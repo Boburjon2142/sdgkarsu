@@ -1,0 +1,42 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{% tr "Community Engagement" %} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}engagement{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>{% tr "Community Engagement" %}</li>
+      </ol>
+      <h1 class="page-title">{% tr "Community Engagement" %}</h1>
+      <p class="page-intro">The university extends sustainability beyond campus through public service, training, and partnerships.</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Public Value" %}</span>
+      <p>{% tr "Community engagement connects institutional knowledge with local development needs and collaborative implementation." %}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "Engagement Portfolio" %}</span>
+        <h2 class="section-title">{% tr "Programs, training, and partnerships" %}</h2>
+      </div>
+    </div>
+    <div class="cards-grid three">
+      {% for initiative in initiatives %}
+        <article class="panel-card">
+          <strong>{{ initiative.title }}</strong>
+          <p>{{ initiative.summary }}</p>
+          {% if initiative.audience %}<p class="muted">{{ initiative.audience }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

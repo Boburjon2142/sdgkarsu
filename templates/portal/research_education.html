@@ -1,0 +1,62 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{% tr "Research & Education" %} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}research{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>{% tr "Research & Education" %}</li>
+      </ol>
+      <h1 class="page-title">{% tr "Research & Education" %}</h1>
+      <p class="page-intro">Sustainability is advanced through rigorous research, applied innovation, teaching, and student-led learning.</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Institutional Role" %}</span>
+      <p>{% tr "The university connects evidence generation, academic delivery, and public value through sustainability-focused research and education programs." %}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "A) Research for Sustainability" %}</span>
+        <h2 class="section-title">{% tr "Research centers, projects, and innovation" %}</h2>
+      </div>
+    </div>
+    <div class="cards-grid three">
+      {% for item in research_items %}
+        <article class="panel-card">
+          <strong>{{ item.title }}</strong>
+          <p>{{ item.summary }}</p>
+          {% if item.department %}<p class="muted">{{ item.department }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "B) Education for Sustainability" %}</span>
+        <h2 class="section-title">{% tr "Courses, programs, and student learning" %}</h2>
+      </div>
+    </div>
+    <div class="cards-grid three">
+      {% for item in education_items %}
+        <article class="info-card">
+          <strong>{{ item.title }}</strong>
+          <p>{{ item.summary }}</p>
+          {% if item.highlight_metric %}<p class="muted">{{ item.highlight_metric }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

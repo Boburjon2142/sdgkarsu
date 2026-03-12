@@ -1,0 +1,58 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{% tr "News & Events" %} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}news{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>{% tr "News & Events" %}</li>
+      </ol>
+      <h1 class="page-title">{% tr "News & Events" %}</h1>
+      <p class="page-intro">{% tr "Official sustainability news, events, conferences, workshops, and institutional announcements." %}</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Editorial and Calendar" %}</span>
+      <p>{% tr "Institutional updates, academic programming, and stakeholder events are published here as part of the public sustainability record." %}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="events">
+  <div class="container">
+    <div class="filters" aria-label="{% tr 'Content filters' %}">
+      <button class="filter-button is-active" data-filter="all">{% tr "All" %}</button>
+      <button class="filter-button" data-filter="news">{% tr "News" %}</button>
+      <button class="filter-button" data-filter="event">{% tr "Events" %}</button>
+      <button class="filter-button" data-filter="conference">{% tr "Conferences" %}</button>
+      <button class="filter-button" data-filter="workshop">{% tr "Workshops" %}</button>
+    </div>
+    <div class="cards-grid three">
+      {% for article in news_items %}
+        <article class="news-card" data-category="news">
+          <div class="card-topline">
+            <span class="tag">{{ article.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
+            <span class="meta-badge">{{ article.published_on|date:"d F Y" }}</span>
+          </div>
+          <h2 class="card-title">{{ article.title }}</h2>
+          <p>{{ article.summary }}</p>
+          <a class="text-link" href="{{ article.get_absolute_url }}">{% tr "Read more" %}</a>
+        </article>
+      {% endfor %}
+      {% for event in events %}
+        <article class="event-card" data-category="{{ event.category }}">
+          <div class="card-topline">
+            <div class="date-chip">{{ event.start_date|date:"d" }}<span>{{ event.start_date|date:"M" }}</span></div>
+            <span class="tag">{{ event.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
+          </div>
+          <h2 class="card-title">{{ event.title }}</h2>
+          <p>{{ event.summary }}</p>
+          <a class="text-link" href="{{ event.get_absolute_url }}">{% tr "View event" %}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

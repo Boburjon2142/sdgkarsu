@@ -1,0 +1,43 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{{ article.title }} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}news{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li><a href="{% url 'news-events' %}">{% tr "News & Events" %}</a></li>
+        <li>{% tr "News Detail" %}</li>
+      </ol>
+      <h1 class="page-title">{{ article.title }}</h1>
+      <div class="page-meta-bar">
+        <span class="tag">{{ article.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
+        <span class="meta-badge">{{ article.published_on|date:"d F Y" }}</span>
+      </div>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Official Article" %}</span>
+      <p>{{ article.summary }}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container editorial-grid">
+    <article class="editorial-body">
+      <p>{{ article.summary }}</p>
+      <p>{{ article.body }}</p>
+    </article>
+    <aside class="info-card">
+      <strong>{% tr "Related reports" %}</strong>
+      <ul class="detail-list">
+        {% for report in related_reports %}
+          <li>{{ report.title }}</li>
+        {% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>
+{% endblock %}

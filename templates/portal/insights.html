@@ -1,0 +1,63 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{% tr "Insights & Reports" %} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}insights{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>{% tr "Insights & Reports" %}</li>
+      </ol>
+      <h1 class="page-title">{% tr "Insights & Reports" %}</h1>
+      <p class="page-intro">Rankings evidence, KPI dashboards, annual reports, and downloadable materials supporting public accountability.</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Evidence Base" %}</span>
+      <p>{% tr "This section consolidates public disclosures, comparative rankings, and indicator summaries for stakeholders and reviewers." %}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section-sm" id="kpi-dashboard">
+  <div class="container">
+    <div class="section-header compact">
+      <div>
+        <span class="section-kicker">{% tr "Indicators" %}</span>
+        <h2 class="section-title">{% tr "Institutional KPI dashboard" %}</h2>
+      </div>
+    </div>
+    <div class="indicator-grid">
+      {% for metric in metrics %}
+        <article class="metric-card">
+          <div class="metric-value">{{ metric.value }}</div>
+          <div class="metric-label">{{ metric.label }}</div>
+          <p class="muted">{{ metric.context }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reports-library">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "Reports and Rankings" %}</span>
+        <h2 class="section-title">{% tr "Annual reporting and reference documents" %}</h2>
+      </div>
+    </div>
+    <div class="reports-grid">
+      {% for report in reports %}
+        <article class="report-card">
+          <strong>{{ report.title }}</strong>
+          <p>{{ report.summary }}</p>
+          <p class="muted">{{ report.get_report_type_display|translate_value:request.LANGUAGE_CODE }} | {{ report.publish_date|date:"F Y" }}</p>
+          {% if report.download_url %}<a class="text-link" href="{{ report.download_url }}">{% tr "Open document" %}</a>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

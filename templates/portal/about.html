@@ -1,0 +1,79 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{% tr "About Sustainability" %} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}about{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>{% tr "About Sustainability" %}</li>
+      </ol>
+      <h1 class="page-title">{% tr "About Sustainability" %}</h1>
+      <p class="page-intro">{{ site_settings.sustainability_strategy }}</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Governance Note" %}</span>
+      <p>{{ site_settings.governance_overview }}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split-panel">
+    <div>
+      <span class="section-kicker">{% tr "Strategy and Governance" %}</span>
+      <h2 class="section-title">{% tr "Institutional leadership and implementation structure" %}</h2>
+      <p class="section-lead">{{ site_settings.governance_overview }}</p>
+    </div>
+    <div class="cards-grid two">
+      {% for role in governance_roles %}
+        <article class="info-card">
+          <strong>{{ role.title }}</strong>
+          <p>{{ role.responsibility }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "Policies and Regulations" %}</span>
+        <h2 class="section-title">{% tr "Core institutional policy instruments" %}</h2>
+      </div>
+    </div>
+    <div class="cards-grid three">
+      {% for policy in policies %}
+        <article class="panel-card">
+          <strong>{{ policy.title }}</strong>
+          <p>{{ policy.summary }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="section-header compact">
+      <div>
+        <span class="section-kicker">{% tr "Reports" %}</span>
+        <h2 class="section-title">{% tr "Sustainability reports and disclosures" %}</h2>
+      </div>
+    </div>
+    <div class="reports-grid">
+      {% for report in reports %}
+        <article class="report-card">
+          <strong>{{ report.title }}</strong>
+          <p>{{ report.summary }}</p>
+          <a class="text-link" href="{% url 'insights' %}">{% tr "Open report" %}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

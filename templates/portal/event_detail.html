@@ -1,0 +1,44 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}{{ event.title }} | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}news{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li><a href="{% url 'news-events' %}">{% tr "News & Events" %}</a></li>
+        <li>{% tr "Event Detail" %}</li>
+      </ol>
+      <h1 class="page-title">{{ event.title }}</h1>
+      <div class="page-meta-bar">
+        <span class="tag">{{ event.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
+        <span class="meta-badge">{{ event.start_date|date:"d F Y" }}</span>
+        <span class="meta-badge">{{ event.venue }}</span>
+      </div>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Event Summary" %}</span>
+      <p>{{ event.summary }}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container editorial-grid">
+    <article class="editorial-body">
+      <p>{{ event.summary }}</p>
+      <p>{{ event.details }}</p>
+    </article>
+    <aside class="info-card">
+      <strong>{% tr "Event information" %}</strong>
+      <ul class="detail-list">
+        <li>{% tr "Category:" %} {{ event.get_category_display|translate_value:request.LANGUAGE_CODE }}</li>
+        <li>{% tr "Venue:" %} {{ event.venue }}</li>
+        <li>{% tr "Audience:" %} {{ event.audience }}</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+{% endblock %}

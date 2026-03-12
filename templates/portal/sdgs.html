@@ -1,0 +1,46 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+{% block title %}SDGs | {{ site_settings.site_name }}{% endblock %}
+{% block body_page %}sdgs{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
+        <li>SDGs</li>
+      </ol>
+      <h1 class="page-title">Sustainable Development Goals</h1>
+      <p class="page-intro">The SDGs provide the central institutional framework for planning, evidence gathering, public reporting, and communication of impact.</p>
+    </div>
+    <aside class="page-hero-side">
+      <span class="section-kicker">{% tr "Framework" %}</span>
+      <p>{% tr "The university aligns teaching, research, operations, and engagement activity with the 17 Sustainable Development Goals." %}</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="section-kicker">{% tr "All 17 Goals" %}</span>
+        <h2 class="section-title">{% tr "Institutional SDG directory" %}</h2>
+      </div>
+    </div>
+    <div class="sdg-grid sdg-grid--full">
+      {% for sdg in sdgs %}
+        <article class="sdg-card {{ sdg.color_class }}">
+          <div class="sdg-card__top">
+            <span class="sdg-number">SDG {{ sdg.number }}</span>
+            <div class="sdg-icon" aria-hidden="true">{% sdg_icon sdg.number %}</div>
+          </div>
+          <h3>{{ sdg.title }}</h3>
+          <p>{{ sdg.short_description }}</p>
+          <a class="text-link" href="{{ sdg.get_absolute_url }}">{% tr "View detail" %}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
