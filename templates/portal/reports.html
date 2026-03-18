@@ -1,0 +1,85 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  {% include "portal/includes/page_intro.html" %}
+
+  <section class="section">
+    <div class="container metrics-band">
+      {% for metric in metrics %}
+        <article class="metric-card reveal">
+          <strong class="counter" data-target="{{ metric.value|cut:'+'|cut:'%'|cut:',' }}">{{ metric.value }}</strong>
+          <h3>{{ metric.label }}</h3>
+          <p>{{ metric.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container two-column">
+      <div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Featured reports</div>
+            <h2>Public reports designed for formal communication and evidence sharing.</h2>
+          </div>
+        </div>
+        <div class="stack-list">
+          {% for report in featured_reports %}
+            <article class="report-card reveal" id="report-{{ report.slug }}">
+              <span class="chip">{{ report.get_report_type_display|translate_value:current_language }}</span>
+              <h3>{{ report.title }}</h3>
+              <p>{{ report.summary }}</p>
+              <small>{{ report.publish_date|date:"F d, Y" }}</small>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Achievements</div>
+            <h2>Recognition, rankings, and public-facing institutional milestones.</h2>
+          </div>
+        </div>
+        <div class="stack-list">
+          {% for item in achievements %}
+            <article class="content-card reveal">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              <small>{{ item.subtitle }}</small>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters" role="tablist" aria-label="Report filters">
+        <button class="filter-button is-active" type="button" data-filter="all">{% tr "All" %}</button>
+        <button class="filter-button" type="button" data-filter="annual">{% tr "Annual" %}</button>
+        <button class="filter-button" type="button" data-filter="insight">{% tr "Insights" %}</button>
+        <button class="filter-button" type="button" data-filter="ranking">{% tr "Rankings" %}</button>
+        <button class="filter-button" type="button" data-filter="dashboard">{% tr "Dashboards" %}</button>
+      </div>
+      <div class="stack-list filter-targets">
+        {% for report in reports %}
+          <article class="list-card reveal" data-category="{{ report.report_type }}">
+            <div>
+              <span class="chip">{{ report.get_report_type_display|translate_value:current_language }}</span>
+              <h3>{{ report.title }}</h3>
+              <p>{{ report.body }}</p>
+            </div>
+            <div class="list-card__meta">
+              <strong>{{ report.highlight_metric }}</strong>
+              <span>{{ report.publish_date|date:"Y" }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

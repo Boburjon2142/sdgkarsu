@@ -1,66 +1,60 @@
 {% extends "portal/base.html" %}
 {% load portal_i18n %}
-{% block title %}{% tr "Contact" %} | {{ site_settings.site_name }}{% endblock %}
-{% block body_page %}contact{% endblock %}
-{% block content %}
-<section class="page-hero">
-  <div class="container page-hero-grid">
-    <div>
-      <ol class="breadcrumb" aria-label="Breadcrumb">
-        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
-        <li>{% tr "Contact" %}</li>
-      </ol>
-      <h1 class="page-title">{% tr "Contact" %}</h1>
-      <p class="page-intro">{% tr "For institutional cooperation, reporting inquiries, student engagement, or sustainability program coordination, contact the Sustainability Office." %}</p>
-    </div>
-    <aside class="page-hero-side">
-      <span class="section-kicker">{% tr "Office Contact" %}</span>
-      <p>{{ site_settings.contact_address }}<br>{{ site_settings.contact_phone }}<br>{{ site_settings.contact_email }}</p>
-    </aside>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container contact-layout">
-    <article class="contact-card">
-      <h2 class="card-title">{% tr "Contact information" %}</h2>
-      <p><strong>{{ site_settings.site_name }}</strong><br>{{ site_settings.contact_address }}</p>
-      <p><strong>{% tr "Phone:" %}</strong> {{ site_settings.contact_phone }}<br><strong>{% tr "Email:" %}</strong> {{ site_settings.contact_email }}</p>
-      <p><strong>{% tr "Hours:" %}</strong> {{ site_settings.office_hours }}</p>
-      <div class="map-placeholder space-top-md">{% tr "Map and office location" %}</div>
-    </article>
-    <article class="contact-card">
-      <h2 class="card-title">{% tr "Submit an inquiry" %}</h2>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-        <div class="form-grid">
-          <div>
-            <label for="{{ form.full_name.id_for_label }}">{% tr "Full name" %}</label>
-            {{ form.full_name }}
+{% block content %}
+  {% include "portal/includes/page_intro.html" %}
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="stack-list">
+        <article class="content-card content-card--panel">
+          <h2>{% tr "Main office" %}</h2>
+          <p>{{ site_settings.address }}</p>
+          <p><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></p>
+          <p><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></p>
+          <p>{{ site_settings.office_hours }}</p>
+        </article>
+        <article class="content-card content-card--panel">
+          <h2>{% tr "Department contacts" %}</h2>
+          {% for item in departments %}
+            <div class="department-row">
+              <strong>{{ item.department_name }}</strong>
+              <p>{{ item.contact_person }}</p>
+              <p>{{ item.office_location }}</p>
+              <p><a href="mailto:{{ item.email }}">{{ item.email }}</a> · <a href="tel:{{ item.phone }}">{{ item.phone }}</a></p>
+            </div>
+          {% endfor %}
+        </article>
+      </div>
+      <article class="content-card content-card--large">
+        <h2>{% tr "Contact form" %}</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-grid">
+            <div>
+              <label for="{{ form.full_name.id_for_label }}">{% tr "Full name" %}</label>
+              {{ form.full_name }}
+            </div>
+            <div>
+              <label for="{{ form.email.id_for_label }}">{% tr "Email" %}</label>
+              {{ form.email }}
+            </div>
+            <div>
+              <label for="{{ form.organization.id_for_label }}">{% tr "Organization" %}</label>
+              {{ form.organization }}
+            </div>
+            <div>
+              <label for="{{ form.subject.id_for_label }}">{% tr "Subject" %}</label>
+              {{ form.subject }}
+            </div>
           </div>
           <div>
-            <label for="{{ form.email.id_for_label }}">{% tr "Email address" %}</label>
-            {{ form.email }}
+            <label for="{{ form.message.id_for_label }}">{% tr "Message" %}</label>
+            {{ form.message }}
           </div>
-        </div>
-        <div class="form-grid">
-          <div>
-            <label for="{{ form.organization.id_for_label }}">{% tr "Organization" %}</label>
-            {{ form.organization }}
-          </div>
-          <div>
-            <label for="{{ form.subject.id_for_label }}">{% tr "Subject" %}</label>
-            {{ form.subject }}
-          </div>
-        </div>
-        <div>
-          <label for="{{ form.message.id_for_label }}">{% tr "Message" %}</label>
-          {{ form.message }}
-        </div>
-        <button class="btn btn-primary" type="submit">{% tr "Submit Inquiry" %}</button>
-      </form>
-    </article>
-  </div>
-</section>
+          <button class="button button--primary" type="submit">{% tr "Submit official inquiry" %}</button>
+        </form>
+      </article>
+    </div>
+  </section>
 {% endblock %}

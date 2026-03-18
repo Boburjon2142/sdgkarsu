@@ -1,96 +1,61 @@
 {% load static portal_i18n %}
 <!DOCTYPE html>
-<html lang="{{ request.LANGUAGE_CODE|default:'en' }}">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{{ site_settings.site_name }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}Official university sustainability portal.{% endblock %}">
-  <meta property="og:title" content="{% block og_title %}{{ site_settings.site_name }}{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}Official university sustainability portal.{% endblock %}">
+  <title>{% block title %}{% if page_content and page_content.meta_title %}{{ page_content.meta_title }}{% else %}{{ site_settings.meta_title }}{% endif %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% if page_content and page_content.meta_description %}{{ page_content.meta_description }}{% else %}{{ site_settings.meta_description }}{% endif %}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{% if page_content and page_content.meta_title %}{{ page_content.meta_title }}{% else %}{{ site_settings.meta_title }}{% endif %}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% if page_content and page_content.meta_description %}{{ page_content.meta_description }}{% else %}{{ site_settings.meta_description }}{% endif %}{% endblock %}">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
-<body data-page="{% block body_page %}{% endblock %}"{% if site_settings.hero_background_image %} class="has-hero-media" style="--hero-image: url('{{ site_settings.hero_background_image.url }}');"{% endif %}>
-  <a class="skip-link" href="#main-content">{% tr "Skip to main content" %}</a>
-  <header class="site-header">
-    <div class="header-shell">
-      <div class="container header-main-inner">
-        <a class="brand" href="{% url 'home' %}" aria-label="{{ site_settings.site_name }}">
-          <div class="brand-mark">{{ site_settings.short_name }}</div>
-          <div class="brand-text">
-            <strong>{{ site_settings.site_name }}</strong>
-            <span>{{ site_settings.tagline }}</span>
-          </div>
+<body>
+  <div class="site-loader" id="site-loader" aria-hidden="true">
+    <div class="site-loader__wheel"></div>
+  </div>
+  <header class="site-header" id="site-header">
+    <div class="header-main">
+      <div class="container header-main__inner">
+        <a class="brand" href="{% url 'home' %}" aria-label="{{ site_settings.institution_name }}">
+          <span class="brand-logo">
+            <img src="{% static 'images/karshi_state_university_logo_no80_v2.svg' %}" alt="Karshi State University logo">
+          </span>
+          <span class="brand-copy">
+            <strong>{% tr "KarshiSU SDG" %}</strong>
+          </span>
         </a>
-        <div class="header-utility">
-          <div class="topbar-badge">{% tr "Official University Sustainability Portal" %}</div>
-          <div class="lang-switcher" aria-label="{% tr 'Language switcher' %}">
-            <a href="{% url 'set-language' 'uz' %}?next={{ request.get_full_path|urlencode }}"{% if request.LANGUAGE_CODE == 'uz' %} aria-current="true"{% endif %}>UZ</a>
-            <a href="{% url 'set-language' 'en' %}?next={{ request.get_full_path|urlencode }}"{% if request.LANGUAGE_CODE == 'en' %} aria-current="true"{% endif %}>EN</a>
-            <a href="{% url 'set-language' 'ru' %}?next={{ request.get_full_path|urlencode }}"{% if request.LANGUAGE_CODE == 'ru' %} aria-current="true"{% endif %}>RU</a>
+        <div class="header-actions">
+          <div class="language-switcher" aria-label="{% tr 'Language switcher' %}">
+            <a href="{% url 'set-language' 'uz' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'uz' %} aria-current="true"{% endif %}>UZ</a>
+            <a href="{% url 'set-language' 'en' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'en' %} aria-current="true"{% endif %}>EN</a>
           </div>
-          <div class="topbar-links">
-            <a href="{% url 'insights' %}">{% tr "Reports" %}</a>
-            <a href="{% url 'news-events' %}">{% tr "News" %}</a>
-            <a href="{% url 'contact' %}">{% tr "Contact" %}</a>
-          </div>
+          <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="{% tr 'Open navigation' %}">
+            <span></span>
+          </button>
+          <nav class="site-navigation" id="site-navigation" aria-label="{% tr 'Primary navigation' %}">
+            <a class="{% if active_page == 'home' %}is-active{% endif %}" href="{% url 'home' %}">{% tr "Home" %}</a>
+            <a class="{% if active_page == 'about' %}is-active{% endif %}" href="{% url 'about' %}">{% tr "About" %}</a>
+            <a class="{% if active_page == 'programs' %}is-active{% endif %}" href="{% url 'programs' %}">{% tr "SDGs" %}</a>
+            <a class="{% if active_page == 'research' %}is-active{% endif %}" href="{% url 'research' %}">{% tr "Research & Education" %}</a>
+            <a class="{% if active_page == 'sustainability' %}is-active{% endif %}" href="{% url 'sustainability' %}">{% tr "Campus" %}</a>
+            <a class="{% if active_page == 'education' %}is-active{% endif %}" href="{% url 'education' %}">{% tr "Engagement" %}</a>
+            <a class="{% if active_page == 'reports' %}is-active{% endif %}" href="{% url 'reports' %}">{% tr "Insights" %}</a>
+            <a class="{% if active_page == 'contact' %}is-active{% endif %}" href="{% url 'contact' %}">{% tr "Contact" %}</a>
+          </nav>
         </div>
-        <button class="mobile-toggle" aria-label="{% tr 'Toggle navigation' %}" aria-expanded="false" aria-controls="site-nav"><span></span></button>
-      </div>
-      <div class="container header-nav-row">
-        <nav class="site-nav" id="site-nav" aria-label="{% tr 'Main navigation' %}">
-          <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" data-nav="home" href="{% url 'home' %}">{% tr "Home" %}</a></li>
-            <li class="nav-item nav-item--dropdown">
-              <a class="nav-link nav-link--dropdown" data-nav="about" href="{% url 'about' %}" aria-expanded="false">{% tr "About" %}</a>
-              <div class="nav-dropdown">
-                <a href="{% url 'about' %}">{% tr "About Sustainability" %}</a>
-                <a href="{% url 'insights' %}">{% tr "Reports" %}</a>
-                <a href="{% url 'contact' %}">{% tr "Contact" %}</a>
-              </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" data-nav="sdgs" href="{% url 'sdg-list' %}">SDGs</a></li>
-            <li class="nav-item nav-item--dropdown">
-              <a class="nav-link nav-link--dropdown" data-nav="research" href="{% url 'research-education' %}" aria-expanded="false">{% tr "Research & Education" %}</a>
-              <div class="nav-dropdown">
-                <a href="{% url 'research-education' %}">{% tr "Research & Education" %}</a>
-                <a href="{% url 'campus' %}">{% tr "Campus Sustainability" %}</a>
-                <a href="{% url 'engagement' %}">{% tr "Community Engagement" %}</a>
-              </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" data-nav="campus" href="{% url 'campus' %}">{% tr "Campus" %}</a></li>
-            <li class="nav-item"><a class="nav-link" data-nav="engagement" href="{% url 'engagement' %}">{% tr "Engagement" %}</a></li>
-            <li class="nav-item nav-item--dropdown">
-              <a class="nav-link nav-link--dropdown" data-nav="insights" href="{% url 'insights' %}" aria-expanded="false">{% tr "Insights" %}</a>
-              <div class="nav-dropdown">
-                <a href="{% url 'insights' %}">{% tr "Insights & Reports" %}</a>
-                <a href="{% url 'insights' %}#kpi-dashboard">{% tr "Indicators" %}</a>
-                <a href="{% url 'insights' %}#reports-library">{% tr "Reports & Rankings" %}</a>
-              </div>
-            </li>
-            <li class="nav-item nav-item--dropdown">
-              <a class="nav-link nav-link--dropdown" data-nav="news" href="{% url 'news-events' %}" aria-expanded="false">{% tr "News & Events" %}</a>
-              <div class="nav-dropdown">
-                <a href="{% url 'news-events' %}">{% tr "News" %}</a>
-                <a href="{% url 'news-events' %}#events">{% tr "Events" %}</a>
-                <a href="{% url 'contact' %}">{% tr "Contact" %}</a>
-              </div>
-            </li>
-            <li class="nav-item"><a class="nav-link" data-nav="contact" href="{% url 'contact' %}">{% tr "Contact" %}</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </header>
 
   <main id="main-content">
     {% if messages %}
-      <section class="section-sm">
+      <section class="section section--compact">
         <div class="container">
           {% for message in messages %}
-            <div class="info-card">{{ message }}</div>
+            <div class="notice-card">{{ message }}</div>
           {% endfor %}
         </div>
       </section>
@@ -98,54 +63,45 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div>
-          <h3>{{ site_settings.site_name }}</h3>
-          <p>{{ site_settings.tagline }}</p>
-        </div>
-        <div>
-          <h4>{% tr "Quick Navigation" %}</h4>
-          <ul class="footer-links">
-            <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
-            <li><a href="{% url 'about' %}">{% tr "About Sustainability" %}</a></li>
-            <li><a href="{% url 'sdg-list' %}">SDGs</a></li>
-            <li><a href="{% url 'contact' %}">{% tr "Contact" %}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>{% tr "Sustainability Sections" %}</h4>
-          <ul class="footer-links">
-            <li><a href="{% url 'research-education' %}">{% tr "Research & Education" %}</a></li>
-            <li><a href="{% url 'campus' %}">{% tr "Campus Sustainability" %}</a></li>
-            <li><a href="{% url 'engagement' %}">{% tr "Community Engagement" %}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>{% tr "Reports & Rankings" %}</h4>
-          <ul class="footer-links">
-            <li><a href="{% url 'insights' %}">{% tr "Insights & Reports" %}</a></li>
-            {% for report in primary_reports %}
-              <li>{{ report.title }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div>
-          <h4>{% tr "Contact Info" %}</h4>
-          <ul class="footer-contact">
-            <li>{{ site_settings.contact_address }}</li>
-            <li>{{ site_settings.contact_phone }}</li>
-            <li>{{ site_settings.contact_email }}</li>
-            <li>{{ site_settings.office_hours }}</li>
-          </ul>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">{{ site_settings.institution_name }}</div>
+        <p class="footer-copy">{{ site_settings.footer_text }}</p>
+      </div>
+      <div>
+        <h3>{% tr "Quick links" %}</h3>
+        <ul class="footer-links">
+          <li><a href="{% url 'about' %}">{% tr "About the institution" %}</a></li>
+          <li><a href="{% url 'programs' %}">{% tr "Programs and services" %}</a></li>
+          <li><a href="{% url 'reports' %}">{% tr "Reports and insights" %}</a></li>
+          <li><a href="{% url 'news-events' %}">{% tr "News and events" %}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>{% tr "Key reports" %}</h3>
+        <ul class="footer-links">
+          {% for report in footer_reports %}
+            <li><a href="{% url 'reports' %}#report-{{ report.slug }}">{{ report.title }}</a></li>
+          {% empty %}
+            <li>{% tr "Reports will appear here after publication." %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>{% tr "Contact" %}</h3>
+        <ul class="footer-links footer-links--contact">
+          <li>{{ site_settings.address }}</li>
+          <li><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></li>
+          <li><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></li>
+          <li>{{ site_settings.office_hours }}</li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span>&copy; 2026 {{ site_settings.site_name }}. {% tr "All rights reserved." %}</span>
-        <span>{% tr "Official institutional publication." %}</span>
+    <div class="footer-legal">
+      <div class="container footer-legal__inner">
+        <span>&copy; 2026 {{ site_settings.institution_name }}</span>
+        <span><a href="{% url 'robots-txt' %}">{% tr "Robots" %}</a> | <a href="/sitemap.xml">{% tr "Sitemap" %}</a></span>
       </div>
     </div>
   </footer>

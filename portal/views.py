@@ -1,164 +1,166 @@
-from django.conf import settings
 from django.contrib import messages
+from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.utils.translation import activate
 from django.views.generic import DetailView, TemplateView
 
 from .forms import ContactSubmissionForm
 from .models import (
-    CampusInitiative,
-    EngagementInitiative,
+    Achievement,
+    DepartmentContact,
+    EducationInitiative,
     Event,
     GovernanceRole,
-    InsightMetric,
+    HeroStat,
+    ImpactMetric,
+    InstitutionalValue,
     NewsArticle,
+    PageContent,
     Partner,
-    ResearchItem,
-    SDG,
+    PolicyDocument,
+    Program,
+    Report,
+    ResearchProject,
     SiteSettings,
-    SustainabilityPolicy,
-    SustainabilityReport,
+    StrategicPriority,
 )
 from .translation_utils import localize_collection, localize_object, translate_text
 
 
 def set_portal_language(request, language_code):
-    supported_languages = {code for code, _label in settings.LANGUAGES}
-    if language_code not in supported_languages:
-        language_code = settings.LANGUAGE_CODE
-
+    language_code = language_code if language_code in {"uz", "en"} else "en"
+    request.session["portal_language"] = language_code
     next_url = request.GET.get("next") or request.META.get("HTTP_REFERER") or "/"
     response = redirect(next_url)
-    activate(language_code)
-    request.session[settings.LANGUAGE_COOKIE_NAME] = language_code
-    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language_code)
+    response.set_cookie("portal_language", language_code)
     return response
 
 
 class BasePortalContextMixin:
+    page_key = "home"
+
     def get_language_code(self):
-        return getattr(self.request, "LANGUAGE_CODE", settings.LANGUAGE_CODE)
+        return getattr(self.request, "LANGUAGE_CODE", "en")
+
+    def get_site_settings(self):
+        return localize_object(SiteSettings.objects.first(), self.get_language_code())
+
+    def get_page_content(self):
+        return localize_object(PageContent.objects.filter(page_key=self.page_key).first(), self.get_language_code())
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        language_code = self.get_language_code()
-        context["site_settings"] = localize_object(SiteSettings.objects.first(), language_code)
-        context["primary_reports"] = localize_collection(SustainabilityReport.objects.all()[:3], language_code)
+        context["site_settings"] = self.get_site_settings()
+        context["page_content"] = self.get_page_content()
+        context["footer_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], self.get_language_code())
+        context["footer_departments"] = localize_collection(DepartmentContact.objects.all()[:3], self.get_language_code())
+        context["active_page"] = self.page_key
+        context["current_language"] = self.get_language_code()
         return context
 
 
 class HomeView(BasePortalContextMixin, TemplateView):
     template_name = "portal/home.html"
+    page_key = "home"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["featured_sdgs"] = localize_collection(SDG.objects.filter(featured=True)[:6], language_code)
+        context["hero_stats"] = localize_collection(HeroStat.objects.all()[:4], language_code)
+        context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all()[:4], language_code)
+        context["featured_programs"] = localize_collection(Program.objects.filter(featured=True)[:3], language_code)
+        context["featured_research"] = localize_collection(ResearchProject.objects.filter(featured=True)[:2], language_code)
+        context["impact_metrics"] = localize_collection(ImpactMetric.objects.filter(scope__in=["home", "both"])[:4], language_code)
+        context["latest_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
         context["latest_news"] = localize_collection(NewsArticle.objects.all()[:3], language_code)
-        context["upcoming_events"] = localize_collection(Event.objects.all()[:3], language_code)
-        context["home_metrics"] = localize_collection(
-            InsightMetric.objects.filter(page_scope__in=["home", "both"])[:4], language_code
-        )
-        context["partners"] = localize_collection(Partner.objects.all()[:5], language_code)
+        context["partners"] = localize_collection(Partner.objects.all()[:6], language_code)
         return context
 
 
 class AboutView(BasePortalContextMixin, TemplateView):
     template_name = "portal/about.html"
+    page_key = "about"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
+        context["values"] = localize_collection(InstitutionalValue.objects.all(), language_code)
         context["governance_roles"] = localize_collection(GovernanceRole.objects.all(), language_code)
-        context["policies"] = localize_collection(SustainabilityPolicy.objects.all(), language_code)
-        context["reports"] = localize_collection(SustainabilityReport.objects.all()[:3], language_code)
+        context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all(), language_code)
         return context
 
 
-class SDGListView(BasePortalContextMixin, TemplateView):
-    template_name = "portal/sdgs.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["sdgs"] = localize_collection(SDG.objects.all(), self.get_language_code())
-        return context
-
-
-class SDGDetailView(BasePortalContextMixin, DetailView):
-    template_name = "portal/sdg_detail.html"
-    context_object_name = "sdg"
-
-    def get_object(self, queryset=None):
-        sdg = SDG.objects.prefetch_related("projects").get(number=self.kwargs["number"])
-        return localize_object(sdg, self.get_language_code())
+class ProgramsView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/programs.html"
+    page_key = "programs"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["related_news"] = localize_collection(NewsArticle.objects.filter(featured=True)[:3], language_code)
-        context["related_reports"] = localize_collection(SustainabilityReport.objects.all()[:3], language_code)
-        context["sdg_projects"] = localize_collection(self.object.projects.all(), language_code)
+        context["featured_programs"] = localize_collection(Program.objects.filter(featured=True), language_code)
+        context["programs"] = localize_collection(Program.objects.all(), language_code)
         return context
 
 
-class ResearchEducationView(BasePortalContextMixin, TemplateView):
-    template_name = "portal/research_education.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        research_categories = ["project", "publication", "center", "innovation", "grant"]
-        education_categories = ["course", "program", "student", "mooc"]
-        language_code = self.get_language_code()
-        context["research_items"] = localize_collection(
-            ResearchItem.objects.filter(category__in=research_categories), language_code
-        )
-        context["education_items"] = localize_collection(
-            ResearchItem.objects.filter(category__in=education_categories), language_code
-        )
-        return context
-
-
-class CampusView(BasePortalContextMixin, TemplateView):
-    template_name = "portal/campus.html"
+class ResearchView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/research.html"
+    page_key = "research"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["initiatives"] = localize_collection(CampusInitiative.objects.all(), language_code)
-        context["metrics"] = localize_collection(
-            InsightMetric.objects.filter(page_scope__in=["home", "both"])[:4], language_code
-        )
+        context["featured_projects"] = localize_collection(ResearchProject.objects.filter(featured=True), language_code)
+        context["projects"] = localize_collection(ResearchProject.objects.all(), language_code)
         return context
 
 
-class EngagementView(BasePortalContextMixin, TemplateView):
-    template_name = "portal/engagement.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["initiatives"] = localize_collection(EngagementInitiative.objects.all(), self.get_language_code())
-        return context
-
-
-class InsightsView(BasePortalContextMixin, TemplateView):
-    template_name = "portal/insights.html"
+class EducationView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/education.html"
+    page_key = "education"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["metrics"] = localize_collection(
-            InsightMetric.objects.filter(page_scope__in=["insights", "both"]), language_code
-        )
-        context["reports"] = localize_collection(SustainabilityReport.objects.all(), language_code)
+        context["featured_initiatives"] = localize_collection(EducationInitiative.objects.filter(featured=True), language_code)
+        context["initiatives"] = localize_collection(EducationInitiative.objects.all(), language_code)
+        return context
+
+
+class SustainabilityView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/sustainability.html"
+    page_key = "sustainability"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        context["policies"] = localize_collection(PolicyDocument.objects.all(), language_code)
+        context["featured_policies"] = localize_collection(PolicyDocument.objects.filter(featured=True)[:3], language_code)
+        context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all(), language_code)
+        return context
+
+
+class ReportsView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/reports.html"
+    page_key = "reports"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        context["metrics"] = localize_collection(ImpactMetric.objects.filter(scope__in=["reports", "both"]), language_code)
+        context["reports"] = localize_collection(Report.objects.all(), language_code)
+        context["featured_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
+        context["achievements"] = localize_collection(Achievement.objects.all(), language_code)
         return context
 
 
 class NewsEventsView(BasePortalContextMixin, TemplateView):
     template_name = "portal/news_events.html"
+    page_key = "news"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
+        featured_article = NewsArticle.objects.filter(featured=True).first() or NewsArticle.objects.first()
+        context["featured_article"] = localize_object(featured_article, language_code)
         context["news_items"] = localize_collection(NewsArticle.objects.all(), language_code)
         context["events"] = localize_collection(Event.objects.all(), language_code)
         return context
@@ -168,14 +170,16 @@ class NewsDetailView(BasePortalContextMixin, DetailView):
     template_name = "portal/news_detail.html"
     model = NewsArticle
     context_object_name = "article"
+    page_key = "news"
 
     def get_object(self, queryset=None):
-        article = super().get_object(queryset)
-        return localize_object(article, self.get_language_code())
+        return localize_object(super().get_object(queryset), self.get_language_code())
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["related_reports"] = localize_collection(SustainabilityReport.objects.all()[:3], self.get_language_code())
+        language_code = self.get_language_code()
+        context["related_reports"] = localize_collection(Report.objects.filter(featured=True)[:2], language_code)
+        context["recent_news"] = localize_collection(NewsArticle.objects.exclude(pk=self.object.pk)[:3], language_code)
         return context
 
 
@@ -183,33 +187,45 @@ class EventDetailView(BasePortalContextMixin, DetailView):
     template_name = "portal/event_detail.html"
     model = Event
     context_object_name = "event"
+    page_key = "news"
 
     def get_object(self, queryset=None):
-        event = super().get_object(queryset)
-        return localize_object(event, self.get_language_code())
+        return localize_object(super().get_object(queryset), self.get_language_code())
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["related_reports"] = localize_collection(SustainabilityReport.objects.all()[:3], self.get_language_code())
+        context["related_events"] = localize_collection(Event.objects.exclude(pk=self.object.pk)[:3], self.get_language_code())
         return context
 
 
 class ContactView(BasePortalContextMixin, TemplateView):
     template_name = "portal/contact.html"
+    page_key = "contact"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.setdefault("form", ContactSubmissionForm(language_code=self.get_language_code()))
+        context["departments"] = localize_collection(DepartmentContact.objects.all(), self.get_language_code())
         return context
 
     def post(self, request, *args, **kwargs):
-        language_code = self.get_language_code()
-        form = ContactSubmissionForm(request.POST, language_code=language_code)
+        form = ContactSubmissionForm(request.POST, language_code=self.get_language_code())
         if form.is_valid():
             form.save()
             messages.success(
                 request,
-                translate_text("Your inquiry has been submitted to the Sustainability Office.", language_code),
+                translate_text("Your message has been submitted to the institutional coordination office.", self.get_language_code()),
             )
             return redirect("contact")
         return self.render_to_response(self.get_context_data(form=form))
+
+
+def robots_txt(_request):
+    content = "\n".join(
+        [
+            "User-agent: *",
+            "Allow: /",
+            "Sitemap: /sitemap.xml",
+        ]
+    )
+    return HttpResponse(content, content_type="text/plain")

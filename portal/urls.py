@@ -1,20 +1,34 @@
 from django.urls import path
 
-from . import views
+from .views import (
+    AboutView,
+    ContactView,
+    EducationView,
+    EventDetailView,
+    HomeView,
+    NewsDetailView,
+    NewsEventsView,
+    ProgramsView,
+    ReportsView,
+    ResearchView,
+    SustainabilityView,
+    robots_txt,
+    set_portal_language,
+)
 
 
 urlpatterns = [
-    path("", views.HomeView.as_view(), name="home"),
-    path("language/<str:language_code>/", views.set_portal_language, name="set-language"),
-    path("about/", views.AboutView.as_view(), name="about"),
-    path("sdgs/", views.SDGListView.as_view(), name="sdg-list"),
-    path("sdgs/<int:number>/", views.SDGDetailView.as_view(), name="sdg-detail"),
-    path("research-education/", views.ResearchEducationView.as_view(), name="research-education"),
-    path("campus/", views.CampusView.as_view(), name="campus"),
-    path("engagement/", views.EngagementView.as_view(), name="engagement"),
-    path("insights/", views.InsightsView.as_view(), name="insights"),
-    path("news-events/", views.NewsEventsView.as_view(), name="news-events"),
-    path("news/<slug:slug>/", views.NewsDetailView.as_view(), name="news-detail"),
-    path("events/<slug:slug>/", views.EventDetailView.as_view(), name="event-detail"),
-    path("contact/", views.ContactView.as_view(), name="contact"),
+    path("", HomeView.as_view(), name="home"),
+    path("language/<str:language_code>/", set_portal_language, name="set-language"),
+    path("about/", AboutView.as_view(), name="about"),
+    path("programs/", ProgramsView.as_view(), name="programs"),
+    path("research-projects/", ResearchView.as_view(), name="research"),
+    path("education-initiatives/", EducationView.as_view(), name="education"),
+    path("sustainability-strategy/", SustainabilityView.as_view(), name="sustainability"),
+    path("reports-insights/", ReportsView.as_view(), name="reports"),
+    path("news-events/", NewsEventsView.as_view(), name="news-events"),
+    path("news/<slug:slug>/", NewsDetailView.as_view(), name="news-detail"),
+    path("events/<slug:slug>/", EventDetailView.as_view(), name="event-detail"),
+    path("contact/", ContactView.as_view(), name="contact"),
+    path("robots.txt", robots_txt, name="robots-txt"),
 ]

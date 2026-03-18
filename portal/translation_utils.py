@@ -1,5 +1,7 @@
 from copy import copy
 
+from .current_portal_translations import PORTAL_TRANSLATIONS
+
 
 TRANSLATIONS = {
     "uz": {
@@ -146,6 +148,8 @@ TRANSLATIONS = {
         "For institutional cooperation, reporting inquiries, student engagement, or sustainability program coordination, contact the Sustainability Office.": "Institutsional hamkorlik, hisobotlar bo'yicha murojaatlar, talabalar ishtiroki yoki barqarorlik dasturlarini muvofiqlashtirish uchun Barqarorlik ofisiga murojaat qiling.",
         "A whole-institution strategy aligned with academic excellence and public responsibility": "Akademik sifat va jamoat mas'uliyati bilan uyg'unlashgan umumuniversitet strategiya",
         "University Sustainability Portal": "Universitet Barqaror Rivojlanish Portali",
+        "KarshiSU SDG": "QarshiDU BRM",
+        "QarshiDU SDG": "QarshiDU BRM",
         "Strategy, evidence, and public accountability": "Strategiya, dalillar va jamoatchilik oldidagi hisobdorlik",
         "Annual Report": "Yillik hisobot",
         "Ranking Submission": "Reyting topshirig'i",
@@ -356,6 +360,9 @@ TRANSLATIONS = {
         "Community beneficiaries": "Бенефициары сообщества",
     },
 }
+
+for language_code, values in PORTAL_TRANSLATIONS.items():
+    TRANSLATIONS.setdefault(language_code, {}).update(values)
 
 
 def translate_text(value, language_code):

@@ -1,105 +1,105 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var header = document.querySelector(".site-header");
-  var nav = document.querySelector(".site-nav");
-  var toggle = document.querySelector(".mobile-toggle");
-  var dropdownItems = document.querySelectorAll(".nav-item--dropdown");
-  var currentPage = document.body.getAttribute("data-page");
-  var navLinks = document.querySelectorAll("[data-nav]");
-  var filterButtons = document.querySelectorAll("[data-filter]");
-  var filterItems = document.querySelectorAll("[data-category]");
+const header = document.getElementById("site-header");
+const mobileToggle = document.querySelector(".mobile-toggle");
+const siteNavigation = document.getElementById("site-navigation");
+const siteLoader = document.getElementById("site-loader");
+const filterButtons = document.querySelectorAll(".filter-button");
+const filterTargets = document.querySelectorAll(".filter-targets [data-category]");
+const revealItems = document.querySelectorAll(".reveal");
+const counters = document.querySelectorAll(".counter[data-target]");
 
-  function setScrolledState() {
-    if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
-  }
-
-  function closeMobileNav() {
-    if (!nav || !toggle) return;
-    nav.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
-    dropdownItems.forEach(function (item) {
-      item.classList.remove("is-open");
-      var trigger = item.querySelector(".nav-link--dropdown");
-      if (trigger) {
-        trigger.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
-  setScrolledState();
-  window.addEventListener("scroll", setScrolledState);
-
-  navLinks.forEach(function (link) {
-    if (link.getAttribute("data-nav") === currentPage) {
-      link.classList.add("is-active");
-      link.setAttribute("aria-current", "page");
-    }
+if (siteLoader) {
+  window.addEventListener("load", () => {
+    siteLoader.classList.add("is-hidden");
+    window.setTimeout(() => {
+      siteLoader.remove();
+    }, 360);
   });
+}
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      nav.classList.toggle("is-open");
+if (header) {
+  const setHeaderState = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  setHeaderState();
+  window.addEventListener("scroll", setHeaderState, { passive: true });
+}
+
+if (mobileToggle && siteNavigation) {
+  mobileToggle.addEventListener("click", () => {
+    const isExpanded = mobileToggle.getAttribute("aria-expanded") === "true";
+    mobileToggle.setAttribute("aria-expanded", String(!isExpanded));
+    siteNavigation.classList.toggle("is-open", !isExpanded);
+  });
+}
+
+if (filterButtons.length && filterTargets.length) {
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const { filter } = button.dataset;
+
+      filterButtons.forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+
+      filterTargets.forEach((target) => {
+        const matches = filter === "all" || target.dataset.category === filter;
+        target.classList.toggle("is-hidden", !matches);
+      });
     });
-  }
+  });
+}
 
-  dropdownItems.forEach(function (item) {
-    var trigger = item.querySelector(".nav-link--dropdown");
-    if (!trigger) return;
-
-    trigger.addEventListener("click", function (event) {
-      if (window.innerWidth > 960) return;
-      event.preventDefault();
-
-      var isOpen = item.classList.contains("is-open");
-      dropdownItems.forEach(function (dropdownItem) {
-        dropdownItem.classList.remove("is-open");
-        var dropdownTrigger = dropdownItem.querySelector(".nav-link--dropdown");
-        if (dropdownTrigger) {
-          dropdownTrigger.setAttribute("aria-expanded", "false");
+if (revealItems.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
         }
       });
+    },
+    { threshold: 0.18 }
+  );
 
-      if (!isOpen) {
-        item.classList.add("is-open");
-        trigger.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
 
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener("click", function (event) {
-      var targetId = anchor.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-      var target = document.querySelector(targetId);
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      closeMobileNav();
-    });
-  });
+if (counters.length) {
+  const countObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-  if (filterButtons.length && filterItems.length) {
-    filterButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        var category = button.getAttribute("data-filter");
-        filterButtons.forEach(function (item) {
-          item.classList.remove("is-active");
-        });
-        button.classList.add("is-active");
+        const counter = entry.target;
+        const targetValue = Number(counter.dataset.target);
+        const originalText = counter.textContent.trim();
 
-        filterItems.forEach(function (card) {
-          var matches = category === "all" || card.getAttribute("data-category") === category;
-          card.classList.toggle("is-hidden", !matches);
-        });
+        if (Number.isNaN(targetValue) || targetValue <= 0) {
+          countObserver.unobserve(counter);
+          return;
+        }
+
+        let current = 0;
+        const step = Math.max(1, Math.ceil(targetValue / 36));
+        const suffix = originalText.replace(/[0-9.,]/g, "");
+
+        const interval = window.setInterval(() => {
+          current += step;
+          if (current >= targetValue) {
+            current = targetValue;
+            clearInterval(interval);
+          }
+          counter.textContent = `${current.toLocaleString()}${suffix}`;
+        }, 30);
+
+        countObserver.unobserve(counter);
       });
-    });
-  }
+    },
+    { threshold: 0.45 }
+  );
 
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 960) {
-      closeMobileNav();
-    }
-  });
-});
+  counters.forEach((counter) => countObserver.observe(counter));
+}

@@ -1,184 +1,140 @@
-@media (max-width: 1180px) {
-  .hero-grid,
-  .split-panel,
-  .page-hero-grid,
-  .sdg-detail-overview,
+@media (max-width: 1100px) {
+  .hero-layout,
+  .page-intro__grid,
   .editorial-grid,
+  .detail-layout,
+  .leader-message,
+  .featured-news,
   .contact-layout,
-  .footer-grid {
+  .two-column {
     grid-template-columns: 1fr;
   }
 
-  .quick-links-grid,
-  .cards-grid.three,
-  .news-grid,
-  .events-grid,
-  .reports-grid,
-  .partner-row,
-  .indicator-grid,
-  .sdg-grid,
-  .sdg-grid--full {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .hero-stats,
+  .overview-grid,
+  .priority-grid,
+  .card-grid--three,
+  .partner-grid,
+  .metrics-band,
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (max-width: 960px) {
-  .header-main-inner,
-  .header-nav-row,
-  .section-header,
-  .footer-bottom-inner {
+  .section-heading,
+  .cta-banner,
+  .list-card {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  .list-card__meta {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 860px) {
   .mobile-toggle {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .site-nav {
+  .header-actions {
+    flex: 0 0 auto;
+    margin-left: 0;
+  }
+
+  .language-switcher {
+    flex: 0 0 auto;
+    margin-left: 0;
+  }
+
+  .site-navigation {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
     display: none;
-    width: 100%;
-  }
-
-  .site-nav.is-open {
-    display: block;
-  }
-
-  .nav-list {
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
-    padding-bottom: 1rem;
+    justify-content: flex-start;
+    padding: 1rem;
+    border: 1px solid rgba(92, 104, 88, 0.14);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 38px rgba(25, 48, 28, 0.14);
   }
 
-  .nav-link {
-    width: 100%;
-    justify-content: space-between;
-    border-radius: var(--radius-sm);
+  .site-navigation.is-open {
+    display: flex;
   }
 
-  .header-main-inner {
-    align-items: center;
+  .header-main__inner {
+    position: relative;
   }
 
-  .header-utility {
-    width: 100%;
-    justify-content: space-between;
-    gap: 0.8rem;
-  }
-
-  .header-nav-row {
-    min-height: auto;
-    align-items: stretch;
-    border-top: 0;
-    padding-bottom: 0.75rem;
-  }
-
-  .nav-item--dropdown {
-    width: 100%;
-  }
-
-  .nav-dropdown {
-    position: static;
-    min-width: 0;
-    margin-top: 0.4rem;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+  .brand-copy small {
     display: none;
-    box-shadow: none;
-    border-radius: var(--radius-sm);
-    background: #f7fbfd;
   }
 
-  .nav-item--dropdown.is-open .nav-dropdown {
-    display: block;
+  .brand-logo {
+    width: 4.1rem;
+    height: 4.1rem;
   }
 
-  .hero-facts,
-  .quick-links-grid,
-  .cards-grid.three,
-  .cards-grid.two,
-  .news-grid,
-  .events-grid,
-  .reports-grid,
-  .contact-grid,
-  .indicator-grid,
-  .sdg-grid,
-  .sdg-grid--full,
-  .partner-row,
+  .hero-section,
+  .page-intro,
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-stats,
+  .overview-grid,
+  .priority-grid,
+  .card-grid--three,
+  .partner-grid,
+  .metrics-band,
+  .footer-grid,
   .form-grid {
     grid-template-columns: 1fr;
   }
-
-  .rector-card,
-  .timeline-item {
-    grid-template-columns: 1fr;
-  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 580px) {
+  body {
+    font-size: 15px;
+  }
+
   .container {
-    width: min(calc(100% - 1.25rem), var(--container));
+    width: min(calc(100% - 1.25rem), 100%);
   }
 
-  .section,
-  .section-sm {
-    padding: 3rem 0;
+  h1 {
+    font-size: 2.45rem;
   }
 
-  .hero,
-  .page-hero {
-    padding-top: 2.75rem;
-    padding-bottom: 2.25rem;
+  h2 {
+    font-size: 1.85rem;
   }
 
-  .hero-title {
-    font-size: 2.1rem;
+  .header-bar__inner {
+    font-size: 0.82rem;
   }
 
-  .page-title {
-    font-size: 2rem;
+  .brand-mark {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 14px;
   }
 
-  .lang-switcher,
-  .topbar-links,
-  .header-utility,
-  .hero-actions,
-  .button-row,
-  .filters {
+  .brand-logo {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .button,
+  .filter-button {
     width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .header-main-inner {
-    align-items: flex-start;
-  }
-
-  .brand {
-    width: 100%;
-  }
-
-  .header-utility {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .hero-card,
-  .info-card,
-  .report-card,
-  .news-card,
-  .event-card,
-  .contact-card,
-  .metric-card,
-  .timeline-card,
-  .panel-card,
-  .rector-card,
-  .editorial-body {
-    padding: 1.2rem;
   }
 }

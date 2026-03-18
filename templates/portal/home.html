@@ -1,195 +1,235 @@
 {% extends "portal/base.html" %}
 {% load portal_i18n %}
-{% block title %}{% tr "Home" %} | {{ site_settings.site_name }}{% endblock %}
-{% block body_page %}home{% endblock %}
+
 {% block content %}
-<section class="hero{% if site_settings.hero_background_image %} hero--with-image{% endif %}">
-  <div class="container hero-grid">
-    <div class="hero-panel">
-      <span class="eyebrow">{% tr "Institutional Sustainability Leadership" %}</span>
-      <h1 class="hero-title">{{ site_settings.hero_title }}</h1>
-      <p class="hero-lead">{{ site_settings.hero_text }}</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="{% url 'sdg-list' %}">{% tr "Explore the 17 SDGs" %}</a>
-        <a class="btn btn-secondary" href="{% url 'insights' %}">{% tr "View Reports & Rankings" %}</a>
+  <section class="hero-section">
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <div class="eyebrow">{{ site_settings.hero_kicker }}</div>
+        <h1>{{ site_settings.hero_title }}</h1>
+        <p class="hero-copy__lead">{{ site_settings.hero_description }}</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{{ site_settings.hero_primary_label }}</a>
+          <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{{ site_settings.hero_secondary_label }}</a>
+        </div>
+        <div class="hero-stats">
+          {% for stat in hero_stats %}
+            <article class="stat-card">
+              <strong class="counter" data-target="{{ stat.value|cut:'+'|cut:'%'|cut:',' }}">{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+              <p>{{ stat.description }}</p>
+            </article>
+          {% endfor %}
+        </div>
       </div>
-      <div class="hero-facts">
-        {% for metric in home_metrics %}
-          <div class="hero-fact">
-            <strong>{{ metric.value }}</strong>
-            <span>{{ metric.label }}</span>
-          </div>
+      <aside class="hero-panel">
+        <div class="hero-panel__badge">{% tr "Trusted institutional environment" %}</div>
+        <h2>{{ site_settings.overview_title }}</h2>
+        <p>{{ site_settings.overview_text }}</p>
+        <ul class="key-points">
+            <li>{% tr "Executive-level governance and policy coordination" %}</li>
+            <li>{% tr "Admin-managed programs, reports, news, and stakeholder updates" %}</li>
+            <li>{% tr "Public-facing evidence architecture designed for trust and clarity" %}</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Institution overview" %}</div>
+          <h2>{% tr "Structured to communicate authority, accountability, and long-term direction." %}</h2>
+        </div>
+        <p>{% tr "The homepage is organized like a ministry-grade institutional portal: leadership, priorities, delivery mechanisms, metrics, reports, and public communication all connect in one coherent flow." %}</p>
+      </div>
+      <div class="overview-grid">
+        <article class="content-card">
+          <h3>{% tr "Mission" %}</h3>
+          <p>{{ site_settings.mission }}</p>
+        </article>
+        <article class="content-card">
+          <h3>{% tr "Vision" %}</h3>
+          <p>{{ site_settings.vision }}</p>
+        </article>
+        <article class="content-card">
+          <h3>{% tr "Strategic approach" %}</h3>
+          <p>{{ site_settings.strategic_approach }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container leader-message">
+      <div class="leader-seal">
+        <span>{% tr "Leadership" %}</span>
+      </div>
+      <div class="leader-copy">
+        <div class="eyebrow">{% tr "Message from the leadership" %}</div>
+        <h2>{{ site_settings.leader_name }}</h2>
+        <p class="leader-title">{{ site_settings.leader_title }}</p>
+        <blockquote>{{ site_settings.leader_message }}</blockquote>
+        <p class="leader-signature">{{ site_settings.leader_signature }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Strategic priorities" %}</div>
+          <h2>{% tr "Institutional execution is organized around clearly defined priorities." %}</h2>
+        </div>
+      </div>
+      <div class="priority-grid">
+        {% for item in strategic_priorities %}
+          <article class="priority-card reveal">
+            <span class="priority-icon">{{ item.icon|upper|slice:":2" }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            {% if item.metric %}
+              <span class="chip">{{ item.metric }}</span>
+            {% endif %}
+          </article>
         {% endfor %}
       </div>
     </div>
-    <aside class="hero-card" aria-label="{% tr 'Governance summary' %}">
-      <div class="hero-card-header">
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-heading">
         <div>
-          <span class="status-badge">{% tr "2026 Strategic Cycle" %}</span>
-          <h2 class="card-title">{% tr "Governance and Implementation Summary" %}</h2>
+          <div class="eyebrow">{% tr "Featured programs" %}</div>
+          <h2>{% tr "Flagship programs and institutional services with measurable outcomes." %}</h2>
         </div>
-        <span class="meta-badge">{% tr "Official update" %}</span>
+        <a class="text-link" href="{% url 'programs' %}">{% tr "View all programs" %}</a>
       </div>
-      <ul class="hero-card-list">
-        <li>{{ site_settings.sustainability_strategy }}</li>
-        <li>{{ site_settings.governance_overview }}</li>
-        <li>{% tr "Annual disclosure covers campus operations, research, education, and community engagement." %}</li>
-        <li>{% tr "Priority action areas include climate resilience, efficient infrastructure, and inclusive learning." %}</li>
-      </ul>
-      <a class="text-link" href="{% url 'about' %}">{% tr "Read the sustainability strategy" %}</a>
-    </aside>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="quick-links-grid">
-      <a class="info-card" href="{% url 'insights' %}">
-        <strong>{% tr "Reports Library" %}</strong>
-        <p>{% tr "Annual sustainability reports, rankings evidence, and policy documents." %}</p>
-      </a>
-      <a class="info-card" href="{% url 'campus' %}">
-        <strong>{% tr "Campus Initiatives" %}</strong>
-        <p>{% tr "Operational performance across energy, water, waste, mobility, and buildings." %}</p>
-      </a>
-      <a class="info-card" href="{% url 'research-education' %}">
-        <strong>{% tr "Research & Education" %}</strong>
-        <p>{% tr "Research projects, centers, courses, and student learning activity." %}</p>
-      </a>
-      <a class="info-card" href="{% url 'news-events' %}">
-        <strong>{% tr "Events Calendar" %}</strong>
-        <p>{% tr "Conferences, workshops, campus events, and institutional announcements." %}</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <span class="section-kicker">{% tr "Leadership Message" %}</span>
-        <h2 class="section-title">{% tr "Rector's message on sustainability" %}</h2>
+      <div class="card-grid card-grid--three">
+        {% for program in featured_programs %}
+          <article class="content-card reveal">
+              <span class="chip">{{ program.get_category_display|translate_value:current_language }}</span>
+            <h3>{{ program.title }}</h3>
+            <p>{{ program.summary }}</p>
+            <div class="metric-inline">
+              <strong>{{ program.outcome_value }}</strong>
+              <span>{{ program.outcome_label }}</span>
+            </div>
+          </article>
+        {% endfor %}
       </div>
     </div>
-    <article class="rector-card">
-      <div class="portrait-placeholder">{% tr "Rector Portrait" %}</div>
-      <div>
-        <p class="section-lead">{{ site_settings.rector_message }}</p>
-        <p><strong>{{ site_settings.rector_name }}</strong><br>{{ site_settings.rector_title }}</p>
-      </div>
-    </article>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <span class="section-kicker">{% tr "Priority SDGs" %}</span>
-        <h2 class="section-title">{% tr "Featured Sustainable Development Goals" %}</h2>
-        <p class="section-lead">{% tr "The university gives focused institutional attention to selected goals where academic, operational, and community impact are strongest." %}</p>
-      </div>
-      <a class="text-link" href="{% url 'sdg-list' %}">{% tr "View all 17 goals" %}</a>
+  <section class="section">
+    <div class="container metrics-band">
+      {% for metric in impact_metrics %}
+        <article class="metric-card reveal">
+          <strong class="counter" data-target="{{ metric.value|cut:'+'|cut:'%'|cut:',' }}">{{ metric.value }}</strong>
+          <h3>{{ metric.label }}</h3>
+          <p>{{ metric.description }}</p>
+        </article>
+      {% endfor %}
     </div>
-    <div class="sdg-grid">
-      {% for sdg in featured_sdgs %}
-        <article class="sdg-card {{ sdg.color_class }}">
-          <div class="sdg-card__top">
-            <span class="sdg-number">SDG {{ sdg.number }}</span>
-            <div class="sdg-icon" aria-hidden="true">{% sdg_icon sdg.number %}</div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container two-column">
+      <div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">{% tr "Research and projects" %}</div>
+            <h2>{% tr "Research portfolios connected to national priorities and institutional delivery." %}</h2>
           </div>
-          <h3>{{ sdg.title }}</h3>
-          <p>{{ sdg.short_description }}</p>
-          <a class="text-link" href="{{ sdg.get_absolute_url }}">{% tr "Open detail page" %}</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="section-header compact">
-      <div>
-        <span class="section-kicker">{% tr "News" %}</span>
-        <h2 class="section-title">{% tr "Latest sustainability news" %}</h2>
+        </div>
+        <div class="stack-list">
+          {% for item in featured_research %}
+            <article class="content-card reveal">
+              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.summary }}</p>
+              <small>{{ item.lead_unit }}{% if item.timeframe %} · {{ item.timeframe }}{% endif %}</small>
+            </article>
+          {% endfor %}
+        </div>
       </div>
-      <a class="text-link" href="{% url 'news-events' %}">{% tr "All news & events" %}</a>
-    </div>
-    <div class="news-grid">
-      {% for article in latest_news %}
-        <article class="news-card">
-          <div class="card-topline">
-            <span class="tag">{{ article.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
-            <span class="meta-badge">{{ article.published_on|date:"d F Y" }}</span>
+      <div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">{% tr "Reports and highlights" %}</div>
+            <h2>{% tr "Recent publications and public accountability documents." %}</h2>
           </div>
-          <h3 class="card-title">{{ article.title }}</h3>
-          <p>{{ article.summary }}</p>
-          <a class="text-link" href="{{ article.get_absolute_url }}">{% tr "Read article" %}</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="section-header compact">
-      <div>
-        <span class="section-kicker">{% tr "Institutional Calendar" %}</span>
-        <h2 class="section-title">{% tr "Events and public programs" %}</h2>
+        </div>
+        <div class="stack-list">
+          {% for report in latest_reports %}
+            <article class="report-card reveal">
+              <span class="chip">{{ report.get_report_type_display|translate_value:current_language }}</span>
+              <h3>{{ report.title }}</h3>
+              <p>{{ report.summary }}</p>
+              <small>{{ report.publish_date|date:"F d, Y" }}</small>
+            </article>
+          {% endfor %}
+        </div>
       </div>
     </div>
-    <div class="events-grid">
-      {% for event in upcoming_events %}
-        <article class="event-card">
-          <div class="card-topline">
-            <div class="date-chip">{{ event.start_date|date:"d" }}<span>{{ event.start_date|date:"M" }}</span></div>
-            <span class="tag">{{ event.get_category_display|translate_value:request.LANGUAGE_CODE }}</span>
-          </div>
-          <h3 class="card-title">{{ event.title }}</h3>
-          <p>{{ event.summary }}</p>
-          <a class="text-link" href="{{ event.get_absolute_url }}">{% tr "Event details" %}</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container split-panel">
-    <div>
-      <span class="section-kicker">{% tr "Evidence and Reporting" %}</span>
-      <h2 class="section-title">{% tr "Reports, rankings, and policy evidence" %}</h2>
-      <p class="section-lead">{% tr "The university publishes recurring reports to document governance, KPI progress, and benchmarking performance across international sustainability frameworks." %}</p>
-      <a class="btn btn-secondary" href="{% url 'insights' %}">{% tr "Open insights & reports" %}</a>
-    </div>
-    <div class="reports-grid">
-      {% for report in primary_reports %}
-        <article class="report-card">
-          <strong>{{ report.title }}</strong>
-          <p>{{ report.summary }}</p>
-          <a class="text-link" href="{% url 'insights' %}">{% tr "View report" %}</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section-sm">
-  <div class="container">
-    <div class="section-header compact">
-      <div>
-        <span class="section-kicker">{% tr "Partners" %}</span>
-        <h2 class="section-title">{% tr "Institutional collaborators" %}</h2>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Latest news" %}</div>
+          <h2>{% tr "Institutional updates, official announcements, and event-led communication." %}</h2>
+        </div>
+        <a class="text-link" href="{% url 'news-events' %}">{% tr "Visit media center" %}</a>
+      </div>
+      <div class="card-grid card-grid--three">
+        {% for article in latest_news %}
+          <article class="news-card reveal">
+            <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
+            <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+            <p>{{ article.summary }}</p>
+            <small>{{ article.published_on|date:"F d, Y" }}</small>
+          </article>
+        {% endfor %}
       </div>
     </div>
-    <div class="partner-row">
-      {% for partner in partners %}
-        <div class="logo-placeholder">{{ partner.name }}</div>
-      {% endfor %}
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Partners and collaboration" %}</div>
+          <h2>{% tr "Coordinated with public institutions, academic bodies, and strategic partners." %}</h2>
+        </div>
+      </div>
+      <div class="partner-grid">
+        {% for partner in partners %}
+          <article class="partner-card reveal">
+            <strong>{{ partner.name }}</strong>
+            <span>{{ partner.partner_type }}</span>
+            <p>{{ partner.description }}</p>
+          </article>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section">
+    <div class="container cta-banner">
+      <div>
+        <div class="eyebrow">{% tr "Next step" %}</div>
+        <h2>{% tr "Need official reports, strategic documents, or partnership coordination?" %}</h2>
+        <p>{% tr "Use the reports center for downloadable materials or contact the coordination office for institutional communication." %}</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a class="button button--primary" href="{% url 'reports' %}">{% tr "Open Reports Center" %}</a>
+        <a class="button button--secondary" href="{% url 'contact' %}">{% tr "Contact Coordination Office" %}</a>
+      </div>
+    </div>
+  </section>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% load portal_i18n %}
+<section class="page-intro">
+  <div class="container page-intro__grid">
+    <div>
+      <div class="eyebrow">{{ page_content.eyebrow }}</div>
+      <h1>{{ page_content.title }}</h1>
+      <p class="page-intro__lead">{{ page_content.intro }}</p>
+    </div>
+    {% if page_content.supporting_title or page_content.supporting_text %}
+      <aside class="page-intro__panel">
+        {% if page_content.supporting_title %}
+          <h2>{{ page_content.supporting_title }}</h2>
+        {% endif %}
+        {% if page_content.supporting_text %}
+          <p>{{ page_content.supporting_text }}</p>
+        {% endif %}
+      </aside>
+    {% endif %}
+  </div>
+</section>

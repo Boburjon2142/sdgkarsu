@@ -1,0 +1,50 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  {% include "portal/includes/page_intro.html" %}
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid card-grid--three">
+        {% for item in featured_programs %}
+          <article class="content-card content-card--featured reveal">
+            <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.summary }}</p>
+            <div class="metric-inline">
+              <strong>{{ item.outcome_value }}</strong>
+              <span>{{ item.outcome_label }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Programs, goals, and services" %}</div>
+          <h2>{% tr "Each item is positioned with clear purpose, supporting narrative, and measurable value." %}</h2>
+        </div>
+      </div>
+      <div class="stack-list">
+        {% for item in programs %}
+          <article class="list-card reveal">
+            <div>
+              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.body }}</p>
+            </div>
+            <div class="list-card__meta">
+              <strong>{{ item.outcome_value }}</strong>
+              <span>{{ item.outcome_label }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

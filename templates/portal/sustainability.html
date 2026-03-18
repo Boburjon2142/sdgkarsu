@@ -1,0 +1,70 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  {% include "portal/includes/page_intro.html" %}
+
+  <section class="section">
+    <div class="container editorial-grid">
+      <article class="content-card content-card--large">
+        <div class="eyebrow">{% tr "Strategy overview" %}</div>
+        <h2>{% tr "Policy, strategy, and implementation are shown as one connected system." %}</h2>
+        <p>{{ site_settings.strategy_overview }}</p>
+        <p>{{ site_settings.governance_overview }}</p>
+      </article>
+      <article class="content-card content-card--panel">
+        <h3>{% tr "Why this matters" %}</h3>
+        <p>{% tr "This section reinforces the sense of an organized public institution: policy documents are discoverable, leadership priorities are visible, and implementation language remains clear and reliable." %}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Strategic priorities" %}</div>
+          <h2>{% tr "Priority areas that shape policy execution and institutional direction." %}</h2>
+        </div>
+      </div>
+      <div class="priority-grid">
+        {% for item in strategic_priorities %}
+          <article class="priority-card reveal">
+            <span class="priority-icon">{{ item.icon|upper|slice:":2" }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            {% if item.metric %}
+              <span class="chip">{{ item.metric }}</span>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Policies and frameworks" %}</div>
+          <h2>{% tr "Official documents presented with clear structure and publication context." %}</h2>
+        </div>
+      </div>
+      <div class="stack-list">
+        {% for item in policies %}
+          <article class="list-card reveal">
+            <div>
+              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.summary }}</p>
+            </div>
+            <div class="list-card__meta">
+              <strong>{{ item.publish_date|date:"Y" }}</strong>
+              <span>{{ item.effective_period }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

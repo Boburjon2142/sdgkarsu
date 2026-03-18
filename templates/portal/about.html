@@ -1,79 +1,97 @@
 {% extends "portal/base.html" %}
 {% load portal_i18n %}
-{% block title %}{% tr "About Sustainability" %} | {{ site_settings.site_name }}{% endblock %}
-{% block body_page %}about{% endblock %}
+
 {% block content %}
-<section class="page-hero">
-  <div class="container page-hero-grid">
-    <div>
-      <ol class="breadcrumb" aria-label="Breadcrumb">
-        <li><a href="{% url 'home' %}">{% tr "Home" %}</a></li>
-        <li>{% tr "About Sustainability" %}</li>
-      </ol>
-      <h1 class="page-title">{% tr "About Sustainability" %}</h1>
-      <p class="page-intro">{{ site_settings.sustainability_strategy }}</p>
-    </div>
-    <aside class="page-hero-side">
-      <span class="section-kicker">{% tr "Governance Note" %}</span>
-      <p>{{ site_settings.governance_overview }}</p>
-    </aside>
-  </div>
-</section>
+  {% include "portal/includes/page_intro.html" %}
 
-<section class="section">
-  <div class="container split-panel">
-    <div>
-      <span class="section-kicker">{% tr "Strategy and Governance" %}</span>
-      <h2 class="section-title">{% tr "Institutional leadership and implementation structure" %}</h2>
-      <p class="section-lead">{{ site_settings.governance_overview }}</p>
+  <section class="section">
+    <div class="container editorial-grid">
+      <article class="content-card content-card--large">
+        <div class="eyebrow">{% tr "Mission and vision" %}</div>
+        <h2>{% tr "Editorial-style institutional narrative with formal clarity." %}</h2>
+        <p>{{ site_settings.mission }}</p>
+        <p>{{ site_settings.vision }}</p>
+      </article>
+      <article class="content-card content-card--panel">
+        <h3>{% tr "Strategic approach" %}</h3>
+        <p>{{ site_settings.strategic_approach }}</p>
+      </article>
     </div>
-    <div class="cards-grid two">
-      {% for role in governance_roles %}
-        <article class="info-card">
-          <strong>{{ role.title }}</strong>
-          <p>{{ role.responsibility }}</p>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-sm">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <span class="section-kicker">{% tr "Policies and Regulations" %}</span>
-        <h2 class="section-title">{% tr "Core institutional policy instruments" %}</h2>
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">{% tr "Institutional values" %}</div>
+          <h2>{% tr "The platform communicates values through governance and execution, not only statements." %}</h2>
+        </div>
+      </div>
+      <div class="card-grid card-grid--three">
+        {% for item in values %}
+          <article class="content-card reveal">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+        {% endfor %}
       </div>
     </div>
-    <div class="cards-grid three">
-      {% for policy in policies %}
-        <article class="panel-card">
-          <strong>{{ policy.title }}</strong>
-          <p>{{ policy.summary }}</p>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-sm">
-  <div class="container">
-    <div class="section-header compact">
-      <div>
-        <span class="section-kicker">{% tr "Reports" %}</span>
-        <h2 class="section-title">{% tr "Sustainability reports and disclosures" %}</h2>
+  <section class="section">
+    <div class="container two-column">
+      <article>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">{% tr "Governance" %}</div>
+            <h2>{% tr "Clear roles, clear accountability, clear delivery ownership." %}</h2>
+          </div>
+        </div>
+        <div class="timeline-list">
+          {% for role in governance_roles %}
+            <article class="timeline-card reveal">
+              <strong>{{ role.title }}</strong>
+              <p>{{ role.responsibility }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </article>
+      <article>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">{% tr "Message from the leadership" %}</div>
+            <h2>{{ site_settings.leader_name }}</h2>
+          </div>
+        </div>
+        <div class="content-card content-card--panel">
+          <p class="leader-title">{{ site_settings.leader_title }}</p>
+          <blockquote>{{ site_settings.leader_message }}</blockquote>
+          <p>{{ site_settings.governance_overview }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+            <div class="eyebrow">{% tr "Institutional priorities" %}</div>
+            <h2>{% tr "Priority areas designed to support professional decision-making and public trust." %}</h2>
+        </div>
+      </div>
+      <div class="priority-grid">
+        {% for item in strategic_priorities %}
+          <article class="priority-card reveal">
+            <span class="priority-icon">{{ item.icon|upper|slice:":2" }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            {% if item.metric %}
+              <span class="chip">{{ item.metric }}</span>
+            {% endif %}
+          </article>
+        {% endfor %}
       </div>
     </div>
-    <div class="reports-grid">
-      {% for report in reports %}
-        <article class="report-card">
-          <strong>{{ report.title }}</strong>
-          <p>{{ report.summary }}</p>
-          <a class="text-link" href="{% url 'insights' %}">{% tr "Open report" %}</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  </section>
 {% endblock %}

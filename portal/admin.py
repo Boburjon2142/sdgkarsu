@@ -1,33 +1,77 @@
 from django.contrib import admin
 
 from .models import (
-    CampusInitiative,
+    Achievement,
     ContactSubmission,
-    EngagementInitiative,
+    DepartmentContact,
+    EducationInitiative,
     Event,
     GovernanceRole,
-    InsightMetric,
+    HeroStat,
+    ImpactMetric,
+    InstitutionalValue,
     NewsArticle,
+    PageContent,
     Partner,
-    ResearchItem,
-    SDG,
-    SDGProject,
+    PolicyDocument,
+    Program,
+    Report,
+    ResearchProject,
     SiteSettings,
-    SustainabilityPolicy,
-    SustainabilityReport,
+    StrategicPriority,
 )
 
 
+class SingletonAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        if self.model.objects.exists():
+            return False
+        return super().has_add_permission(request)
+
+
 @admin.register(SiteSettings)
-class SiteSettingsAdmin(admin.ModelAdmin):
-    list_display = ("site_name", "contact_email", "contact_phone")
+class SiteSettingsAdmin(SingletonAdmin):
+    list_display = ("institution_name", "email", "phone")
     fieldsets = (
-        ("Branding", {"fields": ("site_name", "short_name", "tagline")}),
-        ("Hero", {"fields": ("hero_background_image", "hero_title", "hero_text")}),
-        ("Leadership", {"fields": ("rector_name", "rector_title", "rector_message")}),
-        ("Strategy", {"fields": ("sustainability_strategy", "governance_overview")}),
-        ("Contact", {"fields": ("contact_address", "contact_phone", "contact_email", "office_hours")}),
+        ("Brand", {"fields": ("institution_name", "institution_short_name", "tagline", "official_badge")}),
+        ("Navigation", {"fields": ("navbar_cta_label", "navbar_cta_url")}),
+        (
+            "Hero",
+            {
+                "fields": (
+                    "hero_kicker",
+                    "hero_title",
+                    "hero_description",
+                    "hero_primary_label",
+                    "hero_primary_url",
+                    "hero_secondary_label",
+                    "hero_secondary_url",
+                )
+            },
+        ),
+        ("Institutional narrative", {"fields": ("overview_title", "overview_text", "mission", "vision", "strategic_approach", "governance_overview", "strategy_overview")}),
+        ("Leadership", {"fields": ("leader_name", "leader_title", "leader_message", "leader_signature")}),
+        ("Contact and footer", {"fields": ("address", "phone", "email", "office_hours", "map_embed_url", "footer_text")}),
+        ("SEO", {"fields": ("meta_title", "meta_description")}),
     )
+
+
+@admin.register(PageContent)
+class PageContentAdmin(admin.ModelAdmin):
+    list_display = ("page_key", "title", "eyebrow")
+    search_fields = ("title", "intro", "supporting_text")
+
+
+@admin.register(HeroStat)
+class HeroStatAdmin(admin.ModelAdmin):
+    list_display = ("value", "label", "display_order")
+    list_editable = ("display_order",)
+
+
+@admin.register(InstitutionalValue)
+class InstitutionalValueAdmin(admin.ModelAdmin):
+    list_display = ("title", "display_order")
+    list_editable = ("display_order",)
 
 
 @admin.register(GovernanceRole)
@@ -36,62 +80,74 @@ class GovernanceRoleAdmin(admin.ModelAdmin):
     list_editable = ("display_order",)
 
 
-@admin.register(SustainabilityPolicy)
-class SustainabilityPolicyAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "published_on")
-    list_filter = ("category",)
-    search_fields = ("title", "summary")
+@admin.register(StrategicPriority)
+class StrategicPriorityAdmin(admin.ModelAdmin):
+    list_display = ("title", "metric", "display_order")
+    list_editable = ("display_order",)
+    search_fields = ("title", "summary", "metric")
 
 
-@admin.register(SustainabilityReport)
-class SustainabilityReportAdmin(admin.ModelAdmin):
-    list_display = ("title", "report_type", "publish_date")
-    list_filter = ("report_type",)
-    search_fields = ("title", "summary")
+@admin.register(Program)
+class ProgramAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "featured", "display_order")
+    list_filter = ("category", "featured")
+    list_editable = ("featured", "display_order")
+    search_fields = ("title", "summary", "body")
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(ResearchProject)
+class ResearchProjectAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "lead_unit", "featured", "display_order")
+    list_filter = ("category", "featured")
+    list_editable = ("featured", "display_order")
+    search_fields = ("title", "summary", "body", "lead_unit")
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(EducationInitiative)
+class EducationInitiativeAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "audience", "featured", "display_order")
+    list_filter = ("category", "featured")
+    list_editable = ("featured", "display_order")
+    search_fields = ("title", "summary", "body", "audience")
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(PolicyDocument)
+class PolicyDocumentAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "publish_date", "featured")
+    list_filter = ("category", "featured")
+    search_fields = ("title", "summary", "body")
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(ImpactMetric)
+class ImpactMetricAdmin(admin.ModelAdmin):
+    list_display = ("label", "value", "scope", "display_order")
+    list_filter = ("scope",)
+    list_editable = ("display_order",)
+
+
+@admin.register(Report)
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ("title", "report_type", "publish_date", "featured")
+    list_filter = ("report_type", "featured")
+    search_fields = ("title", "summary", "body", "highlight_metric")
+    prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(Achievement)
+class AchievementAdmin(admin.ModelAdmin):
+    list_display = ("title", "subtitle", "display_order")
+    list_editable = ("display_order",)
 
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
     list_display = ("name", "partner_type", "display_order")
     list_editable = ("display_order",)
-
-
-class SDGProjectInline(admin.TabularInline):
-    model = SDGProject
-    extra = 0
-
-
-@admin.register(SDG)
-class SDGAdmin(admin.ModelAdmin):
-    list_display = ("number", "title", "featured")
-    list_editable = ("featured",)
-    inlines = [SDGProjectInline]
-
-
-@admin.register(ResearchItem)
-class ResearchItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "department")
-    list_filter = ("category",)
-    search_fields = ("title", "summary", "department")
-
-
-@admin.register(CampusInitiative)
-class CampusInitiativeAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "metric")
-    list_filter = ("category",)
-
-
-@admin.register(EngagementInitiative)
-class EngagementInitiativeAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "audience")
-    list_filter = ("category",)
-
-
-@admin.register(InsightMetric)
-class InsightMetricAdmin(admin.ModelAdmin):
-    list_display = ("label", "value", "page_scope", "display_order")
-    list_editable = ("display_order",)
-    list_filter = ("page_scope",)
+    search_fields = ("name", "description")
 
 
 @admin.register(NewsArticle)
@@ -104,16 +160,26 @@ class NewsArticleAdmin(admin.ModelAdmin):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "start_date", "venue")
-    list_filter = ("category",)
+    list_display = ("title", "category", "start_date", "venue", "featured")
+    list_filter = ("category", "featured")
     prepopulated_fields = {"slug": ("title",)}
-    search_fields = ("title", "summary", "details")
+    search_fields = ("title", "summary", "details", "venue")
+
+
+@admin.register(DepartmentContact)
+class DepartmentContactAdmin(admin.ModelAdmin):
+    list_display = ("department_name", "contact_person", "phone", "display_order")
+    list_editable = ("display_order",)
+    search_fields = ("department_name", "contact_person", "email")
 
 
 @admin.register(ContactSubmission)
 class ContactSubmissionAdmin(admin.ModelAdmin):
-    list_display = ("full_name", "email", "subject", "submitted_at")
-    readonly_fields = ("full_name", "email", "organization", "subject", "message", "submitted_at")
+    list_display = ("full_name", "email", "subject", "created_at")
+    readonly_fields = ("full_name", "email", "organization", "subject", "message", "created_at", "updated_at")
     search_fields = ("full_name", "email", "organization", "message")
 
-# Register your models here.
+
+admin.site.site_header = "Institutional Portal Administration"
+admin.site.site_title = "Portal Admin"
+admin.site.index_title = "Content management"

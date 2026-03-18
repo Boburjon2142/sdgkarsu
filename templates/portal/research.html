@@ -1,0 +1,53 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  {% include "portal/includes/page_intro.html" %}
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">{% tr "Featured research" %}</div>
+            <h2>{% tr "Applied research and strategic projects with institutional backing." %}</h2>
+          </div>
+        </div>
+        <div class="stack-list">
+          {% for item in featured_projects %}
+            <article class="content-card reveal">
+              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.summary }}</p>
+              <small>{{ item.lead_unit }}{% if item.timeframe %} · {{ item.timeframe }}{% endif %}</small>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      <aside class="content-card content-card--panel">
+        <h3>{% tr "Institutional positioning" %}</h3>
+        <p>{% tr "Research is presented not as isolated outputs, but as part of a credible delivery architecture tied to policy, infrastructure, and public value creation." %}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="stack-list">
+        {% for item in projects %}
+          <article class="list-card reveal">
+            <div>
+              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.body }}</p>
+            </div>
+            <div class="list-card__meta">
+              <strong>{{ item.lead_unit }}</strong>
+              <span>{{ item.timeframe }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
