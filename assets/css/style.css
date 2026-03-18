@@ -5,8 +5,8 @@
   --primary-dark: #5c9500;
   --primary-hover: #77b800;
   --primary-tint: #edf8d2;
-  --page-bg: #f7f9f2;
-  --section-alt: #eef5e2;
+  --page-bg: #ffffff;
+  --section-alt: #ffffff;
   --card-bg: #ffffff;
   --border: #d5dfc4;
   --text-main: #1f2a1d;
@@ -37,9 +37,7 @@ body {
   min-width: 320px;
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at top left, rgba(137, 206, 0, 0.14), transparent 22%),
-    linear-gradient(180deg, #fbfcf8 0%, var(--page-bg) 26%, var(--page-bg) 100%);
+  background: #ffffff;
   line-height: 1.7;
 }
 
@@ -190,11 +188,11 @@ ul {
 }
 
 .section--soft {
-  background: linear-gradient(180deg, rgba(237, 248, 210, 0.68), rgba(255, 255, 255, 0));
+  background: #ffffff;
 }
 
 .section--tint {
-  background: linear-gradient(180deg, rgba(238, 245, 226, 0.82), rgba(238, 245, 226, 0.35));
+  background: #ffffff;
 }
 
 .eyebrow {
@@ -468,10 +466,7 @@ select {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 15%, rgba(248, 251, 241, 0.82) 60%, rgba(255, 255, 255, 0.96) 100%),
-    radial-gradient(circle at 85% 20%, rgba(137, 206, 0, 0.16), transparent 16%),
-    radial-gradient(circle at 72% 50%, rgba(47, 91, 23, 0.09), transparent 20%);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .hero-layout,
@@ -730,9 +725,7 @@ blockquote {
 .page-intro {
   padding: 4.5rem 0 3rem;
   border-bottom: 1px solid rgba(92, 104, 88, 0.12);
-  background:
-    linear-gradient(180deg, rgba(137, 206, 0, 0.08), rgba(255, 255, 255, 0)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(248, 251, 241, 0.92));
+  background: #ffffff;
 }
 
 .page-intro__grid {
