@@ -1,77 +1,96 @@
 {% extends "portal/base.html" %}
-{% load portal_i18n %}
+{% load static portal_i18n %}
 
 {% block content %}
   <section class="hero-section">
     <div class="container hero-layout">
-      <div class="hero-copy">
-        <div class="eyebrow">{{ site_settings.hero_kicker }}</div>
-        <h1>{{ site_settings.hero_title }}</h1>
-        <p class="hero-copy__lead">{{ site_settings.hero_description }}</p>
-        <div class="hero-actions">
-          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{{ site_settings.hero_primary_label }}</a>
-          <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{{ site_settings.hero_secondary_label }}</a>
+      <div class="hero-portrait-card">
+        {% if site_settings.leader_photo %}
+          <img class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
+        {% else %}
+          <img class="hero-portrait-card__image" src="{% static 'images/rektor.jpg' %}" alt="{{ site_settings.leader_name }}">
+        {% endif %}
+        <div class="hero-portrait-card__meta">
+          <strong>{{ site_settings.leader_name }}</strong>
+          <span>{{ site_settings.leader_title }}</span>
         </div>
-        <div class="hero-stats">
-          {% for stat in hero_stats %}
-            <article class="stat-card">
-              <strong class="counter" data-target="{{ stat.value|cut:'+'|cut:'%'|cut:',' }}">{{ stat.value }}</strong>
-              <span>{{ stat.label }}</span>
-              <p>{{ stat.description }}</p>
-            </article>
-          {% endfor %}
         </div>
+        <div class="hero-copy hero-copy--leader">
+          <div class="eyebrow">{{ site_settings.hero_kicker }}</div>
+          <h1>{{ site_settings.hero_title }}</h1>
+          <div class="hero-author">Nabiyev Dilmurod Xamidullayevich</div>
+          <img class="hero-rankings-strip" src="{% static 'images/rankings-badges.svg' %}" alt="University ranking badges">
+          <div class="hero-actions">
+            <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{{ site_settings.hero_primary_label }}</a>
+            <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{{ site_settings.hero_secondary_label }}</a>
+          </div>
+        </div>
+      <div class="hero-stats hero-stats--full">
+        {% for stat in hero_stats %}
+          <article class="stat-card">
+            <strong class="counter" data-target="{{ stat.value|cut:'+'|cut:'%'|cut:',' }}">{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+            <p>{{ stat.description }}</p>
+          </article>
+        {% endfor %}
       </div>
-      <aside class="hero-panel">
-        <div class="hero-panel__badge">{% tr "Trusted institutional environment" %}</div>
-        <h2>{{ site_settings.overview_title }}</h2>
-        <p>{{ site_settings.overview_text }}</p>
-        <ul class="key-points">
-            <li>{% tr "Executive-level governance and policy coordination" %}</li>
-            <li>{% tr "Admin-managed programs, reports, news, and stakeholder updates" %}</li>
-            <li>{% tr "Public-facing evidence architecture designed for trust and clarity" %}</li>
-        </ul>
-      </aside>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--cool">
     <div class="container">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">{% tr "Institution overview" %}</div>
-          <h2>{% tr "Structured to communicate authority, accountability, and long-term direction." %}</h2>
+      <div class="news-sdg-block">
+        <div class="lined-title">
+          <span>{% tr "Barqarorlikka oid yangiliklar" %}</span>
         </div>
-        <p>{% tr "The homepage is organized like a ministry-grade institutional portal: leadership, priorities, delivery mechanisms, metrics, reports, and public communication all connect in one coherent flow." %}</p>
-      </div>
-      <div class="overview-grid">
-        <article class="content-card">
-          <h3>{% tr "Mission" %}</h3>
-          <p>{{ site_settings.mission }}</p>
-        </article>
-        <article class="content-card">
-          <h3>{% tr "Vision" %}</h3>
-          <p>{{ site_settings.vision }}</p>
-        </article>
-        <article class="content-card">
-          <h3>{% tr "Strategic approach" %}</h3>
-          <p>{{ site_settings.strategic_approach }}</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        <div class="sdg-icons-grid">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-01.png' %}" alt="SDG 1">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-02.png' %}" alt="SDG 2">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-03.png' %}" alt="SDG 3">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-04.png' %}" alt="SDG 4">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-05.png' %}" alt="SDG 5">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-06.png' %}" alt="SDG 6">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-07.png' %}" alt="SDG 7">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-08.png' %}" alt="SDG 8">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-09.png' %}" alt="SDG 9">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-10.png' %}" alt="SDG 10">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-11.png' %}" alt="SDG 11">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-12.png' %}" alt="SDG 12">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-13.png' %}" alt="SDG 13">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-14.png' %}" alt="SDG 14">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-15.png' %}" alt="SDG 15">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-16.png' %}" alt="SDG 16">
+          <img src="{% static 'images/sdg-icons/E-WEB-Goal-17.png' %}" alt="SDG 17">
+        </div>
 
-  <section class="section section--tint">
-    <div class="container leader-message">
-      <div class="leader-seal">
-        <span>{% tr "Leadership" %}</span>
+        <div class="lined-title lined-title--news">
+          <span>{% tr "Latest news" %}</span>
+        </div>
+        <div class="section-heading section-heading--news">
+          <p>{% tr "So‘nggi yangiliklar, rasmiy e’lonlar va institut faoliyatiga oid yangilanishlar." %}</p>
+          <a class="text-link" href="{% url 'news-events' %}">{% tr "Barcha yangiliklarni ko‘rish" %}</a>
+        </div>
       </div>
-      <div class="leader-copy">
-        <div class="eyebrow">{% tr "Message from the leadership" %}</div>
-        <h2>{{ site_settings.leader_name }}</h2>
-        <p class="leader-title">{{ site_settings.leader_title }}</p>
-        <blockquote>{{ site_settings.leader_message }}</blockquote>
-        <p class="leader-signature">{{ site_settings.leader_signature }}</p>
+      <div class="card-grid card-grid--three">
+        {% for article in latest_news %}
+          <article class="news-card reveal">
+            {% if article.image %}
+              <a class="news-card__media" href="{{ article.get_absolute_url }}">
+                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+              </a>
+            {% else %}
+              <a class="news-card__media news-card__media--placeholder" href="{{ article.get_absolute_url }}" aria-label="{{ article.title }}">
+                <span>{{ article.title }}</span>
+              </a>
+            {% endif %}
+            <div class="news-card__body">
+            <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
+            <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+            <p>{{ article.summary }}</p>
+            <small>{{ article.published_on|date:"F d, Y" }}</small>
+            </div>
+          </article>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -173,28 +192,6 @@
             </article>
           {% endfor %}
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">{% tr "Latest news" %}</div>
-          <h2>{% tr "Institutional updates, official announcements, and event-led communication." %}</h2>
-        </div>
-        <a class="text-link" href="{% url 'news-events' %}">{% tr "Visit media center" %}</a>
-      </div>
-      <div class="card-grid card-grid--three">
-        {% for article in latest_news %}
-          <article class="news-card reveal">
-            <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
-            <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-            <p>{{ article.summary }}</p>
-            <small>{{ article.published_on|date:"F d, Y" }}</small>
-          </article>
-        {% endfor %}
       </div>
     </div>
   </section>

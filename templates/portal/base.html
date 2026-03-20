@@ -18,16 +18,13 @@
   </div>
   <header class="site-header" id="site-header">
     <div class="header-main">
-      <div class="container header-main__inner">
-        <a class="brand" href="{% url 'home' %}" aria-label="{{ site_settings.institution_name }}">
-          <span class="brand-logo">
-            <img src="{% static 'images/karshi_state_university_logo_no80_v2.svg' %}" alt="Karshi State University logo">
-          </span>
-          <span class="brand-copy">
-            <strong>{% tr "KarshiSU SDG" %}</strong>
-          </span>
-        </a>
-        <div class="header-actions">
+        <div class="container header-main__inner">
+          <a class="brand" href="{% url 'home' %}" aria-label="{{ site_settings.institution_name }}">
+            <span class="brand-logo">
+              <img src="{% static 'images/karshi_state_university_logo_no80_v2.svg' %}" alt="Karshi State University logo">
+            </span>
+          </a>
+          <div class="header-actions">
           <div class="language-switcher" aria-label="{% tr 'Language switcher' %}">
             <a href="{% url 'set-language' 'uz' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'uz' %} aria-current="true"{% endif %}>UZ</a>
             <a href="{% url 'set-language' 'en' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'en' %} aria-current="true"{% endif %}>EN</a>

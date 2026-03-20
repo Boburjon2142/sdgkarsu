@@ -10,7 +10,13 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-portrait-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
   .hero-stats,
+  .sdg-icons-grid,
   .overview-grid,
   .priority-grid,
   .card-grid--three,
@@ -73,13 +79,9 @@
     position: relative;
   }
 
-  .brand-copy small {
-    display: none;
-  }
-
   .brand-logo {
-    width: 4.1rem;
-    height: 4.1rem;
+    width: 4.9rem;
+    height: 4.9rem;
   }
 
   .hero-section,
@@ -90,6 +92,7 @@
   }
 
   .hero-stats,
+  .sdg-icons-grid,
   .overview-grid,
   .priority-grid,
   .card-grid--three,
@@ -98,6 +101,10 @@
   .footer-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-portrait-card {
+    max-width: 360px;
   }
 }
 
@@ -129,12 +136,24 @@
   }
 
   .brand-logo {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .hero-portrait-card {
+    max-width: 100%;
   }
 
   .button,
   .filter-button {
     width: 100%;
+  }
+
+  .lined-title {
+    gap: 0.55rem;
+  }
+
+  .lined-title span {
+    font-size: 0.95rem;
   }
 }

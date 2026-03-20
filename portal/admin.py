@@ -50,7 +50,7 @@ class SiteSettingsAdmin(SingletonAdmin):
             },
         ),
         ("Institutional narrative", {"fields": ("overview_title", "overview_text", "mission", "vision", "strategic_approach", "governance_overview", "strategy_overview")}),
-        ("Leadership", {"fields": ("leader_name", "leader_title", "leader_message", "leader_signature")}),
+        ("Leadership", {"fields": ("leader_name", "leader_title", "leader_photo", "leader_message", "leader_signature")}),
         ("Contact and footer", {"fields": ("address", "phone", "email", "office_hours", "map_embed_url", "footer_text")}),
         ("SEO", {"fields": ("meta_title", "meta_description")}),
     )
@@ -156,6 +156,11 @@ class NewsArticleAdmin(admin.ModelAdmin):
     list_filter = ("category", "featured")
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ("title", "summary", "body")
+    fieldsets = (
+        (None, {"fields": ("title", "slug", "category", "featured")}),
+        ("Content", {"fields": ("summary", "body", "image")}),
+        ("Publishing", {"fields": ("published_on",)}),
+    )
 
 
 @admin.register(Event)

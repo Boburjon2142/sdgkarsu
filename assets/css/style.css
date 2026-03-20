@@ -57,49 +57,49 @@ body {
 }
 
 .site-loader__wheel {
-  width: 152px;
-  height: 152px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background:
     conic-gradient(
-      #e5243b 0deg 20deg,
-      #ffffff 20deg 22deg,
-      #dda63a 22deg 42deg,
-      #ffffff 42deg 44deg,
-      #4c9f38 44deg 64deg,
-      #ffffff 64deg 66deg,
-      #c5192d 66deg 86deg,
-      #ffffff 86deg 88deg,
-      #ff3a21 88deg 108deg,
-      #ffffff 108deg 110deg,
-      #26bde2 110deg 130deg,
-      #ffffff 130deg 132deg,
-      #fcc30b 132deg 152deg,
-      #ffffff 152deg 154deg,
-      #a21942 154deg 174deg,
-      #ffffff 174deg 176deg,
-      #fd6925 176deg 196deg,
-      #ffffff 196deg 198deg,
-      #dd1367 198deg 218deg,
-      #ffffff 218deg 220deg,
-      #fd9d24 220deg 240deg,
-      #ffffff 240deg 242deg,
-      #bf8b2e 242deg 262deg,
-      #ffffff 262deg 264deg,
-      #3f7e44 264deg 284deg,
-      #ffffff 284deg 286deg,
-      #0a97d9 286deg 306deg,
-      #ffffff 306deg 308deg,
-      #56c02b 308deg 328deg,
-      #ffffff 328deg 330deg,
-      #00689d 330deg 350deg,
-      #ffffff 350deg 352deg,
-      #19486a 352deg 360deg
+      #f7172f 0deg 18deg,
+      #ffffff 18deg 22deg,
+      #dfac26 22deg 40deg,
+      #ffffff 40deg 44deg,
+      #2da348 44deg 62deg,
+      #ffffff 62deg 66deg,
+      #cb1e35 66deg 84deg,
+      #ffffff 84deg 88deg,
+      #fb3b24 88deg 106deg,
+      #ffffff 106deg 110deg,
+      #1cadd1 110deg 128deg,
+      #ffffff 128deg 132deg,
+      #ffbf1f 132deg 150deg,
+      #ffffff 150deg 154deg,
+      #9d1a42 154deg 172deg,
+      #ffffff 172deg 176deg,
+      #ff7020 176deg 194deg,
+      #ffffff 194deg 198deg,
+      #e1148a 198deg 216deg,
+      #ffffff 216deg 220deg,
+      #ffa726 220deg 238deg,
+      #ffffff 238deg 242deg,
+      #d99628 242deg 260deg,
+      #ffffff 260deg 264deg,
+      #4f8441 264deg 282deg,
+      #ffffff 282deg 286deg,
+      #1883bd 286deg 304deg,
+      #ffffff 304deg 308deg,
+      #61c043 308deg 326deg,
+      #ffffff 326deg 330deg,
+      #14639a 330deg 348deg,
+      #ffffff 348deg 352deg,
+      #234684 352deg 360deg
     );
-  -webkit-mask: radial-gradient(circle, transparent 0 54px, #000 55px);
-  mask: radial-gradient(circle, transparent 0 54px, #000 55px);
+  -webkit-mask: radial-gradient(circle, transparent 0 64px, #000 65px);
+  mask: radial-gradient(circle, transparent 0 64px, #000 65px);
   animation: loader-spin-pulse 1.8s ease-in-out infinite;
-  box-shadow: 0 18px 44px rgba(25, 48, 28, 0.14);
+  box-shadow: 0 14px 34px rgba(25, 48, 28, 0.08);
 }
 
 @keyframes loader-spin-pulse {
@@ -466,7 +466,9 @@ select {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.96);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.66) 14%, rgba(255, 255, 255, 0.56) 54%, rgba(255, 255, 255, 0.7) 100%),
+    url("../images/hero-back.jpg") center 22% / cover no-repeat;
 }
 
 .hero-layout,
@@ -480,10 +482,79 @@ select {
 }
 
 .hero-layout {
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  grid-template-columns: minmax(300px, 0.42fr) minmax(0, 1fr);
   align-items: start;
   position: relative;
   z-index: 1;
+}
+
+.hero-portrait-card {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  max-width: 460px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-portrait-card__image,
+.hero-portrait-card__fallback {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.hero-portrait-card__image {
+  object-fit: cover;
+}
+
+.hero-portrait-card__fallback {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, #eff5fb, #dfeaf5);
+  color: #274563;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-portrait-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.95rem 1.05rem 1.1rem;
+  background: #fbfdff;
+}
+
+.hero-portrait-card__meta strong {
+  color: #182616;
+  font-size: 1.08rem;
+}
+
+.hero-portrait-card__meta span {
+  color: var(--text-secondary);
+}
+
+.hero-copy--leader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-rankings-strip {
+  width: min(100%, 920px);
+  margin: 1.1rem 0 1.8rem;
+}
+
+.hero-author {
+  margin-top: 0.4rem;
+  color: #31462b;
+  font-size: 1.05rem;
+  font-weight: 700;
+  align-self: flex-end;
+  text-align: right;
 }
 
 .hero-copy__lead,
@@ -496,7 +567,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin: 1.75rem 0 2rem;
+  margin: 1.1rem 0 2rem;
 }
 
 .hero-stats,
@@ -512,6 +583,11 @@ select {
 
 .hero-stats {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hero-stats--full {
+  grid-column: 1 / -1;
+  width: 100%;
 }
 
 .overview-grid,
@@ -654,6 +730,97 @@ blockquote {
 
 .section-heading p {
   max-width: 34rem;
+}
+
+.section-heading--news {
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.news-sdg-block {
+  margin-bottom: 2rem;
+}
+
+.lined-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+.lined-title::before,
+.lined-title::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(137, 206, 0, 0.2), rgba(137, 206, 0, 0.9), rgba(137, 206, 0, 0.2));
+}
+
+.lined-title span {
+  color: #2f5614;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lined-title--news {
+  margin-top: 2.1rem;
+}
+
+.news-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.news-card__media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #e8eef4;
+}
+
+.news-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.news-card:hover .news-card__media img {
+  transform: scale(1.03);
+}
+
+.news-card__media--placeholder {
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #edf4fb, #dbe7f3);
+  color: #31506d;
+  font-weight: 800;
+  text-align: center;
+}
+
+.news-card__body {
+  padding: 1.35rem 1.4rem 1.45rem;
+}
+
+.sdg-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.sdg-icons-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 8px 18px rgba(45, 77, 115, 0.08);
 }
 
 .priority-card {
