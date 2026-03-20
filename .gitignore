@@ -2,6 +2,7 @@
 # Operating system files
 # -----------------------------------------------------------------------------
 .DS_Store
+.DS_Store?
 .AppleDouble
 .LSOverride
 Thumbs.db
@@ -36,6 +37,7 @@ __pycache__/
 *.pyo
 *.py,cover
 .python-version
+__pypackages__/
 
 # -----------------------------------------------------------------------------
 # Virtual environments
@@ -46,6 +48,8 @@ env/
 ENV/
 .virtualenv/
 .virtualenvs/
+env.bak/
+venv.bak/
 
 # -----------------------------------------------------------------------------
 # Build, packaging, and distribution artifacts
@@ -64,6 +68,7 @@ sdist/
 share/python-wheels/
 wheels/
 pip-wheel-metadata/
+site/
 *.egg
 *.egg-info/
 MANIFEST
@@ -83,6 +88,8 @@ htmlcov/
 .tox/
 .nox/
 .cache/
+.dmypy.json
+dmypy.json
 pytestdebug.log
 *.cover
 
@@ -90,6 +97,7 @@ pytestdebug.log
 # Jupyter / notebook artifacts
 # -----------------------------------------------------------------------------
 .ipynb_checkpoints/
+profile_default/
 
 # -----------------------------------------------------------------------------
 # Logs and runtime temp files
@@ -103,6 +111,7 @@ pytestdebug.log
 tmp/
 temp/
 logs/
+*.stackdump
 
 # -----------------------------------------------------------------------------
 # Django local runtime files
@@ -111,12 +120,16 @@ db.sqlite3
 db.sqlite3-journal
 *.sqlite3
 *.sqlite3-journal
+*.db
 local_settings.py
 media/
 staticfiles/
+static_cdn/
 
 # Keep project source assets tracked, but ignore ad-hoc local media dumps
 meedia/
+photos/
+SDG Icons 2019_WEB/
 
 # -----------------------------------------------------------------------------
 # Environment and secrets
@@ -125,6 +138,9 @@ meedia/
 .env.*
 .envrc
 !.env.example
+*.env.local
+*.secret
+secrets.json
 
 # -----------------------------------------------------------------------------
 # Frontend package managers
@@ -142,6 +158,7 @@ pnpm-debug.log*
 .parcel-cache/
 .sass-cache/
 .eslintcache
+.vite/
 
 # -----------------------------------------------------------------------------
 # Backup and temporary files
@@ -149,8 +166,17 @@ pnpm-debug.log*
 *.bak
 *.tmp
 *.temp
+*.orig
+*.rej
 
 # -----------------------------------------------------------------------------
 # Project-specific local files
 # -----------------------------------------------------------------------------
 colab.ipynb
+
+# -----------------------------------------------------------------------------
+# Deployment / hosting local artifacts
+# -----------------------------------------------------------------------------
+*.pidfile
+uwsgi.ini
+celerybeat-schedule
