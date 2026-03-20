@@ -325,12 +325,15 @@ select {
   width: 5rem;
   height: 5rem;
   flex: 0 0 auto;
+  overflow: visible;
 }
 
 .brand-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform: scale(1.16);
+  transform-origin: center;
 }
 
 .header-actions {
@@ -545,12 +548,13 @@ select {
 }
 
 .hero-author {
-  margin-top: 0.4rem;
+  margin-top: 0.1rem;
   color: #31462b;
   font-size: 1.05rem;
   font-weight: 700;
   align-self: flex-end;
   text-align: right;
+  transform: translateX(-10px);
 }
 
 .hero-copy__lead,

@@ -56,6 +56,7 @@ TRANSLATIONS = {
         "View all 17 goals": "Barcha 17 maqsadni ko'rish",
         "Open detail page": "Batafsil sahifani ochish",
         "Latest sustainability news": "So'nggi barqarorlik yangiliklari",
+        "Sustainability news": "Barqarorlikka oid yangiliklar",
         "All news & events": "Barcha yangiliklar va tadbirlar",
         "Read article": "Maqolani o'qish",
         "Institutional Calendar": "Institutsional kalendar",

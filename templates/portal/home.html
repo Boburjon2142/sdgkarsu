@@ -11,14 +11,38 @@
           <img class="hero-portrait-card__image" src="{% static 'images/rektor.jpg' %}" alt="{{ site_settings.leader_name }}">
         {% endif %}
         <div class="hero-portrait-card__meta">
-          <strong>{{ site_settings.leader_name }}</strong>
-          <span>{{ site_settings.leader_title }}</span>
+          <strong>
+            {% if current_language == "uz" %}
+              Qarshi davlat universiteti rektori
+            {% else %}
+              Rector of Karshi State University
+            {% endif %}
+          </strong>
+          <span>
+            {% if current_language == "uz" %}
+              Dilmurod Nabiyev Xamidullayevich
+            {% else %}
+              Dilmurod Nabiyev Xamidullayevich
+            {% endif %}
+          </span>
         </div>
       </div>
 
       <div class="hero-copy hero-copy--leader">
-        <div class="eyebrow">{{ site_settings.hero_kicker }}</div>
-        <h1>{{ site_settings.hero_title }}</h1>
+        <div class="eyebrow">
+          {% if current_language == "uz" %}
+            BARQARORLIK
+          {% else %}
+            SUSTAINABILITY
+          {% endif %}
+        </div>
+        <h1>
+          {% if current_language == "uz" %}
+            Barqaror kelajak bugundan boshlanadi
+          {% else %}
+            A sustainable future starts today
+          {% endif %}
+        </h1>
         <div class="hero-author">Nabiyev Dilmurod Xamidullayevich</div>
         <img class="hero-rankings-strip" src="{% static 'images/rankings-badges.svg' %}" alt="University ranking badges">
         <div class="hero-actions">
@@ -43,7 +67,7 @@
     <div class="container">
       <div class="news-sdg-block">
         <div class="lined-title">
-          <span>{% tr "Barqarorlikka oid yangiliklar" %}</span>
+          <span>{% tr "Sustainability news" %}</span>
         </div>
         <div class="sdg-icons-grid">
           <img src="{% static 'images/sdg-icons/E-WEB-Goal-01.png' %}" alt="SDG 1">

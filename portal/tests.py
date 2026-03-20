@@ -74,3 +74,141 @@ class PortalSmokeTests(TestCase):
         self.assertTrue(form.is_valid())
         form.save()
         self.assertEqual(ContactSubmission.objects.count(), 1)
+
+    def test_sdg_10_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 10}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Tengsizlikni kamaytirish")
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Mamlakatlar o'rtasidagi va ichida mavjud bo'lgan tengsizlikni qisqartirish.",
+        )
+
+    def test_sdg_11_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 11}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Barqaror shaharlar va aholi yashash joylari")
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Shahar va aholi yashash joylarining ochiqligi, xavfsizligi, mustahkamligi va ekologik barqarorligini ta'minlash.",
+        )
+
+    def test_sdg_12_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 12}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Mas'uliyatli iste'mol va ishlab chiqarish",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Oqilona iste'mol qilish va ishlab chiqarish modellariga o'tishni ta'minlash.",
+        )
+
+    def test_sdg_13_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 13}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Iqlim o'zgarishiga qarshi kurashish",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Iqlim o'zgarishi va uning oqibatlariga qarshi kurashish bo'yicha tezkor choralar ko'rish.",
+        )
+
+    def test_sdg_14_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 14}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Dengiz ekotizimlarini asrash",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Barqaror taraqqiyot yo'lida okeanlar, dengizlar va dengiz zaxiralarini asrash va ulardan oqilona foydalanish.",
+        )
+
+    def test_sdg_15_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 15}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Quruqlikdagi ekotizimlarni asrash",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "O'rmonlardan oqilona foydalanish, cho'llashishga qarshi kurashish, yer tanazzuli holatlariga chek qo'yish va yer unumdorligini qayta tiklash hamda biologik xilma-xillikning yo'qolib ketish xavfini bartaraf etish.",
+        )
+
+    def test_sdg_16_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 16}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Tinchlik, adolat va samarali boshqaruv",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Barqaror rivojlanish manfaatlari yo'lida tinchliksevar va ochiq jamiyatlar qurilishiga ko'maklashish, barcha uchun odil sudlov imkoniyatidan foydalanishni ta'minlash va barcha darajalarda samarali, hisobdor va keng ishtirokka asoslangan muassasalarni tashkil etish.",
+        )
+
+    def test_sdg_17_detail_uses_uzbek_custom_content(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 17}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.context["detail_content"]["hero_title"],
+            "Barqaror rivojlanish yo'lida hamkorlik",
+        )
+        self.assertEqual(
+            response.context["detail_content"]["idea_text"],
+            "Barqaror rivojlanish manfaatlari yo'lida global hamkorlikni faollashtirish.",
+        )

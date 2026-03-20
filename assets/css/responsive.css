@@ -143,6 +143,10 @@
     height: 4rem;
   }
 
+  .brand-logo img {
+    transform: scale(1.08);
+  }
+
   .hero-portrait-card {
     max-width: 100%;
   }
