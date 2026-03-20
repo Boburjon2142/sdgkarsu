@@ -1,46 +1,32 @@
 {% extends "portal/base.html" %}
-{% load portal_i18n %}
+{% load static portal_i18n %}
 
 {% block content %}
-  {% include "portal/includes/page_intro.html" %}
-
   <section class="section">
-    <div class="container">
-      <div class="card-grid card-grid--three">
-        {% for item in featured_programs %}
-          <article class="content-card content-card--featured reveal">
-            <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.summary }}</p>
-            <div class="metric-inline">
-              <strong>{{ item.outcome_value }}</strong>
-              <span>{{ item.outcome_label }}</span>
-            </div>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--soft">
     <div class="container">
       <div class="section-heading">
         <div>
-          <div class="eyebrow">{% tr "Programs, goals, and services" %}</div>
-          <h2>{% tr "Each item is positioned with clear purpose, supporting narrative, and measurable value." %}</h2>
+          <div class="eyebrow">{% tr "All 17 Goals" %}</div>
+          <h2>
+            {% if current_language == "uz" %}
+              17 ta Barqaror Rivojlanish Maqsadlari bo'yicha qisqacha ma'lumot
+            {% else %}
+              Overview of all 17 Sustainable Development Goals
+            {% endif %}
+          </h2>
         </div>
       </div>
-      <div class="stack-list">
-        {% for item in programs %}
-          <article class="list-card reveal">
-            <div>
-              <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.body }}</p>
+
+      <div class="sdg-goals-grid">
+        {% for goal in sdg_goals %}
+          <article class="sdg-goal-card reveal">
+            <div class="sdg-goal-card__media">
+              <img src="{% static goal.image %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
             </div>
-            <div class="list-card__meta">
-              <strong>{{ item.outcome_value }}</strong>
-              <span>{{ item.outcome_label }}</span>
+            <div class="sdg-goal-card__body">
+              <span class="chip">SDG {{ goal.number }}</span>
+              <h3>{{ goal.title }}</h3>
+              <p>{{ goal.description }}</p>
             </div>
           </article>
         {% endfor %}

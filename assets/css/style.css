@@ -57,68 +57,64 @@ body {
 }
 
 .site-loader__wheel {
-  width: 180px;
-  height: 180px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   background:
     conic-gradient(
-      #f7172f 0deg 18deg,
-      #ffffff 18deg 22deg,
-      #dfac26 22deg 40deg,
-      #ffffff 40deg 44deg,
-      #2da348 44deg 62deg,
-      #ffffff 62deg 66deg,
-      #cb1e35 66deg 84deg,
-      #ffffff 84deg 88deg,
-      #fb3b24 88deg 106deg,
-      #ffffff 106deg 110deg,
-      #1cadd1 110deg 128deg,
-      #ffffff 128deg 132deg,
-      #ffbf1f 132deg 150deg,
-      #ffffff 150deg 154deg,
-      #9d1a42 154deg 172deg,
-      #ffffff 172deg 176deg,
-      #ff7020 176deg 194deg,
-      #ffffff 194deg 198deg,
-      #e1148a 198deg 216deg,
-      #ffffff 216deg 220deg,
-      #ffa726 220deg 238deg,
-      #ffffff 238deg 242deg,
-      #d99628 242deg 260deg,
-      #ffffff 260deg 264deg,
-      #4f8441 264deg 282deg,
-      #ffffff 282deg 286deg,
-      #1883bd 286deg 304deg,
-      #ffffff 304deg 308deg,
-      #61c043 308deg 326deg,
-      #ffffff 326deg 330deg,
-      #14639a 330deg 348deg,
-      #ffffff 348deg 352deg,
-      #234684 352deg 360deg
+      #ef3340 0deg 16deg,
+      #ffffff 16deg 21deg,
+      #dda63a 21deg 37deg,
+      #ffffff 37deg 42deg,
+      #2da44f 42deg 58deg,
+      #ffffff 58deg 63deg,
+      #c5192d 63deg 79deg,
+      #ffffff 79deg 84deg,
+      #ff3a21 84deg 100deg,
+      #ffffff 100deg 105deg,
+      #26bde2 105deg 121deg,
+      #ffffff 121deg 126deg,
+      #fcc30b 126deg 142deg,
+      #ffffff 142deg 147deg,
+      #a21942 147deg 163deg,
+      #ffffff 163deg 168deg,
+      #fd6925 168deg 184deg,
+      #ffffff 184deg 189deg,
+      #dd1367 189deg 205deg,
+      #ffffff 205deg 210deg,
+      #fd9d24 210deg 226deg,
+      #ffffff 226deg 231deg,
+      #bf8b2e 231deg 247deg,
+      #ffffff 247deg 252deg,
+      #3f7e44 252deg 268deg,
+      #ffffff 268deg 273deg,
+      #0a97d9 273deg 289deg,
+      #ffffff 289deg 294deg,
+      #56c02b 294deg 310deg,
+      #ffffff 310deg 315deg,
+      #00689d 315deg 331deg,
+      #ffffff 331deg 336deg,
+      #19486a 336deg 352deg,
+      #ffffff 352deg 360deg
     );
-  -webkit-mask: radial-gradient(circle, transparent 0 64px, #000 65px);
-  mask: radial-gradient(circle, transparent 0 64px, #000 65px);
-  animation: loader-spin-pulse 1.8s ease-in-out infinite;
-  box-shadow: 0 14px 34px rgba(25, 48, 28, 0.08);
+  -webkit-mask: radial-gradient(circle, transparent 0 31px, #000 32px);
+  mask: radial-gradient(circle, transparent 0 31px, #000 32px);
+  animation: loader-spin 1.25s linear infinite;
 }
 
-@keyframes loader-spin-pulse {
+@keyframes loader-spin {
   0% {
-    transform: rotate(0deg) scale(0.92);
-  }
-
-  50% {
-    transform: rotate(180deg) scale(1.06);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg) scale(0.92);
+    transform: rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .site-loader__wheel {
-    animation-duration: 3.2s;
+    animation-duration: 2.6s;
   }
 }
 
@@ -821,6 +817,44 @@ blockquote {
   object-fit: cover;
   display: block;
   box-shadow: 0 8px 18px rgba(45, 77, 115, 0.08);
+}
+
+.sdg-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.sdg-goal-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(45, 77, 115, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 22px rgba(45, 77, 115, 0.08);
+}
+
+.sdg-goal-card__media {
+  background: #f5f9ff;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(45, 77, 115, 0.08);
+}
+
+.sdg-goal-card__media img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.sdg-goal-card__body {
+  padding: 1.35rem 1.35rem 1.5rem;
+}
+
+.sdg-goal-card__body h3 {
+  color: #182616;
+}
+
+.sdg-goal-card__body p {
+  margin-bottom: 0;
 }
 
 .priority-card {
