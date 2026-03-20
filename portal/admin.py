@@ -17,6 +17,7 @@ from .models import (
     Program,
     Report,
     ResearchProject,
+    SDGWorkItem,
     SiteSettings,
     StrategicPriority,
 )
@@ -94,6 +95,19 @@ class ProgramAdmin(admin.ModelAdmin):
     list_editable = ("featured", "display_order")
     search_fields = ("title", "summary", "body")
     prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(SDGWorkItem)
+class SDGWorkItemAdmin(admin.ModelAdmin):
+    list_display = ("title", "goal_number", "featured", "display_order")
+    list_filter = ("goal_number", "featured")
+    list_editable = ("featured", "display_order")
+    search_fields = ("title", "summary", "details")
+    fieldsets = (
+        (None, {"fields": ("goal_number", "title", "featured", "display_order")}),
+        ("Content", {"fields": ("summary", "details")}),
+        ("Media", {"fields": ("cover_image", "attachment", "external_url")}),
+    )
 
 
 @admin.register(ResearchProject)

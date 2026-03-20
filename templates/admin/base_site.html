@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}Portal Admin{% endblock %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/admin-custom.css' %}">
+{% endblock %}
+
+{% block branding %}
+  <div class="admin-branding">
+    <div class="admin-branding__copy">
+      <p class="admin-branding__eyebrow">QarshiDU SDG</p>
+      <h1 id="site-name"><a href="{% url 'admin:index' %}">Institutional Portal Administration</a></h1>
+      <p class="admin-branding__sub">Kontentni tez topish, tushunish va boshqarish uchun soddalashtirilgan admin panel.</p>
+    </div>
+    <div class="admin-branding__meta">
+      <span class="admin-chip">Content</span>
+      <span class="admin-chip">SDG</span>
+      <span class="admin-chip">Reports</span>
+    </div>
+  </div>
+{% endblock %}
+
+{% block nav-global %}{{ block.super }}{% endblock %}

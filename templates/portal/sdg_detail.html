@@ -14,13 +14,13 @@
             </div>
           </div>
 
-          <div class="sdg-detail-page__idea">
+          <div class="sdg-detail-page__idea reveal">
             <h2>{{ detail_content.idea_title }}</h2>
             <p>{{ detail_content.idea_text }}</p>
           </div>
 
           {% for section in detail_content.sections %}
-            <section class="sdg-detail-page__section">
+            <section class="sdg-detail-page__section reveal">
               <h3>{{ section.title }}</h3>
               {% for paragraph in section.paragraphs %}
                 <p>{{ paragraph }}</p>
@@ -34,13 +34,62 @@
               {% endif %}
             </section>
           {% endfor %}
+
+          {% if goal_work_items %}
+            <section class="sdg-work-section reveal">
+              <div class="sdg-work-section__heading">
+                <div>
+                  <div class="eyebrow">{% tr "Admin-managed work items" %}</div>
+                  <h2>
+                    {% if current_language == "uz" %}
+                      SDG {{ goal.number }} bo'yicha amalga oshirilgan ishlar
+                    {% else %}
+                      Work delivered for SDG {{ goal.number }}
+                    {% endif %}
+                  </h2>
+                </div>
+              </div>
+              <div class="sdg-work-grid">
+                {% for work_item in goal_work_items %}
+                  <article class="sdg-work-card reveal">
+                    <div class="sdg-work-card__media">
+                      {% if work_item.cover_image %}
+                        <img src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
+                      {% else %}
+                        <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                      {% endif %}
+                    </div>
+                    <div class="sdg-work-card__body">
+                      <h3>{{ work_item.title }}</h3>
+                      <p>{{ work_item.summary }}</p>
+                      {% if work_item.details %}
+                        <div class="sdg-work-card__details">{{ work_item.details|linebreaks }}</div>
+                      {% endif %}
+                      <div class="sdg-work-card__actions">
+                      {% if work_item.attachment %}
+                          <a class="button button--secondary" href="{{ work_item.attachment.url }}" target="_blank" rel="noopener">
+                            {% tr "Open file" %}
+                          </a>
+                        {% endif %}
+                        {% if work_item.external_url %}
+                          <a class="button button--primary" href="{{ work_item.external_url }}" target="_blank" rel="noopener">
+                            {% tr "Open link" %}
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </article>
+                {% endfor %}
+              </div>
+            </section>
+          {% endif %}
         </div>
 
         <aside class="sdg-detail-page__aside">
-          <div class="sdg-detail-page__poster">
+          <div class="sdg-detail-page__poster reveal">
             <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
           </div>
-          <div class="sdg-detail-page__nav">
+          <div class="sdg-detail-page__nav reveal">
             <a href="{% url 'programs' %}" class="text-link">{% tr "Back to all SDGs" %}</a>
             <div class="sdg-detail-page__pager">
               {% if previous_goal %}

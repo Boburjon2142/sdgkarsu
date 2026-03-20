@@ -2,7 +2,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from .forms import ContactSubmissionForm
-from .models import ContactSubmission, PageContent, SiteSettings
+from .models import ContactSubmission, PageContent, SDGWorkItem, SiteSettings
 
 
 class PortalSmokeTests(TestCase):
@@ -59,7 +59,19 @@ class PortalSmokeTests(TestCase):
     def test_homepage_loads(self):
         response = Client().get(reverse("home"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Institutional platform")
+        self.assertContains(response, "A sustainable future starts today")
+
+    def test_homepage_switches_to_uzbek_copy(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("home"))
+
+        self.assertContains(response, "Barqaror kelajak bugundan boshlanadi")
+        self.assertContains(response, "Qarshi davlat universiteti rektori")
+        self.assertContains(response, "Barqarorlikka oid yangiliklar")
 
     def test_contact_form_saves_submission(self):
         form = ContactSubmissionForm(
@@ -212,3 +224,48 @@ class PortalSmokeTests(TestCase):
             response.context["detail_content"]["idea_text"],
             "Barqaror rivojlanish manfaatlari yo'lida global hamkorlikni faollashtirish.",
         )
+
+    def test_homepage_has_clickable_sdg_cards(self):
+        response = Client().get(reverse("home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("sdg-updates", kwargs={"number": 4}))
+        self.assertContains(response, "sdg-news-card")
+
+    def test_sdg_detail_shows_admin_work_items(self):
+        SDGWorkItem.objects.create(
+            goal_number=4,
+            title="Yashil kampus darsi",
+            summary="SDG 4 doirasida yangi o'quv tashabbusi.",
+            details="Talabalar uchun maxsus modul yo'lga qo'yildi.",
+            external_url="https://example.com/sdg4",
+        )
+
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-detail", kwargs={"number": 4}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Yashil kampus darsi")
+        self.assertContains(response, "SDG 4 bo'yicha amalga oshirilgan ishlar")
+
+    def test_sdg_updates_page_shows_goal_specific_news(self):
+        SDGWorkItem.objects.create(
+            goal_number=2,
+            title="Oziq-ovqat xavfsizligi loyihasi",
+            summary="SDG 2 bo'yicha yangi yangilik.",
+        )
+
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("sdg-updates", kwargs={"number": 2}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "SDG 2 bo'yicha yangiliklar")
+        self.assertContains(response, "Oziq-ovqat xavfsizligi loyihasi")

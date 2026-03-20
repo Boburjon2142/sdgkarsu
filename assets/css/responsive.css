@@ -4,6 +4,7 @@
   .editorial-grid,
   .detail-layout,
   .sdg-detail-page,
+  .sdg-updates-page,
   .leader-message,
   .featured-news,
   .contact-layout,
@@ -19,13 +20,14 @@
   .hero-stats,
   .sdg-icons-grid,
   .sdg-goals-grid,
+  .sdg-work-grid,
   .overview-grid,
   .priority-grid,
   .card-grid--three,
   .partner-grid,
   .metrics-band,
   .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .section-heading,
@@ -96,6 +98,7 @@
   .hero-stats,
   .sdg-icons-grid,
   .sdg-goals-grid,
+  .sdg-work-grid,
   .overview-grid,
   .priority-grid,
   .card-grid--three,
@@ -103,7 +106,7 @@
   .metrics-band,
   .footer-grid,
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-portrait-card {
@@ -145,6 +148,17 @@
 
   .brand-logo img {
     transform: scale(1.08);
+  }
+
+  .sdg-icons-grid,
+  .sdg-goals-grid,
+  .sdg-work-grid,
+  .card-grid--three,
+  .partner-grid,
+  .metrics-band,
+  .footer-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-portrait-card {

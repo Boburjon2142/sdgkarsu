@@ -176,6 +176,31 @@ class Program(TimeStampedModel):
         return self.title
 
 
+class SDGWorkItem(TimeStampedModel):
+    GOAL_CHOICES = [(number, f"SDG {number}") for number in range(1, 18)]
+
+    goal_number = models.PositiveSmallIntegerField(choices=GOAL_CHOICES)
+    title = models.CharField(max_length=180)
+    summary = models.TextField()
+    details = models.TextField(blank=True)
+    cover_image = models.ImageField(upload_to="sdg_work_items/", blank=True)
+    attachment = models.FileField(upload_to="sdg_work_items/attachments/", blank=True)
+    external_url = models.URLField(blank=True)
+    display_order = models.PositiveIntegerField(default=0)
+    featured = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["goal_number", "display_order", "title"]
+        verbose_name = "SDG work item"
+        verbose_name_plural = "SDG work items"
+
+    def __str__(self):
+        return f"SDG {self.goal_number}: {self.title}"
+
+    def get_absolute_url(self):
+        return reverse("sdg-detail", kwargs={"number": self.goal_number})
+
+
 class ResearchProject(TimeStampedModel):
     class Category(models.TextChoices):
         RESEARCH = "research", "Research Program"

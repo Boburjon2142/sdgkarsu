@@ -1,0 +1,94 @@
+{% extends "portal/base.html" %}
+{% load static portal_i18n %}
+
+{% block content %}
+  <section class="section section--compact">
+    <div class="container">
+      <div class="sdg-updates-page">
+        <div class="sdg-updates-page__content">
+          <div class="sdg-detail-page__header reveal">
+            <img class="sdg-detail-page__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }}">
+            <div>
+              <div class="eyebrow">{% tr "Sustainability news" %}</div>
+              <h1>
+                {% if current_language == "uz" %}
+                  SDG {{ goal.number }} bo'yicha yangiliklar
+                {% else %}
+                  Updates for SDG {{ goal.number }}
+                {% endif %}
+              </h1>
+              <p class="sdg-updates-page__lead">{{ goal.title }}</p>
+            </div>
+          </div>
+
+          {% if goal_work_items %}
+            <div class="sdg-work-grid">
+              {% for work_item in goal_work_items %}
+                <article class="sdg-work-card reveal">
+                  <div class="sdg-work-card__media">
+                    {% if work_item.cover_image %}
+                      <img src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
+                    {% else %}
+                      <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                    {% endif %}
+                  </div>
+                  <div class="sdg-work-card__body">
+                    <h3>{{ work_item.title }}</h3>
+                    <p>{{ work_item.summary }}</p>
+                    {% if work_item.details %}
+                      <div class="sdg-work-card__details">{{ work_item.details|linebreaks }}</div>
+                    {% endif %}
+                    <div class="sdg-work-card__actions">
+                      {% if work_item.attachment %}
+                        <a class="button button--secondary" href="{{ work_item.attachment.url }}" target="_blank" rel="noopener">{% tr "Open file" %}</a>
+                      {% endif %}
+                      {% if work_item.external_url %}
+                        <a class="button button--primary" href="{{ work_item.external_url }}" target="_blank" rel="noopener">{% tr "Open link" %}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="sdg-detail-page__idea reveal">
+              <h2>{% tr "No updates published yet" %}</h2>
+              <p>
+                {% if current_language == "uz" %}
+                  Ushbu maqsad bo'yicha admin tomonidan yangiliklar hali joylanmagan.
+                {% else %}
+                  No admin-managed updates have been published for this goal yet.
+                {% endif %}
+              </p>
+            </div>
+          {% endif %}
+        </div>
+
+        <aside class="sdg-detail-page__aside">
+          <div class="sdg-detail-page__poster reveal">
+            <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
+          </div>
+          <div class="sdg-detail-page__nav reveal">
+            <a href="{% url 'home' %}#main-content" class="text-link">
+              {% if current_language == "uz" %}
+                Barqarorlik yangiliklariga qaytish
+              {% else %}
+                Back to sustainability news
+              {% endif %}
+            </a>
+            <div class="sdg-detail-page__pager">
+              {% if previous_goal %}
+                <a href="{% url 'sdg-updates' previous_goal %}">&lsaquo; SDG {{ previous_goal }}</a>
+              {% else %}
+                <span></span>
+              {% endif %}
+              {% if next_goal %}
+                <a href="{% url 'sdg-updates' next_goal %}">SDG {{ next_goal }} &rsaquo;</a>
+              {% endif %}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+{% endblock %}

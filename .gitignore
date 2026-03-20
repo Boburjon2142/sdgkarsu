@@ -16,6 +16,8 @@ Icon?
 # -----------------------------------------------------------------------------
 .vscode/
 .idea/
+.vs/
+.history/
 *.code-workspace
 *.suo
 *.user
@@ -82,6 +84,8 @@ coverage.xml
 htmlcov/
 .pytest_cache/
 .mypy_cache/
+.pytype/
+.pytest_temp/
 .ruff_cache/
 .pyre/
 .hypothesis/
@@ -118,13 +122,19 @@ logs/
 # -----------------------------------------------------------------------------
 db.sqlite3
 db.sqlite3-journal
+db.sqlite3-shm
+db.sqlite3-wal
 *.sqlite3
 *.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
 *.db
 local_settings.py
 media/
 staticfiles/
 static_cdn/
+instance/
+.django_cache/
 
 # Keep project source assets tracked, but ignore ad-hoc local media dumps
 meedia/
@@ -138,6 +148,7 @@ SDG Icons 2019_WEB/
 .env.*
 .envrc
 !.env.example
+!.env.sample
 *.env.local
 *.secret
 secrets.json
@@ -180,3 +191,4 @@ colab.ipynb
 *.pidfile
 uwsgi.ini
 celerybeat-schedule
+celerybeat.pid

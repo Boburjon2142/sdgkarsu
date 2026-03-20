@@ -11,43 +11,19 @@
           <img class="hero-portrait-card__image" src="{% static 'images/rektor.jpg' %}" alt="{{ site_settings.leader_name }}">
         {% endif %}
         <div class="hero-portrait-card__meta">
-          <strong>
-            {% if current_language == "uz" %}
-              Qarshi davlat universiteti rektori
-            {% else %}
-              Rector of Karshi State University
-            {% endif %}
-          </strong>
-          <span>
-            {% if current_language == "uz" %}
-              Dilmurod Nabiyev Xamidullayevich
-            {% else %}
-              Dilmurod Nabiyev Xamidullayevich
-            {% endif %}
-          </span>
+          <strong>{% tr "Rector of Karshi State University" %}</strong>
+          <span>Dilmurod Nabiyev Xamidullayevich</span>
         </div>
       </div>
 
       <div class="hero-copy hero-copy--leader">
-        <div class="eyebrow">
-          {% if current_language == "uz" %}
-            BARQARORLIK
-          {% else %}
-            SUSTAINABILITY
-          {% endif %}
-        </div>
-        <h1>
-          {% if current_language == "uz" %}
-            Barqaror kelajak bugundan boshlanadi
-          {% else %}
-            A sustainable future starts today
-          {% endif %}
-        </h1>
+        <div class="eyebrow">{% tr "Sustainability" %}</div>
+        <h1>{% tr "A sustainable future starts today" %}</h1>
         <div class="hero-author">Nabiyev Dilmurod Xamidullayevich</div>
         <img class="hero-rankings-strip" src="{% static 'images/rankings-badges.svg' %}" alt="University ranking badges">
         <div class="hero-actions">
-          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{{ site_settings.hero_primary_label }}</a>
-          <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{{ site_settings.hero_secondary_label }}</a>
+          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Programs" %}</a>
+          <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{% tr "Reports" %}</a>
         </div>
       </div>
 
@@ -70,31 +46,21 @@
           <span>{% tr "Sustainability news" %}</span>
         </div>
         <div class="sdg-icons-grid">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-01.png' %}" alt="SDG 1">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-02.png' %}" alt="SDG 2">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-03.png' %}" alt="SDG 3">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-04.png' %}" alt="SDG 4">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-05.png' %}" alt="SDG 5">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-06.png' %}" alt="SDG 6">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-07.png' %}" alt="SDG 7">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-08.png' %}" alt="SDG 8">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-09.png' %}" alt="SDG 9">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-10.png' %}" alt="SDG 10">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-11.png' %}" alt="SDG 11">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-12.png' %}" alt="SDG 12">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-13.png' %}" alt="SDG 13">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-14.png' %}" alt="SDG 14">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-15.png' %}" alt="SDG 15">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-16.png' %}" alt="SDG 16">
-          <img src="{% static 'images/sdg-icons/E-WEB-Goal-17.png' %}" alt="SDG 17">
+          {% for goal in sdg_goals %}
+            <a class="sdg-news-card reveal" href="{% url 'sdg-updates' goal.number %}" aria-label="SDG {{ goal.number }} - {{ goal.title }}">
+              <img class="sdg-news-card__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
+              <img class="sdg-news-card__gif" src="{% static goal.gif %}" alt="SDG {{ goal.number }} animation">
+              <span class="sdg-news-card__caption">{{ goal.title }}</span>
+            </a>
+          {% endfor %}
         </div>
 
         <div class="lined-title lined-title--news">
           <span>{% tr "Latest news" %}</span>
         </div>
         <div class="section-heading section-heading--news">
-          <p>{% tr "So‘nggi yangiliklar, rasmiy e’lonlar va institut faoliyatiga oid yangilanishlar." %}</p>
-          <a class="text-link" href="{% url 'news-events' %}">{% tr "Barcha yangiliklarni ko‘rish" %}</a>
+          <p>{% tr "Latest updates, official announcements, and news related to institutional activity." %}</p>
+          <a class="text-link" href="{% url 'news-events' %}">{% tr "View all news" %}</a>
         </div>
       </div>
 

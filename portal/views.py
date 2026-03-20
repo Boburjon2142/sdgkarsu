@@ -20,6 +20,7 @@ from .models import (
     Program,
     Report,
     ResearchProject,
+    SDGWorkItem,
     SiteSettings,
     StrategicPriority,
 )
@@ -1422,6 +1423,7 @@ class HomeView(BasePortalContextMixin, TemplateView):
         context["latest_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
         context["latest_news"] = localize_collection(NewsArticle.objects.all()[:3], language_code)
         context["partners"] = localize_collection(Partner.objects.all()[:6], language_code)
+        context["sdg_goals"] = [build_sdg_goal(item, language_code) for item in SDG_CONTENT]
         return context
 
 
@@ -1461,6 +1463,7 @@ class SDGDetailView(BasePortalContextMixin, TemplateView):
         context["goal"] = goal
         context["previous_goal"] = number - 1 if number > 1 else None
         context["next_goal"] = number + 1 if number < 17 else None
+        context["goal_work_items"] = SDGWorkItem.objects.filter(goal_number=number)
 
         if number == 1 and language_code == "uz":
             context["detail_content"] = SDG_1_DETAIL_UZ
@@ -1527,6 +1530,22 @@ class SDGDetailView(BasePortalContextMixin, TemplateView):
                     },
                 ],
             }
+        return context
+
+
+class SDGUpdatesView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/sdg_updates.html"
+    page_key = "programs"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        number = kwargs["number"]
+        goal = get_sdg_goal(number, language_code)
+        context["goal"] = goal
+        context["previous_goal"] = number - 1 if number > 1 else None
+        context["next_goal"] = number + 1 if number < 17 else None
+        context["goal_work_items"] = SDGWorkItem.objects.filter(goal_number=number)
         return context
 
 
