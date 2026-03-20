@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import DetailView, TemplateView
 
@@ -31,6 +31,7 @@ SDG_CONTENT = [
         "number": 1,
         "image_en": "images/goals/E_WEB_01.png",
         "image_uz": "images/goals/E_WEB_01.png",
+        "gif": "images/goals/gifs/E_GIF_01.gif",
         "title_en": "No Poverty",
         "title_uz": "Kambag'allikka barham berish",
         "description_en": "End poverty in all its forms everywhere through inclusive protection systems, access to services, and resilient livelihoods.",
@@ -40,6 +41,7 @@ SDG_CONTENT = [
         "number": 2,
         "image_en": "images/goals/E_WEB_02.png",
         "image_uz": "images/goals/E_WEB_02.png",
+        "gif": "images/goals/gifs/E_GIF_02.gif",
         "title_en": "Zero Hunger",
         "title_uz": "Ochlikka barham berish",
         "description_en": "Achieve food security, improve nutrition, and promote sustainable agriculture for healthier communities.",
@@ -49,6 +51,7 @@ SDG_CONTENT = [
         "number": 3,
         "image_en": "images/goals/E_WEB_03.png",
         "image_uz": "images/goals/E_WEB_03.png",
+        "gif": "images/goals/gifs/E_GIF_03.gif",
         "title_en": "Good Health and Well-being",
         "title_uz": "Sog'lik va farovonlik",
         "description_en": "Ensure healthy lives and promote well-being for all at all ages with equitable access to health services.",
@@ -58,6 +61,7 @@ SDG_CONTENT = [
         "number": 4,
         "image_en": "images/goals/E_WEB_04.png",
         "image_uz": "images/goals/E_WEB_04.png",
+        "gif": "images/goals/gifs/E_GIF_04.gif",
         "title_en": "Quality Education",
         "title_uz": "Sifatli ta'lim",
         "description_en": "Deliver inclusive and equitable quality education and promote lifelong learning opportunities for all.",
@@ -67,6 +71,7 @@ SDG_CONTENT = [
         "number": 5,
         "image_en": "images/goals/E_WEB_05.png",
         "image_uz": "images/goals/E_WEB_05.png",
+        "gif": "images/goals/gifs/E_GIF_05.gif",
         "title_en": "Gender Equality",
         "title_uz": "Gender tenglik",
         "description_en": "Achieve gender equality and empower all women and girls in leadership, education, and economic life.",
@@ -76,6 +81,7 @@ SDG_CONTENT = [
         "number": 6,
         "image_en": "images/goals/E_WEB_06.png",
         "image_uz": "images/goals/E_WEB_06.png",
+        "gif": "images/goals/gifs/E_GIF_06.gif",
         "title_en": "Clean Water and Sanitation",
         "title_uz": "Toza suv va sanitariya",
         "description_en": "Ensure availability and sustainable management of water and sanitation for all communities.",
@@ -85,6 +91,7 @@ SDG_CONTENT = [
         "number": 7,
         "image_en": "images/goals/E_WEB_07.png",
         "image_uz": "images/goals/E_WEB_07.png",
+        "gif": "images/goals/gifs/E_GIF_07.gif",
         "title_en": "Affordable and Clean Energy",
         "title_uz": "Arzon va toza energiya",
         "description_en": "Ensure access to affordable, reliable, sustainable, and modern energy for all.",
@@ -94,6 +101,7 @@ SDG_CONTENT = [
         "number": 8,
         "image_en": "images/goals/E_WEB_08.png",
         "image_uz": "images/goals/E_WEB_08.png",
+        "gif": "images/goals/gifs/E_GIF_08.gif",
         "title_en": "Decent Work and Economic Growth",
         "title_uz": "Munosib mehnat va iqtisodiy o'sish",
         "description_en": "Promote sustained, inclusive economic growth, productive employment, and decent work for all.",
@@ -103,6 +111,7 @@ SDG_CONTENT = [
         "number": 9,
         "image_en": "images/goals/E_WEB_09.png",
         "image_uz": "images/goals/E_WEB_09.png",
+        "gif": "images/goals/gifs/E_GIF_09.gif",
         "title_en": "Industry, Innovation and Infrastructure",
         "title_uz": "Sanoat, innovatsiya va infratuzilma",
         "description_en": "Build resilient infrastructure, promote inclusive industrialization, and foster innovation.",
@@ -112,6 +121,7 @@ SDG_CONTENT = [
         "number": 10,
         "image_en": "images/goals/E_WEB_10.png",
         "image_uz": "images/goals/E_WEB_10.png",
+        "gif": "images/goals/gifs/E_GIF_10.gif",
         "title_en": "Reduced Inequalities",
         "title_uz": "Tengsizlikni qisqartirish",
         "description_en": "Reduce inequality within and among countries through inclusive policy and equal opportunity.",
@@ -121,6 +131,7 @@ SDG_CONTENT = [
         "number": 11,
         "image_en": "images/goals/E_WEB_11.png",
         "image_uz": "images/goals/E_WEB_11.png",
+        "gif": "images/goals/gifs/E_GIF_11.gif",
         "title_en": "Sustainable Cities and Communities",
         "title_uz": "Barqaror shaharlar va aholi yashash joylari",
         "description_en": "Make cities and human settlements inclusive, safe, resilient, and sustainable.",
@@ -130,6 +141,7 @@ SDG_CONTENT = [
         "number": 12,
         "image_en": "images/goals/E_WEB_12.png",
         "image_uz": "images/goals/E_WEB_12.png",
+        "gif": "images/goals/gifs/E_GIF_12.gif",
         "title_en": "Responsible Consumption and Production",
         "title_uz": "Mas'uliyatli iste'mol va ishlab chiqarish",
         "description_en": "Ensure sustainable consumption and production patterns across institutions and communities.",
@@ -139,6 +151,7 @@ SDG_CONTENT = [
         "number": 13,
         "image_en": "images/goals/E_WEB_13.png",
         "image_uz": "images/goals/E_WEB_13.png",
+        "gif": "images/goals/gifs/E_GIF_13.gif",
         "title_en": "Climate Action",
         "title_uz": "Iqlim o'zgarishiga qarshi kurashish",
         "description_en": "Take urgent action to combat climate change and its impacts through adaptation and mitigation.",
@@ -148,6 +161,7 @@ SDG_CONTENT = [
         "number": 14,
         "image_en": "images/goals/E_WEB_14.png",
         "image_uz": "images/goals/E_WEB_14.png",
+        "gif": "images/goals/gifs/E_GIF_14.gif",
         "title_en": "Life Below Water",
         "title_uz": "Suv osti hayoti",
         "description_en": "Conserve and sustainably use oceans, seas, and marine resources for sustainable development.",
@@ -157,6 +171,7 @@ SDG_CONTENT = [
         "number": 15,
         "image_en": "images/goals/E_WEB_15.png",
         "image_uz": "images/goals/E_WEB_15.png",
+        "gif": "images/goals/gifs/E_GIF_15.gif",
         "title_en": "Life on Land",
         "title_uz": "Quruqlikdagi hayot",
         "description_en": "Protect, restore, and promote sustainable use of terrestrial ecosystems and biodiversity.",
@@ -166,6 +181,7 @@ SDG_CONTENT = [
         "number": 16,
         "image_en": "images/goals/E_WEB_16.png",
         "image_uz": "images/goals/E_WEB_16.png",
+        "gif": "images/goals/gifs/E_GIF_16.gif",
         "title_en": "Peace, Justice and Strong Institutions",
         "title_uz": "Tinchlik, adolat va samarali boshqaruv",
         "description_en": "Promote peaceful societies, provide access to justice, and build effective, accountable institutions.",
@@ -175,12 +191,111 @@ SDG_CONTENT = [
         "number": 17,
         "image_en": "images/goals/E_WEB_17.png",
         "image_uz": "images/goals/E_WEB_17.png",
+        "gif": "images/goals/gifs/E_GIF_17.gif",
         "title_en": "Partnerships for the Goals",
         "title_uz": "Maqsadlar yo'lida hamkorlik",
         "description_en": "Strengthen implementation and revitalize global partnerships for sustainable development.",
         "description_uz": "Barqaror rivojlanish uchun milliy va global hamkorliklarni kuchaytirish va birgalikdagi amalga oshirish mexanizmlarini rivojlantirish.",
     },
 ]
+
+
+SDG_1_DETAIL_UZ = {
+    "hero_title": "O‘ta qashshoqlikka barham berish",
+    "idea_title": "Asosiy g‘oya",
+    "idea_text": "Butun dunyoda barcha turdagi qashshoqlikni butkul yo‘q qilish",
+    "sections": [
+        {
+            "title": "Umumiy ma’lumot",
+            "paragraphs": [
+                "2015-yilda Birlashgan Millatlar Tashkiloti tomonidan belgilangan Barqaror rivojlanish maqsadlarining birinchi yo‘nalishi — qashshoqlikning barcha shakllariga barham berishdir (SDG 1).",
+                "Davlatlar quyidagi prinsipni qabul qilgan: “Hech kimni ortda qoldirmaslik”.",
+                "Bu maqsad oziq-ovqat yetishmovchiligi, toza ichimlik suvi muammosi va sanitariya yetishmasligi kabi muammolarni ham qamrab oladi.",
+                "Shuningdek, iqlim o‘zgarishi va mojarolar keltirib chiqaradigan xavflarni ham hal qilishni talab qiladi.",
+            ],
+        },
+        {
+            "title": "Asosiy maqsadlar va natijalar",
+            "paragraphs": [
+                "SDG 1 doirasida 7 ta maqsad va 13 ta ko‘rsatkich mavjud.",
+                "Natijada quyidagilar amalga oshiriladi:",
+            ],
+            "bullets": [
+                "O‘ta qashshoqlikni yo‘q qilish",
+                "Qashshoqlikni kamida 50% ga qisqartirish",
+                "Ijtimoiy himoya tizimini yaratish",
+                "Resurs va xizmatlarga teng kirishni ta’minlash",
+                "Ofatlarga chidamlilikni oshirish",
+            ],
+        },
+        {
+            "title": "Global holat",
+            "paragraphs": ["Hozirgi kunda quyidagi ko‘rsatkichlar dolzarb hisoblanadi:"],
+            "bullets": [
+                "Dunyo aholisining taxminan 10% qashshoqlikda yashaydi",
+                "2015-yilda 736 million odam o‘ta qashshoqlikda yashagan",
+                "Eng katta ulush Afrika hududiga to‘g‘ri keladi",
+                "Qishloqlarda qashshoqlik darajasi 17.2%",
+                "Shaharlarda qashshoqlik darajasi 5.3%",
+            ],
+        },
+        {
+            "title": "Muammolar va xavflar",
+            "paragraphs": [
+                "Qashshoqlikka qarshi kurashni qiyinlashtirayotgan omillar quyidagilar:",
+            ],
+            "bullets": [
+                "iqtisodiy tengsizlik",
+                "siyosiy beqarorlik",
+                "iqlim o‘zgarishi",
+                "urush va mojarolar",
+            ],
+        },
+        {
+            "title": "Bolalar va qashshoqlik",
+            "bullets": [
+                "385 millionga yaqin bola kuniga $1.90 dan kam daromad bilan yashaydi",
+                "Ko‘plab mamlakatlarda bolalar qashshoqligi bo‘yicha aniq statistika yo‘q",
+                "97% mamlakatda yetarli data mavjud emas",
+            ],
+        },
+        {
+            "title": "Ijobiy o‘zgarishlar",
+            "paragraphs": [
+                "1990–2015 oralig‘ida qashshoqlikda yashovchilar soni 1.8 milliarddan 776 milliongacha kamaydi.",
+                "Ammo muammo hali to‘liq hal bo‘lmagan va erishilgan natijalarni saqlab qolish uchun izchil siyosat zarur.",
+            ],
+        },
+        {
+            "title": "Hukumatlar roli",
+            "paragraphs": ["Mahalliy va global hukumatlar quyidagi yo‘nalishlarda faol ishlaydi:"],
+            "bullets": [
+                "kam ta’minlanganlarni qo‘llab-quvvatlash",
+                "shaffof boshqaruvni ta’minlash",
+                "bandlikni oshirish",
+                "ta’lim va iqtisodiy imkoniyatlarni kengaytirish",
+            ],
+        },
+    ],
+}
+
+
+def build_sdg_goal(item, language_code):
+    use_uz = language_code == "uz"
+    return {
+        "number": item["number"],
+        "image": item["image_uz"] if use_uz else item["image_en"],
+        "gif": item["gif"],
+        "title": item["title_uz"] if use_uz else item["title_en"],
+        "description": item["description_uz"] if use_uz else item["description_en"],
+    }
+
+
+def get_sdg_goal(number, language_code):
+    raw_item = next((item for item in SDG_CONTENT if item["number"] == number), None)
+    if not raw_item:
+        raise Http404("SDG not found")
+    return build_sdg_goal(raw_item, language_code)
 
 
 def set_portal_language(request, language_code):
@@ -253,17 +368,56 @@ class ProgramsView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["featured_programs"] = localize_collection(Program.objects.filter(featured=True), language_code)
-        context["programs"] = localize_collection(Program.objects.all(), language_code)
-        context["sdg_goals"] = [
-            {
-                "number": item["number"],
-                "image": item["image_uz"] if language_code == "uz" else item["image_en"],
-                "title": item[f"title_{language_code}"] if language_code == "uz" else item["title_en"],
-                "description": item[f"description_{language_code}"] if language_code == "uz" else item["description_en"],
+        context["sdg_goals"] = [build_sdg_goal(item, language_code) for item in SDG_CONTENT]
+        return context
+
+
+class SDGDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/sdg_detail.html"
+    page_key = "programs"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        number = kwargs["number"]
+        goal = get_sdg_goal(number, language_code)
+        context["goal"] = goal
+        context["previous_goal"] = number - 1 if number > 1 else None
+        context["next_goal"] = number + 1 if number < 17 else None
+
+        if number == 1 and language_code == "uz":
+            context["detail_content"] = SDG_1_DETAIL_UZ
+        else:
+            context["detail_content"] = {
+                "hero_title": goal["title"],
+                "idea_title": "Asosiy g‘oya" if language_code == "uz" else "Core idea",
+                "idea_text": goal["description"],
+                "sections": [
+                    {
+                        "title": "Umumiy ma’lumot" if language_code == "uz" else "Overview",
+                        "paragraphs": [
+                            goal["description"],
+                            "Mazkur maqsad universitetning ilmiy izlanishlari, ta’lim dasturlari va jamoatchilik bilan ishlash tashabbuslari orqali qo‘llab-quvvatlanadi."
+                            if language_code == "uz"
+                            else "This goal is supported through the university's research agenda, educational programs, and community engagement initiatives.",
+                        ],
+                    },
+                    {
+                        "title": "Asosiy yo‘nalishlar" if language_code == "uz" else "Priority directions",
+                        "bullets": [
+                            "ta’lim, tadqiqot va kampus boshqaruvida integratsiya"
+                            if language_code == "uz"
+                            else "integration across teaching, research, and campus management",
+                            "ma’lumotlarga asoslangan institutsional qarorlar"
+                            if language_code == "uz"
+                            else "data-informed institutional decision-making",
+                            "mahalliy va xalqaro hamkorlik"
+                            if language_code == "uz"
+                            else "local and international partnerships",
+                        ],
+                    },
+                ],
             }
-            for item in SDG_CONTENT
-        ]
         return context
 
 

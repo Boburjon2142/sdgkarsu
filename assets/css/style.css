@@ -57,8 +57,8 @@ body {
 }
 
 .site-loader__wheel {
-  width: 112px;
-  height: 112px;
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   background:
     conic-gradient(
@@ -97,8 +97,8 @@ body {
       #19486a 336deg 352deg,
       #ffffff 352deg 360deg
     );
-  -webkit-mask: radial-gradient(circle, transparent 0 31px, #000 32px);
-  mask: radial-gradient(circle, transparent 0 31px, #000 32px);
+  -webkit-mask: radial-gradient(circle, transparent 0 46px, #000 47px);
+  mask: radial-gradient(circle, transparent 0 46px, #000 47px);
   animation: loader-spin 1.25s linear infinite;
 }
 
@@ -826,11 +826,20 @@ blockquote {
 }
 
 .sdg-goal-card {
+  display: block;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid rgba(45, 77, 115, 0.12);
   border-radius: 20px;
   box-shadow: 0 10px 22px rgba(45, 77, 115, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.sdg-goal-card:hover,
+.sdg-goal-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(45, 77, 115, 0.14);
+  border-color: rgba(197, 25, 45, 0.28);
 }
 
 .sdg-goal-card__media {
@@ -855,6 +864,117 @@ blockquote {
 
 .sdg-goal-card__body p {
   margin-bottom: 0;
+}
+
+.sdg-detail-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 410px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.sdg-detail-page__content {
+  min-width: 0;
+}
+
+.sdg-detail-page__header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.sdg-detail-page__header .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.sdg-detail-page__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.sdg-detail-page__idea,
+.sdg-detail-page__section {
+  padding: 1.6rem 1.75rem;
+  border: 1px solid rgba(45, 77, 115, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 22px rgba(45, 77, 115, 0.07);
+}
+
+.sdg-detail-page__idea {
+  margin-bottom: 1.5rem;
+}
+
+.sdg-detail-page__idea h2,
+.sdg-detail-page__section h3 {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.sdg-detail-page__section + .sdg-detail-page__section {
+  margin-top: 1.25rem;
+}
+
+.sdg-detail-page__section p + p {
+  margin-top: 0.8rem;
+}
+
+.sdg-detail-page__list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.sdg-detail-page__list li + li {
+  margin-top: 0.45rem;
+}
+
+.sdg-detail-page__aside {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.sdg-detail-page__poster {
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(45, 77, 115, 0.12);
+  box-shadow: 0 18px 34px rgba(45, 77, 115, 0.12);
+  padding: 1rem;
+}
+
+.sdg-detail-page__poster img {
+  width: 100%;
+  height: auto;
+  max-height: 820px;
+  object-fit: contain;
+}
+
+.sdg-detail-page__nav {
+  margin-top: 1.25rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(45, 77, 115, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.sdg-detail-page__pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.sdg-detail-page__pager a {
+  font-weight: 800;
+  color: #244e8d;
 }
 
 .priority-card {

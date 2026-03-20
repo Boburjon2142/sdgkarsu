@@ -19,16 +19,16 @@
 
       <div class="sdg-goals-grid">
         {% for goal in sdg_goals %}
-          <article class="sdg-goal-card reveal">
+          <a class="sdg-goal-card reveal" href="{% url 'sdg-detail' goal.number %}">
             <div class="sdg-goal-card__media">
-              <img src="{% static goal.image %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
+              <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
             </div>
             <div class="sdg-goal-card__body">
               <span class="chip">SDG {{ goal.number }}</span>
               <h3>{{ goal.title }}</h3>
               <p>{{ goal.description }}</p>
             </div>
-          </article>
+          </a>
         {% endfor %}
       </div>
     </div>
