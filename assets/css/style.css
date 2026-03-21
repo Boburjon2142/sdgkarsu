@@ -539,6 +539,7 @@ select {
 
 .mobile-toggle {
   display: none;
+  position: relative;
   width: 3rem;
   height: 3rem;
   border: 1px solid rgba(19, 32, 15, 0.14);
@@ -550,20 +551,32 @@ select {
 .mobile-toggle::before,
 .mobile-toggle::after {
   content: "";
-  display: block;
+  position: absolute;
+  left: 50%;
   width: 1.1rem;
   height: 2px;
-  margin: 0 auto;
+  margin: 0;
   background: #13200f;
-  transition: transform var(--transition), opacity var(--transition);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  transition: transform var(--transition), opacity var(--transition), top var(--transition);
+}
+
+.mobile-toggle::before {
+  top: 0.95rem;
 }
 
 .mobile-toggle span {
-  margin: 0.35rem auto;
+  top: calc(50% - 1px);
+}
+
+.mobile-toggle::after {
+  top: calc(100% - 0.95rem - 2px);
 }
 
 .mobile-toggle[aria-expanded="true"]::before {
-  transform: translateY(8px) rotate(45deg);
+  top: calc(50% - 1px);
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .mobile-toggle[aria-expanded="true"] span {
@@ -571,7 +584,8 @@ select {
 }
 
 .mobile-toggle[aria-expanded="true"]::after {
-  transform: translateY(-8px) rotate(-45deg);
+  top: calc(50% - 1px);
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 .hero-section {
