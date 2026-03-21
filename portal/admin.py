@@ -45,8 +45,7 @@ class NewsArticleAdminForm(forms.ModelForm):
 class SiteSettingsAdmin(SingletonAdmin):
     list_display = ("institution_name", "email", "phone")
     fieldsets = (
-        ("Brand", {"fields": ("institution_name", "institution_short_name", "tagline", "official_badge")}),
-        ("Navigation", {"fields": ("navbar_cta_label", "navbar_cta_url")}),
+        ("Basic information", {"fields": ("institution_name", "tagline")}),
         (
             "Hero",
             {
@@ -61,10 +60,9 @@ class SiteSettingsAdmin(SingletonAdmin):
                 )
             },
         ),
-        ("Institutional narrative", {"fields": ("overview_title", "overview_text", "mission", "vision", "strategic_approach", "governance_overview", "strategy_overview")}),
-        ("Leadership", {"fields": ("leader_name", "leader_title", "leader_photo", "leader_message", "leader_signature")}),
-        ("Contact and footer", {"fields": ("address", "phone", "email", "office_hours", "map_embed_url", "footer_text")}),
-        ("SEO", {"fields": ("meta_title", "meta_description")}),
+        ("Institutional narrative", {"fields": ("overview_title", "overview_text", "mission", "vision")}),
+        ("Leadership", {"fields": ("leader_name", "leader_title", "leader_photo", "leader_message")}),
+        ("Contact information", {"fields": ("address", "phone", "email", "office_hours")}),
     )
 
 
@@ -72,6 +70,10 @@ class SiteSettingsAdmin(SingletonAdmin):
 class PageContentAdmin(admin.ModelAdmin):
     list_display = ("page_key", "title", "eyebrow")
     search_fields = ("title", "intro", "supporting_text")
+    fieldsets = (
+        ("Basic information", {"fields": ("page_key", "eyebrow", "title", "intro")}),
+        ("Supporting content", {"fields": ("supporting_title", "supporting_text")}),
+    )
 
 
 @admin.register(HeroStat)
@@ -106,6 +108,11 @@ class ProgramAdmin(admin.ModelAdmin):
     list_editable = ("featured", "display_order")
     search_fields = ("title", "summary", "body")
     prepopulated_fields = {"slug": ("title",)}
+    fieldsets = (
+        ("Basic information", {"fields": ("category", "title", "slug", "summary")}),
+        ("Detailed content", {"fields": ("body",)}),
+        ("Display", {"fields": ("featured", "display_order")}),
+    )
 
 
 @admin.register(SDGWorkItem)
@@ -128,6 +135,11 @@ class ResearchProjectAdmin(admin.ModelAdmin):
     list_editable = ("featured", "display_order")
     search_fields = ("title", "summary", "body", "lead_unit")
     prepopulated_fields = {"slug": ("title",)}
+    fieldsets = (
+        ("Basic information", {"fields": ("category", "title", "slug", "lead_unit", "summary")}),
+        ("Detailed content", {"fields": ("body",)}),
+        ("Display", {"fields": ("featured", "display_order")}),
+    )
 
 
 @admin.register(EducationInitiative)
@@ -137,6 +149,11 @@ class EducationInitiativeAdmin(admin.ModelAdmin):
     list_editable = ("featured", "display_order")
     search_fields = ("title", "summary", "body", "audience")
     prepopulated_fields = {"slug": ("title",)}
+    fieldsets = (
+        ("Basic information", {"fields": ("category", "title", "slug", "audience", "summary")}),
+        ("Detailed content", {"fields": ("body",)}),
+        ("Display", {"fields": ("featured", "display_order")}),
+    )
 
 
 @admin.register(PolicyDocument)
@@ -145,6 +162,11 @@ class PolicyDocumentAdmin(admin.ModelAdmin):
     list_filter = ("category", "featured")
     search_fields = ("title", "summary", "body")
     prepopulated_fields = {"slug": ("title",)}
+    fieldsets = (
+        ("Basic information", {"fields": ("category", "title", "slug", "publish_date", "summary")}),
+        ("Detailed content", {"fields": ("body",)}),
+        ("Document source", {"fields": ("file", "external_url", "featured")}),
+    )
 
 
 @admin.register(ImpactMetric)
@@ -160,6 +182,11 @@ class ReportAdmin(admin.ModelAdmin):
     list_filter = ("report_type", "featured")
     search_fields = ("title", "summary", "body", "highlight_metric")
     prepopulated_fields = {"slug": ("title",)}
+    fieldsets = (
+        ("Basic information", {"fields": ("report_type", "title", "slug", "publish_date", "summary")}),
+        ("Detailed content", {"fields": ("body",)}),
+        ("Report source", {"fields": ("file", "external_url", "featured")}),
+    )
 
 
 @admin.register(Achievement)
@@ -209,6 +236,11 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = ("category", "featured")
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ("title", "summary", "details", "venue")
+    fieldsets = (
+        ("Basic information", {"fields": ("category", "title", "slug", "start_date", "venue", "summary")}),
+        ("Detailed content", {"fields": ("details",)}),
+        ("Display", {"fields": ("featured",)}),
+    )
 
 
 @admin.register(DepartmentContact)
@@ -216,6 +248,11 @@ class DepartmentContactAdmin(admin.ModelAdmin):
     list_display = ("department_name", "contact_person", "phone", "display_order")
     list_editable = ("display_order",)
     search_fields = ("department_name", "contact_person", "email")
+    fieldsets = (
+        ("Department", {"fields": ("department_name", "contact_person")}),
+        ("Contact information", {"fields": ("phone", "email", "office_location", "office_hours")}),
+        ("Display", {"fields": ("display_order",)}),
+    )
 
 
 @admin.register(ContactSubmission)

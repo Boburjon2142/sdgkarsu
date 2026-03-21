@@ -6,6 +6,11 @@ const filterButtons = document.querySelectorAll(".filter-button");
 const filterTargets = document.querySelectorAll(".filter-targets [data-category]");
 const revealItems = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll(".counter[data-target]");
+const tiltTargets = document.querySelectorAll(
+  ".stat-card, .content-card, .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card, .sdg-work-card"
+);
+const heroParallax = document.querySelectorAll(".hero-portrait-card, .hero-rankings-strip, .hero-author");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (siteLoader) {
   window.addEventListener("load", () => {
@@ -50,6 +55,10 @@ if (filterButtons.length && filterTargets.length) {
 }
 
 if (revealItems.length) {
+  revealItems.forEach((item, index) => {
+    item.style.setProperty("--reveal-delay", `${Math.min(index * 55, 420)}ms`);
+  });
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -102,4 +111,43 @@ if (counters.length) {
   );
 
   counters.forEach((counter) => countObserver.observe(counter));
+}
+
+if (tiltTargets.length && !prefersReducedMotion.matches) {
+  tiltTargets.forEach((card) => {
+    card.classList.add("tilt-card");
+
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * -8;
+      const rotateY = ((x / rect.width) - 0.5) * 8;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+
+    card.addEventListener("pointerup", () => {
+      card.style.transform = "";
+    });
+  });
+}
+
+if (heroParallax.length && !prefersReducedMotion.matches) {
+  const handleHeroParallax = () => {
+    const offset = Math.min(window.scrollY * 0.08, 24);
+
+    heroParallax.forEach((item, index) => {
+      const multipliers = [1, 0.65, 0.45];
+      const multiplier = multipliers[index] || 0.4;
+      item.style.transform = `translateY(${offset * multiplier}px)`;
+    });
+  };
+
+  handleHeroParallax();
+  window.addEventListener("scroll", handleHeroParallax, { passive: true });
 }
