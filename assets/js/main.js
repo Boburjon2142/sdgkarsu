@@ -31,10 +31,27 @@ if (header) {
 }
 
 if (mobileToggle && siteNavigation) {
+  const closeNavigation = () => {
+    mobileToggle.setAttribute("aria-expanded", "false");
+    siteNavigation.classList.remove("is-open");
+  };
+
   mobileToggle.addEventListener("click", () => {
     const isExpanded = mobileToggle.getAttribute("aria-expanded") === "true";
     mobileToggle.setAttribute("aria-expanded", String(!isExpanded));
     siteNavigation.classList.toggle("is-open", !isExpanded);
+  });
+
+  siteNavigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeNavigation();
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) {
+      closeNavigation();
+    }
   });
 }
 
