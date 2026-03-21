@@ -32,6 +32,16 @@
             <a href="{% url 'set-language' 'uz' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'uz' %} aria-current="true"{% endif %}>UZ</a>
             <a href="{% url 'set-language' 'en' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'en' %} aria-current="true"{% endif %}>EN</a>
           </div>
+          <div class="language-dropdown" aria-label="{% tr 'Language switcher' %}">
+            <button class="language-dropdown__toggle" type="button" aria-expanded="false" aria-controls="language-dropdown-menu">
+              <span>{{ current_language|upper }}</span>
+              <span class="language-dropdown__caret" aria-hidden="true"></span>
+            </button>
+            <div class="language-dropdown__menu" id="language-dropdown-menu">
+              <a href="{% url 'set-language' 'uz' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'uz' %} aria-current="true"{% endif %}>O'zbekcha</a>
+              <a href="{% url 'set-language' 'en' %}?next={{ request.get_full_path|urlencode }}"{% if current_language == 'en' %} aria-current="true"{% endif %}>English</a>
+            </div>
+          </div>
           <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="{% tr 'Open navigation' %}">
             <span></span>
           </button>

@@ -77,11 +77,11 @@
     min-height: auto;
     padding: 0.9rem 0;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .brand {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
   }
 
@@ -92,9 +92,10 @@
   }
 
   .header-actions {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     margin-left: 0;
     gap: 0.65rem;
+    justify-content: flex-end;
   }
 
   .language-switcher {
@@ -145,8 +146,8 @@
   }
 
   .brand-logo {
-    width: 4.9rem;
-    height: 4.9rem;
+    width: 4.3rem;
+    height: 4.3rem;
   }
 
   .hero-section,
@@ -233,8 +234,9 @@
   }
 
   .brand {
-    width: 100%;
-    justify-content: space-between;
+    flex: 0 1 auto;
+    width: auto;
+    justify-content: flex-start;
   }
 
   .brand-mark {
@@ -244,8 +246,8 @@
   }
 
   .brand-logo {
-    width: 4rem;
-    height: 4rem;
+    width: 3.6rem;
+    height: 3.6rem;
   }
 
   .brand-logo img {
@@ -253,8 +255,9 @@
   }
 
   .header-actions {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    flex: 1 1 auto;
+    justify-content: flex-end;
   }
 
   .language-switcher {
@@ -268,6 +271,19 @@
 
   .mobile-toggle {
     flex: 0 0 3rem;
+  }
+
+  .language-switcher {
+    display: none;
+  }
+
+  .language-dropdown {
+    display: inline-flex;
+  }
+
+  .language-dropdown__toggle {
+    min-width: 4rem;
+    min-height: 3rem;
   }
 
   .site-navigation {
@@ -324,7 +340,6 @@
   }
 
   .sdg-icons-grid,
-  .sdg-goals-grid,
   .sdg-work-grid,
   .card-grid--three,
   .partner-grid,
@@ -332,6 +347,23 @@
   .footer-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sdg-icons-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .sdg-news-card {
+    border-radius: 10px;
+  }
+
+  .sdg-news-card__caption {
+    left: 0.65rem;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    font-size: 0.82rem;
+    line-height: 1.15;
   }
 
   .hero-portrait-card {
@@ -458,8 +490,17 @@
   }
 
   .brand-logo {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .language-dropdown__toggle {
+    min-width: 3.65rem;
+    padding: 0.6rem 0.75rem;
   }
 
   .site-navigation {
@@ -467,6 +508,7 @@
   }
 
   .hero-portrait-card,
+  .sdg-news-card,
   .sdg-goal-card,
   .sdg-work-card,
   .news-card,
@@ -483,5 +525,16 @@
   .sdg-goal-card__body,
   .sdg-work-card__body {
     padding: 0.95rem;
+  }
+
+  .sdg-icons-grid {
+    gap: 0.6rem;
+  }
+
+  .sdg-news-card__caption {
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    font-size: 0.76rem;
   }
 }
