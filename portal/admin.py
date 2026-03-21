@@ -1,4 +1,6 @@
+from django import forms
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import (
     Achievement,
@@ -28,6 +30,15 @@ class SingletonAdmin(admin.ModelAdmin):
         if self.model.objects.exists():
             return False
         return super().has_add_permission(request)
+
+
+class NewsArticleAdminForm(forms.ModelForm):
+    class Meta:
+        model = NewsArticle
+        fields = "__all__"
+        help_texts = {
+            "image": "Recommended size: 1600 x 1000 px (16:10), landscape. 1200 x 750 px also works well. Keep the main subject near the center because the card uses cover cropping.",
+        }
 
 
 @admin.register(SiteSettings)
@@ -166,15 +177,30 @@ class PartnerAdmin(admin.ModelAdmin):
 
 @admin.register(NewsArticle)
 class NewsArticleAdmin(admin.ModelAdmin):
+    form = NewsArticleAdminForm
     list_display = ("title", "category", "published_on", "featured")
     list_filter = ("category", "featured")
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ("title", "summary", "body")
+    readonly_fields = ("image_preview",)
     fieldsets = (
         (None, {"fields": ("title", "slug", "category", "featured")}),
-        ("Content", {"fields": ("summary", "body", "image")}),
+        ("Content", {"fields": ("summary", "body", "image", "image_preview")}),
         ("Publishing", {"fields": ("published_on",)}),
     )
+
+    def image_preview(self, obj):
+        if not obj or not obj.image:
+            return "Image preview will appear after upload."
+        return format_html(
+            '<div style="max-width: 420px;">'
+            '<img src="{}" alt="News image preview" style="width: 100%; max-width: 420px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid rgba(17, 24, 39, 0.08);" />'
+            '<p style="margin: 10px 0 0; color: #52606d; font-size: 12px;">Current preview in a 16:10 crop.</p>'
+            "</div>",
+            obj.image.url,
+        )
+
+    image_preview.short_description = "Preview"
 
 
 @admin.register(Event)

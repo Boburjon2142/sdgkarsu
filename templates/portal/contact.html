@@ -2,19 +2,43 @@
 {% load portal_i18n %}
 
 {% block content %}
-  {% include "portal/includes/page_intro.html" %}
+  <section class="page-intro page-intro--clean">
+    <div class="container research-intro">
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ page_content.eyebrow }}</div>
+        <h1>
+          {% if current_language == "uz" %}
+            Taklif va murojaatlar uchun
+          {% else %}
+            For Suggestions and Inquiries
+          {% endif %}
+        </h1>
+        <p class="page-intro__lead">{{ page_content.intro }}</p>
+      </div>
+      {% if page_content.supporting_title or page_content.supporting_text %}
+        <aside class="research-intro__aside">
+          {% if page_content.supporting_title %}
+            <span class="chip">{{ page_content.supporting_title }}</span>
+          {% endif %}
+          {% if page_content.supporting_text %}
+            <p>{{ page_content.supporting_text }}</p>
+          {% endif %}
+        </aside>
+      {% endif %}
+    </div>
+  </section>
 
   <section class="section">
     <div class="container contact-layout">
       <div class="stack-list">
-        <article class="content-card content-card--panel">
+        <article class="content-card soft-panel-card">
           <h2>{% tr "Main office" %}</h2>
           <p>{{ site_settings.address }}</p>
           <p><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></p>
           <p><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></p>
           <p>{{ site_settings.office_hours }}</p>
         </article>
-        <article class="content-card content-card--panel">
+        <article class="content-card soft-panel-card">
           <h2>{% tr "Department contacts" %}</h2>
           {% for item in departments %}
             <div class="department-row">

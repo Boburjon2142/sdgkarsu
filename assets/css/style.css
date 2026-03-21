@@ -897,8 +897,8 @@ blockquote {
 
 .sdg-goals-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .sdg-goal-card {
@@ -1196,6 +1196,52 @@ blockquote {
   padding: 2rem;
 }
 
+.research-note-card {
+  align-self: start;
+  background: linear-gradient(180deg, #fbfdf9, #f4f8ed);
+  border-color: rgba(92, 104, 88, 0.14);
+  box-shadow: 0 14px 30px rgba(37, 59, 23, 0.07);
+}
+
+.research-note-card h3 {
+  margin-bottom: 0.85rem;
+}
+
+.research-note-card p {
+  margin-bottom: 0;
+}
+
+.about-callout-card {
+  align-self: start;
+  background: linear-gradient(180deg, #fbfdf9, #f6faf1);
+  border-color: rgba(92, 104, 88, 0.14);
+  box-shadow: 0 14px 30px rgba(37, 59, 23, 0.06);
+}
+
+.about-callout-card h3,
+.about-callout-card .leader-title {
+  color: #182616;
+}
+
+.about-callout-card blockquote {
+  margin-top: 1rem;
+}
+
+.soft-panel-card {
+  align-self: start;
+  background: linear-gradient(180deg, #fbfdf9, #f6faf1);
+  border-color: rgba(92, 104, 88, 0.14);
+  box-shadow: 0 14px 30px rgba(37, 59, 23, 0.06);
+}
+
+.soft-panel-card h2,
+.soft-panel-card h3,
+.soft-panel-card p,
+.soft-panel-card a,
+.soft-panel-card strong {
+  color: #182616;
+}
+
 .list-card {
   display: flex;
   align-items: center;
@@ -1219,9 +1265,40 @@ blockquote {
   background: #ffffff;
 }
 
+.page-intro--clean {
+  padding: 4rem 0 2.5rem;
+}
+
 .page-intro__grid {
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.36fr);
   align-items: end;
+}
+
+.research-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 2rem;
+  align-items: end;
+}
+
+.research-intro__main {
+  max-width: 58rem;
+}
+
+.research-intro__aside {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(92, 104, 88, 0.14);
+  border-radius: 18px;
+  background: #fbfdf8;
+  box-shadow: 0 12px 28px rgba(37, 59, 23, 0.06);
+}
+
+.research-intro__aside .chip {
+  margin-bottom: 0.8rem;
+}
+
+.research-intro__aside p {
+  margin-bottom: 0;
 }
 
 .filters {

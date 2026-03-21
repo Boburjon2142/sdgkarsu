@@ -2,7 +2,25 @@
 {% load portal_i18n %}
 
 {% block content %}
-  {% include "portal/includes/page_intro.html" %}
+  <section class="page-intro page-intro--clean">
+    <div class="container research-intro">
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ page_content.eyebrow }}</div>
+        <h1>{{ page_content.title }}</h1>
+        <p class="page-intro__lead">{{ page_content.intro }}</p>
+      </div>
+      {% if page_content.supporting_title or page_content.supporting_text %}
+        <aside class="research-intro__aside">
+          {% if page_content.supporting_title %}
+            <span class="chip">{{ page_content.supporting_title }}</span>
+          {% endif %}
+          {% if page_content.supporting_text %}
+            <p>{{ page_content.supporting_text }}</p>
+          {% endif %}
+        </aside>
+      {% endif %}
+    </div>
+  </section>
 
   <section class="section">
     <div class="container editorial-grid">
@@ -12,7 +30,7 @@
         <p>{{ site_settings.strategy_overview }}</p>
         <p>{{ site_settings.governance_overview }}</p>
       </article>
-      <article class="content-card content-card--panel">
+      <article class="content-card soft-panel-card">
         <h3>{% tr "Why this matters" %}</h3>
         <p>{% tr "This section reinforces the sense of an organized public institution: policy documents are discoverable, leadership priorities are visible, and implementation language remains clear and reliable." %}</p>
       </article>

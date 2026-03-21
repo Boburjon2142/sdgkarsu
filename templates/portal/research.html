@@ -2,7 +2,25 @@
 {% load portal_i18n %}
 
 {% block content %}
-  {% include "portal/includes/page_intro.html" %}
+  <section class="page-intro page-intro--clean">
+    <div class="container research-intro">
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ page_content.eyebrow }}</div>
+        <h1>{{ page_content.title }}</h1>
+        <p class="page-intro__lead">{{ page_content.intro }}</p>
+      </div>
+      {% if page_content.supporting_title or page_content.supporting_text %}
+        <aside class="research-intro__aside">
+          {% if page_content.supporting_title %}
+            <span class="chip">{{ page_content.supporting_title }}</span>
+          {% endif %}
+          {% if page_content.supporting_text %}
+            <p>{{ page_content.supporting_text }}</p>
+          {% endif %}
+        </aside>
+      {% endif %}
+    </div>
+  </section>
 
   <section class="section">
     <div class="container two-column">
@@ -24,7 +42,7 @@
           {% endfor %}
         </div>
       </div>
-      <aside class="content-card content-card--panel">
+      <aside class="content-card research-note-card">
         <h3>{% tr "Institutional positioning" %}</h3>
         <p>{% tr "Research is presented not as isolated outputs, but as part of a credible delivery architecture tied to policy, infrastructure, and public value creation." %}</p>
       </aside>
