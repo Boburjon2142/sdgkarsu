@@ -7,6 +7,7 @@ TRANSLATIONS = {
     "uz": {
         "Official University Sustainability Portal": "Universitetning Rasmiy Barqaror Rivojlanish Portali",
         "Language switcher": "Tilni almashtirish",
+        "Results": "Natijalar",
         "Reports": "Hisobotlar",
         "News": "Yangiliklar",
         "Contact": "Aloqa",

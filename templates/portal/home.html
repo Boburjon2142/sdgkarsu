@@ -4,6 +4,14 @@
 {% block content %}
   <section class="hero-section">
     <div class="container hero-layout">
+      <div class="hero-copy hero-copy--leader">
+        <div class="eyebrow">{% tr "Sustainability" %}</div>
+        <h1>{% tr "A sustainable future starts today" %}</h1>
+        <div class="hero-actions">
+          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Results" %}</a>
+        </div>
+      </div>
+
       <div class="hero-portrait-card">
         {% if site_settings.leader_photo %}
           <img class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
@@ -16,25 +24,23 @@
         </div>
       </div>
 
-      <div class="hero-copy hero-copy--leader">
-        <div class="eyebrow">{% tr "Sustainability" %}</div>
-        <h1>{% tr "A sustainable future starts today" %}</h1>
-        <div class="hero-author">Nabiyev Dilmurod Xamidullayevich</div>
-        <img class="hero-rankings-strip" src="{% static 'images/rankings-badges.svg' %}" alt="University ranking badges">
-        <div class="hero-actions">
-          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Programs" %}</a>
-          <a class="button button--secondary" href="{{ site_settings.hero_secondary_url }}">{% tr "Reports" %}</a>
-        </div>
-      </div>
-
       <div class="hero-stats hero-stats--full">
-        {% for stat in hero_stats %}
-          <article class="stat-card">
-            <strong class="counter" data-target="{{ stat.value|cut:'+'|cut:'%'|cut:',' }}">{{ stat.value }}</strong>
-            <span>{{ stat.label }}</span>
-            <p>{{ stat.description }}</p>
-          </article>
-        {% endfor %}
+        <article class="stat-card stat-card--hero stat-card--hero-featured">
+          <div class="stat-card--hero__content">
+            <strong>#403</strong>
+            <span>UI GreenMetric</span>
+            <p>World University Rankings</p>
+          </div>
+          <img class="stat-card--hero__logo" src="{% static 'images/uigreenmetric.png' %}" alt="UI GreenMetric logo">
+        </article>
+        <article class="stat-card stat-card--hero stat-card--hero-featured">
+          <div class="stat-card--hero__content">
+            <strong>#1500+</strong>
+            <span>THE Impact Rankings</span>
+            <p>Global university standing</p>
+          </div>
+          <img class="stat-card--hero__logo stat-card--hero__logo--impact" src="{% static 'images/impact.png' %}" alt="THE Impact Rankings logo">
+        </article>
       </div>
     </div>
   </section>

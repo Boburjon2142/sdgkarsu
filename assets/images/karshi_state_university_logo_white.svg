@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="684" viewBox="58 12 233 136" role="img" aria-labelledby="title desc">
+  <title id="title">Karshi State University logo</title>
+  <desc id="desc">Karshi State University English logo with white text.</desc>
+
+  <defs>
+    <linearGradient id="swooshGradEnWhite" x1="0%" y1="50%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#6f1b86"/>
+      <stop offset="60%" stop-color="#7f1c88"/>
+      <stop offset="86%" stop-color="#9f2e8d"/>
+      <stop offset="100%" stop-color="#e3a030"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M108 42 C145 38, 182 35, 219 28 C242 23, 264 21, 286 18
+           C271 30, 256 41, 238 57
+           C231 48, 211 43, 187 41
+           C162 40, 136 40, 108 42 Z"
+        fill="url(#swooshGradEnWhite)"/>
+
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="74" y="78" font-size="25" letter-spacing="0.2">KARSHI</text>
+    <text x="74" y="108" font-size="25" letter-spacing="0.2">STATE</text>
+    <text x="74" y="138" font-size="25" letter-spacing="0.2">UNIVERSITY</text>
+  </g>
+</svg>

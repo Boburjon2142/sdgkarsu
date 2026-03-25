@@ -281,6 +281,193 @@ SDG_1_DETAIL_UZ = {
 }
 
 
+SDG_1_DETAIL_UZ_CLEAN = {
+    "hero_title": "O'ta qashshoqlikka barham berish",
+    "idea_title": "Asosiy g'oya",
+    "idea_text": "Butun dunyoda barcha turdagi qashshoqlikni butkul yo'q qilish",
+    "article_mode": True,
+    "article_blocks": [
+        {
+            "type": "paragraph",
+            "content": "2015-yilda Birlashgan Millatlar Tashkiloti tomonidan belgilangan Barqaror rivojlanish maqsadlarining birinchi maqsadi Qashshoqlikning barcha shakllariga barham berish (keyingi o'rinlarda SDG 1 deb yuritiladi) deyiladi. BRM ga a'zo davlatlar \"Hech kimni ortda qoldirmaslik va eng uzoq hududlardagi aholiga birinchi navbatda yordamga borish\" majburiyatini o'z zimmalariga oldilar. SDG 1 o'ta qashshoqlikning barcha shakllariga, jumladan oziq-ovqat, toza ichimlik suvi va sanitariya yetishmasligiga barham berishga qaratilgan. Ushbu maqsadga erishish iqlim o'zgarishi va mojarolar keltirib chiqaradigan yangi tahdidlarga yechim topishni o'z ichiga oladi.",
+        },
+        {
+            "type": "paragraph",
+            "content": "SDG 1ni amalga oshirish uchun 7 maqsad va taraqqiyot yo'lini belgilash uchun 13 ko'rsatkich mavjud. Yuqoridagi vazifalarni amalga oshirgandan so'ng quyidagi natijaga erishiladi:",
+        },
+        {
+            "type": "list",
+            "items": [
+                "o'ta qashshoqlikni yo'q qilish",
+                "barcha turdagi qashshoqliklarni yarmiga qisqartirish",
+                "ijtimoiy himoya tizimlarini joriy etish",
+                "mulk, asosiy xizmatlar, texnologiyalar va iqtisodiy resurslardan foydalanishga teng huquqlarni ta'minlash",
+                "ekologik, iqtisodiy va ijtimoiy ofatlarga chidamlilikni oshirish",
+            ],
+        },
+        {
+            "type": "paragraph",
+            "content": "Taraqqiyot davom etayotganiga qaramay, dunyo aholisining 10 foizi qashshoqlikda yashaydi va sog'liqni saqlash, ta'lim, suv va kanalizatsiya kabi asosiy ehtiyojlarni qondirish uchun kurashmoqda. Haddan tashqari qashshoqlik daromadi past mamlakatlarda, ayniqsa, mojarolar va siyosiy g'alayonlardan jabrlangan mamlakatlarda hamon keng tarqalgan. 2015-yilgi statistika shuni ko'rsatadiki, o'ta qashshoqlikda yashovchi 736 million aholining yarmidan ko'pi Sahroi Kabir va janubiy Afrika hududlariga to'g'ri keladi. Bunday holatda, ijtimoiy siyosat jarayonida sezilarli siljishlarsiz, 2030-yilga kelib qashshoqlik keskin ortadi. 2016 yilgi statistikaga ko'ra, qishloqlarda qashshoqlik darajasi 17,2 foizni, shaharlarda esa 5,3 foizni tashkil etadi.",
+        },
+        {
+            "type": "paragraph",
+            "content": "Kambag'allikni o'lchaydigan asosiy ko'rsatkichlardan biri bu xalqaro va milliy qashshoqlik chegarasidan pastda yashaydigan aholi ulushidir. Ijtimoiy himoya tizimlari bilan qamrab olingan va asosiy xizmatlardan foydalana oladigan uy xo'jaliklarida yashovchi aholi ulushini o'lchash ham qashshoqlik darajasini ko'rsatib beruvchi ko'rsatkichlardan biridir. 2020-yildagi COVID-19 pandemiyasi qashshoqlikka barham berishni qiyinlashtirdi. 2020-yil sentabrida chop etilgan tadqiqot shuni ko'rsatdiki, qashshoqlik oxirgi 20 yil ichida barqaror ravishda pasayib borayotgan bo'lsa-da, bir necha oy ichida 7 foizga oshgan.",
+        },
+        {
+            "type": "paragraph",
+            "content": "Qashshoqlik bolalarni ham chetlab o'tmadi. Har yil qancha bola ochlik va muhtojlikda yashayotgani haqida statistika qilinib boriladi. Lekin bu statistikalar doim ham to'g'ri chiqavermaydi. Misol uchun, 2013-yildagi ma'lumotlarga qaraydigan bo'lsak, taxminan 385 million bola kuniga 1,90 AQSh dollaridan kam pul bilan yashagan. Dunyo bo'ylab bolalarning ahvoli to'g'risidagi to'liq ma'lumotlar mavhumligi tufayli bu raqamlar ishonchsizdir. O'rtacha 97 foiz mamlakatlarda kam ta'minlangan bolalarning ahvolini aniqlash va SDG 1ga erishish yo'llarini ishlab chiqish uchun yetarlicha ma'lumotlar yo'q. Mamlakatlarning 63 foizida esa bolalar qashshoqligi haqida hech qanday statistika yo'q.",
+        },
+        {
+            "type": "paragraph",
+            "content": "1990-yildan buyon dunyo mamlakatlari qashshoqlikni kamaytirish uchun turli chora-tadbirlarni amalga oshirib, samarali natijalarga erishdi. 2013-yilda o'ta qashshoqlikda yashovchi odamlar soni 1,8 milliarddan 776 milliongacha kamaydi. Biroq, quyori natijalarga qaramasadan odamlar qashshoqlikda yashashda davom etmoqda. Jahon bankining hisob-kitoblariga ko'ra, 2020-yilda 40 dan 60 milliongacha odam o'ta qashshoqlikka tushib qoladi",
+        },
+        {
+            "type": "paragraph",
+            "content": "Dunyoning eng qashshoq mamlakatlarida iqtisodiy o'sishning yo'qligi, tengsizlikning kuchayishi, davlatchilikning tobora zaiflashib borayotgani va iqlim o'zgarishi kabi oqibatlar SDG 1ga erishishga to'sqinlik qilmoqda. Mahalliy hukumatlar qashshoqlik bilan bog'liq masalalarni yechishda muhim rol o'ynaydi. Butun dunyoda mahalliy hukumatni vazifalari turlicha bo'lib, quyidagi vazifalar bajaradilar:",
+        },
+        {
+            "type": "list",
+            "items": [
+                "kam ta'minlanganlarning ehtiyojlarini qondirish",
+                "hisobdorlik va shaffoflikni ta'minlash uchun yaxshi boshqaruv",
+                "bandlikni yaxshilash uchun inklyuziv ta'limni yaxshi yo'lga qo'yish",
+                "ehtiyojmand aholi va qishloq jamoalariga ta'sir ko'rsatadigan davlat korxonalarining biznes etikasi ustida ishlash",
+            ],
+        },
+    ],
+    "sections": [
+        {
+            "title": "Umumiy ma'lumot",
+            "paragraphs": [
+                "2015-yilda Birlashgan Millatlar Tashkiloti tomonidan belgilangan Barqaror rivojlanish maqsadlarining birinchi maqsadi Qashshoqlikning barcha shakllariga barham berish (keyingi o'rinlarda SDG 1 deb yuritiladi) deyiladi.",
+                "BRM ga a'zo davlatlar \"Hech kimni ortda qoldirmaslik va eng uzoq hududlardagi aholiga birinchi navbatda yordamga borish\" majburiyatini o'z zimmalariga oldilar.",
+                "SDG 1 o'ta qashshoqlikning barcha shakllariga, jumladan oziq-ovqat, toza ichimlik suvi va sanitariya yetishmasligiga barham berishga qaratilgan.",
+                "Ushbu maqsadga erishish iqlim o'zgarishi va mojarolar keltirib chiqaradigan yangi tahdidlarga yechim topishni o'z ichiga oladi.",
+            ],
+        },
+        {
+            "title": "Asosiy maqsadlar va kutiladigan natijalar",
+            "paragraphs": [
+                "SDG 1ni amalga oshirish uchun 7 maqsad va taraqqiyot yo'lini belgilash uchun 13 ko'rsatkich mavjud.",
+                "Yuqoridagi vazifalarni amalga oshirgandan so'ng quyidagi natijaga erishiladi:",
+            ],
+            "bullets": [
+                "o'ta qashshoqlikni yo'q qilish",
+                "barcha turdagi qashshoqliklarni yarmiga qisqartirish",
+                "ijtimoiy himoya tizimlarini joriy etish",
+                "mulk, asosiy xizmatlar, texnologiyalar va iqtisodiy resurslardan foydalanishga teng huquqlarni ta'minlash",
+                "ekologik, iqtisodiy va ijtimoiy ofatlarga chidamlilikni oshirish",
+            ],
+        },
+        {
+            "title": "Global holat",
+            "paragraphs": [
+                "Taraqqiyot davom etayotganiga qaramay, dunyo aholisining 10 foizi qashshoqlikda yashaydi va sog'liqni saqlash, ta'lim, suv va kanalizatsiya kabi asosiy ehtiyojlarni qondirish uchun kurashmoqda.",
+                "Haddan tashqari qashshoqlik daromadi past mamlakatlarda, ayniqsa, mojarolar va siyosiy g'alayonlardan jabrlangan mamlakatlarda hamon keng tarqalgan.",
+                "2015-yilgi statistika shuni ko'rsatadiki, o'ta qashshoqlikda yashovchi 736 million aholining yarmidan ko'pi Sahroi Kabir va janubiy Afrika hududlariga to'g'ri keladi.",
+                "Bunday holatda, ijtimoiy siyosat jarayonida sezilarli siljishlarsiz, 2030-yilga kelib qashshoqlik keskin ortadi.",
+                "2016 yilgi statistikaga ko'ra, qishloqlarda qashshoqlik darajasi 17,2 foizni, shaharlarda esa 5,3 foizni tashkil etadi.",
+            ],
+        },
+        {
+            "title": "Qashshoqlikni o'lchash va pandemiya ta'siri",
+            "paragraphs": [
+                "Kambag'allikni o'lchaydigan asosiy ko'rsatkichlardan biri bu xalqaro va milliy qashshoqlik chegarasidan pastda yashaydigan aholi ulushidir.",
+                "Ijtimoiy himoya tizimlari bilan qamrab olingan va asosiy xizmatlardan foydalana oladigan uy xo'jaliklarida yashovchi aholi ulushini o'lchash ham qashshoqlik darajasini ko'rsatib beruvchi ko'rsatkichlardan biridir.",
+                "2020-yildagi COVID-19 pandemiyasi qashshoqlikka barham berishni qiyinlashtirdi.",
+                "2020-yil sentabrida chop etilgan tadqiqot shuni ko'rsatdiki, qashshoqlik oxirgi 20 yil ichida barqaror ravishda pasayib borayotgan bo'lsa-da, bir necha oy ichida 7 foizga oshgan.",
+            ],
+        },
+        {
+            "title": "Bolalar va qashshoqlik",
+            "paragraphs": [
+                "Qashshoqlik bolalarni ham chetlab o'tmadi. Har yil qancha bola ochlik va muhtojlikda yashayotgani haqida statistika qilinib boriladi. Lekin bu statistikalar doim ham to'g'ri chiqavermaydi.",
+                "Misol uchun, 2013-yildagi ma'lumotlarga qaraydigan bo'lsak, taxminan 385 million bola kuniga 1,90 AQSh dollaridan kam pul bilan yashagan.",
+                "Dunyo bo'ylab bolalarning ahvoli to'g'risidagi to'liq ma'lumotlar mavhumligi tufayli bu raqamlar ishonchsizdir.",
+                "O'rtacha 97 foiz mamlakatlarda kam ta'minlangan bolalarning ahvolini aniqlash va SDG 1ga erishish yo'llarini ishlab chiqish uchun yetarlicha ma'lumotlar yo'q.",
+                "Mamlakatlarning 63 foizida esa bolalar qashshoqligi haqida hech qanday statistika yo'q.",
+            ],
+        },
+        {
+            "title": "Ijobiy siljishlar va saqlanib qolayotgan xavflar",
+            "paragraphs": [
+                "1990-yildan buyon dunyo mamlakatlari qashshoqlikni kamaytirish uchun turli chora-tadbirlarni amalga oshirib, samarali natijalarga erishdi.",
+                "2013-yilda o'ta qashshoqlikda yashovchi odamlar soni 1,8 milliarddan 776 milliongacha kamaydi.",
+                "Biroq, yuqori natijalarga qaramasadan odamlar qashshoqlikda yashashda davom etmoqda.",
+                "Jahon bankining hisob-kitoblariga ko'ra, 2020-yilda 40 dan 60 milliongacha odam o'ta qashshoqlikka tushib qoladi.",
+                "Dunyoning eng qashshoq mamlakatlarida iqtisodiy o'sishning yo'qligi, tengsizlikning kuchayishi, davlatchilikning tobora zaiflashib borayotgani va iqlim o'zgarishi kabi oqibatlar SDG 1ga erishishga to'sqinlik qilmoqda.",
+            ],
+        },
+        {
+            "title": "Mahalliy hukumatlarning roli",
+            "paragraphs": [
+                "Mahalliy hukumatlar qashshoqlik bilan bog'liq masalalarni yechishda muhim rol o'ynaydi.",
+                "Butun dunyoda mahalliy hukumatni vazifalari turlicha bo'lib, quyidagi vazifalar bajaradilar:",
+            ],
+            "bullets": [
+                "kam ta'minlanganlarning ehtiyojlarini qondirish",
+                "hisobdorlik va shaffoflikni ta'minlash uchun yaxshi boshqaruv",
+                "bandlikni yaxshilash uchun inklyuziv ta'limni yaxshi yo'lga qo'yish",
+                "ehtiyojmand aholi va qishloq jamoalariga ta'sir ko'rsatadigan davlat korxonalarining biznes etikasi ustida ishlash",
+            ],
+        },
+    ],
+}
+
+
+SDG_2_DETAIL_UZ_CLEAN = {
+    "hero_title": "Ochlikka barham berish",
+    "idea_title": "Asosiy g'oya",
+    "idea_text": "Ochlikni tugatish, oziq-ovqat xavfsizligini ta'minlash va oziqlanishni yaxshilash hamda qishloq xo'jaligining barqaror rivojlanishiga ko'maklashish",
+    "article_mode": True,
+    "article_blocks": [
+        {
+            "type": "paragraph",
+            "content": "Barqaror rivojlanishning 2-maqsadi Ochlikni tugatish, oziq-ovqat xavfsizligini ta'minlash va oziqlanishni yaxshilash hamda qishloq xo'jaligining barqaror rivojlanishiga ko'maklashish (keying o'rinlarda SDG 2 deb yuritiladi) deyiladi. SDG 2 oziq-ovqat xavfsizligi, ovqatlanish patsioniga foydali mahsulotlarni qo'shish, qishloq hayotini tubdan o'zgartirish va barqaror qishloq xo'jaligi o'rtasida uzviy o'zaro bog'liqlik borligini ko'rsatadi. Birlashgan Millatlar Tashkilotining ma'lumotlariga ko'ra, 690 millionga yaqin odam och qolmoqda, bu dunyo aholisining 10 foizdan sal kamrog'ini tashkil etadi. Har to'qqiz kishidan biri har kecha och uxlab yotadi, jumladan, hozirda Janubiy Sudan, Somali, Yaman va Nigeriyada ochlikdan o'lish xavfi ostida bo'lgan 20 million kishi borligi aytilmoqda.",
+        },
+        {
+            "type": "paragraph",
+            "content": "2-maqsadni amalga oshirish uchun 8 maqsad va taraqqiyot yo'lini belgilash uchun 14 ko'rsatkich mavjud Yuqoridagi vazifalarni amalga oshirgandan so'ng quyidagi natijaga erishiladi:",
+        },
+        {
+            "type": "list",
+            "items": [
+                "ochlikni yo'q qilish va oziq-ovqat bilan ta'minlashni yaxshilash",
+                "to'yib ovqatlanmaslikning barcha shakllarini yo'q qilish",
+                "qishloq xo'jaligi hosildorligini oshirish",
+                "barqaror oziq-ovqat ishlab chiqarish tizimlari va barqaror qishloq xo'jaligi amaliyoti kengaytirish",
+                "urug'lar, ekinlar, qishloq xo'jaligi va uy hayvonlarining genetik xilma-xilligi ko'paytirish",
+                "investitsiyalar, tadqiqot va texnologiya olib kirish",
+            ],
+        },
+        {
+            "type": "paragraph",
+            "content": "To'yib ovqatlanmaslik darajasi ko'p yillar davomida ma'lum bir foizda kamaydi. Lekin 2015-yildan boshlab och qolish darajasini yana ortib bordi. Buning asosiy sababi, oziq-ovqat tizimlaridagi turli xil yetishmovchiliklar, iqlim o'zgarishlari, chigirtkalar invaziyasi va COVID-19 pandemiyasi hisoblanadi. Bu oqibatlar bilvosita xarid qobiliyatini, oziq-ovqat mahsulotlarini ishlab chiqarish va tarqatish qobiliyatini pasaytiradi. Bu esa aholining eng zaif qatlamlariga ta'sir qiladi va qo'shimcha ravishda ularning oziq-ovqat mahsulotlaridan foydalanishini cheklaydi. Statistik ma'lumotga ko'ra, 2020-yilda 142 milliongacha odam COVID-19 pandemiyasi natijasida to'yib ovqatlanmaslikdan aziyat chekkan. Bundan tashqari, COVID-19 pandemiyasi davrida iqtisodiy o'sish darajasi sust bo'lganligi sababli, 2020-yil oxiriga kelib, dunyoda to'yib ovqatlanmaydigan odamlarning umumiy soniga 83 dan 132 milliongacha oshdi.",
+        },
+        {
+            "type": "paragraph",
+            "content": "Bunday holatda dunyo 2030-yilga borib ocharchilikni yo'qota olmaydi. Ayniqsa, Afrikadagi aholi ochlikdan qutilishi dargumon. BRM ga a'zo davlatlarni ochlik va oziq-ovqat yetishmovchiligini yo'q qilish uchun hali ko'p ish qilish kerakligidan ogohlantiradi.",
+        },
+        {
+            "type": "paragraph",
+            "content": "2-maqsad 2030-yilga kelib to'yib ovqatlanmaslik va ochlikning barcha shakllariga barham berish va yil davomida har bir kishi, ayniqsa bolalar uchun yetarli ovqatlanishni ta'minlashni maqsad qilgan. Dunyo bo'ylab taxminan 155 million bolaga yomon ta'sir ko'rsatadigan to'yib ovqatlanmaslikdir. Bu bolalarning aqliy va jismoniy rivojlanishini sekinlashtiradi, ularda o'lim va kasallik xavfini oshiradi.",
+        },
+        {
+            "type": "paragraph",
+            "content": "2017-yil holatiga ko'ra, BMTga a'zo 202 ta davlatdan faqat 26 tasi to'yib ovqatlanmaslikni tugatish bo'yicha BRM maqsadiga erishish yo'lida ketayotgan edi. 20 foizi esa hech qanday muvaffaqiyatga erisha olmadi, deyarli 70 foizida hech qanday strategik ish amalga oshirilmagan.",
+        },
+        {
+            "type": "paragraph",
+            "content": "Noto'g'ri ovqatlanish va haddan tashqari ochlik barqaror rivojlanish yo'lidagi asosiy to'siqdir. Ikki to'siq odamlar uchun qiyinchilik tug'diradi. Och odamlar unumdorligi past bo'ladi va kasalliklarga ko'proq moyil bo'ladi. Shunday qilib, ular o'z hayotlarini yaxshilay olmaydilar. 2-maqsad dunyo aholisini saqlab qolish va hech kim hech qachon ochlikdan aziyat chekmasligini ta'minlash uchun asos yaratadi. Bu zamonaviy texnologiyalar va adolatli taqsimlash tizimlaridan foydalangan holda barqaror qishloq xo'jaligini rivojlantirish orqali amalga oshirilishi kerak. Qishloq xo'jaligidagi innovatsiyalar oziq-ovqat ishlab chiqarishni ko'paytirish va chiqindilarini kamaytirish uchun mo'ljallangan.",
+        },
+        {
+            "type": "paragraph",
+            "content": "2-maqsadda aytilishicha, 2030-yilgacha odamlar ochlik va to'yib ovqatlanmaslikning barcha shakllariga barham berish orqali oziq-ovqat xavfsizligiga erishishlari kerak. Bunga qishloq xo'jaligi mahsuldorligini va kichik oziq-ovqat ishlab chiqaruvchilarning (ayniqsa, ayollar va mahalliy xalqlar) daromadlarini ikki baravar oshirish, oziq-ovqat ishlab chiqarishning barqaror tizimlarini ta'minlash, yer va tuproq sifatini izchil yaxshilash orqali erishiladi. Qishloq xo'jaligi dunyodagi eng yirik ish beruvchi bo'lib, dunyo aholisining 40 foizini tirikchilik bilan ta'minlaydi. Bu ehtiyojmand qishloq uy xo'jaliklari uchun eng katta daromad manbai hisoblanadi. Rivojlanayotgan mamlakatlarda qishloq xo'jaligi ishchi kuchining qariyb 43%, Osiyo va Afrikaning ayrim qismlarida esa 50% dan ortig'ini ayollar tashkil qiladi. Biroq, ayollar yerning atigi 20 foiziga egalik qiladi.",
+        },
+    ],
+}
+
+
 SDG_2_DETAIL_UZ = {
     "hero_title": "Ochlikka barham berish",
     "idea_title": "Asosiy g‘oya",
@@ -1466,9 +1653,9 @@ class SDGDetailView(BasePortalContextMixin, TemplateView):
         context["goal_work_items"] = SDGWorkItem.objects.filter(goal_number=number)
 
         if number == 1 and language_code == "uz":
-            context["detail_content"] = SDG_1_DETAIL_UZ
+            context["detail_content"] = SDG_1_DETAIL_UZ_CLEAN
         elif number == 2 and language_code == "uz":
-            context["detail_content"] = SDG_2_DETAIL_UZ
+            context["detail_content"] = SDG_2_DETAIL_UZ_CLEAN
         elif number == 3 and language_code == "uz":
             context["detail_content"] = SDG_3_DETAIL_UZ_CLEAN
         elif number == 4 and language_code == "uz":

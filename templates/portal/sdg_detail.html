@@ -14,26 +14,44 @@
             </div>
           </div>
 
-          <div class="sdg-detail-page__idea reveal">
-            <h2>{{ detail_content.idea_title }}</h2>
-            <p>{{ detail_content.idea_text }}</p>
-          </div>
-
-          {% for section in detail_content.sections %}
-            <section class="sdg-detail-page__section reveal">
-              <h3>{{ section.title }}</h3>
-              {% for paragraph in section.paragraphs %}
-                <p>{{ paragraph }}</p>
+          {% if detail_content.article_mode %}
+            <article class="sdg-detail-page__article reveal">
+              <h2>{{ detail_content.idea_title }}</h2>
+              <p class="sdg-detail-page__lead">{{ detail_content.idea_text }}</p>
+              {% for block in detail_content.article_blocks %}
+                {% if block.type == "paragraph" %}
+                  <p>{{ block.content }}</p>
+                {% elif block.type == "list" %}
+                  <ul class="sdg-detail-page__list">
+                    {% for item in block.items %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               {% endfor %}
-              {% if section.bullets %}
-                <ul class="sdg-detail-page__list">
-                  {% for bullet in section.bullets %}
-                    <li>{{ bullet }}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </section>
-          {% endfor %}
+            </article>
+          {% else %}
+            <div class="sdg-detail-page__idea reveal">
+              <h2>{{ detail_content.idea_title }}</h2>
+              <p>{{ detail_content.idea_text }}</p>
+            </div>
+
+            {% for section in detail_content.sections %}
+              <section class="sdg-detail-page__section reveal">
+                <h3>{{ section.title }}</h3>
+                {% for paragraph in section.paragraphs %}
+                  <p>{{ paragraph }}</p>
+                {% endfor %}
+                {% if section.bullets %}
+                  <ul class="sdg-detail-page__list">
+                    {% for bullet in section.bullets %}
+                      <li>{{ bullet }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </section>
+            {% endfor %}
+          {% endif %}
 
           {% if goal_work_items %}
             <section class="sdg-work-section reveal">
