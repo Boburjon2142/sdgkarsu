@@ -14,6 +14,7 @@ TRANSLATIONS = {
         "Main navigation": "Asosiy navigatsiya",
         "Home": "Bosh sahifa",
         "About": "Haqida",
+        "Sustainability governance": "Barqarorlik boshqaruvi",
         "About Sustainability": "Barqarorlik haqida",
         "Sustainability": "Barqarorlik",
         "Research & Education": "Tadqiqot va ta'lim",
