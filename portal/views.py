@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.views.generic import DetailView, TemplateView
 
@@ -1864,3 +1864,7 @@ def robots_txt(_request):
         ]
     )
     return HttpResponse(content, content_type="text/plain")
+
+
+def health_check(_request):
+    return JsonResponse({"status": "ok"})

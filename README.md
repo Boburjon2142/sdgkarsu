@@ -22,6 +22,9 @@ Official-grade multi-page institutional website built with Django, Django templa
    `python manage.py createsuperuser`
 6. Run development server:
    `python manage.py runserver`
+7. Verify the local app responds:
+   `python manage.py check`
+   `curl http://127.0.0.1:8000/health/`
 
 Seed content is included in the `portal` migrations so the homepage and all core sections render immediately after migration.
 
@@ -54,11 +57,15 @@ The admin panel allows editors to manage:
    `python manage.py collectstatic --noinput`
 5. Run a production readiness check:
    `python manage.py check --deploy`
-6. Configure the web app to point to `config.wsgi`.
-7. Add static root mapping to `/static/` -> `staticfiles`.
-8. Add media root mapping to `/media/` -> `media`.
-9. Reload the PythonAnywhere web app.
-10. If you want the site to open with ready demo cards, images, and SDG content, run:
+6. Verify the app through the local reverse-proxy target before exposing the domain:
+   `curl -I http://127.0.0.1:8000/`
+   `curl -I http://127.0.0.1:8000/ -H "Host: your-domain.example"`
+   `curl -kI --resolve your-domain.example:443:127.0.0.1 https://your-domain.example/`
+7. Configure the web app to point to `config.wsgi`.
+8. Add static root mapping to `/static/` -> `staticfiles`.
+9. Add media root mapping to `/media/` -> `media`.
+10. Reload the PythonAnywhere web app.
+11. If you want the site to open with ready demo cards, images, and SDG content, run:
    `python manage.py load_demo_content --reset`
 
 ## Demo content on PythonAnywhere
@@ -94,4 +101,18 @@ The admin panel allows editors to manage:
 - Security defaults are enabled automatically when `DJANGO_DEBUG=0`.
 - Use `python manage.py check --deploy` before going live.
 - The project includes `robots.txt` and `sitemap.xml`
+- The project includes a lightweight health endpoint at `/health/`
 - Media and static paths are already configured for PythonAnywhere
+
+## Reverse Proxy Notes
+
+If you deploy behind Nginx or another reverse proxy, forward the original scheme to Django:
+
+`proxy_set_header X-Forwarded-Proto $scheme;`
+
+Useful smoke tests after every deploy:
+
+- `curl -I http://127.0.0.1:8000/`
+- `curl -I http://127.0.0.1:8000/ -H "Host: your-domain.example"`
+- `curl -kI --resolve your-domain.example:443:127.0.0.1 https://your-domain.example/`
+- `curl https://your-domain.example/health/`

@@ -746,6 +746,44 @@ select {
   gap: 1.5rem;
 }
 
+.stat-card--hero-greenmetric {
+  justify-content: center;
+}
+
+.stat-card--hero-impact {
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.stat-card--hero-greenmetric .stat-card--hero__content {
+  align-items: center;
+  text-align: center;
+}
+
+.stat-card--hero-impact .stat-card--hero__content {
+  flex: 0 0 auto;
+  min-width: max-content;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.stat-card--hero-greenmetric .stat-card--hero__logo {
+  width: 190px;
+  margin-inline: auto;
+}
+
+.stat-card--hero-impact .stat-card--hero__logo {
+  width: min(100%, 460px);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.stat-card--hero-impact .stat-card--hero__content strong,
+.stat-card--hero-impact .stat-card--hero__content span,
+.stat-card--hero-impact .stat-card--hero__content p {
+  white-space: nowrap;
+}
+
 .stat-card--hero__logo {
   width: 210px;
   max-width: 100%;

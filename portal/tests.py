@@ -61,6 +61,12 @@ class PortalSmokeTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "A sustainable future starts today")
 
+    def test_health_check_returns_ok(self):
+        response = Client().get(reverse("health-check"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertJSONEqual(response.content, {"status": "ok"})
+
     def test_homepage_switches_to_uzbek_copy(self):
         client = Client()
         session = client.session

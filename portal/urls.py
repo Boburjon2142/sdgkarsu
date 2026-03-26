@@ -14,6 +14,7 @@ from .views import (
     SDGDetailView,
     SDGUpdatesView,
     SustainabilityView,
+    health_check,
     robots_txt,
     set_portal_language,
 )
@@ -34,5 +35,6 @@ urlpatterns = [
     path("news/<slug:slug>/", NewsDetailView.as_view(), name="news-detail"),
     path("events/<slug:slug>/", EventDetailView.as_view(), name="event-detail"),
     path("contact/", ContactView.as_view(), name="contact"),
+    path("health/", health_check, name="health-check"),
     path("robots.txt", robots_txt, name="robots-txt"),
 ]
