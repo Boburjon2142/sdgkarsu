@@ -5,110 +5,122 @@
   <section class="page-intro page-intro--clean">
     <div class="container research-intro">
       <div class="research-intro__main">
-        <div class="eyebrow">{{ page_content.eyebrow }}</div>
-        <h1>{{ page_content.title }}</h1>
-        <p class="page-intro__lead">{{ page_content.intro }}</p>
+        <div class="eyebrow">{% tr "Sustainability governance" %}</div>
+        <h1>{% tr "Institutional sustainability governance" %}</h1>
+        <p class="page-intro__lead">{% tr "Mission, vision, governance architecture, leadership accountability, and strategic direction are presented here as one integrated institutional framework." %}</p>
       </div>
-      {% if page_content.supporting_title or page_content.supporting_text %}
-        <aside class="research-intro__aside">
-          {% if page_content.supporting_title %}
-            <span class="chip">{{ page_content.supporting_title }}</span>
-          {% endif %}
-          {% if page_content.supporting_text %}
-            <p>{{ page_content.supporting_text }}</p>
-          {% endif %}
-        </aside>
-      {% endif %}
+      <aside class="research-intro__aside">
+        <span class="chip">{% tr "Governance note" %}</span>
+        <p>{% tr "This section explains how leadership, priorities, execution, and institutional responsibility are coordinated within the sustainability governance system." %}</p>
+      </aside>
     </div>
   </section>
 
   <section class="section">
-    <div class="container editorial-grid">
-      <article class="content-card content-card--large">
-        <div class="eyebrow">{% tr "Mission and vision" %}</div>
-        <h2>{% tr "Editorial-style institutional narrative with formal clarity." %}</h2>
-        <p>{{ site_settings.mission }}</p>
-        <p>{{ site_settings.vision }}</p>
-      </article>
-      <article class="content-card about-callout-card">
-        <h3>{% tr "Strategic approach" %}</h3>
-        <p>{{ site_settings.strategic_approach }}</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section--soft">
     <div class="container">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">{% tr "Institutional values" %}</div>
-          <h2>{% tr "The platform communicates values through governance and execution, not only statements." %}</h2>
-        </div>
-      </div>
-      <div class="card-grid card-grid--three">
-        {% for item in values %}
-          <article class="content-card reveal">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container two-column">
-      <article>
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">{% tr "Governance" %}</div>
-            <h2>{% tr "Clear roles, clear accountability, clear delivery ownership." %}</h2>
-          </div>
-        </div>
-        <div class="timeline-list">
-          {% for role in governance_roles %}
-            <article class="timeline-card reveal">
-              <strong>{{ role.title }}</strong>
-              <p>{{ role.responsibility }}</p>
-            </article>
-          {% endfor %}
-        </div>
-      </article>
-      <article>
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">{% tr "Message from the leadership" %}</div>
-            <h2>{{ site_settings.leader_name }}</h2>
-          </div>
-        </div>
-        <div class="content-card about-callout-card">
-          <p class="leader-title">{{ site_settings.leader_title }}</p>
-          <blockquote>{{ site_settings.leader_message }}</blockquote>
-          <p>{{ site_settings.governance_overview }}</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section--tint">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-            <div class="eyebrow">{% tr "Institutional priorities" %}</div>
-            <h2>{% tr "Priority areas designed to support professional decision-making and public trust." %}</h2>
-        </div>
-      </div>
-      <div class="priority-grid">
-        {% for item in strategic_priorities %}
-          <article class="priority-card reveal">
-            <span class="priority-icon">{{ item.icon|upper|slice:":2" }}</span>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.summary }}</p>
-            {% if item.metric %}
-              <span class="chip">{{ item.metric }}</span>
+      <div class="governance-accordion">
+        <details class="governance-panel" open>
+          <summary class="governance-panel__summary">
+            {% if request.LANGUAGE_CODE == "uz" %}
+              Universitet barqarorlik siyosati
+            {% else %}
+              University sustainability policy
             {% endif %}
-          </article>
-        {% endfor %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card content-card--large">
+                {% if request.LANGUAGE_CODE == "uz" %}
+                  <h2>Qarshi davlat universiteti atrof-muhit barqarorligi siyosati</h2>
+                  <p>Universitet barqaror va ekologik mas'uliyatli akademik muhitni rivojlantirishga sodiqdir. Siyosat ta'lim, tadqiqot, boshqaruv va jamoatchilik bilan hamkorlik jarayonlariga barqarorlik tamoyillarini tizimli integratsiya qilishni nazarda tutadi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>tabiiy resurslardan oqilona foydalanish va ekologik mas'uliyatni kuchaytirish;</li>
+                    <li>issiqxona gazlari chiqindilarini kamaytirish va energiya samaradorligini oshirish;</li>
+                    <li>suv, chiqindi, transport va iste'mol boshqaruvida ilg'or yondashuvlarni joriy etish;</li>
+                    <li>milliy va xalqaro ekologik me'yorlar hamda standartlarga muvofiqlikni ta'minlash.</li>
+                  </ul>
+                {% else %}
+                  <h2>Environmental sustainability policy of Karshi State University</h2>
+                  <p>The University treats environmental sustainability as a core institutional priority and integrates sustainability principles into academic, research, operational, and community-facing activities.</p>
+                  <ul class="governance-bullet-list">
+                    <li>responsible use of natural resources and stronger environmental accountability;</li>
+                    <li>reduction of greenhouse gas emissions and improved energy efficiency;</li>
+                    <li>advanced approaches to water, waste, transport, and sustainable consumption;</li>
+                    <li>alignment with national and international environmental standards.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel">
+          <summary class="governance-panel__summary">
+            {% if request.LANGUAGE_CODE == "uz" %}
+              Barqaror xaridlar siyosati (2025-2030)
+            {% else %}
+              Sustainable procurement policy (2025-2030)
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card about-callout-card">
+                {% if request.LANGUAGE_CODE == "uz" %}
+                  <p>Barqaror xaridlar siyosati universitet xarid faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishga qaratilgan.</p>
+                  <ul class="governance-bullet-list">
+                    <li>narx, texnik sifat va ESG ko'rsatkichlari asosida tender baholash tizimi qo'llanadi;</li>
+                    <li>energiya samarador uskunalar, ekologik sertifikatlangan mahsulotlar va kam chiqindili materiallarga ustuvorlik beriladi;</li>
+                    <li>mahalliy ishlab chiqaruvchilar, kichik biznes va ijtimoiy mas'ul yetkazib beruvchilar rag'batlantiriladi;</li>
+                    <li>2030 yilgacha sustainable procurement share 40%, eco-certified products 30%, supplier ESG compliance 70% va energy efficient equipment 50%ga yetkazish ko'zda tutilgan.</li>
+                  </ul>
+                {% else %}
+                  <p>The sustainable procurement policy introduces economic efficiency, environmental responsibility, and social sustainability into university purchasing decisions.</p>
+                  <ul class="governance-bullet-list">
+                    <li>tenders are evaluated through price, technical quality, and ESG performance criteria;</li>
+                    <li>priority is given to energy-efficient equipment, eco-certified goods, and lower-waste materials;</li>
+                    <li>local producers, small businesses, and socially responsible suppliers are encouraged;</li>
+                    <li>the 2030 targets include a 40% sustainable procurement share, 30% eco-certified products, 70% supplier ESG compliance, and 50% energy-efficient equipment.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel">
+          <summary class="governance-panel__summary">
+            {% if request.LANGUAGE_CODE == "uz" %}
+              Barqaror investitsiya siyosati (2025-2030)
+            {% else %}
+              Sustainable investment policy (2025-2030)
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card">
+                {% if request.LANGUAGE_CODE == "uz" %}
+                  <p>Barqaror investitsiya siyosati universitetning barcha investitsion qarorlariga ESG, yashil iqtisodiyot va uzoq muddatli iqtisodiy samaradorlik mezonlarini integratsiya qiladi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>kapital qo'yilmalar, infratuzilma loyihalari, xalqaro grantlar, modernizatsiya va PPP loyihalariga tatbiq etiladi;</li>
+                    <li>har bir loyiha Environmental impact, Energy efficiency, Social impact, Governance va Financial sustainability mezonlari bo'yicha baholanadi;</li>
+                    <li>minimal ESG ball 60 bo'lib, undan past loyihalar moliyalashtirilmaydi;</li>
+                    <li>ko'mirga asoslangan energetika, tamaki, qurol ishlab chiqarish, jiddiy ekologik zarar yetkazuvchi va inson huquqlarini buzuvchi faoliyatlarga investitsiya kiritilmaydi;</li>
+                    <li>moliyalashtirish manbalari davlat budjeti, maqsadli jamg'armalar, xalqaro moliya institutlari, yashil obligatsiyalar va xususiy investitsiyalarni o'z ichiga oladi.</li>
+                  </ul>
+                {% else %}
+                  <p>The sustainable investment policy integrates ESG, green economy principles, and long-term financial viability into the University's investment decisions.</p>
+                  <ul class="governance-bullet-list">
+                    <li>it applies to capital investments, infrastructure, grants, modernization projects, and public-private partnership initiatives;</li>
+                    <li>each project is scored against environmental impact, energy efficiency, social impact, governance, and financial sustainability criteria;</li>
+                    <li>the minimum ESG threshold is 60 points, and projects below that score are not financed;</li>
+                    <li>the University excludes coal-based energy, tobacco, weapons production, severe environmental harm, and human-rights-violating activities from investment;</li>
+                    <li>funding sources include the state budget, targeted funds, international finance institutions, green bonds, and private investment.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </section>

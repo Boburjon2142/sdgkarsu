@@ -443,6 +443,7 @@
 
   .page-intro__panel,
   .research-intro__aside,
+  .governance-panel,
   .soft-panel-card,
   .about-callout-card,
   .research-note-card {
@@ -493,6 +494,15 @@
 
   .filters {
     gap: 0.65rem;
+  }
+
+  .governance-panel__summary {
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  .governance-panel__content {
+    padding: 0 0.8rem 0.8rem;
   }
 
   .chip {
