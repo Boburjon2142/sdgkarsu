@@ -47,6 +47,25 @@
 
   <section class="section section--cool">
     <div class="container">
+      <div class="lined-title lined-title--news">
+        <span>{% tr "Sustainability news" %}</span>
+      </div>
+
+      <div class="sdg-icons-grid">
+        {% for goal in sdg_goals %}
+          <a class="sdg-news-card reveal" href="{% url 'sdg-detail' goal.number %}">
+            <img src="{% static goal.image %}" alt="{{ goal.title }}">
+            {% if current_language == "uz" %}
+              <div class="sdg-news-card__caption">{{ goal.title }}</div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cool">
+    <div class="container">
       <div class="news-sdg-block">
         <div class="lined-title lined-title--news">
           <span>{% tr "Latest news" %}</span>

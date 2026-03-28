@@ -736,16 +736,15 @@ select {
 }
 
 .stat-card--hero {
-  min-height: 92px;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  min-height: 52px;
+  padding: 0.1rem 0.9rem;
 }
 
 .stat-card--hero-featured {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 0.7rem;
 }
 
 .stat-card--hero-greenmetric {
@@ -770,14 +769,15 @@ select {
 }
 
 .stat-card--hero-greenmetric .stat-card--hero__logo {
-  width: 220px;
+  width: 205px;
   margin-inline: auto;
 }
 
 .stat-card--hero-impact .stat-card--hero__logo {
-  width: min(100%, 500px);
+  width: min(100%, 360px);
   margin-left: auto;
   margin-right: 0;
+  transform: translateY(-28px);
 }
 
 .stat-card--hero-impact .stat-card--hero__content strong,
@@ -787,7 +787,7 @@ select {
 }
 
 .stat-card--hero__logo {
-  width: 230px;
+  width: 210px;
   max-width: 100%;
   margin-bottom: 0;
   object-fit: contain;
@@ -795,7 +795,7 @@ select {
 }
 
 .stat-card--hero__logo--impact {
-  width: 560px;
+  width: 360px;
 }
 
 .stat-card--hero__content {
@@ -804,16 +804,16 @@ select {
   min-width: 0;
   flex-direction: column;
   justify-content: center;
-  gap: 0.28rem;
+  gap: 0.18rem;
 }
 
 .stat-card--hero__content strong {
-  font-size: clamp(2.4rem, 3vw, 3.3rem);
+  font-size: clamp(2.7rem, 3.3vw, 3.7rem);
 }
 
 .stat-card--hero__content span {
   color: #243522;
-  font-size: 1.08rem;
+  font-size: 1.22rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -821,8 +821,8 @@ select {
 .stat-card--hero__content p {
   margin: 0;
   color: #5a6655;
-  font-size: 0.98rem;
-  line-height: 1.28;
+  font-size: 1.1rem;
+  line-height: 1.2;
 }
 
 .overview-grid,
