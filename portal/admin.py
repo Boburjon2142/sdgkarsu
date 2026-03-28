@@ -205,13 +205,13 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(NewsArticle)
 class NewsArticleAdmin(admin.ModelAdmin):
     form = NewsArticleAdminForm
-    list_display = ("title", "category", "published_on", "featured")
-    list_filter = ("category", "featured")
+    list_display = ("title", "category", "sdg_goal", "published_on", "featured")
+    list_filter = ("category", "sdg_goal", "featured")
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ("title", "summary", "body")
     readonly_fields = ("image_preview",)
     fieldsets = (
-        (None, {"fields": ("title", "slug", "category", "featured")}),
+        (None, {"fields": ("title", "slug", "category", "sdg_goal", "featured")}),
         ("Content", {"fields": ("summary", "body", "image", "image_preview")}),
         ("Publishing", {"fields": ("published_on",)}),
     )

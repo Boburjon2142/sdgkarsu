@@ -27,7 +27,13 @@
       <div class="section-heading">
         <div>
           <div class="eyebrow">{% tr "Latest news" %}</div>
-          <h2>{% tr "Professional media-center style updates." %}</h2>
+          <h2>
+            {% if selected_sdg_goal %}
+              SDG {{ selected_sdg_goal.number }}: {{ selected_sdg_goal.title }}
+            {% else %}
+              {% tr "Professional media-center style updates." %}
+            {% endif %}
+          </h2>
         </div>
       </div>
       <div class="card-grid card-grid--three">

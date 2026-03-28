@@ -352,9 +352,12 @@ class NewsArticle(TimeStampedModel):
         PROGRAM = "program", "Program"
         EVENT = "event", "Event"
 
+    SDG_CHOICES = [(number, f"SDG {number}") for number in range(1, 18)]
+
     title = models.TextField()
     slug = models.SlugField(unique=True)
     category = models.CharField(max_length=20, choices=Category.choices)
+    sdg_goal = models.PositiveSmallIntegerField(choices=SDG_CHOICES, blank=True, null=True)
     summary = models.TextField()
     body = models.TextField()
     image = models.ImageField(upload_to="news/", blank=True)

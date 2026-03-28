@@ -47,13 +47,18 @@
 
   <section class="section section--cool">
     <div class="container">
-      <div class="lined-title lined-title--news">
-        <span>{% tr "Sustainability news" %}</span>
+      <div class="news-sdg-block">
+        <div class="lined-title lined-title--news">
+          <span>{% tr "Sustainability news" %}</span>
+        </div>
+        <div class="section-heading section-heading--news">
+          <p>{% tr "Select an SDG card to see the latest updates related to that goal." %}</p>
+        </div>
       </div>
 
       <div class="sdg-icons-grid">
         {% for goal in sdg_goals %}
-          <a class="sdg-news-card reveal" href="{% url 'sdg-detail' goal.number %}">
+          <a class="sdg-news-card reveal" href="{% url 'news-events' %}?sdg={{ goal.number }}">
             <img src="{% static goal.image %}" alt="{{ goal.title }}">
             {% if current_language == "uz" %}
               <div class="sdg-news-card__caption">{{ goal.title }}</div>

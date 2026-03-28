@@ -1101,9 +1101,15 @@ blockquote {
 }
 
 .sdg-news-card:hover,
-.sdg-news-card:focus-visible {
+.sdg-news-card:focus-visible,
+.sdg-news-card.is-active {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 22px 40px rgba(45, 77, 115, 0.22);
+}
+
+.sdg-news-card.is-active {
+  outline: 3px solid rgba(137, 206, 0, 0.42);
+  outline-offset: 4px;
 }
 
 .sdg-news-card__icon,

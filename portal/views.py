@@ -1602,6 +1602,20 @@ class HomeView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
+        selected_sdg = self.request.GET.get("sdg")
+        available_sdg_numbers = list(
+            NewsArticle.objects.filter(sdg_goal__isnull=False)
+            .order_by("sdg_goal")
+            .values_list("sdg_goal", flat=True)
+            .distinct()
+        )
+        try:
+            selected_sdg = int(selected_sdg) if selected_sdg else None
+        except (TypeError, ValueError):
+            selected_sdg = None
+        if selected_sdg not in range(1, 18):
+            selected_sdg = available_sdg_numbers[0] if available_sdg_numbers else 1
+        sustainability_news = NewsArticle.objects.filter(sdg_goal=selected_sdg)[:3]
         context["hero_stats"] = localize_collection(HeroStat.objects.all()[:4], language_code)
         context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all()[:4], language_code)
         context["featured_programs"] = localize_collection(Program.objects.filter(featured=True)[:3], language_code)
@@ -1609,8 +1623,11 @@ class HomeView(BasePortalContextMixin, TemplateView):
         context["impact_metrics"] = localize_collection(ImpactMetric.objects.filter(scope__in=["home", "both"])[:4], language_code)
         context["latest_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
         context["latest_news"] = localize_collection(NewsArticle.objects.all()[:3], language_code)
+        context["sustainability_news"] = localize_collection(sustainability_news, language_code)
         context["partners"] = localize_collection(Partner.objects.all()[:6], language_code)
         context["sdg_goals"] = [build_sdg_goal(item, language_code) for item in SDG_CONTENT]
+        context["selected_sdg"] = selected_sdg
+        context["selected_sdg_goal"] = get_sdg_goal(selected_sdg, language_code)
         return context
 
 
@@ -1794,10 +1811,20 @@ class NewsEventsView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        featured_article = NewsArticle.objects.filter(featured=True).first() or NewsArticle.objects.first()
+        selected_sdg = self.request.GET.get("sdg")
+        try:
+            selected_sdg = int(selected_sdg) if selected_sdg else None
+        except (TypeError, ValueError):
+            selected_sdg = None
+        news_queryset = NewsArticle.objects.all()
+        if selected_sdg in range(1, 18):
+            news_queryset = news_queryset.filter(sdg_goal=selected_sdg)
+        featured_article = news_queryset.filter(featured=True).first() or news_queryset.first()
         context["featured_article"] = localize_object(featured_article, language_code)
-        context["news_items"] = localize_collection(NewsArticle.objects.all(), language_code)
+        context["news_items"] = localize_collection(news_queryset, language_code)
         context["events"] = localize_collection(Event.objects.all(), language_code)
+        context["selected_sdg"] = selected_sdg
+        context["selected_sdg_goal"] = get_sdg_goal(selected_sdg, language_code) if selected_sdg in range(1, 18) else None
         return context
 
 
