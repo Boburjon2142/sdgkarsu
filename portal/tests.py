@@ -238,6 +238,20 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, reverse("sdg-updates", kwargs={"number": 4}))
         self.assertContains(response, "sdg-news-card")
 
+    def test_governance_detail_uses_english_content_when_language_is_en(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "en"
+        session.save()
+
+        response = client.get(reverse("governance-detail", kwargs={"slug": "sdg-purchase"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Sustainable Procurement Policy (2025-2030)")
+        self.assertContains(response, "Head of the Planning and Finance Department")
+        self.assertContains(response, "Implementation period:")
+        self.assertNotContains(response, "Barqaror xaridlar siyosati")
+
     def test_sdg_detail_shows_admin_work_items(self):
         SDGWorkItem.objects.create(
             goal_number=4,

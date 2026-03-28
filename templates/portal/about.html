@@ -2,26 +2,145 @@
 {% load portal_i18n %}
 
 {% block content %}
-  <section class="page-intro page-intro--clean">
-    <div class="container research-intro">
-      <div class="research-intro__main">
-        <div class="eyebrow">{% tr "Sustainability governance" %}</div>
-        <h1>{% tr "Institutional sustainability governance" %}</h1>
-        <p class="page-intro__lead">{% tr "Mission, vision, governance architecture, leadership accountability, and strategic direction are presented here as one integrated institutional framework." %}</p>
-      </div>
-      <aside class="research-intro__aside">
-        <span class="chip">{% tr "Governance note" %}</span>
-        <p>{% tr "This section explains how leadership, priorities, execution, and institutional responsibility are coordinated within the sustainability governance system." %}</p>
-      </aside>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container">
+      <div class="governance-links">
+        <div class="lined-title">
+          <span>
+            {% if current_language == "uz" %}
+              Boshqaruv yo'nalishlari
+            {% else %}
+              Governance directions
+            {% endif %}
+          </span>
+        </div>
+        <div class="governance-links__grid">
+          <a class="governance-link-card governance-link-card--policy" href="{% url 'governance-detail' 'sdg-policy' %}">
+            <span class="governance-link-card__eyebrow">01</span>
+            <strong>
+              {% if current_language == "uz" %}
+                SDG siyosati
+              {% else %}
+                SDG Policy
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Asosiy institutsional siyosat ramkasi
+              {% else %}
+                Core institutional policy framework
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--invest" href="{% url 'governance-detail' 'sdg-investment' %}">
+            <span class="governance-link-card__eyebrow">02</span>
+            <strong>
+              {% if current_language == "uz" %}
+                SDG investitsiya
+              {% else %}
+                SDG Investment
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                ESG asosidagi investitsiya ustuvorliklari
+              {% else %}
+                ESG-led investment priorities
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--purchase" href="{% url 'governance-detail' 'sdg-purchase' %}">
+            <span class="governance-link-card__eyebrow">03</span>
+            <strong>
+              {% if current_language == "uz" %}
+                SDG xaridlari
+              {% else %}
+                SDG Purchase
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Barqaror xaridlar va yetkazib beruvchilar mezoni
+              {% else %}
+                Sustainable procurement and supplier standards
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--committee" href="{% url 'governance-detail' 'sdg-committee' %}">
+            <span class="governance-link-card__eyebrow">04</span>
+            <strong>
+              {% if current_language == "uz" %}
+                SDG qo'mitasi
+              {% else %}
+                SDG Committee
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Muvofiqlashtiruvchi rahbarlar va ijro guruhlari
+              {% else %}
+                Coordinating leadership and delivery teams
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--integrity" href="{% url 'governance-detail' 'anti-corruption' %}">
+            <span class="governance-link-card__eyebrow">05</span>
+            <strong>
+              {% if current_language == "uz" %}
+                Korrupsiyaga qarshi
+              {% else %}
+                Anti-Corruption
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Halollik, shaffoflik va nazorat mexanizmlari
+              {% else %}
+                Integrity, transparency, and oversight controls
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--public" href="{% url 'governance-detail' 'jamoatchilik' %}">
+            <span class="governance-link-card__eyebrow">06</span>
+            <strong>
+              {% if current_language == "uz" %}
+                Jamoatchilik
+              {% else %}
+                Public Engagement
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Ochiqlik, muloqot va manfaatdor tomonlar ishtiroki
+              {% else %}
+                Openness, dialogue, and stakeholder participation
+              {% endif %}
+            </p>
+          </a>
+          <a class="governance-link-card governance-link-card--women" href="{% url 'governance-detail' 'xotin-qizlar' %}">
+            <span class="governance-link-card__eyebrow">07</span>
+            <strong>
+              {% if current_language == "uz" %}
+                Xotin-qizlar
+              {% else %}
+                Women
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Yetakchilik, imkoniyat va himoya siyosati
+              {% else %}
+                Leadership, opportunity, and protection policy
+              {% endif %}
+            </p>
+          </a>
+        </div>
+      </div>
+
       <div class="governance-accordion">
-        <details class="governance-panel" open>
+        <details class="governance-panel" id="governance-policy" open>
           <summary class="governance-panel__summary">
-            {% if request.LANGUAGE_CODE == "uz" %}
+            {% if current_language == "uz" %}
               Universitet barqarorlik siyosati
             {% else %}
               University sustainability policy
@@ -30,7 +149,7 @@
           <div class="governance-panel__content">
             <div class="governance-panel__stack">
               <article class="content-card content-card--large">
-                {% if request.LANGUAGE_CODE == "uz" %}
+                {% if current_language == "uz" %}
                   <h2>Qarshi davlat universiteti atrof-muhit barqarorligi siyosati</h2>
                   <p>Universitet barqaror va ekologik mas'uliyatli akademik muhitni rivojlantirishga sodiqdir. Siyosat ta'lim, tadqiqot, boshqaruv va jamoatchilik bilan hamkorlik jarayonlariga barqarorlik tamoyillarini tizimli integratsiya qilishni nazarda tutadi.</p>
                   <ul class="governance-bullet-list">
@@ -54,9 +173,9 @@
           </div>
         </details>
 
-        <details class="governance-panel">
+        <details class="governance-panel" id="governance-purchase">
           <summary class="governance-panel__summary">
-            {% if request.LANGUAGE_CODE == "uz" %}
+            {% if current_language == "uz" %}
               Barqaror xaridlar siyosati (2025-2030)
             {% else %}
               Sustainable procurement policy (2025-2030)
@@ -65,7 +184,7 @@
           <div class="governance-panel__content">
             <div class="governance-panel__stack">
               <article class="content-card about-callout-card">
-                {% if request.LANGUAGE_CODE == "uz" %}
+                {% if current_language == "uz" %}
                   <p>Barqaror xaridlar siyosati universitet xarid faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishga qaratilgan.</p>
                   <ul class="governance-bullet-list">
                     <li>narx, texnik sifat va ESG ko'rsatkichlari asosida tender baholash tizimi qo'llanadi;</li>
@@ -87,9 +206,9 @@
           </div>
         </details>
 
-        <details class="governance-panel">
+        <details class="governance-panel" id="governance-investment">
           <summary class="governance-panel__summary">
-            {% if request.LANGUAGE_CODE == "uz" %}
+            {% if current_language == "uz" %}
               Barqaror investitsiya siyosati (2025-2030)
             {% else %}
               Sustainable investment policy (2025-2030)
@@ -98,7 +217,7 @@
           <div class="governance-panel__content">
             <div class="governance-panel__stack">
               <article class="content-card">
-                {% if request.LANGUAGE_CODE == "uz" %}
+                {% if current_language == "uz" %}
                   <p>Barqaror investitsiya siyosati universitetning barcha investitsion qarorlariga ESG, yashil iqtisodiyot va uzoq muddatli iqtisodiy samaradorlik mezonlarini integratsiya qiladi.</p>
                   <ul class="governance-bullet-list">
                     <li>kapital qo'yilmalar, infratuzilma loyihalari, xalqaro grantlar, modernizatsiya va PPP loyihalariga tatbiq etiladi;</li>
@@ -115,6 +234,130 @@
                     <li>the minimum ESG threshold is 60 points, and projects below that score are not financed;</li>
                     <li>the University excludes coal-based energy, tobacco, weapons production, severe environmental harm, and human-rights-violating activities from investment;</li>
                     <li>funding sources include the state budget, targeted funds, international finance institutions, green bonds, and private investment.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel" id="governance-committee">
+          <summary class="governance-panel__summary">
+            {% if current_language == "uz" %}
+              SDG qo'mitasi
+            {% else %}
+              SDG committee
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card">
+                {% if current_language == "uz" %}
+                  <p>SDG qo'mitasi universitetning barqarorlik bo'yicha strategik qarorlari, maqsadlar monitoringi va fakultetlararo muvofiqlashtirishini boshqaradigan asosiy institutsional platforma hisoblanadi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>rektorat, tegishli prorektorlar, bo'lim rahbarlari va texnik ijro guruhlarini birlashtiradi;</li>
+                    <li>har chorakda ustuvor indikatorlar, loyiha ijrosi va xavf nuqtalarini ko'rib chiqadi;</li>
+                    <li>SDGlar kesimida kampus, xarid, investitsiya va jamoatchilik aloqalarini uyg'unlashtiradi.</li>
+                  </ul>
+                {% else %}
+                  <p>The SDG committee serves as the University's coordinating body for strategic sustainability decisions, target monitoring, and cross-unit alignment.</p>
+                  <ul class="governance-bullet-list">
+                    <li>it brings together senior leadership, operational heads, and technical delivery teams;</li>
+                    <li>it reviews quarterly indicators, implementation progress, and institutional risks;</li>
+                    <li>it aligns campus, procurement, investment, and public-engagement activity across the SDG agenda.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel" id="governance-anti-corruption">
+          <summary class="governance-panel__summary">
+            {% if current_language == "uz" %}
+              Korrupsiyaga qarshi siyosat
+            {% else %}
+              Anti-corruption
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card">
+                {% if current_language == "uz" %}
+                  <p>Universitet halollik, shaffoflik va manfaatlar to'qnashuvining oldini olish tamoyillariga asoslangan nol toqat yondashuvini qo'llaydi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>xarid va investitsiya qarorlarida hujjatlashtirilgan ekspertiza va tekshiruv tartibi qo'llanadi;</li>
+                    <li>anonim murojaatlar, ichki audit va ijro nazorati mexanizmlari doimiy faoliyat yuritadi;</li>
+                    <li>rahbar va xodimlar uchun halollik, etik me'yorlar va manfaatlar to'qnashuvi bo'yicha muntazam treninglar o'tkaziladi.</li>
+                  </ul>
+                {% else %}
+                  <p>The University applies a zero-tolerance approach grounded in integrity, transparency, and conflict-of-interest prevention.</p>
+                  <ul class="governance-bullet-list">
+                    <li>procurement and investment decisions follow documented review and verification procedures;</li>
+                    <li>anonymous reporting, internal audit, and implementation oversight mechanisms remain active;</li>
+                    <li>leaders and staff receive regular training on ethics, integrity, and conflict-of-interest standards.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel" id="governance-community">
+          <summary class="governance-panel__summary">
+            {% if current_language == "uz" %}
+              Jamoatchilik bilan ishlash
+            {% else %}
+              Public engagement
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card">
+                {% if current_language == "uz" %}
+                  <p>Jamoatchilik bilan ishlash universitetning ochiq muloqot, hamkorlik va ijtimoiy hisobdorlik standartlarini amaliyotga aylantiradi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>mahalliy hamjamiyat, maktablar, NNTlar va davlat tashkilotlari bilan barqaror aloqalar qo'llab-quvvatlanadi;</li>
+                    <li>portal, tadbirlar va ochiq e'lonlar orqali natijalar muntazam ommaga yetkaziladi;</li>
+                    <li>talabalar va fuqarolik jamiyati tashabbuslari institutsional loyihalarga integratsiya qilinadi.</li>
+                  </ul>
+                {% else %}
+                  <p>Public engagement turns the University's standards for openness, collaboration, and social accountability into visible practice.</p>
+                  <ul class="governance-bullet-list">
+                    <li>it sustains structured relationships with communities, schools, NGOs, and public institutions;</li>
+                    <li>results are shared through the portal, public events, and formal announcements;</li>
+                    <li>student and civil-society initiatives are integrated into institutional delivery where relevant.</li>
+                  </ul>
+                {% endif %}
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="governance-panel" id="governance-women">
+          <summary class="governance-panel__summary">
+            {% if current_language == "uz" %}
+              Xotin-qizlar siyosati
+            {% else %}
+              Women and inclusion
+            {% endif %}
+          </summary>
+          <div class="governance-panel__content">
+            <div class="governance-panel__stack">
+              <article class="content-card">
+                {% if current_language == "uz" %}
+                  <p>Universitet xotin-qizlarning ta'lim, bandlik, yetakchilik va qaror qabul qilishdagi ishtirokini kuchaytirishga qaratilgan inklyuziv siyosat yuritadi.</p>
+                  <ul class="governance-bullet-list">
+                    <li>akademik va ma'muriy muhitda teng imkoniyatlar va xavfsiz ishlash tamoyillari ta'minlanadi;</li>
+                    <li>mentorlk, liderlik dasturlari va himoya mexanizmlari orqali qo'llab-quvvatlash kuchaytiriladi;</li>
+                    <li>gender tenglik ko'rsatkichlari institutsional monitoringning ajralmas qismi sifatida kuzatiladi.</li>
+                  </ul>
+                {% else %}
+                  <p>The University follows an inclusive policy designed to strengthen women's participation in education, employment, leadership, and decision-making.</p>
+                  <ul class="governance-bullet-list">
+                    <li>equal opportunity and safe working standards are upheld across academic and administrative environments;</li>
+                    <li>support is reinforced through mentoring, leadership pathways, and protection mechanisms;</li>
+                    <li>gender equality indicators are tracked as a formal part of institutional monitoring.</li>
                   </ul>
                 {% endif %}
               </article>

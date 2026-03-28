@@ -28,6 +28,806 @@ from .models import (
 from .translation_utils import localize_collection, localize_object, translate_text
 
 
+GOVERNANCE_PAGE_CONTENT = {
+    "sdg-policy": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "SDG siyosati",
+        "title_en": "SDG Policy",
+        "intro_uz": "Universitetning barqarorlik bo'yicha asosiy institutsional siyosati, tamoyillari va amaliy ustuvorliklari.",
+        "intro_en": "The University's core sustainability policy, principles, and implementation priorities.",
+        "sections_uz": [
+            {
+                "title": "Asosiy siyosat ramkasi",
+                "paragraphs": [
+                    "Qarshi davlat universiteti barqarorlikni ta'lim, tadqiqot, boshqaruv va jamoatchilik bilan hamkorlik jarayonlariga tizimli integratsiya qilishni institutsional vazifa sifatida belgilaydi.",
+                    "Mazkur siyosat ekologik mas'uliyat, resurslardan oqilona foydalanish, shaffof boshqaruv va uzoq muddatli ijtimoiy ta'sirni bir butun strategik yondashuvga birlashtiradi.",
+                ],
+            },
+            {
+                "title": "Amaliy ustuvorliklar",
+                "bullets": [
+                    "tabiiy resurslardan samarali foydalanish va chiqindilarni kamaytirish",
+                    "energiya samaradorligini oshirish va iqlimga ta'sirni pasaytirish",
+                    "ta'lim va tadqiqot dasturlariga SDG tamoyillarini integratsiya qilish",
+                    "milliy va xalqaro barqarorlik standartlariga muvofiqlikni kuchaytirish",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Core policy framework",
+                "paragraphs": [
+                    "Karshi State University defines sustainability as an institutional priority and integrates it across teaching, research, operations, and public engagement.",
+                    "This policy combines environmental responsibility, efficient resource use, transparent governance, and long-term social impact within one strategic framework.",
+                ],
+            },
+            {
+                "title": "Implementation priorities",
+                "bullets": [
+                    "more efficient use of natural resources and reduced waste",
+                    "higher energy efficiency and lower climate impact",
+                    "integration of SDG principles into academic and research programs",
+                    "stronger alignment with national and international sustainability standards",
+                ],
+            },
+        ],
+    },
+    "sdg-investment": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Barqaror investitsiya siyosati (2025-2030)",
+        "title_en": "Sustainable Investment Policy (2025-2030)",
+        "intro_uz": "Investitsiya faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlikni uyg'unlashtiruvchi institutsional siyosat.",
+        "intro_en": "An institutional policy aligning investment decisions with economic efficiency, environmental responsibility, and social sustainability.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>BARQAROR INVESTITSIYA SIYOSATI (2025-2030)</strong></p>
+              <p><strong>Ishlab chiquvchi:</strong> Reja-moliya bo'limi<br><strong>Amal qilish muddati:</strong> 2025-2030 yillar<br><strong>Qamrovi:</strong> Barcha tuzilmaviy bo'linmalar, loyihalar va investitsion faoliyat</p>
+              <p>Ushbu siyosat tashkilotning investitsiya faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishni maqsad qiladi. Siyosat O'zbekiston Respublikasining Investitsiyalar va investitsiya faoliyati to'g'risidagi qonuni, xalqaro barqaror rivojlanish tamoyillari va "yashil iqtisodiyot" yondashuvlariga muvofiq ishlab chiqilgan.</p>
+              <p><strong>MAQSAD VA VAZIFA</strong></p>
+              <p>Barqaror investitsiyalar orqali xarajatlarni optimallashtirish, atrof-muhitga salbiy ta'sirni kamaytirish va ijtimoiy qiymat yaratish maqsad qilingan. Dasturning vazifasi 5-10 yillik iqtisodiy samaradorligini baholash, potensial iqtisodiy risklarni aniqlash va ularni kamaytirish choralarini ishlab chiqish, investitsiya qarorlarini obyektiv asosda qabul qilish, ESG (Environmental, Social, Governance) va barqarorlik qoidalariga muvofiqlikni ta'minlash, ekologik ta'sirni kamaytirish, ijtimoiy qiymat yaratish, moliyaviy risklarni boshqarish, ESG tamoyillarini investitsiya jarayoniga integratsiya qilish hamda korrupsiya xavflarini kamaytirish va shaffoflikni ta'minlashdan iborat.</p>
+              <p>Siyosat quyidagi yo'nalishlarga tatbiq etiladi: kapital qo'yilmalar, infratuzilma loyihalari, davlat-xususiy sheriklik loyihalari, xalqaro grantlar, xalqaro moliya institutlari ishtirokidagi investitsiyalar, texnologik va energetik modernizatsiya loyihalari.</p>
+              <p><strong>INVESTITSIYA TAMOYILLARI</strong></p>
+              <p>Investitsiya faoliyatida ESG (Environmental, Social, Governance), SDG (Sustainable Development Goals), yashil iqtisodiyot tamoyillari va milliy qonunchilik talablari asos qilib olinadi. Innovatsiya tamoyiliga yashil texnologiyalar va raqamli yechimlardan foydalanish kiradi. Ekologik tamoyillarga karbon chiqindilarini kamaytirish, energiya samaradorligi va suv resurslaridan samarali foydalanish kiradi. Ijtimoiy tamoyillar mehnat huquqlariga rioya qilish, sog'liq va xavfsizlik, inklyuziv rivojlanishni qamrab oladi. Boshqaruv tamoyillari esa shaffoflik, korrupsiyaga qarshi siyosat va hisobdorlikni o'z ichiga oladi.</p>
+              <p><strong>TAQIQLANGAN INVESTITSIYALAR</strong></p>
+              <p>Universitet quyidagi faoliyatlarga investitsiya kiritmaydi: ko'mirga asoslangan energetika loyihalari, tamaki sanoati, qurol ishlab chiqarish, atrof-muhitga jiddiy zarar yetkazuvchi loyihalar va inson huquqlarini buzuvchi kompaniyalar.</p>
+              <p><strong>ESG baholash tizimi</strong></p>
+              <p>Har bir investitsiya loyihasi ESG mezonlari asosida baholanadi.</p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Mezoni</th>
+                      <th>Ball</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Environmental impact</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Energy efficiency</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Social impact</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Governance</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Financial sustainability</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Minimal ESG ball: 60. 60 balldan past loyihalar moliyalashtirilmaydi. Investitsiya qaror qabul qilish jarayoni loyiha taklifini taqdim etish, moliyaviy tahlil (NPV, IRR, ROI), ESG baholash, risk tahlili va investitsiya qo'mitasi qarori bosqichlarida amalga oshiriladi.</p>
+              <p><strong>Loyiha ma'lumotlarini yig'ish</strong></p>
+              <p>Investitsiya loyihasi bo'yicha avvalo loyiha turi, qo'llaniladigan texnologiya, faoliyat sohasi, prognoz xarajatlar, daromadlar, moliyaviy oqimlar hamda qarz va moliyalashtirish shartlari to'g'risidagi ma'lumotlar yig'iladi. Shundan so'ng loyiha tasavvuri, maqsadi va amalga oshiriladigan hududi aniqlanadi. Loyiha tavsifi doirasida uning joylashuvi, qo'llaniladigan texnologiya va faoliyat turi batafsil bayon etiladi. Loyiha milliy qonunchilik va xalqaro standartlarga muvofiqligi nuqtai nazaridan huquqiy jihatdan tahlil qilinadi.</p>
+              <p>Ekologik tahlilda loyiha faoliyatining havo, suv, tuproq hamda biologik xilma-xillikka ta'siri baholanadi. Ijtimoiy tahlil doirasida aholi salomatligi, bandlik darajasi, migratsiya jarayonlari va ijtimoiy munosabatlarga ta'siri o'rganiladi. Ta'sirlarni baholash bosqichida loyiha natijasida yuzaga kelishi mumkin bo'lgan ijobiy va salbiy ta'sirlar aniqlanadi. Salbiy ta'sirlarni kamaytirish uchun mitigatsiya va kompensatsiya choralari ishlab chiqiladi.</p>
+              <p>Monitoring rejasi ishlab chiqilib, unda mas'ullar, nazorat usullari, muddatlar va baholash indikatorlari belgilanadi. Yakuniy bosqichda loyiha bo'yicha qaror qabul qilinadi va uni tasdiqlash yoki takomillashtirish yuzasidan tavsiyalar beriladi. Loyiha iqtisodiy samaradorligi NPV, IRR, ROI va Payback period kabi ko'rsatkichlar orqali aniqlanadi. Risk tahlilida ekologik va ijtimoiy, moliyaviy, operatsion hamda qonunchilik va siyosiy risklar kompleks baholanadi. Ssenariy tahlilida optimistik, pessimistik va asosiy variantlar ishlab chiqiladi. Chuqurlashtirilgan tahlil jarayonida Monte Carlo simulyatsiyalari qo'llanadi hamda chiqindi va energiya xarajatlari hisobga olinadi.</p>
+              <p>Loyiha ESG indikatorlari bilan integratsiya qilinadi. Moliyalashtirish manbalari sifatida davlat budjeti, maqsadli jamg'armalar, xalqaro moliya institutlari, yashil obligatsiyalar va xususiy investitsiyalar jalb etiladi. Monitoring va hisobot tizimi orqali yillik KPIlar belgilanadi, ESG hisobotlari tayyorlanadi va aniqlangan kamchiliklar bo'yicha tuzatish choralari ko'riladi. Ichki audit tizimi loyiha muvofiqligi va samaradorligini baholab boradi. Investitsiya loyihalari muntazam ravishda monitoring qilinadi.</p>
+              <p><strong>Asosiy ko'rsatkichlar:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>KPI</th>
+                      <th>Davriylik</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>ESG samaradorligi</td>
+                      <td>yiliga 1 marta</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Uglerod (karbon) ta'siri</td>
+                      <td>yiliga 1 marta</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Energiya tejalishi</td>
+                      <td>yiliga 1 marta</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Ijtimoiy ta'sir</td>
+                      <td>yiliga 1 marta</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Izoh. Natijalar yillik barqarorlik hisobotida e'lon qilinadi.</p>
+              <p><strong>Barqaror investitsiyalar qo'mitasi</strong></p>
+              <p>Investitsiya qarorlari quyidagi tarkibdagi qo'mita tomonidan ko'rib chiqiladi: rektor yoki prorektor, moliya bo'limi rahbari, barqaror rivojlanish bo'limi vakili, texnik ekspert va tashqi mustaqil ekspert.</p>
+              <p><strong>Yakunlovchi qoida</strong></p>
+              <p>Ushbu siyosat 2025 yildan kuchga kiradi va 2030 yilgacha amal qiladi. Zarur hollarda Reja-moliya bo'limi tomonidan qayta ko'rib chiqiladi va yangilanadi. Siyosat har 3 yilda qayta ko'rib chiqiladi yoki zarur hollarda yangilanadi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>SUSTAINABLE INVESTMENT POLICY (2025-2030)</strong></p>
+              <p><strong>Prepared by:</strong> Planning and Finance Department<br><strong>Implementation period:</strong> 2025-2030<br><strong>Scope:</strong> All structural divisions, projects, and investment activities</p>
+              <p>This policy aims to embed economic efficiency, environmental responsibility, and social sustainability principles into the institution's investment activities. It has been developed in accordance with the Law of the Republic of Uzbekistan on Investments and Investment Activity, international sustainable development principles, and green economy approaches.</p>
+              <p><strong>PURPOSE AND OBJECTIVES</strong></p>
+              <p>The policy seeks to optimize costs, reduce negative environmental impact, and create social value through sustainable investments. Its objectives include assessing medium- and long-term economic efficiency over 5-10 years, identifying potential economic risks and designing mitigation measures, making objective investment decisions, ensuring compliance with ESG (Environmental, Social, Governance) and sustainability principles, integrating ESG criteria into investment processes, reducing ecological impact, generating social value, managing financial risks, and reducing corruption risks while strengthening transparency.</p>
+              <p>The policy applies to capital investments, infrastructure projects, public-private partnership initiatives, international grants, investments involving international financial institutions, and technology or energy modernization projects.</p>
+              <p><strong>INVESTMENT PRINCIPLES</strong></p>
+              <p>Investment activities are guided by ESG (Environmental, Social, Governance), SDG (Sustainable Development Goals), green economy principles, and national legal requirements. Innovation principles include the use of green technologies and digital solutions. Environmental principles include reduced carbon emissions, energy efficiency, and efficient use of water resources. Social principles include labor rights, health and safety, and inclusive development. Governance principles include transparency, anti-corruption policy, and accountability.</p>
+              <p><strong>PROHIBITED INVESTMENTS</strong></p>
+              <p>The University does not invest in coal-based energy projects, the tobacco industry, weapons manufacturing, projects causing serious environmental harm, or companies associated with human rights violations.</p>
+              <p><strong>ESG evaluation system</strong></p>
+              <p>Each investment project is assessed based on ESG criteria.</p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Criterion</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Environmental impact</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Energy efficiency</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Social impact</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Governance</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Financial sustainability</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Minimum ESG score: 60. Projects scoring below 60 are not financed. Investment decision-making proceeds through the submission of a project proposal, financial analysis (NPV, IRR, ROI), ESG assessment, risk analysis, and review by the investment committee.</p>
+              <p><strong>Project data collection</strong></p>
+              <p>For each investment project, data are collected on project type, technology used, sector of activity, projected costs, revenues, financial flows, and debt or financing conditions. The project concept, objective, and implementation area are then defined. The project description explains the location, technology, and type of activity in detail. Legal analysis is carried out to assess compliance with national legislation and international standards.</p>
+              <p>Environmental analysis evaluates impacts on air, water, soil, and biodiversity. Social analysis examines effects on public health, employment, migration processes, and social relations. During the impact assessment stage, both positive and negative effects are identified. Mitigation and compensation measures are developed to reduce negative impacts.</p>
+              <p>A monitoring plan is prepared, defining responsible actors, control methods, timelines, and assessment indicators. The final stage involves project approval and recommendations for confirmation or improvement. Economic efficiency is assessed through NPV, IRR, ROI, and payback period indicators. Risk analysis covers environmental and social, financial, operational, legal, and political risks. Scenario analysis considers optimistic, pessimistic, and baseline cases. More advanced analysis may use Monte Carlo simulations and include waste and energy costs.</p>
+              <p>Projects are integrated with ESG indicators. Financing sources may include the state budget, targeted funds, international financial institutions, green bonds, and private investment. Monitoring and reporting define annual KPIs, ESG reports, and corrective measures for detected shortcomings. Internal audit continuously evaluates compliance and effectiveness. Investment projects are monitored on a regular basis.</p>
+              <p><strong>Key indicators:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>KPI</th>
+                      <th>Frequency</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>ESG performance</td>
+                      <td>once a year</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Carbon impact</td>
+                      <td>once a year</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Energy savings</td>
+                      <td>once a year</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Social impact</td>
+                      <td>once a year</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Note: Results are disclosed in the annual sustainability report.</p>
+              <p><strong>Sustainable investment committee</strong></p>
+              <p>Investment decisions are reviewed by a committee composed of the rector or vice-rector, head of the finance department, a representative of the sustainable development unit, a technical expert, and an external independent expert.</p>
+              <p><strong>Final provision</strong></p>
+              <p>This policy enters into force in 2025 and remains valid until 2030. It may be reviewed and updated by the Planning and Finance Department whenever necessary. In all cases, the policy is reviewed every three years or updated as required.</p>
+            </div>
+        """,
+    },
+    "sdg-purchase": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Barqaror xaridlar siyosati (2025-2030)",
+        "title_en": "Sustainable Procurement Policy (2025-2030)",
+        "intro_uz": "Qarshi davlat universiteti xarid faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishga qaratilgan institutsional siyosat.",
+        "intro_en": "Managing operational impact through sustainable procurement and supplier standards.",
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>BARQAROR XARIDLAR SIYOSATI (2025-2030)</strong></p>
+              <p><strong>Ishlab chiquvchi:</strong> Reja-moliya bo'limi rahbari<br><strong>Amal qilish muddati:</strong> 2025-2030 yillar<br><strong>Qamrovi:</strong> Qarshi davlat universitetining barcha tuzilmaviy bo'linmalari</p>
+              <p>Mazkur siyosat Qarshi davlat universiteti xarid faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishni maqsad qiladi. Siyosat davlat xaridlari to'g'risidagi qonunning 111-moddasi, davlat xaridlarini amalga oshirish bilan bog'liq tartib-taomillarni tashkil etish va o'tkazish tartibi to'g'risidagi nizom, "yashil iqtisodiyot", ESG tamoyillari, ISO 20400 Sustainable Procurement yondashuvi va Birlashgan Millatlar Tashkilotining barqaror rivojlanish maqsadlariga mos ravishda ishlab chiqilgan.</p>
+              <p><strong>MAQSAD VA VAZIFA</strong></p>
+              <p>Qarshi davlat universitetining xarid faoliyatida ekologik ta'sirni kamaytirish, energiya samarador mahsulotlar ulushini oshirish, ijtimoiy mas'ul yetkazib beruvchilar bilan ishlash, xarid jarayonlarida shaffoflikni ta'minlash va Life Cycle Cost - hayot sikli qiymati (LCC) yondashuvini joriy qilish ko'zda tutiladi.</p>
+              <p>Barqaror xaridlar orqali xarajatlarni optimallashtirish, atrof-muhitga salbiy ta'sirni kamaytirish va ijtimoiy qiymat yaratish, ekologik toza va energiya tejamkor mahsulotlar ulushini oshirish, mahalliy ishlab chiqaruvchilar va ijtimoiy mas'ul yetkazib beruvchilarni qo'llab-quvvatlash, korrupsiya xavflarini kamaytirish hamda shaffoflikni ta'minlash maqsadida davlat xaridlari elektron tizimi orqali amalga oshiriladi.</p>
+              <p>Siyosat quyidagi yo'nalishlarga tatbiq etiladi: kapital qo'yilmalar, infratuzilma loyihalari, davlat-xususiy sheriklik loyihalari, xalqaro va milliy grantlar, xalqaro moliya institutlari ishtirokidagi investitsiyalar, texnologik va energetik modernizatsiya loyihalari va xalqaro moliyalashtirish ishtirokidagi loyihalar.</p>
+              <p>Ekologik tamoyillariga energiya samarador mahsulotlari, ekologik sertifikatlangan mahsulotlar, chiqindilarni kamaytirish, qayta ishlanadigan materiallardan foydalanish, karbon chiqindilarini kamaytirish va suv resurslaridan samarali foydalanish talablari kiradi. Ijtimoiy tamoyillarga mehnat huquqlariga rioya qilish va xavfsiz mehnat sharoitlarini ta'minlash kiradi. Boshqaruv tamoyillariga shaffof tender jarayonlari, korrupsiyaga qarshi mexanizmlar va hisobdorlik kiradi.</p>
+              <p>Mazkur siyosat quyidagi xarid turlariga tatbiq etiladi: tovarlar xaridi, xizmatlar xaridi, qurilish va infratuzilma loyihalari, IT uskunalar, laboratoriya jihozlari va ofis materiallari.</p>
+              <p>Xarid mezonlarida energiya samaradorligi va ekologik sertifikatlar (ISO, EcoLabel va h.k.), yashil texnologiyalar va raqamli yechimlardan foydalanganlik, qayta ishlanadigan yoki kam chiqindili materiallar, yetkazib beruvchining ESG ko'rsatkichlari muhim hisoblanadi.</p>
+              <p><strong>Tender jarayonida quyidagi mezonlar qo'llaniladi:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Tender mezonlari</th>
+                      <th>Tender ball</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Narx</td>
+                      <td>50 ball</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Texnik sifat</td>
+                      <td>20 ball</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>ESG ko'rsatkichlari</td>
+                      <td>30 ball</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Yetkazib beruvchilar bilan ishlashda barqarorlik talablari kiritilgan shartnomalar, yetkazib beruvchilarni baholash va reytinglash, mahalliy va kichik biznesni rag'batlantirish hisobga olinadi. Supplier sustainability reyting tizimi joriy etiladi.</p>
+              <p>Monitoring va hisobot jarayonlari yillik KPIlar va indikatorlar, ESG hisobotlari tayyorlash, hisobot kamchiliklari bo'yicha tuzatuv rejalari orqali amalga oshiriladi.</p>
+              <p><strong>Barqaror xaridlar samaradorligi quyidagi ko'rsatkichlar orqali baholanadi:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Indikator</th>
+                      <th>2030 yilgacha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Sustainable procurement share</td>
+                      <td>40%</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Eco-certified products</td>
+                      <td>30%</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Supplier ESG compliance</td>
+                      <td>70%</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Energy efficient equipment</td>
+                      <td>50%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Izoh. Monitoring yiliga bir marta amalga oshiriladi.</p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Indikator</th>
+                      <th>2030 yilgacha</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Karbon emissiyasi</td>
+                      <td>-40% kamaytirish</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Qayta tiklanuvchi energiya ulushi</td>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Suv iste'moli</td>
+                      <td>-30% kamaytirish</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Chiqindilarni qayta ishlash</td>
+                      <td>70%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Barqaror xaridlar siyosati orqali 2030 yilgacha ekologik barqarorlikka erishish maqsadlari monitoring natijalari orqali baholanadi.</p>
+              <p><strong>Boshqaruv va mas'uliyat:</strong> Reja-moliya bo'limi siyosatni amalga oshiradi va monitoring olib boradi. Xaridlar komissiyasi mezonlar va tender jarayonlarini nazorat qiladi. Ichki audit muvofiqlik va samaradorlikni baholash tizimini yuritadi. Xatarlar va ularni boshqarishda moliyaviy va bozor xavflari, ta'minot zanjiridagi uzilishlar, regulyator o'zgarishlariga moslashuv tekshirilib boriladi.</p>
+              <p><strong>Yakunlovchi qoidalar:</strong> Ushbu siyosat 2025 yildan kuchga kiradi va 2030 yilgacha amal qiladi. Zarur hollarda Reja-moliya bo'limi tomonidan qayta ko'rib chiqiladi va yangilanadi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>SUSTAINABLE PROCUREMENT POLICY (2025-2030)</strong></p>
+              <p><strong>Prepared by:</strong> Head of the Planning and Finance Department<br><strong>Implementation period:</strong> 2025-2030<br><strong>Scope:</strong> All structural divisions of Karshi State University</p>
+              <p>This policy aims to embed economic efficiency, environmental responsibility, and social sustainability principles into the procurement operations of Karshi State University. It has been developed in alignment with Article 111 of the Law on Public Procurement, the regulation governing public procurement procedures, the green economy agenda, ESG principles, the ISO 20400 Sustainable Procurement approach, and the United Nations Sustainable Development Goals.</p>
+              <p><strong>PURPOSE AND OBJECTIVES</strong></p>
+              <p>The policy is designed to reduce environmental impact in procurement, increase the share of energy-efficient products, work with socially responsible suppliers, ensure transparency in purchasing processes, and introduce a Life Cycle Cost (LCC) approach.</p>
+              <p>Sustainable procurement is implemented through the public e-procurement system in order to optimize costs, reduce negative environmental impact, create social value, expand the share of eco-friendly and energy-efficient products, support local producers and socially responsible suppliers, reduce corruption risks, and improve transparency.</p>
+              <p>The policy applies to the following areas: capital investments, infrastructure projects, public-private partnership projects, international and national grants, investments involving international financial institutions, technology and energy modernization projects, and projects supported by international financing.</p>
+              <p>Environmental principles include requirements related to energy-efficient products, eco-certified products, waste reduction, the use of recyclable materials, lower carbon emissions, and efficient use of water resources. Social principles include respect for labor rights and the provision of safe working conditions. Governance principles include transparent tender procedures, anti-corruption mechanisms, and accountability.</p>
+              <p>This policy applies to the following procurement categories: goods procurement, services procurement, construction and infrastructure projects, IT equipment, laboratory equipment, and office supplies.</p>
+              <p>Procurement criteria place importance on energy efficiency, ecological certifications (ISO, EcoLabel, etc.), the use of green technologies and digital solutions, recyclable or low-waste materials, and the supplier's ESG performance indicators.</p>
+              <p><strong>The following criteria are applied in the tender process:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Tender criteria</th>
+                      <th>Tender score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Price</td>
+                      <td>50 points</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Technical quality</td>
+                      <td>20 points</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>ESG indicators</td>
+                      <td>30 points</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Work with suppliers takes into account contracts containing sustainability requirements, supplier evaluation and ranking, and incentives for local and small businesses. A supplier sustainability rating system will be introduced.</p>
+              <p>Monitoring and reporting will include annual KPIs and indicators, ESG reporting, and corrective action plans based on reporting gaps.</p>
+              <p><strong>Sustainable procurement performance will be assessed through the following indicators:</strong></p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Indicator</th>
+                      <th>By 2030</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Sustainable procurement share</td>
+                      <td>40%</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Eco-certified products</td>
+                      <td>30%</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Supplier ESG compliance</td>
+                      <td>70%</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Energy efficient equipment</td>
+                      <td>50%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Note: Monitoring is carried out once a year.</p>
+              <div class="governance-table-wrap">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Indicator</th>
+                      <th>By 2030</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Carbon emissions</td>
+                      <td>Reduce by 40%</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Renewable energy share</td>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Water consumption</td>
+                      <td>Reduce by 30%</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Waste recycling</td>
+                      <td>70%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Through this policy, the University seeks to achieve key environmental sustainability targets by 2030.</p>
+              <p><strong>Governance and responsibility:</strong> The Planning and Finance Department implements the policy and conducts monitoring. The Procurement Commission supervises the criteria and tender processes. Internal audit manages the compliance and effectiveness assessment system. Risks and risk management include financial and market risks, supply-chain disruptions, and adaptation to regulatory changes.</p>
+              <p><strong>Final provisions:</strong> This policy enters into force in 2025 and remains valid until 2030. Where necessary, it will be reviewed and updated by the Planning and Finance Department.</p>
+            </div>
+        """,
+        "sections_uz": [
+            {
+                "title": "Siyosat haqida",
+                "paragraphs": [
+                    "BARQAROR XARIDLAR SIYOSATI (2025-2030).",
+                    "Ishlab chiquvchi: Reja-moliya bo'limi rahbari. Amal qilish muddati: 2025-2030 yillar. Qamrovi: Qarshi davlat universitetining barcha tuzilmaviy bo'linmalari.",
+                    "Mazkur siyosat Qarshi davlat universiteti xarid faoliyatida iqtisodiy samaradorlik, ekologik mas'uliyat va ijtimoiy barqarorlik tamoyillarini joriy etishni maqsad qiladi.",
+                    "Siyosat davlat xaridlari to'g'risidagi qonunning 111-moddasi, davlat xaridlarini amalga oshirish bilan bog'liq tartib-taomillarni tashkil etish va o'tkazish tartibi to'g'risidagi nizom, yashil iqtisodiyot, ESG tamoyillari, ISO 20400 Sustainable Procurement yondashuvi hamda BMTning barqaror rivojlanish maqsadlariga mos ravishda ishlab chiqilgan.",
+                ],
+            },
+            {
+                "title": "Maqsad va vazifalar",
+                "paragraphs": [
+                    "Qarshi davlat universitetining xarid faoliyatida ekologik ta'sirni kamaytirish, energiya samarador mahsulotlar ulushini oshirish, ijtimoiy mas'ul yetkazib beruvchilar bilan ishlash, xarid jarayonlarida shaffoflikni ta'minlash va Life Cycle Cost - hayot sikli qiymati (LCC) yondashuvini joriy qilish ushbu siyosatning asosiy vazifasi hisoblanadi.",
+                    "Barqaror xaridlar orqali xarajatlarni optimallashtirish, atrof-muhitga salbiy ta'sirni kamaytirish va ijtimoiy qiymat yaratish, ekologik toza va energiya tejamkor mahsulotlar ulushini oshirish, mahalliy ishlab chiqaruvchilar hamda ijtimoiy mas'ul yetkazib beruvchilarni qo'llab-quvvatlash, korrupsiya xavflarini kamaytirish va shaffoflikni ta'minlash maqsadida davlat xaridlari elektron tizimi orqali amalga oshiriladi.",
+                ],
+            },
+            {
+                "title": "Tatbiq etiladigan yo'nalishlar",
+                "paragraphs": [
+                    "Siyosat quyidagi yo'nalishlarga tatbiq etiladi:",
+                ],
+                "bullets": [
+                    "kapital qo'yilmalar",
+                    "infratuzilma loyihalari",
+                    "davlat-xususiy sheriklik loyihalari",
+                    "xalqaro va milliy grantlar",
+                    "xalqaro moliya institutlari ishtirokidagi investitsiyalar",
+                    "texnologik va energetik modernizatsiya loyihalari",
+                    "xalqaro moliyalashtirish ishtirokidagi loyihalar",
+                ],
+            },
+            {
+                "title": "Tamoyillar va xarid turlari",
+                "paragraphs": [
+                    "Ekologik tamoyillariga energiya samarador mahsulotlari, ekologik sertifikatlangan mahsulotlar, chiqindilarni kamaytirish, qayta ishlanadigan materiallardan foydalanish, karbon chiqindilarini kamaytirish va suv resurslaridan samarali foydalanish talablari kiradi.",
+                    "Ijtimoiy tamoyillarga mehnat huquqlariga rioya qilish va xavfsiz mehnat sharoitlarini ta'minlash kiradi.",
+                    "Boshqaruv tamoyillariga shaffof tender jarayonlari, korrupsiyaga qarshi mexanizmlar va hisobdorlik kiradi.",
+                    "Mazkur siyosat quyidagi xarid turlariga tatbiq etiladi: tovarlar xaridi, xizmatlar xaridi, qurilish va infratuzilma loyihalari, IT uskunalar, laboratoriya jihozlari va ofis materiallari.",
+                ],
+            },
+            {
+                "title": "Xarid mezonlari va tender baholash",
+                "paragraphs": [
+                    "Xarid mezonlarida energiya samaradorligi va ekologik sertifikatlar (ISO, EcoLabel va h.k.), yashil texnologiyalar va raqamli yechimlardan foydalanganlik, qayta ishlanadigan yoki kam chiqindili materiallar yetkazib beruvchining ESG ko'rsatkichlari muhim hisoblanadi.",
+                    "Tender jarayonida quyidagi mezonlar qo'llaniladi:",
+                ],
+                "tables": [
+                    {
+                        "headers": ["№", "Tender mezonlari", "Tender ball"],
+                        "rows": [
+                            ["1", "Narx", "50 ball"],
+                            ["2", "Texnik sifat", "20 ball"],
+                            ["3", "ESG ko'rsatkichlari", "30 ball"],
+                        ],
+                    }
+                ],
+            },
+            {
+                "title": "Yetkazib beruvchilar, monitoring va KPI",
+                "paragraphs": [
+                    "Yetkazib beruvchilar bilan ishlashda barqarorlik talablari kiritilgan shartnomalar, yetkazib beruvchilarni baholash va reytinglash, mahalliy va kichik biznesni rag'batlantirish hisobga olinadi. Supplier sustainability reyting tizimi joriy etiladi.",
+                    "Monitoring va hisobot jarayonlarida yillik KPIlar va indikatorlar, ESG hisobotlari tayyorlash, hisobot kamchiliklari bo'yicha tuzatuv rejalari amalga oshiriladi.",
+                    "Barqaror xaridlar samaradorligi quyidagi ko'rsatkichlar orqali baholanadi:",
+                ],
+                "tables": [
+                    {
+                        "headers": ["№", "Indikator", "2030 yilgacha"],
+                        "rows": [
+                            ["1", "Sustainable procurement share", "40%"],
+                            ["2", "Eco-certified products", "30%"],
+                            ["3", "Supplier ESG compliance", "70%"],
+                            ["4", "Energy efficient equipment", "50%"],
+                        ],
+                    }
+                ],
+            },
+            {
+                "title": "2030 yilgacha ekologik natijalar",
+                "paragraphs": [
+                    "Izoh. Monitoring yiliga bir marta amalga oshiriladi.",
+                    "Barqaror xaridlar siyosati orqali 2030 yilgacha ekologik barqarorlikka erishish maqsadlari quyidagi ko'rsatkichlar orqali baholanadi:",
+                ],
+                "tables": [
+                    {
+                        "headers": ["№", "Indikator", "2030 yilgacha"],
+                        "rows": [
+                            ["1", "Karbon emissiyasi", "−40% kamaytirish"],
+                            ["2", "Qayta tiklanuvchi energiya ulushi", "50%"],
+                            ["3", "Suv iste'moli", "−30% kamaytirish"],
+                            ["4", "Chiqindilarni qayta ishlash", "70%"],
+                        ],
+                    }
+                ],
+            },
+            {
+                "title": "Boshqaruv va mas'uliyat",
+                "paragraphs": [
+                    "Reja-moliya bo'limi siyosatni amalga oshiradi va monitoring olib boradi. Xaridlar komissiyasi mezonlar va tender jarayonlarini nazorat qiladi. Ichki audit muvofiqlik va samaradorlikni baholash tizimini yuritadi.",
+                    "Xatarlar va ularni boshqarishda moliyaviy va bozor xavflari, ta'minot zanjiridagi uzilishlar va regulyator o'zgarishlariga moslashuv muntazam tekshirilib boriladi.",
+                ],
+            },
+            {
+                "title": "Yakunlovchi qoidalar",
+                "paragraphs": [
+                    "Ushbu siyosat 2025 yildan kuchga kiradi va 2030 yilgacha amal qiladi.",
+                    "Zarur hollarda Reja-moliya bo'limi tomonidan qayta ko'rib chiqiladi va yangilanadi.",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Procurement approach",
+                "paragraphs": [
+                    "Procurement decisions evaluate ESG performance alongside price and technical quality.",
+                    "Priority is given to eco-certified products, energy-efficient equipment, and responsible suppliers.",
+                ],
+            },
+            {
+                "title": "2030 outcomes",
+                "bullets": [
+                    "increase the share of sustainable procurement",
+                    "expand procurement of eco-certified products",
+                    "raise supplier ESG compliance levels",
+                    "grow the share of energy-efficient campus equipment",
+                ],
+            },
+        ],
+    },
+    "sdg-committee": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "SDG qo'mitasi",
+        "title_en": "SDG Committee",
+        "intro_uz": "Barqarorlik bo'yicha institutsional qarorlar, monitoring va muvofiqlashtirish uchun rahbar organ.",
+        "intro_en": "The leadership structure that drives sustainability decisions, monitoring, and coordination.",
+        "sections_uz": [
+            {
+                "title": "Boshqaruv arxitekturasi",
+                "paragraphs": [
+                    "SDG qo'mitasi rektorat, tegishli prorektorlar, bo'lim rahbarlari va ijrochi guruhlarni birlashtiruvchi markaziy muvofiqlashtirish platformasidir.",
+                    "Qo'mita ustuvor maqsadlar ijrosini, indikatorlar monitoringini va fakultetlararo hamkorlikni boshqaradi.",
+                ],
+            },
+            {
+                "title": "Asosiy funksiyalar",
+                "bullets": [
+                    "choraklik ko'rsatkichlar va natijalarni ko'rib chiqish",
+                    "institutsional xavf va imkoniyatlarni baholash",
+                    "kampus, xarid va jamoatchilik bo'yicha ishlarni uyg'unlashtirish",
+                    "SDG yo'nalishidagi yangi tashabbuslarni tasdiqlash",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Governance architecture",
+                "paragraphs": [
+                    "The SDG Committee is the University's central coordinating platform linking senior leadership, operational heads, and implementation teams.",
+                    "It manages target delivery, indicator tracking, and cross-faculty alignment across the sustainability agenda.",
+                ],
+            },
+            {
+                "title": "Core functions",
+                "bullets": [
+                    "review quarterly indicators and outcomes",
+                    "assess institutional risks and opportunities",
+                    "align campus, procurement, and public-engagement work",
+                    "approve new SDG-focused initiatives",
+                ],
+            },
+        ],
+    },
+    "anti-corruption": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Korrupsiyaga qarshi",
+        "title_en": "Anti-Corruption",
+        "intro_uz": "Halollik, shaffoflik va manfaatlar to'qnashuvining oldini olishga qaratilgan institutsional nazorat tizimi.",
+        "intro_en": "Institutional controls designed around integrity, transparency, and conflict-of-interest prevention.",
+        "sections_uz": [
+            {
+                "title": "Nol toqat tamoyili",
+                "paragraphs": [
+                    "Universitet korrupsiyaga nisbatan nol toqat siyosatini qo'llaydi va barcha qarorlarda hujjatlashtirilgan shaffof tartiblarni talab qiladi.",
+                    "Xarid, investitsiya va boshqaruv bo'yicha muhim qarorlar nazorat, tekshiruv va ichki audit mexanizmlari bilan qo'llab-quvvatlanadi.",
+                ],
+            },
+            {
+                "title": "Nazorat vositalari",
+                "bullets": [
+                    "anonim murojaatlar va ichki xabar berish kanallari",
+                    "ichki audit va ijro nazorati",
+                    "manfaatlar to'qnashuvi bo'yicha deklaratsiyalar",
+                    "xodimlar uchun etik me'yor va halollik treninglari",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Zero-tolerance principle",
+                "paragraphs": [
+                    "The University applies a zero-tolerance policy toward corruption and requires transparent, documented procedures in decision-making.",
+                    "Major procurement, investment, and governance decisions are supported by review, verification, and internal audit mechanisms.",
+                ],
+            },
+            {
+                "title": "Control mechanisms",
+                "bullets": [
+                    "anonymous reporting and internal disclosure channels",
+                    "internal audit and implementation oversight",
+                    "conflict-of-interest declarations",
+                    "ethics and integrity training for staff",
+                ],
+            },
+        ],
+    },
+    "jamoatchilik": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Jamoatchilik",
+        "title_en": "Public Engagement",
+        "intro_uz": "Ochiqlik, muloqot va manfaatdor tomonlar bilan hamkorlik orqali ijtimoiy hisobdorlikni kuchaytirish yo'nalishi.",
+        "intro_en": "A public engagement direction focused on openness, dialogue, and social accountability through stakeholder collaboration.",
+        "sections_uz": [
+            {
+                "title": "Hamkorlik modeli",
+                "paragraphs": [
+                    "Universitet mahalliy hamjamiyat, maktablar, NNTlar va davlat tashkilotlari bilan tizimli aloqalarni barqaror platforma sifatida yuritadi.",
+                    "Natijalar portal, tadbirlar va jamoatchilikka ochiq e'lonlar orqali muntazam yetkaziladi.",
+                ],
+            },
+            {
+                "title": "Asosiy yo'nalishlar",
+                "bullets": [
+                    "ochiq muloqot va jamoatchilik bilan konsultatsiyalar",
+                    "talabalar va fuqarolik jamiyati tashabbuslarini qo'llab-quvvatlash",
+                    "ijtimoiy loyihalarni hamkorlikda amalga oshirish",
+                    "natijalar bo'yicha muntazam ommaviy hisobot berish",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Engagement model",
+                "paragraphs": [
+                    "The University maintains structured relationships with communities, schools, NGOs, and public institutions as part of its sustainability platform.",
+                    "Results are regularly communicated through the portal, public events, and open institutional announcements.",
+                ],
+            },
+            {
+                "title": "Key directions",
+                "bullets": [
+                    "open dialogue and public consultation",
+                    "support for student and civil-society initiatives",
+                    "joint delivery of social-impact projects",
+                    "regular public reporting on outcomes",
+                ],
+            },
+        ],
+    },
+    "xotin-qizlar": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Xotin-qizlar",
+        "title_en": "Women and Inclusion",
+        "intro_uz": "Ta'lim, bandlik, yetakchilik va qaror qabul qilishdagi ishtirokni kuchaytirishga qaratilgan inklyuziv siyosat.",
+        "intro_en": "An inclusive policy designed to strengthen participation in education, employment, leadership, and decision-making.",
+        "sections_uz": [
+            {
+                "title": "Institutsional yondashuv",
+                "paragraphs": [
+                    "Universitet xotin-qizlar uchun xavfsiz, teng imkoniyatli va rivojlanishga yo'naltirilgan muhit yaratishni ustuvor deb biladi.",
+                    "Gender tenglik ko'rsatkichlari institutsional monitoring va rahbariyat hisobotining ajralmas qismi sifatida kuzatiladi.",
+                ],
+            },
+            {
+                "title": "Qo'llab-quvvatlash mexanizmlari",
+                "bullets": [
+                    "mentorlik va liderlik dasturlari",
+                    "teng imkoniyat va xavfsiz mehnat tamoyillari",
+                    "himoya va murojaat mexanizmlari",
+                    "qaror qabul qilishdagi vakillikni oshirish",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Institutional approach",
+                "paragraphs": [
+                    "The University prioritizes a safe, equitable, and growth-oriented environment for women across academic and administrative life.",
+                    "Gender equality indicators are tracked as a formal part of institutional monitoring and leadership reporting.",
+                ],
+            },
+            {
+                "title": "Support mechanisms",
+                "bullets": [
+                    "mentoring and leadership pathways",
+                    "equal-opportunity and safe-work standards",
+                    "protection and reporting mechanisms",
+                    "stronger representation in decision-making",
+                ],
+            },
+        ],
+    },
+}
+
+
 SDG_CONTENT = [
     {
         "number": 1,
@@ -1577,7 +2377,13 @@ class BasePortalContextMixin:
     page_key = "home"
 
     def get_language_code(self):
-        return getattr(self.request, "LANGUAGE_CODE", "en")
+        language_code = (
+            self.request.session.get("portal_language")
+            or self.request.COOKIES.get("portal_language")
+            or getattr(self.request, "LANGUAGE_CODE", "en")
+            or "en"
+        )
+        return language_code if language_code in {"uz", "en"} else "en"
 
     def get_site_settings(self):
         return localize_object(SiteSettings.objects.first(), self.get_language_code())
@@ -1642,6 +2448,31 @@ class AboutView(BasePortalContextMixin, TemplateView):
         context["values"] = localize_collection(InstitutionalValue.objects.all(), language_code)
         context["governance_roles"] = localize_collection(GovernanceRole.objects.all(), language_code)
         context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all(), language_code)
+        return context
+
+
+class GovernanceDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/governance_detail.html"
+    page_key = "about"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        slug = kwargs["slug"]
+        section = GOVERNANCE_PAGE_CONTENT.get(slug)
+        if not section:
+            raise Http404("Governance page not found")
+
+        language_code = self.get_language_code()
+        language_suffix = "uz" if language_code == "uz" else "en"
+        context["governance_section"] = {
+            "slug": slug,
+            "eyebrow": section[f"eyebrow_{language_suffix}"],
+            "title": section[f"title_{language_suffix}"],
+            "intro": section[f"intro_{language_suffix}"],
+            "sections": section[f"sections_{language_suffix}"],
+            "raw_html": section.get(f"single_card_raw_{language_suffix}"),
+            "single_card": slug in {"sdg-purchase", "sdg-investment"},
+        }
         return context
 
 

@@ -9,10 +9,13 @@ const filterTargets = document.querySelectorAll(".filter-targets [data-category]
 const revealItems = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll(".counter[data-target]");
 const tiltTargets = document.querySelectorAll(
-  ".stat-card, .content-card, .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card, .sdg-work-card"
+  ".stat-card, .content-card:not(.governance-detail-card), .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card, .sdg-work-card"
 );
 const heroParallax = document.querySelectorAll(".hero-portrait-card, .hero-rankings-strip, .hero-author");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const typewriterTargets = document.querySelectorAll(
+  ".hero-copy h1, .page-intro h1, .section-heading h2, .lined-title span"
+);
 
 if (siteLoader) {
   window.addEventListener("load", () => {
@@ -200,4 +203,59 @@ if (heroParallax.length && !prefersReducedMotion.matches) {
 
   handleHeroParallax();
   window.addEventListener("scroll", handleHeroParallax, { passive: true });
+}
+
+if (typewriterTargets.length) {
+  const runTypewriter = (element) => {
+    if (element.dataset.typewriterReady === "true") {
+      return;
+    }
+
+    const originalText = element.textContent.trim();
+    if (!originalText) {
+      element.dataset.typewriterReady = "true";
+      return;
+    }
+
+    element.dataset.typewriterReady = "true";
+    element.classList.add("typewriter-target");
+
+    if (prefersReducedMotion.matches) {
+      element.textContent = originalText;
+      element.classList.add("is-complete");
+      return;
+    }
+
+    element.textContent = "";
+    element.classList.add("is-typing");
+
+    let index = 0;
+    const step = () => {
+      index += 1;
+      element.textContent = originalText.slice(0, index);
+
+      if (index < originalText.length) {
+        window.setTimeout(step, originalText.length > 42 ? 20 : 34);
+      } else {
+        element.classList.remove("is-typing");
+        element.classList.add("is-complete");
+      }
+    };
+
+    window.setTimeout(step, 120);
+  };
+
+  const typeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          runTypewriter(entry.target);
+          typeObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  typewriterTargets.forEach((target) => typeObserver.observe(target));
 }

@@ -1,0 +1,122 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <div class="section-heading governance-detail-intro">
+        <div>
+          <div class="lined-title">
+            <span>{{ governance_section.eyebrow }}</span>
+          </div>
+          <h1>{{ governance_section.title }}</h1>
+          {% if not governance_section.single_card %}
+            <p>{{ governance_section.intro }}</p>
+          {% endif %}
+        </div>
+        <div class="governance-detail-intro__actions">
+          <a class="button button--ghost" href="{% url 'about' %}">
+            {% if current_language == "uz" %}
+              Boshqaruv sahifasiga qaytish
+            {% else %}
+              Back to governance
+            {% endif %}
+          </a>
+        </div>
+      </div>
+
+      <div class="governance-detail-stack">
+        {% if governance_section.single_card %}
+          <article class="content-card governance-detail-card governance-detail-card--single">
+            {% if governance_section.raw_html %}
+              {{ governance_section.raw_html|safe }}
+            {% else %}
+              <div class="governance-detail-card__lead">
+                <p>{{ governance_section.intro }}</p>
+              </div>
+              {% for section in governance_section.sections %}
+                <section class="governance-detail-card__block">
+                  <h2>{{ section.title }}</h2>
+                  {% for paragraph in section.paragraphs %}
+                    <p>{{ paragraph }}</p>
+                  {% endfor %}
+                  {% if section.bullets %}
+                    <ul class="governance-bullet-list">
+                      {% for bullet in section.bullets %}
+                        <li>{{ bullet }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                  {% if section.tables %}
+                    {% for table in section.tables %}
+                      <div class="governance-table-wrap">
+                        <table class="governance-table">
+                          <thead>
+                            <tr>
+                              {% for header in table.headers %}
+                                <th>{{ header }}</th>
+                              {% endfor %}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for row in table.rows %}
+                              <tr>
+                                {% for cell in row %}
+                                  <td>{{ cell }}</td>
+                                {% endfor %}
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                </section>
+              {% endfor %}
+            {% endif %}
+          </article>
+        {% else %}
+          {% for section in governance_section.sections %}
+            <article class="content-card governance-detail-card">
+              <h2>{{ section.title }}</h2>
+              {% for paragraph in section.paragraphs %}
+                <p>{{ paragraph }}</p>
+              {% endfor %}
+              {% if section.bullets %}
+                <ul class="governance-bullet-list">
+                  {% for bullet in section.bullets %}
+                    <li>{{ bullet }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if section.tables %}
+                {% for table in section.tables %}
+                  <div class="governance-table-wrap">
+                    <table class="governance-table">
+                      <thead>
+                        <tr>
+                          {% for header in table.headers %}
+                            <th>{{ header }}</th>
+                          {% endfor %}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for row in table.rows %}
+                          <tr>
+                            {% for cell in row %}
+                              <td>{{ cell }}</td>
+                            {% endfor %}
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            </article>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

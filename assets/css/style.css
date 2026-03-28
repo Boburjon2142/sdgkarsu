@@ -1542,6 +1542,223 @@ blockquote {
   gap: 1rem;
 }
 
+.governance-links {
+  margin-bottom: 2rem;
+}
+
+.governance-links__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.governance-link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 162px;
+  padding: 1.25rem 1.3rem;
+  border: 1px solid rgba(92, 104, 88, 0.14);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(137, 206, 0, 0.16), transparent 42%),
+    linear-gradient(180deg, #fbfdf9, #f6faf1);
+  box-shadow: 0 14px 30px rgba(37, 59, 23, 0.06);
+  overflow: hidden;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-slow);
+}
+
+.governance-link-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -30px -30px auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(137, 206, 0, 0.08);
+  transition: transform var(--transition-slow), background var(--transition-slow);
+}
+
+.governance-link-card:hover,
+.governance-link-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(92, 149, 0, 0.26);
+  box-shadow: 0 22px 40px rgba(37, 59, 23, 0.12);
+}
+
+.governance-link-card:hover::after,
+.governance-link-card:focus-visible::after {
+  transform: scale(1.08);
+  background: rgba(137, 206, 0, 0.12);
+}
+
+.governance-link-card__eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(47, 91, 23, 0.08);
+  color: #2f5b17;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.governance-link-card strong {
+  position: relative;
+  z-index: 1;
+  color: #182616;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.governance-link-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.governance-detail-intro {
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.governance-detail-intro h1 {
+  margin-bottom: 0.9rem;
+}
+
+.governance-detail-intro p {
+  max-width: 48rem;
+  margin-bottom: 0;
+}
+
+.governance-detail-intro__actions {
+  flex: 0 0 auto;
+}
+
+.governance-detail-stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.governance-detail-card h2 {
+  margin-bottom: 0.85rem;
+}
+
+.governance-detail-card,
+.governance-detail-card:hover,
+.governance-detail-card:focus-within {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  transition: none;
+  animation: none;
+}
+
+.governance-detail-card--single {
+  padding-bottom: 1.6rem;
+}
+
+.governance-richtext p {
+  margin-bottom: 1rem;
+}
+
+.governance-richtext strong {
+  color: var(--text-strong);
+}
+
+.governance-richtext .governance-table-wrap {
+  margin: 1rem 0 1.25rem;
+}
+
+.governance-detail-card__block + .governance-detail-card__block {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(92, 104, 88, 0.12);
+}
+
+.governance-detail-card__block h2 {
+  margin-bottom: 0.85rem;
+}
+
+.governance-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.governance-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+  border: 1px solid rgba(92, 104, 88, 0.14);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.governance-table thead {
+  background: linear-gradient(180deg, rgba(137, 206, 0, 0.12), rgba(137, 206, 0, 0.05));
+}
+
+.governance-table th,
+.governance-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(92, 104, 88, 0.12);
+}
+
+.governance-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.governance-table th {
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.governance-link-card--policy {
+  background:
+      radial-gradient(circle at top right, rgba(137, 206, 0, 0.2), transparent 44%),
+      linear-gradient(180deg, #fbfdf9, #f6faf1);
+}
+
+.governance-link-card--invest {
+  background:
+    radial-gradient(circle at top right, rgba(10, 151, 217, 0.14), transparent 44%),
+    linear-gradient(180deg, #fbfdff, #f4f9fd);
+}
+
+.governance-link-card--purchase {
+  background:
+    radial-gradient(circle at top right, rgba(253, 157, 36, 0.16), transparent 44%),
+    linear-gradient(180deg, #fffdf8, #fbf5ea);
+}
+
+.governance-link-card--committee {
+  background:
+    radial-gradient(circle at top right, rgba(25, 72, 106, 0.15), transparent 44%),
+    linear-gradient(180deg, #fbfdff, #eff5fb);
+}
+
+.governance-link-card--integrity {
+  background:
+    radial-gradient(circle at top right, rgba(197, 25, 45, 0.12), transparent 44%),
+    linear-gradient(180deg, #fffdfd, #faf1f2);
+}
+
+.governance-link-card--public {
+  background:
+    radial-gradient(circle at top right, rgba(63, 126, 68, 0.14), transparent 44%),
+    linear-gradient(180deg, #fbfdfb, #f2f8f2);
+}
+
+.governance-link-card--women {
+  background:
+    radial-gradient(circle at top right, rgba(221, 19, 103, 0.12), transparent 44%),
+    linear-gradient(180deg, #fffdfd, #faf3f7);
+}
+
 .governance-panel {
   border: 1px solid rgba(92, 104, 88, 0.14);
   border-radius: 24px;
@@ -1551,6 +1768,7 @@ blockquote {
 }
 
 .governance-panel__summary {
+  scroll-margin-top: 7rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -1846,9 +2064,39 @@ textarea {
 .hero-copy .hero-rankings-strip { animation-delay: 240ms; }
 .hero-copy .hero-actions { animation-delay: 300ms; }
 
+.typewriter-target {
+  position: relative;
+  display: inline-block;
+  min-height: 1em;
+}
+
+.typewriter-target.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.09em;
+  height: 0.92em;
+  margin-left: 0.14em;
+  vertical-align: -0.08em;
+  background: currentColor;
+  animation: type-caret 0.8s step-end infinite;
+}
+
+.typewriter-target.is-complete::after {
+  opacity: 0;
+}
+
 @keyframes floating-card {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+@keyframes type-caret {
+  0%, 45% {
+    opacity: 1;
+  }
+  46%, 100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-up {
@@ -1891,6 +2139,10 @@ textarea {
   .hero-copy > *,
   .hero-rankings-strip,
   .hero-author {
+    animation: none !important;
+  }
+
+  .typewriter-target.is-typing::after {
     animation: none !important;
   }
 
