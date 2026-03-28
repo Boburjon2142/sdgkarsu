@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.views.generic import DetailView, TemplateView
@@ -1820,8 +1821,12 @@ class NewsEventsView(BasePortalContextMixin, TemplateView):
         if selected_sdg in range(1, 18):
             news_queryset = news_queryset.filter(sdg_goal=selected_sdg)
         featured_article = news_queryset.filter(featured=True).first() or news_queryset.first()
+        paginator = Paginator(news_queryset, 9)
+        page_obj = paginator.get_page(self.request.GET.get("page"))
+        news_items = page_obj.object_list
         context["featured_article"] = localize_object(featured_article, language_code)
-        context["news_items"] = localize_collection(news_queryset, language_code)
+        context["news_items"] = localize_collection(news_items, language_code)
+        context["page_obj"] = page_obj
         context["events"] = localize_collection(Event.objects.all(), language_code)
         context["selected_sdg"] = selected_sdg
         context["selected_sdg_goal"] = get_sdg_goal(selected_sdg, language_code) if selected_sdg in range(1, 18) else None

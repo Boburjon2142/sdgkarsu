@@ -2,29 +2,9 @@
 {% load portal_i18n %}
 
 {% block content %}
-  {% include "portal/includes/page_intro.html" %}
-
-  {% if featured_article %}
-    <section class="section">
-      <div class="container featured-news">
-        <div>
-          <div class="eyebrow">{% tr "Featured article" %}</div>
-          <h2><a href="{{ featured_article.get_absolute_url }}">{{ featured_article.title }}</a></h2>
-          <p>{{ featured_article.body }}</p>
-          <a class="button button--primary" href="{{ featured_article.get_absolute_url }}">{% tr "Read official article" %}</a>
-        </div>
-        <aside class="content-card content-card--panel">
-          <span class="chip">{{ featured_article.get_category_display|translate_value:current_language }}</span>
-          <strong>{{ featured_article.published_on|date:"F d, Y" }}</strong>
-          <p>{{ featured_article.summary }}</p>
-        </aside>
-      </div>
-    </section>
-  {% endif %}
-
   <section class="section section--soft">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading section-heading--news">
         <div>
           <div class="eyebrow">{% tr "Latest news" %}</div>
           <h2>
@@ -39,39 +19,57 @@
       <div class="card-grid card-grid--three">
         {% for article in news_items %}
           <article class="news-card reveal">
-            <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
-            <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-            <p>{{ article.summary }}</p>
-            <small>{{ article.published_on|date:"F d, Y" }}</small>
+            {% if article.image %}
+              <a class="news-card__media" href="{{ article.get_absolute_url }}">
+                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+              </a>
+            {% else %}
+              <a class="news-card__media news-card__media--placeholder" href="{{ article.get_absolute_url }}" aria-label="{{ article.title }}">
+                <span>{{ article.title }}</span>
+              </a>
+            {% endif %}
+            <div class="news-card__body">
+              <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
+              <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+              <p>{{ article.summary }}</p>
+              <small>{{ article.published_on|date:"F d, Y" }}</small>
+            </div>
+          </article>
+        {% empty %}
+          <article class="content-card">
+            <p>{% tr "No updates published yet" %}</p>
           </article>
         {% endfor %}
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">{% tr "Events" %}</div>
-          <h2>{% tr "Forums, conferences, workshops, and institutional briefings." %}</h2>
+      {% if page_obj and page_obj.paginator.num_pages > 1 %}
+        <div class="section-heading section-heading--news">
+          <p>
+            {% if current_language == "uz" %}
+              Sahifa {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+            {% else %}
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            {% endif %}
+          </p>
+          <div class="hero-actions">
+            {% if page_obj.has_previous %}
+              <a class="button button--secondary" href="?{% if selected_sdg %}sdg={{ selected_sdg }}&amp;{% endif %}page={{ page_obj.previous_page_number }}">{% tr "Previous" %}</a>
+            {% endif %}
+
+            {% for page_number in page_obj.paginator.page_range %}
+              {% if page_number == page_obj.number %}
+                <span class="button button--primary">{{ page_number }}</span>
+              {% elif page_number >= page_obj.number|add:"-2" and page_number <= page_obj.number|add:"2" %}
+                <a class="button button--secondary" href="?{% if selected_sdg %}sdg={{ selected_sdg }}&amp;{% endif %}page={{ page_number }}">{{ page_number }}</a>
+              {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+              <a class="button button--secondary" href="?{% if selected_sdg %}sdg={{ selected_sdg }}&amp;{% endif %}page={{ page_obj.next_page_number }}">{% tr "Next" %}</a>
+            {% endif %}
+          </div>
         </div>
-      </div>
-      <div class="stack-list">
-        {% for event in events %}
-          <article class="list-card reveal">
-            <div>
-              <span class="chip">{{ event.get_category_display|translate_value:current_language }}</span>
-              <h3><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h3>
-              <p>{{ event.summary }}</p>
-            </div>
-            <div class="list-card__meta">
-              <strong>{{ event.start_date|date:"M d" }}</strong>
-              <span>{{ event.venue }}</span>
-            </div>
-          </article>
-        {% endfor %}
-      </div>
+      {% endif %}
     </div>
   </section>
 {% endblock %}

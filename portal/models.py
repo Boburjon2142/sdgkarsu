@@ -355,11 +355,17 @@ class NewsArticle(TimeStampedModel):
     SDG_CHOICES = [(number, f"SDG {number}") for number in range(1, 18)]
 
     title = models.TextField()
+    title_uz = models.TextField(blank=True, default="")
+    title_en = models.TextField(blank=True, default="")
     slug = models.SlugField(unique=True)
     category = models.CharField(max_length=20, choices=Category.choices)
     sdg_goal = models.PositiveSmallIntegerField(choices=SDG_CHOICES, blank=True, null=True)
     summary = models.TextField()
+    summary_uz = models.TextField(blank=True, default="")
+    summary_en = models.TextField(blank=True, default="")
     body = models.TextField()
+    body_uz = models.TextField(blank=True, default="")
+    body_en = models.TextField(blank=True, default="")
     image = models.ImageField(upload_to="news/", blank=True)
     published_on = models.DateField()
     featured = models.BooleanField(default=False)
@@ -368,7 +374,7 @@ class NewsArticle(TimeStampedModel):
         ordering = ["-published_on", "title"]
 
     def __str__(self):
-        return self.title
+        return self.title_uz or self.title_en or self.title
 
     def get_absolute_url(self):
         return reverse("news-detail", kwargs={"slug": self.slug})

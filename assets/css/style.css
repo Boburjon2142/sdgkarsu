@@ -185,6 +185,14 @@ ul {
   padding: 1.5rem 0 0;
 }
 
+.section--sdg-news {
+  padding-bottom: 2rem;
+}
+
+.section--latest-news {
+  padding-top: 1.5rem;
+}
+
 .section--soft {
   background: #ffffff;
 }

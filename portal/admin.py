@@ -40,6 +40,23 @@ class NewsArticleAdminForm(forms.ModelForm):
             "image": "Recommended size: 1600 x 1000 px (16:10), landscape. 1200 x 750 px also works well. Keep the main subject near the center because the card uses cover cropping.",
         }
 
+    def clean(self):
+        cleaned_data = super().clean()
+        cleaned_data["title"] = cleaned_data.get("title_en") or cleaned_data.get("title_uz") or cleaned_data.get("title") or ""
+        cleaned_data["summary"] = cleaned_data.get("summary_en") or cleaned_data.get("summary_uz") or cleaned_data.get("summary") or ""
+        cleaned_data["body"] = cleaned_data.get("body_en") or cleaned_data.get("body_uz") or cleaned_data.get("body") or ""
+        return cleaned_data
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        instance.title = self.cleaned_data.get("title", "")
+        instance.summary = self.cleaned_data.get("summary", "")
+        instance.body = self.cleaned_data.get("body", "")
+        if commit:
+            instance.save()
+            self.save_m2m()
+        return instance
+
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(SingletonAdmin):
@@ -205,14 +222,16 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(NewsArticle)
 class NewsArticleAdmin(admin.ModelAdmin):
     form = NewsArticleAdminForm
-    list_display = ("title", "category", "sdg_goal", "published_on", "featured")
+    list_display = ("title_uz", "title_en", "category", "sdg_goal", "published_on", "featured")
     list_filter = ("category", "sdg_goal", "featured")
-    prepopulated_fields = {"slug": ("title",)}
-    search_fields = ("title", "summary", "body")
+    prepopulated_fields = {"slug": ("title_en",)}
+    search_fields = ("title_uz", "title_en", "summary_uz", "summary_en", "body_uz", "body_en", "title", "summary", "body")
     readonly_fields = ("image_preview",)
     fieldsets = (
-        (None, {"fields": ("title", "slug", "category", "sdg_goal", "featured")}),
-        ("Content", {"fields": ("summary", "body", "image", "image_preview")}),
+        (None, {"fields": ("title_uz", "title_en", "slug", "category", "sdg_goal", "featured")}),
+        ("Summary", {"fields": ("summary_uz", "summary_en")}),
+        ("Body", {"fields": ("body_uz", "body_en")}),
+        ("Media", {"fields": ("image", "image_preview")}),
         ("Publishing", {"fields": ("published_on",)}),
     )
 

@@ -63,12 +63,15 @@ TRANSLATIONS = {
         "View all 17 goals": "Barcha 17 maqsadni ko'rish",
         "Open detail page": "Batafsil sahifani ochish",
         "Latest sustainability news": "So'nggi barqarorlik yangiliklari",
+        "Sustainability goals": "Barqarorlik maqsadlari",
+        "17 sustainability goals": "17ta barqarorlik maqsadlari",
         "Sustainability news": "Barqarorlikka oid yangiliklar",
         "No updates published yet": "Hozircha yangiliklar joylanmagan",
         "A sustainable future starts today": "Barqaror kelajak bugundan boshlanadi",
         "Rector of Karshi State University": "Qarshi davlat universiteti rektori",
         "Latest updates, official announcements, and news related to institutional activity.": "So'nggi yangiliklar, rasmiy e'lonlar va institut faoliyatiga oid yangilanishlar.",
         "View all news": "Barcha yangiliklarni ko'rish",
+        "Archive": "Arxiv",
         "All news & events": "Barcha yangiliklar va tadbirlar",
         "Read article": "Maqolani o'qish",
         "Institutional Calendar": "Institutsional kalendar",
@@ -390,15 +393,31 @@ def translate_text(value, language_code):
     return TRANSLATIONS.get(language, {}).get(value, value)
 
 
+def resolve_bilingual_text(instance, field_name, language_code):
+    language = (language_code or "en").split("-")[0]
+    primary_attr = f"{field_name}_{language}"
+    secondary_attr = f"{field_name}_{'en' if language == 'uz' else 'uz'}"
+    primary_value = getattr(instance, primary_attr, "")
+    secondary_value = getattr(instance, secondary_attr, "")
+    legacy_value = getattr(instance, field_name, "")
+    return primary_value or secondary_value or legacy_value
+
+
 def localize_object(instance, language_code):
     if instance is None:
         return instance
     localized_instance = copy(instance)
+    bilingual_fields = ("title", "summary", "body")
     for key, value in vars(instance).items():
         if key.startswith("_"):
             continue
+        if key in bilingual_fields and (hasattr(instance, f"{key}_uz") or hasattr(instance, f"{key}_en")):
+            continue
         if isinstance(value, str):
             setattr(localized_instance, key, translate_text(value, language_code))
+    for field_name in bilingual_fields:
+        if hasattr(instance, f"{field_name}_uz") or hasattr(instance, f"{field_name}_en"):
+            setattr(localized_instance, field_name, resolve_bilingual_text(instance, field_name, language_code))
     return localized_instance
 
 
