@@ -91,6 +91,7 @@ def cache_config_from_url(cache_url):
             "LOCATION": cache_url,
             "OPTIONS": {
                 "CLIENT_CLASS": "django_redis.client.DefaultClient",
+                "IGNORE_EXCEPTIONS": True,
             },
             "KEY_PREFIX": env("DJANGO_CACHE_KEY_PREFIX", "sdg"),
             "TIMEOUT": env_int("DJANGO_CACHE_TIMEOUT", 300),
@@ -211,7 +212,7 @@ if env("CACHE_URL"):
         CACHES["default"],
         key_prefix=env("DJANGO_FRAGMENT_CACHE_KEY_PREFIX", f'{env("DJANGO_CACHE_KEY_PREFIX", "sdg")}:fragments'),
     )
-    SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+    SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
     SESSION_CACHE_ALIAS = "sessions"
 else:
     CACHES["sessions"] = clone_cache_config(CACHES["default"], key_prefix="sdg:sessions")

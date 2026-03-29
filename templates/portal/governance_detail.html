@@ -15,6 +15,36 @@
           {% endif %}
         </div>
         <div class="governance-detail-intro__actions">
+          {% with responsible_contact=footer_departments|first %}
+            {% if responsible_contact %}
+              <article class="content-card soft-panel-card governance-detail-contact">
+                <strong>
+                  {% if current_language == "uz" %}
+                    Mas'ul xodim
+                  {% else %}
+                    Responsible contact
+                  {% endif %}
+                </strong>
+                <p>{{ responsible_contact.contact_person }}</p>
+                <p>{{ responsible_contact.department_name }}</p>
+                <a class="button button--primary" href="mailto:{{ responsible_contact.email }}">
+                  {% if current_language == "uz" %}
+                    Mas'ul xodim bilan bog'lanish
+                  {% else %}
+                    Contact responsible officer
+                  {% endif %}
+                </a>
+              </article>
+            {% else %}
+              <a class="button button--primary" href="{% url 'contact' %}">
+                {% if current_language == "uz" %}
+                  Mas'ul xodim bilan bog'lanish
+                {% else %}
+                  Contact responsible officer
+                {% endif %}
+              </a>
+            {% endif %}
+          {% endwith %}
           <a class="button button--ghost" href="{% url 'about' %}">
             {% if current_language == "uz" %}
               Boshqaruv sahifasiga qaytish
