@@ -1,7 +1,8 @@
 {% extends "portal/base.html" %}
-{% load static portal_i18n %}
+{% load cache static portal_i18n %}
 
 {% block content %}
+  {% cache 900 home_hero current_language home_hero_cache_key using="fragments" %}
   <section class="hero-section">
     <div class="container hero-layout">
       <div class="hero-copy hero-copy--leader">
@@ -44,7 +45,9 @@
       </div>
     </div>
   </section>
+  {% endcache %}
 
+  {% cache 900 home_sdg_news current_language home_sdg_grid_cache_key using="fragments" %}
   <section class="section section--cool section--sdg-news">
     <div class="container">
       <div class="news-sdg-block">
@@ -68,7 +71,9 @@
       </div>
     </div>
   </section>
+  {% endcache %}
 
+  {% cache 300 home_latest_news current_language home_latest_news_cache_key using="fragments" %}
   <section class="section section--cool section--latest-news">
     <div class="container">
       <div class="news-sdg-block">
@@ -104,4 +109,5 @@
       </div>
     </div>
   </section>
+  {% endcache %}
 {% endblock %}

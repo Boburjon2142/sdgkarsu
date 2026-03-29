@@ -2406,6 +2406,15 @@ class HomeView(BasePortalContextMixin, TemplateView):
     template_name = "portal/home.html"
     page_key = "home"
 
+    @staticmethod
+    def _fragment_signature(items):
+        if not items:
+            return "empty"
+        return "-".join(
+            f"{item.pk}:{item.updated_at.strftime('%Y%m%d%H%M%S')}"
+            for item in items
+        )
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
@@ -2423,18 +2432,26 @@ class HomeView(BasePortalContextMixin, TemplateView):
         if selected_sdg not in range(1, 18):
             selected_sdg = available_sdg_numbers[0] if available_sdg_numbers else 1
         sustainability_news = NewsArticle.objects.filter(sdg_goal=selected_sdg)[:3]
+        latest_news_items = list(NewsArticle.objects.all()[:3])
         context["hero_stats"] = localize_collection(HeroStat.objects.all()[:4], language_code)
         context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all()[:4], language_code)
         context["featured_programs"] = localize_collection(Program.objects.filter(featured=True)[:3], language_code)
         context["featured_research"] = localize_collection(ResearchProject.objects.filter(featured=True)[:2], language_code)
         context["impact_metrics"] = localize_collection(ImpactMetric.objects.filter(scope__in=["home", "both"])[:4], language_code)
         context["latest_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
-        context["latest_news"] = localize_collection(NewsArticle.objects.all()[:3], language_code)
+        context["latest_news"] = localize_collection(latest_news_items, language_code)
         context["sustainability_news"] = localize_collection(sustainability_news, language_code)
         context["partners"] = localize_collection(Partner.objects.all()[:6], language_code)
         context["sdg_goals"] = [build_sdg_goal(item, language_code) for item in SDG_CONTENT]
         context["selected_sdg"] = selected_sdg
         context["selected_sdg_goal"] = get_sdg_goal(selected_sdg, language_code)
+        context["home_hero_cache_key"] = (
+            f"{language_code}:{context['site_settings'].updated_at.strftime('%Y%m%d%H%M%S')}"
+        )
+        context["home_sdg_grid_cache_key"] = language_code
+        context["home_latest_news_cache_key"] = (
+            f"{language_code}:{self._fragment_signature(latest_news_items)}"
+        )
         return context
 
 
