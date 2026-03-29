@@ -81,6 +81,46 @@ def database_config_from_url(database_url):
     }
 
 
+def cache_config_from_url(cache_url):
+    parsed = urlparse(cache_url)
+    scheme = parsed.scheme.lower()
+
+    if scheme in {"redis", "rediss"}:
+        return {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": cache_url,
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            },
+            "KEY_PREFIX": env("DJANGO_CACHE_KEY_PREFIX", "sdg"),
+            "TIMEOUT": env_int("DJANGO_CACHE_TIMEOUT", 300),
+        }
+
+    if scheme in {"locmem", "memory"}:
+        return {
+            "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+            "LOCATION": env("DJANGO_CACHE_LOCATION", "sdg-local-cache"),
+            "TIMEOUT": env_int("DJANGO_CACHE_TIMEOUT", 300),
+        }
+
+    raise ImproperlyConfigured(f"Unsupported CACHE_URL scheme: {scheme}")
+
+
+def clone_cache_config(cache_config, *, key_prefix=None):
+    cloned = {
+        "BACKEND": cache_config["BACKEND"],
+        "LOCATION": cache_config["LOCATION"],
+        "TIMEOUT": cache_config.get("TIMEOUT"),
+    }
+    if "OPTIONS" in cache_config:
+        cloned["OPTIONS"] = dict(cache_config["OPTIONS"])
+    if key_prefix is not None:
+        cloned["KEY_PREFIX"] = key_prefix
+    elif "KEY_PREFIX" in cache_config:
+        cloned["KEY_PREFIX"] = cache_config["KEY_PREFIX"]
+    return cloned
+
+
 SECRET_KEY = env("DJANGO_SECRET_KEY", "change-me-in-production")
 DEBUG = env_bool("DJANGO_DEBUG", True)
 
@@ -151,6 +191,31 @@ DATABASES = {
 
 if env("DATABASE_URL"):
     DATABASES["default"] = database_config_from_url(env("DATABASE_URL"))
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": env("DJANGO_CACHE_LOCATION", "sdg-local-cache"),
+        "TIMEOUT": env_int("DJANGO_CACHE_TIMEOUT", 300),
+    }
+}
+
+if env("CACHE_URL"):
+    CACHES["default"] = cache_config_from_url(env("CACHE_URL"))
+    CACHES["sessions"] = clone_cache_config(
+        CACHES["default"],
+        key_prefix=env("DJANGO_SESSION_CACHE_KEY_PREFIX", f'{env("DJANGO_CACHE_KEY_PREFIX", "sdg")}:sessions'),
+    )
+    CACHES["fragments"] = clone_cache_config(
+        CACHES["default"],
+        key_prefix=env("DJANGO_FRAGMENT_CACHE_KEY_PREFIX", f'{env("DJANGO_CACHE_KEY_PREFIX", "sdg")}:fragments'),
+    )
+    SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+    SESSION_CACHE_ALIAS = "sessions"
+else:
+    CACHES["sessions"] = clone_cache_config(CACHES["default"], key_prefix="sdg:sessions")
+    CACHES["fragments"] = clone_cache_config(CACHES["default"], key_prefix="sdg:fragments")
 
 
 AUTH_PASSWORD_VALIDATORS = [
