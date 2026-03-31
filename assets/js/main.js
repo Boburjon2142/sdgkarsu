@@ -7,15 +7,13 @@ const siteLoader = document.getElementById("site-loader");
 const filterButtons = document.querySelectorAll(".filter-button");
 const filterTargets = document.querySelectorAll(".filter-targets [data-category]");
 const revealItems = document.querySelectorAll(".reveal");
-const counters = document.querySelectorAll(".counter[data-target]");
+const countupItems = document.querySelectorAll("[data-countup]");
 const tiltTargets = document.querySelectorAll(
   ".stat-card, .content-card:not(.governance-detail-card), .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card, .sdg-work-card"
 );
 const heroParallax = document.querySelectorAll(".hero-portrait-card, .hero-rankings-strip, .hero-author");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const typewriterTargets = document.querySelectorAll(
-  ".hero-copy h1, .page-intro h1, .section-heading h2, .lined-title span"
-);
+const typewriterTargets = document.querySelectorAll("[data-typewriter]");
 
 if (siteLoader) {
   window.addEventListener("load", () => {
@@ -112,11 +110,19 @@ if (revealItems.length) {
     item.style.setProperty("--reveal-delay", `${Math.min(index * 55, 420)}ms`);
   });
 
+  const revealItem = (item) => {
+    if (item.classList.contains("is-visible")) {
+      return;
+    }
+
+    item.classList.add("is-visible");
+  };
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          revealItem(entry.target);
           revealObserver.unobserve(entry.target);
         }
       });
@@ -124,46 +130,97 @@ if (revealItems.length) {
     { threshold: 0.18 }
   );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
+  revealItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+      revealItem(item);
+      return;
+    }
+
+    revealObserver.observe(item);
+  });
 }
 
-if (counters.length) {
-  const countObserver = new IntersectionObserver(
+if (countupItems.length) {
+  const formatCountupValue = (value, prefix = "", suffix = "") => {
+    return `${prefix}${Math.round(value).toLocaleString("en-US")}${suffix}`;
+  };
+
+  const runCountup = (element) => {
+    if (element.dataset.countupReady === "true") {
+      return;
+    }
+
+    const targetValue = Number(element.dataset.target);
+    const duration = Number(element.dataset.duration || 1800);
+    const prefix = element.dataset.prefix || "";
+    const suffix = element.dataset.suffix || "";
+
+    if (Number.isNaN(targetValue) || targetValue <= 0) {
+      element.textContent = formatCountupValue(0, prefix, suffix);
+      element.dataset.countupReady = "true";
+      return;
+    }
+
+    element.dataset.countupReady = "true";
+
+    if (prefersReducedMotion.matches) {
+      element.textContent = formatCountupValue(targetValue, prefix, suffix);
+      return;
+    }
+
+    const startedAt = performance.now();
+    const easeOutCubic = (progress) => 1 - ((1 - progress) ** 3);
+
+    element.textContent = formatCountupValue(0, prefix, suffix);
+
+    const tick = (now) => {
+      const elapsed = now - startedAt;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = targetValue * easeOutCubic(progress);
+
+      element.textContent = formatCountupValue(currentValue, prefix, suffix);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(tick);
+      } else {
+        element.textContent = formatCountupValue(targetValue, prefix, suffix);
+      }
+    };
+
+    window.requestAnimationFrame(tick);
+  };
+
+  const countupObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           return;
         }
 
-        const counter = entry.target;
-        const targetValue = Number(counter.dataset.target);
-        const originalText = counter.textContent.trim();
-
-        if (Number.isNaN(targetValue) || targetValue <= 0) {
-          countObserver.unobserve(counter);
-          return;
-        }
-
-        let current = 0;
-        const step = Math.max(1, Math.ceil(targetValue / 36));
-        const suffix = originalText.replace(/[0-9.,]/g, "");
-
-        const interval = window.setInterval(() => {
-          current += step;
-          if (current >= targetValue) {
-            current = targetValue;
-            clearInterval(interval);
-          }
-          counter.textContent = `${current.toLocaleString()}${suffix}`;
-        }, 30);
-
-        countObserver.unobserve(counter);
+        runCountup(entry.target);
+        countupObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.45 }
+    {
+      threshold: 0.35,
+      rootMargin: "0px 0px -5% 0px",
+    }
   );
 
-  counters.forEach((counter) => countObserver.observe(counter));
+  countupItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+      runCountup(item);
+      return;
+    }
+
+    countupObserver.observe(item);
+  });
 }
 
 if (tiltTargets.length && !prefersReducedMotion.matches) {
@@ -219,10 +276,13 @@ if (typewriterTargets.length) {
 
     element.dataset.typewriterReady = "true";
     element.classList.add("typewriter-target");
+    element.classList.remove("typewriter-pending");
+    element.style.minHeight = `${element.getBoundingClientRect().height || element.offsetHeight}px`;
 
     if (prefersReducedMotion.matches) {
       element.textContent = originalText;
       element.classList.add("is-complete");
+      element.classList.remove("typewriter-pending");
       return;
     }
 
@@ -239,23 +299,38 @@ if (typewriterTargets.length) {
       } else {
         element.classList.remove("is-typing");
         element.classList.add("is-complete");
+        element.style.minHeight = "";
       }
     };
 
     window.setTimeout(step, 120);
   };
 
-  const typeObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          runTypewriter(entry.target);
-          typeObserver.unobserve(entry.target);
+  const startTypewriters = () => {
+    typewriterTargets.forEach((target) => {
+      runTypewriter(target);
+    });
+  };
+
+  if (document.readyState === "complete") {
+    window.setTimeout(startTypewriters, 180);
+  } else {
+    window.addEventListener("load", () => {
+      window.setTimeout(startTypewriters, 180);
+    });
+  }
+
+  if (prefersReducedMotion.matches) {
+    typewriterTargets.forEach((target) => {
+      target.classList.remove("typewriter-pending");
+    });
+  } else {
+    window.setTimeout(() => {
+      typewriterTargets.forEach((target) => {
+        if (target.dataset.typewriterReady !== "true") {
+          target.classList.remove("typewriter-pending");
         }
       });
-    },
-    { threshold: 0.45 }
-  );
-
-  typewriterTargets.forEach((target) => typeObserver.observe(target));
+    }, 2000);
+  }
 }

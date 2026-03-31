@@ -5,14 +5,6 @@
   {% cache 900 home_hero current_language home_hero_cache_key using="fragments" %}
   <section class="hero-section">
     <div class="container hero-layout">
-      <div class="hero-copy hero-copy--leader">
-        <div class="eyebrow">{% tr "Sustainability" %}</div>
-        <h1>{% tr "A sustainable future starts today" %}</h1>
-        <div class="hero-actions">
-          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Results" %}</a>
-        </div>
-      </div>
-
       <div class="hero-portrait-card">
         {% if site_settings.leader_photo %}
           <img class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
@@ -25,10 +17,25 @@
         </div>
       </div>
 
+      <div class="hero-copy hero-copy--leader">
+        <div class="eyebrow">{% tr "Sustainability" %}</div>
+        <h1 class="typewriter-pending" data-typewriter>{% tr "A sustainable future starts today" %}</h1>
+        <div class="hero-actions">
+          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Results" %}</a>
+        </div>
+      </div>
+
       <div class="hero-stats hero-stats--full">
         <article class="stat-card stat-card--hero stat-card--hero-featured stat-card--hero-greenmetric">
           <div class="stat-card--hero__content">
-            <strong>#403</strong>
+            <strong
+              class="stat-card__value js-countup"
+              data-countup
+              data-target="403"
+              data-prefix="#"
+              data-duration="1800"
+              aria-label="403"
+            >#0</strong>
             <span>UI GreenMetric</span>
             <p>World University Rankings</p>
           </div>
@@ -36,7 +43,15 @@
         </article>
         <article class="stat-card stat-card--hero stat-card--hero-featured stat-card--hero-impact">
           <div class="stat-card--hero__content">
-            <strong>#1500+</strong>
+            <strong
+              class="stat-card__value js-countup"
+              data-countup
+              data-target="1500"
+              data-prefix="#"
+              data-suffix="+"
+              data-duration="2200"
+              aria-label="1500 plus"
+            >#0+</strong>
             <span>THE Impact Rankings</span>
             <p>Global university standing</p>
           </div>
@@ -54,15 +69,13 @@
         <div class="lined-title lined-title--news">
           <span>{% tr "Sustainability news" %}</span>
         </div>
-        <div class="section-heading section-heading--news">
-          <p>{% tr "Select an SDG card to see the latest updates related to that goal." %}</p>
-        </div>
       </div>
 
       <div class="sdg-icons-grid">
         {% for goal in sdg_goals %}
           <a class="sdg-news-card reveal" href="{% url 'news-events' %}?sdg={{ goal.number }}">
-            <img src="{% static goal.image %}" alt="{{ goal.title }}">
+            <img class="sdg-news-card__icon" src="{% static goal.image %}" alt="{{ goal.title }}">
+            <img class="sdg-news-card__gif" src="{% static goal.gif %}" alt="" aria-hidden="true">
             {% if current_language == "uz" %}
               <div class="sdg-news-card__caption">{{ goal.title }}</div>
             {% endif %}
@@ -76,14 +89,11 @@
   {% cache 300 home_latest_news current_language home_latest_news_cache_key using="fragments" %}
   <section class="section section--cool section--latest-news">
     <div class="container">
-      <div class="news-sdg-block">
+      <div class="news-sdg-block section-heading section-heading--news">
         <div class="lined-title lined-title--news">
           <span>{% tr "Latest news" %}</span>
         </div>
-        <div class="section-heading section-heading--news">
-          <p>{% tr "Latest updates, official announcements, and news related to institutional activity." %}</p>
-          <a class="text-link" href="{% url 'news-events' %}">{% tr "Archive" %}</a>
-        </div>
+        <a class="text-link" href="{% url 'news-events' %}">{% tr "Archive" %}</a>
       </div>
 
       <div class="card-grid card-grid--three">
