@@ -32,22 +32,74 @@
     <div class="container contact-layout">
       <div class="stack-list">
         <article class="content-card soft-panel-card">
-          <h2>{% tr "Main office" %}</h2>
-          <p>{{ site_settings.address }}</p>
-          <p><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></p>
-          <p><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></p>
-          <p>{{ site_settings.office_hours }}</p>
+          <h2>
+            {% if current_language == "uz" %}
+              Aloqa ma'lumotlari
+            {% else %}
+              Contact details
+            {% endif %}
+          </h2>
+          <div class="department-row department-row--profile">
+            <div class="contact-profile-head">
+              <div class="contact-avatar-wrap">
+                <img class="contact-avatar" src="/meedia/akaFarrux.jpg" alt="Farrux Aminov">
+              </div>
+              <div class="contact-person-meta">
+                <strong>Farrux Aminov</strong>
+                {% if current_language == "uz" %}
+                  <p>Xalqaro reytinglar bo'yicha bosh mutaxassis</p>
+                {% else %}
+                  <p>International Rankings officer</p>
+                {% endif %}
+              </div>
+            </div>
+            {% if current_language == "uz" %}
+              <p><strong>E-mail:</strong> <a href="mailto:aminov.fk@qarshidu.uz">aminov.fk@qarshidu.uz</a></p>
+              <p><strong>Telefon raqami:</strong> <a href="tel:+998909053675">+998 90 905 3675</a></p>
+              <p><strong>Ish vaqti:</strong> Dushanba–Juma 9:00-17:00</p>
+              <p><strong>Manzil:</strong> Qarshi shahri, Ko'chabog' ko'chasi, 17-uy, 180100</p>
+            {% else %}
+              <p><strong>Email:</strong> <a href="mailto:aminov.fk@qarshidu.uz">aminov.fk@qarshidu.uz</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+998909053675">+998 90 905 3675</a></p>
+              <p><strong>Working Hours:</strong> Monday–Friday, 09:00-17:00</p>
+              <p><strong>Address:</strong> Karshi city, Kuchabag street, house-17, 180100</p>
+            {% endif %}
+          </div>
         </article>
         <article class="content-card soft-panel-card">
-          <h2>{% tr "Department contacts" %}</h2>
-          {% for item in departments %}
-            <div class="department-row">
-              <strong>{{ item.department_name }}</strong>
-              <p>{{ item.contact_person }}</p>
-              <p>{{ item.office_location }}</p>
-              <p><a href="mailto:{{ item.email }}">{{ item.email }}</a> · <a href="tel:{{ item.phone }}">{{ item.phone }}</a></p>
+          <h2>
+            {% if current_language == "uz" %}
+              Barqarorlik bo'yicha aloqa
+            {% else %}
+              Sustainability contact
+            {% endif %}
+          </h2>
+          <div class="department-row department-row--profile">
+            <div class="contact-profile-head">
+              <div class="contact-avatar-wrap">
+                <img class="contact-avatar" src="/meedia/opaFiruza.jpg" alt="Firuza Davronova">
+              </div>
+              <div class="contact-person-meta">
+                <strong>Firuza Davronova</strong>
+                {% if current_language == "uz" %}
+                  <p>Barqarorlik bo'yicha mas'ul shaxs (tashkilotda barqaror rivojlanishni ilgari surish uchun yagona mas'ul)</p>
+                {% else %}
+                  <p>Sustainability officer (Sole responsibility is to advance sustainable development at the institution.)</p>
+                {% endif %}
+              </div>
             </div>
-          {% endfor %}
+            {% if current_language == "uz" %}
+              <p><strong>E-mail:</strong> <a href="mailto:firuzadavronova612@gmail.com">firuzadavronova612@gmail.com</a></p>
+              <p><strong>Telefon raqami:</strong> <a href="tel:+998889530105">+998 88 953 0105</a></p>
+              <p><strong>Ish vaqti:</strong> Dushanba–Juma 9:00-17:00</p>
+              <p><strong>Manzil:</strong> Qarshi shahri, Ko'chabog' ko'chasi, 17-uy, 180100</p>
+            {% else %}
+              <p><strong>Email:</strong> <a href="mailto:firuzadavronova612@gmail.com">firuzadavronova612@gmail.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+998889530105">+998 88 953 0105</a></p>
+              <p><strong>Working Hours:</strong> Monday–Friday, 09:00-17:00</p>
+              <p><strong>Address:</strong> Karshi city, Kuchabag street, house-17, 180100</p>
+            {% endif %}
+          </div>
         </article>
       </div>
       <article class="content-card content-card--large">

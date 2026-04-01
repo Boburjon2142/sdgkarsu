@@ -1,6 +1,9 @@
+from pathlib import Path
+
+from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.http import Http404, HttpResponse, JsonResponse
+from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.views.generic import DetailView, TemplateView
 
@@ -28,50 +31,167 @@ from .models import (
 from .translation_utils import localize_collection, localize_object, translate_text
 
 
+ETHICS_CODE_PDF_PATH = Path(settings.BASE_DIR) / "meedia" / "QARSHI DAVLAT UNIVERSITETINING ODOB-AXLOQ KODEKSI.pdf"
+
+ANTI_CORRUPTION_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Korrupsiyaga qarshi kurashish bo'limi",
+        "intro": "Bo'lim boshlig'i va bo'lim faoliyati bo'yicha batafsil ma'lumotlar.",
+        "leader_title": "Bo'lim boshlig'i",
+        "leader_name": "Ismatov Xolmumin Xurozovich",
+        "leader_role": "Bo'lim boshlig'i",
+        "leader_details": [
+            "Telefon: 75-220-02-17, 98-776-59-08",
+            "Elektron pochta: halmumin8@gmail.com",
+            "Qabul vaqti: har kuni 09:00 dan 18:00 gacha",
+        ],
+        "sections": [
+            {
+                "title": "Mehnat faoliyati",
+                "paragraphs": [
+                    "1983-1988 yillarda Moskva muhandis qurilish institutida tahsil olgan. 1988-1995 yillarda Toshkent yengil metal konstruksiya zavodida texnik nazorat bo'limi boshlig'i bo'lib ishlagan.",
+                    "1995-2013 yillarda Milliy xavfsizlik xizmatida ishlagan. 2013-2017 yillarda \"Sho'rtan neftgaz\" UKda 1-bo'lim boshlig'i va rahbar o'rinbosari bo'lgan.",
+                    "2017-2023 yillarda G'uzor tumani Sho'rtan neft-gaz qazib chiqarish boshqarmasi o'quv markaziga rahbarlik qilgan. 2023 yildan hozirgacha Qarshi davlat universitetida ushbu bo'lim boshlig'i sifatida faoliyat yuritmoqda.",
+                ],
+            },
+            {
+                "title": "Bo'lim tarixi",
+                "paragraphs": [
+                    "Bo'lim O'zbekiston Respublikasi Oliy va o'rta maxsus ta'lim vazirligining 2021-yil 28-iyundagi 281-sonli buyrug'i ijrosini ta'minlash maqsadida, Qarshi davlat universiteti rektorining 2021-yil 5-iyuldagi 171-I-sonli buyrug'i bilan tashkil etilgan.",
+                    "Bo'lim tarkibi: 1 nafar bo'lim boshlig'i va 2 nafar bosh mutaxassis.",
+                ],
+            },
+            {
+                "title": "Asosiy vazifalari",
+                "bullets": [
+                    "universitetda korrupsiyaga oid huquqbuzarliklarning oldini olish va ularga qarshi kurashish",
+                    "\"Korrupsiyasiz soha\" loyihasini universitetda joriy etish",
+                    "korrupsion xavf yuqori bo'lgan yo'nalishlarni aniqlash",
+                    "sabab va shart-sharoitlarni bartaraf etish",
+                    "monitoring va jamoatchilik nazoratini yo'lga qo'yish",
+                    "xalqaro tajribani o'rganish",
+                    "texnikumlar va akademik litsey faoliyatini muvofiqlashtirish",
+                ],
+            },
+            {
+                "title": "Bo'lim mutaxassislari aloqalari",
+                "bullets": [
+                    "+99897-319-00-12 — nodirasrajiddinova@gmail.com",
+                    "+99877-106-67-77 — shuxrataxmedov2778@gmail.com",
+                ],
+            },
+            {
+                "title": "Botlar",
+                "links": [
+                    {"label": "@QarDu_AntiKor_bot", "url": "https://t.me/QarDu_AntiKor_bot", "description": "Qarshi davlat universiteti bo'limi boti."},
+                    {"label": "@eduuzanticor_bot", "url": "https://t.me/eduuzanticor_bot", "description": "Oliy ta'lim, fan va innovatsiyalar vazirligi korrupsiyaga qarshi kurashish bo'limi boti."},
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Anti-Corruption Department",
+        "intro": "Detailed information about the department head and the department's activities.",
+        "leader_title": "Head of the department",
+        "leader_name": "Ismatov Xolmumin Xurozovich",
+        "leader_role": "Head of department",
+        "leader_details": [
+            "Phone: 75-220-02-17, 98-776-59-08",
+            "Email: halmumin8@gmail.com",
+            "Reception hours: every day from 09:00 to 18:00",
+        ],
+        "sections": [
+            {
+                "title": "Professional background",
+                "paragraphs": [
+                    "From 1983 to 1988, he studied at the Moscow Institute of Civil Engineering. From 1988 to 1995, he worked as Head of the Technical Control Department at the Tashkent Light Metal Structures Plant.",
+                    "From 1995 to 2013, he served in the National Security Service. From 2013 to 2017, he was Head of Department No. 1 and Deputy Manager at Shurtan Neftgaz UK.",
+                    "From 2017 to 2023, he led the training center of the Shurtan oil and gas production administration in Guzor district. Since 2023, he has been serving as the head of this department at Karshi State University.",
+                ],
+            },
+            {
+                "title": "History of the department",
+                "paragraphs": [
+                    "The department was established by Rector's Order No. 171-I dated July 5, 2021, in order to implement Order No. 281 of the Ministry of Higher and Secondary Specialized Education of the Republic of Uzbekistan dated June 28, 2021.",
+                    "The department structure consists of 1 head of department and 2 chief specialists.",
+                ],
+            },
+            {
+                "title": "Main responsibilities",
+                "bullets": [
+                    "preventing and combating corruption-related offenses at the university",
+                    "implementing the \"Corruption-Free Sphere\" project at the university",
+                    "identifying areas with high corruption risk",
+                    "eliminating root causes and enabling conditions",
+                    "establishing monitoring and public oversight",
+                    "studying international best practices",
+                    "coordinating the activities of technical schools and academic lyceums",
+                ],
+            },
+            {
+                "title": "Specialists' contacts",
+                "bullets": [
+                    "+99897-319-00-12 — nodirasrajiddinova@gmail.com",
+                    "+99877-106-67-77 — shuxrataxmedov2778@gmail.com",
+                ],
+            },
+            {
+                "title": "Bots",
+                "links": [
+                    {"label": "@QarDu_AntiKor_bot", "url": "https://t.me/QarDu_AntiKor_bot", "description": "Bot of the Karshi State University department."},
+                    {"label": "@eduuzanticor_bot", "url": "https://t.me/eduuzanticor_bot", "description": "Bot of the anti-corruption department of the Ministry of Higher Education, Science and Innovations."},
+                ],
+            },
+        ],
+    },
+}
+
+
 GOVERNANCE_PAGE_CONTENT = {
     "sdg-policy": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
         "eyebrow_en": "Sustainability governance",
-        "title_uz": "SDG siyosati",
-        "title_en": "SDG Policy",
-        "intro_uz": "Universitetning barqarorlik bo'yicha asosiy institutsional siyosati, tamoyillari va amaliy ustuvorliklari.",
-        "intro_en": "The University's core sustainability policy, principles, and implementation priorities.",
-        "sections_uz": [
-            {
-                "title": "Asosiy siyosat ramkasi",
-                "paragraphs": [
-                    "Qarshi davlat universiteti barqarorlikni ta'lim, tadqiqot, boshqaruv va jamoatchilik bilan hamkorlik jarayonlariga tizimli integratsiya qilishni institutsional vazifa sifatida belgilaydi.",
-                    "Mazkur siyosat ekologik mas'uliyat, resurslardan oqilona foydalanish, shaffof boshqaruv va uzoq muddatli ijtimoiy ta'sirni bir butun strategik yondashuvga birlashtiradi.",
-                ],
-            },
-            {
-                "title": "Amaliy ustuvorliklar",
-                "bullets": [
-                    "tabiiy resurslardan samarali foydalanish va chiqindilarni kamaytirish",
-                    "energiya samaradorligini oshirish va iqlimga ta'sirni pasaytirish",
-                    "ta'lim va tadqiqot dasturlariga SDG tamoyillarini integratsiya qilish",
-                    "milliy va xalqaro barqarorlik standartlariga muvofiqlikni kuchaytirish",
-                ],
-            },
-        ],
-        "sections_en": [
-            {
-                "title": "Core policy framework",
-                "paragraphs": [
-                    "Karshi State University defines sustainability as an institutional priority and integrates it across teaching, research, operations, and public engagement.",
-                    "This policy combines environmental responsibility, efficient resource use, transparent governance, and long-term social impact within one strategic framework.",
-                ],
-            },
-            {
-                "title": "Implementation priorities",
-                "bullets": [
-                    "more efficient use of natural resources and reduced waste",
-                    "higher energy efficiency and lower climate impact",
-                    "integration of SDG principles into academic and research programs",
-                    "stronger alignment with national and international sustainability standards",
-                ],
-            },
-        ],
+        "title_uz": "Barqarorlik siyosati",
+        "title_en": "Sustainability Policy",
+        "intro_uz": "Qarshi davlat universitetining atrof-muhit barqarorligi, resurslardan oqilona foydalanish va ekologik mas'uliyatni kuchaytirishga qaratilgan institutsional siyosati.",
+        "intro_en": "Karshi State University's institutional policy on environmental sustainability, responsible resource use, and stronger environmental accountability.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>Qarshi davlat universiteti atrof-muhit barqarorligi siyosati</strong></p>
+              <p><strong>Kirish.</strong> Qarshi Davlat Universiteti (QDU) barqaror va ekologik mas'uliyatli akademik muhitni rivojlantirishga sodiqdir. Ta'lim, tadqiqot va jamoatchilik bilan hamkorlikka bag'ishlangan muassasa sifatida QDU atrof-muhit barqarorligini targ'ib qilish va ekologik izini kamaytirishda o'z rolini anglaydi. Ushbu siyosat barqaror amaliyotlarga, resurslardan oqilona foydalanishga va atrof-muhitni muhofaza qilishda doimiy takomillashuvga bo'lgan majburiyatimizni bayon etadi.</p>
+              <p><strong>Maqsadlar.</strong> Qarshi Davlat Universiteti (QDU) o'z faoliyatida atrof-muhit barqarorligini ustuvor yo'nalishlardan biri sifatida belgilaydi va uni universitetning ta'lim, ilmiy-tadqiqot hamda boshqaruv jarayonlariga tizimli ravishda integratsiya qilishni maqsad qiladi. Ushbu siyosat universitet faoliyatining barcha bosqichlarida barqarorlik tamoyillarini joriy etish, tabiiy resurslardan oqilona foydalanish hamda ekologik mas'uliyatni kuchaytirishga qaratilgan. Shu bilan birga, issiqxona gazlari chiqindilarini kamaytirish, energiya samaradorligini oshirish, suv va chiqindilarni boshqarishda ilg'or yondashuvlarni qo'llash, shuningdek, barqaror transport va iste'mol madaniyatini rivojlantirish asosiy ustuvor vazifalar sifatida e'tirof etiladi. Universitet o'z faoliyatida milliy va xalqaro ekologik me'yorlar hamda standartlarga qat'iy amal qilish bilan birga, barqarorlik tashabbuslarini kengaytirish maqsadida turli darajadagi hamkorlik aloqalarini rivojlantirishni qo'llab-quvvatlaydi.</p>
+              <p><strong>Energiya va iqlim harakati.</strong> Energiya va iqlim harakati doirasida universitet barcha binolar va inshootlarda energiya samaradorligini oshirishga alohida e'tibor qaratadi. Zamonaviy energiya tejovchi texnologiyalarni joriy etish, aqlli resurslarni boshqarish tizimlaridan foydalanish hamda imkoniyat darajasida qayta tiklanadigan energiya manbalariga o'tish orqali karbonat angidrid chiqindilarini kamaytirish ko'zda tutiladi. Shu bilan birga, universitet hamjamiyati orasida energiya tejash madaniyatini shakllantirish muhim vazifalardan biri hisoblanadi.</p>
+              <p><strong>Suvni tejash va boshqarish.</strong> Suv resurslarini boshqarish siyosati suvdan samarali va tejamkor foydalanishni ta'minlashga qaratilgan bo'lib, suv isrofini minimallashtirish ustuvor ahamiyatga ega. Universitet tomchilab sug'orish texnologiyalarini joriy etish, chiqindi suvlarni qayta ishlash imkoniyatlarini kengaytirish hamda axborot-targ'ibot ishlari orqali mas'uliyatli suv iste'molini rivojlantirishga intiladi. Bu jarayonda talabalar va xodimlarning ekologik ongini oshirish muhim o'rin tutadi.</p>
+              <p><strong>Chiqindilarni qayta ishlash va kamaytirish.</strong> Chiqindilarni boshqarish yo'nalishida universitet chiqindilarni kamaytirish, saralash va qayta ishlash tizimini takomillashtirishga alohida e'tibor beradi. Bir martalik plastmassa mahsulotlaridan foydalanishni qisqartirish, ekologik jihatdan barqaror muqobillarni joriy etish hamda chiqindilar bilan mas'uliyatli muomala qilish madaniyatini shakllantirish asosiy vazifalardan hisoblanadi. Shu bilan birga, chiqindilarni samarali boshqarish bo'yicha mahalliy tashkilotlar bilan hamkorlik qilish orqali tizimli natijalarga erishish ko'zda tutiladi.</p>
+              <p><strong>Barqaror transport.</strong> Barqaror transportni rivojlantirish maqsadida universitet xodimlar va talabalar orasida jamoat transporti, velosiped hamda avtohamkorlik (carpooling)dan foydalanishni rag'batlantiradi. Ekologik transport infratuzilmasini rivojlantirish, jumladan velosipedlar uchun maxsus joylar va elektromobillarni quvvatlash stansiyalarini tashkil etish, shuningdek, universitet transport vositalarini past uglerodli alternativalarga bosqichma-bosqich o'tkazish rejalashtirilgan.</p>
+              <p><strong>Barqaror xarid va iste'mol.</strong> Barqaror xarid va iste'mol siyosati doirasida universitet ekologik toza, ijtimoiy va axloqiy jihatdan maqbul mahsulotlarni xarid qilishga ustuvorlik beradi. Raqamlashtirish jarayonlarini kengaytirish orqali qog'oz sarfini kamaytirish, mas'uliyatli chop etish amaliyotlarini joriy etish hamda universitet hududida barqaror oziq-ovqat va ovqatlanish xizmatlarini rivojlantirish ko'zda tutiladi.</p>
+              <p><strong>Barqarorlik bo'yicha ta'lim va tadqiqot.</strong> Ta'lim va tadqiqot faoliyatida barqarorlikni integratsiya qilish universitet siyosatining muhim tarkibiy qismi hisoblanadi. O'quv dasturlari va ilmiy-tadqiqot loyihalarida atrof-muhit muammolari va barqaror rivojlanish masalalarini keng yoritish, professor-o'qituvchilar va talabalar tomonidan amalga oshirilayotgan tashabbuslarni qo'llab-quvvatlash, shuningdek, seminarlar, treninglar va ilmiy tadbirlar orqali ekologik bilim va ko'nikmalarni rivojlantirish ustuvor vazifalar sirasiga kiradi.</p>
+              <p><strong>Jamoatchilik bilan hamkorlik va hamkorlik loyihalari.</strong> Jamoatchilik bilan hamkorlik universitetning barqarorlik strategiyasida alohida ahamiyat kasb etadi. Universitet mahalliy hamjamiyatlar, davlat tashkilotlari va xalqaro hamkorlar bilan hamkorlikda barqaror rivojlanish maqsadlariga erishishni ko'zlaydi. Shu bilan birga, talabalarni ekologik tashabbuslar va jamoat xizmatlariga jalb qilish orqali ularning ijtimoiy faolligini oshirishga intiladi.</p>
+              <p><strong>Monitoring va doimiy takomillashtirish.</strong> Barqarorlik siyosatini samarali amalga oshirish uchun monitoring va doimiy takomillashtirish mexanizmlari joriy etiladi. Asosiy ko'rsatkichlar (KPI) ishlab chiqilib, barqarorlik tashabbuslari natijalari muntazam ravishda baholanadi. Atrof-muhitga ta'sirni tahlil qilish asosida siyosat doimiy ravishda yangilanib, zamonaviy talablar va yangi imkoniyatlarga moslashtiriladi.</p>
+              <p><strong>Amalga oshirish va mas'uliyat.</strong> Mazkur siyosatning amalga oshirilishini universitetning Barqarorlik qo'mitasi muvofiqlashtiradi va nazorat qiladi. Professor-o'qituvchilar, xodimlar va talabalar ushbu jarayonda faol ishtirok etishlari kutiladi. Shuningdek, tashqi hamkorlar va mutaxassislar bilan hamkorlik qilish orqali barqarorlik tashabbuslarini yanada rivojlantirish rag'batlantiriladi.</p>
+              <p>Qarshi Davlat Universiteti barqarorlikni o'zining ajralmas institutsional qadriyatiga aylantirishga sodiq bo'lib, ushbu siyosat orqali atrof-muhitni muhofaza qilish, resurslardan oqilona foydalanish va kelajak avlodlar uchun barqaror muhit yaratish borasidagi majburiyatini yana bir bor tasdiqlaydi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>Environmental sustainability policy of Karshi State University</strong></p>
+              <p><strong>Introduction.</strong> Karshi State University (KSU) recognizes environmental sustainability as a core institutional priority and is committed to systematically integrating sustainability principles into its academic, research, and operational activities. This policy aims to embed sustainability across all levels of university functions, promote the responsible use of natural resources, and strengthen environmental accountability. In this context, reducing greenhouse gas emissions, improving energy efficiency, ensuring responsible water and waste management, and promoting sustainable transportation and consumption practices are identified as key priorities. The University is also committed to complying with national and international environmental standards while fostering collaboration with partners at local, national, and global levels to advance sustainability initiatives.</p>
+              <p><strong>Objectives.</strong> Within the framework of energy and climate action, the University prioritizes improving energy efficiency across all buildings and facilities. This includes the implementation of modern energy-saving technologies, the adoption of smart resource management systems, and, where feasible, a gradual transition to renewable energy sources. These measures aim to reduce carbon dioxide emissions while cultivating a culture of energy conservation among students, faculty, and staff.</p>
+              <p><strong>Energy and climate action.</strong> The University's water management approach focuses on ensuring efficient and responsible water use, with the objective of minimizing water waste. Efforts include the introduction of water-saving programs, the application of technologies such as drip irrigation, and the exploration of wastewater recycling systems. Additionally, awareness campaigns and training activities are conducted to promote responsible water consumption and enhance environmental awareness within the university community.</p>
+              <p><strong>Water conservation and management.</strong> In the area of waste management, the University is committed to developing effective systems for waste reduction, sorting, and recycling. Particular emphasis is placed on reducing the use of single-use plastics and promoting environmentally sustainable alternatives. The University also seeks to foster responsible waste disposal practices among students and staff while strengthening cooperation with local waste management authorities to achieve sustainable outcomes.</p>
+              <p><strong>Waste reduction and recycling.</strong> To support sustainable transportation, the University encourages the use of public transport, cycling, and carpooling among students and staff. It aims to develop environmentally friendly transport infrastructure, including bicycle parking facilities and electric vehicle charging stations. Furthermore, the University plans to gradually transition its fleet to low-carbon alternatives in order to reduce transportation-related emissions.</p>
+              <p><strong>Sustainable transport.</strong> Sustainable procurement and consumption practices are promoted by prioritizing environmentally friendly and ethically sourced products. The University also seeks to reduce paper usage through digitalization and responsible printing practices, while encouraging sustainable food services and consumption patterns within the campus.</p>
+              <p><strong>Sustainable procurement and consumption.</strong> Sustainability is also integrated into education and research activities. The University promotes the inclusion of environmental sustainability topics in academic curricula and research initiatives, supports sustainability-related projects led by faculty and students, and organizes seminars, training sessions, and events to raise awareness of environmental challenges and solutions.</p>
+              <p><strong>Sustainability in education and research.</strong> Engagement with the broader community is an essential component of the University's sustainability strategy. The University collaborates with local communities, governmental institutions, and international partners to advance environmental sustainability goals. It also actively involves students in community service and outreach activities focused on sustainability, thereby fostering civic responsibility and environmental stewardship.</p>
+              <p><strong>Community engagement and partnership projects.</strong> To ensure effective implementation, the University establishes monitoring and continuous improvement mechanisms. Key performance indicators are defined to track progress, and regular environmental impact assessments are conducted. Based on these evaluations, the policy is periodically reviewed and updated to reflect emerging challenges, opportunities, and best practices.</p>
+              <p><strong>Monitoring and continuous improvement.</strong> The implementation of this policy is overseen by the University's Sustainability Committee. Faculty members, staff, and students are expected to actively participate in sustainability initiatives. The University also encourages collaboration with external partners and experts to further enhance its sustainability efforts.</p>
+              <p>Karshi State University is committed to embedding sustainability as an integral institutional value. Through this policy, the University reaffirms its dedication to environmental protection, responsible resource management, and the creation of a more sustainable future for its community and beyond.</p>
+            </div>
+        """,
     },
     "sdg-investment": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
@@ -652,134 +772,164 @@ GOVERNANCE_PAGE_CONTENT = {
     "sdg-committee": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
         "eyebrow_en": "Sustainability governance",
-        "title_uz": "SDG qo'mitasi",
-        "title_en": "SDG Committee",
-        "intro_uz": "Barqarorlik bo'yicha institutsional qarorlar, monitoring va muvofiqlashtirish uchun rahbar organ.",
-        "intro_en": "The leadership structure that drives sustainability decisions, monitoring, and coordination.",
-        "sections_uz": [
-            {
-                "title": "Boshqaruv arxitekturasi",
-                "paragraphs": [
-                    "SDG qo'mitasi rektorat, tegishli prorektorlar, bo'lim rahbarlari va ijrochi guruhlarni birlashtiruvchi markaziy muvofiqlashtirish platformasidir.",
-                    "Qo'mita ustuvor maqsadlar ijrosini, indikatorlar monitoringini va fakultetlararo hamkorlikni boshqaradi.",
-                ],
-            },
-            {
-                "title": "Asosiy funksiyalar",
-                "bullets": [
-                    "choraklik ko'rsatkichlar va natijalarni ko'rib chiqish",
-                    "institutsional xavf va imkoniyatlarni baholash",
-                    "kampus, xarid va jamoatchilik bo'yicha ishlarni uyg'unlashtirish",
-                    "SDG yo'nalishidagi yangi tashabbuslarni tasdiqlash",
-                ],
-            },
-        ],
-        "sections_en": [
-            {
-                "title": "Governance architecture",
-                "paragraphs": [
-                    "The SDG Committee is the University's central coordinating platform linking senior leadership, operational heads, and implementation teams.",
-                    "It manages target delivery, indicator tracking, and cross-faculty alignment across the sustainability agenda.",
-                ],
-            },
-            {
-                "title": "Core functions",
-                "bullets": [
-                    "review quarterly indicators and outcomes",
-                    "assess institutional risks and opportunities",
-                    "align campus, procurement, and public-engagement work",
-                    "approve new SDG-focused initiatives",
-                ],
-            },
-        ],
+        "title_uz": "Barqarorlik qo'mitasi",
+        "title_en": "Sustainability Committee",
+        "intro_uz": "Universitetda barqaror rivojlanish faoliyatlarini muvofiqlashtiruvchi, monitoring qiluvchi va kuchaytiruvchi markaziy boshqaruv organi.",
+        "intro_en": "The University's central governance body for coordinating, monitoring, and strengthening sustainable development activities.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>Barqarorlik qo'mitasi</strong></p>
+              <p>2025-yil 3-aprel kuni Qarshi davlat universitetida Universitet Kengashi qaroriga muvofiq Barqarorlik qo'mitasi rasmiy ravishda tashkil etildi. Ushbu qo'mita universitetda barqaror rivojlanish yo'nalishidagi faoliyatlarni muvofiqlashtirish va kuchaytirish uchun markaziy organ sifatida faoliyat yuritadi.</p>
+              <p>Qo'mita universitetning ta'lim, ilmiy-tadqiqot va operatsion faoliyatlarida barqarorlik tashabbuslarini rivojlantirish, strategiyalar ishlab chiqish va amalga oshirishni nazorat qiladi. Shuningdek, ekologik mas'uliyatli amaliyotlarni targ'ib qiladi hamda barqarorlik tamoyillarini ta'lim, ilmiy izlanishlar, kampus boshqaruvi va jamoatchilik bilan hamkorlik faoliyatlariga integratsiya qilishni qo'llab-quvvatlaydi.</p>
+              <p>Bundan tashqari, qo'mita akademik bo'limlar, ilmiy laboratoriyalar va ma'muriy tuzilmalar o'rtasida hamkorlikni ta'minlab, barqarorlik tashabbuslarini samarali amalga oshirishga xizmat qiladi.</p>
+              <p>Ushbu faoliyatlarni muvofiqlashtirish va qo'llab-quvvatlash uchun maxsus xodimlar tayinlangan. Farrux Aminov Barqarorlik qo'mitasining ijrochi kotibi sifatida faoliyat yuritib, barqarorlik strategiyalarini muvofiqlashtirish va universitetdagi barqarorlik tashabbuslarini monitoring qilish uchun mas'ul hisoblanadi. Firuza Davronova esa qo'mita ijrochi kotibi o'rinbosari sifatida barqarorlik dasturlarini amalga oshirishda ko'maklashadi hamda universitet bo'limlari va ilmiy markazlar o'rtasidagi hamkorlikni ta'minlaydi.</p>
+              <p>Mazkur boshqaruv tuzilmasi orqali universitet barqaror rivojlanishni ilgari surishda yetakchilik, javobgarlik va uzluksiz rivojlanishni ta'minlaydi.</p>
+              <p><strong>Qarshi davlat universitetida "yashil" madaniyatni targ'ib qilishga mas'ul Barqarorlik qo'mitasi a'zolari:</strong></p>
+              <ol>
+                <li>Dilmurod Xamidullayevich Nabiyev - Qo'mita raisi (Rektor)</li>
+                <li>Ilhom Rustamovich Bekpulatov - Ijrochi direktor (ilmiy ishlar va innovatsiyalar bo'yicha prorektor)</li>
+                <li>Abdulxamid Erkinovich Xolmurodov - Ijrochi direktor (o'quv ishlari bo'yicha prorektor)</li>
+                <li>Oybek Chuliyevich Kuziyev - Ijrochi direktor (yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor)</li>
+                <li>Xurshid G'aybullayevich Jurayev - Ijrochi direktor (moliya-iqtisod ishlari bo'yicha prorektor)</li>
+                <li>Farrux Aminov - Ijrochi kotib</li>
+                <li>Firuza Davronova - Ijrochi kotib o'rinbosari</li>
+                <li>Xalqaro bo'lim boshlig'i - xalqaro hamkorlik doirasida barqarorlik faoliyatlarini tashkil etish va hisobot tayyorlash uchun mas'ul</li>
+                <li>Kasaba uyushmasi raisi - talabalar va xodimlar huquqlarini himoya qilish hamda statistik tahlillar uchun mas'ul</li>
+                <li>Ma'naviy-ma'rifiy ishlar bo'limi boshlig'i - targ'ibot va tahliliy faoliyatlar uchun mas'ul</li>
+                <li>Reja-moliya bo'limi boshlig'i - moliyaviy choralarni amalga oshirish uchun mas'ul</li>
+                <li>Kadrlar bo'limi boshlig'i - kadrlar siyosatini yuritish uchun mas'ul</li>
+                <li>O'quv ishlari va registrator bo'limi boshlig'i - statistik tahlillar uchun mas'ul</li>
+                <li>Xotin-qizlar masalalari va psixologik maslahat markazi rahbari - tegishli faoliyatlar uchun mas'ul</li>
+                <li>Korrupsiyaga qarshi kurash bo'limi boshlig'i - tegishli choralarni amalga oshirish uchun mas'ul</li>
+                <li>Talabalar yetakchisi - talabalar ishtirokidagi faoliyatlarni tashkil etish uchun mas'ul</li>
+                <li>Axborot xizmati boshlig'i - sayt, ijtimoiy tarmoqlar va hisobotlar uchun mas'ul</li>
+                <li>Xalqaro nashrlar bo'yicha mutaxassis - ilmiy maqolalarni rag'batlantirish uchun mas'ul</li>
+                <li>Inkubatsiya markazi rahbari - ta'limiy faoliyatlarni tashkil etish uchun mas'ul</li>
+                <li>Geografiya va agronomiya fakulteti dekani - ta'limiy faoliyatlar uchun mas'ul</li>
+                <li>Kimyo va biologiya fakulteti dekani - ta'limiy faoliyatlar uchun mas'ul</li>
+                <li>Tibbiyot fakulteti dekani - ta'limiy faoliyatlar uchun mas'ul</li>
+                <li>Sanoat muhandisligi kafedrasi mudiri - ta'limiy faoliyatlar uchun mas'ul</li>
+                <li>Psixologiya kafedrasi mudiri - psixologik qo'llab-quvvatlash va tahlillar uchun mas'ul</li>
+              </ol>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>Sustainability Committee</strong></p>
+              <p>On April 3, 2025, Karshi State University formally established a Sustainability Committee in accordance with a decision of the University Committee to coordinate and strengthen institutional efforts related to sustainable development. The committee serves as the central body responsible for advancing sustainability initiatives across academic, research, and operational activities of the university.</p>
+              <p>The committee oversees the development and implementation of sustainability strategies, promotes environmentally responsible practices, and supports the integration of sustainability principles into teaching, research, campus operations, and community engagement activities. It also facilitates cooperation between academic departments, research laboratories, and administrative units to ensure the effective implementation of sustainability initiatives.</p>
+              <p>Dedicated staff members have been appointed to coordinate and support these activities. Farrukh Aminov serves as the Executive Secretary of the Sustainability Committee and is responsible for coordinating sustainability strategies and monitoring institutional sustainability initiatives. Firuza Davronova serves as the Deputy Executive Secretary of the Sustainability Committee and supports the implementation of sustainability programs while facilitating collaboration among university departments and research centers.</p>
+              <p>Through this governance structure, the university ensures institutional leadership, accountability, and continuous progress in advancing sustainable development across the campus community.</p>
+              <p><strong>Members of the sustainability committee responsible for promoting a "green" culture at Karshi State University:</strong></p>
+              <ol>
+                <li>Dilmurod Khamidullayevich Nabiyev - Chair of the committee (Rector of Karshi State University)</li>
+                <li>Ilhom Rustamovich Bekpulatov - Executive director of the committee (Vice-Rector for Research and innovation)</li>
+                <li>Abdulxamid Erkinovich Xolmurodov - Executive director of the committee (Vice-Rector for Academic affairs)</li>
+                <li>Oybek Chuliyevich Kuziyev - Executive director of the committee (First Vice-Rector for Youth affairs and spiritual-educational work)</li>
+                <li>Xurshid G'aybullayevich Djurayev - Executive director of the committee (Vice-Rector for Finance and economic affairs)</li>
+                <li>Farrukh Aminov - Executive secretary of the committee (specialist of the International rankings department)</li>
+                <li>Firuza Davronova - Deputy executive secretary of the committee (International rankings department staff member)</li>
+                <li>Head of the International department - responsible for organizing sustainability-related activities within the framework of international cooperation and preparing relevant reports.</li>
+                <li>Head of the Trade union - responsible for implementing measures aimed at protecting the rights of students and staff, conducting statistical analyses, and preparing relevant reports.</li>
+                <li>Head of the department for Spiritual and educational work - responsible for organizing educational and awareness activities related to sustainability and preparing analytical reports.</li>
+                <li>Head of the Planning and finance department - responsible for implementing financial measures related to sustainability and preparing analytical reports.</li>
+                <li>Head of the Human resources department - responsible for implementing personnel policies related to sustainability and preparing analytical reports.</li>
+                <li>Head of the Academic affairs and registrar office - responsible for conducting statistical analyses related to sustainability and preparing relevant reports.</li>
+                <li>Head of the Women's affairs and psychological counseling center - responsible for organizing activities related to women's rights and sustainability and preparing analytical reports.</li>
+                <li>Head of the Anti-corruption department - responsible for implementing anti-corruption activities related to sustainability and preparing analytical reports.</li>
+                <li>Student leader - responsible for organizing sustainability activities involving students and preparing analytical reports.</li>
+                <li>Head of the Information service department - responsible for managing the university's sustainability website, social media activities, and reporting on the Sustainable development goals.</li>
+                <li>Specialist for International publications - responsible for encouraging faculty members to publish scientific articles related to sustainability.</li>
+                <li>Head of the Incubation center - responsible for organizing educational activities related to sustainability and preparing relevant reports.</li>
+                <li>Dean of the faculty of Geography and agronomy - responsible for implementing educational activities related to sustainability and preparing relevant reports.</li>
+                <li>Dean of the faculty of Chemistry and biology - responsible for implementing educational activities related to sustainability and preparing relevant reports.</li>
+                <li>Dean of the faculty of Medicine - responsible for implementing educational activities related to sustainability and preparing relevant reports.</li>
+                <li>Head of the department of Industrial engineering - responsible for implementing sustainability-related educational activities and preparing reports.</li>
+                <li>Head of the department of Psychology - responsible for organizing psychological support activities related to sustainability, conducting statistical analyses, and preparing reports.</li>
+              </ol>
+            </div>
+        """,
     },
     "anti-corruption": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
         "eyebrow_en": "Sustainability governance",
-        "title_uz": "Korrupsiyaga qarshi",
-        "title_en": "Anti-Corruption",
-        "intro_uz": "Halollik, shaffoflik va manfaatlar to'qnashuvining oldini olishga qaratilgan institutsional nazorat tizimi.",
-        "intro_en": "Institutional controls designed around integrity, transparency, and conflict-of-interest prevention.",
-        "sections_uz": [
-            {
-                "title": "Nol toqat tamoyili",
-                "paragraphs": [
-                    "Universitet korrupsiyaga nisbatan nol toqat siyosatini qo'llaydi va barcha qarorlarda hujjatlashtirilgan shaffof tartiblarni talab qiladi.",
-                    "Xarid, investitsiya va boshqaruv bo'yicha muhim qarorlar nazorat, tekshiruv va ichki audit mexanizmlari bilan qo'llab-quvvatlanadi.",
-                ],
-            },
-            {
-                "title": "Nazorat vositalari",
-                "bullets": [
-                    "anonim murojaatlar va ichki xabar berish kanallari",
-                    "ichki audit va ijro nazorati",
-                    "manfaatlar to'qnashuvi bo'yicha deklaratsiyalar",
-                    "xodimlar uchun etik me'yor va halollik treninglari",
-                ],
-            },
-        ],
-        "sections_en": [
-            {
-                "title": "Zero-tolerance principle",
-                "paragraphs": [
-                    "The University applies a zero-tolerance policy toward corruption and requires transparent, documented procedures in decision-making.",
-                    "Major procurement, investment, and governance decisions are supported by review, verification, and internal audit mechanisms.",
-                ],
-            },
-            {
-                "title": "Control mechanisms",
-                "bullets": [
-                    "anonymous reporting and internal disclosure channels",
-                    "internal audit and implementation oversight",
-                    "conflict-of-interest declarations",
-                    "ethics and integrity training for staff",
-                ],
-            },
-        ],
+        "title_uz": "Korrupsiyaga qarshi siyosat",
+        "title_en": "Anti-Corruption Policy",
+        "intro_uz": "Universitetda halollik, shaffoflik va hisobdorlikni mustahkamlashga qaratilgan institutsional korrupsiyaga qarshi siyosat va komplayens nazorat tizimi.",
+        "intro_en": "The University's institutional anti-corruption policy and compliance control framework designed to strengthen integrity, transparency, and accountability.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>QARSHI DAVLAT UNIVERSITETIDA KORRUPSIYAGA QARSHI SIYOSAT</strong></p>
+              <p>O'zbekiston Respublikasi Prezidentining 2020-yil 27-maydagi PF-5927-sonli "O'zbekiston Respublikasida korrupsiyaga qarshi kurashish tizimini yanada takomillashtirish chora-tadbirlari to'g'risida"gi Farmoni, O'zbekiston Respublikasi Prezidenti Administratsiyasi rahbarining 2020-yil 4-sentabrdagi 22-2488-sonli topshirig'i, shuningdek, Oliy va o'rta maxsus ta'lim vazirligining 2020-2021-yillarga mo'ljallangan "yo'l xaritasi"da belgilangan yashirin iqtisodiyotga qarshi kurashish va korrupsiyaning oldini olishga qaratilgan vazifalar hamda 2021-yil 28-iyundagi 281-sonli "Oliy ta'lim tizimida 'Korrupsiyasiz soha' loyihasini amalga oshirishni tashkil etish to'g'risida"gi buyrug'iga muvofiq, Qarshi davlat universitetida 2021-yil 5-iyul kuni rektor buyrug'i bilan Korrupsiyaga qarshi kurashish bo'yicha komplayens nazorat bo'limi tashkil etildi.</p>
+              <p>Universitet barcha akademik va ma'muriy faoliyatlarda shaffoflik, hisobdorlik va halollikni ta'minlashga qaratilgan kompleks korrupsiyaga qarshi siyosat tizimi hamda institutsional boshqaruv mexanizmlari orqali yaxlit etik tashkiliy madaniyatni rivojlantiradi. Ushbu siyosat oliy ta'lim tizimida korrupsiyaga qarshi kurashish amaliyotlarini mustahkamlashga qaratilgan milliy qonunchilik va davlat tashabbuslari asosida amalga oshiriladi.</p>
+              <p>Mazkur choralarni amalga oshirish maqsadida universitetda rektor nazorati ostida faoliyat yurituvchi va muassasa bo'ylab korrupsiyaga qarshi tashabbuslarni muvofiqlashtiruvchi maxsus Korrupsiyaga qarshi komplayens nazorat bo'limi tashkil etilgan. Bo'lim korrupsiyaga qarshi qonunchilik va ichki me'yoriy hujjatlarga rioya etilishini nazorat qiladi, korrupsiya xavfi yuqori bo'lgan sohalarni aniqlaydi hamda tizimli xavflarni kamaytirish va korrupsion holatlarning ildiz sabablarini bartaraf etishga qaratilgan profilaktik strategiyalarni ishlab chiqadi.</p>
+              <p>Amaliy jihatdan bo'lim qonunchilik va ichki tartib-qoidalarga rioya etilishini monitoring qiladi, profilaktik chora-tadbirlar rejalarini ishlab chiqadi va amalga oshiradi, shuningdek, universitetda "Korrupsiyasiz soha" loyihasi kabi milliy tashabbuslarni joriy etishda ishtirok etadi. Bo'lim korrupsiyaga qarshi siyosatga oid ichki me'yoriy hujjatlarni tayyorlaydi, ichki jarayonlardagi kamchiliklarni aniqlaydi va shaffoflik hamda hisobdorlikni kuchaytirishga qaratilgan institutsional islohotlar bo'yicha takliflar kiritadi.</p>
+              <p>Shuningdek, bo'lim korrupsiyaga oid murojaatlar va xabarlarni, jumladan anonim murojaatlarni ham ko'rib chiqadi hamda korrupsiya bilan bog'liq holatlar bo'yicha ichki tekshiruvlar reyestrini yuritadi. Xaridlar va ma'muriy jarayonlarda yuzaga kelishi mumkin bo'lgan manfaatlar to'qnashuvini tahlil qiladi va qaror qabul qilishda halollik hamda adolatlilikni ta'minlash bo'yicha tavsiyalar beradi.</p>
+              <p>Bundan tashqari, universitetda professor-o'qituvchilar, ma'muriy xodimlar va talabalar o'rtasida etik qadriyatlarni targ'ib qilish maqsadida muntazam ravishda seminarlar, davra suhbatlari, konferensiyalar va targ'ibot tadbirlari tashkil etiladi. Korrupsiya xavflarini baholash va amalga oshirilayotgan chora-tadbirlar samaradorligini aniqlash uchun so'rovnomalar va tahliliy tadqiqotlar o'tkaziladi. Bo'lim davlat organlari, fuqarolik jamiyati institutlari va hamkor tashkilotlar bilan hamkorlik qilib, nazoratni kuchaytirish va shaffoflikni ta'minlashga xizmat qiladi.</p>
+              <p>Uzluksiz monitoring, hisobot berish, targ'ibot ishlari va institutsional hamkorlik orqali universitet shaffof boshqaruv tizimini ta'minlaydi hamda halollik, hisobdorlik va mas'uliyatli institutsional madaniyatni rivojlantiruvchi etik akademik muhitni shakllantiradi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>ANTI-CORRUPTION POLICY AT KARSHI STATE UNIVERSITY</strong></p>
+              <p>In accordance with Presidential Decree No. PF-5927 dated May 27, 2020, "On Measures to Further Improve the System of Combating Corruption in the Republic of Uzbekistan," and Instruction No. 22-2488 of the Head of the Presidential Administration of the Republic of Uzbekistan dated September 4, 2020, as well as the tasks outlined in the 2020-2021 "Roadmap" of the Ministry of Higher and Secondary Specialized Education aimed at combatting the shadow economy and preventing corruption, and Order No. 281, dated June 28, 2021, "On the Organization of the Implementation of the 'Corruption-Free Sphere' Project in the Higher Education System," the Compliance Control Department for Anti-Corruption Efforts was established at Karshi State University by Rector's Order on July 5, 2021.</p>
+              <p>The university promotes a holistic ethical organizational culture through a comprehensive anti-corruption policy framework and institutional governance mechanisms aimed at ensuring transparency, accountability, and integrity in all academic and administrative activities. The policy is implemented in accordance with national legislation and government initiatives designed to strengthen anti-corruption practices in the higher education system. To implement these measures, the university has established a dedicated Compliance control department for anti-corruption efforts that operates under the supervision of the Rector and coordinates anti-corruption initiatives across the institution. The department oversees compliance with anti-corruption laws and institutional regulations, identifies high-risk areas vulnerable to corruption, and develops preventive strategies to address systemic risks and eliminate the underlying causes of corrupt practices.</p>
+              <p>Operationally, the department monitors compliance with legal and institutional regulations, develops and implements preventive action plans, and facilitates the implementation of national initiatives such as the "Corruption-Free Sphere" project within the university. It prepares internal regulatory documents related to anti-corruption policies, identifies weaknesses in internal procedures, and proposes institutional reforms to strengthen transparency and accountability.</p>
+              <p>The department also considers complaints and reports related to corruption, including anonymous submissions, and maintains a registry of internal investigations concerning corruption-related incidents. It analyzes potential conflicts of interest in procurement and administrative processes and provides recommendations to ensure integrity and fairness in decision-making.</p>
+              <p>In addition, the university regularly organizes seminars, roundtables, conferences, and awareness campaigns to promote ethical values among academic staff, administrative personnel, and students. Surveys and analytical studies are conducted to assess corruption risks and evaluate the effectiveness of anti-corruption initiatives. The department cooperates with government institutions, civil society organizations, and partner institutions to strengthen oversight and promote transparency.</p>
+              <p>Through continuous monitoring, reporting, awareness activities, and institutional coordination, the university maintains a transparent governance structure and fosters an ethical academic environment that supports integrity, accountability, and responsible institutional culture.</p>
+            </div>
+        """,
     },
     "jamoatchilik": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
         "eyebrow_en": "Sustainability governance",
-        "title_uz": "Jamoatchilik",
-        "title_en": "Public Engagement",
-        "intro_uz": "Ochiqlik, muloqot va manfaatdor tomonlar bilan hamkorlik orqali ijtimoiy hisobdorlikni kuchaytirish yo'nalishi.",
-        "intro_en": "A public engagement direction focused on openness, dialogue, and social accountability through stakeholder collaboration.",
-        "sections_uz": [
-            {
-                "title": "Hamkorlik modeli",
-                "paragraphs": [
-                    "Universitet mahalliy hamjamiyat, maktablar, NNTlar va davlat tashkilotlari bilan tizimli aloqalarni barqaror platforma sifatida yuritadi.",
-                    "Natijalar portal, tadbirlar va jamoatchilikka ochiq e'lonlar orqali muntazam yetkaziladi.",
-                ],
-            },
-            {
-                "title": "Asosiy yo'nalishlar",
-                "bullets": [
-                    "ochiq muloqot va jamoatchilik bilan konsultatsiyalar",
-                    "talabalar va fuqarolik jamiyati tashabbuslarini qo'llab-quvvatlash",
-                    "ijtimoiy loyihalarni hamkorlikda amalga oshirish",
-                    "natijalar bo'yicha muntazam ommaviy hisobot berish",
-                ],
-            },
-        ],
-        "sections_en": [
-            {
-                "title": "Engagement model",
-                "paragraphs": [
-                    "The University maintains structured relationships with communities, schools, NGOs, and public institutions as part of its sustainability platform.",
-                    "Results are regularly communicated through the portal, public events, and open institutional announcements.",
-                ],
-            },
-            {
-                "title": "Key directions",
-                "bullets": [
-                    "open dialogue and public consultation",
-                    "support for student and civil-society initiatives",
-                    "joint delivery of social-impact projects",
-                    "regular public reporting on outcomes",
-                ],
-            },
-        ],
+        "title_uz": "Jamoa shartnomasi",
+        "title_en": "Collective Agreement",
+        "intro_uz": "Universitet ma'muriyati hamda xodimlar va talabalar kasaba uyushmasi o'rtasidagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi hujjat.",
+        "intro_en": "A regulatory document governing labor, socio-economic, and professional relations between the university administration and the trade union of staff and students.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>QARSHI DAVLAT UNIVERSITETI MA'MURIYATI HAMDA UNIVERSITET XODIMLARI VA TALABALARI KASABA UYUSHMA QO'MITASI JAMOA SHARTNOMASI</strong></p>
+              <p>Qarshi davlat universiteti ma'muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo'mitasi o'rtasida 2023-2025-yillar uchun jamoa shartnomasi tuzilgan bo'lib, u universitetdagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi muhim normativ hujjat hisoblanadi.</p>
+              <p>Mazkur shartnoma O'zbekiston Respublikasi qonunchiligi, xususan Mehnat kodeksi va boshqa tegishli normativ hujjatlarga asoslangan holda ishlab chiqilgan. Uning asosiy maqsadi - universitet xodimlari va talabalarning huquq va manfaatlarini himoya qilish, mehnat sharoitlarini yaxshilash hamda ijtimoiy hamkorlikni rivojlantirishdan iborat.</p>
+              <p><strong>Shartnoma quyidagi asosiy yo'nalishlarni qamrab oladi:</strong></p>
+              <ul>
+                <li>mehnat shartnomalari va bandlik kafolatlari</li>
+                <li>ish vaqti va dam olish tartibi</li>
+                <li>mehnatga haq to'lash, kompensatsiya va rag'batlantirish tizimi</li>
+                <li>mehnatni muhofaza qilish va xavfsizlik</li>
+                <li>ijtimoiy himoya, sug'urta va imtiyozlar</li>
+                <li>xodimlarning malakasini oshirish va kasbiy rivojlanishi</li>
+                <li>jamoaviy hamkorlik va kasaba uyushmasi faoliyati</li>
+              </ul>
+              <p>Shuningdek, shartnoma universitetda ochiqlik, adolat va o'zaro hamkorlik tamoyillarini mustahkamlashga xizmat qiladi. Unda ish beruvchi, xodimlar va kasaba uyushmasining majburiyatlari aniq belgilangan bo'lib, tomonlar o'rtasida barqaror ijtimoiy muhitni ta'minlashga qaratilgan.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>COLLECTIVE AGREEMENT BETWEEN THE ADMINISTRATION OF KARSHI STATE UNIVERSITY AND THE TRADE UNION COMMITTEE OF UNIVERSITY STAFF AND STUDENTS</strong></p>
+              <p>A collective agreement for the period 2023-2025 has been concluded between the administration of Karshi State University and the trade union committee representing the university's staff and students. This agreement serves as an important regulatory document governing labor, socio-economic, and professional relations within the university.</p>
+              <p>The agreement has been developed in accordance with the legislation of the Republic of Uzbekistan, particularly the Labor Code and other relevant legal acts. Its main objective is to protect the rights and interests of university staff and students, improve working conditions, and promote social partnership.</p>
+              <p><strong>The agreement covers the following key areas:</strong></p>
+              <ul>
+                <li>employment contracts and job security guarantees</li>
+                <li>working hours and rest periods</li>
+                <li>remuneration, compensation, and incentive systems</li>
+                <li>occupational safety and labor protection</li>
+                <li>social protection, insurance, and benefits</li>
+                <li>professional development and capacity building of employees</li>
+                <li>collective cooperation and trade union activities</li>
+              </ul>
+              <p>In addition, the agreement contributes to strengthening the principles of transparency, fairness, and mutual cooperation within the university. It clearly defines the responsibilities of the employer, employees, and the trade union, aiming to ensure a stable and supportive social environment.</p>
+            </div>
+        """,
     },
     "xotin-qizlar": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
@@ -824,6 +974,142 @@ GOVERNANCE_PAGE_CONTENT = {
                 ],
             },
         ],
+    },
+    "ethics-code": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Qarshi davlat universiteti odob-axloq kodeksi",
+        "title_en": "Code of Ethics of Karshi State University",
+        "intro_uz": "Universitet jamoasida yuksak ma'naviy-axloqiy muhitni shakllantirish, akademik halollikni ta'minlash va ijtimoiy mas'uliyatni rivojlantirishga qaratilgan etik me'yorlar tizimi.",
+        "intro_en": "An ethical framework designed to foster a strong moral culture, ensure academic integrity, and promote social responsibility across the university community.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>Qarshi davlat universitetining odob-axloq kodeksi mazmuni va ahamiyati</strong></p>
+              <p>Qarshi davlat universitetining odob-axloq kodeksi universitet jamoasida yuksak ma'naviy-axloqiy muhitni shakllantirish, akademik halollikni ta'minlash va ijtimoiy mas'uliyatni rivojlantirishga qaratilgan muhim normativ hujjat hisoblanadi. Ushbu kodeks milliy va umuminsoniy qadriyatlarga tayangan holda ishlab chiqilgan bo'lib, u universitetning barcha xodimlari, talabalari va doktorantlari uchun majburiy hisoblanadi.</p>
+              <p><strong>Kodeksning asosiy maqsadi</strong></p>
+              <p>Kodeksning bosh maqsadi - universitet jamoasida axloqiy me'yorlarni shakllantirish, o'zaro hurmat va mas'uliyatni mustahkamlash, ta'lim jarayonida intizom va madaniyatni ta'minlash hamda universitet obro'sini oshirishdan iborat.</p>
+              <p>Shuningdek, kodeks yosh avlodni milliy qadriyatlarga hurmat ruhida tarbiyalash, huquqbuzarliklarning oldini olish va sog'lom ijtimoiy-psixologik muhit yaratishga xizmat qiladi.</p>
+              <p><strong>Asosiy prinsiplar</strong></p>
+              <p>Kodeks bir qator muhim axloqiy va huquqiy prinsiplar asosida qurilgan:</p>
+              <ul>
+                <li><strong>Qonuniylik</strong> - barcha faoliyat amaldagi qonunchilikka mos bo'lishi kerak</li>
+                <li><strong>Adolat va halollik</strong> - har bir qaror va harakat xolislik asosida amalga oshiriladi</li>
+                <li><strong>Huquq va erkinliklarning ustuvorligi</strong> - inson qadr-qimmati oliy qadriyat sifatida e'tirof etiladi</li>
+                <li><strong>Vatanparvarlik va sadoqat</strong> - universitet manfaatlariga xizmat qilish muhim vazifa sifatida qaraladi</li>
+                <li><strong>Samaradorlik va tejamkorlik</strong> - resurslardan oqilona foydalanish targ'ib qilinadi</li>
+              </ul>
+              <p>Mazkur prinsiplar universitetda etik boshqaruv (ethical governance) va barqaror rivojlanish tamoyillarini mustahkamlashga xizmat qiladi.</p>
+              <p><strong>Korrupsiyaga qarshi qat'iy yondashuv</strong></p>
+              <p>Kodeksda korrupsiyaning har qanday shakli qat'iyan rad etiladi. Universitet jamoasi korrupsion holatlarga qarshi kurashish, ochiqlik va shaffoflikni ta'minlash, halollik prinsiplariga amal qilish majburiyatini oladi. Bu yondashuv SDG maqsadlari, xususan, institutsional shaffoflik va adolatli boshqaruv (SDG 16) talablariga to'liq mos keladi.</p>
+              <p><strong>Xulq-atvor va kasbiy madaniyat</strong></p>
+              <p>Kodeks universitet a'zolarining kundalik xulq-atvoriga ham aniq talablar qo'yadi. Jumladan:</p>
+              <ul>
+                <li>tashqi ko'rinish va kiyinish madaniyati</li>
+                <li>o'zaro hurmat va muomala odobi</li>
+                <li>jamoat joylarida tartib-intizom</li>
+                <li>rasmiy muloqot madaniyati</li>
+              </ul>
+              <p>Ayniqsa, ijtimoiy tarmoqlarda va ommaviy axborot vositalarida universitet sha'niga putur yetkazuvchi noto'g'ri yoki asossiz ma'lumotlarni tarqatmaslik muhim talab sifatida belgilangan.</p>
+              <p><strong>Akademik muhit va o'zaro munosabatlar</strong></p>
+              <p>Kodeks universitet ichida sog'lom akademik muhitni ta'minlashga alohida e'tibor qaratadi. Unda:</p>
+              <ul>
+                <li>pedagog va talaba o'rtasidagi hurmatli munosabat</li>
+                <li>akademik halollik</li>
+                <li>tazyiq va kamsitishlarga yo'l qo'ymaslik</li>
+                <li>bilim berish jarayonida adolatli yondashuv</li>
+              </ul>
+              <p>kabi tamoyillar belgilangan. Bu esa zamonaviy ta'lim tizimida muhim bo'lgan inklyuziv va adolatli ta'lim muhitini shakllantirishga xizmat qiladi.</p>
+              <p><strong>Taqiqlangan xatti-harakatlar</strong></p>
+              <p>Kodeksda universitet hududida qat'iyan man etilgan xatti-harakatlar ham aniq ko'rsatilgan:</p>
+              <ul>
+                <li>huquqbuzarlik va zo'ravonlik</li>
+                <li>giyohvand moddalar va alkogol iste'moli</li>
+                <li>akademik insofsizlik</li>
+                <li>ekstremistik yoki zararli kontent tarqatish</li>
+                <li>boshqalarning sha'ni va qadr-qimmatini kamsitish</li>
+              </ul>
+              <p>Bu cheklovlar universitetda xavfsiz, sog'lom va barqaror muhitni ta'minlashga qaratilgan.</p>
+              <p><strong>Rahbariyatning mas'uliyati</strong></p>
+              <p>Kodeks rahbarlar zimmasiga ham muhim vazifalarni yuklaydi:</p>
+              <ul>
+                <li>adolatli va xolis boshqaruv</li>
+                <li>favoritizm va diskriminatsiyaga yo'l qo'ymaslik</li>
+                <li>xodimlar uchun qulay ish sharoitlarini yaratish</li>
+                <li>manfaatlar to'qnashuvining oldini olish</li>
+              </ul>
+              <p>Bu esa universitetda yaxshi boshqaruv tizimini mustahkamlaydi.</p>
+              <p>Qarshi davlat universitetining odob-axloq kodeksi nafaqat ichki tartib-qoidalarni belgilovchi hujjat, balki universitetning etik qadriyatlari va barqaror rivojlanish strategiyasining muhim qismidir. U axloqiy madaniyatni shakllantiradi, akademik halollikni ta'minlaydi, ijtimoiy mas'uliyatni oshiradi va universitetning xalqaro imidjini mustahkamlaydi.</p>
+              <p>Mazkur kodeks orqali universitet jamoasi o'z faoliyatida halollik, adolat va hurmat kabi qadriyatlarga asoslangan barqaror va inklyuziv muhitni rivojlantirishga intiladi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>Code of ethics of Karshi State University content and significance</strong></p>
+              <p>The code of ethics of Karshi State University is a key regulatory document aimed at fostering a strong ethical culture, ensuring academic integrity, and promoting social responsibility within the university community. Developed based on national and universal values, the Code applies to all academic staff, administrative personnel, students, and doctoral candidates of the university.</p>
+              <p><strong>Purpose of the code</strong></p>
+              <p>The primary purpose of the code is to:</p>
+              <ul>
+                <li>establish and strengthen ethical standards</li>
+                <li>promote mutual respect and responsibility</li>
+                <li>ensure discipline and professionalism in the educational environment</li>
+                <li>enhance the institutional reputation of the university</li>
+              </ul>
+              <p>Additionally, the code contributes to nurturing students and staff in the spirit of respect for national values, preventing misconduct, and creating a healthy socio-psychological environment.</p>
+              <p><strong>Core principles</strong></p>
+              <p>The code is based on the following fundamental principles:</p>
+              <ul>
+                <li><strong>Legality</strong> - all activities must comply with national legislation</li>
+                <li><strong>Justice and Integrity</strong> - all actions and decisions must be fair and impartial</li>
+                <li><strong>Respect for Rights and Freedoms</strong> - human dignity is recognized as a highest value</li>
+                <li><strong>Patriotism and Loyalty</strong> - commitment to institutional and societal responsibilities</li>
+                <li><strong>Efficiency and Responsibility</strong> - rational and careful use of resources</li>
+              </ul>
+              <p>These principles support ethical governance and align with the university's commitment to sustainable development.</p>
+              <p><strong>Zero tolerance for corruption</strong></p>
+              <p>The code clearly establishes a zero-tolerance policy towards all forms of corruption. Members of the university community are required to actively combat corruption, ensure transparency and accountability, and adhere strictly to ethical and legal standards. This approach is fully aligned with sustainable development goal 16 (Peace, Justice, and Strong Institutions).</p>
+              <p><strong>Standards of conduct and professional behavior</strong></p>
+              <p>The code defines clear expectations for daily conduct, including:</p>
+              <ul>
+                <li>appropriate dress and professional appearance</li>
+                <li>respectful communication and behavior</li>
+                <li>adherence to discipline in university premises</li>
+                <li>responsible communication in public and digital spaces</li>
+              </ul>
+              <p>Special attention is given to maintaining the university's reputation by avoiding the dissemination of misleading or unverified information, especially on social media platforms.</p>
+              <p><strong>Academic environment and interpersonal relations</strong></p>
+              <p>The code emphasizes the importance of a respectful and inclusive academic environment. It promotes:</p>
+              <ul>
+                <li>mutual respect between faculty and students</li>
+                <li>academic honesty and fairness</li>
+                <li>prohibition of harassment or discrimination</li>
+                <li>a supportive and student-centered teaching approach</li>
+              </ul>
+              <p>These principles contribute to building an inclusive and equitable learning environment.</p>
+              <p><strong>Prohibited actions</strong></p>
+              <p>The code strictly prohibits actions that may harm individuals or the institution, including:</p>
+              <ul>
+                <li>any form of misconduct or violence</li>
+                <li>use or distribution of drugs, alcohol, or harmful substances</li>
+                <li>academic dishonesty</li>
+                <li>dissemination of extremist or inappropriate content</li>
+                <li>actions that undermine human dignity</li>
+              </ul>
+              <p>These restrictions ensure a safe, respectful, and sustainable campus environment.</p>
+              <p><strong>Responsibilities of leadership</strong></p>
+              <p>The code also outlines key responsibilities for university leadership, including:</p>
+              <ul>
+                <li>ensuring fair and transparent management</li>
+                <li>preventing favoritism and discrimination</li>
+                <li>providing supportive working conditions</li>
+                <li>managing conflicts of interest effectively</li>
+              </ul>
+              <p>This strengthens good governance and institutional accountability.</p>
+              <p>The code of ethics of Karshi State University is not only a regulatory framework but also a reflection of the university's commitment to ethical values and sustainable development. It plays a vital role in fostering a culture of integrity, ensuring academic excellence, promoting social responsibility, and enhancing the university's global reputation.</p>
+              <p>Through the implementation of this code, the university strives to create a sustainable, inclusive, and ethically responsible academic environment grounded in respect, fairness, and integrity.</p>
+            </div>
+        """,
     },
 }
 
@@ -2488,9 +2774,195 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "intro": section[f"intro_{language_suffix}"],
             "sections": section[f"sections_{language_suffix}"],
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
-            "single_card": slug in {"sdg-purchase", "sdg-investment"},
+            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "ethics-code"},
         }
+        if slug == "ethics-code":
+            if language_code == "uz":
+                context["ethics_pdf_panel"] = {
+                    "title": "Batafsil",
+                    "description": "PDF hujjat asosidagi asosiy qoidalar, prinsiplar va amaliy talablarni ko'rish uchun ushbu bo'limdan foydalaning.",
+                    "button_label": "Batafsil ma'lumot",
+                    "download_label": "PDF hujjatni yuklab olish",
+                    "section_title": "PDF hujjat asosidagi batafsil ma'lumotlar",
+                    "section_intro": "Quyida odob-axloq kodeksining PDF hujjatidan olingan asosiy bo'limlar qisqacha bayon qilingan.",
+                    "items": [
+                        {
+                            "title": "1. Umumiy qoidalar",
+                            "points": [
+                                "Kodeks O'zbekiston Respublikasi qonunchiligiga asoslanib ishlab chiqilgan bo'lib, universitetning barcha xodim, talaba va doktorantlari uchun majburiydir.",
+                                "Maqsadlari: milliy va umuminsoniy qadriyatlar asosida madaniyat shakllantirish, huquqbuzarliklarning oldini olish, sog'lom ijtimoiy-psixologik muhit yaratish.",
+                            ],
+                        },
+                        {
+                            "title": "2. Asosiy prinsiplar",
+                            "points": [
+                                "Qonuniylik — qonunchilikka so'zsiz rioya qilish",
+                                "Vatanparvarlik — Vatanga sadoqat va xizmat burchiga sodiqlik",
+                                "Adolat va halollik — barcha munosabatlarda xolis bo'lish",
+                                "Samaradorlik — innovatsiyalar orqali faoliyatni doimiy yaxshilash",
+                            ],
+                        },
+                        {
+                            "title": "3. Korrupsiyaga qarshi kurash",
+                            "points": [
+                                "Korrupsiyaning har qanday shakli qat'iyan rad etiladi.",
+                                "Barcha xodim va talabalar korrupsiyaga qarshi faol kurashishi shart.",
+                            ],
+                        },
+                        {
+                            "title": "4. Kiyinish va tashqi ko'rinish qoidalari",
+                            "points": [
+                                "Qizlar: tizzani yopuvchi yubka/shim, och bo'lmagan bluzka, to'q poyabzal",
+                                "Erkaklar: klassik shim/kostyum, oq/havorang ko'ylak, soqol/soch tartibli",
+                                "Taqiqlanadi: shaffof kiyim, ochiq yelka/qorin, pirsing, tatuirovka, diniy ramzlar (xoch, hijob, kipa va h.k.)",
+                                "Dam olish kunlari erkin kiyim ruxsat etiladi (qoidalar doirasida)",
+                            ],
+                        },
+                        {
+                            "title": "5. Qat'iyan taqiqlangan xatti-harakatlar",
+                            "points": [
+                                "Giyohvand, alkogol, tamaki, vayp iste'mol qilish",
+                                "Janjal, qimor, zo'ravonlik",
+                                "Soxta hujjat taqdim etish yoki hujjatlarni o'zgartirish",
+                                "Dars vaqtida telefon ishlatish",
+                                "Ekstremistik, pornografik materiallar tarqatish",
+                                "Universitetni obro'sizlantiruvchi ma'lumot ijtimoiy tarmoqlarda joylashtirish",
+                            ],
+                        },
+                        {
+                            "title": "6. O'qituvchi-talaba munosabatlari",
+                            "points": [
+                                "Talabalar darsga kirmay qolish va kechikishga yo'l qo'ymaydi",
+                                "O'qituvchi kirganida talabalar o'rindan turadi",
+                                "Akademik ta'qib (harassment) — qat'iyan taqiqlanadi",
+                                "Talabalar asosli shikoyat bilan dekanat yoki rekturat orqali murojaat qila oladi",
+                            ],
+                        },
+                        {
+                            "title": "7. Rahbariyat majburiyatlari",
+                            "points": [
+                                "Qarindoshlik/mahalliychilik asosida kadr tanlash taqiqlanadi",
+                                "Xodimlarga psixologik yoki jismoniy ta'sir ko'rsatish taqiqlanadi",
+                                "Qulay ish sharoitlari (kompyuter, internet, kutubxona) ta'minlanishi shart",
+                            ],
+                        },
+                        {
+                            "title": "8. Rag'batlantirish va javobgarlik",
+                            "points": [
+                                "Kodeksga rioya qilganlar moddiy yoki ma'naviy rag'batlantiriladi",
+                                "Buzganlar intizomiy javobgarlikka tortiladi",
+                                "Odob-axloq komissiyasi (kamida 5 kishi) har qanday shikoyatni ko'rib chiqadi",
+                            ],
+                        },
+                    ],
+                }
+            else:
+                context["ethics_pdf_panel"] = {
+                    "title": "Details",
+                    "description": "Use this section to view the main rules, principles, and practical requirements summarized from the PDF document.",
+                    "button_label": "View details",
+                    "download_label": "Download PDF document",
+                    "section_title": "Detailed information based on the PDF document",
+                    "section_intro": "Below is a concise summary of the main sections extracted from the code of ethics PDF.",
+                    "items": [
+                        {
+                            "title": "1. General provisions",
+                            "points": [
+                                "The code is developed in accordance with the legislation of the Republic of Uzbekistan and is mandatory for all university employees, students, and doctoral candidates.",
+                                "Its goals include building culture on the basis of national and universal values, preventing misconduct, and creating a healthy socio-psychological environment.",
+                            ],
+                        },
+                        {
+                            "title": "2. Core principles",
+                            "points": [
+                                "Legality — unconditional compliance with legislation",
+                                "Patriotism — loyalty to the country and dedication to service",
+                                "Justice and integrity — impartiality in all relations",
+                                "Efficiency — continuous improvement through innovation",
+                            ],
+                        },
+                        {
+                            "title": "3. Anti-corruption approach",
+                            "points": [
+                                "Any form of corruption is strictly rejected.",
+                                "All employees and students are required to actively combat corruption.",
+                            ],
+                        },
+                        {
+                            "title": "4. Dress code and appearance rules",
+                            "points": [
+                                "For women: knee-covering skirts/trousers, modest blouse, dark shoes",
+                                "For men: classic trousers/suit, white or light-blue shirt, neat beard/hair",
+                                "Prohibited: transparent clothing, exposed shoulders or abdomen, piercing, tattoos, and religious symbols (cross, hijab, kippah, etc.)",
+                                "Casual clothing is allowed on days off within established rules",
+                            ],
+                        },
+                        {
+                            "title": "5. Strictly prohibited actions",
+                            "points": [
+                                "Consumption of drugs, alcohol, tobacco, or vape products",
+                                "Fighting, gambling, and violence",
+                                "Submitting forged documents or altering official records",
+                                "Using phones during class",
+                                "Distributing extremist or pornographic materials",
+                                "Posting information on social media that damages the university's reputation",
+                            ],
+                        },
+                        {
+                            "title": "6. Teacher-student relations",
+                            "points": [
+                                "Students must not skip classes or arrive late",
+                                "Students stand when a teacher enters the classroom",
+                                "Academic harassment is strictly prohibited",
+                                "Students may submit justified complaints through the dean's office or rectorate",
+                            ],
+                        },
+                        {
+                            "title": "7. Responsibilities of leadership",
+                            "points": [
+                                "Recruitment based on kinship or local favoritism is prohibited",
+                                "Psychological or physical pressure on employees is prohibited",
+                                "Proper working conditions must be ensured, including computers, internet, and library access",
+                            ],
+                        },
+                        {
+                            "title": "8. Incentives and accountability",
+                            "points": [
+                                "Those who comply with the code may receive material or moral encouragement",
+                                "Violators are subject to disciplinary responsibility",
+                                "The ethics commission, composed of at least 5 members, reviews any complaint",
+                            ],
+                        },
+                    ],
+                }
+            context["ethics_pdf_url"] = "/about/ethics-code/document/"
+            context["ethics_pdf_download_url"] = "/about/ethics-code/document/?download=1"
         return context
+
+
+class AntiCorruptionContactView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/anti_corruption_contact.html"
+    page_key = "about"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        content = ANTI_CORRUPTION_CONTACT_CONTENT["uz" if language_code == "uz" else "en"]
+        context["department_contact_page"] = content
+        return context
+
+
+def ethics_code_document(request):
+    if not ETHICS_CODE_PDF_PATH.exists():
+        raise Http404("Ethics code PDF not found")
+
+    response = FileResponse(ETHICS_CODE_PDF_PATH.open("rb"), content_type="application/pdf")
+    filename = ETHICS_CODE_PDF_PATH.name
+    if request.GET.get("download") == "1":
+        response["Content-Disposition"] = f'attachment; filename="{filename}"'
+    else:
+        response["Content-Disposition"] = f'inline; filename="{filename}"'
+    return response
 
 
 class ProgramsView(BasePortalContextMixin, TemplateView):

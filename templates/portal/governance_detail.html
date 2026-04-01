@@ -1,9 +1,10 @@
 {% extends "portal/base.html" %}
-{% load portal_i18n %}
+{% load cache portal_i18n %}
 
 {% block content %}
   <section class="section">
     <div class="container">
+      {% cache 900 governance_detail_intro governance_section.slug current_language using="fragments" %}
       <div class="section-heading governance-detail-intro">
         <div>
           <div class="lined-title">
@@ -15,36 +16,55 @@
           {% endif %}
         </div>
         <div class="governance-detail-intro__actions">
-          {% with responsible_contact=footer_departments|first %}
-            {% if responsible_contact %}
-              <article class="content-card soft-panel-card governance-detail-contact">
-                <strong>
-                  {% if current_language == "uz" %}
-                    Mas'ul xodim
+          {% if governance_section.slug == "ethics-code" and ethics_pdf_panel %}
+            <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
+              <strong>{{ ethics_pdf_panel.title }}</strong>
+              <p>{{ ethics_pdf_panel.description }}</p>
+              <a class="button button--primary" href="#ethics-pdf-details">{{ ethics_pdf_panel.button_label }}</a>
+              <a class="button button--secondary" href="{{ ethics_pdf_download_url }}">{{ ethics_pdf_panel.download_label }}</a>
+            </article>
+          {% else %}
+            {% with responsible_contact=footer_departments|first %}
+              {% if responsible_contact %}
+                <article class="content-card soft-panel-card governance-detail-contact">
+                  <strong>
+                    {% if current_language == "uz" %}
+                      Mas'ul xodim
+                    {% else %}
+                      Responsible contact
+                    {% endif %}
+                  </strong>
+                  <p>{{ responsible_contact.contact_person }}</p>
+                  <p>{{ responsible_contact.department_name }}</p>
+                  {% if governance_section.slug == "anti-corruption" %}
+                    <a class="button button--primary" href="{% url 'anti-corruption-contact' %}">
+                      {% if current_language == "uz" %}
+                        Mas'ul xodim bilan bog'lanish
+                      {% else %}
+                        Contact responsible officer
+                      {% endif %}
+                    </a>
                   {% else %}
-                    Responsible contact
+                    <a class="button button--primary" href="mailto:{{ responsible_contact.email }}">
+                      {% if current_language == "uz" %}
+                        Mas'ul xodim bilan bog'lanish
+                      {% else %}
+                        Contact responsible officer
+                      {% endif %}
+                    </a>
                   {% endif %}
-                </strong>
-                <p>{{ responsible_contact.contact_person }}</p>
-                <p>{{ responsible_contact.department_name }}</p>
-                <a class="button button--primary" href="mailto:{{ responsible_contact.email }}">
+                </article>
+              {% else %}
+                <a class="button button--primary" href="{% url 'contact' %}">
                   {% if current_language == "uz" %}
                     Mas'ul xodim bilan bog'lanish
                   {% else %}
                     Contact responsible officer
                   {% endif %}
                 </a>
-              </article>
-            {% else %}
-              <a class="button button--primary" href="{% url 'contact' %}">
-                {% if current_language == "uz" %}
-                  Mas'ul xodim bilan bog'lanish
-                {% else %}
-                  Contact responsible officer
-                {% endif %}
-              </a>
-            {% endif %}
-          {% endwith %}
+              {% endif %}
+            {% endwith %}
+          {% endif %}
           <a class="button button--ghost" href="{% url 'about' %}">
             {% if current_language == "uz" %}
               Boshqaruv sahifasiga qaytish
@@ -54,7 +74,9 @@
           </a>
         </div>
       </div>
+      {% endcache %}
 
+      {% cache 900 governance_detail_stack governance_section.slug current_language using="fragments" %}
       <div class="governance-detail-stack">
         {% if governance_section.single_card %}
           <article class="content-card governance-detail-card governance-detail-card--single">
@@ -147,6 +169,7 @@
           {% endfor %}
         {% endif %}
       </div>
+      {% endcache %}
     </div>
   </section>
 {% endblock %}

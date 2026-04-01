@@ -1,0 +1,76 @@
+{% extends "portal/base.html" %}
+{% load cache %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      {% cache 900 anti_corruption_contact_intro current_language using="fragments" %}
+      <div class="section-heading governance-detail-intro">
+        <div>
+          <div class="lined-title">
+            <span>{{ department_contact_page.eyebrow }}</span>
+          </div>
+          <h1>{{ department_contact_page.title }}</h1>
+          <p>{{ department_contact_page.intro }}</p>
+        </div>
+      </div>
+      {% endcache %}
+
+      {% cache 900 anti_corruption_contact_body current_language using="fragments" %}
+      <div class="governance-detail-stack">
+        <article class="content-card governance-detail-card governance-detail-card--single anti-corruption-contact-card">
+          <div class="anti-corruption-contact-card__header">
+            <div class="anti-corruption-contact-card__image-wrap">
+              <img class="anti-corruption-contact-card__image" src="/meedia/korrupsiya.jpg" alt="{{ department_contact_page.leader_name }}">
+            </div>
+            <div class="anti-corruption-contact-card__meta">
+              <h2>{{ department_contact_page.leader_title }}</h2>
+              <p class="anti-corruption-contact-card__name">{{ department_contact_page.leader_name }}</p>
+              <p class="anti-corruption-contact-card__role">{{ department_contact_page.leader_role }}</p>
+              <div class="anti-corruption-contact-card__details">
+                {% for detail in department_contact_page.leader_details %}
+                  <p>{{ detail }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          {% for section in department_contact_page.sections %}
+            <section class="governance-detail-card__block">
+              <h2>{{ section.title }}</h2>
+              {% for paragraph in section.paragraphs %}
+                <p>{{ paragraph }}</p>
+              {% endfor %}
+              {% if section.bullets %}
+                <ul class="governance-bullet-list">
+                  {% for bullet in section.bullets %}
+                    <li>{{ bullet }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if section.links %}
+                <ul class="governance-bullet-list">
+                  {% for link in section.links %}
+                    <li>
+                      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+                      {% if link.description %} — {{ link.description }}{% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </section>
+          {% endfor %}
+        </article>
+
+        <a class="button button--ghost anti-corruption-contact-card__back" href="{% url 'governance-detail' 'anti-corruption' %}">
+          {% if current_language == "uz" %}
+            Korrupsiyaga qarshi siyosat sahifasiga qaytish
+          {% else %}
+            Back to anti-corruption policy
+          {% endif %}
+        </a>
+      </div>
+      {% endcache %}
+    </div>
+  </section>
+{% endblock %}
