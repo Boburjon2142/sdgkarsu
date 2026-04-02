@@ -1566,6 +1566,21 @@ blockquote {
   padding: 2rem;
 }
 
+.detail-media {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 0.2rem);
+  border: 1px solid rgba(142, 164, 126, 0.22);
+  background: #edf3e7;
+}
+
+.detail-media img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+}
+
 .contact-layout .content-card--large {
   transform: none !important;
   transition: box-shadow var(--transition-slow), border-color var(--transition-slow), background var(--transition-slow) !important;

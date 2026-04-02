@@ -22,6 +22,11 @@
   <section class="section">
     <div class="container detail-layout">
       <article class="content-card content-card--large">
+        {% if article.image %}
+          <figure class="detail-media">
+            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+          </figure>
+        {% endif %}
         <p>{{ article.body }}</p>
       </article>
       <aside class="stack-list">
