@@ -20,8 +20,12 @@
             <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
               <strong>{{ ethics_pdf_panel.title }}</strong>
               <p>{{ ethics_pdf_panel.description }}</p>
-              <a class="button button--primary" href="#ethics-pdf-details">{{ ethics_pdf_panel.button_label }}</a>
-              <a class="button button--secondary" href="{{ ethics_pdf_download_url }}">{{ ethics_pdf_panel.download_label }}</a>
+              <a class="button button--primary" href="{{ ethics_pdf_url|default:'#' }}" target="_blank" rel="noopener">
+                {{ ethics_pdf_panel.button_label }}
+              </a>
+              <a class="button button--secondary" href="{{ ethics_pdf_download_url|default:'#' }}" target="_blank" rel="noopener">
+                {{ ethics_pdf_panel.download_label }}
+              </a>
             </article>
           {% else %}
             {% with responsible_contact=footer_departments|first %}

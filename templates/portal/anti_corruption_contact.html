@@ -1,5 +1,5 @@
 {% extends "portal/base.html" %}
-{% load cache %}
+{% load cache static %}
 
 {% block content %}
   <section class="section">
@@ -21,7 +21,7 @@
         <article class="content-card governance-detail-card governance-detail-card--single anti-corruption-contact-card">
           <div class="anti-corruption-contact-card__header">
             <div class="anti-corruption-contact-card__image-wrap">
-              <img class="anti-corruption-contact-card__image" src="/meedia/korrupsiya.jpg" alt="{{ department_contact_page.leader_name }}">
+              <img class="anti-corruption-contact-card__image" src="{% static 'images/staff/korrupsiya.jpg' %}" alt="{{ department_contact_page.leader_name }}">
             </div>
             <div class="anti-corruption-contact-card__meta">
               <h2>{{ department_contact_page.leader_title }}</h2>
