@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
   --primary: #89ce00;
@@ -36,10 +36,11 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  font-size: 16px;
   color: var(--text-main);
   background: #ffffff;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .site-loader {
@@ -207,8 +208,8 @@ ul {
   gap: 0.75rem;
   margin-bottom: 1rem;
   color: var(--cta-accent);
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -224,26 +225,50 @@ ul {
 
 h1,
 h2 {
-  font-family: "Source Serif 4", Georgia, serif;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: #182616;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: 36px;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-size: 30px;
   margin-bottom: 0.75rem;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 h3 {
   margin-bottom: 0.75rem;
-  font-size: 1.2rem;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 20px;
   line-height: 1.35;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter", "Roboto", "Arial", sans-serif;
 }
 
 p,
@@ -254,6 +279,22 @@ input,
 textarea,
 select {
   color: var(--text-secondary);
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+small {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .button,
@@ -421,8 +462,8 @@ select {
   padding: 0.5rem 0.75rem;
   border-radius: 999px;
   color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0.06em;
   line-height: 1;
 }
@@ -452,8 +493,8 @@ select {
   background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  font-size: 0.86rem;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1;
   cursor: pointer;
@@ -498,8 +539,8 @@ select {
   padding: 0.7rem 0.85rem;
   border-radius: 12px;
   color: #13200f;
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .language-dropdown__menu a:hover,
@@ -517,8 +558,8 @@ select {
   padding: 0.9rem 1rem;
   border-radius: 999px;
   color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.15;
   transition: background var(--transition), color var(--transition);
 }
@@ -715,7 +756,23 @@ select {
 .hero-copy__lead,
 .page-intro__lead {
   max-width: 52rem;
-  font-size: 1.08rem;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.rich-text-inline,
+.rich-text-content {
+  text-align: justify;
+  text-justify: inter-word;
+  white-space: pre-wrap;
+}
+
+.rich-text-inline {
+  margin-bottom: 0;
+}
+
+.rich-text-content > :last-child {
+  margin-bottom: 0;
 }
 
 .hero-actions {
@@ -899,8 +956,8 @@ select {
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -930,8 +987,8 @@ select {
   border-radius: 999px;
   background: var(--primary-tint);
   color: #263c15;
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -1010,8 +1067,8 @@ blockquote {
 
 .lined-title span {
   color: #2f5614;
-  font-size: 0.98rem;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1092,6 +1149,17 @@ blockquote {
 
 .news-card__body {
   padding: 1.35rem 1.4rem 1.45rem;
+}
+
+.news-card__body h3,
+.sdg-goal-card__body h3,
+.sdg-work-card__body h3,
+.report-card h3,
+.content-card h3,
+.list-card h3 {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
 }
 
 .sdg-icons-grid {
@@ -1698,8 +1766,8 @@ blockquote {
   border-radius: 999px;
   background: rgba(47, 91, 23, 0.08);
   color: #2f5b17;
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.08em;
 }
 
@@ -1707,7 +1775,7 @@ blockquote {
   position: relative;
   z-index: 1;
   color: #182616;
-  font-size: 1.15rem;
+  font-size: 20px;
   line-height: 1.2;
 }
 
@@ -2017,8 +2085,8 @@ blockquote {
 .anti-corruption-contact-card__name {
   margin: 0;
   color: #182616;
-  font-size: 1.55rem;
-  font-weight: 800;
+  font-size: 30px;
+  font-weight: 700;
   line-height: 1.12;
 }
 
@@ -2096,8 +2164,9 @@ blockquote {
 }
 
 .contact-person-meta strong {
-  font-size: 1.9rem;
-  line-height: 1.05;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .contact-person-meta p {
@@ -2283,18 +2352,27 @@ textarea {
   color: #fff;
 }
 
+.site-footer h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
 .footer-copy {
   max-width: 26rem;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .footer-links--contact li {
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
-  font-size: 0.92rem;
+  font-size: 14px;
 }
 
 .reveal {

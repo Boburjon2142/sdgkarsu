@@ -7,7 +7,7 @@
       <div class="research-intro__main">
         <div class="eyebrow">{{ page_content.eyebrow }}</div>
         <h1>{{ page_content.title }}</h1>
-        <p class="page-intro__lead">{{ page_content.intro }}</p>
+        <p class="page-intro__lead rich-text-inline">{{ page_content.intro }}</p>
       </div>
       {% if page_content.supporting_title or page_content.supporting_text %}
         <aside class="research-intro__aside">
@@ -15,7 +15,7 @@
             <span class="chip">{{ page_content.supporting_title }}</span>
           {% endif %}
           {% if page_content.supporting_text %}
-            <p>{{ page_content.supporting_text }}</p>
+            <p class="rich-text-inline">{{ page_content.supporting_text }}</p>
           {% endif %}
         </aside>
       {% endif %}
@@ -27,8 +27,8 @@
       <article class="content-card content-card--large">
         <div class="eyebrow">{% tr "Strategy overview" %}</div>
         <h2>{% tr "Policy, strategy, and implementation are shown as one connected system." %}</h2>
-        <p>{{ site_settings.strategy_overview }}</p>
-        <p>{{ site_settings.governance_overview }}</p>
+        <p class="rich-text-inline">{{ site_settings.strategy_overview }}</p>
+        <p class="rich-text-inline">{{ site_settings.governance_overview }}</p>
       </article>
       <article class="content-card soft-panel-card">
         <h3>{% tr "Why this matters" %}</h3>
@@ -50,7 +50,7 @@
           <article class="priority-card reveal">
             <span class="priority-icon">{{ item.icon|upper|slice:":2" }}</span>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.summary }}</p>
+            <p class="rich-text-inline">{{ item.summary }}</p>
             {% if item.metric %}
               <span class="chip">{{ item.metric }}</span>
             {% endif %}
@@ -74,7 +74,7 @@
             <div>
               <span class="chip">{{ item.get_category_display|translate_value:current_language }}</span>
               <h3>{{ item.title }}</h3>
-              <p>{{ item.summary }}</p>
+              <p class="rich-text-inline">{{ item.summary }}</p>
             </div>
             <div class="list-card__meta">
               <strong>{{ item.publish_date|date:"Y" }}</strong>

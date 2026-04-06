@@ -111,7 +111,7 @@
             <div class="news-card__body">
               <span class="chip">{{ article.get_category_display|translate_value:current_language }}</span>
               <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-              <p>{{ article.summary }}</p>
+              <p class="rich-text-inline">{{ article.summary }}</p>
               <small>{{ article.published_on|date:"F d, Y" }}</small>
             </div>
           </article>

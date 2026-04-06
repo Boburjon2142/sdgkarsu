@@ -7,7 +7,7 @@
       <div class="research-intro__main">
         <div class="eyebrow">{{ page_content.eyebrow }}</div>
         <h1>{{ page_content.title }}</h1>
-        <p class="page-intro__lead">{{ page_content.intro }}</p>
+        <p class="page-intro__lead rich-text-inline">{{ page_content.intro }}</p>
       </div>
       {% if page_content.supporting_title or page_content.supporting_text %}
         <aside class="research-intro__aside">
@@ -15,7 +15,7 @@
             <span class="chip">{{ page_content.supporting_title }}</span>
           {% endif %}
           {% if page_content.supporting_text %}
-            <p>{{ page_content.supporting_text }}</p>
+            <p class="rich-text-inline">{{ page_content.supporting_text }}</p>
           {% endif %}
         </aside>
       {% endif %}
@@ -48,7 +48,7 @@
             <article class="report-card reveal" id="report-{{ report.slug }}">
               <span class="chip">{{ report.get_report_type_display|translate_value:current_language }}</span>
               <h3>{{ report.title }}</h3>
-              <p>{{ report.summary }}</p>
+              <p class="rich-text-inline">{{ report.summary }}</p>
               <small>{{ report.publish_date|date:"F d, Y" }}</small>
             </article>
           {% endfor %}
@@ -65,7 +65,7 @@
           {% for item in achievements %}
             <article class="content-card reveal">
               <h3>{{ item.title }}</h3>
-              <p>{{ item.description }}</p>
+              <p class="rich-text-inline">{{ item.description }}</p>
               <small>{{ item.subtitle }}</small>
             </article>
           {% endfor %}
@@ -89,7 +89,7 @@
             <div>
               <span class="chip">{{ report.get_report_type_display|translate_value:current_language }}</span>
               <h3>{{ report.title }}</h3>
-              <p>{{ report.body }}</p>
+              <p class="rich-text-inline">{{ report.body }}</p>
             </div>
             <div class="list-card__meta">
               <strong>{{ report.highlight_metric }}</strong>

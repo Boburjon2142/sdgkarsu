@@ -4,7 +4,7 @@
     <div>
       <div class="eyebrow">{{ page_content.eyebrow }}</div>
       <h1>{{ page_content.title }}</h1>
-      <p class="page-intro__lead">{{ page_content.intro }}</p>
+      <p class="page-intro__lead rich-text-inline">{{ page_content.intro }}</p>
     </div>
     {% if page_content.supporting_title or page_content.supporting_text %}
       <aside class="page-intro__panel">
@@ -12,7 +12,7 @@
           <h2>{{ page_content.supporting_title }}</h2>
         {% endif %}
         {% if page_content.supporting_text %}
-          <p>{{ page_content.supporting_text }}</p>
+          <p class="rich-text-inline">{{ page_content.supporting_text }}</p>
         {% endif %}
       </aside>
     {% endif %}

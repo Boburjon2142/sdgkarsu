@@ -10,7 +10,7 @@
       <div>
         <div class="eyebrow">{{ event.get_category_display|translate_value:current_language }}</div>
         <h1>{{ event.title }}</h1>
-        <p class="page-intro__lead">{{ event.summary }}</p>
+        <p class="page-intro__lead rich-text-inline">{{ event.summary }}</p>
       </div>
       <aside class="page-intro__panel">
         <h2>{% tr "Event details" %}</h2>
@@ -24,7 +24,7 @@
   <section class="section">
     <div class="container detail-layout">
       <article class="content-card content-card--large">
-        <p>{{ event.details }}</p>
+        <div class="rich-text-content">{{ event.details }}</div>
       </article>
       <aside class="stack-list">
         <article class="content-card content-card--panel">

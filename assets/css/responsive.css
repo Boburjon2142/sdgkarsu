@@ -69,6 +69,56 @@
 }
 
 @media (max-width: 860px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+
+  p,
+  li,
+  label,
+  input,
+  textarea,
+  select,
+  .hero-copy__lead,
+  .page-intro__lead,
+  .section-heading p {
+    font-size: 15px;
+  }
+
+  small,
+  .chip,
+  .eyebrow,
+  .site-navigation a,
+  .language-switcher a,
+  .language-dropdown__toggle,
+  .language-dropdown__menu a,
+  .hero-panel__badge,
+  .footer-copy,
+  .footer-links--contact li,
+  .footer-legal {
+    font-size: 13px;
+  }
+
   .site-header {
     position: sticky;
   }
@@ -209,20 +259,16 @@
 }
 
 @media (max-width: 580px) {
-  body {
-    font-size: 15px;
-  }
-
   .container {
     width: min(calc(100% - 1.25rem), 100%);
   }
 
   h1 {
-    font-size: 2.45rem;
+    font-size: 28px;
   }
 
   h2 {
-    font-size: 1.85rem;
+    font-size: 24px;
   }
 
   h1,
@@ -568,11 +614,11 @@
   }
 
   h1 {
-    font-size: 2.15rem;
+    font-size: 28px;
   }
 
   h2 {
-    font-size: 1.65rem;
+    font-size: 24px;
   }
 
   .brand-logo {
