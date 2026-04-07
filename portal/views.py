@@ -938,42 +938,34 @@ GOVERNANCE_PAGE_CONTENT = {
         "title_en": "Women and Inclusion",
         "intro_uz": "Ta'lim, bandlik, yetakchilik va qaror qabul qilishdagi ishtirokni kuchaytirishga qaratilgan inklyuziv siyosat.",
         "intro_en": "An inclusive policy designed to strengthen participation in education, employment, leadership, and decision-making.",
-        "sections_uz": [
-            {
-                "title": "Institutsional yondashuv",
-                "paragraphs": [
-                    "Universitet xotin-qizlar uchun xavfsiz, teng imkoniyatli va rivojlanishga yo'naltirilgan muhit yaratishni ustuvor deb biladi.",
-                    "Gender tenglik ko'rsatkichlari institutsional monitoring va rahbariyat hisobotining ajralmas qismi sifatida kuzatiladi.",
-                ],
-            },
-            {
-                "title": "Qo'llab-quvvatlash mexanizmlari",
-                "bullets": [
-                    "mentorlik va liderlik dasturlari",
-                    "teng imkoniyat va xavfsiz mehnat tamoyillari",
-                    "himoya va murojaat mexanizmlari",
-                    "qaror qabul qilishdagi vakillikni oshirish",
-                ],
-            },
-        ],
-        "sections_en": [
-            {
-                "title": "Institutional approach",
-                "paragraphs": [
-                    "The University prioritizes a safe, equitable, and growth-oriented environment for women across academic and administrative life.",
-                    "Gender equality indicators are tracked as a formal part of institutional monitoring and leadership reporting.",
-                ],
-            },
-            {
-                "title": "Support mechanisms",
-                "bullets": [
-                    "mentoring and leadership pathways",
-                    "equal-opportunity and safe-work standards",
-                    "protection and reporting mechanisms",
-                    "stronger representation in decision-making",
-                ],
-            },
-        ],
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>XOTIN-QIZLARNI QO‘LLAB-QUVVATLASH VA GENDER TENGLIK SIYOSATI</strong></p>
+              <p>Qarshi davlat universiteti xotin-qizlarning huquq va manfaatlarini himoya qilish, ularning ta’lim, ilmiy faoliyat va ijtimoiy hayotdagi faol ishtirokini ta’minlash hamda gender tenglik tamoyillarini mustahkamlashni o‘zining ustuvor vazifalaridan biri sifatida belgilaydi. Mazkur siyosat O‘zbekiston Respublikasi Oliy Majlis Senatining 2022-yil 28-dekabrdagi “2030-yilgacha O‘zbekiston Respublikasida gender tenglikka erishish strategiyasining 2021–2022-yillardagi ijrosi hamda uni amalga oshirish bo‘yicha 2023-yilga mo‘ljallangan chora-tadbirlarni tasdiqlash to‘g‘risida”gi SQ-682-IV-sonli qarori, O‘zbekiston Respublikasi Oliy ta’lim, fan va innovatsiyalar vazirligining 2023-yil 5-maydagi 126-sonli buyrug‘i, shuningdek O‘zbekiston Respublikasi Vazirlar Mahkamasining 2021-yil 6-oktabrdagi 625-sonli “Zo‘rlik ishlatishdan jabr ko‘rgan xotin-qizlarni reabilitatsiya qilish va moslashtirish hamda o‘z joniga qasd qilishning oldini olish borasidagi ishlarni takomillashtirishga doir qo‘shimcha chora-tadbirlar to‘g‘risida”gi qarori asosida ishlab chiqilgan bo‘lib, universitetda xotin-qizlarga nisbatan har qanday diskriminatsiya, tazyiq va zo‘ravonlikka qarshi qat’iy nol darajadagi yondashuvni ta’minlashga qaratilgan.</p>
+              <p>Universitet hududida xotin-qizlar uchun teng imkoniyatlar yaratish nafaqat rasmiy siyosat va tartib-qoidalar orqali, balki kundalik ta’lim jarayoni, ijtimoiy hayot va madaniy faoliyat orqali ham izchil amalga oshiriladi. Talaba-qizlar va ayol xodimlarning shaxsiy rivojlanishi, ilmiy salohiyatini oshirish, kasbiy kompetensiyalarini mustahkamlash hamda jamiyatda faol fuqarolik pozitsiyasini shakllantirish uchun zarur shart-sharoitlar yaratiladi. Shu bilan birga, universitetda sog‘lom ijtimoiy-psixologik muhitni shakllantirish, o‘zaro hurmat, tenglik va bag‘rikenglik qadriyatlarini rivojlantirishga alohida e’tibor qaratiladi.</p>
+              <p>Qarshi davlat universitetida xotin-qizlarga nisbatan zo‘ravonlik va tazyiqlarning oldini olish ustuvor yo‘nalishlardan biri hisoblanadi. Shu maqsadda muntazam ravishda “Zo‘ravonlik va tazyiqqa qarshimiz” mavzusida davra suhbatlari, targ‘ibot tadbirlari va ma’rifiy uchrashuvlar tashkil etiladi. Ushbu jarayonlarda talabalar jinoyatchilikning oldini olish, huquqiy savodxonlikni oshirish, zo‘ravonlikning sabablari va oqibatlari haqida chuqur tushunchaga ega bo‘ladilar, shuningdek bunday holatlarda qanday himoyalanish va qayerga murojaat qilish mumkinligi yuzasidan aniq tavsiyalar oladilar. Universitet psixologlari, inspektorlar va mutaxassislar ishtirokida o‘tkaziladigan bunday tadbirlar xotin-qizlarda o‘z huquqlarini anglash, ijtimoiy faollik va shaxsiy xavfsizlik madaniyatini shakllantirishga xizmat qiladi.</p>
+              <p>Universitetda psixologik va ijtimoiy qo‘llab-quvvatlash tizimi izchil yo‘lga qo‘yilgan bo‘lib, talaba-qizlar va ayol xodimlar uchun bepul maslahat xizmatlari taqdim etiladi. Psixologik xizmat markazi orqali stress, bosim, ijtimoiy muammolar yoki shaxsiy qiyinchiliklarga duch kelgan xotin-qizlarga individual yondashuv asosida yordam ko‘rsatiladi, bu esa ularning ruhiy barqarorligini mustahkamlash, ta’lim va ish faoliyatida samaradorlikni oshirishga xizmat qiladi.</p>
+              <p>Shuningdek, universitetda gender tenglik, oilaviy qadriyatlar va ijtimoiy mas’uliyat masalalariga bag‘ishlangan ta’lim va ma’rifiy dasturlar muntazam amalga oshiriladi. Fakultetlar kesimida tashkil etiladigan seminarlar va uchrashuvlarda xotin-qizlarning jamiyatdagi o‘rni, ularning ijtimoiy himoyasi, zamonaviy globallashuv sharoitida yuzaga kelayotgan muammolar va ularning yechimlari muhokama qilinadi. Bu jarayonlarda xotin-qizlar bo‘yicha maslahatchilar, psixologlar va mutaxassislar faol ishtirok etadi va talabalarga amaliy bilim hamda hayotiy ko‘nikmalar beriladi.</p>
+              <p>Universitet xotin-qizlarning ijtimoiy faolligini oshirishga alohida e’tibor qaratadi. Turli tanlovlar, aksiyalar va madaniy tadbirlar, jumladan “Zo‘ravonlikka qarshi 16 kun” kampaniyasi doirasidagi tashabbuslar xotin-qizlarning jamiyatdagi rolini mustahkamlash, ularning ijodiy va ijtimoiy salohiyatini namoyon etish uchun muhim platforma vazifasini bajaradi. Bunday tashabbuslar nafaqat xotin-qizlarni qo‘llab-quvvatlashga, balki universitetda sog‘lom, xavfsiz va inklyuziv muhitni shakllantirishga xizmat qiladi.</p>
+              <p>Mazkur siyosat doirasida universitet har bir xotin-qiz uchun xavfsiz va himoyalangan muhitni kafolatlaydi. Zo‘ravonlik yoki tazyiq holatlari yuzaga kelgan taqdirda maxfiy murojaat qilish imkoniyati yaratilgan bo‘lib, har bir murojaat tezkor, xolis va adolatli tarzda ko‘rib chiqiladi, jabrlangan shaxslarni himoya qilish va ularga zarur yordam ko‘rsatish ustuvor vazifa sifatida qaraladi.</p>
+              <p>Umuman olganda, Qarshi davlat universiteti xotin-qizlarni qo‘llab-quvvatlash va gender tenglikni ta’minlash orqali zamonaviy, inklyuziv va barqaror ta’lim muhitini shakllantirishni maqsad qiladi. Ushbu siyosat universitet jamoasining barcha a’zolari uchun teng imkoniyatlar yaratish, inson qadr-qimmatini hurmat qilish va ijtimoiy adolatni ta’minlashga xizmat qiladi hamda milliy va xalqaro barqaror rivojlanish maqsadlariga mos ravishda doimiy takomillashtirib boriladi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>KARSHI STATE UNIVERSITY<br>WOMEN’S SUPPORT AND GENDER EQUALITY POLICY</strong></p>
+              <p>Karshi State University recognizes the protection of women’s rights and interests, the promotion of their active participation in education, research, and social life, and the strengthening of gender equality principles as one of its key institutional priorities. This policy has been developed in accordance with the Resolution of the Senate of the Republic of Uzbekistan dated December 28, 2022 (No. SQ-682-IV) on the implementation of the Gender Equality Strategy of the Republic of Uzbekistan until 2030, the Order of the Ministry of Higher Education, Science and Innovation dated May 5, 2023 (No. 126), as well as the Resolution of the Cabinet of Ministers dated October 6, 2021 (No. 625) on additional measures to improve the rehabilitation and adaptation of women affected by violence and the prevention of suicide. The policy is aimed at ensuring a strict zero-tolerance approach to any form of discrimination, harassment, or violence against women within the university.</p>
+              <p>Within the university environment, equal opportunities for women are ensured not only through formal policies and regulations but also through the consistent integration of these principles into academic processes, social life, and cultural activities. Necessary conditions are created to support the personal development of female students and women staff, enhance their academic and professional competencies, and foster an active civic position in society. At the same time, particular attention is given to building a healthy socio-psychological environment based on mutual respect, equality, and tolerance.</p>
+              <p>Preventing violence and harassment against women is one of the university’s priority areas. For this purpose, regular roundtable discussions, awareness campaigns, and educational meetings are organized under themes such as “We are against violence and harassment.” During these activities, students are provided with comprehensive knowledge on crime prevention, legal awareness, the causes and consequences of violence, as well as practical guidance on protection mechanisms and reporting procedures. Events conducted with the participation of university psychologists, inspectors, and specialists contribute to raising awareness among women about their rights, strengthening social engagement, and developing a culture of personal safety.</p>
+              <p>The university has established a consistent system of psychological and social support, providing free counseling services to female students and women staff. Through the psychological service center, individualized support is offered to those experiencing stress, pressure, social challenges, or personal difficulties. This contributes to strengthening their emotional well-being and improving their academic and professional performance.</p>
+              <p>In addition, the university regularly implements educational and awareness programs focused on gender equality, family values, and social responsibility. Seminars and meetings organized at the faculty level address the role of women in society, their social protection, as well as contemporary challenges emerging in the context of globalization and their possible solutions. These activities involve faculty advisors for women’s issues, psychologists, and specialists, providing students with practical knowledge and life skills.</p>
+              <p>The university also places strong emphasis on increasing the social engagement of women. Various competitions, campaigns, and cultural events, such as initiatives conducted within the framework of the “16 Days of Activism Against Violence,” serve as important platforms for strengthening women’s role in society and showcasing their creative and social potential. These initiatives contribute not only to supporting women but also to fostering a safe, inclusive, and healthy university environment.</p>
+              <p>Within the framework of this policy, the university guarantees a safe and protected environment for every woman. In cases of violence or harassment, confidential reporting mechanisms are available, and each case is reviewed promptly, fairly, and impartially. Protecting victims and providing them with the necessary support is considered a priority responsibility of the institution.</p>
+              <p>Overall, Karshi State University aims to create a modern, inclusive, and sustainable educational environment by supporting women and ensuring gender equality. This policy contributes to providing equal opportunities for all members of the university community, promoting respect for human dignity, and ensuring social justice, while being continuously improved in alignment with national and international sustainable development goals.</p>
+            </div>
+        """,
     },
     "ethics-code": {
         "eyebrow_uz": "Barqarorlik boshqaruvi",
@@ -2774,7 +2766,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "intro": section[f"intro_{language_suffix}"],
             "sections": section[f"sections_{language_suffix}"],
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
-            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "ethics-code"},
+            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code"},
         }
         if slug == "ethics-code":
             if language_code == "uz":
