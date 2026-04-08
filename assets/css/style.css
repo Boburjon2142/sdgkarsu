@@ -412,10 +412,10 @@ small {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.3rem;
   flex: 1;
   min-width: 0;
-  margin-left: 1rem;
+  margin-left: 0.6rem;
 }
 
 .brand-copy {
@@ -433,7 +433,7 @@ small {
   display: flex;
   align-items: center;
   gap: 0.1rem;
-  flex: 1;
+  flex: 0 1 auto;
   justify-content: flex-start;
   min-width: 0;
   flex-wrap: nowrap;
@@ -575,10 +575,10 @@ small {
 .site-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   flex: 0 0 13.2rem;
   min-width: 13.2rem;
-  margin-left: auto;
+  margin-left: 0.35rem;
 }
 
 .site-search input,
