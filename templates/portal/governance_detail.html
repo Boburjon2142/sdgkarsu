@@ -48,6 +48,14 @@
                         Contact responsible officer
                       {% endif %}
                     </a>
+                  {% elif governance_section.slug == "sdg-investment" or governance_section.slug == "sdg-purchase" or governance_section.slug == "xotin-qizlar" %}
+                    <a class="button button--primary" href="{% url 'governance-finance-contact' governance_section.slug %}">
+                      {% if current_language == "uz" %}
+                        Mas'ul xodim bilan bog'lanish
+                      {% else %}
+                        Contact responsible officer
+                      {% endif %}
+                    </a>
                   {% else %}
                     <a class="button button--primary" href="mailto:{{ responsible_contact.email }}">
                       {% if current_language == "uz" %}

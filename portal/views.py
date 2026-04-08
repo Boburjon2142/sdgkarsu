@@ -2,6 +2,7 @@ from pathlib import Path
 
 from django.conf import settings
 from django.contrib import messages
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect
@@ -142,6 +143,182 @@ ANTI_CORRUPTION_CONTACT_CONTENT = {
                 "links": [
                     {"label": "@QarDu_AntiKor_bot", "url": "https://t.me/QarDu_AntiKor_bot", "description": "Bot of the Karshi State University department."},
                     {"label": "@eduuzanticor_bot", "url": "https://t.me/eduuzanticor_bot", "description": "Bot of the anti-corruption department of the Ministry of Higher Education, Science and Innovations."},
+                ],
+            },
+        ],
+    },
+}
+
+
+FINANCIAL_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Reja-moliya bo'limi",
+        "intro": "Reja-moliya bo'limi — Qarshi davlat universiteti sahifasi, 24-fevral 2025 sanasi bilan joylangan.",
+        "leader_title": "Bo'lim boshlig'i",
+        "leader_name": "Xolbayev Sodiq Utaganovich",
+        "leader_role": "Reja-moliya bo'limi boshlig'i",
+        "leader_details": [
+            "Telefon: +998 90 428 00 38",
+            "Elektron pochta: Rejamoliya@mail.ru",
+            "Qabul kunlari: Dushanba-Juma, 09:00 dan 16:00 gacha",
+        ],
+        "image_url": "/meedia/reja-moliya.jpg",
+        "sections": [
+            {
+                "title": "Mehnat faoliyati",
+                "bullets": [
+                    "1983-1983 yy. — Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida hisobchi",
+                    "1983-1985 yy. — muddatli harbiy xizmat chaqiriluvchisi",
+                    "1985-1986 yy. — Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida chorva bo'yicha hisobchi",
+                    "1986-1997 yy. — Nishon tumani \"Salvador Alyendi\" nomli jamoa xo'jaligida hisobchi",
+                    "1997-2004 yy. — Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
+                    "2004-2005 yy. — Qarshi davlat universitetida bosh hisobchi",
+                    "2005 yildan hozirga qadar — Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
+                ],
+            },
+            {
+                "title": "Bo'lim tarixi",
+                "paragraphs": [
+                    "Reja-moliya bo'limi universitet tashkil qilinganidan buyon faoliyat yuritib keladi. 1992-yildan boshlab alohida bo'lim sifatida ishlamoqda.",
+                ],
+            },
+            {
+                "title": "Asosiy vazifalari",
+                "paragraphs": [
+                    "OTM faoliyatini takomillashtirish, budjet va budjetdan tashqari mablag'lar bo'yicha daromad hamda xarajatlar smetasini tuzish, iqtisodiy tahlil o'tkazish, namunaviy shtatlar jadvalining to'g'ri yuritilishini nazorat qilish va universitet faoliyatini muntazam moliyalashtirib borish.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Planning and Finance Department",
+        "intro": "Planning and Finance Department page of Karshi State University, published on February 24, 2025.",
+        "leader_title": "Head of the department",
+        "leader_name": "Xolbayev Sodiq Utaganovich",
+        "leader_role": "Head of the Planning and Finance Department",
+        "leader_details": [
+            "Phone: +998 90 428 00 38",
+            "Email: Rejamoliya@mail.ru",
+            "Reception days: Monday-Friday, from 09:00 to 16:00",
+        ],
+        "image_url": "/meedia/reja-moliya.jpg",
+        "sections": [
+            {
+                "title": "Professional background",
+                "bullets": [
+                    "1983-1983 — Accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
+                    "1983-1985 — Conscript in compulsory military service",
+                    "1985-1986 — Livestock accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
+                    "1986-1997 — Accountant at the \"Salvador Allende\" collective farm, Nishon district",
+                    "1997-2004 — Head of the Planning and Finance Department, Karshi State University",
+                    "2004-2005 — Chief accountant at Karshi State University",
+                    "Since 2005 — Head of the Planning and Finance Department, Karshi State University",
+                ],
+            },
+            {
+                "title": "Department history",
+                "paragraphs": [
+                    "The Planning and Finance Department has been operating since the establishment of the university. Since 1992, it has functioned as an independent department.",
+                ],
+            },
+            {
+                "title": "Main responsibilities",
+                "paragraphs": [
+                    "Improving the activities of the higher education institution, preparing income and expenditure estimates for budgetary and extra-budgetary funds, conducting economic analysis, monitoring the proper maintenance of standard staffing schedules, and ensuring the regular financing of university operations.",
+                ],
+            },
+        ],
+    },
+}
+
+
+WOMEN_SUPPORT_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi",
+        "intro": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi sahifasi. URL eski nom bilan ochiladi: xotin-qizlar-maslahat-kengashi.",
+        "leader_title": "Rahbar",
+        "leader_name": "Gulruxbegim Ravshanova Qahramon qizi",
+        "leader_role": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi boshlig'i, filologiya fanlari bo'yicha falsafa doktori, dotsent.",
+        "leader_details": [
+            "Telefon: +998 97 229-69-27",
+            "Elektron pochta: sh.l.karamova@qardu.uz",
+            "Qabul kunlari: haftaning juft kunlari, 09:00 dan 17:00 gacha",
+        ],
+        "image_url": "/meedia/karomova.jpg",
+        "sections": [
+            {
+                "title": "Mehnat faoliyati",
+                "bullets": [
+                    "2018-2020 yy. — Qarshi davlat universiteti adabiyotshunoslik kafedrasi o'qituvchisi",
+                    "2020-2022 yy. — Qarshi davlat universiteti adabiyotshunoslik kafedrasi katta o'qituvchisi",
+                    "2022-2023 yy. — Qarshi davlat universiteti xotin-qizlar maslahat kengashi raisi",
+                    "2023 yildan hozirgacha — Qarshi davlat universiteti xotin-qizlar bilan ishlash va psixologik maslahat markazi boshlig'i.",
+                ],
+            },
+            {
+                "title": "Bo'lim tarixi",
+                "paragraphs": [
+                    "2023-yil 6-martgacha universitet xotin-qizlar kengashi faoliyat yuritgan. 2023-yil 7-martdan boshlab Qarshi davlat universiteti rektorining 111-X-sonli buyrug'i asosida Xotin-qizlar bilan ishlash va psixologik maslahat markazi ish boshlagan.",
+                ],
+            },
+            {
+                "title": "Asosiy vazifalari",
+                "bullets": [
+                    "talaba-qizlarning axloqiy va estetik madaniyatini, ijtimoiy-siyosiy faolligini oshirish;",
+                    "ularni kasb-hunarga yo'naltirish va bo'sh vaqtini mazmunli tashkil etish;",
+                    "talabalar turar joylaridagi xotin-qizlar o'rtasida ma'naviy-axloqiy va tarbiyaviy ishlarni kuchaytirish;",
+                    "TTJlarda ijodiy, kasbiy va badiiy to'garak-klublar faoliyatini kuchaytirish;",
+                    "yordamga muhtoj, og'ir ijtimoiy ahvoldagi xotin-qizlarni aniqlash va ularga ijtimoiy-huquqiy, psixologik hamda moddiy yordam ko'rsatish;",
+                    "xotin-qizlarga nisbatan tazyiq va zo'ravonlik holatlarini aniqlash bo'yicha so'rovnomalar o'tkazish;",
+                    "notinch oilalardagi talaba-qizlarga alohida e'tibor qaratish;",
+                    "ijarada yashovchi talaba-qizlarning yashash sharoitlarini o'rganish va manzillariga tashrif buyurish.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Center for Work with Women and Psychological Counseling",
+        "intro": "Center for Work with Women and Psychological Counseling page. The URL still opens under the former name: xotin-qizlar-maslahat-kengashi.",
+        "leader_title": "Head",
+        "leader_name": "Gulruxbegim Ravshanova Qahramon qizi",
+        "leader_role": "Head of the Center for Work with Women and Psychological Counseling, Doctor of Philosophy in Philology, Associate Professor.",
+        "leader_details": [
+            "Phone: +998 97 229-69-27",
+            "Email: sh.l.karamova@qardu.uz",
+            "Reception days: even weekdays, from 09:00 to 17:00",
+        ],
+        "image_url": "/meedia/karomova.jpg",
+        "sections": [
+            {
+                "title": "Professional background",
+                "bullets": [
+                    "2018-2020 — Teacher at the Department of Literary Studies, Karshi State University",
+                    "2020-2022 — Senior teacher at the Department of Literary Studies, Karshi State University",
+                    "2022-2023 — Chair of the Women's Advisory Council, Karshi State University",
+                    "Since 2023 — Head of the Center for Work with Women and Psychological Counseling, Karshi State University.",
+                ],
+            },
+            {
+                "title": "Department history",
+                "paragraphs": [
+                    "Until March 6, 2023, the university's Women's Council operated at the institution. Starting from March 7, 2023, the Center for Work with Women and Psychological Counseling began its work on the basis of Order No. 111-X of the Rector of Karshi State University.",
+                ],
+            },
+            {
+                "title": "Main responsibilities",
+                "bullets": [
+                    "improving the moral, aesthetic, and socio-political engagement of female students;",
+                    "guiding them toward professions and organizing their free time meaningfully;",
+                    "strengthening spiritual, moral, and educational work among women in student dormitories;",
+                    "expanding the activities of creative, professional, and artistic clubs in dormitories;",
+                    "identifying women in need and in difficult social conditions and providing them with social, legal, psychological, and material support;",
+                    "conducting surveys to identify cases of pressure and violence against women;",
+                    "paying special attention to female students from troubled families;",
+                    "studying the living conditions of female students living in rented housing and visiting their addresses.",
                 ],
             },
         ],
@@ -2651,6 +2828,141 @@ def set_portal_language(request, language_code):
     return response
 
 
+def build_search_sections(language_code, query):
+    query = (query or "").strip()
+    normalized_query = query.lower()
+    use_uz = language_code == "uz"
+
+    def matches(*values):
+        if not normalized_query:
+            return False
+        haystack = " ".join(str(value or "") for value in values).lower()
+        return normalized_query in haystack
+
+    def section(label_uz, label_en, items):
+        return {"label": label_uz if use_uz else label_en, "items": items}
+
+    sections = []
+
+    governance_items = []
+    for slug, content in GOVERNANCE_PAGE_CONTENT.items():
+        title = content["title_uz"] if use_uz else content["title_en"]
+        intro = content["intro_uz"] if use_uz else content["intro_en"]
+        if not query or matches(title, intro, slug):
+            governance_items.append({"title": title, "summary": intro, "url": f"/about/{slug}/"})
+
+    page_items = []
+    page_map = {
+        "home": "/",
+        "about": "/about/",
+        "programs": "/programs/",
+        "research": "/research-projects/",
+        "education": "/education-initiatives/",
+        "sustainability": "/sustainability-strategy/",
+        "reports": "/reports-insights/",
+        "news": "/news-events/",
+        "contact": "/contact/",
+    }
+    for page in localize_collection(PageContent.objects.all(), language_code):
+        url = page_map.get(page.page_key)
+        if url and (not query or matches(page.title, page.intro, page.supporting_title, page.supporting_text)):
+            page_items.append({"title": page.title, "summary": page.intro, "url": url})
+
+    program_items = [
+        {"title": item.title, "summary": item.summary, "url": f"/programs/{item.slug}/" if item.slug.startswith("sdg-") else "/programs/"}
+        for item in localize_collection(
+            Program.objects.filter(
+                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query)
+            )[:8] if query else Program.objects.filter(featured=True)[:6],
+            language_code,
+        )
+    ]
+
+    research_items = [
+        {"title": item.title, "summary": item.summary, "url": "/research-projects/"}
+        for item in localize_collection(
+            ResearchProject.objects.filter(
+                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query) | Q(lead_unit__icontains=query)
+            )[:8] if query else ResearchProject.objects.filter(featured=True)[:6],
+            language_code,
+        )
+    ]
+
+    education_items = [
+        {"title": item.title, "summary": item.summary, "url": "/education-initiatives/"}
+        for item in localize_collection(
+            EducationInitiative.objects.filter(
+                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query) | Q(audience__icontains=query)
+            )[:8] if query else EducationInitiative.objects.filter(featured=True)[:6],
+            language_code,
+        )
+    ]
+
+    report_items = [
+        {
+            "title": item.title,
+            "summary": item.summary,
+            "url": "/reports-insights/",
+            "meta": item.publish_date.strftime("%d.%m.%Y") if getattr(item, "publish_date", None) else "",
+        }
+        for item in localize_collection(
+            Report.objects.filter(
+                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query)
+            )[:8] if query else Report.objects.filter(featured=True)[:6],
+            language_code,
+        )
+    ]
+
+    news_queryset = (
+        NewsArticle.objects.filter(
+            Q(title__icontains=query) | Q(title_uz__icontains=query) | Q(title_en__icontains=query)
+            | Q(summary__icontains=query) | Q(summary_uz__icontains=query) | Q(summary_en__icontains=query)
+            | Q(body__icontains=query) | Q(body_uz__icontains=query) | Q(body_en__icontains=query)
+        )[:8]
+        if query
+        else NewsArticle.objects.filter(featured=True)[:6]
+    )
+    news_items = [
+        {
+            "title": item.title,
+            "summary": item.summary,
+            "url": item.get_absolute_url(),
+            "meta": item.published_on.strftime("%d.%m.%Y") if getattr(item, "published_on", None) else "",
+        }
+        for item in localize_collection(news_queryset, language_code)
+    ]
+
+    event_items = [
+        {
+            "title": item.title,
+            "summary": item.summary,
+            "url": item.get_absolute_url(),
+            "meta": item.start_date.strftime("%d.%m.%Y") if getattr(item, "start_date", None) else "",
+        }
+        for item in localize_collection(
+            Event.objects.filter(
+                Q(title__icontains=query) | Q(summary__icontains=query) | Q(details__icontains=query) | Q(venue__icontains=query)
+            )[:8] if query else Event.objects.filter(featured=True)[:6],
+            language_code,
+        )
+    ]
+
+    for group in [
+        section("Asosiy sahifalar", "Main pages", page_items),
+        section("Barqarorlik boshqaruvi", "Sustainability governance", governance_items),
+        section("Dasturlar va BRMlar", "Programs and SDGs", program_items),
+        section("Tadqiqot", "Research", research_items),
+        section("Ta'lim va tashabbuslar", "Education and initiatives", education_items),
+        section("Hisobotlar", "Reports", report_items),
+        section("Yangiliklar", "News", news_items),
+        section("Tadbirlar", "Events", event_items),
+    ]:
+        if group["items"]:
+            sections.append(group)
+
+    return sections
+
+
 class BasePortalContextMixin:
     page_key = "home"
 
@@ -2677,6 +2989,7 @@ class BasePortalContextMixin:
         context["footer_departments"] = localize_collection(DepartmentContact.objects.all()[:3], self.get_language_code())
         context["active_page"] = self.page_key
         context["current_language"] = self.get_language_code()
+        context["header_search_query"] = self.request.GET.get("q", "").strip()
         return context
 
 
@@ -2940,7 +3253,62 @@ class AntiCorruptionContactView(BasePortalContextMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
         content = ANTI_CORRUPTION_CONTACT_CONTENT["uz" if language_code == "uz" else "en"]
+        content = {
+            **content,
+            "image_url": "/static/images/staff/korrupsiya.jpg",
+            "back_url": "/about/anti-corruption/",
+            "back_label": "Korrupsiyaga qarshi siyosat sahifasiga qaytish" if language_code == "uz" else "Back to anti-corruption policy",
+            "cache_key": "anti-corruption-contact",
+        }
         context["department_contact_page"] = content
+        return context
+
+
+class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/anti_corruption_contact.html"
+    page_key = "about"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        slug = kwargs["slug"]
+        governance_contact_content = {
+            "sdg-investment": FINANCIAL_CONTACT_CONTENT,
+            "sdg-purchase": FINANCIAL_CONTACT_CONTENT,
+            "xotin-qizlar": WOMEN_SUPPORT_CONTACT_CONTENT,
+        }
+        if slug not in governance_contact_content:
+            raise Http404("Governance contact page not found")
+
+        content = governance_contact_content[slug]["uz" if language_code == "uz" else "en"]
+        content = {
+            **content,
+            "back_url": f"/about/{slug}/",
+            "back_label": "Boshqaruv sahifasiga qaytish" if language_code == "uz" else "Back to governance",
+            "cache_key": f"{slug}-contact",
+        }
+        context["department_contact_page"] = content
+        return context
+
+
+class SearchView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/search_results.html"
+    page_key = "home"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        query = self.request.GET.get("q", "").strip()
+        search_sections = build_search_sections(language_code, query)
+
+        context.update(
+            {
+                "active_page": "",
+                "search_query": query,
+                "search_sections": search_sections,
+                "search_total_results": sum(len(section["items"]) for section in search_sections),
+            }
+        )
         return context
 
 

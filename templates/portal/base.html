@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% if page_content and page_content.meta_title %}{{ page_content.meta_title }}{% else %}{{ site_settings.meta_title }}{% endif %}{% endblock %}</title>
+  <title>{% block title %}sdg.qarshidu.uz{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{% if page_content and page_content.meta_description %}{{ page_content.meta_description }}{% else %}{{ site_settings.meta_description }}{% endif %}{% endblock %}">
-  <meta property="og:title" content="{% block og_title %}{% if page_content and page_content.meta_title %}{{ page_content.meta_title }}{% else %}{{ site_settings.meta_title }}{% endif %}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}sdg.qarshidu.uz{% endblock %}">
   <meta property="og:description" content="{% block og_description %}{% if page_content and page_content.meta_description %}{{ page_content.meta_description }}{% else %}{{ site_settings.meta_description }}{% endif %}{% endblock %}">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -54,6 +54,21 @@
             <a class="{% if active_page == 'reports' %}is-active{% endif %}" href="{% url 'reports' %}">{% tr "Insights" %}</a>
             <a class="{% if active_page == 'contact' %}is-active{% endif %}" href="{% url 'contact' %}">{% tr "Contact" %}</a>
           </nav>
+          <form class="site-search" action="{% url 'search' %}" method="get" role="search">
+            <label class="sr-only" for="site-search-input">
+              {% if current_language == "uz" %}Sayt bo'yicha qidirish{% else %}Search across the site{% endif %}
+            </label>
+            <input
+              id="site-search-input"
+              type="search"
+              name="q"
+              value="{{ header_search_query }}"
+              placeholder="{% if current_language == 'uz' %}Qidiruv...{% else %}Search...{% endif %}"
+            >
+            <button type="submit">
+              {% if current_language == "uz" %}Qidirish{% else %}Search{% endif %}
+            </button>
+          </form>
         </div>
       </div>
     </div>

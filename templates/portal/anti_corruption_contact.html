@@ -4,7 +4,7 @@
 {% block content %}
   <section class="section">
     <div class="container">
-      {% cache 900 anti_corruption_contact_intro current_language using="fragments" %}
+      {% cache 900 department_contact_intro department_contact_page.cache_key current_language using="fragments" %}
       <div class="section-heading governance-detail-intro">
         <div>
           <div class="lined-title">
@@ -16,12 +16,12 @@
       </div>
       {% endcache %}
 
-      {% cache 900 anti_corruption_contact_body current_language using="fragments" %}
+      {% cache 900 department_contact_body department_contact_page.cache_key current_language using="fragments" %}
       <div class="governance-detail-stack">
         <article class="content-card governance-detail-card governance-detail-card--single anti-corruption-contact-card">
           <div class="anti-corruption-contact-card__header">
             <div class="anti-corruption-contact-card__image-wrap">
-              <img class="anti-corruption-contact-card__image" src="{% static 'images/staff/korrupsiya.jpg' %}" alt="{{ department_contact_page.leader_name }}">
+              <img class="anti-corruption-contact-card__image" src="{{ department_contact_page.image_url }}" alt="{{ department_contact_page.leader_name }}">
             </div>
             <div class="anti-corruption-contact-card__meta">
               <h2>{{ department_contact_page.leader_title }}</h2>
@@ -62,13 +62,7 @@
           {% endfor %}
         </article>
 
-        <a class="button button--ghost anti-corruption-contact-card__back" href="{% url 'governance-detail' 'anti-corruption' %}">
-          {% if current_language == "uz" %}
-            Korrupsiyaga qarshi siyosat sahifasiga qaytish
-          {% else %}
-            Back to anti-corruption policy
-          {% endif %}
-        </a>
+        <a class="button button--ghost anti-corruption-contact-card__back" href="{{ department_contact_page.back_url }}">{{ department_contact_page.back_label }}</a>
       </div>
       {% endcache %}
     </div>

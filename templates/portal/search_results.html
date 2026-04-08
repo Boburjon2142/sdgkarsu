@@ -1,0 +1,95 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  <section class="page-intro">
+    <div class="container page-intro__grid">
+      <div>
+        <div class="eyebrow">
+          {% if current_language == "uz" %}
+            Sayt bo'yicha qidiruv
+          {% else %}
+            Site search
+          {% endif %}
+        </div>
+        <h1>
+          {% if search_query %}
+            "{{ search_query }}"
+          {% else %}
+            {% if current_language == "uz" %}
+              Bo'limlar bo'yicha tavsiyalar
+            {% else %}
+              Section suggestions
+            {% endif %}
+          {% endif %}
+        </h1>
+        <p class="page-intro__lead">
+          {% if search_query %}
+            {% if current_language == "uz" %}
+              Topilgan natijalar: {{ search_total_results }} ta. Natijalar bo'limlar kesimida guruhlandi.
+            {% else %}
+              Found results: {{ search_total_results }}. Results are grouped by section.
+            {% endif %}
+          {% else %}
+            {% if current_language == "uz" %}
+              Qidiruv so'zini kiriting yoki quyidagi bo'limlar bo'yicha tavsiya etilgan sahifalardan foydalaning.
+            {% else %}
+              Enter a search term or use the suggested pages grouped by section below.
+            {% endif %}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <form class="search-page-form" action="{% url 'search' %}" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          value="{{ search_query }}"
+          placeholder="{% if current_language == 'uz' %}Sayt bo'yicha qidirish{% else %}Search across the site{% endif %}"
+        >
+        <button class="button button--primary" type="submit">
+          {% if current_language == "uz" %}Qidirish{% else %}Search{% endif %}
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container search-results-layout">
+      {% for section in search_sections %}
+        <article class="content-card search-section-card">
+          <div class="search-section-card__head">
+            <h2>{{ section.label }}</h2>
+            <span>{{ section.items|length }}</span>
+          </div>
+          <div class="search-section-card__list">
+            {% for item in section.items %}
+              <a class="search-result-item" href="{{ item.url }}">
+                <strong>{{ item.title }}</strong>
+                {% if item.meta %}
+                  <span class="search-result-item__meta">{{ item.meta }}</span>
+                {% endif %}
+                <p>{{ item.summary }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        </article>
+      {% empty %}
+        <article class="content-card content-card--large">
+          <h2>{% if current_language == "uz" %}Natija topilmadi{% else %}No results found{% endif %}</h2>
+          <p>
+            {% if current_language == "uz" %}
+              Boshqa kalit so'z bilan qayta urinib ko'ring.
+            {% else %}
+              Try again with a different keyword.
+            {% endif %}
+          </p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
