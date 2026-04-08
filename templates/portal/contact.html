@@ -15,16 +15,6 @@
         </h1>
         <p class="page-intro__lead">{{ page_content.intro }}</p>
       </div>
-      {% if page_content.supporting_title or page_content.supporting_text %}
-        <aside class="research-intro__aside">
-          {% if page_content.supporting_title %}
-            <span class="chip">{{ page_content.supporting_title }}</span>
-          {% endif %}
-          {% if page_content.supporting_text %}
-            <p>{{ page_content.supporting_text }}</p>
-          {% endif %}
-        </aside>
-      {% endif %}
     </div>
   </section>
 
@@ -102,35 +92,6 @@
           </div>
         </article>
       </div>
-      <article class="content-card content-card--large">
-        <h2>{% tr "Contact form" %}</h2>
-        <form method="post">
-          {% csrf_token %}
-          <div class="form-grid">
-            <div>
-              <label for="{{ form.full_name.id_for_label }}">{% tr "Full name" %}</label>
-              {{ form.full_name }}
-            </div>
-            <div>
-              <label for="{{ form.email.id_for_label }}">{% tr "Email" %}</label>
-              {{ form.email }}
-            </div>
-            <div>
-              <label for="{{ form.organization.id_for_label }}">{% tr "Organization" %}</label>
-              {{ form.organization }}
-            </div>
-            <div>
-              <label for="{{ form.subject.id_for_label }}">{% tr "Subject" %}</label>
-              {{ form.subject }}
-            </div>
-          </div>
-          <div>
-            <label for="{{ form.message.id_for_label }}">{% tr "Message" %}</label>
-            {{ form.message }}
-          </div>
-          <button class="button button--primary" type="submit">{% tr "Submit official inquiry" %}</button>
-        </form>
-      </article>
     </div>
   </section>
 {% endblock %}

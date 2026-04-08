@@ -16,7 +16,8 @@
           {% endif %}
         </div>
         <div class="governance-detail-intro__actions">
-          {% if governance_section.slug == "ethics-code" and ethics_pdf_panel %}
+          {% if governance_section.slug == "sdg-policy" or governance_section.slug == "sdg-committee" or governance_section.slug == "talabalar-kengashi" %}
+          {% elif governance_section.slug == "ethics-code" and ethics_pdf_panel %}
             <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
               <strong>{{ ethics_pdf_panel.title }}</strong>
               <p>{{ ethics_pdf_panel.description }}</p>

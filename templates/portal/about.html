@@ -151,6 +151,23 @@
               {% endif %}
             </p>
           </a>
+          <a class="governance-link-card governance-link-card--public" href="{% url 'governance-detail' 'talabalar-kengashi' %}">
+            <span class="governance-link-card__eyebrow">09</span>
+            <strong>
+              {% if current_language == "uz" %}
+                Talabalar kengashi
+              {% else %}
+                Student Union
+              {% endif %}
+            </strong>
+            <p>
+              {% if current_language == "uz" %}
+                Talaba-yoshlar huquqlari, faolligi va tashabbuslarini qo'llab-quvvatlash
+              {% else %}
+                Supporting student rights, engagement, and youth initiatives
+              {% endif %}
+            </p>
+          </a>
         </div>
       </div>
 

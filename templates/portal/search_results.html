@@ -83,12 +83,31 @@
           <h2>{% if current_language == "uz" %}Natija topilmadi{% else %}No results found{% endif %}</h2>
           <p>
             {% if current_language == "uz" %}
-              Boshqa kalit so'z bilan qayta urinib ko'ring.
+              Boshqa kalit so'z bilan qayta urinib ko'ring. Ism-sharif, bo'lim nomi, email, telefon yoki mavzu bo'yicha qidirish ham mumkin.
             {% else %}
-              Try again with a different keyword.
+              Try again with a different keyword. You can search by name, department, email, phone number, or topic.
             {% endif %}
           </p>
         </article>
+        {% for section in suggested_search_sections %}
+          <article class="content-card search-section-card">
+            <div class="search-section-card__head">
+              <h2>{{ section.label }}</h2>
+              <span>{{ section.items|length }}</span>
+            </div>
+            <div class="search-section-card__list">
+              {% for item in section.items %}
+                <a class="search-result-item" href="{{ item.url }}">
+                  <strong>{{ item.title }}</strong>
+                  {% if item.meta %}
+                    <span class="search-result-item__meta">{{ item.meta }}</span>
+                  {% endif %}
+                  <p>{{ item.summary }}</p>
+                </a>
+              {% endfor %}
+            </div>
+          </article>
+        {% endfor %}
       {% endfor %}
     </div>
   </section>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
   --primary: #89ce00;
@@ -36,7 +36,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   color: var(--text-main);
   background: #ffffff;
@@ -225,7 +225,7 @@ ul {
 
 h1,
 h2 {
-  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: #182616;
@@ -268,7 +268,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
 }
 
 p,
@@ -415,7 +415,7 @@ small {
   gap: 0.3rem;
   flex: 1;
   min-width: 0;
-  margin-left: 0.6rem;
+  margin-left: 0.4rem;
 }
 
 .brand-copy {
@@ -554,11 +554,13 @@ small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   white-space: nowrap;
+  min-height: 3rem;
   padding: 0.85rem 0.7rem;
   border-radius: 999px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.15;
   text-align: center;
@@ -578,12 +580,17 @@ small {
   gap: 0.35rem;
   flex: 0 0 13.2rem;
   min-width: 13.2rem;
-  margin-left: 0.35rem;
+  margin-left: 0.15rem;
+}
+
+.site-search--mobile {
+  display: none;
 }
 
 .site-search input,
 .search-page-form input {
   width: 100%;
+  flex: 0 0 auto;
   min-height: 2.9rem;
   padding: 0.78rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -609,6 +616,7 @@ small {
 }
 
 .site-search button {
+  flex: 0 0 auto;
   min-height: 2.9rem;
   padding: 0.75rem 1rem;
   border: 0;
@@ -1490,7 +1498,7 @@ blockquote {
 
 .sdg-detail-page__idea h2,
 .sdg-detail-page__section h3 {
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 1.35rem;
   line-height: 1.35;
   letter-spacing: -0.01em;
@@ -1523,7 +1531,7 @@ blockquote {
 }
 
 .sdg-detail-page__article h2 {
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 1.35rem;
   line-height: 1.35;
   letter-spacing: -0.01em;
@@ -1762,10 +1770,18 @@ blockquote {
 }
 
 .search-page-form input {
+  flex: 1 1 auto;
+  min-width: 0;
   border-color: rgba(19, 44, 18, 0.12);
   background: #ffffff;
   color: #13200f;
   box-shadow: 0 16px 34px rgba(16, 48, 21, 0.08);
+}
+
+.search-page-form .button {
+  flex: 0 0 auto;
+  min-width: 7.5rem;
+  white-space: nowrap;
 }
 
 .search-page-form input::placeholder {
@@ -2527,6 +2543,13 @@ textarea {
   max-width: 26rem;
   font-size: 14px;
   line-height: 1.5;
+}
+
+.footer-logo {
+  display: block;
+  width: min(100%, 9rem);
+  height: auto;
+  margin-top: 0.9rem;
 }
 
 .footer-links--contact li {

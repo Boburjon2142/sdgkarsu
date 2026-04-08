@@ -53,6 +53,21 @@
             <a class="{% if active_page == 'education' %}is-active{% endif %}" href="{% url 'education' %}">{% tr "Engagement" %}</a>
             <a class="{% if active_page == 'reports' %}is-active{% endif %}" href="{% url 'reports' %}">{% tr "Insights" %}</a>
             <a class="{% if active_page == 'contact' %}is-active{% endif %}" href="{% url 'contact' %}">{% tr "Contact" %}</a>
+            <form class="site-search site-search--mobile" action="{% url 'search' %}" method="get" role="search">
+              <label class="sr-only" for="site-search-input-mobile">
+                {% if current_language == "uz" %}Sayt bo'yicha qidirish{% else %}Search across the site{% endif %}
+              </label>
+              <input
+                id="site-search-input-mobile"
+                type="search"
+                name="q"
+                value="{{ header_search_query }}"
+                placeholder="{% if current_language == 'uz' %}Qidiruv...{% else %}Search...{% endif %}"
+              >
+              <button type="submit">
+                {% if current_language == "uz" %}Qidirish{% else %}Search{% endif %}
+              </button>
+            </form>
           </nav>
           <form class="site-search" action="{% url 'search' %}" method="get" role="search">
             <label class="sr-only" for="site-search-input">
@@ -90,8 +105,12 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand">{{ site_settings.institution_name }}</div>
-        <p class="footer-copy">{{ site_settings.footer_text }}</p>
+        <div class="footer-brand">{% if current_language == "uz" %}Qarshi davlat universiteti{% else %}Karshi State University{% endif %}</div>
+        <img
+          class="footer-logo"
+          src="{% if current_language == 'uz' %}{% static 'images/qarshi_davlat_universiteti_logo_white.svg' %}{% else %}{% static 'images/karshi_state_university_logo_white.svg' %}{% endif %}"
+          alt="{% if current_language == 'uz' %}Qarshi Davlat Universiteti logotipi{% else %}Karshi State University logo{% endif %}"
+        >
       </div>
       <div>
         <h3>{% tr "Quick links" %}</h3>
@@ -115,16 +134,15 @@
       <div>
         <h3>{% tr "Contact" %}</h3>
         <ul class="footer-links footer-links--contact">
-          <li>{{ site_settings.address }}</li>
-          <li><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></li>
-          <li><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></li>
-          <li>{{ site_settings.office_hours }}</li>
+          <li>180119, Qarshi shahri, Ko'chabog' ko'chasi, 17-uy</li>
+          <li><strong>{% if current_language == "uz" %}Ishonch telefoni{% else %}Phone{% endif %}</strong><br><a href="tel:+998752212104">+998 75 221 21 04</a></li>
+          <li><strong>{% if current_language == "uz" %}Elektron pochta{% else %}Email{% endif %}</strong><br><a href="mailto:kasu_info@edu.uz">kasu_info@edu.uz</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-legal">
       <div class="container footer-legal__inner">
-        <span>&copy; 2026 {{ site_settings.institution_name }}</span>
+        <span>&copy; 2026 {% if current_language == "uz" %}Qarshi davlat universiteti{% else %}Karshi State University{% endif %}</span>
         <span><a href="{% url 'robots-txt' %}">{% tr "Robots" %}</a> | <a href="/sitemap.xml">{% tr "Sitemap" %}</a></span>
       </div>
     </div>

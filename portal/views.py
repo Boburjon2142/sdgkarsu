@@ -2,10 +2,10 @@ from pathlib import Path
 
 from django.conf import settings
 from django.contrib import messages
-from django.db.models import Q
 from django.core.paginator import Paginator
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import redirect
+from django.utils.html import strip_tags
 from django.views.generic import DetailView, TemplateView
 
 from .forms import ContactSubmissionForm
@@ -1277,6 +1277,50 @@ GOVERNANCE_PAGE_CONTENT = {
               <p>This strengthens good governance and institutional accountability.</p>
               <p>The code of ethics of Karshi State University is not only a regulatory framework but also a reflection of the university's commitment to ethical values and sustainable development. It plays a vital role in fostering a culture of integrity, ensuring academic excellence, promoting social responsibility, and enhancing the university's global reputation.</p>
               <p>Through the implementation of this code, the university strives to create a sustainable, inclusive, and ethically responsible academic environment grounded in respect, fairness, and integrity.</p>
+            </div>
+        """,
+    },
+    "talabalar-kengashi": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Talabalar kengashi",
+        "title_en": "Student Union",
+        "intro_uz": "Talaba-yoshlar huquqlari, faolligi va tashabbuslarini qo'llab-quvvatlashga qaratilgan universitet yoshlar kengashi faoliyati.",
+        "intro_en": "University Youth Council activity focused on supporting student rights, engagement, and youth initiatives.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>TALABALAR KENGASHI</strong></p>
+              <p>O‘zbekiston Yoshlar ittifoqining Qarshi davlat universitetida ham boshlang‘ich tashkiloti mavjud bo‘lib, Oliy ta’lim fan va innovatsiyalar vazirligi hamda O‘zbekiston Yoshlar ittifoqi Markaziy Kengashining 2023-yil 29-apreldagi 6-son Qo‘shma qaroriga asosan universitetda Yoshlar Kengashi faoliyat yuritadi. Yoshlar Kengashining a’zolari 6 ta yo‘nalish va 12 ta fakultet koordinatorlaridan iborat bo‘lib ularning maqsad va vazifalari quydagicha:</p>
+              <ul>
+                <li>Boshlang‘ich tashkilotning asosiy maqsadi oliy ta’lim muassasasida tahsil olayotgan talaba-yoshlarning huquq va qonuniy manfaatlarini himoya qilish, ularning ma’naviy-mafkuraviy dunyoqarashini mustahkamlash, iqtidorli yoshlarni har tomonlama qo‘llab-quvvatlash hamda ijtimoiy faolligini oshirishdan iboratdir. Shuningdek, talaba-yoshlarning bo‘sh vaqtlarini mazmunli tashkil etish, ularning tashabbus va g‘oyalarini ro‘yobga chiqarishga ko‘maklashish tashkilot faoliyatining ustuvor yo‘nalishlaridan biri hisoblanadi.</li>
+                <li>Ekologiya va atrof-muhitni muhofaza qilish, tabiiy resurslardan oqilona foydalanishni targ‘ib qilish orqali yoshlarning ekologik madaniyatini yuksaltirish va ekologik tashabbuslarini qo‘llab-quvvatlash ham tashkilot faoliyatining ajralmas qismi hisoblanadi.</li>
+                <li>Boshlang‘ich tashkilot o‘z oldiga qator muhim vazifalarni qo‘yadi. Avvalo, oliy ta’lim muassasasida talaba-yoshlarni qo‘llab-quvvatlash, ularning huquq va manfaatlarini himoya qilishga qaratilgan amaliy chora-tadbirlar yuzasidan takliflar ishlab chiqadi. Yoshlar o‘rtasida tibbiy madaniyatni oshirish, sog‘lom turmush tarzini targ‘ib qilish, kasalliklarning oldini olish bo‘yicha tushuntirish ishlari olib boriladi. Shu bilan birga, ijtimoiy himoyaga muhtoj, yetim va ota-onasining qaramog‘idan mahrum bo‘lgan talaba-yoshlarning ijtimoiy-huquqiy himoyasini ta’minlashda faol ishtirok etadi. Huquqbuzarlikdan jabrlangan yoki bunday holatlarga moyil bo‘lgan yoshlarni ijtimoiy reabilitatsiya qilish va jamiyatga moslashtirish bo‘yicha ishlar ham tashkilot e’tiborida bo‘ladi.</li>
+                <li>Tashkilot talaba-yoshlarni Vatanga muhabbat va sadoqat ruhida tarbiyalash, ularning ongiga milliy istiqlol g‘oyasi, milliy qadriyatlar, diniy bag‘rikenglik, millatlararo totuvlik va oilaviy qadriyatlarni singdirishga alohida ahamiyat qaratadi. Shu bilan birga, yoshlarning O‘zbekiston Respublikasi Konstitutsiyasi va qonunlarida belgilangan huquq va burchlarini anglab yetishlariga ko‘maklashadi hamda mamlakatda yoshlarga oid davlat siyosati doirasida amalga oshirilayotgan islohotlarning mazmun-mohiyatini tushuntiradi.</li>
+                <li>Talaba-yoshlarning murojaatlari va muammolarini o‘rganish, ularni hal etishda amaliy yordam ko‘rsatish ham tashkilot faoliyatining muhim yo‘nalishlaridan biridir. Bundan tashqari, yoshlarning sifatli ta’lim olishi, chet tillarini o‘rganishi, zamonaviy axborot-kommunikatsiya texnologiyalarini puxta egallashi va kasb-hunarga yo‘naltirilishiga qaratilgan tadbirlar muntazam amalga oshiriladi.</li>
+                <li>Iste’dodli yoshlarni aniqlash, ularni rag‘batlantirish va har tomonlama qo‘llab-quvvatlash maqsadida turli tanlovlar, intellektual o‘yinlar, ijodiy loyihalar hamda klub va to‘garaklar faoliyati yo‘lga qo‘yiladi. Shuningdek, talaba-yoshlar o‘rtasida kitobxonlikni keng targ‘ib qilish, kitob o‘qishga bo‘lgan qiziqishni oshirish va kitobxonlik madaniyatini rivojlantirishga alohida e’tibor qaratiladi.</li>
+                <li>Tashkilot yoshlar ongida “ommaviy madaniyat” niqobi ostidagi zararli illatlarga, turli axborot xurujlariga, diniy aqidaparastlik, missionerlik va ekstremistik g‘oyalarga qarshi mustahkam mafkuraviy immunitetni shakllantirishga xizmat qiladi.</li>
+                <li>Bundan tashqari, yoshlar turizmini rivojlantirish, ularni o‘z hududidagi tarixiy obidalar, muqaddas qadamjolar, muzeylar, teatrlar hamda mustaqillik yillarida barpo etilgan zamonaviy inshootlar bilan yaqindan tanishtirish maqsadida turli sayohatlar tashkil etiladi.</li>
+                <li>Talaba-yoshlar, ayniqsa xotin-qizlar o‘rtasida sportni keng targ‘ib qilish, ularning sportga bo‘lgan qiziqishini qo‘llab-quvvatlash hamda turli sport musobaqalarida ishtirok etishlari uchun zarur shart-sharoitlar yaratib berish ham muhim vazifalardan biri hisoblanadi.</li>
+              </ul>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>STUDENT UNION</strong></p>
+              <p>The Youth Union of Uzbekistan has an established primary organization at Karshi State University. In accordance with the Joint Resolution No. 6 dated April 29, 2023, adopted by the Ministry of Higher Education, Science and Innovation and the Central Council of the Youth Union of Uzbekistan, a Youth Council operates within the university. The Youth Council consists of members representing six directions and coordinators from twelve faculties. Its primary goals and responsibilities are as follows:</p>
+              <ul>
+                <li>The main objective of the primary organization is to protect the rights and legitimate interests of student youth studying at the higher education institution, strengthen their spiritual and ideological outlook, support talented young people in all aspects, and enhance their social activity. Additionally, organizing students’ free time in a meaningful way and assisting in the realization of their initiatives and ideas are among the priority areas of the organization’s activities.</li>
+                <li>Promoting ecological culture among youth through environmental protection activities, rational use of natural resources, and support for environmental initiatives is an integral part of its work.</li>
+                <li>The primary organization sets a number of important tasks. First of all, it develops proposals for practical measures aimed at supporting students and protecting their rights and interests within the higher education institution. The organization also works to improve medical awareness among young people, promote a healthy lifestyle, and conduct awareness campaigns aimed at preventing diseases. It also actively participates in ensuring the social and legal protection of students in need, including orphans and those deprived of parental care. Furthermore, it works on the social rehabilitation and reintegration of young people affected by or vulnerable to offenses.</li>
+                <li>The organization places special emphasis on fostering patriotism and devotion to the homeland among students, instilling in them the ideas of national independence, national values, religious tolerance, interethnic harmony, and family values. It also helps young people understand their rights and responsibilities as defined by the Constitution and laws of the Republic of Uzbekistan and raises awareness about the essence of reforms being implemented within the framework of state youth policy.</li>
+                <li>Studying student appeals and problems and providing practical assistance in resolving them is another key area of activity. In addition, regular activities are carried out to ensure that students receive quality education, learn foreign languages, master modern information and communication technologies, and are guided toward professional development.</li>
+                <li>To identify, encourage, and support talented youth, various competitions, intellectual games, creative projects, as well as clubs and extracurricular groups are organized. Special attention is also given to promoting reading culture, increasing interest in books, and developing a strong reading habit among students.</li>
+                <li>The organization contributes to forming a strong ideological immunity among young people against harmful influences disguised as “mass culture,” as well as against various information attacks, religious extremism, missionary activities, and radical ideas.</li>
+                <li>Moreover, to promote youth tourism, various excursions are organized to introduce students to historical monuments, sacred sites, museums, theaters, and modern structures built during the years of independence.</li>
+                <li>Finally, special attention is given to promoting sports among students, especially women, supporting their interest in sports, and creating favorable conditions for their participation in various sports competitions.</li>
+              </ul>
             </div>
         """,
     },
@@ -2828,27 +2872,140 @@ def set_portal_language(request, language_code):
     return response
 
 
+def normalize_search_text(value):
+    normalized = (value or "").lower()
+    for source, target in {
+        "’": "'",
+        "`": "'",
+        "ʻ": "'",
+        "“": '"',
+        "”": '"',
+        "–": "-",
+        "—": "-",
+    }.items():
+        normalized = normalized.replace(source, target)
+    return " ".join(normalized.split())
+
+
+def score_search_entry(query, *values):
+    normalized_query = normalize_search_text(query)
+    if not normalized_query:
+        return 1
+
+    searchable_text = normalize_search_text(" ".join(str(value or "") for value in values))
+    if not searchable_text:
+        return 0
+
+    tokens = [token for token in normalized_query.split() if token]
+    if normalized_query in searchable_text:
+        return 120 + len(tokens)
+    if tokens and all(token in searchable_text for token in tokens):
+        return 80 + len(tokens)
+
+    token_hits = sum(1 for token in tokens if token in searchable_text)
+    if token_hits:
+        return 30 + token_hits
+    return 0
+
+
 def build_search_sections(language_code, query):
     query = (query or "").strip()
-    normalized_query = query.lower()
     use_uz = language_code == "uz"
-
-    def matches(*values):
-        if not normalized_query:
-            return False
-        haystack = " ".join(str(value or "") for value in values).lower()
-        return normalized_query in haystack
 
     def section(label_uz, label_en, items):
         return {"label": label_uz if use_uz else label_en, "items": items}
 
+    def sort_and_trim(items, limit=8):
+        ranked = [item for item in items if item.get("_score", 0) > 0]
+        ranked.sort(key=lambda item: (-item["_score"], item["title"]))
+        return [{key: value for key, value in item.items() if key != "_score"} for item in ranked[:limit]]
+
     sections = []
+
+    site_settings = localize_object(SiteSettings.objects.first(), language_code)
+    leadership_items = []
+    if site_settings:
+        leadership_score = score_search_entry(
+            query,
+            site_settings.institution_name,
+            site_settings.leader_name,
+            site_settings.leader_title,
+            site_settings.leader_message,
+            site_settings.email,
+            site_settings.phone,
+        )
+        if leadership_score:
+            leadership_items.append(
+                {
+                    "title": site_settings.leader_name,
+                    "summary": site_settings.leader_title,
+                    "url": "/",
+                    "meta": use_uz and "Rahbariyat" or "Leadership",
+                    "_score": leadership_score,
+                }
+            )
+
+    for department in localize_collection(DepartmentContact.objects.all(), language_code):
+        score = score_search_entry(
+            query,
+            department.department_name,
+            department.contact_person,
+            department.email,
+            department.phone,
+            department.office_location,
+            department.office_hours,
+        )
+        if score:
+            leadership_items.append(
+                {
+                    "title": department.contact_person,
+                    "summary": department.department_name,
+                    "url": "/contact/",
+                    "meta": department.email,
+                    "_score": score,
+                }
+            )
+
+    special_contacts = [
+        (ANTI_CORRUPTION_CONTACT_CONTENT["uz" if use_uz else "en"], "/about/anti-corruption/contact/"),
+        (FINANCIAL_CONTACT_CONTENT["uz" if use_uz else "en"], "/about/sdg-investment/contact/"),
+        (WOMEN_SUPPORT_CONTACT_CONTENT["uz" if use_uz else "en"], "/about/xotin-qizlar/contact/"),
+    ]
+    for content, url in special_contacts:
+        joined_sections = " ".join(
+            " ".join(section.get("paragraphs", []) + section.get("bullets", []))
+            for section in content.get("sections", [])
+        )
+        score = score_search_entry(
+            query,
+            content.get("title"),
+            content.get("leader_name"),
+            content.get("leader_role"),
+            " ".join(content.get("leader_details", [])),
+            joined_sections,
+        )
+        if score:
+            leadership_items.append(
+                {
+                    "title": content.get("leader_name") or content.get("title"),
+                    "summary": content.get("leader_role") or content.get("title"),
+                    "url": url,
+                    "meta": content.get("title"),
+                    "_score": score,
+                }
+            )
 
     governance_items = []
     for slug, content in GOVERNANCE_PAGE_CONTENT.items():
         title = content["title_uz"] if use_uz else content["title_en"]
         intro = content["intro_uz"] if use_uz else content["intro_en"]
-        if not query or matches(title, intro, slug):
+        rich_text = strip_tags(content.get("single_card_raw_uz" if use_uz else "single_card_raw_en", ""))
+        section_text = " ".join(
+            " ".join(section.get("paragraphs", []) + section.get("bullets", []))
+            for section in content.get("sections_uz" if use_uz else "sections_en", [])
+        )
+        score = score_search_entry(query, title, intro, slug, rich_text, section_text)
+        if score:
             governance_items.append({"title": title, "summary": intro, "url": f"/about/{slug}/"})
 
     page_items = []
@@ -2865,97 +3022,97 @@ def build_search_sections(language_code, query):
     }
     for page in localize_collection(PageContent.objects.all(), language_code):
         url = page_map.get(page.page_key)
-        if url and (not query or matches(page.title, page.intro, page.supporting_title, page.supporting_text)):
-            page_items.append({"title": page.title, "summary": page.intro, "url": url})
+        if url:
+            score = score_search_entry(query, page.title, page.intro, page.supporting_title, page.supporting_text)
+            if score:
+                page_items.append({"title": page.title, "summary": page.intro, "url": url, "_score": score})
 
-    program_items = [
-        {"title": item.title, "summary": item.summary, "url": f"/programs/{item.slug}/" if item.slug.startswith("sdg-") else "/programs/"}
-        for item in localize_collection(
-            Program.objects.filter(
-                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query)
-            )[:8] if query else Program.objects.filter(featured=True)[:6],
-            language_code,
+    program_items = []
+    for item in localize_collection(Program.objects.all(), language_code):
+        score = score_search_entry(query, item.title, item.summary, item.body, item.slug)
+        if score:
+            program_items.append(
+                {
+                    "title": item.title,
+                    "summary": item.summary,
+                    "url": f"/programs/{item.slug}/" if item.slug.startswith("sdg-") else "/programs/",
+                    "_score": score,
+                }
+            )
+
+    research_items = []
+    for item in localize_collection(ResearchProject.objects.all(), language_code):
+        score = score_search_entry(query, item.title, item.summary, item.body, item.lead_unit, item.timeframe)
+        if score:
+            research_items.append({"title": item.title, "summary": item.summary, "url": "/research-projects/", "_score": score})
+
+    education_items = []
+    for item in localize_collection(EducationInitiative.objects.all(), language_code):
+        score = score_search_entry(query, item.title, item.summary, item.body, item.audience, item.delivery_model)
+        if score:
+            education_items.append({"title": item.title, "summary": item.summary, "url": "/education-initiatives/", "_score": score})
+
+    report_items = []
+    for item in localize_collection(Report.objects.all(), language_code):
+        score = score_search_entry(query, item.title, item.summary, item.body, item.highlight_metric)
+        if score:
+            report_items.append(
+                {
+                    "title": item.title,
+                    "summary": item.summary,
+                    "url": "/reports-insights/",
+                    "meta": item.publish_date.strftime("%d.%m.%Y") if getattr(item, "publish_date", None) else "",
+                    "_score": score,
+                }
+            )
+
+    news_items = []
+    for item in localize_collection(NewsArticle.objects.all(), language_code):
+        score = score_search_entry(
+            query,
+            item.title,
+            item.summary,
+            item.body,
+            getattr(item, "title_uz", ""),
+            getattr(item, "title_en", ""),
+            getattr(item, "summary_uz", ""),
+            getattr(item, "summary_en", ""),
         )
-    ]
+        if score:
+            news_items.append(
+                {
+                    "title": item.title,
+                    "summary": item.summary,
+                    "url": item.get_absolute_url(),
+                    "meta": item.published_on.strftime("%d.%m.%Y") if getattr(item, "published_on", None) else "",
+                    "_score": score,
+                }
+            )
 
-    research_items = [
-        {"title": item.title, "summary": item.summary, "url": "/research-projects/"}
-        for item in localize_collection(
-            ResearchProject.objects.filter(
-                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query) | Q(lead_unit__icontains=query)
-            )[:8] if query else ResearchProject.objects.filter(featured=True)[:6],
-            language_code,
-        )
-    ]
-
-    education_items = [
-        {"title": item.title, "summary": item.summary, "url": "/education-initiatives/"}
-        for item in localize_collection(
-            EducationInitiative.objects.filter(
-                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query) | Q(audience__icontains=query)
-            )[:8] if query else EducationInitiative.objects.filter(featured=True)[:6],
-            language_code,
-        )
-    ]
-
-    report_items = [
-        {
-            "title": item.title,
-            "summary": item.summary,
-            "url": "/reports-insights/",
-            "meta": item.publish_date.strftime("%d.%m.%Y") if getattr(item, "publish_date", None) else "",
-        }
-        for item in localize_collection(
-            Report.objects.filter(
-                Q(title__icontains=query) | Q(summary__icontains=query) | Q(body__icontains=query)
-            )[:8] if query else Report.objects.filter(featured=True)[:6],
-            language_code,
-        )
-    ]
-
-    news_queryset = (
-        NewsArticle.objects.filter(
-            Q(title__icontains=query) | Q(title_uz__icontains=query) | Q(title_en__icontains=query)
-            | Q(summary__icontains=query) | Q(summary_uz__icontains=query) | Q(summary_en__icontains=query)
-            | Q(body__icontains=query) | Q(body_uz__icontains=query) | Q(body_en__icontains=query)
-        )[:8]
-        if query
-        else NewsArticle.objects.filter(featured=True)[:6]
-    )
-    news_items = [
-        {
-            "title": item.title,
-            "summary": item.summary,
-            "url": item.get_absolute_url(),
-            "meta": item.published_on.strftime("%d.%m.%Y") if getattr(item, "published_on", None) else "",
-        }
-        for item in localize_collection(news_queryset, language_code)
-    ]
-
-    event_items = [
-        {
-            "title": item.title,
-            "summary": item.summary,
-            "url": item.get_absolute_url(),
-            "meta": item.start_date.strftime("%d.%m.%Y") if getattr(item, "start_date", None) else "",
-        }
-        for item in localize_collection(
-            Event.objects.filter(
-                Q(title__icontains=query) | Q(summary__icontains=query) | Q(details__icontains=query) | Q(venue__icontains=query)
-            )[:8] if query else Event.objects.filter(featured=True)[:6],
-            language_code,
-        )
-    ]
+    event_items = []
+    for item in localize_collection(Event.objects.all(), language_code):
+        score = score_search_entry(query, item.title, item.summary, item.details, item.venue, item.audience)
+        if score:
+            event_items.append(
+                {
+                    "title": item.title,
+                    "summary": item.summary,
+                    "url": item.get_absolute_url(),
+                    "meta": item.start_date.strftime("%d.%m.%Y") if getattr(item, "start_date", None) else "",
+                    "_score": score,
+                }
+            )
 
     for group in [
-        section("Asosiy sahifalar", "Main pages", page_items),
-        section("Barqarorlik boshqaruvi", "Sustainability governance", governance_items),
-        section("Dasturlar va BRMlar", "Programs and SDGs", program_items),
-        section("Tadqiqot", "Research", research_items),
-        section("Ta'lim va tashabbuslar", "Education and initiatives", education_items),
-        section("Hisobotlar", "Reports", report_items),
-        section("Yangiliklar", "News", news_items),
-        section("Tadbirlar", "Events", event_items),
+        section("Rahbariyat va aloqalar", "Leadership and contacts", sort_and_trim(leadership_items)),
+        section("Asosiy sahifalar", "Main pages", sort_and_trim(page_items)),
+        section("Barqarorlik boshqaruvi", "Sustainability governance", sort_and_trim(governance_items)),
+        section("Dasturlar va BRMlar", "Programs and SDGs", sort_and_trim(program_items)),
+        section("Tadqiqot", "Research", sort_and_trim(research_items)),
+        section("Ta'lim va tashabbuslar", "Education and initiatives", sort_and_trim(education_items)),
+        section("Hisobotlar", "Reports", sort_and_trim(report_items)),
+        section("Yangiliklar", "News", sort_and_trim(news_items)),
+        section("Tadbirlar", "Events", sort_and_trim(event_items)),
     ]:
         if group["items"]:
             sections.append(group)
@@ -3079,7 +3236,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "intro": section[f"intro_{language_suffix}"],
             "sections": section[f"sections_{language_suffix}"],
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
-            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code"},
+            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi"},
         }
         if slug == "ethics-code":
             if language_code == "uz":
@@ -3300,6 +3457,7 @@ class SearchView(BasePortalContextMixin, TemplateView):
         language_code = self.get_language_code()
         query = self.request.GET.get("q", "").strip()
         search_sections = build_search_sections(language_code, query)
+        suggested_sections = build_search_sections(language_code, "")[:4] if query and not search_sections else []
 
         context.update(
             {
@@ -3307,6 +3465,7 @@ class SearchView(BasePortalContextMixin, TemplateView):
                 "search_query": query,
                 "search_sections": search_sections,
                 "search_total_results": sum(len(section["items"]) for section in search_sections),
+                "suggested_search_sections": suggested_sections,
             }
         )
         return context
@@ -3441,8 +3600,32 @@ class ResearchView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["featured_projects"] = localize_collection(ResearchProject.objects.filter(featured=True), language_code)
-        context["projects"] = localize_collection(ResearchProject.objects.all(), language_code)
+        context["research_cards"] = [
+            {
+                "title": "SDG publications" if language_code == "en" else "SDG nashrlari",
+                "summary": (
+                    "Published articles, reports, and academic outputs connected to the Sustainable Development Goals."
+                    if language_code == "en"
+                    else "Barqaror rivojlanish maqsadlari bilan bog'liq maqolalar, hisobotlar va ilmiy nashrlar."
+                ),
+            },
+            {
+                "title": "Research centers" if language_code == "en" else "Tadqiqot markazlari",
+                "summary": (
+                    "University research centers and laboratories supporting sustainability-focused inquiry and innovation."
+                    if language_code == "en"
+                    else "Barqarorlikka yo'naltirilgan tadqiqot va innovatsiyalarni qo'llab-quvvatlovchi universitet markazlari va laboratoriyalari."
+                ),
+            },
+            {
+                "title": "Start-ups and grants" if language_code == "en" else "Startaplar va grantlar",
+                "summary": (
+                    "Innovation projects, start-up initiatives, and grant opportunities linked to research and development."
+                    if language_code == "en"
+                    else "Tadqiqot va rivojlanish bilan bog'liq innovatsion loyihalar, startap tashabbuslari va grant imkoniyatlari."
+                ),
+            },
+        ]
         return context
 
 
