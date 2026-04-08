@@ -195,6 +195,13 @@
     background: transparent;
   }
 
+  .site-navigation__link--stacked {
+    width: 100%;
+    min-height: 0;
+    white-space: normal !important;
+    text-align: left;
+  }
+
   .site-navigation a::after {
     left: 1rem;
     right: auto;
