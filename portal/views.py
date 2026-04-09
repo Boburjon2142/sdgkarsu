@@ -4206,9 +4206,63 @@ class SustainabilityView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["policies"] = localize_collection(PolicyDocument.objects.all(), language_code)
-        context["featured_policies"] = localize_collection(PolicyDocument.objects.filter(featured=True)[:3], language_code)
-        context["strategic_priorities"] = localize_collection(StrategicPriority.objects.all(), language_code)
+        context["page_content"] = build_page_content_fallback(
+            eyebrow="Kampus" if language_code == "uz" else "Campus",
+            title="Kampus barqarorligi" if language_code == "uz" else "Campus sustainability",
+            intro=(
+                "Universitet kampusida infratuzilma, energiya, chiqindilar, suv va transport yo'nalishlari bo'yicha barqaror boshqaruv choralarini ko'rsatadigan asosiy bo'limlar."
+                if language_code == "uz"
+                else "Core sections that present how the university manages infrastructure, energy, waste, water, and transport across the campus."
+            ),
+            supporting_title="Kampus izohi" if language_code == "uz" else "Campus note",
+            supporting_text=(
+                "Bu sahifa kampus faoliyatining asosiy ekologik va operatsion yo'nalishlarini soddalashtirilgan ko'rinishda jamlaydi."
+                if language_code == "uz"
+                else "This page brings together the main environmental and operational areas of campus activity in a clear, simplified structure."
+            ),
+        )
+        context["campus_sections"] = [
+            {
+                "title": "Joylashuv & Infratuzilma" if language_code == "uz" else "Location & Infrastructure",
+                "summary": (
+                    "Kampus hududi, bino va inshootlar, yashil maydonlar hamda infratuzilma quvvatlari bo'yicha asosiy ma'lumotlar."
+                    if language_code == "uz"
+                    else "Core information on the campus site, buildings, green areas, and infrastructure capacity."
+                ),
+            },
+            {
+                "title": "Energiya & iqlim o'zgarishi" if language_code == "uz" else "Energy & Climate Change",
+                "summary": (
+                    "Energiya samaradorligi, elektr va issiqlik iste'moli, quyosh energiyasi va emissiyalarni kamaytirish choralarini qamrab oladi."
+                    if language_code == "uz"
+                    else "Covers energy efficiency, electricity and heat use, solar energy, and measures to reduce emissions."
+                ),
+            },
+            {
+                "title": "Chiqindilar" if language_code == "uz" else "Waste",
+                "summary": (
+                    "Maishiy va operatsion chiqindilarni boshqarish, saralash, qayta ishlash va ekologik nazorat bo'yicha yo'nalish."
+                    if language_code == "uz"
+                    else "Focuses on operational and household waste management, sorting, recycling, and environmental control."
+                ),
+            },
+            {
+                "title": "Suv" if language_code == "uz" else "Water",
+                "summary": (
+                    "Suv resurslarini tejash, tarmoqlarni monitoring qilish va samarali foydalanish bo'yicha tashabbuslar."
+                    if language_code == "uz"
+                    else "Highlights initiatives for water conservation, network monitoring, and efficient use."
+                ),
+            },
+            {
+                "title": "Transport" if language_code == "uz" else "Transport",
+                "summary": (
+                    "Talaba va xodimlar qatnovi, kampus ichki harakati va barqaror transport yechimlari bo'yicha ma'lumotlar."
+                    if language_code == "uz"
+                    else "Presents information on student and staff mobility, internal campus movement, and sustainable transport solutions."
+                ),
+            },
+        ]
         return context
 
 
