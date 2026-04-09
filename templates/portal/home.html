@@ -21,7 +21,7 @@
         <div class="eyebrow">{% tr "Sustainability" %}</div>
         <h1 class="typewriter-pending" data-typewriter>{% tr "A sustainable future starts today" %}</h1>
         <div class="hero-actions">
-          <a class="button button--primary" href="{{ site_settings.hero_primary_url }}">{% tr "Results" %}</a>
+          <a class="button button--primary" href="{% url 'results-showcase' %}">{% tr "Results" %}</a>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
 
       <div class="sdg-icons-grid">
         {% for goal in sdg_goals %}
-          <a class="sdg-news-card reveal" href="{% url 'news-events' %}?sdg={{ goal.number }}">
+          <a class="sdg-news-card reveal" href="{% url 'sdg-updates' number=goal.number %}">
             <img class="sdg-news-card__icon" src="{% static goal.image %}" alt="{{ goal.title }}">
             <img class="sdg-news-card__gif" src="{% static goal.gif %}" alt="" aria-hidden="true">
             {% if current_language == "uz" %}

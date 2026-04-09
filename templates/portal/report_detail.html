@@ -1,0 +1,57 @@
+{% extends "portal/base.html" %}
+{% load portal_i18n %}
+
+{% block content %}
+  <section class="page-intro page-intro--clean">
+    <div class="container research-intro">
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ report_detail.eyebrow }}</div>
+        <h1>{{ report_detail.title }}</h1>
+        <p class="page-intro__lead">{{ report_detail.intro }}</p>
+      </div>
+      <aside class="research-intro__aside">
+        <span class="chip">
+          {% if current_language == "uz" %}
+            Hujjat
+          {% else %}
+            Document
+          {% endif %}
+        </span>
+        <p>
+          {% if current_language == "uz" %}
+            Hisobot faylini to'liq ko'rish yoki yuklab olish uchun quyidagi tugmadan foydalaning.
+          {% else %}
+            Use the button below to view or download the full report file.
+          {% endif %}
+        </p>
+        <a class="button button--primary" href="{{ report_detail.download_url }}" download="{{ report_detail.download_name }}" target="_blank" rel="noopener">
+          {% if current_language == "uz" %}
+            Yuklab olish
+          {% else %}
+            Download
+          {% endif %}
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container governance-detail-stack">
+      {% for section in report_detail.sections %}
+        <article class="content-card governance-detail-card">
+          <h2>{{ section.title }}</h2>
+          {% for paragraph in section.paragraphs %}
+            <p>{{ paragraph }}</p>
+          {% endfor %}
+          {% if section.bullets %}
+            <ul class="governance-bullet-list">
+              {% for bullet in section.bullets %}
+                <li>{{ bullet }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

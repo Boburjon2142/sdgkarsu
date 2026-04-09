@@ -1,4 +1,5 @@
 {% extends "portal/base.html" %}
+{% load portal_i18n %}
 
 {% block content %}
   <section class="page-intro page-intro--clean">
@@ -37,14 +38,37 @@
             </a>
           {% endfor %}
         </div>
+      {% elif research_detail.article_titles %}
+        <div class="stack-list research-project-cards">
+          {% for article in research_detail.article_titles %}
+            <article class="content-card content-card--large content-card--static">
+              <div class="rich-text-content project-card-copy">
+                <p><strong>{{ forloop.counter }}.</strong> {{ article.title }}</p>
+                {% if article.authors %}
+                  <p><strong>{% if current_language == "uz" %}Mualliflar{% else %}Authors{% endif %}:</strong> {{ article.authors }}</p>
+                {% endif %}
+                {% if article.venue %}
+                  <p><strong>{% if current_language == "uz" %}Jurnal{% else %}Journal{% endif %}:</strong> {{ article.venue }}</p>
+                {% endif %}
+                {% if article.year %}
+                  <p><strong>{% if current_language == "uz" %}Yil{% else %}Year{% endif %}:</strong> {{ article.year }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
       {% else %}
         <article class="content-card content-card--large">
           {% if research_detail.raw_html %}
             <div class="rich-text-content">{{ research_detail.raw_html|safe }}</div>
           {% else %}
-            {% for paragraph in research_detail.body %}
-              <p class="rich-text-inline">{{ paragraph }}</p>
-            {% endfor %}
+            {% if research_detail.body %}
+              {% for paragraph in research_detail.body %}
+                <p class="rich-text-inline">{{ paragraph }}</p>
+              {% endfor %}
+            {% else %}
+              <p class="rich-text-inline">{% if current_language == "uz" %}Hozircha maqola nomlari mavjud emas.{% else %}No publication titles available yet.{% endif %}</p>
+            {% endif %}
           {% endif %}
         </article>
       {% endif %}

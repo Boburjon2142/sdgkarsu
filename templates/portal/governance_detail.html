@@ -28,55 +28,49 @@
                 {{ ethics_pdf_panel.download_label }}
               </a>
             </article>
+          {% elif governance_section.slug == "jamoatchilik" %}
+            <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
+              <strong>
+                {% if current_language == "uz" %}
+                  Jamoa shartnomasi 2026-2028
+                {% else %}
+                  Collective Agreement 2026-2028
+                {% endif %}
+              </strong>
+              <p>
+                {% if current_language == "uz" %}
+                  Yangilangan jamoa shartnomasi PDF formatda yuklab olish uchun tayyor.
+                {% else %}
+                  The updated collective agreement is available for download in PDF format.
+                {% endif %}
+              </p>
+              <a class="button button--primary" href="{% static 'documents/collective-agreement-2026-2028.pdf' %}" download="Collective Agreement 2026-2028.pdf" target="_blank" rel="noopener">
+                {% if current_language == "uz" %}
+                  Yuklab olish
+                {% else %}
+                  Download
+                {% endif %}
+              </a>
+            </article>
           {% else %}
-            {% with responsible_contact=footer_departments|first %}
-              {% if responsible_contact %}
-                <article class="content-card soft-panel-card governance-detail-contact">
-                  <strong>
-                    {% if current_language == "uz" %}
-                      Mas'ul xodim
-                    {% else %}
-                      Responsible contact
-                    {% endif %}
-                  </strong>
-                  <p>{{ responsible_contact.contact_person }}</p>
-                  <p>{{ responsible_contact.department_name }}</p>
-                  {% if governance_section.slug == "anti-corruption" %}
-                    <a class="button button--primary" href="{% url 'anti-corruption-contact' %}">
-                      {% if current_language == "uz" %}
-                        Mas'ul xodim bilan bog'lanish
-                      {% else %}
-                        Contact responsible officer
-                      {% endif %}
-                    </a>
-                  {% elif governance_section.slug == "sdg-investment" or governance_section.slug == "sdg-purchase" or governance_section.slug == "xotin-qizlar" %}
-                    <a class="button button--primary" href="{% url 'governance-finance-contact' governance_section.slug %}">
-                      {% if current_language == "uz" %}
-                        Mas'ul xodim bilan bog'lanish
-                      {% else %}
-                        Contact responsible officer
-                      {% endif %}
-                    </a>
-                  {% else %}
-                    <a class="button button--primary" href="mailto:{{ responsible_contact.email }}">
-                      {% if current_language == "uz" %}
-                        Mas'ul xodim bilan bog'lanish
-                      {% else %}
-                        Contact responsible officer
-                      {% endif %}
-                    </a>
-                  {% endif %}
-                </article>
-              {% else %}
-                <a class="button button--primary" href="{% url 'contact' %}">
-                  {% if current_language == "uz" %}
-                    Mas'ul xodim bilan bog'lanish
-                  {% else %}
-                    Contact responsible officer
-                  {% endif %}
+            {% if governance_contact_panel %}
+              <article class="content-card soft-panel-card governance-detail-contact">
+                <strong>{{ governance_contact_panel.title }}</strong>
+                <p>{{ governance_contact_panel.name }}</p>
+                <p>{{ governance_contact_panel.department }}</p>
+                <a class="button button--primary" href="{{ governance_contact_panel.url }}">
+                  {{ governance_contact_panel.button_label }}
                 </a>
-              {% endif %}
-            {% endwith %}
+              </article>
+            {% else %}
+              <a class="button button--primary" href="{% url 'contact' %}">
+                {% if current_language == "uz" %}
+                  Mutaxassis bilan bog'lanish
+                {% else %}
+                  Contact specialist
+                {% endif %}
+              </a>
+            {% endif %}
           {% endif %}
           <a class="button button--ghost" href="{% url 'about' %}">
             {% if current_language == "uz" %}

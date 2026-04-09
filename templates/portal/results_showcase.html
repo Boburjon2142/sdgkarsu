@@ -1,0 +1,88 @@
+{% extends "portal/base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="page-intro page-intro--clean results-showcase-intro">
+    <div class="container page-intro__grid results-showcase-intro__grid">
+      <div>
+        <div class="eyebrow">{{ results_page.eyebrow }}</div>
+        <h1>{{ results_page.title }}</h1>
+        <p class="page-intro__lead">{{ results_page.intro }}</p>
+      </div>
+      <aside class="page-intro__panel results-showcase-intro__panel">
+        <span class="chip">{{ results_page.rankings_label }}</span>
+        <p>{{ results_page.sdg_intro }}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--cool results-showcase-section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="lined-title lined-title--news">
+          <span>{{ results_page.rankings_label }}</span>
+        </div>
+      </div>
+
+      <div class="results-ranking-grid">
+        {% for ranking in results_ranking_cards %}
+          <article class="results-ranking-card">
+            <div class="results-ranking-card__badge">{{ ranking.region }}</div>
+            <strong class="results-ranking-card__value">{{ ranking.value }}</strong>
+            <h3>{{ ranking.title }}</h3>
+            <p>{{ ranking.subtitle }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section results-showcase-section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="lined-title lined-title--news">
+          <span>{{ results_page.impact_label }}</span>
+        </div>
+      </div>
+
+      <div class="results-impact-grid">
+        {% for card in results_page.impact_cards %}
+          <article class="results-impact-card">
+            <div class="results-impact-card__logo-wrap">
+              <img src="{% static card.logo %}" alt="{{ card.title }}">
+            </div>
+            <div class="results-impact-card__copy">
+              <p class="results-impact-card__title">{{ card.title }}</p>
+              <strong class="results-impact-card__value">{{ card.value }}</strong>
+              <p class="results-impact-card__summary">{{ card.summary }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cool results-showcase-section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="lined-title lined-title--news">
+          <span>{{ results_page.sdg_label }}</span>
+        </div>
+      </div>
+
+      <div class="results-sdg-grid">
+        {% for goal in results_sdg_cards %}
+          <article class="results-sdg-card">
+            <div class="results-sdg-card__icon">
+              <img src="{% static goal.image %}" alt="{{ goal.title }}">
+            </div>
+            <div class="results-sdg-card__body">
+              <p class="results-sdg-card__title">SDG {{ goal.number }}: {{ goal.title }}</p>
+              <strong class="results-sdg-card__rank">{{ goal.rank }}</strong>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

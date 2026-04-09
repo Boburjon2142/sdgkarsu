@@ -1,4 +1,5 @@
 from copy import copy
+from types import SimpleNamespace
 
 from .current_portal_translations import PORTAL_TRANSLATIONS
 
@@ -384,13 +385,34 @@ for language_code, values in PORTAL_TRANSLATIONS.items():
     TRANSLATIONS.setdefault(language_code, {}).update(values)
 
 
+MOJIBAKE_REPLACEMENTS = {
+    "вЂ": "‘",
+    "вЂ™": "’",
+    "вЂњ": "“",
+    "вЂќ": "”",
+    "вЂ“": "–",
+    "вЂ”": "—",
+    "вЂ¦": "…",
+    "в„–": "№",
+}
+
+
+def normalize_text(value):
+    if not isinstance(value, str):
+        return value
+    cleaned = value
+    for source, target in MOJIBAKE_REPLACEMENTS.items():
+        cleaned = cleaned.replace(source, target)
+    return cleaned
+
+
 def translate_text(value, language_code):
     if not isinstance(value, str):
         return value
     language = (language_code or "en").split("-")[0]
     if language == "en":
-        return value
-    return TRANSLATIONS.get(language, {}).get(value, value)
+        return normalize_text(value)
+    return normalize_text(TRANSLATIONS.get(language, {}).get(value, value))
 
 
 def resolve_bilingual_text(instance, field_name, language_code):
@@ -400,7 +422,7 @@ def resolve_bilingual_text(instance, field_name, language_code):
     primary_value = getattr(instance, primary_attr, "")
     secondary_value = getattr(instance, secondary_attr, "")
     legacy_value = getattr(instance, field_name, "")
-    return primary_value or secondary_value or legacy_value
+    return normalize_text(primary_value or secondary_value or legacy_value)
 
 
 def localize_object(instance, language_code):
@@ -419,6 +441,11 @@ def localize_object(instance, language_code):
         if hasattr(instance, f"{field_name}_uz") or hasattr(instance, f"{field_name}_en"):
             setattr(localized_instance, field_name, resolve_bilingual_text(instance, field_name, language_code))
     return localized_instance
+
+
+def build_page_content_fallback(**values):
+    normalized = {key: normalize_text(value) for key, value in values.items()}
+    return SimpleNamespace(**normalized)
 
 
 def localize_collection(items, language_code):

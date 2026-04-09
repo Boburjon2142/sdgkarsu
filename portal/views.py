@@ -31,7 +31,8 @@ from .models import (
     StrategicPriority,
 )
 from .research_centers_data import RESEARCH_CENTER_CARDS, RESEARCH_CENTER_DETAILS
-from .translation_utils import localize_collection, localize_object, translate_text
+from .sdg_publications_data import get_sdg_publication_data
+from .translation_utils import build_page_content_fallback, localize_collection, localize_object, translate_text
 
 
 ETHICS_CODE_PDF_PATH = Path(settings.BASE_DIR) / "meedia" / "QARSHI DAVLAT UNIVERSITETINING ODOB-AXLOQ KODEKSI.pdf"
@@ -1069,14 +1070,14 @@ GOVERNANCE_PAGE_CONTENT = {
         "eyebrow_en": "Sustainability governance",
         "title_uz": "Jamoa shartnomasi",
         "title_en": "Collective Agreement",
-        "intro_uz": "Universitet ma'muriyati hamda xodimlar va talabalar kasaba uyushmasi o'rtasidagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi hujjat.",
-        "intro_en": "A regulatory document governing labor, socio-economic, and professional relations between the university administration and the trade union of staff and students.",
+        "intro_uz": "Universitet ma'muriyati hamda xodimlar va talabalar kasaba uyushmasi o'rtasidagi 2026-2028-yillar uchun mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi hujjat.",
+        "intro_en": "A regulatory document governing labor, socio-economic, and professional relations between the university administration and the trade union of staff and students for 2026-2028.",
         "sections_uz": [],
         "sections_en": [],
         "single_card_raw_uz": """
             <div class="governance-richtext">
               <p><strong>QARSHI DAVLAT UNIVERSITETI MA'MURIYATI HAMDA UNIVERSITET XODIMLARI VA TALABALARI KASABA UYUSHMA QO'MITASI JAMOA SHARTNOMASI</strong></p>
-              <p>Qarshi davlat universiteti ma'muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo'mitasi o'rtasida 2023-2025-yillar uchun jamoa shartnomasi tuzilgan bo'lib, u universitetdagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi muhim normativ hujjat hisoblanadi.</p>
+              <p>Qarshi davlat universiteti ma'muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo'mitasi o'rtasida 2026-2028-yillar uchun jamoa shartnomasi tuzilgan bo'lib, u universitetdagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi muhim normativ hujjat hisoblanadi.</p>
               <p>Mazkur shartnoma O'zbekiston Respublikasi qonunchiligi, xususan Mehnat kodeksi va boshqa tegishli normativ hujjatlarga asoslangan holda ishlab chiqilgan. Uning asosiy maqsadi - universitet xodimlari va talabalarning huquq va manfaatlarini himoya qilish, mehnat sharoitlarini yaxshilash hamda ijtimoiy hamkorlikni rivojlantirishdan iborat.</p>
               <p><strong>Shartnoma quyidagi asosiy yo'nalishlarni qamrab oladi:</strong></p>
               <ul>
@@ -1094,7 +1095,7 @@ GOVERNANCE_PAGE_CONTENT = {
         "single_card_raw_en": """
             <div class="governance-richtext">
               <p><strong>COLLECTIVE AGREEMENT BETWEEN THE ADMINISTRATION OF KARSHI STATE UNIVERSITY AND THE TRADE UNION COMMITTEE OF UNIVERSITY STAFF AND STUDENTS</strong></p>
-              <p>A collective agreement for the period 2023-2025 has been concluded between the administration of Karshi State University and the trade union committee representing the university's staff and students. This agreement serves as an important regulatory document governing labor, socio-economic, and professional relations within the university.</p>
+              <p>A collective agreement for the period 2026-2028 has been concluded between the administration of Karshi State University and the trade union committee representing the university's staff and students. This agreement serves as an important regulatory document governing labor, socio-economic, and professional relations within the university.</p>
               <p>The agreement has been developed in accordance with the legislation of the Republic of Uzbekistan, particularly the Labor Code and other relevant legal acts. Its main objective is to protect the rights and interests of university staff and students, improve working conditions, and promote social partnership.</p>
               <p><strong>The agreement covers the following key areas:</strong></p>
               <ul>
@@ -3205,6 +3206,124 @@ class HomeView(BasePortalContextMixin, TemplateView):
         return context
 
 
+class ResultsShowcaseView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/results_showcase.html"
+    page_key = "home"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+
+        ranking_cards = [
+            {
+                "region": "QS Asia",
+                "value": "925th",
+                "title_uz": "QS Asia University Rankings",
+                "title_en": "QS Asia University Rankings",
+                "subtitle_uz": "Osiyo universitetlari reytingi",
+                "subtitle_en": "Asia university ranking",
+            },
+            {
+                "region": "QS Uzbekistan",
+                "value": "15th",
+                "title_uz": "Uzbekistan University Ranking",
+                "title_en": "Uzbekistan University Ranking",
+                "subtitle_uz": "O'zbekiston bo'yicha universitetlar reytingi",
+                "subtitle_en": "National university standing in Uzbekistan",
+            },
+            {
+                "region": "QS Central Asia",
+                "value": "52nd",
+                "title_uz": "Asian University Rankings - Central Asia",
+                "title_en": "Asian University Rankings - Central Asia",
+                "subtitle_uz": "Markaziy Osiyo mintaqaviy reytingi",
+                "subtitle_en": "Regional standing across Central Asia",
+            },
+        ]
+
+        sdg_rankings = [
+            (1, "1001+"),
+            (2, "601-800"),
+            (3, "1001-1500"),
+            (4, "1500+"),
+            (5, "1001-1500"),
+            (6, "801-1000"),
+            (7, "601-800"),
+            (8, "1001+"),
+            (9, "801-1000"),
+            (10, "1001+"),
+            (11, "801-1000"),
+            (12, "801+"),
+            (13, "801-1000"),
+            (14, "601+"),
+            (15, "601-800"),
+            (16, "1001+"),
+        ]
+
+        context["results_page"] = {
+            "eyebrow": "Natijalar" if language_code == "uz" else "Results",
+            "title": (
+                "Qarshi davlat universitetining global va SDG natijalari"
+                if language_code == "uz"
+                else "Karshi State University global and SDG results"
+            ),
+            "intro": (
+                "Universitetning xalqaro reytinglardagi o'rni, ta'sir ko'rsatkichlari va Barqaror rivojlanish maqsadlari bo'yicha natijalari."
+                if language_code == "uz"
+                else "A showcase of the university's international rankings, impact indicators, and Sustainable Development Goal results."
+            ),
+            "rankings_label": "Xalqaro reytinglar" if language_code == "uz" else "International rankings",
+            "impact_label": "Ta'sir va kampus ko'rsatkichlari" if language_code == "uz" else "Impact and campus indicators",
+            "sdg_label": "SDG natijalari" if language_code == "uz" else "SDG results",
+            "sdg_intro": (
+                "Quyidagi ko'rsatkichlar universitetning THE Impact Rankings doirasidagi SDG yo'nalishlari bo'yicha qayd etilgan natijalarini aks ettiradi."
+                if language_code == "uz"
+                else "The tiles below highlight the university's recorded standings across SDG areas in the THE Impact Rankings framework."
+            ),
+            "impact_cards": [
+                {
+                    "logo": "images/impact.png",
+                    "value": "TOP 1500+",
+                    "title": "THE Impact Rankings",
+                    "summary": (
+                        "Barqaror rivojlanish maqsadlari bo'yicha global universitetlar reytingi."
+                        if language_code == "uz"
+                        else "Global university ranking linked to the Sustainable Development Goals."
+                    ),
+                },
+                {
+                    "logo": "images/uigreenmetric.png",
+                    "value": "#403",
+                    "title": "UI GreenMetric",
+                    "summary": (
+                        "World University Rankings bo'yicha ekologik va yashil kampus natijasi."
+                        if language_code == "uz"
+                        else "Environmental and green-campus standing in the World University Rankings."
+                    ),
+                },
+            ],
+        }
+        context["results_ranking_cards"] = [
+            {
+                "region": item["region"],
+                "value": item["value"],
+                "title": item[f"title_{language_code}"],
+                "subtitle": item[f"subtitle_{language_code}"],
+            }
+            for item in ranking_cards
+        ]
+        context["results_sdg_cards"] = [
+            {
+                "number": number,
+                "rank": rank,
+                "title": get_sdg_goal(number, language_code)["title"],
+                "image": f"images/goals/E_WEB_{number:02d}.png",
+            }
+            for number, rank in sdg_rankings
+        ]
+        return context
+
+
 class AboutView(BasePortalContextMixin, TemplateView):
     template_name = "portal/about.html"
     page_key = "about"
@@ -3240,6 +3359,48 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
             "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi"},
         }
+        contact_language = "uz" if language_code == "uz" else "en"
+        governance_contact_panels = {
+            "anti-corruption": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": ANTI_CORRUPTION_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": ANTI_CORRUPTION_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
+                "url": reverse("anti-corruption-contact"),
+            },
+            "sdg-investment": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": FINANCIAL_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": FINANCIAL_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
+                "url": reverse("governance-finance-contact", args=[slug]),
+            },
+            "sdg-purchase": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": FINANCIAL_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": FINANCIAL_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
+                "url": reverse("governance-finance-contact", args=[slug]),
+            },
+            "xotin-qizlar": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": WOMEN_SUPPORT_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": WOMEN_SUPPORT_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
+                "url": reverse("governance-finance-contact", args=[slug]),
+            },
+        }
+        if slug in governance_contact_panels:
+            context["governance_contact_panel"] = governance_contact_panels[slug]
+        elif context.get("footer_departments"):
+            responsible_contact = context["footer_departments"][0]
+            context["governance_contact_panel"] = {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": responsible_contact.contact_person,
+                "department": responsible_contact.department_name,
+                "button_label": "Mutaxassis bilan bog'lanish" if language_code == "uz" else "Contact specialist",
+                "url": f"mailto:{responsible_contact.email}",
+            }
         if slug == "ethics-code":
             if language_code == "uz":
                 context["ethics_pdf_panel"] = {
@@ -3630,6 +3791,104 @@ RESEARCH_CARD_CONTENT = {
         "cards_uz": RESEARCH_CENTER_CARDS,
         "cards_en": RESEARCH_CENTER_CARDS,
     },
+    "sustainability-subjects": {
+        "eyebrow_uz": "Tadqiqot va ta'lim",
+        "eyebrow_en": "Research & Education",
+        "title_uz": "Barqarorlik oid fanlar",
+        "title_en": "Subjects related to sustainability",
+        "intro_uz": "Barqarorlik tamoyillarini turli fakultetlar kesimida qamrab oluvchi fanlar ro'yxati va yo'nalishlari.",
+        "intro_en": "An overview of courses that integrate sustainability principles across multiple faculties and disciplines.",
+        "body_uz": [
+            "Qarshi davlat universitetida jami 169 ta fan barqarorlik, atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, biotexnologiya va ijtimoiy mas'uliyat bilan bog'liq mavzularni o'z ichiga oladi.",
+            "Mazkur fanlar muhandislik va texnologiya, kimyo va biologiya, geografiya va Yer fanlari, fizika, iqtisodiyot, tibbiyot hamda pedagogika yo'nalishlari bo'yicha barqarorlik yondashuvlarini ta'limga integratsiya qiladi.",
+        ],
+        "body_en": [
+            "Karshi State University offers a total of 169 courses that incorporate sustainability, environmental protection, renewable energy, biotechnology, and social responsibility topics.",
+            "These courses embed sustainability concepts across engineering and technology, chemistry and biology, geography and earth sciences, physics, economics, medicine, and pedagogy.",
+        ],
+        "raw_html_uz": """
+            <div class="governance-richtext">
+              <p><strong>BARQARORLIK OID FANLAR</strong></p>
+              <p>Qarshi davlat universiteti barqarorlik tamoyillarini akademik fanlariga faol integratsiya qiladi. Universitetda <strong>169 ta fan</strong> barqarorlik, atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, biotexnologiya va ijtimoiy mas'uliyat bilan bog'liq mavzularni qamrab oladi.</p>
+              <p>Ushbu fanlar muhandislik va texnologiya, kimyo va biologiya, geografiya va Yer fanlari, fizika, iqtisodiyot, tibbiyot va pedagogika yo'nalishlari bo'yicha o'qitiladi.</p>
+              <ul class="governance-bullet-list">
+                <li>Muhandislik va texnologiya: muqobil energiya, energiya samarador texnologiyalar, bioinjiniring, ekobiotexnologiya, issiqlik texnikasi va gidroenergetika</li>
+                <li>Kimyo va biologiya: kimyoviy ekologiya, atrof-muhitni muhofaza qilish, agrobiokimyo va yashil kimyo tamoyillari</li>
+                <li>Geografiya va Yer fanlari: amaliy ekologiya, geoekologiya, landshaft ekologiyasi, gidroekologiya va ekologiyada geoinformatsion texnologiyalar</li>
+                <li>Iqtisodiyot va boshqaruv: yashil iqtisodiyot, energiya menejmenti va issiqxona xo'jaligini boshqarish</li>
+                <li>Tibbiyot va sog'liqni saqlash: ekologik fiziologiya, salomatlikni saqlash asoslari va hayot faoliyati xavfsizligi</li>
+                <li>Pedagogika: ekologik fanlarni o'qitish metodikasi va barqarorlik ongini shakllantiruvchi yo'nalishlar</li>
+              </ul>
+              <p>Ushbu fanlar orqali universitet SDG 4, SDG 7, SDG 13 va SDG 15 kabi maqsadlarga mos keluvchi bilim va ko'nikmalarni shakllantiradi.</p>
+            </div>
+        """,
+        "raw_html_en": """
+            <div class="governance-richtext">
+              <p><strong>SUBJECTS RELATED TO SUSTAINABILITY</strong></p>
+              <p>Karshi State University actively integrates sustainability into its academic subjects. The university offers <strong>169 courses</strong> covering sustainability, environmental protection, renewable energy, biotechnology, and social responsibility.</p>
+              <p>These courses are delivered across engineering and technology, chemistry and biology, geography and earth sciences, physics, economics, medicine, and pedagogy.</p>
+              <ul class="governance-bullet-list">
+                <li>Engineering and technology: alternative energy, energy-efficient technologies, bioengineering, ecobiotechnology, heat engineering, and hydropower</li>
+                <li>Chemistry and biology: chemical ecology, environmental protection, agrochemical biochemistry, and green chemistry principles</li>
+                <li>Geography and earth sciences: applied ecology, geoecology, landscape ecology, hydroecology, and geoinformation technologies in ecology</li>
+                <li>Economics and management: green economy, energy management, and greenhouse economy management</li>
+                <li>Medicine and health sciences: ecological physiology, health preservation, and life safety</li>
+                <li>Pedagogy: methods of teaching ecological sciences and sustainability awareness building</li>
+              </ul>
+              <p>Through these courses, the university aligns its academic offer with SDG 4, SDG 7, SDG 13, and SDG 15.</p>
+            </div>
+        """,
+    },
+    "sustainability-study-programs": {
+        "eyebrow_uz": "Tadqiqot va ta'lim",
+        "eyebrow_en": "Research & Education",
+        "title_uz": "Barqarorlikka oid ta'lim dasturlari",
+        "title_en": "Study programs related to sustainability",
+        "intro_uz": "Barqaror rivojlanish bilan bevosita bog'liq fakultetlar va ta'lim dasturlari haqida umumiy ma'lumot.",
+        "intro_en": "An overview of faculties and study programs directly connected to sustainability-oriented education.",
+        "body_uz": [
+            "Universitetdagi 7 ta fakultet barqarorlik bilan bevosita bog'liq ta'lim dasturlarini taklif etadi.",
+            "Ushbu dasturlar atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, barqaror qishloq xo'jaligi, ta'lim va ijtimoiy farovonlikni qamrab oladi.",
+        ],
+        "body_en": [
+            "A total of seven faculties at the university offer study programs directly related to sustainability.",
+            "These programs cover environmental protection, renewable energy, sustainable agriculture, education, and social well-being.",
+        ],
+        "raw_html_uz": """
+            <div class="governance-richtext">
+              <p><strong>BARQARORLIKKA OID TA'LIM DASTURLARI</strong></p>
+              <p>Qarshi davlat universiteti ta'lim dasturlariga barqaror rivojlanish tamoyillarini faol ravishda integratsiya qiladi. Universitetdagi <strong>7 ta fakultet</strong> barqarorlik bilan bevosita bog'liq ta'lim dasturlarini taklif etadi.</p>
+              <p>Ushbu dasturlar atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, barqaror qishloq xo'jaligi, ta'lim va ijtimoiy farovonlik yo'nalishlarini qamrab oladi hamda SDG 4, SDG 7, SDG 13 va SDG 15 maqsadlariga xizmat qiladi.</p>
+              <ul class="governance-bullet-list">
+                <li>Pedagogika fakulteti: Boshlang'ich ta'lim, Maktabgacha ta'lim, Maxsus pedagogika, Psixologiya</li>
+                <li>Matematika va kompyuter ilmlari fakulteti: Dasturiy injiniring, Axborot tizimlari, Sun'iy intellekt, Matematik modellashtirish</li>
+                <li>Iqtisodiyot fakulteti: Iqtisodiyot, Moliya va moliyaviy texnologiyalar, Bank ishi, Marketing, Turizm va mehmondo'stlik</li>
+                <li>Fizika fakulteti: Fizika, Elektronika va asbobsozlik, Energetika, Yengil sanoat muhandisligi, Qayta tiklanuvchi energiya manbalari</li>
+                <li>Kimyo va biologiya fakulteti: Kimyo, Biologiya, Mikrobiologiya, Biotexnologiya</li>
+                <li>Tibbiyot fakulteti: Davolash ishi, Pediatriya</li>
+                <li>Geografiya va agronomiya fakulteti: O'simliklarni himoya qilish, Geografiya, Agrokimyo va tuproqshunoslik, Ekologiya va atrof-muhitni muhofaza qilish</li>
+              </ul>
+              <p>Mazkur ko'p tarmoqli dasturlar orqali universitet bitiruvchilarning turli kasbiy sohalarda barqaror rivojlanishga hissa qo'shishini ta'minlaydi.</p>
+            </div>
+        """,
+        "raw_html_en": """
+            <div class="governance-richtext">
+              <p><strong>STUDY PROGRAMS RELATED TO SUSTAINABILITY</strong></p>
+              <p>Karshi State University actively integrates sustainability principles into its study programs. A total of <strong>seven faculties</strong> offer academic programs directly connected to sustainability.</p>
+              <p>These programs cover environmental protection, renewable energy, sustainable agriculture, education, and social well-being, while contributing to SDG 4, SDG 7, SDG 13, and SDG 15.</p>
+              <ul class="governance-bullet-list">
+                <li>Faculty of Pedagogy: Primary Education, Preschool Education, Special Pedagogy, Psychology</li>
+                <li>Faculty of Mathematics and Computer Sciences: Software Engineering, Information Systems, Artificial Intelligence, Mathematical Modeling</li>
+                <li>Faculty of Economics: Economics, Finance and Financial Technologies, Banking, Marketing, Tourism and Hospitality</li>
+                <li>Faculty of Physics: Physics, Electronics and Instrumentation, Power Engineering, Light Industry Engineering, Renewable Energy Sources</li>
+                <li>Faculty of Chemistry and Biology: Chemistry, Biology, Microbiology, Biotechnology</li>
+                <li>Faculty of Medicine: General Medicine, Pediatrics</li>
+                <li>Faculty of Geography and Agronomy: Plant Protection and Quarantine, Geography, Agrochemistry and Soil Science, Ecology and Environmental Protection</li>
+              </ul>
+              <p>Through these multidisciplinary programs, the university prepares graduates to contribute to sustainable development across diverse professional sectors.</p>
+            </div>
+        """,
+    },
     "startups-and-grants": {
         "eyebrow_uz": "Tadqiqot va ta'lim",
         "eyebrow_en": "Research & Education",
@@ -3754,6 +4013,21 @@ class ResearchView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
+        context["page_content"] = build_page_content_fallback(
+            eyebrow="Tadqiqot" if language_code == "uz" else "Research",
+            title="Tadqiqot va ta'lim" if language_code == "uz" else "Research & Education",
+            intro=(
+                "Universitetning BRM nashrlari, tadqiqot markazlari, barqarorlikka oid fanlari, ta'lim dasturlari va grant/startap tashabbuslari."
+                if language_code == "uz"
+                else "A consolidated view of the university's SDG publications, research centers, sustainability-related subjects, academic programs, and start-up or grant activity."
+            ),
+            supporting_title="Tadqiqot izohi" if language_code == "uz" else "Research note",
+            supporting_text=(
+                "Bu bo'lim universitetning ilmiy salohiyati, ta'lim integratsiyasi va BRM yo'nalishlari bo'yicha amaliy natijalarini bir joyda ko'rsatadi."
+                if language_code == "uz"
+                else "This section brings together the university's research capacity, education integration, and practical results related to the SDGs."
+            ),
+        )
         context["research_cards"] = [
             {
                 "slug": "sdg-publications",
@@ -3771,6 +4045,24 @@ class ResearchView(BasePortalContextMixin, TemplateView):
                     "University research centers and laboratories supporting sustainability-focused inquiry and innovation."
                     if language_code == "en"
                     else "Barqarorlikka yo'naltirilgan tadqiqot va innovatsiyalarni qo'llab-quvvatlovchi universitet markazlari va laboratoriyalari."
+                ),
+            },
+            {
+                "slug": "sustainability-subjects",
+                "title": "Subjects related to sustainability" if language_code == "en" else "Barqarorlik oid fanlar",
+                "summary": (
+                    "Courses across multiple faculties that integrate sustainability, environmental protection, renewable energy, and social responsibility."
+                    if language_code == "en"
+                    else "Turli fakultetlarda barqarorlik, ekologiya, qayta tiklanuvchi energiya va ijtimoiy mas'uliyatni qamrab oluvchi fanlar."
+                ),
+            },
+            {
+                "slug": "sustainability-study-programs",
+                "title": "Study programs related to sustainability" if language_code == "en" else "Barqarorlikka oid ta'lim dasturlari",
+                "summary": (
+                    "Multidisciplinary study programs that connect education with sustainable development, green economy, and environmental responsibility."
+                    if language_code == "en"
+                    else "Barqaror rivojlanish, yashil iqtisodiyot va ekologik mas'uliyat bilan bog'liq ko'p tarmoqli ta'lim dasturlari."
                 ),
             },
             {
@@ -3799,6 +4091,22 @@ class ResearchCardDetailView(BasePortalContextMixin, TemplateView):
             raise Http404("Research detail page not found")
 
         suffix = "uz" if language_code == "uz" else "en"
+        cards = content.get(f"cards_{suffix}", [])
+        if slug == "sdg-publications":
+            sdg_data = get_sdg_publication_data()
+            cards = [
+                {
+                    "slug": f"sdg-{goal_number}",
+                    "title": goal_data[f"title_{suffix}"],
+                    "summary": (
+                        f"{len(goal_data['articles'])} publication(s) available."
+                        if suffix == "en"
+                        else f"{len(goal_data['articles'])} ta maqola nomi mavjud."
+                    ),
+                    "url": reverse("sdg-publication-detail", kwargs={"goal_number": goal_number}),
+                }
+                for goal_number, goal_data in sdg_data.items()
+            ]
         context["research_detail"] = {
             "slug": slug,
             "eyebrow": content[f"eyebrow_{suffix}"],
@@ -3810,10 +4118,11 @@ class ResearchCardDetailView(BasePortalContextMixin, TemplateView):
             "cards": [
                 {
                     **item,
-                    "url": reverse("research-center-detail", kwargs={"center_slug": item["slug"]}),
+                    "url": item.get("url", reverse("research-center-detail", kwargs={"center_slug": item["slug"]})),
                 }
-                for item in content.get(f"cards_{suffix}", [])
+                for item in cards
             ],
+            "article_titles": [],
         }
         return context
 
@@ -3838,6 +4147,42 @@ class ResearchCenterDetailView(BasePortalContextMixin, TemplateView):
             "raw_html": None,
             "projects": [],
             "cards": [],
+            "article_titles": [],
+        }
+        return context
+
+
+class SDGPublicationDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/research_card_detail.html"
+    page_key = "research"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        suffix = "uz" if language_code == "uz" else "en"
+        goal_number = kwargs["goal_number"]
+        goal_data = get_sdg_publication_data().get(goal_number)
+        if not goal_data:
+            raise Http404("SDG publication page not found")
+
+        context["research_detail"] = {
+            "slug": f"sdg-{goal_number}",
+            "eyebrow": "Research & Education" if language_code == "en" else "Tadqiqot va ta'lim",
+            "title": goal_data[f"title_{suffix}"],
+            "intro": goal_data[f"intro_{suffix}"],
+            "body": (
+                []
+                if goal_data["articles"]
+                else (
+                    ["No publication titles were found for this SDG yet."]
+                    if language_code == "en"
+                    else ["Bu SDG uchun hozircha maqola nomlari topilmadi."]
+                )
+            ),
+            "raw_html": None,
+            "projects": [],
+            "cards": [],
+            "article_titles": goal_data["articles"],
         }
         return context
 
@@ -3874,10 +4219,249 @@ class ReportsView(BasePortalContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
-        context["metrics"] = localize_collection(ImpactMetric.objects.filter(scope__in=["reports", "both"]), language_code)
-        context["reports"] = localize_collection(Report.objects.all(), language_code)
-        context["featured_reports"] = localize_collection(Report.objects.filter(featured=True)[:3], language_code)
-        context["achievements"] = localize_collection(Achievement.objects.all(), language_code)
+        context["page_content"] = build_page_content_fallback(
+            eyebrow="Hisobotlar" if language_code == "uz" else "Reports",
+            title="Tahlillar va hisobotlar" if language_code == "uz" else "Insights & Reports",
+            intro=(
+                "Universitetning emissiya, moliya va umumiy barqarorlik natijalari bo'yicha asosiy hujjatlari va yuklab olinadigan hisobotlari."
+                if language_code == "uz"
+                else "Core documents and downloadable reports covering the university's emissions, finance, and overall sustainability performance."
+            ),
+            supporting_title="Hisobot izohi" if language_code == "uz" else "Reporting note",
+            supporting_text=(
+                "Bu sahifa tez ko'zdan kechirish, rasmiy ma'lumot olish va kerakli hisobotlarni yuklab olish uchun tartiblangan."
+                if language_code == "uz"
+                else "This page is structured for quick review, official reference, and direct access to key downloadable reports."
+            ),
+        )
+        context["report_cards"] = [
+            {
+                "slug": "greenhouse-gases",
+                "title": "Issiqxona gazlari emissiyalari hisoboti" if language_code == "uz" else "Greenhouse gas emissions report",
+                "summary": (
+                    "Universitet faoliyatidagi issiqxona gazlari, emissiya ko'rsatkichlari va ekologik monitoring bo'yicha ma'lumotlar."
+                    if language_code == "uz"
+                    else "Information on greenhouse gas emissions, climate indicators, and environmental monitoring across the university."
+                ),
+            },
+            {
+                "slug": "financial-report",
+                "title": "Moliyaviy hisobot" if language_code == "uz" else "Financial report",
+                "summary": (
+                    "Moliyaviy faoliyat, mablag'lar taqsimoti va institutsional xarajatlar bo'yicha asosiy hisobotlar."
+                    if language_code == "uz"
+                    else "Key reports on financial activity, fund allocation, and institutional expenditure."
+                ),
+            },
+            {
+                "slug": "sustainability-report",
+                "title": "Barqarorlik hisoboti" if language_code == "uz" else "Sustainability report",
+                "summary": (
+                    "Barqaror rivojlanish maqsadlari, tashabbuslar va universitetning umumiy barqarorlik natijalari bo'yicha hisobot."
+                    if language_code == "uz"
+                    else "A report covering sustainability goals, initiatives, and the university's overall sustainability performance."
+                ),
+            },
+        ]
+        return context
+
+
+REPORT_INSIGHT_CARD_CONTENT = {
+    "greenhouse-gases": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Issiqxona gazlari",
+        "title_en": "Greenhouse gases",
+        "intro_uz": "Qarshi davlat universitetining 2024–2025 yillar bo'yicha GHG emissiyalari hisoboti.",
+        "intro_en": "Karshi State University's greenhouse gas emissions report for 2024–2025.",
+        "download_url": "/static/documents/ghg-protocol-2024-2025.xlsx",
+        "download_name": "GHG Protocol 2024-2025.xlsx",
+        "sections_uz": [
+            {
+                "title": "Hisobot haqida",
+                "paragraphs": [
+                    "Hisobot xalqaro miqyosda tan olingan GHG Protocol standarti asosida tayyorlangan bo'lib, universitetning 2024–2025 yillardagi emissiya ko'rsatkichlarini Scope 1, Scope 2 va Scope 3 kesimida jamlaydi.",
+                    "Hujjat bevosita yoqilg'i sarfi, elektr energiyasi iste'moli, transport, chiqindilar, qog'oz, ofis jihozlari, IT va laboratoriya uskunalari hamda qatnov bilan bog'liq emissiyalarni qamrab oladi.",
+                ],
+            },
+            {
+                "title": "Asosiy ko'rsatkichlar",
+                "bullets": [
+                    "Jami Scope 1: 1 159 tCO₂e",
+                    "Jami Scope 2: 617,31 tCO₂e",
+                    "Jami Scope 3: 3 990,85 tCO₂e",
+                    "Scope 1 ichida eng katta ulush tabiiy gaz iste'moliga to'g'ri keladi: 1 141,9 tCO₂e",
+                    "Scope 2 bo'yicha elektr energiya iste'moli 617,31 tCO₂e ni tashkil etadi, quyosh energiyasi esa nol emissiya bilan qayd etilgan",
+                    "Scope 3 bo'yicha asosiy ulushlar talabalar qatnovi, xodimlar qatnovi va qurilish ishlari bilan bog'liq",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "About the report",
+                "paragraphs": [
+                    "This report is prepared in line with the internationally recognized GHG Protocol standard and summarizes the university's 2024–2025 emissions across Scope 1, Scope 2, and Scope 3.",
+                    "The workbook covers direct fuel use, electricity consumption, transport, waste, paper, office equipment, IT and laboratory equipment, and commuting-related emissions.",
+                ],
+            },
+            {
+                "title": "Key indicators",
+                "bullets": [
+                    "Total Scope 1: 1,159 tCO₂e",
+                    "Total Scope 2: 617.31 tCO₂e",
+                    "Total Scope 3: 3,990.85 tCO₂e",
+                    "Within Scope 1, natural gas consumption represents the largest share: 1,141.9 tCO₂e",
+                    "Within Scope 2, electricity consumption accounts for 617.31 tCO₂e, while solar energy is recorded with zero emissions",
+                    "Within Scope 3, the main contributions come from student commuting, staff commuting, and construction works",
+                ],
+            },
+        ],
+    },
+    "financial-report": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Moliyaviy hisobot",
+        "title_en": "Financial report",
+        "intro_uz": "Qarshi davlat universitetining 2024-yil uchun yillik moliyaviy hisobotining asosiy ko'rsatkichlari.",
+        "intro_en": "Key figures from Karshi State University's annual financial report for 2024.",
+        "download_url": "/static/documents/annual-financial-report-2024.docx",
+        "download_name": "Annual Financial Report-2024.docx",
+        "sections_uz": [
+            {
+                "title": "Umumiy hisobot",
+                "bullets": [
+                    "Jami daromadlar: 220 142 803 400 so'm",
+                    "Jami xarajatlar: 280 886 637 423 so'm",
+                    "Defitsit mablag': 60 743 834 023 so'm",
+                    "Ortiqcha mablag': 0",
+                    "Qarz mablag': 0",
+                ],
+            },
+            {
+                "title": "Daromad manbalari",
+                "bullets": [
+                    "Davlat tomonidan moliyalashtirish: 66 579 927 300 so'm",
+                    "O'qish to'lovlari-kontrakt: 134 716 228 100 so'm",
+                    "Grantlar va ilmiy tadqiqotlarni moliyalashtirish: 6 848 615 800 so'm",
+                    "Boshqa daromadlar: 11 998 032 200 so'm",
+                ],
+            },
+            {
+                "title": "Xarajatlar tarkibi",
+                "bullets": [
+                    "Maosh va ish haqi: 174 206 001 178 so'm",
+                    "Infratuzilma va texnik xizmat ko'rsatish: 44 739 359 771 so'm",
+                    "Kommunal xizmatlar: 1 972 623 932 so'm",
+                    "Ta'lim resurslari: 19 716 656 428 so'm",
+                    "Boshqa xarajatlar: 40 251 996 114 so'm",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Summary report",
+                "bullets": [
+                    "Total revenue: 220,142,803,400 UZS",
+                    "Total expenditure: 280,886,637,423 UZS",
+                    "Deficit: 60,743,834,023 UZS",
+                    "Surplus: 0",
+                    "Debt: 0",
+                ],
+            },
+            {
+                "title": "Revenue breakdown",
+                "bullets": [
+                    "Government funding: 66,579,927,300 UZS",
+                    "Tuition fees (contract-based): 134,716,228,100 UZS",
+                    "Grants and research financing: 6,848,615,800 UZS",
+                    "Other income: 11,998,032,200 UZS",
+                ],
+            },
+            {
+                "title": "Expenditure structure",
+                "bullets": [
+                    "Salary and wages: 174,206,001,178 UZS",
+                    "Infrastructure and maintenance: 44,739,359,771 UZS",
+                    "Utilities: 1,972,623,932 UZS",
+                    "Educational resources: 19,716,656,428 UZS",
+                    "Other expenses: 40,251,996,114 UZS",
+                ],
+            },
+        ],
+    },
+    "sustainability-report": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Barqarorlik hisoboti",
+        "title_en": "Sustainability report",
+        "intro_uz": "Qarshi davlat universitetining 2024–2025 yillardagi Barqarorlik hisoboti asosida tayyorlangan qisqacha sahifa.",
+        "intro_en": "A summary page based on Karshi State University's Sustainability Report 2024–2025.",
+        "download_url": "/static/documents/sustainability-report-2024-2025.pdf",
+        "download_name": "Sustainability report 2024-2025.pdf",
+        "sections_uz": [
+            {
+                "title": "Hisobot mazmuni",
+                "paragraphs": [
+                    "Hisobot universitetning atrof-muhitga mas'uliyatli yondashuvi, barqaror rivojlanish strategiyasi va global hamkorlik bo'yicha yondashuvini yoritadi.",
+                    "Unda infratuzilma, energiya va iqlim o'zgarishi, chiqindilarni boshqarish, suv resurslarini tejash, transport, ta'lim va ilmiy tadqiqotlar kabi olti asosiy yo'nalish qamrab olingan.",
+                ],
+            },
+            {
+                "title": "Asosiy jihatlar",
+                "bullets": [
+                    "Barqarorlik tashabbuslari ilmiy ishlar va innovatsiyalar bo'yicha prorektor rahbarligidagi maxsus bo'linma va Barqarorlik kengashi orqali muvofiqlashtiriladi",
+                    "Universitet umumiy byudjetining taxminan 30 foizi yashil tashabbuslar va ekologik dasturlarga yo'naltirilgan",
+                    "Kampus hududining yarmidan ortig'i yashil hududlar bilan qoplangan",
+                    "LED yoritish, issiqlik izolyatsiyasi va quyosh panellari orqali energiya iste'moli hamda karbon chiqindilarini kamaytirish bo'yicha amaliy ishlar olib borilgan",
+                    "Barqarorlik ta'lim, ilmiy tadqiqot va talaba tashabbuslariga faol integratsiya qilingan",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Report scope",
+                "paragraphs": [
+                    "The report outlines the university's environmentally responsible approach, sustainability strategy, and commitment to global engagement.",
+                    "It covers six major areas: infrastructure, energy and climate change, waste management, water conservation, transportation, and education and research.",
+                ],
+            },
+            {
+                "title": "Key highlights",
+                "bullets": [
+                    "Sustainability initiatives are coordinated through a dedicated unit under the Vice-Rector for Scientific Affairs and Innovations together with a Sustainability Council",
+                    "Approximately 30% of the university's total budget is directed toward green initiatives and environmental programs",
+                    "More than half of the campus area is covered by green space",
+                    "LED lighting, thermal insulation, and solar panels are used to reduce energy consumption and carbon emissions",
+                    "Sustainability is actively integrated into education, research, and student-led initiatives",
+                ],
+            },
+        ],
+    },
+}
+
+
+class ReportCardDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/report_detail.html"
+    page_key = "reports"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        suffix = "uz" if language_code == "uz" else "en"
+        slug = kwargs["slug"]
+        report = REPORT_INSIGHT_CARD_CONTENT.get(slug)
+        if not report:
+            raise Http404("Report detail page not found")
+
+        context["report_detail"] = {
+            "slug": slug,
+            "eyebrow": report[f"eyebrow_{suffix}"],
+            "title": report[f"title_{suffix}"],
+            "intro": report[f"intro_{suffix}"],
+            "download_url": report["download_url"],
+            "download_name": report["download_name"],
+            "sections": report[f"sections_{suffix}"],
+        }
         return context
 
 
