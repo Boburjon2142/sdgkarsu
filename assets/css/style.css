@@ -1747,6 +1747,37 @@ blockquote {
   box-shadow: 0 14px 30px rgba(37, 59, 23, 0.07);
 }
 
+.content-card--static:hover,
+.content-card--static:focus-within {
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.research-project-cards > * + * {
+  margin-top: 0.65rem;
+}
+
+.research-project-cards .content-card--large {
+  padding: 1.25rem 1.5rem;
+}
+
+.project-card-copy p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.project-card-copy {
+  white-space: normal;
+}
+
+.project-card-copy p + p {
+  margin-top: 0.55rem;
+}
+
+.project-card-copy strong {
+  color: #344534;
+}
+
 .research-note-card {
   align-self: start;
   background: linear-gradient(180deg, #fbfdf9, #f4f8ed);

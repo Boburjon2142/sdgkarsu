@@ -26,11 +26,11 @@
     <div class="container">
       <div class="card-grid card-grid--three">
         {% for item in research_cards %}
-          <article class="content-card reveal">
+          <a class="content-card reveal" href="{% url 'research-card-detail' item.slug %}">
             <span class="chip">Research &amp; Education</span>
             <h3>{{ item.title }}</h3>
             <p class="rich-text-inline">{{ item.summary }}</p>
-          </article>
+          </a>
         {% endfor %}
       </div>
     </div>

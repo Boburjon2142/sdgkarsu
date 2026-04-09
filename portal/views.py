@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
+from django.urls import reverse
 from django.shortcuts import redirect
 from django.utils.html import strip_tags
 from django.views.generic import DetailView, TemplateView
@@ -29,6 +30,7 @@ from .models import (
     SiteSettings,
     StrategicPriority,
 )
+from .research_centers_data import RESEARCH_CENTER_CARDS, RESEARCH_CENTER_DETAILS
 from .translation_utils import localize_collection, localize_object, translate_text
 
 
@@ -3593,6 +3595,158 @@ class SDGUpdatesView(BasePortalContextMixin, TemplateView):
         return context
 
 
+RESEARCH_CARD_CONTENT = {
+    "sdg-publications": {
+        "eyebrow_uz": "Tadqiqot va ta'lim",
+        "eyebrow_en": "Research & Education",
+        "title_uz": "SDG nashrlari",
+        "title_en": "SDG publications",
+        "intro_uz": "Barqaror rivojlanish maqsadlari bilan bog'liq maqolalar, hisobotlar va ilmiy nashrlar.",
+        "intro_en": "Published articles, reports, and academic outputs connected to the Sustainable Development Goals.",
+        "body_uz": [
+            "Ushbu bo'lim universitetda Barqaror rivojlanish maqsadlari bilan bog'liq tayyorlangan ilmiy maqolalar, nashrlar, tahliliy sharhlar va institutsional hisobotlarni jamlaydi.",
+            "Sahifa ilmiy natijalarni bir joyda ko'rsatish, tadqiqot faoliyatini tizimlashtirish va manfaatdor tomonlar uchun ochiq akademik ma'lumotlar maydonini yaratishga xizmat qiladi.",
+        ],
+        "body_en": [
+            "This section brings together scientific articles, publications, analytical reviews, and institutional reports prepared at the university in connection with the Sustainable Development Goals.",
+            "The page is designed to present academic outputs in one place, structure research activity, and provide an open knowledge space for stakeholders.",
+        ],
+    },
+    "research-centers": {
+        "eyebrow_uz": "Tadqiqot va ta'lim",
+        "eyebrow_en": "Research & Education",
+        "title_uz": "Tadqiqot markazlari",
+        "title_en": "Research centers",
+        "intro_uz": "Barqarorlikka yo'naltirilgan tadqiqot va innovatsiyalarni qo'llab-quvvatlovchi universitet markazlari va laboratoriyalari.",
+        "intro_en": "University research centers and laboratories supporting sustainability-focused inquiry and innovation.",
+        "body_uz": [
+            "Ushbu bo'lim universitet tarkibidagi tadqiqot markazlari, ilmiy laboratoriyalar va barqarorlik yo'nalishidagi ilmiy platformalarni yoritadi.",
+            "Markazlar ilmiy salohiyatni oshirish, fanlararo hamkorlikni kuchaytirish hamda amaliy va nazariy tadqiqotlarni rivojlantirish uchun xizmat qiladi.",
+        ],
+        "body_en": [
+            "This section highlights the university's research centers, scientific laboratories, and research platforms working in sustainability-related areas.",
+            "These centers support academic capacity, strengthen interdisciplinary cooperation, and advance both applied and theoretical research activity.",
+        ],
+        "cards_uz": RESEARCH_CENTER_CARDS,
+        "cards_en": RESEARCH_CENTER_CARDS,
+    },
+    "startups-and-grants": {
+        "eyebrow_uz": "Tadqiqot va ta'lim",
+        "eyebrow_en": "Research & Education",
+        "title_uz": "Startaplar va grantlar",
+        "title_en": "Start-ups and grants",
+        "intro_uz": "Tadqiqot va rivojlanish bilan bog'liq innovatsion loyihalar, startap tashabbuslari va grant imkoniyatlari.",
+        "intro_en": "Innovation projects, start-up initiatives, and grant opportunities linked to research and development.",
+        "body_uz": [],
+        "body_en": [],
+        "projects_uz": [
+            {
+                "label": "1) Innovatsion loyiha",
+                "title_label": "Nomi",
+                "title": "“Energiya tejovchi texnologiyalarda foydalaniladigan silidsid metall va yarimo‘tkazgich birikmalar asosidagi nanoo‘lchamli plyonkalarning optik va elektrofizik xossalarini tadqiq etish”",
+                "details": [
+                    {"label": "Sana", "value": "10-avgust 2024"},
+                    {"label": "Loyiha rahbari", "value": "Normuradov Muradulla, fizika-matematika fanlari doktori, professor"},
+                    {"label": "Fan yo‘nalishi", "value": "Matematika va fizika, mexanika fanlari"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha kremniy monokristallari yuzasida hosil bo‘ladigan o‘tish metallari, ularning silisidlari va nanoo‘lchamli yupqa plyonkalar xossalarini o‘rganishga qaratilgan. Asosiy urg‘u — qattiq jismli elektronika uchun noyob xossalarga ega materiallar yaratish, ion-plazma usulida olingan yupqa plyonkalar asosida yangi qurilmalar ishlab chiqish."},
+                    {"label": "Ijrochi tashkilot", "value": "Qarshi davlat universiteti"},
+                    {"label": "Loyiha qiymati", "value": "1 936 350 000 so‘m."},
+                ],
+            },
+            {
+                "label": "2) Amaliy loyiha",
+                "title_label": "Nomi",
+                "title": "“Qashqadaryo viloyati hududida tarqalgan iste’molbop, dorivor qo‘ziqorinlar va ularni sun’iy ozuqa muhitlarida yetishtirish texnologiyasini ishlab chiqish”",
+                "details": [
+                    {"label": "Sana", "value": "10-avgust 2024"},
+                    {"label": "Loyiha rahbari", "value": "dots. Sherqulova Jamila Payanovna"},
+                    {"label": "Fan yo‘nalishi", "value": "Biotexnologiya va mikologiya"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha iste’molbop va dorivor zamburug‘larni mahalliy sharoitda ilmiy asosda yetishtirish texnologiyasini ishlab chiqishga qaratilgan. Unda sifatli oziq-ovqat va tabiiy dori vositalariga ehtiyoj ortayotgani, Qashqadaryoda bu yo‘nalishda rejali mikologik tadqiqotlar yetarli emasligi, sof kultura kolleksiyasini yaratish va arzon substratlar asosida yuqori hosil olish zarurligi ta’kidlangan."},
+                    {"label": "Ijrochi tashkilot", "value": "Qarshi davlat universiteti"},
+                    {"label": "Loyiha qiymati", "value": "981 920 000 so‘m."},
+                ],
+            },
+            {
+                "label": "3) Startup loyiha",
+                "title_label": "Nomi",
+                "title": "“Clean Water”",
+                "details": [
+                    {"label": "Sana", "value": "10-avgust 2024"},
+                    {"label": "Loyiha rahbari", "value": "Shamsiddinova Shahrizoda Baxtiyor qizi"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha suv o‘tlari yordamida suvni biologik usulda tozalashga qaratilgan. Unda chiqindi suvlarni organo-minerallar, og‘ir metallar, sianidlar, neft mahsulotlari va patogen mikroorganizmlardan tozalash, shuningdek, qishloq xo‘jaligi, baliqchilik, parrandachilik va chorvachilik uchun foydali resurs olish ko‘zda tutilgan."},
+                    {"label": "Hamkor tashkilot", "value": "Qarshi davlat universiteti"},
+                    {"label": "Loyiha qiymati", "value": "177 410 000 so‘m."},
+                ],
+            },
+            {
+                "label": "4) Xalqaro loyiha",
+                "title_label": "Nomi",
+                "title": "“Access Microscholarship Program”",
+                "details": [
+                    {"label": "Sana", "value": "10-avgust 2024"},
+                    {"label": "Loyiha rahbari", "value": "Musayeva Dilso‘z Tuychiyevna, PhD"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha AQShning O‘zbekistondagi Elchixonasi moliyaviy ko‘magida, Amerika kengashlari rahbarligida amalga oshiriladi. Qarshi shahridagi umumiy o‘rta ta’lim maktablarida o‘qiyotgan, kam ta’minlangan va ijtimoiy himoyaga muhtoj oilalar farzandlarining ingliz tili malakasini oshirishga qaratilgan. Darslik va o‘quv jihozlari xarajatlari loyiha mablag‘lari hisobidan qoplanadi."},
+                    {"label": "Hamkor tashkilot", "value": "Qarshi davlat universiteti"},
+                    {"label": "Loyiha qiymati", "value": "64 000 AQSH dollari."},
+                ],
+            },
+        ],
+        "projects_en": [
+            {
+                "label": "1) Innovation project",
+                "title_label": "Title",
+                "title": "“Research on the optical and electrophysical properties of nanoscale films based on silicide metals and semiconductor compounds used in energy-saving technologies”",
+                "details": [
+                    {"label": "Date", "value": "August 10, 2024"},
+                    {"label": "Project leader", "value": "Normuradov Muradulla, Doctor of Physical and Mathematical Sciences, Professor"},
+                    {"label": "Scientific field", "value": "Mathematics, physics, and mechanics"},
+                    {"label": "Summary", "value": "The project is aimed at studying transition metals formed on the surface of silicon single crystals, their silicides, and nanoscale thin films. The main focus is on creating materials with unique properties for solid-state electronics and developing new devices based on thin films obtained through ion-plasma methods."},
+                    {"label": "Implementing institution", "value": "Karshi State University"},
+                    {"label": "Project value", "value": "1,936,350,000 UZS."},
+                ],
+            },
+            {
+                "label": "2) Applied project",
+                "title_label": "Title",
+                "title": "“Development of technology for cultivating edible and medicinal mushrooms widespread in Kashkadarya region in artificial nutrient media”",
+                "details": [
+                    {"label": "Date", "value": "August 10, 2024"},
+                    {"label": "Project leader", "value": "Assoc. Prof. Sherqulova Jamila Payanovna"},
+                    {"label": "Scientific field", "value": "Biotechnology and mycology"},
+                    {"label": "Summary", "value": "The project focuses on developing a scientifically grounded local technology for cultivating edible and medicinal fungi. It emphasizes the growing need for quality food and natural remedies, the limited planned mycological research in Kashkadarya, and the need to create a pure culture collection and achieve high yields using low-cost substrates."},
+                    {"label": "Implementing institution", "value": "Karshi State University"},
+                    {"label": "Project value", "value": "981,920,000 UZS."},
+                ],
+            },
+            {
+                "label": "3) Startup project",
+                "title_label": "Title",
+                "title": "“Clean Water”",
+                "details": [
+                    {"label": "Date", "value": "August 10, 2024"},
+                    {"label": "Project leader", "value": "Shamsiddinova Shahrizoda Baxtiyor qizi"},
+                    {"label": "Summary", "value": "The project is aimed at biologically purifying water with the help of algae. It is designed to clean wastewater from organo-minerals, heavy metals, cyanides, petroleum products, and pathogenic microorganisms, while also generating useful resources for agriculture, fisheries, poultry farming, and livestock production."},
+                    {"label": "Partner institution", "value": "Karshi State University"},
+                    {"label": "Project value", "value": "177,410,000 UZS."},
+                ],
+            },
+            {
+                "label": "4) International project",
+                "title_label": "Title",
+                "title": "“Access Microscholarship Program”",
+                "details": [
+                    {"label": "Date", "value": "August 10, 2024"},
+                    {"label": "Project leader", "value": "Musayeva Dilso‘z Tuychiyevna, PhD"},
+                    {"label": "Summary", "value": "The project is implemented under the leadership of American Councils with financial support from the U.S. Embassy in Uzbekistan. It is aimed at improving English language proficiency among schoolchildren in Karshi city from low-income and socially vulnerable families. The costs of textbooks and educational materials are covered through project funds."},
+                    {"label": "Partner institution", "value": "Karshi State University"},
+                    {"label": "Project value", "value": "64,000 USD."},
+                ],
+            },
+        ],
+    },
+}
+
+
 class ResearchView(BasePortalContextMixin, TemplateView):
     template_name = "portal/research.html"
     page_key = "research"
@@ -3602,6 +3756,7 @@ class ResearchView(BasePortalContextMixin, TemplateView):
         language_code = self.get_language_code()
         context["research_cards"] = [
             {
+                "slug": "sdg-publications",
                 "title": "SDG publications" if language_code == "en" else "SDG nashrlari",
                 "summary": (
                     "Published articles, reports, and academic outputs connected to the Sustainable Development Goals."
@@ -3610,6 +3765,7 @@ class ResearchView(BasePortalContextMixin, TemplateView):
                 ),
             },
             {
+                "slug": "research-centers",
                 "title": "Research centers" if language_code == "en" else "Tadqiqot markazlari",
                 "summary": (
                     "University research centers and laboratories supporting sustainability-focused inquiry and innovation."
@@ -3618,6 +3774,7 @@ class ResearchView(BasePortalContextMixin, TemplateView):
                 ),
             },
             {
+                "slug": "startups-and-grants",
                 "title": "Start-ups and grants" if language_code == "en" else "Startaplar va grantlar",
                 "summary": (
                     "Innovation projects, start-up initiatives, and grant opportunities linked to research and development."
@@ -3626,6 +3783,62 @@ class ResearchView(BasePortalContextMixin, TemplateView):
                 ),
             },
         ]
+        return context
+
+
+class ResearchCardDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/research_card_detail.html"
+    page_key = "research"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
+        slug = kwargs["slug"]
+        content = RESEARCH_CARD_CONTENT.get(slug)
+        if not content:
+            raise Http404("Research detail page not found")
+
+        suffix = "uz" if language_code == "uz" else "en"
+        context["research_detail"] = {
+            "slug": slug,
+            "eyebrow": content[f"eyebrow_{suffix}"],
+            "title": content[f"title_{suffix}"],
+            "intro": content[f"intro_{suffix}"],
+            "body": content[f"body_{suffix}"],
+            "raw_html": content.get(f"raw_html_{suffix}"),
+            "projects": content.get(f"projects_{suffix}", []),
+            "cards": [
+                {
+                    **item,
+                    "url": reverse("research-center-detail", kwargs={"center_slug": item["slug"]}),
+                }
+                for item in content.get(f"cards_{suffix}", [])
+            ],
+        }
+        return context
+
+
+class ResearchCenterDetailView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/research_card_detail.html"
+    page_key = "research"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        center_slug = kwargs["center_slug"]
+        center = RESEARCH_CENTER_DETAILS.get(center_slug)
+        if not center:
+            raise Http404("Research center page not found")
+
+        context["research_detail"] = {
+            "slug": center_slug,
+            "eyebrow": "Research & Education" if self.get_language_code() == "en" else "Tadqiqot va ta'lim",
+            "title": center["title"],
+            "intro": center["summary"],
+            "body": center["body"],
+            "raw_html": None,
+            "projects": [],
+            "cards": [],
+        }
         return context
 
 

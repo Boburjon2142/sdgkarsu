@@ -1,0 +1,53 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+  <section class="page-intro page-intro--clean">
+    <div class="container research-intro">
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ research_detail.eyebrow }}</div>
+        <h1>{{ research_detail.title }}</h1>
+        <p class="page-intro__lead rich-text-inline">{{ research_detail.intro }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {% if research_detail.projects %}
+        <div class="stack-list research-project-cards">
+          {% for project in research_detail.projects %}
+            <article class="content-card content-card--large content-card--static">
+              <div class="rich-text-content project-card-copy">
+                <p><strong>{{ project.label }}</strong></p>
+                <p><strong>{{ project.title_label }}:</strong> {{ project.title }}</p>
+                {% for detail in project.details %}
+                  <p><strong>{{ detail.label }}:</strong> {{ detail.value }}</p>
+                {% endfor %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% elif research_detail.cards %}
+        <div class="card-grid card-grid--three">
+          {% for item in research_detail.cards %}
+            <a class="content-card reveal" href="{{ item.url }}">
+              <span class="chip">Research &amp; Education</span>
+              <h3>{{ item.title }}</h3>
+              <p class="rich-text-inline">{{ item.summary }}</p>
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <article class="content-card content-card--large">
+          {% if research_detail.raw_html %}
+            <div class="rich-text-content">{{ research_detail.raw_html|safe }}</div>
+          {% else %}
+            {% for paragraph in research_detail.body %}
+              <p class="rich-text-inline">{{ paragraph }}</p>
+            {% endfor %}
+          {% endif %}
+        </article>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
