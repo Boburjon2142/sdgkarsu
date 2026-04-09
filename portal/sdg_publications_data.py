@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+from typing import Dict, List, Tuple
 from zipfile import ZipFile
 from xml.etree import ElementTree as ET
 
@@ -79,7 +80,7 @@ def _normalize_publication_kind(value: str) -> str:
     return " ".join(value.replace("\xa0", " ").split())
 
 
-def _read_docx_paragraphs(path: Path) -> list[str]:
+def _read_docx_paragraphs(path: Path) -> List[str]:
     with ZipFile(path) as archive:
         xml = archive.read("word/document.xml")
 
@@ -92,7 +93,7 @@ def _read_docx_paragraphs(path: Path) -> list[str]:
     return paragraphs
 
 
-def _extract_publication_meta(citation: str) -> tuple[str, str, str]:
+def _extract_publication_meta(citation: str) -> Tuple[str, str, str]:
     normalized = citation.replace("\xa0", " ").strip()
     year_match = re.search(r"(19|20)\d{2}(?!.*(19|20)\d{2})", normalized)
     year = year_match.group(0) if year_match else ""
@@ -112,7 +113,7 @@ def _extract_publication_meta(citation: str) -> tuple[str, str, str]:
     return authors, venue, year
 
 
-def _extract_titles(path: Path) -> list[dict]:
+def _extract_titles(path: Path) -> List[Dict[str, str]]:
     if not path.exists():
         return []
 
@@ -141,7 +142,7 @@ def _extract_titles(path: Path) -> list[dict]:
     return titles
 
 
-def get_sdg_publication_data() -> dict[int, dict]:
+def get_sdg_publication_data() -> Dict[int, Dict[str, object]]:
     result = {}
     for goal_number, meta in SDG_GOAL_META.items():
         titles = _extract_titles(SDG_PUBLICATION_FOLDER / f"SDG {goal_number}.docx")
