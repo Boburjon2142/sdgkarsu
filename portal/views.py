@@ -3009,7 +3009,54 @@ def build_search_sections(language_code, query):
         )
         score = score_search_entry(query, title, intro, slug, rich_text, section_text)
         if score:
-            governance_items.append({"title": title, "summary": intro, "url": f"/about/{slug}/"})
+            governance_items.append({"title": title, "summary": intro, "url": f"/about/{slug}/", "_score": score})
+
+    campus_items = []
+    campus_sections = [
+        {
+            "title_uz": "Joylashuv & Infratuzilma",
+            "title_en": "Location & Infrastructure",
+            "summary_uz": "Kampus hududi, bino va inshootlar, yashil maydonlar hamda infratuzilma quvvatlari bo'yicha asosiy ma'lumotlar.",
+            "summary_en": "Core information on the campus site, buildings, green areas, and infrastructure capacity.",
+        },
+        {
+            "title_uz": "Energiya & iqlim o'zgarishi",
+            "title_en": "Energy & Climate Change",
+            "summary_uz": "Energiya samaradorligi, elektr va issiqlik iste'moli, quyosh energiyasi va emissiyalarni kamaytirish choralarini qamrab oladi.",
+            "summary_en": "Covers energy efficiency, electricity and heat use, solar energy, and measures to reduce emissions.",
+        },
+        {
+            "title_uz": "Chiqindilar",
+            "title_en": "Waste",
+            "summary_uz": "Maishiy va operatsion chiqindilarni boshqarish, saralash, qayta ishlash va ekologik nazorat bo'yicha yo'nalish.",
+            "summary_en": "Focuses on operational and household waste management, sorting, recycling, and environmental control.",
+        },
+        {
+            "title_uz": "Suv",
+            "title_en": "Water",
+            "summary_uz": "Suv resurslarini tejash, tarmoqlarni monitoring qilish va samarali foydalanish bo'yicha tashabbuslar.",
+            "summary_en": "Highlights initiatives for water conservation, network monitoring, and efficient use.",
+        },
+        {
+            "title_uz": "Transport",
+            "title_en": "Transport",
+            "summary_uz": "Talaba va xodimlar qatnovi, kampus ichki harakati va barqaror transport yechimlari bo'yicha ma'lumotlar.",
+            "summary_en": "Presents information on student and staff mobility, internal campus movement, and sustainable transport solutions.",
+        },
+    ]
+    for item in campus_sections:
+        title = item["title_uz"] if use_uz else item["title_en"]
+        summary = item["summary_uz"] if use_uz else item["summary_en"]
+        score = score_search_entry(query, title, summary, "campus", "sustainability")
+        if score:
+            campus_items.append(
+                {
+                    "title": title,
+                    "summary": summary,
+                    "url": "/sustainability-strategy/",
+                    "_score": score,
+                }
+            )
 
     page_items = []
     page_map = {
@@ -3069,6 +3116,43 @@ def build_search_sections(language_code, query):
                 }
             )
 
+    report_cards = [
+        {
+            "title_uz": "Issiqxona gazlari emissiyalari hisoboti",
+            "title_en": "Greenhouse gas emissions report",
+            "summary_uz": "Universitet faoliyatidagi issiqxona gazlari, emissiya ko'rsatkichlari va ekologik monitoring bo'yicha ma'lumotlar.",
+            "summary_en": "Information on greenhouse gas emissions, climate indicators, and environmental monitoring across the university.",
+            "url": "/reports-insights/greenhouse-gases/",
+        },
+        {
+            "title_uz": "Moliyaviy hisobot",
+            "title_en": "Financial report",
+            "summary_uz": "Moliyaviy faoliyat, mablag'lar taqsimoti va institutsional xarajatlar bo'yicha asosiy hisobotlar.",
+            "summary_en": "Key reports on financial activity, fund allocation, and institutional expenditure.",
+            "url": "/reports-insights/financial-report/",
+        },
+        {
+            "title_uz": "Barqarorlik hisoboti",
+            "title_en": "Sustainability report",
+            "summary_uz": "Barqaror rivojlanish maqsadlari, tashabbuslar va universitetning umumiy barqarorlik natijalari bo'yicha hisobot.",
+            "summary_en": "A report covering sustainability goals, initiatives, and the university's overall sustainability performance.",
+            "url": "/reports-insights/sustainability-report/",
+        },
+    ]
+    for card in report_cards:
+        title = card["title_uz"] if use_uz else card["title_en"]
+        summary = card["summary_uz"] if use_uz else card["summary_en"]
+        score = score_search_entry(query, title, summary, "report", "insights")
+        if score:
+            report_items.append(
+                {
+                    "title": title,
+                    "summary": summary,
+                    "url": card["url"],
+                    "_score": score,
+                }
+            )
+
     news_items = []
     for item in localize_collection(NewsArticle.objects.all(), language_code):
         score = score_search_entry(
@@ -3110,6 +3194,7 @@ def build_search_sections(language_code, query):
         section("Rahbariyat va aloqalar", "Leadership and contacts", sort_and_trim(leadership_items)),
         section("Asosiy sahifalar", "Main pages", sort_and_trim(page_items)),
         section("Barqarorlik boshqaruvi", "Sustainability governance", sort_and_trim(governance_items)),
+        section("Kampus", "Campus", sort_and_trim(campus_items)),
         section("Dasturlar va BRMlar", "Programs and SDGs", sort_and_trim(program_items)),
         section("Tadqiqot", "Research", sort_and_trim(research_items)),
         section("Ta'lim va tashabbuslar", "Education and initiatives", sort_and_trim(education_items)),
