@@ -166,7 +166,7 @@ FINANCIAL_CONTACT_CONTENT = {
             "Elektron pochta: Rejamoliya@mail.ru",
             "Qabul kunlari: Dushanba-Juma, 09:00 dan 16:00 gacha",
         ],
-        "image_url": "/meedia/reja-moliya.jpg",
+        "image_url": "/static/images/staff/reja-moliya.jpg",
         "sections": [
             {
                 "title": "Mehnat faoliyati",
@@ -206,7 +206,7 @@ FINANCIAL_CONTACT_CONTENT = {
             "Email: Rejamoliya@mail.ru",
             "Reception days: Monday-Friday, from 09:00 to 16:00",
         ],
-        "image_url": "/meedia/reja-moliya.jpg",
+        "image_url": "/static/images/staff/reja-moliya.jpg",
         "sections": [
             {
                 "title": "Professional background",
@@ -250,7 +250,7 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
             "Elektron pochta: sh.l.karamova@qardu.uz",
             "Qabul kunlari: haftaning juft kunlari, 09:00 dan 17:00 gacha",
         ],
-        "image_url": "/meedia/karomova.jpg",
+        "image_url": "/static/images/staff/karomova.jpg",
         "sections": [
             {
                 "title": "Mehnat faoliyati",
@@ -294,7 +294,7 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
             "Email: sh.l.karamova@qardu.uz",
             "Reception days: even weekdays, from 09:00 to 17:00",
         ],
-        "image_url": "/meedia/karomova.jpg",
+        "image_url": "/static/images/staff/karomova.jpg",
         "sections": [
             {
                 "title": "Professional background",
