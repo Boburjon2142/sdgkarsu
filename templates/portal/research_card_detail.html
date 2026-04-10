@@ -12,7 +12,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section{% if research_detail.slug == 'sustainability-subjects' or research_detail.slug == 'sustainability-study-programs' %} research-detail-section--no-hover{% endif %}">
     <div class="container">
       {% if research_detail.projects %}
         <div class="stack-list research-project-cards">

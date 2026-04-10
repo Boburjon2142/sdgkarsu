@@ -238,3 +238,73 @@ RESEARCH_CENTER_CARDS = [
         "summary": RESEARCH_CENTER_DETAILS["fiziologik-tadqiqotlar-ilmiy-laboratoriyasi"]["summary"],
     },
 ]
+
+
+RESEARCH_CENTER_TRANSLATIONS_EN = {
+    "shevashunoslik-ilmiy-tadqiqot-labaratoriyasi": {
+        "title": "Dialectology Research Laboratory",
+        "summary": "A scientific laboratory specialized in comparative studies of Southern Uzbekistan and Turkic peoples' folklore and dialectology.",
+        "body": [
+            "This laboratory focuses on comparative research into the folklore and dialectology of Southern Uzbekistan and Turkic peoples.",
+            "It supports academic cooperation, field collection, publication activity, and the development of applied research projects in linguistics and folklore studies.",
+        ],
+    },
+    "mikrobiotexnologiya-ilmiy-tadqiqot-laboratoriyasi": {
+        "title": "Microbiotechnology Research Laboratory",
+        "summary": "A laboratory working in microbiology, mushroom cultivation, and agrobiotechnology.",
+        "body": [
+            "The laboratory conducts research in microbiology, agricultural biotechnology, and the cultivation of edible and medicinal mushrooms.",
+            "Its work includes diagnostics of harmful crop microorganisms, pure culture collection development, and applied biotechnological solutions for local conditions.",
+        ],
+    },
+    "mikro-va-nanoelektronika-ilmiy-tadqiqot-laboratoriyasi": {
+        "title": "Micro and Nanoelectronics Research Laboratory",
+        "summary": "A modern laboratory dedicated to nanoscale thin films and semiconductor-based devices.",
+        "body": [
+            "This laboratory studies nanoscale thin films, metal silicides, and semiconductor compounds for advanced electronic applications.",
+            "It supports research on optical and electrophysical properties, new material development, and semiconductor device innovation.",
+        ],
+    },
+    "muqobil-energiya-manbalaridan-foydalanish-ilmiy-tadqiqot-laboratoriyasi": {
+        "title": "Alternative Energy Sources Research Laboratory",
+        "summary": "A laboratory conducting applied research in renewable energy and solar technologies.",
+        "body": [
+            "The laboratory works on renewable energy systems, solar technologies, and energy-efficiency solutions.",
+            "It supports applied research, industry collaboration, and innovation linked to alternative energy use and sustainable engineering.",
+        ],
+    },
+    "tuproqshunoslik-ilmiy-tadqiqot-laboratoriyasi": {
+        "title": "Soil Science Research Laboratory",
+        "summary": "A scientific laboratory focused on agro-soil science, soil analysis, and agroecological monitoring.",
+        "body": [
+            "This laboratory specializes in agro-soil science, soil diagnostics, and agroecological monitoring.",
+            "It provides analytical support for soils, plants, fertilizers, and water, while strengthening cooperation with farms, clusters, and research institutions.",
+        ],
+    },
+    "biologik-faol-moddalar-kimyosi-va-fizik-kimyoviy-tadqiqotlar-laboratoriyasi": {
+        "title": "Laboratory of Chemistry of Biologically Active Substances and Physicochemical Research",
+        "summary": "A physicochemical research laboratory covering chemistry, pharmaceuticals, and green technologies.",
+        "body": [
+            "The laboratory carries out research on biologically active compounds, polymers, and physicochemical analysis relevant to medicine, agriculture, and industry.",
+            "Its priorities include green chemistry, new materials, and the development of biologically active substances with practical application potential.",
+        ],
+    },
+    "fiziologik-tadqiqotlar-ilmiy-laboratoriyasi": {
+        "title": "Physiological Research Laboratory",
+        "summary": "A physiological laboratory oriented toward population health, nutrition, and cardiorespiratory system research.",
+        "body": [
+            "This laboratory studies population nutrition, physiological indicators, and the functional state of the cardiorespiratory system.",
+            "It develops evidence-based recommendations related to health, biochemistry, and physiology in the regional context.",
+        ],
+    },
+}
+
+
+RESEARCH_CENTER_CARDS_EN = [
+    {
+        "slug": slug,
+        "title": RESEARCH_CENTER_TRANSLATIONS_EN[slug]["title"],
+        "summary": RESEARCH_CENTER_TRANSLATIONS_EN[slug]["summary"],
+    }
+    for slug in RESEARCH_CENTER_DETAILS
+]

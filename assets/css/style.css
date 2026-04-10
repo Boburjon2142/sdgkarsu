@@ -2121,6 +2121,38 @@ blockquote {
   color: var(--text-strong);
 }
 
+.research-detail-section--no-hover .content-card,
+.research-detail-section--no-hover .content-card:hover,
+.research-detail-section--no-hover .content-card:focus-within {
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: none !important;
+  animation: none !important;
+  border-color: var(--border) !important;
+}
+
+.research-detail-section--no-hover .governance-table,
+.research-detail-section--no-hover .governance-table th,
+.research-detail-section--no-hover .governance-table td,
+.research-detail-section--no-hover .governance-table tbody tr,
+.research-detail-section--no-hover .governance-table tbody tr:hover {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.research-detail-section--no-hover .content-card *,
+.research-detail-section--no-hover .content-card *:hover,
+.research-detail-section--no-hover .content-card *:focus-within,
+.research-detail-section--no-hover .content-card::before,
+.research-detail-section--no-hover .content-card::after,
+.research-detail-section--no-hover .governance-table *,
+.research-detail-section--no-hover .governance-table *:hover {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
 .governance-link-card--policy {
   background:
       radial-gradient(circle at top right, rgba(137, 206, 0, 0.2), transparent 44%),

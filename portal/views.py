@@ -30,8 +30,21 @@ from .models import (
     SiteSettings,
     StrategicPriority,
 )
-from .research_centers_data import RESEARCH_CENTER_CARDS, RESEARCH_CENTER_DETAILS
+from .research_centers_data import (
+    RESEARCH_CENTER_CARDS,
+    RESEARCH_CENTER_CARDS_EN,
+    RESEARCH_CENTER_DETAILS,
+    RESEARCH_CENTER_TRANSLATIONS_EN,
+)
 from .sdg_publications_data import get_sdg_publication_data
+from .sustainability_subjects_tables import (
+    SUSTAINABILITY_SUBJECTS_RAW_HTML_EN,
+    SUSTAINABILITY_SUBJECTS_RAW_HTML_UZ,
+)
+from .sustainability_study_programs_tables import (
+    SUSTAINABILITY_STUDY_PROGRAMS_RAW_HTML_EN,
+    SUSTAINABILITY_STUDY_PROGRAMS_RAW_HTML_UZ,
+)
 from .translation_utils import build_page_content_fallback, localize_collection, localize_object, translate_text
 
 
@@ -243,7 +256,7 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
         "title": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi",
         "intro": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi sahifasi. URL eski nom bilan ochiladi: xotin-qizlar-maslahat-kengashi.",
         "leader_title": "Rahbar",
-        "leader_name": "Gulruxbegim Ravshanova Qahramon qizi",
+        "leader_name": "Karamova Shoxida Luftillayevna",
         "leader_role": "Xotin-qizlar bilan ishlash va psixologik maslahat markazi boshlig'i, filologiya fanlari bo'yicha falsafa doktori, dotsent.",
         "leader_details": [
             "Telefon: +998 97 229-69-27",
@@ -287,7 +300,7 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
         "title": "Center for Work with Women and Psychological Counseling",
         "intro": "Center for Work with Women and Psychological Counseling page. The URL still opens under the former name: xotin-qizlar-maslahat-kengashi.",
         "leader_title": "Head",
-        "leader_name": "Gulruxbegim Ravshanova Qahramon qizi",
+        "leader_name": "Karamova Shoxida Luftillayevna",
         "leader_role": "Head of the Center for Work with Women and Psychological Counseling, Doctor of Philosophy in Philology, Associate Professor.",
         "leader_details": [
             "Phone: +998 97 229-69-27",
@@ -322,6 +335,194 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
                     "conducting surveys to identify cases of pressure and violence against women;",
                     "paying special attention to female students from troubled families;",
                     "studying the living conditions of female students living in rented housing and visiting their addresses.",
+                ],
+            },
+        ],
+    },
+}
+
+
+YOUTH_AFFAIRS_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Yoshlar bilan ishlash bo'limi",
+        "intro": "Yoshlar bilan ishlash bo'limi boshlig'i va bo'lim faoliyati bo'yicha batafsil ma'lumotlar.",
+        "leader_title": "Bo'lim boshlig'i",
+        "leader_name": "Norbek Pardaqulov Pardaqulovich",
+        "leader_role": "Yoshlar bilan ishlash bo'limi boshlig'i.",
+        "leader_details": [
+            "Telefon: +998 97 070-77-90",
+            "Elektron pochta: norbekpx90@umail.com",
+            "Qabul kunlari: har kuni soat 9:00 dan 18:00 gacha",
+        ],
+        "image_url": "/static/images/staff/yoshlar-bilan-ishlash.jpg",
+        "sections": [
+            {
+                "title": "Mehnat faoliyati",
+                "paragraphs": [
+                    "U mehnat faoliyatini 2012-yilda Qarshi shahridagi 35-umumiy o'rta ta'lim maktabida psixolog sifatida boshlagan. 2015-yildan 2023-yilgacha Qarshi davlat universitetida turli lavozimlarda, jumladan Talabalar shaharchasi direktori, Pedagogika kafedrasi o'qituvchisi va Pedagogika fakulteti tyutori sifatida ishlagan. 2023-yildan hozirgacha Qarshi davlat universiteti Yoshlar bilan ishlash bo'limi boshlig'i lavozimida faoliyat yuritmoqda.",
+                ],
+            },
+            {
+                "title": "Bo'lim tarixi",
+                "paragraphs": [
+                    "Mazkur bo'lim Qarshi davlat universiteti rektorining 2023-yil 16-noyabrdagi buyrug'i bilan tashkil etilgan. Sahifada buyruq raqami ko'rsatilmagan, joyi bo'sh qolgan va bu qism draft holatda qolgan.",
+                ],
+            },
+            {
+                "title": "Asosiy vazifalari",
+                "paragraphs": [
+                    "Bo'lim talaba-yoshlarga ta'lim olishda va bo'sh vaqtlarini mazmunli tashkil etishda ko'maklashadi, ularni insonparvarlik, adolat, mehnatsevarlik va Vatanga muhabbat ruhida tarbiyalashga qaratilgan ishlarni olib boradi.",
+                    "Shuningdek, tyutorlarning TTJda, ijarada va xususiy xonadonlarda yashovchi talabalar holatini o'rganishini tashkil etadi, yashash sharoitlari va muammolarini aniqlash hamda yaxshilash choralarini ko'radi.",
+                    "Bo'lim talabalar qonuniy manfaatlarini himoya qilish, ularga o'qish, ilm-fan, yashash va dam olish uchun zarur sharoitlar yaratishga amaliy yordam ko'rsatish bilan ham shug'ullanadi. Faoliyat amaldagi qonunchilik, ichki tartib-qoidalar, odob-axloq kodeksi va bo'lim nizomi asosida yuritiladi.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Youth Affairs Department",
+        "intro": "Detailed information about the head of the Youth Affairs Department and the department's work.",
+        "leader_title": "Head of the department",
+        "leader_name": "Norbek Pardaqulov Pardaqulovich",
+        "leader_role": "Head of the Youth Affairs Department.",
+        "leader_details": [
+            "Phone: +998 97 070-77-90",
+            "Email: norbekpx90@umail.com",
+            "Reception days: every day from 9:00 to 18:00",
+        ],
+        "image_url": "/static/images/staff/yoshlar-bilan-ishlash.jpg",
+        "sections": [
+            {
+                "title": "Professional background",
+                "paragraphs": [
+                    "He began his professional career in 2012 as a psychologist at School No. 35 in Qarshi city. From 2015 to 2023, he worked at Karshi State University in various roles, including Director of the Student Campus, Lecturer at the Department of Pedagogy, and Tutor of the Faculty of Pedagogy. Since 2023, he has been serving as Head of the Youth Affairs Department at Karshi State University.",
+                ],
+            },
+            {
+                "title": "Department history",
+                "paragraphs": [
+                    "This department was established by an order of the Rector of Karshi State University dated November 16, 2023. The order number is not indicated on the original source page and that part appears to have remained in draft form.",
+                ],
+            },
+            {
+                "title": "Main responsibilities",
+                "paragraphs": [
+                    "The department supports students in their studies and in organizing their free time meaningfully, while carrying out activities aimed at educating them in the spirit of humanism, justice, diligence, and love for the homeland.",
+                    "It also organizes the work of tutors who study the conditions of students living in dormitories, rental housing, and private homes, identify their living conditions and problems, and help improve them.",
+                    "The department is also responsible for protecting the legal interests of students and providing practical support in creating proper conditions for study, research, living, and recreation. Its work is carried out on the basis of current legislation, internal regulations, the code of ethics, and the department regulation.",
+                ],
+            },
+        ],
+    },
+}
+
+
+TRADE_UNION_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Qarshi davlat universiteti xodimlari va talabalari kasaba uyushma qo'mitasi",
+        "intro": "Qarshi davlat universiteti xodimlari va talabalari kasaba uyushma qo'mitasi bo'yicha batafsil ma'lumotlar.",
+        "leader_title": "Qo'mita raisi",
+        "leader_name": "Norov Abdisait Muradovich",
+        "leader_role": "Kasaba uyushma qo'mitasi raisi (2020-yil 23-iyuldan buyon).",
+        "leader_details": [
+            "Telefon: +998 90 721-31-13 (telegram ham shu nomerda)",
+            "Elektron pochta: qardukasaba@umail.uz",
+        ],
+        "image_url": "/static/images/staff/norov.jpg",
+        "sections": [
+            {
+                "title": "Kasaba uyushma qo'mitasi raisining ish rejimi",
+                "bullets": [
+                    "Ish haftasi - 6 kunlik (dushanba-shanba).",
+                    "Dushanba-Juma kunlari: 09:00 dan 18:00 gacha.",
+                    "Shanba kuni (qisqartirilgan ish kuni): 09:00 dan 13:00 gacha.",
+                    "Tushlik tanaffus: 13:00 dan 14:00 gacha (Dushanba-Juma kunlari).",
+                    "Yakshanba - dam olish kuni hisoblanadi.",
+                ],
+            },
+            {
+                "title": "Qabul kunlari va tartibi",
+                "bullets": [
+                    "Seshanba: 10:00 dan 13:00 gacha.",
+                    "Payshanba: 14:00 dan 17:00 gacha.",
+                    "Shanba kuni qabul o'tkazilmaydi, ushbu kun ichki tashkiliy ishlar uchun ajratiladi.",
+                    "Zarur hollarda fuqarolar va xodimlar navbatdan tashqari qabul qilinishi mumkin.",
+                ],
+            },
+            {
+                "title": "Vazifalari",
+                "bullets": [
+                    "Xodimlar mehnat huquqlarini himoya qiladi.",
+                    "Ish beruvchi bilan kelishmovchiliklarda xodimlar tomonini qo'llab-quvvatlaydi.",
+                    "Adolatsiz ishdan bo'shatish yoki jazolarga qarshi yordam beradi.",
+                    "Ish joyidagi xavfsizlik va qulaylikni nazorat qiladi.",
+                    "Ish vaqti, dam olish va ta'til masalalarini ko'rib chiqadi.",
+                    "Moddiy yordam, nafaqa yoki imtiyozlar ajratishda ko'maklashadi.",
+                    "Sog'lomlashtirish, sanatoriy va dam olish yo'llanmalarini tashkil qiladi.",
+                    "Bayramlar, sport musobaqalari va turli tadbirlar tashkil etadi.",
+                    "Ish beruvchi bilan jamoaviy shartnomalar tuzishda qatnashadi va xodimlar manfaatini himoya qiladi.",
+                    "Talabalar manfaatlarini himoya qiladi hamda ijtimoiy yordam, stipendiya va yashash sharoitlari bo'yicha yordam beradi.",
+                    "Barcha xodim va talabalar uchun teng imkoniyatlar yaratilishini qo'llab-quvvatlaydi.",
+                    "Jins, millat, til, din yoki ijtimoiy holatga qarab kamsitishlarning oldini oladi.",
+                    "Nogironligi bo'lgan shaxslar uchun qulay muhit yaratishga ko'maklashadi.",
+                    "Inklyuziv ta'lim va ish muhitini rivojlantirishga hissa qo'shadi.",
+                    "Turli guruhlar o'rtasida o'zaro hurmat va bag'rikenglik muhitini mustahkamlaydi.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Trade Union Committee of Employees and Students of Karshi State University",
+        "intro": "Detailed information about the trade union committee of employees and students of Karshi State University.",
+        "leader_title": "Chairperson of the committee",
+        "leader_name": "Norov Abdisait Muradovich",
+        "leader_role": "Chairperson of the trade union committee (since July 23, 2020).",
+        "leader_details": [
+            "Phone: +998 90 721-31-13 (also available on Telegram)",
+            "Email: qardukasaba@umail.uz",
+        ],
+        "image_url": "/static/images/staff/norov.jpg",
+        "sections": [
+            {
+                "title": "Working schedule of the trade union committee chairperson",
+                "bullets": [
+                    "Workweek - 6 days (Monday-Saturday).",
+                    "Monday-Friday: from 09:00 to 18:00.",
+                    "Saturday (shortened working day): from 09:00 to 13:00.",
+                    "Lunch break: 13:00-14:00 (Monday-Friday).",
+                    "Sunday is a day off.",
+                ],
+            },
+            {
+                "title": "Reception days and procedures",
+                "bullets": [
+                    "Tuesday: 10:00-13:00.",
+                    "Thursday: 14:00-17:00.",
+                    "No reception is held on Saturdays; this day is allocated for internal organizational work.",
+                    "In necessary cases, citizens and staff may be received outside scheduled hours.",
+                ],
+            },
+            {
+                "title": "Functions of the trade union committee",
+                "bullets": [
+                    "Protects employees' labor rights.",
+                    "Supports employees in disputes with the employer.",
+                    "Provides assistance against unfair dismissal or disciplinary actions.",
+                    "Monitors workplace safety and comfort.",
+                    "Reviews issues related to working hours, rest, and leave.",
+                    "Assists in providing financial aid, benefits, and allowances.",
+                    "Organizes health improvement activities, including sanatoriums and holiday trips.",
+                    "Organizes celebrations, sports competitions, and various events.",
+                    "Participates in concluding collective agreements with the employer while protecting employees' interests.",
+                    "Protects students' interests and provides support on social assistance, scholarships, and living conditions.",
+                    "Promotes equal opportunities for all employees and students.",
+                    "Prevents discrimination based on gender, nationality, language, religion, or social status.",
+                    "Supports the creation of an accessible environment for persons with disabilities.",
+                    "Contributes to the development of inclusive education and workplace environments.",
+                    "Fosters mutual respect and tolerance among different groups.",
                 ],
             },
         ],
@@ -3489,9 +3690,10 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
         if slug == "ethics-code":
             if language_code == "uz":
                 context["ethics_pdf_panel"] = {
-                    "title": "Batafsil",
-                    "description": "PDF hujjat asosidagi asosiy qoidalar, prinsiplar va amaliy talablarni ko'rish uchun ushbu bo'limdan foydalaning.",
-                    "button_label": "Batafsil ma'lumot",
+                    "title": "Mas'ul mutaxassis",
+                    "description": "Yoshlar bilan ishlash bo'limi bo'yicha mas'ul mutaxassis ma'lumotlari va aloqa tafsilotlarini ushbu bo'lim orqali ko'rishingiz mumkin.",
+                    "button_label": "Mutaxassis bilan bog'lanish",
+                    "button_url": "/about/ethics-code/contact/",
                     "download_label": "PDF hujjatni yuklab olish",
                     "section_title": "PDF hujjat asosidagi batafsil ma'lumotlar",
                     "section_intro": "Quyida odob-axloq kodeksining PDF hujjatidan olingan asosiy bo'limlar qisqacha bayon qilingan.",
@@ -3568,9 +3770,10 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                 }
             else:
                 context["ethics_pdf_panel"] = {
-                    "title": "Details",
-                    "description": "Use this section to view the main rules, principles, and practical requirements summarized from the PDF document.",
-                    "button_label": "View details",
+                    "title": "Responsible specialist",
+                    "description": "Use this section to view the contact details and profile of the specialist responsible for youth affairs.",
+                    "button_label": "Contact specialist",
+                    "button_url": "/about/ethics-code/contact/",
                     "download_label": "Download PDF document",
                     "section_title": "Detailed information based on the PDF document",
                     "section_intro": "Below is a concise summary of the main sections extracted from the code of ethics PDF.",
@@ -3681,6 +3884,8 @@ class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
             "sdg-investment": FINANCIAL_CONTACT_CONTENT,
             "sdg-purchase": FINANCIAL_CONTACT_CONTENT,
             "xotin-qizlar": WOMEN_SUPPORT_CONTACT_CONTENT,
+            "ethics-code": YOUTH_AFFAIRS_CONTACT_CONTENT,
+            "jamoatchilik": TRADE_UNION_CONTACT_CONTENT,
         }
         if slug not in governance_contact_content:
             raise Http404("Governance contact page not found")
@@ -3875,7 +4080,7 @@ RESEARCH_CARD_CONTENT = {
             "These centers support academic capacity, strengthen interdisciplinary cooperation, and advance both applied and theoretical research activity.",
         ],
         "cards_uz": RESEARCH_CENTER_CARDS,
-        "cards_en": RESEARCH_CENTER_CARDS,
+        "cards_en": RESEARCH_CENTER_CARDS_EN,
     },
     "sustainability-subjects": {
         "eyebrow_uz": "Tadqiqot va ta'lim",
@@ -3892,38 +4097,8 @@ RESEARCH_CARD_CONTENT = {
             "Karshi State University offers a total of 169 courses that incorporate sustainability, environmental protection, renewable energy, biotechnology, and social responsibility topics.",
             "These courses embed sustainability concepts across engineering and technology, chemistry and biology, geography and earth sciences, physics, economics, medicine, and pedagogy.",
         ],
-        "raw_html_uz": """
-            <div class="governance-richtext">
-              <p><strong>BARQARORLIK OID FANLAR</strong></p>
-              <p>Qarshi davlat universiteti barqarorlik tamoyillarini akademik fanlariga faol integratsiya qiladi. Universitetda <strong>169 ta fan</strong> barqarorlik, atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, biotexnologiya va ijtimoiy mas'uliyat bilan bog'liq mavzularni qamrab oladi.</p>
-              <p>Ushbu fanlar muhandislik va texnologiya, kimyo va biologiya, geografiya va Yer fanlari, fizika, iqtisodiyot, tibbiyot va pedagogika yo'nalishlari bo'yicha o'qitiladi.</p>
-              <ul class="governance-bullet-list">
-                <li>Muhandislik va texnologiya: muqobil energiya, energiya samarador texnologiyalar, bioinjiniring, ekobiotexnologiya, issiqlik texnikasi va gidroenergetika</li>
-                <li>Kimyo va biologiya: kimyoviy ekologiya, atrof-muhitni muhofaza qilish, agrobiokimyo va yashil kimyo tamoyillari</li>
-                <li>Geografiya va Yer fanlari: amaliy ekologiya, geoekologiya, landshaft ekologiyasi, gidroekologiya va ekologiyada geoinformatsion texnologiyalar</li>
-                <li>Iqtisodiyot va boshqaruv: yashil iqtisodiyot, energiya menejmenti va issiqxona xo'jaligini boshqarish</li>
-                <li>Tibbiyot va sog'liqni saqlash: ekologik fiziologiya, salomatlikni saqlash asoslari va hayot faoliyati xavfsizligi</li>
-                <li>Pedagogika: ekologik fanlarni o'qitish metodikasi va barqarorlik ongini shakllantiruvchi yo'nalishlar</li>
-              </ul>
-              <p>Ushbu fanlar orqali universitet SDG 4, SDG 7, SDG 13 va SDG 15 kabi maqsadlarga mos keluvchi bilim va ko'nikmalarni shakllantiradi.</p>
-            </div>
-        """,
-        "raw_html_en": """
-            <div class="governance-richtext">
-              <p><strong>SUBJECTS RELATED TO SUSTAINABILITY</strong></p>
-              <p>Karshi State University actively integrates sustainability into its academic subjects. The university offers <strong>169 courses</strong> covering sustainability, environmental protection, renewable energy, biotechnology, and social responsibility.</p>
-              <p>These courses are delivered across engineering and technology, chemistry and biology, geography and earth sciences, physics, economics, medicine, and pedagogy.</p>
-              <ul class="governance-bullet-list">
-                <li>Engineering and technology: alternative energy, energy-efficient technologies, bioengineering, ecobiotechnology, heat engineering, and hydropower</li>
-                <li>Chemistry and biology: chemical ecology, environmental protection, agrochemical biochemistry, and green chemistry principles</li>
-                <li>Geography and earth sciences: applied ecology, geoecology, landscape ecology, hydroecology, and geoinformation technologies in ecology</li>
-                <li>Economics and management: green economy, energy management, and greenhouse economy management</li>
-                <li>Medicine and health sciences: ecological physiology, health preservation, and life safety</li>
-                <li>Pedagogy: methods of teaching ecological sciences and sustainability awareness building</li>
-              </ul>
-              <p>Through these courses, the university aligns its academic offer with SDG 4, SDG 7, SDG 13, and SDG 15.</p>
-            </div>
-        """,
+        "raw_html_uz": SUSTAINABILITY_SUBJECTS_RAW_HTML_UZ,
+        "raw_html_en": SUSTAINABILITY_SUBJECTS_RAW_HTML_EN,
     },
     "sustainability-study-programs": {
         "eyebrow_uz": "Tadqiqot va ta'lim",
@@ -3940,40 +4115,8 @@ RESEARCH_CARD_CONTENT = {
             "A total of seven faculties at the university offer study programs directly related to sustainability.",
             "These programs cover environmental protection, renewable energy, sustainable agriculture, education, and social well-being.",
         ],
-        "raw_html_uz": """
-            <div class="governance-richtext">
-              <p><strong>BARQARORLIKKA OID TA'LIM DASTURLARI</strong></p>
-              <p>Qarshi davlat universiteti ta'lim dasturlariga barqaror rivojlanish tamoyillarini faol ravishda integratsiya qiladi. Universitetdagi <strong>7 ta fakultet</strong> barqarorlik bilan bevosita bog'liq ta'lim dasturlarini taklif etadi.</p>
-              <p>Ushbu dasturlar atrof-muhitni muhofaza qilish, qayta tiklanuvchi energiya, barqaror qishloq xo'jaligi, ta'lim va ijtimoiy farovonlik yo'nalishlarini qamrab oladi hamda SDG 4, SDG 7, SDG 13 va SDG 15 maqsadlariga xizmat qiladi.</p>
-              <ul class="governance-bullet-list">
-                <li>Pedagogika fakulteti: Boshlang'ich ta'lim, Maktabgacha ta'lim, Maxsus pedagogika, Psixologiya</li>
-                <li>Matematika va kompyuter ilmlari fakulteti: Dasturiy injiniring, Axborot tizimlari, Sun'iy intellekt, Matematik modellashtirish</li>
-                <li>Iqtisodiyot fakulteti: Iqtisodiyot, Moliya va moliyaviy texnologiyalar, Bank ishi, Marketing, Turizm va mehmondo'stlik</li>
-                <li>Fizika fakulteti: Fizika, Elektronika va asbobsozlik, Energetika, Yengil sanoat muhandisligi, Qayta tiklanuvchi energiya manbalari</li>
-                <li>Kimyo va biologiya fakulteti: Kimyo, Biologiya, Mikrobiologiya, Biotexnologiya</li>
-                <li>Tibbiyot fakulteti: Davolash ishi, Pediatriya</li>
-                <li>Geografiya va agronomiya fakulteti: O'simliklarni himoya qilish, Geografiya, Agrokimyo va tuproqshunoslik, Ekologiya va atrof-muhitni muhofaza qilish</li>
-              </ul>
-              <p>Mazkur ko'p tarmoqli dasturlar orqali universitet bitiruvchilarning turli kasbiy sohalarda barqaror rivojlanishga hissa qo'shishini ta'minlaydi.</p>
-            </div>
-        """,
-        "raw_html_en": """
-            <div class="governance-richtext">
-              <p><strong>STUDY PROGRAMS RELATED TO SUSTAINABILITY</strong></p>
-              <p>Karshi State University actively integrates sustainability principles into its study programs. A total of <strong>seven faculties</strong> offer academic programs directly connected to sustainability.</p>
-              <p>These programs cover environmental protection, renewable energy, sustainable agriculture, education, and social well-being, while contributing to SDG 4, SDG 7, SDG 13, and SDG 15.</p>
-              <ul class="governance-bullet-list">
-                <li>Faculty of Pedagogy: Primary Education, Preschool Education, Special Pedagogy, Psychology</li>
-                <li>Faculty of Mathematics and Computer Sciences: Software Engineering, Information Systems, Artificial Intelligence, Mathematical Modeling</li>
-                <li>Faculty of Economics: Economics, Finance and Financial Technologies, Banking, Marketing, Tourism and Hospitality</li>
-                <li>Faculty of Physics: Physics, Electronics and Instrumentation, Power Engineering, Light Industry Engineering, Renewable Energy Sources</li>
-                <li>Faculty of Chemistry and Biology: Chemistry, Biology, Microbiology, Biotechnology</li>
-                <li>Faculty of Medicine: General Medicine, Pediatrics</li>
-                <li>Faculty of Geography and Agronomy: Plant Protection and Quarantine, Geography, Agrochemistry and Soil Science, Ecology and Environmental Protection</li>
-              </ul>
-              <p>Through these multidisciplinary programs, the university prepares graduates to contribute to sustainable development across diverse professional sectors.</p>
-            </div>
-        """,
+        "raw_html_uz": SUSTAINABILITY_STUDY_PROGRAMS_RAW_HTML_UZ,
+        "raw_html_en": SUSTAINABILITY_STUDY_PROGRAMS_RAW_HTML_EN,
     },
     "startups-and-grants": {
         "eyebrow_uz": "Tadqiqot va ta'lim",
@@ -4219,17 +4362,23 @@ class ResearchCenterDetailView(BasePortalContextMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        language_code = self.get_language_code()
         center_slug = kwargs["center_slug"]
         center = RESEARCH_CENTER_DETAILS.get(center_slug)
         if not center:
             raise Http404("Research center page not found")
 
+        if language_code == "en":
+            center_content = RESEARCH_CENTER_TRANSLATIONS_EN.get(center_slug, {})
+        else:
+            center_content = center
+
         context["research_detail"] = {
             "slug": center_slug,
-            "eyebrow": "Research & Education" if self.get_language_code() == "en" else "Tadqiqot va ta'lim",
-            "title": center["title"],
-            "intro": center["summary"],
-            "body": center["body"],
+            "eyebrow": "Research & Education" if language_code == "en" else "Tadqiqot va ta'lim",
+            "title": center_content.get("title", center["title"]),
+            "intro": center_content.get("summary", center["summary"]),
+            "body": center_content.get("body", center["body"]),
             "raw_html": None,
             "projects": [],
             "cards": [],
@@ -4469,62 +4618,66 @@ REPORT_INSIGHT_CARD_CONTENT = {
         "sections_uz": [
             {
                 "title": "Umumiy hisobot",
-                "bullets": [
-                    "Jami daromadlar: 220 142 803 400 so'm",
-                    "Jami xarajatlar: 280 886 637 423 so'm",
-                    "Defitsit mablag': 60 743 834 023 so'm",
-                    "Ortiqcha mablag': 0",
-                    "Qarz mablag': 0",
+                "table_headers": ["№", "Umumiy hisobot", "So'm"],
+                "table_rows": [
+                    ["1", "Jami daromadlar qiymati", "267 923 179 787"],
+                    ["2", "Jami xarajatlar qiymati", "228 895 792 507"],
+                    ["3", "Ortiqcha mablag'", "39 027 387 280"],
+                    ["4", "Qarz mablag'", "0"],
                 ],
             },
             {
-                "title": "Daromad manbalari",
-                "bullets": [
-                    "Davlat tomonidan moliyalashtirish: 66 579 927 300 so'm",
-                    "O'qish to'lovlari-kontrakt: 134 716 228 100 so'm",
-                    "Grantlar va ilmiy tadqiqotlarni moliyalashtirish: 6 848 615 800 so'm",
-                    "Boshqa daromadlar: 11 998 032 200 so'm",
+                "title": "Daromad hisoboti",
+                "table_headers": ["№", "Daromad hisoboti", "So'm"],
+                "table_rows": [
+                    ["1", "Davlat tomonidan moliyalashtirish", "66 579 927 300"],
+                    ["2", "O'qish to'lovlari-kontrakt", "182 496 604 487"],
+                    ["3", "Grantlar va ilmiy tadqiqotlarni moliyalashtirish", "6 848 615 800"],
+                    ["4", "Boshqa daromadlar", "11 998 032 200"],
                 ],
             },
             {
-                "title": "Xarajatlar tarkibi",
-                "bullets": [
-                    "Maosh va ish haqi: 174 206 001 178 so'm",
-                    "Infratuzilma va texnik xizmat ko'rsatish: 44 739 359 771 so'm",
-                    "Kommunal xizmatlar: 1 972 623 932 so'm",
-                    "Ta'lim resurslari: 19 716 656 428 so'm",
-                    "Boshqa xarajatlar: 40 251 996 114 so'm",
+                "title": "Xarajatlar",
+                "table_headers": ["№", "Xarajatlar", "So'm"],
+                "table_rows": [
+                    ["1", "Maosh va ish haqi", "124 947 192 257"],
+                    ["2", "Infratuzilma va texnik xizmat ko'rsatish", "44 739 359 771"],
+                    ["3", "Kommunal xizmatlar", "1 972 623 932"],
+                    ["4", "Ta'lim resurslari", "19 716 656 428"],
+                    ["5", "Boshqa xarajatlar", "37 519 960 119"],
                 ],
             },
         ],
         "sections_en": [
             {
-                "title": "Summary report",
-                "bullets": [
-                    "Total revenue: 220,142,803,400 UZS",
-                    "Total expenditure: 280,886,637,423 UZS",
-                    "Deficit: 60,743,834,023 UZS",
-                    "Surplus: 0",
-                    "Debt: 0",
+                "title": "Summary Financial Report",
+                "table_headers": ["№", "Summary Financial Report", "Amount (UZS)"],
+                "table_rows": [
+                    ["1", "Total Revenue", "267 923 179 787"],
+                    ["2", "Total Expenditure", "228 895 792 507"],
+                    ["3", "Surplus", "39 027 387 280"],
+                    ["4", "Debt", "0"],
                 ],
             },
             {
                 "title": "Revenue breakdown",
-                "bullets": [
-                    "Government funding: 66,579,927,300 UZS",
-                    "Tuition fees (contract-based): 134,716,228,100 UZS",
-                    "Grants and research financing: 6,848,615,800 UZS",
-                    "Other income: 11,998,032,200 UZS",
+                "table_headers": ["№", "Revenue Breakdown", "Amount (UZS)"],
+                "table_rows": [
+                    ["1", "Government Funding", "66 579 927 300"],
+                    ["2", "Tuition Fees (Contract-based)", "182 496 604 487"],
+                    ["3", "Grants and Research Funding", "6 848 615 800"],
+                    ["4", "Other Income", "11 998 032 200"],
                 ],
             },
             {
-                "title": "Expenditure structure",
-                "bullets": [
-                    "Salary and wages: 174,206,001,178 UZS",
-                    "Infrastructure and maintenance: 44,739,359,771 UZS",
-                    "Utilities: 1,972,623,932 UZS",
-                    "Educational resources: 19,716,656,428 UZS",
-                    "Other expenses: 40,251,996,114 UZS",
+                "title": "Expenditure Breakdown",
+                "table_headers": ["№", "Expenditure Breakdown", "Amount (UZS)"],
+                "table_rows": [
+                    ["1", "Salaries and Wages", "124 947 192 257"],
+                    ["2", "Infrastructure and Maintenance", "44 739 359 771"],
+                    ["3", "Utilities", "1 972 623 932"],
+                    ["4", "Educational Resources", "19 716 656 428"],
+                    ["5", "Other Expenses", "37 519 960 119"],
                 ],
             },
         ],

@@ -43,6 +43,28 @@
           {% for paragraph in section.paragraphs %}
             <p>{{ paragraph }}</p>
           {% endfor %}
+          {% if section.table_headers and section.table_rows %}
+            <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr>
+                    {% for header in section.table_headers %}
+                      <th>{{ header }}</th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in section.table_rows %}
+                    <tr>
+                      {% for cell in row %}
+                        <td>{{ cell }}</td>
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endif %}
           {% if section.bullets %}
             <ul class="governance-bullet-list">
               {% for bullet in section.bullets %}

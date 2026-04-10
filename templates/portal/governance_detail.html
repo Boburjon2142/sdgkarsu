@@ -21,7 +21,7 @@
             <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
               <strong>{{ ethics_pdf_panel.title }}</strong>
               <p>{{ ethics_pdf_panel.description }}</p>
-              <a class="button button--primary" href="{% static 'documents/code-of-ethics-karshi-state-university.pdf' %}" target="_blank" rel="noopener">
+              <a class="button button--primary" href="{{ ethics_pdf_panel.button_url }}">
                 {{ ethics_pdf_panel.button_label }}
               </a>
               <a class="button button--secondary" href="{% static 'documents/code-of-ethics-karshi-state-university.pdf' %}" download="code-of-ethics-karshi-state-university.pdf" target="_blank" rel="noopener">
@@ -32,23 +32,37 @@
             <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
               <strong>
                 {% if current_language == "uz" %}
-                  Jamoa shartnomasi 2026-2028
+                  Mas'ul mutaxassis
                 {% else %}
-                  Collective Agreement 2026-2028
+                  Responsible specialist
                 {% endif %}
               </strong>
               <p>
                 {% if current_language == "uz" %}
-                  Yangilangan jamoa shartnomasi PDF formatda yuklab olish uchun tayyor.
+                  Qo'mita raisi
                 {% else %}
-                  The updated collective agreement is available for download in PDF format.
+                  Chairperson of the committee
                 {% endif %}
               </p>
+              <p>
+                {% if current_language == "uz" %}
+                  Norov Abdisait Muradovich
+                {% else %}
+                  Norov Abdisait Muradovich
+                {% endif %}
+              </p>
+              <a class="button button--primary" href="{% url 'governance-finance-contact' slug='jamoatchilik' %}">
+                {% if current_language == "uz" %}
+                  Mutaxassis bilan bog'lanish
+                {% else %}
+                  Contact specialist
+                {% endif %}
+              </a>
               <a class="button button--primary" href="{% static 'documents/collective-agreement-2026-2028.pdf' %}" download="Collective Agreement 2026-2028.pdf" target="_blank" rel="noopener">
                 {% if current_language == "uz" %}
-                  Yuklab olish
+                  PDF hujjatni yuklab olish
                 {% else %}
-                  Download
+                  Download PDF document
                 {% endif %}
               </a>
             </article>
