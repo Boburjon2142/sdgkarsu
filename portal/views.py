@@ -3578,7 +3578,7 @@ class AntiCorruptionContactView(BasePortalContextMixin, TemplateView):
             "image_url": "/static/images/staff/korrupsiya.jpg",
             "back_url": "/about/anti-corruption/",
             "back_label": "Korrupsiyaga qarshi siyosat sahifasiga qaytish" if language_code == "uz" else "Back to anti-corruption policy",
-            "cache_key": "anti-corruption-contact",
+            "cache_key": "anti-corruption-contact-v2",
         }
         context["department_contact_page"] = content
         return context
@@ -3605,7 +3605,7 @@ class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
             **content,
             "back_url": f"/about/{slug}/",
             "back_label": "Boshqaruv sahifasiga qaytish" if language_code == "uz" else "Back to governance",
-            "cache_key": f"{slug}-contact",
+            "cache_key": f"{slug}-contact-v2",
         }
         context["department_contact_page"] = content
         return context
