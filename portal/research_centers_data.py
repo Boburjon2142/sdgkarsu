@@ -198,6 +198,20 @@ RESEARCH_CENTER_DETAILS = {
             "13. Spirograf, 2022",
         ],
     },
+    "geografiya-tadqiqot-va-talim-markazi": {
+        "title": "Geografiya tadqiqot va ta’lim markazi",
+        "summary": "Geografiya bo‘yicha nazariy bilimlarni amaliy qo‘llanmalar bilan bog‘lashga qaratilgan platforma.",
+        "body": [
+            "Geografiya tadqiqot va ta’lim markazi 2024-yil 5-sentyabrda tashkil etilgan bo‘lib, u geografiya bo‘yicha nazariy bilimlarni real hayotdagi amaliy qo‘llanmalar bilan bog‘lashga qaratilgan ixtisoslashtirilgan akademik va amaliy platforma hisoblanadi. Markaz geografiya hamda unga yaqin fanlar bo‘yicha ta’lim, ilmiy tadqiqotlar va dala sharoitidagi amaliy mashg‘ulotlarni qo‘llab-quvvatlovchi integratsiyalashgan o‘quv muhiti sifatida xizmat qiladi.",
+            "Markazning asosiy missiyasi talabalarining fazoviy tafakkuri, tahliliy qobiliyatlari va tadqiqotchilik ko‘nikmalarini tajribaga asoslangan o‘qitish hamda amaliy faoliyat orqali rivojlantirishdan iborat. U tabiiy va ijtimoiy-iqtisodiy geografik jarayonlarni real atrof-muhit sharoitlarida o‘rganishga, zamonaviy pedagogik yondashuvlar hamda STEAM (Science, Technology, Engineering, Arts, Mathematics) kompetensiyaviy ta’lim modelini qo‘llashga xizmat qiladi.",
+            "Markaz keng ko‘lamli akademik va amaliy faoliyatlarni amalga oshirish uchun zarur sharoitlarni yaratadi. Bular qatoriga azimutni o‘lchash, masofani aniqlash, GPS orqali koordinatalarni belgilash hamda kichik masshtabli topografik xaritalar tuzish kabi topografik tadqiqotlar kiradi. Shuningdek, u relyef shakllarini kuzatish va tahlil qilish, eroziya jarayonlarini o‘rganish hamda landshaft dinamikasini dala tajribalari va modellashtirish usullari orqali o‘rganishni qo‘llab-quvvatlaydi.",
+            "Meteorologik kuzatuvlar termometr, barometr, yomg‘ir o‘lchagich (dojdomer) va shamol yo‘nalishini aniqlovchi asboblar yordamida olib boriladi. Bu esa talabalarga atmosfera sharoitlari va iqlim o‘zgarishlarini tahlil qilish imkonini beradi. Bundan tashqari, o‘quvchilar tabiiy landshaft komponentlarini o‘rganib, ekotizimlar o‘zaro bog‘liqligi va atrof-muhit o‘zgarishlarini chuqurroq anglaydilar.",
+            "Markaz ilmiy-tadqiqot va innovatsion faoliyatlarda ham muhim o‘rin tutadi. Talabalar va xodimlar mikroiqlim, tuproq xususiyatlari, suv resurslari hamda ekologik holat bo‘yicha mini-tadqiqotlar olib boradilar. Geografik axborot tizimlari (GIS) fazoviy ma’lumotlarni tahlil qilish, xaritalash hamda hududiy ekologik va ijtimoiy-iqtisodiy jarayonlarni baholashda faol qo‘llaniladi. Shuningdek, markaz ekologik monitoringni qo‘llab-quvvatlab, mahalliy geografik muammolarga yo‘naltirilgan loyiha yechimlarini ishlab chiqishga yordam beradi.",
+            "Fanlararo hamkorlik markaz faoliyatining muhim jihatlaridan biri bo‘lib, geografiya biologiya, tarix va ekologiya fanlari bilan integratsiya qilinadi. Bu hududiy rivojlanish, barqarorlik hamda inson va atrof-muhit o‘rtasidagi o‘zaro aloqalarni yaxlit tushunishga xizmat qiladi. Shuningdek, markaz talaba va xodimlarda ekologik madaniyat, ekologik mas’uliyat va barqaror fikrlashni rivojlantirishga hissa qo‘shadi.",
+            "Geografiya tadqiqot va ta’lim markazi an’anaviy va zamonaviy o‘quv vositalari bilan jihozlangan bo‘lib, ular globuslar, mavzuli va fizik xaritalar, kompaslar, relyef maketlari, GIS texnologiyalari hamda raqamli ta’lim resurslarini o‘z ichiga oladi. Bunday an’anaviy va zamonaviy vositalar uyg‘unligi ta’lim, o‘qitish va tadqiqot jarayonlarining sifatini oshiradi.",
+            "Umuman olganda, markaz sifatli ta’limni rivojlantirish, ilmiy-tadqiqot salohiyatini mustahkamlash va barqaror rivojlanishga yo‘naltirilgan ta’limni qo‘llab-quvvatlashda muhim rol o‘ynaydi. U Birlashgan Millatlar Tashkilotining Barqaror Rivojlanish Maqsadlari (SDGs), xususan sifatli ta’lim, iqlim harakati va barqaror jamiyatlarni rivojlantirishga doir maqsadlar bilan uyg‘un holda faoliyat yuritadi."
+        ],
+    },
 }
 
 
@@ -235,7 +249,11 @@ RESEARCH_CENTER_CARDS = [
     {
         "slug": "fiziologik-tadqiqotlar-ilmiy-laboratoriyasi",
         "title": RESEARCH_CENTER_DETAILS["fiziologik-tadqiqotlar-ilmiy-laboratoriyasi"]["title"],
-        "summary": RESEARCH_CENTER_DETAILS["fiziologik-tadqiqotlar-ilmiy-laboratoriyasi"]["summary"],
+    },
+    {
+        "slug": "geografiya-tadqiqot-va-talim-markazi",
+        "title": RESEARCH_CENTER_DETAILS["geografiya-tadqiqot-va-talim-markazi"]["title"],
+        "summary": RESEARCH_CENTER_DETAILS["geografiya-tadqiqot-va-talim-markazi"]["summary"],
     },
 ]
 
@@ -295,6 +313,20 @@ RESEARCH_CENTER_TRANSLATIONS_EN = {
         "body": [
             "This laboratory studies population nutrition, physiological indicators, and the functional state of the cardiorespiratory system.",
             "It develops evidence-based recommendations related to health, biochemistry, and physiology in the regional context.",
+        ],
+    },
+    "geografiya-tadqiqot-va-talim-markazi": {
+        "title": "Geography research and education center",
+        "summary": "A specialized platform aimed at strengthening the connection between theoretical geographical knowledge and real-world applications.",
+        "body": [
+            "The Geography research and education center was established on 5 September 2024 as a specialized academic and practical platform aimed at strengthening the connection between theoretical geographical knowledge and real-world applications. The center serves as an integrated learning environment that supports education, research, and field-based training in geography and related interdisciplinary sciences.",
+            "The primary mission of the center is to develop students’ spatial thinking, analytical abilities, and research competencies through experiential learning and practical engagement. It promotes an understanding of natural and socio-economic geographical processes by utilizing real-world environmental settings, modern pedagogical approaches, and competency-based education models, including the STEAM (Science, Technology, Engineering, Arts, and Mathematics) framework.",
+            "The center provides a structured environment for a wide range of academic and practical activities. These include topographic studies such as azimuth measurement, distance calculation, GPS-based coordinate identification, and the development of small-scale topographic maps. It also supports the observation and analysis of relief forms, erosion processes, and landscape dynamics through field experiments and modeling techniques.",
+            "Meteorological observations are conducted using standard instruments such as thermometers, barometers, rain gauges, and wind direction indicators, enabling students to analyze atmospheric conditions and climatic variations. In addition, learners engage in the study of natural landscape components, fostering a deeper understanding of ecosystem interactions and environmental change.",
+            "The center also plays a significant role in research and innovation activities. Students and staff conduct mini-research projects focusing on microclimate analysis, soil characteristics, water resources, and ecological conditions. Geographic information systems (GIS) are actively used for spatial data analysis, mapping, and regional assessment of environmental and socio-economic issues. Furthermore, the center supports ecological monitoring initiatives and promotes project-based solutions to local geographical challenges.",
+            "Interdisciplinary collaboration is a key feature of the center’s approach, integrating geography with disciplines such as biology, history, and environmental science. This ensures a holistic understanding of regional development, sustainability, and human-environment interactions. The center also contributes to the development of environmental awareness, ecological responsibility, and sustainable thinking among students and staff.",
+            "The Geography research and education center is equipped with both traditional and modern educational tools, including globes, thematic and physical maps, compasses, relief models, GIS technologies, and digital learning resources. This combination of classical and modern instruments enhances the quality and effectiveness of teaching, learning, and research activities.",
+            "Overall, the center plays a vital role in advancing high-quality education, strengthening scientific research capacity, and promoting sustainability-oriented learning in alignment with the United Nations Sustainable development goals, particularly those related to quality education, climate action, and sustainable communities."
         ],
     },
 }

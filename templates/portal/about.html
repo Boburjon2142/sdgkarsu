@@ -2,175 +2,199 @@
 {% load portal_i18n %}
 
 {% block content %}
-  <section class="section">
-    <div class="container">
-      <div class="governance-links">
-        <div class="lined-title">
-          <span>
-            {% if current_language == "uz" %}
-              Boshqaruv yo'nalishlari
-            {% else %}
-              Governance directions
-            {% endif %}
-          </span>
-        </div>
-        <div class="governance-links__grid">
-          <a class="governance-link-card governance-link-card--policy" href="{% url 'governance-detail' 'sdg-policy' %}">
-            <span class="governance-link-card__eyebrow">01</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Barqarorlik siyosati
-              {% else %}
-                Sustainability Policy
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Asosiy institutsional siyosat ramkasi
-              {% else %}
-                Core institutional policy framework
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--invest" href="{% url 'governance-detail' 'sdg-investment' %}">
-            <span class="governance-link-card__eyebrow">02</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Barqaror Investitsiyalar Siyosati
-              {% else %}
-                Sustainable Investment Policy
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                ESG asosidagi investitsiya ustuvorliklari
-              {% else %}
-                ESG-led investment priorities
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--purchase" href="{% url 'governance-detail' 'sdg-purchase' %}">
-            <span class="governance-link-card__eyebrow">03</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Barqaror Xaridlar Siyosati
-              {% else %}
-                Sustainable Purchasing Policy
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Barqaror xaridlar va yetkazib beruvchilar mezoni
-              {% else %}
-                Sustainable procurement and supplier standards
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--committee" href="{% url 'governance-detail' 'sdg-committee' %}">
-            <span class="governance-link-card__eyebrow">04</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Barqarorlik Qo'mitasi
-              {% else %}
-                Sustainability Committee
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Muvofiqlashtiruvchi rahbarlar va ijro guruhlari
-              {% else %}
-                Coordinating leadership and delivery teams
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--integrity" href="{% url 'governance-detail' 'anti-corruption' %}">
-            <span class="governance-link-card__eyebrow">05</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Korrupsiyaga qarshi siyosat
-              {% else %}
-                Anti-Corruption Policy
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Halollik, shaffoflik va nazorat mexanizmlari
-              {% else %}
-                Integrity, transparency, and oversight controls
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--public" href="{% url 'governance-detail' 'jamoatchilik' %}">
-            <span class="governance-link-card__eyebrow">06</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Jamoa shartnomasi
-              {% else %}
-                Collective Agreement
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Ochiqlik, muloqot va manfaatdor tomonlar ishtiroki
-              {% else %}
-                Openness, dialogue, and stakeholder participation
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--women" href="{% url 'governance-detail' 'xotin-qizlar' %}">
-            <span class="governance-link-card__eyebrow">07</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Xotin-qizlarni qo'llab-quvvatlash dasturi
-              {% else %}
-                Women Support Policy
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Yetakchilik, imkoniyat va himoya siyosati
-              {% else %}
-                Leadership, opportunity, and protection policy
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--ethics" href="{% url 'governance-detail' 'ethics-code' %}">
-            <span class="governance-link-card__eyebrow">08</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Qarshi davlat universiteti odob-axloq kodeksi
-              {% else %}
-                Code of Ethics of Karshi State University
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Institutsional xulq-atvor, etik me'yorlar va mas'uliyat tamoyillari
-              {% else %}
-                Institutional conduct, ethical standards, and accountability principles
-              {% endif %}
-            </p>
-          </a>
-          <a class="governance-link-card governance-link-card--public" href="{% url 'governance-detail' 'talabalar-kengashi' %}">
-            <span class="governance-link-card__eyebrow">09</span>
-            <strong>
-              {% if current_language == "uz" %}
-                Talabalar kengashi
-              {% else %}
-                Student Union
-              {% endif %}
-            </strong>
-            <p>
-              {% if current_language == "uz" %}
-                Talaba-yoshlar huquqlari, faolligi va tashabbuslarini qo'llab-quvvatlash
-              {% else %}
-                Supporting student rights, engagement, and youth initiatives
-              {% endif %}
-            </p>
-          </a>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="governance-links">
+      <div class="lined-title">
+        <span>
+          {% if current_language == "uz" %}
+          Boshqaruv yo'nalishlari
+          {% else %}
+          Governance directions
+          {% endif %}
+        </span>
       </div>
-
+      <div class="governance-links__grid">
+        <a class="governance-link-card governance-link-card--policy" href="{% url 'governance-detail' 'sdg-policy' %}">
+          <span class="governance-link-card__eyebrow">01</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Barqarorlik siyosati
+            {% else %}
+            Sustainability Policy
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Asosiy institutsional siyosat ramkasi
+            {% else %}
+            Core institutional policy framework
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--invest"
+          href="{% url 'governance-detail' 'sdg-investment' %}">
+          <span class="governance-link-card__eyebrow">02</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Barqaror Investitsiyalar Siyosati
+            {% else %}
+            Sustainable Investment Policy
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            ESG asosidagi investitsiya ustuvorliklari
+            {% else %}
+            ESG-led investment priorities
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--purchase"
+          href="{% url 'governance-detail' 'sdg-purchase' %}">
+          <span class="governance-link-card__eyebrow">03</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Barqaror Xaridlar Siyosati
+            {% else %}
+            Sustainable Purchasing Policy
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Barqaror xaridlar va yetkazib beruvchilar mezoni
+            {% else %}
+            Sustainable procurement and supplier standards
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--committee"
+          href="{% url 'governance-detail' 'sdg-committee' %}">
+          <span class="governance-link-card__eyebrow">04</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Barqarorlik Qo'mitasi
+            {% else %}
+            Sustainability Committee
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Muvofiqlashtiruvchi rahbarlar va ijro guruhlari
+            {% else %}
+            Coordinating leadership and delivery teams
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--integrity"
+          href="{% url 'governance-detail' 'anti-corruption' %}">
+          <span class="governance-link-card__eyebrow">05</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Korrupsiyaga qarshi siyosat
+            {% else %}
+            Anti-Corruption Policy
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Halollik, shaffoflik va nazorat mexanizmlari
+            {% else %}
+            Integrity, transparency, and oversight controls
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--public"
+          href="{% url 'governance-detail' 'jamoatchilik' %}">
+          <span class="governance-link-card__eyebrow">06</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Jamoa shartnomasi
+            {% else %}
+            Collective Agreement
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Ochiqlik, muloqot va manfaatdor tomonlar ishtiroki
+            {% else %}
+            Openness, dialogue, and stakeholder participation
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--women" href="{% url 'governance-detail' 'xotin-qizlar' %}">
+          <span class="governance-link-card__eyebrow">07</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Xotin-qizlarni qo'llab-quvvatlash dasturi
+            {% else %}
+            Women Support Policy
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Yetakchilik, imkoniyat va himoya siyosati
+            {% else %}
+            Leadership, opportunity, and protection policy
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--ethics" href="{% url 'governance-detail' 'ethics-code' %}">
+          <span class="governance-link-card__eyebrow">08</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Qarshi davlat universiteti odob-axloq kodeksi
+            {% else %}
+            Code of Ethics of Karshi State University
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Institutsional xulq-atvor, etik me'yorlar va mas'uliyat tamoyillari
+            {% else %}
+            Institutional conduct, ethical standards, and accountability principles
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--public"
+          href="{% url 'governance-detail' 'talabalar-kengashi' %}">
+          <span class="governance-link-card__eyebrow">09</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Talabalar kengashi
+            {% else %}
+            Student Union
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Talaba-yoshlar huquqlari, faolligi va tashabbuslarini qo'llab-quvvatlash
+            {% else %}
+            Supporting student rights, engagement, and youth initiatives
+            {% endif %}
+          </p>
+        </a>
+        <a class="governance-link-card governance-link-card--carbon"
+          href="{% url 'governance-detail' 'uglerod-emissiyalari' %}">
+          <span class="governance-link-card__eyebrow">10</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Uglerod emissiyalarini kamaytirish maqsadlari
+            {% else %}
+            Carbon Emission Reduction Targets
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            (Scope 1 va Scope 2) 2024–2050
+            {% else %}
+            (Scope 1 and Scope 2) 2024–2050
+            {% endif %}
+          </p>
+        </a>
+      </div>
     </div>
-  </section>
+
+  </div>
+</section>
 {% endblock %}

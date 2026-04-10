@@ -1528,6 +1528,137 @@ GOVERNANCE_PAGE_CONTENT = {
             </div>
         """,
     },
+    "uglerod-emissiyalari": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Uglerod emissiyalarini kamaytirish maqsadlari",
+        "title_en": "Carbon Emission Reduction Targets",
+        "intro_uz": "(Scope 1 va Scope 2) 2024–2050",
+        "intro_en": "(Scope 1 and Scope 2) 2024–2050",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>UGLEROD EMISSIYALARINI KAMAYTIRISH MAQSADLARI<br>(SCOPE 1 VA SCOPE 2)<br>2024–2050</strong></p>
+              <p>Qarshi davlat universitetining Scope 1 va Scope 2 toifalariga kiruvchi issiqxona gazlari (GHG) emissiyalarini kamaytirish bo‘yicha uzoq muddatli maqsadlari universitetning 2024–2025 yillardagi tasdiqlangan emissiya ma’lumotlariga asoslangan bo‘lib, xalqaro iqlim majburiyatlari, xususan Parij kelishuvi talablariga muvofiq ishlab chiqilgan. Hujjatda 2050 yilgacha uglerod neytralligiga (Net Zero) erishish yo‘li bosqichma-bosqich ko‘rsatib berilgan.</p>
+              <p>Mazkur maqsadlar universitet tasarrufidagi barcha asosiy infratuzilma obyektlarini, jumladan o‘quv binolari, ma’muriy binolar, talabalar turar joylari, laboratoriyalar va boshqa yordamchi inshootlarni qamrab oladi.</p>
+              <p>Scope 1 emissiyalariga tabiiy gaz, ko‘mir va universitetga tegishli transport vositalarida ishlatiladigan yoqilg‘i natijasida hosil bo‘ladigan to‘g‘ridan-to‘g‘ri emissiyalar kiradi. Scope 2 emissiyalariga esa universitet tomonidan iste’mol qilinadigan elektr energiyasi bilan bog‘liq bilvosita emissiyalar kiradi.</p>
+              <p>2024–2025 yillar uchun boshlang‘ich emissiya ko‘rsatkichlari quyidagi jadvalda keltirilgan.</p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Scope</th><th>Emissiya manbasi</th><th>Emissiya (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Scope 1</td><td>Tabiiy gaz, ko‘mir yoqilg‘isi</td><td>1,159</td></tr>
+                  <tr><td>Scope 2</td><td>Elektr energiyasi</td><td>617.31</td></tr>
+                  <tr><td><strong>Jami</strong></td><td><strong>Scope 1 + Scope 2</strong></td><td><strong>1,776.31</strong></td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Tahlillar shuni ko‘rsatadiki, Scope 1 emissiyalarining asosiy qismi isitish tizimlarida ishlatiladigan tabiiy gaz hissasiga to‘g‘ri keladi. Scope 2 emissiyalari esa to‘liq elektr energiyasi iste’moli bilan bog‘liq.</p>
+              <p>Qarshi davlat universiteti 2050 yilga borib Scope 1 va Scope 2 emissiyalarini nol darajaga (Net Zero) tushirishni o‘z oldiga strategik maqsad qilib qo‘yadi. Ushbu yakuniy maqsadga erishish uchun oraliq bosqichlar quyidagicha belgilangan.</p>
+              <p><strong>Emissiyalarni kamaytirish maqsadlari</strong></p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Yil</th><th>Kamaytirish (%)</th><th>Emissiya (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>2025</td><td>Boshlang‘ich</td><td>1,776</td></tr>
+                  <tr><td>2030</td><td>30%</td><td>1,243</td></tr>
+                  <tr><td>2035</td><td>50%</td><td>888</td></tr>
+                  <tr><td>2040</td><td>70%</td><td>533</td></tr>
+                  <tr><td>2045</td><td>90%</td><td>178</td></tr>
+                  <tr><td>2050</td><td>Net Zero</td><td>~0</td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Scope 1 emissiyalarini kamaytirish asosan isitish tizimlarini transformatsiya qilish, yuqori emissiyali yoqilg‘ilarni bosqichma-bosqich bekor qilish hamda transport tizimini modernizatsiya qilish orqali amalga oshiriladi. Tabiiy gazdan foydalanish hozirgi kunda asosiy emissiya manbasi bo‘lib, uni elektr asosidagi isitish texnologiyalari, xususan issiqlik nasoslari bilan almashtirish rejalashtirilgan. Shu bilan birga, binolarning issiqlik izolyatsiyasini yaxshilash orqali umumiy energiya talabi kamaytiriladi.</p>
+              <p>Ko‘mir yuqori emissiya koeffitsientiga ega bo‘lganligi sababli, uni ishlatish 2030 yilga qadar to‘liq to‘xtatiladi. Bu qisqa muddat ichida sezilarli emissiya kamayishiga olib keladi.</p>
+              <p>Transport vositalaridan kelib chiqadigan emissiyalarni kamaytirish maqsadida universitet bosqichma-bosqich elektr transport vositalariga o‘tadi. Bu esa uzoq muddatda yoqilg‘i asosidagi emissiyalarni deyarli to‘liq yo‘q qilish imkonini beradi.</p>
+              <p>Scope 2 emissiyalarini kamaytirish elektr energiyasi iste’molini optimallashtirish va qayta tiklanuvchi energiya manbalarini kengaytirish orqali amalga oshiriladi. Universitetda LED yoritish tizimlari joriy etilgan bo‘lib, bu energiya samaradorligini oshirishga xizmat qilmoqda. Keyingi bosqichda asosiy e’tibor quyosh energiyasidan foydalanishni kengaytirishga qaratiladi. Universitet hududida quyosh panellarini o‘rnatish orqali elektr energiyasining muhim qismini qayta tiklanuvchi manbalardan olish rejalashtirilgan. Shu bilan birga, energiya iste’molini nazorat qilish va optimallashtirish uchun zamonaviy monitoring tizimlari joriy etiladi.</p>
+              <p><strong>Scope 1 va Scope 2 emissiyalarining umumiy kamayish dinamikasi quyidagi jadvalda keltirilgan.</strong></p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Yil</th><th>Scope 1</th><th>Scope 2</th><th>Jami (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>2025</td><td>1,159</td><td>617</td><td>1,776</td></tr>
+                  <tr><td>2030</td><td>850</td><td>400</td><td>1,250</td></tr>
+                  <tr><td>2035</td><td>600</td><td>300</td><td>900</td></tr>
+                  <tr><td>2040</td><td>350</td><td>180</td><td>530</td></tr>
+                  <tr><td>2045</td><td>120</td><td>60</td><td>180</td></tr>
+                  <tr><td>2050</td><td>~0</td><td>~0</td><td>Net Zero</td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Mazkur maqsadlarning amalga oshirilishi doimiy monitoring va boshqaruv tizimi orqali ta’minlanadi. Universitet har yili ISO 14064-1 standartiga muvofiq issiqxona gazlari inventarizatsiyasini amalga oshiradi. Ichki auditlar muntazam ravishda o‘tkazilib, tashqi auditlar orqali ma’lumotlarning ishonchliligi ta’minlanadi.</p>
+              <p>Asosiy ko‘rsatkichlar sifatida umumiy emissiya hajmi, qayta tiklanuvchi energiya ulushi va energiya samaradorligi darajasi monitoring qilinadi. Ushbu natijalar universitetning barqarorlik hisobotlariga va xalqaro reyting tizimlariga integratsiya qilinadi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>KARSHI STATE UNIVERSITY<br>CARBON EMISSION REDUCTION TARGETS<br>(SCOPE 1 AND SCOPE 2)<br>2024–2050</strong></p>
+              <p>The long-term targets of Karshi State University for reducing greenhouse gas (GHG) emissions under Scope 1 and Scope 2 are based on the university’s verified emissions data for the years 2024–2025 and have been developed in accordance with international climate commitments, particularly the requirements of the Paris Agreement. The document outlines a step-by-step pathway for achieving carbon neutrality (Net Zero) by 2050.</p>
+              <p>These targets cover all major infrastructure facilities under the management of the university, including academic buildings, administrative buildings, student dormitories, laboratories, and other supporting structures.</p>
+              <p>Scope 1 emissions include direct emissions resulting from the use of natural gas, coal, and fuel consumed by university-owned vehicles. Scope 2 emissions include indirect emissions associated with the electricity consumed by the university.</p>
+              <p>The baseline emission figures for the years 2024–2025 are presented in the table below.</p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Scope</th><th>Emission Source</th><th>Emissions (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Scope 1</td><td>Natural gas, coal, fuel</td><td>1,159</td></tr>
+                  <tr><td>Scope 2</td><td>Electricity</td><td>617.31</td></tr>
+                  <tr><td><strong>Total</strong></td><td><strong>Scope 1 + Scope 2</strong></td><td><strong>1,776.31</strong></td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Analysis shows that the majority of Scope 1 emissions are attributable to natural gas used in heating systems, while Scope 2 emissions are entirely associated with electricity consumption.<br>Karshi State University has set a strategic goal to reduce Scope 1 and Scope 2 emissions to net zero by 2050. To achieve this final target, the following interim milestones have been established.</p>
+              <p><strong>Emission Reduction Targets</strong></p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Year</th><th>Reduction (%)</th><th>Emissions (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>2024</td><td>Baseline</td><td>1,776</td></tr>
+                  <tr><td>2030</td><td>30%</td><td>1,243</td></tr>
+                  <tr><td>2035</td><td>50%</td><td>888</td></tr>
+                  <tr><td>2040</td><td>70%</td><td>533</td></tr>
+                  <tr><td>2045</td><td>90%</td><td>178</td></tr>
+                  <tr><td>2050</td><td>Net Zero</td><td>~0</td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Scope 1 emissions will be reduced primarily through the transformation of heating systems, the gradual phase-out of high-emission fuels, and the modernization of the transport system. Natural gas is currently the main source of emissions, and it is planned to replace it with electric-based heating technologies, particularly heat pumps. At the same time, overall energy demand will be reduced through improvements in building thermal insulation.</p>
+              <p>Due to its high emission factor, coal will be completely phased out by 2030. This measure will result in a significant reduction in emissions in the short term.</p>
+              <p>To reduce emissions from transport, the university will gradually transition to electric vehicles. In the long term, this will enable the near-complete elimination of fuel-based emissions.</p>
+              <p>Scope 2 emissions will be reduced through the optimization of electricity consumption and the expansion of renewable energy sources. The university has already implemented LED lighting systems, which contribute to improved energy efficiency. In the next phase, the primary focus will be on expanding the use of solar energy. By installing solar panels across the campus, a significant share of electricity demand will be met from renewable sources. In addition, modern monitoring systems will be introduced to control and optimize energy consumption.</p>
+              <p><strong>The overall reduction trajectory of Scope 1 and Scope 2 emissions is presented in the table below.</strong></p>
+              <div class="governance-table-wrap">
+              <table class="governance-table">
+                <thead>
+                  <tr><th>Year</th><th>Scope 1 (tCO₂e)</th><th>Scope 2 (tCO₂e)</th><th>Total (tCO₂e)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>2024</td><td>1,159</td><td>617</td><td>1,776</td></tr>
+                  <tr><td>2030</td><td>850</td><td>400</td><td>1,250</td></tr>
+                  <tr><td>2035</td><td>600</td><td>300</td><td>900</td></tr>
+                  <tr><td>2040</td><td>350</td><td>180</td><td>530</td></tr>
+                  <tr><td>2045</td><td>120</td><td>60</td><td>180</td></tr>
+                  <tr><td>2050</td><td>~0</td><td>~0</td><td>Net Zero</td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p>The implementation of these targets will be ensured through a continuous monitoring and management system. The university will conduct annual greenhouse gas inventories in accordance with the ISO 14064-1 standard. Internal audits will be carried out regularly, while external audits will ensure the reliability and accuracy of the data.</p>
+              <p>Key indicators such as total emissions, the share of renewable energy, and the level of energy efficiency will be monitored. These results will be integrated into the university’s sustainability reports and international ranking systems.</p>
+            </div>
+        """,
+    },
 }
 
 
@@ -3643,7 +3774,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "intro": section[f"intro_{language_suffix}"],
             "sections": section[f"sections_{language_suffix}"],
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
-            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi"},
+            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi", "uglerod-emissiyalari"},
         }
         contact_language = "uz" if language_code == "uz" else "en"
         governance_contact_panels = {
@@ -3678,7 +3809,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
         }
         if slug in governance_contact_panels:
             context["governance_contact_panel"] = governance_contact_panels[slug]
-        elif context.get("footer_departments"):
+        elif context.get("footer_departments") and slug != "uglerod-emissiyalari":
             responsible_contact = context["footer_departments"][0]
             context["governance_contact_panel"] = {
                 "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
@@ -4746,7 +4877,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
         if not report:
             raise Http404("Report detail page not found")
 
-        context["report_detail"] = {
+        report_context = {
             "slug": slug,
             "eyebrow": report[f"eyebrow_{suffix}"],
             "title": report[f"title_{suffix}"],
@@ -4755,6 +4886,87 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
             "download_name": report["download_name"],
             "sections": report[f"sections_{suffix}"],
         }
+
+        if slug == "financial-report":
+            page = self.request.GET.get("page", "1")
+            context["is_paginated"] = True
+            context["page_number"] = page
+
+            if page == "2":
+                report_context["intro"] = "Qarshi davlat universitetining 2023-yil uchun yillik moliyaviy hisobotining asosiy ko'rsatkichlari." if suffix == "uz" else "Key figures from Karshi State University's annual financial report for 2023."
+                report_context["download_url"] = "/static/documents/annual-financial-report-2023.docx"
+                report_context["download_name"] = "Annual Financial Report-2023.docx"
+                
+                if suffix == "uz":
+                    report_context["sections"] = [
+                        {
+                            "title": "Umumiy hisobot",
+                            "table_headers": ["№", "Umumiy hisobot", "So'm"],
+                            "table_rows": [
+                                ["1", "Jami daromadlar qiymati", "269 259 861 100"],
+                                ["2", "Jami xarajatlar qiymati", "198 402 697 300"],
+                                ["4", "Ortiqcha mablag'", "70 857 163 800"],
+                                ["5", "Qarz mablag'", "0"],
+                            ],
+                        },
+                        {
+                            "title": "Daromad hisoboti",
+                            "table_headers": ["№", "Daromad hisoboti", "So'm"],
+                            "table_rows": [
+                                ["1", "Davlat tomonidan moliyalashtirish", "56 707 206 700"],
+                                ["2", "O'qish to'lovlari-kontrakt", "205 655 311 200"],
+                                ["3", "Grantlar va ilmiy tadqiqotlarni moliyalashtirish", "2 240 310 100"],
+                                ["4", "Boshqa daromadlar", "4 657 038 100"],
+                            ],
+                        },
+                        {
+                            "title": "Xarajatlar",
+                            "table_headers": ["№", "Xarajatlar", "So'm"],
+                            "table_rows": [
+                                ["1", "Maosh va ish haqi", "110 575 449 800"],
+                                ["2", "Infratuzilma va texnik xizmat ko'rsatish", "27 908 827 800"],
+                                ["3", "Kommunal xizmatlar", "4 287 978 000"],
+                                ["4", "Ta'lim resurslari", "32 677 676 600"],
+                                ["5", "Boshqa xarajatlar", "26 811 945 300"],
+                            ],
+                        },
+                    ]
+                else:
+                    report_context["sections"] = [
+                        {
+                            "title": "Summary Financial Report",
+                            "table_headers": ["№", "Summary Financial Report", "Amount (UZS)"],
+                            "table_rows": [
+                                ["1", "Total Revenue", "269 259 861 100"],
+                                ["2", "Total Expenditure", "198 402 697 300"],
+                                ["4", "Surplus", "70 857 163 800"],
+                                ["5", "Debt", "0"],
+                            ],
+                        },
+                        {
+                            "title": "Revenue Breakdown",
+                            "table_headers": ["№", "Revenue Breakdown", "Amount (UZS)"],
+                            "table_rows": [
+                                ["1", "Government Funding", "56 707 206 700"],
+                                ["2", "Tuition Fees (Contract-based)", "205 655 311 200"],
+                                ["3", "Grants and Research Funding", "2 240 310 100"],
+                                ["4", "Other Income", "4 657 038 100"],
+                            ],
+                        },
+                        {
+                            "title": "Expenditure Breakdown",
+                            "table_headers": ["№", "Expenditure Breakdown", "Amount (UZS)"],
+                            "table_rows": [
+                                ["1", "Salaries and Wages", "110 575 449 800"],
+                                ["2", "Infrastructure and Maintenance", "27 908 827 800"],
+                                ["3", "Utilities", "4 287 978 000"],
+                                ["4", "Educational Resources", "32 677 676 600"],
+                                ["5", "Other Expenses", "26 811 945 300"],
+                            ],
+                        },
+                    ]
+
+        context["report_detail"] = report_context
         return context
 
 

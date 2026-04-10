@@ -2,78 +2,95 @@
 {% load portal_i18n %}
 
 {% block content %}
-  <section class="page-intro page-intro--clean">
-    <div class="container research-intro">
-      <div class="research-intro__main">
-        <div class="eyebrow">{{ report_detail.eyebrow }}</div>
-        <h1>{{ report_detail.title }}</h1>
-        <p class="page-intro__lead">{{ report_detail.intro }}</p>
-      </div>
-      <aside class="research-intro__aside">
-        <span class="chip">
-          {% if current_language == "uz" %}
-            Hujjat
-          {% else %}
-            Document
-          {% endif %}
-        </span>
-        <p>
-          {% if current_language == "uz" %}
-            Hisobot faylini to'liq ko'rish yoki yuklab olish uchun quyidagi tugmadan foydalaning.
-          {% else %}
-            Use the button below to view or download the full report file.
-          {% endif %}
-        </p>
-        <a class="button button--primary" href="{{ report_detail.download_url }}" download="{{ report_detail.download_name }}" target="_blank" rel="noopener">
-          {% if current_language == "uz" %}
-            Yuklab olish
-          {% else %}
-            Download
-          {% endif %}
-        </a>
-      </aside>
+<section class="page-intro page-intro--clean">
+  <div class="container research-intro">
+    <div class="research-intro__main">
+      <div class="eyebrow">{{ report_detail.eyebrow }}</div>
+      <h1>{{ report_detail.title }}</h1>
+      <p class="page-intro__lead">{{ report_detail.intro }}</p>
     </div>
-  </section>
+    <aside class="research-intro__aside">
+      <span class="chip">
+        {% if current_language == "uz" %}
+        Hujjat
+        {% else %}
+        Document
+        {% endif %}
+      </span>
+      <p>
+        {% if current_language == "uz" %}
+        Hisobot faylini to'liq ko'rish yoki yuklab olish uchun quyidagi tugmadan foydalaning.
+        {% else %}
+        Use the button below to view or download the full report file.
+        {% endif %}
+      </p>
+      <a class="button button--primary" href="{{ report_detail.download_url }}"
+        download="{{ report_detail.download_name }}" target="_blank" rel="noopener">
+        {% if current_language == "uz" %}
+        Yuklab olish
+        {% else %}
+        Download
+        {% endif %}
+      </a>
+    </aside>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="container governance-detail-stack">
-      {% for section in report_detail.sections %}
-        <article class="content-card governance-detail-card">
-          <h2>{{ section.title }}</h2>
-          {% for paragraph in section.paragraphs %}
-            <p>{{ paragraph }}</p>
-          {% endfor %}
-          {% if section.table_headers and section.table_rows %}
-            <div class="governance-table-wrap">
-              <table class="governance-table">
-                <thead>
-                  <tr>
-                    {% for header in section.table_headers %}
-                      <th>{{ header }}</th>
-                    {% endfor %}
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for row in section.table_rows %}
-                    <tr>
-                      {% for cell in row %}
-                        <td>{{ cell }}</td>
-                      {% endfor %}
-                    </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          {% endif %}
-          {% if section.bullets %}
-            <ul class="governance-bullet-list">
-              {% for bullet in section.bullets %}
-                <li>{{ bullet }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
+<section class="section">
+  <div class="container governance-detail-stack">
+    {% for section in report_detail.sections %}
+    <article class="content-card governance-detail-card">
+      <h2>{{ section.title }}</h2>
+      {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph }}</p>
       {% endfor %}
-    </div>
-  </section>
+      {% if section.table_headers and section.table_rows %}
+      <div class="governance-table-wrap">
+        <table class="governance-table">
+          <thead>
+            <tr>
+              {% for header in section.table_headers %}
+              <th>{{ header }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in section.table_rows %}
+            <tr>
+              {% for cell in row %}
+              <td>{{ cell }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+      {% if section.bullets %}
+      <ul class="governance-bullet-list">
+        {% for bullet in section.bullets %}
+        <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </article>
+    {% endfor %}
+
+    {% if is_paginated %}
+    <nav aria-label="Pagination" style="margin-top: 3rem; display: flex; justify-content: center;">
+      <ul class="pagination"
+        style="display: flex; gap: 0.5rem; justify-content: center; list-style: none; padding: 0; margin: 0;">
+        <li>
+          <a href="?page=1" class="button {% if page_number == '1' %}button--primary{% endif %}"
+            style="padding: 0.5rem 1.5rem; {% if page_number != '1' %}border: 1px solid #75B700; color: #75B700;{% endif %}">2024</a>
+        </li>
+        <li>
+          <a href="?page=2" class="button {% if page_number == '2' %}button--primary{% endif %}"
+            style="padding: 0.5rem 1.5rem; {% if page_number != '2' %}border: 1px solid #75B700; color: #75B700;{% endif %}">2023</a>
+        </li>
+      </ul>
+    </nav>
+    {% endif %}
+  </div>
+</section>
 {% endblock %}
