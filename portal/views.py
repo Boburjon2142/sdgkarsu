@@ -3837,6 +3837,7 @@ class SDGUpdatesView(BasePortalContextMixin, TemplateView):
         context["goal"] = goal
         context["previous_goal"] = number - 1 if number > 1 else None
         context["next_goal"] = number + 1 if number < 17 else None
+        context["goal_news_items"] = localize_collection(NewsArticle.objects.filter(sdg_goal=number), language_code)
         context["goal_work_items"] = SDGWorkItem.objects.filter(goal_number=number)
         return context
 

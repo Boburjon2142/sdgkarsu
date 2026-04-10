@@ -21,7 +21,31 @@
             </div>
           </div>
 
-          {% if goal_work_items %}
+          {% if goal_news_items %}
+            <div class="sdg-work-grid">
+              {% for item in goal_news_items %}
+                <article class="sdg-work-card reveal">
+                  <div class="sdg-work-card__media">
+                    {% if item.image %}
+                      <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                    {% else %}
+                      <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                    {% endif %}
+                  </div>
+                  <div class="sdg-work-card__body">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.summary }}</p>
+                    {% if item.body %}
+                      <div class="sdg-work-card__details">{{ item.body|truncatewords:50|linebreaks }}</div>
+                    {% endif %}
+                    <div class="sdg-work-card__actions">
+                      <a class="button button--primary" href="{{ item.get_absolute_url }}">{% tr "Read more" %}</a>
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          {% elif goal_work_items %}
             <div class="sdg-work-grid">
               {% for work_item in goal_work_items %}
                 <article class="sdg-work-card reveal">
