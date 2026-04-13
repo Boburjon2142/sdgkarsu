@@ -16,7 +16,7 @@
           {% endif %}
         </div>
         <div class="governance-detail-intro__actions">
-          {% if governance_section.slug == "sdg-policy" or governance_section.slug == "sdg-committee" or governance_section.slug == "talabalar-kengashi" %}
+          {% if governance_section.slug == "sdg-policy" or governance_section.slug == "sdg-committee" %}
           {% elif governance_section.slug == "ethics-code" and ethics_pdf_panel %}
             <article class="content-card soft-panel-card governance-detail-contact governance-detail-contact--details">
               <strong>{{ ethics_pdf_panel.title }}</strong>
@@ -75,6 +75,15 @@
                 <a class="button button--primary" href="{{ governance_contact_panel.url }}">
                   {{ governance_contact_panel.button_label }}
                 </a>
+                {% if governance_section.slug == "disability-support-policy" %}
+                <a class="button button--secondary" href="{% url 'governance-roadmap' slug=governance_section.slug %}">
+                  {% if current_language == "uz" %}
+                    Yo'l xaritasi
+                  {% else %}
+                    Roadmap
+                  {% endif %}
+                </a>
+                {% endif %}
               </article>
             {% else %}
               <a class="button button--primary" href="{% url 'contact' %}">

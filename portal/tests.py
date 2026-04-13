@@ -238,6 +238,66 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, reverse("sdg-updates", kwargs={"number": 4}))
         self.assertContains(response, "sdg-news-card")
 
+    def test_governance_card_11_is_available(self):
+        response = Client().get(reverse("about"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("governance-detail", kwargs={"slug": "disability-support-policy"}))
+        self.assertContains(response, "Support Policy for Persons with Disabilities")
+
+    def test_disability_support_policy_detail_loads(self):
+        response = Client().get(reverse("governance-detail", kwargs={"slug": "disability-support-policy"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Support Policy for Persons with Disabilities")
+        self.assertContains(response, "Inclusion Support Unit")
+
+    def test_disability_support_policy_detail_has_roadmap_button(self):
+        response = Client().get(reverse("governance-detail", kwargs={"slug": "disability-support-policy"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("governance-roadmap", kwargs={"slug": "disability-support-policy"}))
+        self.assertContains(response, "Roadmap")
+
+    def test_disability_support_roadmap_loads(self):
+        response = Client().get(reverse("governance-roadmap", kwargs={"slug": "disability-support-policy"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Assessment of the Inclusive Education Environment for Students with Disabilities")
+        self.assertContains(response, "Roadmap")
+        self.assertContains(response, "June 2026")
+        self.assertContains(response, "Creating an accessible and barrier-free environment")
+
+    def test_student_union_detail_has_contact_button(self):
+        response = Client().get(reverse("governance-detail", kwargs={"slug": "talabalar-kengashi"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("governance-finance-contact", kwargs={"slug": "talabalar-kengashi"}))
+        self.assertContains(response, "Contact specialist")
+
+    def test_student_union_contact_page_loads(self):
+        response = Client().get(reverse("governance-finance-contact", kwargs={"slug": "talabalar-kengashi"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Ravshanov Doston Rustam")
+        self.assertContains(response, "dostonravshanov1996@gmail.com")
+        self.assertContains(response, "Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University")
+        self.assertContains(response, "/meedia/dossi.jpg")
+
+    def test_collective_agreement_content_loads(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("governance-detail", kwargs={"slug": "jamoatchilik"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "2023-2025")
+        self.assertContains(response, "mehnatga haq to'lash, kompensatsiya va rag'batlantirish tizimi")
+        self.assertContains(response, "Universitet ish joyida har qanday shakldagi diskriminatsiyani qat'iyan taqiqlaydi.")
+        self.assertContains(response, "homiladorlik va onalik davrida ayollarni qo'llab-quvvatlash siyosatini amalga oshiradi")
+
     def test_governance_detail_uses_english_content_when_language_is_en(self):
         client = Client()
         session = client.session

@@ -192,6 +192,23 @@
             {% endif %}
           </p>
         </a>
+        <a class="governance-link-card governance-link-card--inclusion" href="{% url 'governance-detail' 'disability-support-policy' %}">
+          <span class="governance-link-card__eyebrow">11</span>
+          <strong>
+            {% if current_language == "uz" %}
+            Nogironligi bo'lgan shaxslarni qo'llab-quvvatlash siyosati
+            {% else %}
+            Support Policy for Persons with Disabilities
+            {% endif %}
+          </strong>
+          <p>
+            {% if current_language == "uz" %}
+            Teng imkoniyatlar, qulay muhit va inklyuziv ishtirok
+            {% else %}
+            Equal access, inclusive learning, and full participation
+            {% endif %}
+          </p>
+        </a>
       </div>
     </div>
 

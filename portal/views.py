@@ -163,6 +163,96 @@ ANTI_CORRUPTION_CONTACT_CONTENT = {
             },
         ],
     },
+    "disability-support-policy": {
+        "eyebrow_uz": "Barqarorlik boshqaruvi",
+        "eyebrow_en": "Sustainability governance",
+        "title_uz": "Nogironligi bo'lgan shaxslarni qo'llab-quvvatlash siyosati",
+        "title_en": "Support Policy for Persons with Disabilities",
+        "intro_uz": "Inklyuziv ta'lim, teng imkoniyatlar va moslashtirilgan xizmatlar uchun institutsional siyosat.",
+        "intro_en": "An institutional policy for inclusive education, equal opportunity, and accessible support services.",
+        "sections_uz": [],
+        "sections_en": [],
+        "single_card_raw_uz": """
+            <div class="governance-richtext">
+              <p><strong>Nogironligi bo'lgan shaxslarni qo'llab-quvvatlash siyosati</strong></p>
+              <p>O'zbekiston Respublikasi Prezidentining 2019-yil 29-apreldagi PF-5712-son Farmoni hamda 2020-2025-yillarda inklyuziv ta'limni rivojlantirish konsepsiyasiga muvofiq, Qarshi davlat universitetida alohida ta'lim ehtiyojlariga ega bo'lgan talabalar uchun teng, qulay va sifatli ta'lim muhitini yaratish ustuvor vazifa etib belgilanadi.</p>
+              <p>Mazkur siyosat nogironligi bo'lgan talabalar, xodimlar va tashrif buyuruvchilar uchun teng imkoniyatlar yaratish, ularning ta'lim, mehnat va ijtimoiy hayotda to'liq va samarali ishtirokini ta'minlashga qaratilgan. Siyosat inklyuzivlik, kamsitmaslik, individual yondashuv, maxfiylik va barqarorlik tamoyillariga asoslanadi hamda Barqaror rivojlanish maqsadlari bilan uyg'un holda amalga oshiriladi.</p>
+              <p><strong>Qo'llash sohasi va majburiy hollari</strong></p>
+              <p>Siyosat barcha ta'lim bosqichlari talabalari, akademik va ma'muriy xodimlar, tashrif buyuruvchilar hamda hamkor tashkilot vakillariga tatbiq etiladi. U ta'lim jarayoni, ish faoliyati, tadbirlar va infratuzilma xizmatlarini qamrab oladi va quyidagi holatlarda majburiy hisoblanadi:</p>
+              <ul>
+                <li>ma'ruza, seminar va imtihonlar kabi ta'lim jarayonlarida;</li>
+                <li>ishga qabul qilish va mehnat faoliyatida;</li>
+                <li>tadbirlar va jamoat faoliyatida;</li>
+                <li>infratuzilma va xizmatlardan foydalanishda.</li>
+              </ul>
+              <p><strong>Asosiy tamoyillar</strong></p>
+              <ul>
+                <li>har bir shaxs uchun teng huquq va imkoniyatlar;</li>
+                <li>to'g'ridan-to'g'ri yoki bilvosita diskriminatsiyani qat'iy rad etish;</li>
+                <li>individual ehtiyojlarni alohida baholash va moslashtirilgan qo'llab-quvvatlash;</li>
+                <li>nogironlikka oid ma'lumotlarning maxfiyligi;</li>
+                <li>qo'llab-quvvatlash xizmatlarini doimiy rivojlantirish.</li>
+              </ul>
+              <p><strong>Qo'llab-quvvatlash xizmatlari</strong></p>
+              <p>Akademik qo'llab-quvvatlash doirasida individual o'quv rejalarini ishlab chiqish, o'quv materiallarini braille, audio va raqamli shakllarda taqdim etish, imtihonlarda qo'shimcha vaqt ajratish, alohida sharoit yaratish va moslashtirilgan baholash tizimlarini joriy etish ko'zda tutiladi. O'qituvchilar uchun inkluziv pedagogika bo'yicha treninglar muntazam o'tkaziladi.</p>
+              <p>Jismoniy muhitni moslashtirish doirasida panduslar, liftlar, keng kirish yo'laklari, maxsus hojatxonalar, taktil yo'laklar hamda vizual va audio belgilar joriy etiladi. Texnologik qo'llab-quvvatlash screen reader, speech-to-text va text-to-speech vositalarini, shuningdek, onlayn ta'lim platformalarini xalqaro accessibility standartlariga moslashtirishni o'z ichiga oladi. Kutubxonalarda maxsus texnika va raqamli resurslar kengaytiriladi.</p>
+              <p>Psixologik va ijtimoiy yordam xizmatlari professional maslahat, stressni boshqarish, yangi muhitga moslashish dasturlari, tengdoshlar o'rtasida o'zaro yordam tizimlari va inklyuziv madaniyatni shakllantirishga qaratilgan ma'naviy-ma'rifiy tadbirlarni o'z ichiga oladi.</p>
+              <p><strong>Inkluziv qo'llab-quvvatlash markazi</strong></p>
+              <p>Universitetda tashkil etilgan "Inkluziv qo'llab-quvvatlash markazi" quyidagilar uchun mas'ul:</p>
+              <ul>
+                <li>talablarni aniqlash;</li>
+                <li>xizmatlarni tashkil etish;</li>
+                <li>monitoring olib borish;</li>
+                <li>har bir fakultet va bo'limning siyosatga amal qilishini ta'minlash;</li>
+                <li>o'qituvchilar tomonidan inkluziv yondashuv qo'llanilishini kuzatish.</li>
+              </ul>
+              <p><strong>Monitoring va baholash</strong></p>
+              <p>Siyosatning samarali ijrosi yillik auditlar va hisobotlar, talaba va xodimlar fikr-mulohazalari, KPI hamda SDG indikatorlari asosida baholanadi. Natijalar doimiy takomillashtirish rejasiga kiritilib boriladi.</p>
+              <p><strong>Moliyalashtirish</strong></p>
+              <p>Moliyalashtirish universitetning ichki budjeti, davlat dasturlari, xalqaro grantlar, xususiy sektor hamda donor tashkilotlar bilan hamkorlik orqali shakllantiriladi. Bu yondashuv infratuzilmani moslashtirish, assistiv texnologiyalarni xarid qilish, mutaxassislarni tayyorlash va qo'llab-quvvatlash xizmatlarini barqaror saqlashga xizmat qiladi.</p>
+            </div>
+        """,
+        "single_card_raw_en": """
+            <div class="governance-richtext">
+              <p><strong>Support Policy for Persons with Disabilities</strong></p>
+              <p>In accordance with the Decree of the President of the Republic of Uzbekistan No. PF-5712 dated April 29, 2019, and the Concept for the Development of Inclusive Education in 2020-2025, Karshi State University identifies the creation of an equal, accessible, and high-quality educational environment for students with special educational needs as a priority task.</p>
+              <p>This policy is aimed at creating equal opportunities for students, staff, and visitors with disabilities and ensuring their full and effective participation in education, employment, and social life. It is based on the principles of inclusion, non-discrimination, individual approach, confidentiality, and sustainability, and it is implemented in alignment with the Sustainable Development Goals.</p>
+              <p><strong>Scope and mandatory cases</strong></p>
+              <p>The policy applies to students at all levels of education, academic and administrative staff, visitors, guests, and partner organizations. It covers educational processes, work activities, events, and infrastructure services and is mandatory in the following cases:</p>
+              <ul>
+                <li>lectures, seminars, and examinations;</li>
+                <li>recruitment and employment activities;</li>
+                <li>events and public activities;</li>
+                <li>use of infrastructure and services.</li>
+              </ul>
+              <p><strong>Core principles</strong></p>
+              <ul>
+                <li>equal rights and opportunities for every individual;</li>
+                <li>strict prohibition of direct and indirect disability-based discrimination;</li>
+                <li>separate assessment of individual needs and tailored support;</li>
+                <li>confidential handling of disability-related information;</li>
+                <li>continuous and systematic development of support services.</li>
+              </ul>
+              <p><strong>Support services</strong></p>
+              <p>Academic support includes individual learning plans, learning materials in Braille, audio, and digital formats, extra time in examinations, separate conditions, and adapted assessment systems. Teachers receive regular training in inclusive pedagogy.</p>
+              <p>Accessibility improvements include ramps, elevators, wide access corridors, accessible restrooms, tactile pathways, and visual and audio signage. Technological support includes screen reader software, speech-to-text and text-to-speech tools, adaptation of online learning platforms to international accessibility standards, and expanded access to specialized equipment and digital library resources.</p>
+              <p>Psychological and social support services include professional counseling, stress management and adaptation programs, peer-support systems, and educational activities that help build an inclusive culture.</p>
+              <p><strong>Inclusion Support Unit</strong></p>
+              <p>The university has established an "Inclusion Support Unit" responsible for:</p>
+              <ul>
+                <li>identifying needs;</li>
+                <li>organizing services;</li>
+                <li>conducting monitoring;</li>
+                <li>ensuring every faculty and department follows the policy;</li>
+                <li>supporting teachers in applying inclusive approaches.</li>
+              </ul>
+              <p><strong>Monitoring and evaluation</strong></p>
+              <p>Policy implementation is assessed through annual audits and reports, feedback from students and staff, KPI tracking, SDG indicators, and a continuous improvement plan.</p>
+              <p><strong>Financing</strong></p>
+              <p>The financing system follows a sustainable, multi-source approach. Primary funds are allocated from the university budget, while additional resources are attracted through government programs, international grants, private-sector partnerships, donor organizations, sponsorships, and joint social initiatives. This mechanism supports infrastructure adaptation, assistive technology procurement, specialist training, and the long-term sustainability of services.</p>
+            </div>
+        """,
+    },
 }
 
 
@@ -523,6 +613,158 @@ TRADE_UNION_CONTACT_CONTENT = {
                     "Supports the creation of an accessible environment for persons with disabilities.",
                     "Contributes to the development of inclusive education and workplace environments.",
                     "Fosters mutual respect and tolerance among different groups.",
+                ],
+            },
+        ],
+    },
+}
+
+
+DISABILITY_SUPPORT_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Inklyuziv qo'llab-quvvatlash markazi",
+        "intro": "Nogironligi bo'lgan talabalar, xodimlar va tashrif buyuruvchilar uchun teng imkoniyatlarni ta'minlashga mas'ul markaz.",
+        "leader_title": "Markaz rahbari",
+        "leader_name": "Nurbek Farmonov",
+        "leader_role": "Inklyuziv qo'llab-quvvatlash markazi rahbari (volontyorlik asosida).",
+        "leader_details": [
+            "Telefon: +998979500620",
+            "Elektron pochta: nurbekfarmonov4@gmail.com",
+            "Qabul kunlari: Dushanba 10:00-13:00, Chorshanba 14:00-17:00",
+        ],
+        "image_url": "/meedia/farmonov.jpg",
+        "sections": [
+            {
+                "title": "Asosiy vazifalari",
+                "bullets": [
+                    "nogironligi bo'lgan shaxslarning ehtiyojlarini aniqlash va individual qo'llab-quvvatlash choralarini ishlab chiqish",
+                    "akademik va ijtimoiy moslashuv jarayonlarini tashkil etish va muvofiqlashtirish",
+                    "inklyuziv ta'lim muhitini rivojlantirish va fakultetlar bilan hamkorlikda ishlash",
+                    "assistiv texnologiyalar va moslashtirilgan xizmatlarni joriy etishni ta'minlash",
+                    "psixologik va ijtimoiy yordam xizmatlarini yo'lga qo'yish",
+                    "nogironligi bo'lgan shaxslar huquqlarini himoya qilish va diskriminatsiyaning oldini olish",
+                    "talabalar va xodimlar o'rtasida inklyuziv madaniyatni shakllantirishga qaratilgan tadbirlarni tashkil etish",
+                    "monitoring va baholash jarayonlarini olib borish hamda tegishli hisobotlarni tayyorlash",
+                ],
+            },
+            {
+                "title": "Volontyorlik asosidagi faoliyat",
+                "paragraphs": [
+                    "Mazkur faoliyat Nurbek Farmonov tomonidan volontyorlik asosida amalga oshiriladi va bu uning ijtimoiy mas'uliyat, insonparvarlik hamda jamiyatda teng imkoniyatlarni rivojlantirishga bo'lgan sadoqatini ifodalaydi.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Inclusion Support Center",
+        "intro": "The center responsible for ensuring equal opportunities for students, staff, and visitors with disabilities.",
+        "leader_title": "Head of the center",
+        "leader_name": "Nurbek Farmonov",
+        "leader_role": "Head of the Inclusion Support Center (on a voluntary basis).",
+        "leader_details": [
+            "Phone: +998979500620",
+            "Email: nurbekfarmonov4@gmail.com",
+            "Reception days: Monday 10:00-13:00, Wednesday 14:00-17:00",
+        ],
+        "image_url": "/meedia/farmonov.jpg",
+        "sections": [
+            {
+                "title": "Main responsibilities",
+                "bullets": [
+                    "identifying the needs of persons with disabilities and developing individualized support measures",
+                    "organizing and coordinating academic and social adaptation processes",
+                    "promoting an inclusive educational environment and collaborating with faculties",
+                    "ensuring the implementation of assistive technologies and adapted services",
+                    "establishing psychological and social support services",
+                    "protecting the rights of persons with disabilities and preventing discrimination",
+                    "organizing activities aimed at fostering an inclusive culture among students and staff",
+                    "conducting monitoring and evaluation processes and preparing relevant reports",
+                ],
+            },
+            {
+                "title": "Voluntary basis",
+                "paragraphs": [
+                    "This activity is carried out by Nurbek Farmonov on a voluntary basis, reflecting his strong commitment to social responsibility, humanity, and the promotion of equal opportunities in society.",
+                ],
+            },
+        ],
+    },
+}
+
+
+STUDENT_UNION_CONTACT_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Talabalar kengashi",
+        "intro": "Talaba-yoshlar huquqlari, faolligi va tashabbuslarini qo'llab-quvvatlashga mas'ul vakil ma'lumotlari.",
+        "leader_title": "Boshlang'ich tashkilot yetakchisi",
+        "leader_name": "Ravshanov Doston Rustam o'g'li",
+        "leader_role": "O'zbekiston Yoshlar ittifoqi Qarshi davlat universiteti boshlang'ich tashkilot yetakchisi",
+        "leader_details": [
+            "Telefon: +998 90 882 28 80",
+            "Elektron pochta: dostonravshanov1996@gmail.com",
+            "Qabul kunlari: Dushanba-Juma 9:00-18:00 gacha",
+        ],
+        "image_url": "/meedia/dossi.jpg",
+        "sections": [
+            {
+                "title": "Mehnat faoliyati",
+                "bullets": [
+                    "2021-2022-y.y. Qarshi davlat universiteti Ma'naviy-ma'rifiy ishlarni tashkil etish bo'limi bosh mutaxassisi",
+                    "2022-2024-y.y. Qarshi davlat universitetida Talabalarni turar joy bilan ta'minlash ishlarini tashkil etishni muvofiqlashtiruvchi bo'limi bosh mutaxassisi",
+                    "2024-yildan O'zbekiston yoshlar ittifoqi Qarshi davlat universiteti boshlang'ich tashkilot yetakchisi",
+                ],
+            },
+            {
+                "title": "Vazifalari",
+                "bullets": [
+                    "Yoshlar yetakchisi boshlang'ich tashkilot ishlarini boshqaradi va umumiy faoliyatni yo'lga qo'yadi.",
+                    "Universitet kengashi yig'ilishlarida yoshlar vakili sifatida qatnashadi, talaba-yoshlarning fikr-mulohazalari, taklif va tashabbuslarini ilgari suradi hamda qabul qilinayotgan qarorlarda ularning manfaatlari inobatga olinishi uchun faol ishtirok etadi.",
+                    "Fakultetlar va guruhlardagi yoshlar yetakchilari ishini bir tizimga soladi, ularga metodik yordam beradi.",
+                    "Talabalarning huquq va manfaatlarini himoya qiladi, ularning muammolarini rahbariyatga yetkazadi.",
+                    "Talabalar tomonidan ilgari surilgan g'oya va loyihalarni rivojlantirishga yordam beradi.",
+                    "Universitet ichida va yuqori tashkilotlar bilan aloqalarni olib boradi.",
+                    "Olib borilgan ishlar yuzasidan muntazam ravishda hisobot beradi.",
+                    "Yuqori tashkilotlar va universitet rahbariyati tomonidan berilgan vazifalarni bajaradi.",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Student Union",
+        "intro": "Contact details for the representative responsible for supporting student rights, engagement, and youth initiatives.",
+        "leader_title": "Leader of the primary organization",
+        "leader_name": "Ravshanov Doston Rustam o'g'li",
+        "leader_role": "Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University",
+        "leader_details": [
+            "Phone: +998 90 882 28 80",
+            "Email: dostonravshanov1996@gmail.com",
+            "Reception hours: Monday-Friday from 09:00 to 18:00",
+        ],
+        "image_url": "/meedia/dossi.jpg",
+        "sections": [
+            {
+                "title": "Work Experience",
+                "bullets": [
+                    "2021-2022 – Chief Specialist, Department for the Organization of Spiritual and Educational Activities, Karshi State University",
+                    "2022-2024 – Chief Specialist, Department for Coordination of Student Accommodation, Karshi State University",
+                    "Since 2024 – Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University",
+                ],
+            },
+            {
+                "title": "Responsibilities",
+                "bullets": [
+                    "Manages the activities of the primary organization and ensures the effective functioning of its overall operations.",
+                    "Takes part in University Council meetings as a representative of youth, presents students' opinions, proposals, and initiatives, and actively contributes to ensuring that their interests are considered in decision-making processes.",
+                    "Coordinates the work of youth leaders across faculties and groups and provides them with methodological support.",
+                    "Safeguards the rights and interests of students and communicates their concerns to the university administration.",
+                    "Encourages and supports ideas and projects initiated by students.",
+                    "Represents the organization within the university and in relations with higher-level institutions.",
+                    "Regularly provides reports on the activities carried out.",
+                    "Ensures the execution of tasks assigned by higher organizations and the university administration.",
                 ],
             },
         ],
@@ -1271,15 +1513,16 @@ GOVERNANCE_PAGE_CONTENT = {
         "eyebrow_en": "Sustainability governance",
         "title_uz": "Jamoa shartnomasi",
         "title_en": "Collective Agreement",
-        "intro_uz": "Universitet ma'muriyati hamda xodimlar va talabalar kasaba uyushmasi o'rtasidagi 2026-2028-yillar uchun mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi hujjat.",
-        "intro_en": "A regulatory document governing labor, socio-economic, and professional relations between the university administration and the trade union of staff and students for 2026-2028.",
+        "intro_uz": "Universitet ma'muriyati hamda xodimlar va talabalar kasaba uyushmasi o'rtasidagi 2023-2025-yillar uchun mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi hujjat.",
+        "intro_en": "A regulatory document governing labor, socio-economic, and professional relations between the university administration and the trade union of staff and students for 2023-2025.",
         "sections_uz": [],
         "sections_en": [],
         "single_card_raw_uz": """
             <div class="governance-richtext">
               <p><strong>QARSHI DAVLAT UNIVERSITETI MA'MURIYATI HAMDA UNIVERSITET XODIMLARI VA TALABALARI KASABA UYUSHMA QO'MITASI JAMOA SHARTNOMASI</strong></p>
-              <p>Qarshi davlat universiteti ma'muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo'mitasi o'rtasida 2026-2028-yillar uchun jamoa shartnomasi tuzilgan bo'lib, u universitetdagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi muhim normativ hujjat hisoblanadi.</p>
-              <p>Mazkur shartnoma O'zbekiston Respublikasi qonunchiligi, xususan Mehnat kodeksi va boshqa tegishli normativ hujjatlarga asoslangan holda ishlab chiqilgan. Uning asosiy maqsadi - universitet xodimlari va talabalarning huquq va manfaatlarini himoya qilish, mehnat sharoitlarini yaxshilash hamda ijtimoiy hamkorlikni rivojlantirishdan iborat.</p>
+              <p>Qarshi davlat universiteti ma'muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo'mitasi o'rtasida 2023-2025-yillar uchun jamoa shartnomasi tuzilgan bo'lib, u universitetdagi mehnat, ijtimoiy-iqtisodiy va kasbiy munosabatlarni tartibga soluvchi muhim normativ hujjat hisoblanadi.</p>
+              <p>Mazkur shartnoma O'zbekiston Respublikasi qonunchiligi, xususan Mehnat kodeksi va boshqa tegishli normativ hujjatlarga asoslangan holda ishlab chiqilgan. Uning asosiy maqsadi universitet xodimlari va talabalarning huquq va manfaatlarini himoya qilish, mehnat sharoitlarini yaxshilash hamda ijtimoiy hamkorlikni rivojlantirishdan iborat.</p>
+
               <p><strong>Shartnoma quyidagi asosiy yo'nalishlarni qamrab oladi:</strong></p>
               <ul>
                 <li>mehnat shartnomalari va bandlik kafolatlari</li>
@@ -1290,14 +1533,50 @@ GOVERNANCE_PAGE_CONTENT = {
                 <li>xodimlarning malakasini oshirish va kasbiy rivojlanishi</li>
                 <li>jamoaviy hamkorlik va kasaba uyushmasi faoliyati</li>
               </ul>
+
               <p>Shuningdek, shartnoma universitetda ochiqlik, adolat va o'zaro hamkorlik tamoyillarini mustahkamlashga xizmat qiladi. Unda ish beruvchi, xodimlar va kasaba uyushmasining majburiyatlari aniq belgilangan bo'lib, tomonlar o'rtasida barqaror ijtimoiy muhitni ta'minlashga qaratilgan.</p>
+
+              <p><strong>Tenglik, xilma-xillik va inklyuziya</strong></p>
+              <p>Universitet barcha xodimlar va talabalar uchun teng imkoniyatlarni ta'minlash, adolatli va inklyuziv muhit yaratish majburiyatini o'z zimmasiga oladi. Universitet yosh, jins, gender identifikatsiyasi, jinsni o'zgartirish holati, nogironlik, millat, etnik kelib chiqish, din yoki e'tiqod, jinsiy orientatsiya, nikoh va fuqarolik holati, qochqinlik yoki boshpana izlovchi maqomi, homiladorlik va onalik kabi belgilarga ko'ra har qanday kamsitishni taqiqlaydi.</p>
+              <p>Universitet o'z faoliyatining barcha yo'nalishlarida tenglik, xilma-xillik va inklyuziya tamoyillariga rioya etilishini ta'minlaydi.</p>
+
+              <p><strong>Nogironligi bo'lgan xodimlar va talabalar uchun qo'llab-quvvatlash</strong></p>
+              <p>Universitet nogironligi bo'lgan xodimlar va talabalar uchun teng imkoniyatlar yaratish maqsadida zarur shart-sharoitlar va yordam xizmatlarini taqdim etadi. Bunga binolarga erkin kirish uchun panduslar va liftlar, moslashtirilgan auditoriyalar, maxsus o'quv materiallari, assistent va tarjimon xizmatlari, shuningdek psixologik, akademik va ijtimoiy maslahat xizmatlari kiradi.</p>
+
+              <p><strong>Kasaba uyushmasiga a'zolik huquqi</strong></p>
+              <p>Universitet barcha xodimlarning kasaba uyushmalariga a'zo bo'lish huquqini tan oladi va hurmat qiladi. Ushbu huquq barcha toifadagi xodimlarga, jumladan ayollar, yosh mutaxassislar va xalqaro xodimlarga nisbatan teng ravishda tatbiq etiladi. Universitet kasaba uyushmalari bilan ijtimoiy hamkorlik va konstruktiv muloqot tamoyillariga amal qiladi.</p>
+
+              <p><strong>Diskriminatsiya va majburiy mehnatga qarshi siyosat</strong></p>
+              <p>Universitet ish joyida har qanday shakldagi diskriminatsiyani qat'iyan taqiqlaydi. Xodimlar va talabalar jins, yosh, din, millat, nogironlik, jinsiy orientatsiya yoki boshqa shaxsiy belgilari asosida kamsitilmasligi kerak. Diskriminatsiya holatlari aniqlangan taqdirda, ular amaldagi ichki tartib-qoidalar va qonunchilikka muvofiq ko'rib chiqiladi hamda tegishli choralar ko'riladi.</p>
+              <p>Universitet majburiy mehnat, zamonaviy qullik, odam savdosi va bolalar mehnatining barcha shakllarini keskin rad etadi. Universitet o'z faoliyatida ushbu tamoyillarga qat'iy amal qiladi hamda hamkor tashkilotlar, pudratchilar va tashqi xizmat ko'rsatuvchilardan ham xuddi shunday yondashuvni talab qiladi.</p>
+
+              <p><strong>Uchinchi tomonlar bilan hamkorlik</strong></p>
+              <p>Universitet uchinchi tomon tashkilotlari bilan hamkorlik qilgan hollarda ham xodimlarning mehnat huquqlari himoya qilinishini kafolatlashga intiladi. Outsourcing asosida jalb etilgan xodimlar uchun adolatli ish sharoiti, munosib va teng ish haqi, mehnat xavfsizligi va ijtimoiy himoya tamoyillari ta'minlanishi lozim.</p>
+
+              <p><strong>Teng haq to'lash va gender monitoringi</strong></p>
+              <p>Universitet erkaklar va ayollar uchun teng qiymatdagi mehnatga teng haq to'lash tamoyiliga amal qiladi. Ish haqi tizimida gender asosidagi tafovutlarning oldini olish, ularni aniqlash va bartaraf etish universitetning ustuvor yo'nalishlaridan biri hisoblanadi.</p>
+              <p>Universitet xodimlar ish haqi bo'yicha muntazam statistik tahlil o'tkazadi hamda gender tengligi darajasini monitoring qiladi. Aniqlangan tafovutlarni bartaraf etish yuzasidan tegishli boshqaruv, tashkiliy va amaliy choralar ko'riladi.</p>
+
+              <p><strong>Murojaat va shikoyatlar tartibi</strong></p>
+              <p>Universitet xodimlari o'z mehnat huquqlari, ish haqi, mehnat sharoitlari yoki boshqa mehnatga oid masalalar yuzasidan rasmiy tarzda murojaat qilish va shikoyat berish huquqiga ega. Universitetda bunday murojaatlarni ko'rib chiqishning aniq, shaffof, adolatli va maxfiy tartibi joriy etiladi.</p>
+
+              <p><strong>Asosiy mehnat huquqlari</strong></p>
+              <p>Universitet barcha xodimlarning asosiy mehnat huquqlarini tan oladi va hurmat qiladi. Bunga kasaba uyushmalariga birlashish erkinligi, kollektiv muzokaralar olib borish huquqi, xavfsiz mehnat sharoiti va adolatli mehnat munosabatlari kiradi.</p>
+
+              <p><strong>Diskriminatsiyadan holi muhit</strong></p>
+              <p>Universitet xodimlar va talabalar uchun diskriminatsiyadan holi, xavfsiz va hurmatga asoslangan muhit yaratishni o'zining muhim vazifalaridan biri deb biladi. Universitet millat, jins, din, yosh, nogironlik yoki boshqa shaxsiy belgilar asosida kamsitishni taqiqlaydi va bunday holatlarning oldini olish choralarini ko'radi.</p>
+              <p>Universitetda tenglik, xilma-xillik va inklyuziya masalalari bilan shug'ullanuvchi maxsus komissiya yoki mas'ul bo'linma faoliyat yuritadi. Ushbu tuzilma tegishli siyosatlarni ishlab chiqish, amalga oshirilishini monitoring qilish, xodimlar va talabalar o'rtasida tushuntirish ishlari hamda treninglar tashkil etish bilan shug'ullanadi.</p>
+
+              <p><strong>Homiladorlik va onalikni qo'llab-quvvatlash</strong></p>
+              <p>Universitet homiladorlik va onalik davrida ayollarni qo'llab-quvvatlash siyosatini amalga oshiradi. Bunga homiladorlik ta'tili, bola parvarishi ta'tili, ish joyini saqlab qolish kafolatlari va zarur hollarda moslashtirilgan mehnat sharoitlari kiradi.</p>
             </div>
         """,
         "single_card_raw_en": """
             <div class="governance-richtext">
               <p><strong>COLLECTIVE AGREEMENT BETWEEN THE ADMINISTRATION OF KARSHI STATE UNIVERSITY AND THE TRADE UNION COMMITTEE OF UNIVERSITY STAFF AND STUDENTS</strong></p>
-              <p>A collective agreement for the period 2026-2028 has been concluded between the administration of Karshi State University and the trade union committee representing the university's staff and students. This agreement serves as an important regulatory document governing labor, socio-economic, and professional relations within the university.</p>
+              <p>A collective agreement for the period 2023-2025 has been concluded between the administration of Karshi State University and the trade union committee representing the university's staff and students. This agreement serves as an important regulatory document governing labor, socio-economic, and professional relations within the university.</p>
               <p>The agreement has been developed in accordance with the legislation of the Republic of Uzbekistan, particularly the Labor Code and other relevant legal acts. Its main objective is to protect the rights and interests of university staff and students, improve working conditions, and promote social partnership.</p>
+
               <p><strong>The agreement covers the following key areas:</strong></p>
               <ul>
                 <li>employment contracts and job security guarantees</li>
@@ -1308,7 +1587,42 @@ GOVERNANCE_PAGE_CONTENT = {
                 <li>professional development and capacity building of employees</li>
                 <li>collective cooperation and trade union activities</li>
               </ul>
+
               <p>In addition, the agreement contributes to strengthening the principles of transparency, fairness, and mutual cooperation within the university. It clearly defines the responsibilities of the employer, employees, and the trade union, aiming to ensure a stable and supportive social environment.</p>
+
+              <p><strong>Equality, diversity, and inclusion</strong></p>
+              <p>The University is committed to ensuring equal opportunities and fostering a fair, inclusive, and respectful environment for all employees and students. Discrimination based on age, sex, gender identity, gender reassignment, disability, nationality or ethnic origin, religion or belief, sexual orientation, marital or civil status, refugee or asylum seeker status, pregnancy and maternity is strictly prohibited.</p>
+              <p>The University shall ensure that equality, diversity, and inclusion principles are upheld across all areas of its activities.</p>
+
+              <p><strong>Support for employees and students with disabilities</strong></p>
+              <p>The University shall provide necessary support services and accessible conditions to ensure equal opportunities for employees and students with disabilities. These include, but are not limited to, accessible infrastructure (ramps and elevators), adapted classrooms, specialized learning materials, assistant and interpreter services, as well as psychological, academic, and social support.</p>
+
+              <p><strong>Right to join trade unions</strong></p>
+              <p>The University recognizes and respects the right of all employees to join trade unions. This right shall apply equally to all categories of staff, including women, early-career professionals, and international employees. The University shall maintain constructive engagement and social dialogue with trade unions.</p>
+
+              <p><strong>Discrimination-free and safe workplace</strong></p>
+              <p>The University strictly prohibits all forms of discrimination in the workplace. Employees and students shall not be subjected to discrimination based on sex, age, religion, nationality, disability, sexual orientation, or any other personal characteristic. Any cases of discrimination shall be addressed in accordance with internal regulations and applicable laws.</p>
+              <p>The University firmly rejects all forms of forced labour, modern slavery, human trafficking, and child labour. The University shall adhere to these principles in its operations and require the same standards from its partners, contractors, and service providers.</p>
+
+              <p><strong>Third-party relations</strong></p>
+              <p>The University shall ensure that employees' labour rights are protected when engaging with third-party organizations. Workers involved through outsourcing arrangements shall be guaranteed fair working conditions, equitable remuneration, occupational safety, and social protection.</p>
+
+              <p><strong>Equal pay and gender monitoring</strong></p>
+              <p>The University shall adhere to the principle of equal pay for work of equal value, regardless of gender. Preventing, identifying, and eliminating gender-based pay disparities shall be a key institutional priority.</p>
+              <p>The University shall conduct regular statistical analyses of employee remuneration to monitor gender pay equality. Where disparities are identified, appropriate corrective measures shall be implemented.</p>
+
+              <p><strong>Grievance and complaint procedure</strong></p>
+              <p>Employees shall have the right to submit formal complaints regarding labour rights, remuneration, working conditions, or other employment-related matters. The University shall maintain a transparent, fair, and confidential grievance mechanism.</p>
+
+              <p><strong>Fundamental labour rights</strong></p>
+              <p>The University recognizes and respects fundamental labour rights, including freedom of association, the right to collective bargaining, safe working conditions, and fair labour practices.</p>
+
+              <p><strong>Equality, diversity, and inclusion structure</strong></p>
+              <p>The University shall ensure a safe, respectful, and discrimination-free environment for all employees and students. Discrimination based on nationality, gender, religion, age, disability, or any other personal characteristic is strictly prohibited.</p>
+              <p>The University shall establish a dedicated committee or unit responsible for equality, diversity, and inclusion. This body shall develop policies, monitor implementation, conduct awareness activities, and organize training programs.</p>
+
+              <p><strong>Support during pregnancy and maternity</strong></p>
+              <p>The University shall implement policies to support women during pregnancy and maternity. This includes maternity leave, childcare leave, job protection guarantees, and, where necessary, flexible or adapted working conditions.</p>
             </div>
         """,
     },
@@ -1658,6 +1972,223 @@ GOVERNANCE_PAGE_CONTENT = {
               <p>Key indicators such as total emissions, the share of renewable energy, and the level of energy efficiency will be monitored. These results will be integrated into the university’s sustainability reports and international ranking systems.</p>
             </div>
         """,
+    },
+}
+
+GOVERNANCE_PAGE_CONTENT["disability-support-policy"] = ANTI_CORRUPTION_CONTACT_CONTENT["disability-support-policy"]
+
+
+DISABILITY_SUPPORT_ROADMAP_CONTENT = {
+    "uz": {
+        "eyebrow": "Barqarorlik boshqaruvi",
+        "title": "Qarshi davlat universitetining nogironligi bo'lgan talabalar uchun inklyuziv ta'lim muhiti holatini baholab, kamchiliklarni bartaraf etish bo'yicha \"YO'L-XARITASI\"",
+        "intro": "Nogironligi bo'lgan talabalar uchun ta'lim muhiti, infratuzilma va qo'llab-quvvatlash xizmatlarini bosqichma-bosqich yaxshilashga qaratilgan amaliy reja.",
+        "table_headers": ["№", "Chora-tadbir nomi", "Amalga oshirish mexanizmi", "Muddat", "Mas'ullar"],
+        "rows": [
+            {
+                "no": "1",
+                "activity": "Ta'lim muhitini (auditoriya, TTJ, hudud) tahlil qilish.",
+                "mechanism_steps": [
+                    "Ishchi guruh tuzish.",
+                    "Ishchi guruh xulosalari asosida tegishli chora-tadbirlarni amalga oshirib borish.",
+                    "Ishchi guruh xulosalarini universitet Kengashlarida muhokama qilib borish.",
+                ],
+                "timeline": "2026-yil iyun",
+                "responsible_people": [
+                    "Yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor (O.Kuziyev)",
+                    "O'quv ishlari bo'yicha prorektor",
+                ],
+            },
+            {
+                "no": "2",
+                "activity": "Ta'lim dasturi bo'yicha maxsus o'quv materiallari (Brayl alifbosidagi kitoblar, ko'rgazmali materiallar), maxsus jihozlar va yordamchi texnik vositalar mavjudligi.",
+                "mechanism_steps": [
+                    "Tegishli fanlarni aniqlash.",
+                    "Audio, elektron adabiyotlarni tayyorlash.",
+                    "Tayyorlangan audio, elektron adabiyotlarni talabalarga yetkazish.",
+                ],
+                "timeline": "O'quv yili davomida",
+                "responsible_people": [
+                    "O'quv ishlari bo'yicha prorektor",
+                    "Axborot-resurs markazi direktori K.Dusyorova",
+                ],
+            },
+            {
+                "no": "3",
+                "activity": "Nogironligi bo'lgan talabalarni qiziqish va imkoniyatlaridan kelib chiqib to'garaklarga jalb etish.",
+                "mechanism_steps": [
+                    "Nogironligi bo'lgan talabalar ro'yxatini shakllantirish.",
+                    "Ushbu talabalarni qiziqish va imkoniyatlaridan kelib chiqib \"Ustoz-shogird\" an'anasi asosida professor-o'qituvchilarga biriktirish.",
+                    "To'garaklarda ishtirokini ta'minlash.",
+                ],
+                "timeline": "2026-yil may",
+                "responsible_people": [
+                    "Yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor (O.Kuziyev)",
+                    "Fakultet dekanlari",
+                ],
+            },
+            {
+                "no": "4",
+                "activity": "Nogironligi bo'lgan talabalarni rag'batlantirish va moddiy qo'llab-quvvatlash.",
+                "mechanism_steps": [
+                    "Nogironligi bo'lgan talabalar ro'yxati asosida tegishli hujjatlarni jamlash.",
+                    "Tegishli hujjatlar asosida universitet rektori buyrug'i loyihasini tayyorlash.",
+                    "Nogironligi bo'lgan talabalarni moddiy qo'llab-quvvatlash.",
+                ],
+                "timeline": "Alohida reja asosida",
+                "responsible_people": [
+                    "Yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor O.Kuziyev",
+                    "Moliya-iqtisod ishlari bo'yicha prorektor",
+                    "Fakultet dekanlari",
+                ],
+            },
+            {
+                "no": "5",
+                "activity": "3-dekabr – “Xalqaro nogironlar kuni” munosabati bilan universitetda “Hech kim mehr va e’tibordan chetda qolmasin!” shiori ostida tadbirlar tashkil etish.",
+                "mechanism_steps": [
+                    "Tadbirlar rejasini ishlab chiqib, tasdiqlash.",
+                    "Tadbirlar ssenariysini ishlab chiqish.",
+                ],
+                "timeline": "2026-yil dekabr",
+                "responsible_people": [
+                    "Yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor O.Kuziyev",
+                    "Fakultet dekanlari",
+                ],
+            },
+            {
+                "no": "6",
+                "activity": "Nogironligi bo'lgan shaxslar uchun qulay muhit va to'siqsiz harakatlanish imkoniyatini yaratish.",
+                "mechanism_steps": [
+                    "Universitet bino-inshootlarini nogironligi bo'lgan shaxslarning to'siqsiz harakatlanishi va ta'lim olish imkoniyatini yaratish uchun rekonstruksiya qilish va jihozlash choralarini ko'rish.",
+                    "Yangi qurilayotgan o'quv binosida nogironlar yo'lakchalari va boshqa infratuzilmalarni yaratish.",
+                ],
+                "timeline": "2026-yil davomida",
+                "responsible_people": [
+                    "Moliya-iqtisod ishlari bo'yicha prorektor.",
+                ],
+            },
+            {
+                "no": "7",
+                "activity": "Inklyuziv ta'lim uchun AKT, elektron resurslar, dasturiy ta'minotdan foydalanish imkoniyati (audio-video resurslar, Brayl yozuvi alifbosi, subtitr va boshqalar) yaratish.",
+                "mechanism_steps": [
+                    "Inklyuziv ta'lim uchun AKT, elektron resurslar va dasturiy ta'minot (audio-video resurslar, Brayl yozuvi, subtitr va boshqalar) yaratish.",
+                    "Ushbu resurslar nogironligi bo'lgan talabalar uchun o'quv jarayonida qo'llash va ta'lim dasturi maqsadlariga erishishga xizmat qilishi.",
+                    "AKT va elektron resurslardan foydalanish samaradorligini monitoring qilish, yangilash va qo'llab-quvvatlash mexanizmlari tashkil qilish.",
+                ],
+                "timeline": "O'quv yili davomida",
+                "responsible_people": [
+                    "Yoshlar masalalari va ma'naviy-ma'rifiy ishlar bo'yicha birinchi prorektor (O.Kuziyev)",
+                    "Moliya-iqtisod ishlari bo'yicha prorektor",
+                    "O'quv ishlari bo'yicha prorektor",
+                    "Axborot-resurs markazi direktori K.Dusyorova",
+                ],
+            },
+        ],
+    },
+    "en": {
+        "eyebrow": "Sustainability governance",
+        "title": "Assessment of the Inclusive Education Environment for Students with Disabilities at Karshi State University and a \"Roadmap\" for Eliminating Identified Shortcomings",
+        "intro": "A practical roadmap for improving the learning environment, infrastructure, and support services for students with disabilities.",
+        "table_headers": ["No.", "Name of Activity", "Implementation mechanism", "Timeline", "Responsible persons"],
+        "rows": [
+            {
+                "no": "1",
+                "activity": "Assessment of the educational environment (classrooms, dormitories, campus area).",
+                "mechanism_steps": [
+                    "Establish a working group.",
+                    "Implement appropriate measures based on the conclusions of the working group.",
+                    "Regularly discuss the working group's conclusions at University Council meetings.",
+                ],
+                "timeline": "June 2026",
+                "responsible_people": [
+                    "First Vice-Rector for Youth Affairs (O. Kuziyev)",
+                    "Vice-Rector for Academic Affairs",
+                ],
+            },
+            {
+                "no": "2",
+                "activity": "Availability of specialized learning materials (Braille books, visual materials), equipment, and assistive technologies.",
+                "mechanism_steps": [
+                    "Identify relevant subjects.",
+                    "Prepare audio and electronic materials.",
+                    "Deliver materials to students.",
+                ],
+                "timeline": "Throughout academic year",
+                "responsible_people": [
+                    "Vice-Rector for Academic Affairs",
+                    "Director of Information Resource Center (K. Dusyorova)",
+                ],
+            },
+            {
+                "no": "3",
+                "activity": "Engagement of students with disabilities in extracurricular clubs.",
+                "mechanism_steps": [
+                    "Compile list of students.",
+                    "Assign mentors based on interests (mentor-mentee system).",
+                    "Ensure participation in clubs.",
+                ],
+                "timeline": "May 2026",
+                "responsible_people": [
+                    "First Vice-Rector (O. Kuziyev)",
+                    "Faculty Deans",
+                ],
+            },
+            {
+                "no": "4",
+                "activity": "Encouragement and financial support for students with disabilities.",
+                "mechanism_steps": [
+                    "Collect required documents.",
+                    "Prepare Rector's order draft.",
+                    "Provide financial support.",
+                ],
+                "timeline": "Based on separate plan",
+                "responsible_people": [
+                    "First Vice-Rector (O. Kuziyev)",
+                    "Vice-Rector for Finance",
+                    "Faculty Deans",
+                ],
+            },
+            {
+                "no": "5",
+                "activity": "Organization of events for International Day of Persons with Disabilities.",
+                "mechanism_steps": [
+                    "Develop and approve plan.",
+                    "Prepare event program/script.",
+                ],
+                "timeline": "December 2026",
+                "responsible_people": [
+                    "First Vice-Rector (O. Kuziyev)",
+                    "Faculty Deans",
+                ],
+            },
+            {
+                "no": "6",
+                "activity": "Creating an accessible and barrier-free environment.",
+                "mechanism_steps": [
+                    "Reconstruct and equip buildings.",
+                    "Create accessible infrastructure in new buildings.",
+                ],
+                "timeline": "Throughout 2026",
+                "responsible_people": [
+                    "Vice-Rector for Finance and Economic Affairs",
+                ],
+            },
+            {
+                "no": "7",
+                "activity": "Use of ICT, electronic resources, and software for inclusive education.",
+                "mechanism_steps": [
+                    "Develop ICT tools and resources.",
+                    "Integrate into learning process.",
+                    "Monitor and update effectiveness.",
+                ],
+                "timeline": "Throughout academic year",
+                "responsible_people": [
+                    "First Vice-Rector (O. Kuziyev)",
+                    "Vice-Rectors",
+                    "Director of Information Resource Center (K. Dusyorova)",
+                ],
+            },
+        ],
     },
 }
 
@@ -3774,7 +4305,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
             "intro": section[f"intro_{language_suffix}"],
             "sections": section[f"sections_{language_suffix}"],
             "raw_html": section.get(f"single_card_raw_{language_suffix}"),
-            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi", "uglerod-emissiyalari"},
+            "single_card": slug in {"sdg-policy", "sdg-purchase", "sdg-investment", "sdg-committee", "anti-corruption", "jamoatchilik", "xotin-qizlar", "ethics-code", "talabalar-kengashi", "uglerod-emissiyalari", "disability-support-policy"},
         }
         contact_language = "uz" if language_code == "uz" else "en"
         governance_contact_panels = {
@@ -3784,6 +4315,13 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                 "department": ANTI_CORRUPTION_CONTACT_CONTENT[contact_language]["title"],
                 "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
                 "url": reverse("anti-corruption-contact"),
+            },
+            "disability-support-policy": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": DISABILITY_SUPPORT_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": DISABILITY_SUPPORT_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Markaz ma'lumotlari" if language_code == "uz" else "View center details",
+                "url": reverse("governance-finance-contact", args=[slug]),
             },
             "sdg-investment": {
                 "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
@@ -3804,6 +4342,13 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                 "name": WOMEN_SUPPORT_CONTACT_CONTENT[contact_language]["leader_name"],
                 "department": WOMEN_SUPPORT_CONTACT_CONTENT[contact_language]["title"],
                 "button_label": "Mutaxassis ma'lumotlari" if language_code == "uz" else "View specialist details",
+                "url": reverse("governance-finance-contact", args=[slug]),
+            },
+            "talabalar-kengashi": {
+                "title": "Mas'ul mutaxassis" if language_code == "uz" else "Responsible specialist",
+                "name": STUDENT_UNION_CONTACT_CONTENT[contact_language]["leader_name"],
+                "department": STUDENT_UNION_CONTACT_CONTENT[contact_language]["title"],
+                "button_label": "Mutaxassis bilan bog'lanish" if language_code == "uz" else "Contact specialist",
                 "url": reverse("governance-finance-contact", args=[slug]),
             },
         }
@@ -4017,6 +4562,8 @@ class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
             "xotin-qizlar": WOMEN_SUPPORT_CONTACT_CONTENT,
             "ethics-code": YOUTH_AFFAIRS_CONTACT_CONTENT,
             "jamoatchilik": TRADE_UNION_CONTACT_CONTENT,
+            "disability-support-policy": DISABILITY_SUPPORT_CONTACT_CONTENT,
+            "talabalar-kengashi": STUDENT_UNION_CONTACT_CONTENT,
         }
         if slug not in governance_contact_content:
             raise Http404("Governance contact page not found")
@@ -4029,6 +4576,29 @@ class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
             "cache_key": f"{slug}-contact-v2",
         }
         context["department_contact_page"] = content
+        return context
+
+
+class GovernanceRoadmapView(BasePortalContextMixin, TemplateView):
+    template_name = "portal/governance_roadmap.html"
+    page_key = "about"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        slug = kwargs["slug"]
+        if slug != "disability-support-policy":
+            raise Http404("Governance roadmap page not found")
+
+        language_code = self.get_language_code()
+        roadmap_content = DISABILITY_SUPPORT_ROADMAP_CONTENT["uz" if language_code == "uz" else "en"]
+        context["roadmap_page"] = {
+            **roadmap_content,
+            "back_url": reverse("governance-detail", args=[slug]),
+            "back_label": "Siyosat sahifasiga qaytish" if language_code == "uz" else "Back to policy",
+            "contact_url": reverse("governance-finance-contact", args=[slug]),
+            "contact_label": "Markaz ma'lumotlari" if language_code == "uz" else "View center details",
+            "cache_key": "disability-support-roadmap-v1",
+        }
         return context
 
 

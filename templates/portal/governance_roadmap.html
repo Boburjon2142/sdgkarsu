@@ -1,0 +1,79 @@
+{% extends "portal/base.html" %}
+{% load cache %}
+
+{% block content %}
+  <section class="page-intro page-intro--clean roadmap-page__hero">
+    <div class="container research-intro roadmap-page__hero-grid">
+      {% cache 900 roadmap_page_hero roadmap_page.cache_key current_language using="fragments" %}
+      <div class="research-intro__main">
+        <div class="eyebrow">{{ roadmap_page.eyebrow }}</div>
+        <h1>{{ roadmap_page.title }}</h1>
+        <p class="page-intro__lead">{{ roadmap_page.intro }}</p>
+      </div>
+      <aside class="research-intro__aside roadmap-page__aside">
+        <span class="chip">
+          {% if current_language == "uz" %}
+            Yo'l xaritasi
+          {% else %}
+            Roadmap
+          {% endif %}
+        </span>
+        <p>
+          {% if current_language == "uz" %}
+            Ushbu sahifa nogironligi bo'lgan talabalar uchun inklyuziv ta'lim muhiti va infratuzilmani yaxshilash bo'yicha amaliy choralarni jamlaydi.
+          {% else %}
+            This page brings together practical measures for improving inclusive education conditions and infrastructure for students with disabilities.
+          {% endif %}
+        </p>
+        <a class="button button--primary" href="{{ roadmap_page.contact_url }}">
+          {{ roadmap_page.contact_label }}
+        </a>
+        <a class="button button--secondary" href="{{ roadmap_page.back_url }}">
+          {{ roadmap_page.back_label }}
+        </a>
+      </aside>
+      {% endcache %}
+    </div>
+  </section>
+
+  <section class="section roadmap-page__table-section">
+    <div class="container">
+      {% cache 900 roadmap_page_body roadmap_page.cache_key current_language using="fragments" %}
+      <article class="content-card governance-detail-card governance-detail-card--single roadmap-page__card">
+        <div class="governance-table-wrap">
+          <table class="governance-table roadmap-table">
+            <thead>
+              <tr>
+                {% for header in roadmap_page.table_headers %}
+                  <th>{{ header }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in roadmap_page.rows %}
+                <tr>
+                  <td class="roadmap-table__no">{{ row.no }}</td>
+                  <td class="roadmap-table__activity">{{ row.activity }}</td>
+                  <td class="roadmap-table__mechanism">
+                    <ol class="roadmap-step-list">
+                      {% for step in row.mechanism_steps %}
+                        <li>{{ step }}</li>
+                      {% endfor %}
+                    </ol>
+                  </td>
+                  <td class="roadmap-table__timeline">{{ row.timeline }}</td>
+                  <td class="roadmap-table__responsible">
+                    {% for person in row.responsible_people %}
+                      <p>{{ person }}</p>
+                    {% endfor %}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </article>
+      {% endcache %}
+    </div>
+  </section>
+{% endblock %}

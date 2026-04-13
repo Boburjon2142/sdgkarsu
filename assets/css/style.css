@@ -2121,6 +2121,36 @@ blockquote {
   color: var(--text-strong);
 }
 
+.roadmap-page__aside .button {
+  width: 100%;
+}
+
+.roadmap-table td {
+  vertical-align: top;
+}
+
+.roadmap-table__no {
+  width: 3rem;
+  font-weight: 700;
+}
+
+.roadmap-step-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.roadmap-step-list li + li {
+  margin-top: 0.45rem;
+}
+
+.roadmap-table__responsible p {
+  margin: 0;
+}
+
+.roadmap-table__responsible p + p {
+  margin-top: 0.35rem;
+}
+
 .research-detail-section--no-hover .content-card,
 .research-detail-section--no-hover .content-card:hover,
 .research-detail-section--no-hover .content-card:focus-within {
@@ -2193,6 +2223,12 @@ blockquote {
   background:
     radial-gradient(circle at top right, rgba(221, 19, 103, 0.12), transparent 44%),
     linear-gradient(180deg, #fffdfd, #faf3f7);
+}
+
+.governance-link-card--inclusion {
+  background:
+    radial-gradient(circle at top right, rgba(0, 126, 145, 0.13), transparent 44%),
+    linear-gradient(180deg, #fbfefe, #eff8fa);
 }
 
 .governance-panel {
