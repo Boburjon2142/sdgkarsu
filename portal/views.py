@@ -633,7 +633,7 @@ DISABILITY_SUPPORT_CONTACT_CONTENT = {
             "Elektron pochta: nurbekfarmonov4@gmail.com",
             "Qabul kunlari: Dushanba 10:00-13:00, Chorshanba 14:00-17:00",
         ],
-        "image_url": "/meedia/farmonov.jpg",
+        "image_url": "/static/images/staff/farmonov.jpg",
         "sections": [
             {
                 "title": "Asosiy vazifalari",
@@ -668,7 +668,7 @@ DISABILITY_SUPPORT_CONTACT_CONTENT = {
             "Email: nurbekfarmonov4@gmail.com",
             "Reception days: Monday 10:00-13:00, Wednesday 14:00-17:00",
         ],
-        "image_url": "/meedia/farmonov.jpg",
+        "image_url": "/static/images/staff/farmonov.jpg",
         "sections": [
             {
                 "title": "Main responsibilities",
@@ -707,7 +707,7 @@ STUDENT_UNION_CONTACT_CONTENT = {
             "Elektron pochta: dostonravshanov1996@gmail.com",
             "Qabul kunlari: Dushanba-Juma 9:00-18:00 gacha",
         ],
-        "image_url": "/meedia/dossi.jpg",
+        "image_url": "/static/images/staff/dossi.jpg",
         "sections": [
             {
                 "title": "Mehnat faoliyati",
@@ -744,7 +744,7 @@ STUDENT_UNION_CONTACT_CONTENT = {
             "Email: dostonravshanov1996@gmail.com",
             "Reception hours: Monday-Friday from 09:00 to 18:00",
         ],
-        "image_url": "/meedia/dossi.jpg",
+        "image_url": "/static/images/staff/dossi.jpg",
         "sections": [
             {
                 "title": "Work Experience",
