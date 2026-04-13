@@ -21,7 +21,7 @@
         <article class="content-card governance-detail-card governance-detail-card--single anti-corruption-contact-card">
           <div class="anti-corruption-contact-card__header">
             <div class="anti-corruption-contact-card__image-wrap">
-              <img class="anti-corruption-contact-card__image" src="{{ department_contact_page.image_url }}" alt="{{ department_contact_page.leader_name }}">
+              <img class="anti-corruption-contact-card__image" src="{{ department_contact_page.image_url }}" alt="{{ department_contact_page.leader_name }}"{% if department_contact_page.image_fallback_url %} onerror="this.onerror=null; this.src='{{ department_contact_page.image_fallback_url|escapejs }}';"{% endif %}>
             </div>
             <div class="anti-corruption-contact-card__meta">
               <h2>{{ department_contact_page.leader_title }}</h2>

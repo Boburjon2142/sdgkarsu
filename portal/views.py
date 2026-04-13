@@ -634,6 +634,7 @@ DISABILITY_SUPPORT_CONTACT_CONTENT = {
             "Qabul kunlari: Dushanba 10:00-13:00, Chorshanba 14:00-17:00",
         ],
         "image_url": "/static/images/staff/farmonov.jpg",
+        "image_fallback_url": "/meedia/farmonov.jpg",
         "sections": [
             {
                 "title": "Asosiy vazifalari",
@@ -669,6 +670,7 @@ DISABILITY_SUPPORT_CONTACT_CONTENT = {
             "Reception days: Monday 10:00-13:00, Wednesday 14:00-17:00",
         ],
         "image_url": "/static/images/staff/farmonov.jpg",
+        "image_fallback_url": "/meedia/farmonov.jpg",
         "sections": [
             {
                 "title": "Main responsibilities",
@@ -708,6 +710,7 @@ STUDENT_UNION_CONTACT_CONTENT = {
             "Qabul kunlari: Dushanba-Juma 9:00-18:00 gacha",
         ],
         "image_url": "/static/images/staff/dossi.jpg",
+        "image_fallback_url": "/meedia/dossi.jpg",
         "sections": [
             {
                 "title": "Mehnat faoliyati",
@@ -745,6 +748,7 @@ STUDENT_UNION_CONTACT_CONTENT = {
             "Reception hours: Monday-Friday from 09:00 to 18:00",
         ],
         "image_url": "/static/images/staff/dossi.jpg",
+        "image_fallback_url": "/meedia/dossi.jpg",
         "sections": [
             {
                 "title": "Work Experience",
@@ -4573,7 +4577,7 @@ class GovernanceFinanceContactView(BasePortalContextMixin, TemplateView):
             **content,
             "back_url": f"/about/{slug}/",
             "back_label": "Boshqaruv sahifasiga qaytish" if language_code == "uz" else "Back to governance",
-            "cache_key": f"{slug}-contact-v2",
+            "cache_key": f"{slug}-contact-v3",
         }
         context["department_contact_page"] = content
         return context

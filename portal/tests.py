@@ -283,6 +283,7 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, "dostonravshanov1996@gmail.com")
         self.assertContains(response, "Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University")
         self.assertContains(response, "/static/images/staff/dossi.jpg")
+        self.assertContains(response, "/meedia/dossi.jpg")
 
     def test_collective_agreement_content_loads(self):
         client = Client()
