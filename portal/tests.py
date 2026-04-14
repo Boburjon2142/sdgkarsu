@@ -299,6 +299,36 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, "Universitet ish joyida har qanday shakldagi diskriminatsiyani qat'iyan taqiqlaydi.")
         self.assertContains(response, "homiladorlik va onalik davrida ayollarni qo'llab-quvvatlash siyosatini amalga oshiradi")
 
+    def test_greenhouse_report_uses_uzbek_tables_without_download_cta(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("report-card-detail", kwargs={"slug": "greenhouse-gases"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Scope 1 -")
+        self.assertContains(response, "Tabiiy gaz")
+        self.assertContains(response, "1 141,9")
+        self.assertNotContains(response, "research-intro__aside")
+        self.assertNotContains(response, "download=")
+
+    def test_greenhouse_report_uses_english_tables_without_download_cta(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "en"
+        session.save()
+
+        response = client.get(reverse("report-card-detail", kwargs={"slug": "greenhouse-gases"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Scope 1 - Direct Emissions")
+        self.assertContains(response, "Natural gas consumption")
+        self.assertContains(response, "1 141.9")
+        self.assertNotContains(response, "research-intro__aside")
+        self.assertNotContains(response, "download=")
+
     def test_governance_detail_uses_english_content_when_language_is_en(self):
         client = Client()
         session = client.session
