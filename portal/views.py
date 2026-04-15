@@ -94,8 +94,8 @@ ANTI_CORRUPTION_CONTACT_CONTENT = {
             {
                 "title": "Bo'lim mutaxassislari aloqalari",
                 "bullets": [
-                    "+99897-319-00-12 вЂ” nodirasrajiddinova@gmail.com",
-                    "+99877-106-67-77 вЂ” shuxrataxmedov2778@gmail.com",
+                    "+99897-319-00-12 РІР‚вЂќ nodirasrajiddinova@gmail.com",
+                    "+99877-106-67-77 РІР‚вЂќ shuxrataxmedov2778@gmail.com",
                 ],
             },
             {
@@ -150,8 +150,8 @@ ANTI_CORRUPTION_CONTACT_CONTENT = {
             {
                 "title": "Specialists' contacts",
                 "bullets": [
-                    "+99897-319-00-12 вЂ” nodirasrajiddinova@gmail.com",
-                    "+99877-106-67-77 вЂ” shuxrataxmedov2778@gmail.com",
+                    "+99897-319-00-12 РІР‚вЂќ nodirasrajiddinova@gmail.com",
+                    "+99877-106-67-77 РІР‚вЂќ shuxrataxmedov2778@gmail.com",
                 ],
             },
             {
@@ -260,7 +260,7 @@ FINANCIAL_CONTACT_CONTENT = {
     "uz": {
         "eyebrow": "Barqarorlik boshqaruvi",
         "title": "Reja-moliya bo'limi",
-        "intro": "Reja-moliya bo'limi вЂ” Qarshi davlat universiteti sahifasi, 24-fevral 2025 sanasi bilan joylangan.",
+        "intro": "Reja-moliya bo'limi РІР‚вЂќ Qarshi davlat universiteti sahifasi, 24-fevral 2025 sanasi bilan joylangan.",
         "leader_title": "Bo'lim boshlig'i",
         "leader_name": "Xolbayev Sodiq Utaganovich",
         "leader_role": "Reja-moliya bo'limi boshlig'i",
@@ -274,13 +274,13 @@ FINANCIAL_CONTACT_CONTENT = {
             {
                 "title": "Mehnat faoliyati",
                 "bullets": [
-                    "1983-1983 yy. вЂ” Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida hisobchi",
-                    "1983-1985 yy. вЂ” muddatli harbiy xizmat chaqiriluvchisi",
-                    "1985-1986 yy. вЂ” Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida chorva bo'yicha hisobchi",
-                    "1986-1997 yy. вЂ” Nishon tumani \"Salvador Alyendi\" nomli jamoa xo'jaligida hisobchi",
-                    "1997-2004 yy. вЂ” Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
-                    "2004-2005 yy. вЂ” Qarshi davlat universitetida bosh hisobchi",
-                    "2005 yildan hozirga qadar вЂ” Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
+                    "1983-1983 yy. РІР‚вЂќ Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida hisobchi",
+                    "1983-1985 yy. РІР‚вЂќ muddatli harbiy xizmat chaqiriluvchisi",
+                    "1985-1986 yy. РІР‚вЂќ Dehqonobod tumani \"Krupskaya\" nomli jamoa xo'jaligida chorva bo'yicha hisobchi",
+                    "1986-1997 yy. РІР‚вЂќ Nishon tumani \"Salvador Alyendi\" nomli jamoa xo'jaligida hisobchi",
+                    "1997-2004 yy. РІР‚вЂќ Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
+                    "2004-2005 yy. РІР‚вЂќ Qarshi davlat universitetida bosh hisobchi",
+                    "2005 yildan hozirga qadar РІР‚вЂќ Qarshi davlat universiteti Reja-moliya bo'limi boshlig'i",
                 ],
             },
             {
@@ -314,13 +314,13 @@ FINANCIAL_CONTACT_CONTENT = {
             {
                 "title": "Professional background",
                 "bullets": [
-                    "1983-1983 вЂ” Accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
-                    "1983-1985 вЂ” Conscript in compulsory military service",
-                    "1985-1986 вЂ” Livestock accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
-                    "1986-1997 вЂ” Accountant at the \"Salvador Allende\" collective farm, Nishon district",
-                    "1997-2004 вЂ” Head of the Planning and Finance Department, Karshi State University",
-                    "2004-2005 вЂ” Chief accountant at Karshi State University",
-                    "Since 2005 вЂ” Head of the Planning and Finance Department, Karshi State University",
+                    "1983-1983 РІР‚вЂќ Accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
+                    "1983-1985 РІР‚вЂќ Conscript in compulsory military service",
+                    "1985-1986 РІР‚вЂќ Livestock accountant at the \"Krupskaya\" collective farm, Dehqonobod district",
+                    "1986-1997 РІР‚вЂќ Accountant at the \"Salvador Allende\" collective farm, Nishon district",
+                    "1997-2004 РІР‚вЂќ Head of the Planning and Finance Department, Karshi State University",
+                    "2004-2005 РІР‚вЂќ Chief accountant at Karshi State University",
+                    "Since 2005 РІР‚вЂќ Head of the Planning and Finance Department, Karshi State University",
                 ],
             },
             {
@@ -358,10 +358,10 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
             {
                 "title": "Mehnat faoliyati",
                 "bullets": [
-                    "2018-2020 yy. вЂ” Qarshi davlat universiteti adabiyotshunoslik kafedrasi o'qituvchisi",
-                    "2020-2022 yy. вЂ” Qarshi davlat universiteti adabiyotshunoslik kafedrasi katta o'qituvchisi",
-                    "2022-2023 yy. вЂ” Qarshi davlat universiteti xotin-qizlar maslahat kengashi raisi",
-                    "2023 yildan hozirgacha вЂ” Qarshi davlat universiteti xotin-qizlar bilan ishlash va psixologik maslahat markazi boshlig'i.",
+                    "2018-2020 yy. РІР‚вЂќ Qarshi davlat universiteti adabiyotshunoslik kafedrasi o'qituvchisi",
+                    "2020-2022 yy. РІР‚вЂќ Qarshi davlat universiteti adabiyotshunoslik kafedrasi katta o'qituvchisi",
+                    "2022-2023 yy. РІР‚вЂќ Qarshi davlat universiteti xotin-qizlar maslahat kengashi raisi",
+                    "2023 yildan hozirgacha РІР‚вЂќ Qarshi davlat universiteti xotin-qizlar bilan ishlash va psixologik maslahat markazi boshlig'i.",
                 ],
             },
             {
@@ -402,10 +402,10 @@ WOMEN_SUPPORT_CONTACT_CONTENT = {
             {
                 "title": "Professional background",
                 "bullets": [
-                    "2018-2020 вЂ” Teacher at the Department of Literary Studies, Karshi State University",
-                    "2020-2022 вЂ” Senior teacher at the Department of Literary Studies, Karshi State University",
-                    "2022-2023 вЂ” Chair of the Women's Advisory Council, Karshi State University",
-                    "Since 2023 вЂ” Head of the Center for Work with Women and Psychological Counseling, Karshi State University.",
+                    "2018-2020 РІР‚вЂќ Teacher at the Department of Literary Studies, Karshi State University",
+                    "2020-2022 РІР‚вЂќ Senior teacher at the Department of Literary Studies, Karshi State University",
+                    "2022-2023 РІР‚вЂќ Chair of the Women's Advisory Council, Karshi State University",
+                    "Since 2023 РІР‚вЂќ Head of the Center for Work with Women and Psychological Counseling, Karshi State University.",
                 ],
             },
             {
@@ -753,9 +753,9 @@ STUDENT_UNION_CONTACT_CONTENT = {
             {
                 "title": "Work Experience",
                 "bullets": [
-                    "2021-2022 вЂ“ Chief Specialist, Department for the Organization of Spiritual and Educational Activities, Karshi State University",
-                    "2022-2024 вЂ“ Chief Specialist, Department for Coordination of Student Accommodation, Karshi State University",
-                    "Since 2024 вЂ“ Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University",
+                    "2021-2022 РІР‚вЂњ Chief Specialist, Department for the Organization of Spiritual and Educational Activities, Karshi State University",
+                    "2022-2024 РІР‚вЂњ Chief Specialist, Department for Coordination of Student Accommodation, Karshi State University",
+                    "Since 2024 РІР‚вЂњ Leader of the Primary Organization of the Youth Union of Uzbekistan at Karshi State University",
                 ],
             },
             {
@@ -1316,7 +1316,7 @@ GOVERNANCE_PAGE_CONTENT = {
                 ],
                 "tables": [
                     {
-                        "headers": ["в„–", "Tender mezonlari", "Tender ball"],
+                        "headers": ["РІвЂћвЂ“", "Tender mezonlari", "Tender ball"],
                         "rows": [
                             ["1", "Narx", "50 ball"],
                             ["2", "Texnik sifat", "20 ball"],
@@ -1334,7 +1334,7 @@ GOVERNANCE_PAGE_CONTENT = {
                 ],
                 "tables": [
                     {
-                        "headers": ["в„–", "Indikator", "2030 yilgacha"],
+                        "headers": ["РІвЂћвЂ“", "Indikator", "2030 yilgacha"],
                         "rows": [
                             ["1", "Sustainable procurement share", "40%"],
                             ["2", "Eco-certified products", "30%"],
@@ -1352,11 +1352,11 @@ GOVERNANCE_PAGE_CONTENT = {
                 ],
                 "tables": [
                     {
-                        "headers": ["в„–", "Indikator", "2030 yilgacha"],
+                        "headers": ["РІвЂћвЂ“", "Indikator", "2030 yilgacha"],
                         "rows": [
-                            ["1", "Karbon emissiyasi", "в€’40% kamaytirish"],
+                            ["1", "Karbon emissiyasi", "РІв‚¬вЂ™40% kamaytirish"],
                             ["2", "Qayta tiklanuvchi energiya ulushi", "50%"],
-                            ["3", "Suv iste'moli", "в€’30% kamaytirish"],
+                            ["3", "Suv iste'moli", "РІв‚¬вЂ™30% kamaytirish"],
                             ["4", "Chiqindilarni qayta ishlash", "70%"],
                         ],
                     }
@@ -1641,26 +1641,26 @@ GOVERNANCE_PAGE_CONTENT = {
         "sections_en": [],
         "single_card_raw_uz": """
             <div class="governance-richtext">
-              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>XOTIN-QIZLARNI QOвЂLLAB-QUVVATLASH VA GENDER TENGLIK SIYOSATI</strong></p>
-              <p>Qarshi davlat universiteti xotin-qizlarning huquq va manfaatlarini himoya qilish, ularning taвЂ™lim, ilmiy faoliyat va ijtimoiy hayotdagi faol ishtirokini taвЂ™minlash hamda gender tenglik tamoyillarini mustahkamlashni oвЂzining ustuvor vazifalaridan biri sifatida belgilaydi. Mazkur siyosat OвЂzbekiston Respublikasi Oliy Majlis Senatining 2022-yil 28-dekabrdagi вЂњ2030-yilgacha OвЂzbekiston Respublikasida gender tenglikka erishish strategiyasining 2021вЂ“2022-yillardagi ijrosi hamda uni amalga oshirish boвЂyicha 2023-yilga moвЂljallangan chora-tadbirlarni tasdiqlash toвЂgвЂrisidaвЂќgi SQ-682-IV-sonli qarori, OвЂzbekiston Respublikasi Oliy taвЂ™lim, fan va innovatsiyalar vazirligining 2023-yil 5-maydagi 126-sonli buyrugвЂi, shuningdek OвЂzbekiston Respublikasi Vazirlar Mahkamasining 2021-yil 6-oktabrdagi 625-sonli вЂњZoвЂrlik ishlatishdan jabr koвЂrgan xotin-qizlarni reabilitatsiya qilish va moslashtirish hamda oвЂz joniga qasd qilishning oldini olish borasidagi ishlarni takomillashtirishga doir qoвЂshimcha chora-tadbirlar toвЂgвЂrisidaвЂќgi qarori asosida ishlab chiqilgan boвЂlib, universitetda xotin-qizlarga nisbatan har qanday diskriminatsiya, tazyiq va zoвЂravonlikka qarshi qatвЂ™iy nol darajadagi yondashuvni taвЂ™minlashga qaratilgan.</p>
-              <p>Universitet hududida xotin-qizlar uchun teng imkoniyatlar yaratish nafaqat rasmiy siyosat va tartib-qoidalar orqali, balki kundalik taвЂ™lim jarayoni, ijtimoiy hayot va madaniy faoliyat orqali ham izchil amalga oshiriladi. Talaba-qizlar va ayol xodimlarning shaxsiy rivojlanishi, ilmiy salohiyatini oshirish, kasbiy kompetensiyalarini mustahkamlash hamda jamiyatda faol fuqarolik pozitsiyasini shakllantirish uchun zarur shart-sharoitlar yaratiladi. Shu bilan birga, universitetda sogвЂlom ijtimoiy-psixologik muhitni shakllantirish, oвЂzaro hurmat, tenglik va bagвЂrikenglik qadriyatlarini rivojlantirishga alohida eвЂ™tibor qaratiladi.</p>
-              <p>Qarshi davlat universitetida xotin-qizlarga nisbatan zoвЂravonlik va tazyiqlarning oldini olish ustuvor yoвЂnalishlardan biri hisoblanadi. Shu maqsadda muntazam ravishda вЂњZoвЂravonlik va tazyiqqa qarshimizвЂќ mavzusida davra suhbatlari, targвЂibot tadbirlari va maвЂ™rifiy uchrashuvlar tashkil etiladi. Ushbu jarayonlarda talabalar jinoyatchilikning oldini olish, huquqiy savodxonlikni oshirish, zoвЂravonlikning sabablari va oqibatlari haqida chuqur tushunchaga ega boвЂladilar, shuningdek bunday holatlarda qanday himoyalanish va qayerga murojaat qilish mumkinligi yuzasidan aniq tavsiyalar oladilar. Universitet psixologlari, inspektorlar va mutaxassislar ishtirokida oвЂtkaziladigan bunday tadbirlar xotin-qizlarda oвЂz huquqlarini anglash, ijtimoiy faollik va shaxsiy xavfsizlik madaniyatini shakllantirishga xizmat qiladi.</p>
-              <p>Universitetda psixologik va ijtimoiy qoвЂllab-quvvatlash tizimi izchil yoвЂlga qoвЂyilgan boвЂlib, talaba-qizlar va ayol xodimlar uchun bepul maslahat xizmatlari taqdim etiladi. Psixologik xizmat markazi orqali stress, bosim, ijtimoiy muammolar yoki shaxsiy qiyinchiliklarga duch kelgan xotin-qizlarga individual yondashuv asosida yordam koвЂrsatiladi, bu esa ularning ruhiy barqarorligini mustahkamlash, taвЂ™lim va ish faoliyatida samaradorlikni oshirishga xizmat qiladi.</p>
-              <p>Shuningdek, universitetda gender tenglik, oilaviy qadriyatlar va ijtimoiy masвЂ™uliyat masalalariga bagвЂishlangan taвЂ™lim va maвЂ™rifiy dasturlar muntazam amalga oshiriladi. Fakultetlar kesimida tashkil etiladigan seminarlar va uchrashuvlarda xotin-qizlarning jamiyatdagi oвЂrni, ularning ijtimoiy himoyasi, zamonaviy globallashuv sharoitida yuzaga kelayotgan muammolar va ularning yechimlari muhokama qilinadi. Bu jarayonlarda xotin-qizlar boвЂyicha maslahatchilar, psixologlar va mutaxassislar faol ishtirok etadi va talabalarga amaliy bilim hamda hayotiy koвЂnikmalar beriladi.</p>
-              <p>Universitet xotin-qizlarning ijtimoiy faolligini oshirishga alohida eвЂ™tibor qaratadi. Turli tanlovlar, aksiyalar va madaniy tadbirlar, jumladan вЂњZoвЂravonlikka qarshi 16 kunвЂќ kampaniyasi doirasidagi tashabbuslar xotin-qizlarning jamiyatdagi rolini mustahkamlash, ularning ijodiy va ijtimoiy salohiyatini namoyon etish uchun muhim platforma vazifasini bajaradi. Bunday tashabbuslar nafaqat xotin-qizlarni qoвЂllab-quvvatlashga, balki universitetda sogвЂlom, xavfsiz va inklyuziv muhitni shakllantirishga xizmat qiladi.</p>
-              <p>Mazkur siyosat doirasida universitet har bir xotin-qiz uchun xavfsiz va himoyalangan muhitni kafolatlaydi. ZoвЂravonlik yoki tazyiq holatlari yuzaga kelgan taqdirda maxfiy murojaat qilish imkoniyati yaratilgan boвЂlib, har bir murojaat tezkor, xolis va adolatli tarzda koвЂrib chiqiladi, jabrlangan shaxslarni himoya qilish va ularga zarur yordam koвЂrsatish ustuvor vazifa sifatida qaraladi.</p>
-              <p>Umuman olganda, Qarshi davlat universiteti xotin-qizlarni qoвЂllab-quvvatlash va gender tenglikni taвЂ™minlash orqali zamonaviy, inklyuziv va barqaror taвЂ™lim muhitini shakllantirishni maqsad qiladi. Ushbu siyosat universitet jamoasining barcha aвЂ™zolari uchun teng imkoniyatlar yaratish, inson qadr-qimmatini hurmat qilish va ijtimoiy adolatni taвЂ™minlashga xizmat qiladi hamda milliy va xalqaro barqaror rivojlanish maqsadlariga mos ravishda doimiy takomillashtirib boriladi.</p>
+              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>XOTIN-QIZLARNI QOРІР‚ВLLAB-QUVVATLASH VA GENDER TENGLIK SIYOSATI</strong></p>
+              <p>Qarshi davlat universiteti xotin-qizlarning huquq va manfaatlarini himoya qilish, ularning taРІР‚в„ўlim, ilmiy faoliyat va ijtimoiy hayotdagi faol ishtirokini taРІР‚в„ўminlash hamda gender tenglik tamoyillarini mustahkamlashni oРІР‚Вzining ustuvor vazifalaridan biri sifatida belgilaydi. Mazkur siyosat OРІР‚Вzbekiston Respublikasi Oliy Majlis Senatining 2022-yil 28-dekabrdagi РІР‚Сљ2030-yilgacha OРІР‚Вzbekiston Respublikasida gender tenglikka erishish strategiyasining 2021РІР‚вЂњ2022-yillardagi ijrosi hamda uni amalga oshirish boРІР‚Вyicha 2023-yilga moРІР‚Вljallangan chora-tadbirlarni tasdiqlash toРІР‚ВgРІР‚ВrisidaРІР‚Сњgi SQ-682-IV-sonli qarori, OРІР‚Вzbekiston Respublikasi Oliy taРІР‚в„ўlim, fan va innovatsiyalar vazirligining 2023-yil 5-maydagi 126-sonli buyrugРІР‚Вi, shuningdek OРІР‚Вzbekiston Respublikasi Vazirlar Mahkamasining 2021-yil 6-oktabrdagi 625-sonli РІР‚СљZoРІР‚Вrlik ishlatishdan jabr koРІР‚Вrgan xotin-qizlarni reabilitatsiya qilish va moslashtirish hamda oРІР‚Вz joniga qasd qilishning oldini olish borasidagi ishlarni takomillashtirishga doir qoРІР‚Вshimcha chora-tadbirlar toРІР‚ВgРІР‚ВrisidaРІР‚Сњgi qarori asosida ishlab chiqilgan boРІР‚Вlib, universitetda xotin-qizlarga nisbatan har qanday diskriminatsiya, tazyiq va zoРІР‚Вravonlikka qarshi qatРІР‚в„ўiy nol darajadagi yondashuvni taРІР‚в„ўminlashga qaratilgan.</p>
+              <p>Universitet hududida xotin-qizlar uchun teng imkoniyatlar yaratish nafaqat rasmiy siyosat va tartib-qoidalar orqali, balki kundalik taРІР‚в„ўlim jarayoni, ijtimoiy hayot va madaniy faoliyat orqali ham izchil amalga oshiriladi. Talaba-qizlar va ayol xodimlarning shaxsiy rivojlanishi, ilmiy salohiyatini oshirish, kasbiy kompetensiyalarini mustahkamlash hamda jamiyatda faol fuqarolik pozitsiyasini shakllantirish uchun zarur shart-sharoitlar yaratiladi. Shu bilan birga, universitetda sogРІР‚Вlom ijtimoiy-psixologik muhitni shakllantirish, oРІР‚Вzaro hurmat, tenglik va bagРІР‚Вrikenglik qadriyatlarini rivojlantirishga alohida eРІР‚в„ўtibor qaratiladi.</p>
+              <p>Qarshi davlat universitetida xotin-qizlarga nisbatan zoРІР‚Вravonlik va tazyiqlarning oldini olish ustuvor yoРІР‚Вnalishlardan biri hisoblanadi. Shu maqsadda muntazam ravishda РІР‚СљZoРІР‚Вravonlik va tazyiqqa qarshimizРІР‚Сњ mavzusida davra suhbatlari, targРІР‚Вibot tadbirlari va maРІР‚в„ўrifiy uchrashuvlar tashkil etiladi. Ushbu jarayonlarda talabalar jinoyatchilikning oldini olish, huquqiy savodxonlikni oshirish, zoРІР‚Вravonlikning sabablari va oqibatlari haqida chuqur tushunchaga ega boРІР‚Вladilar, shuningdek bunday holatlarda qanday himoyalanish va qayerga murojaat qilish mumkinligi yuzasidan aniq tavsiyalar oladilar. Universitet psixologlari, inspektorlar va mutaxassislar ishtirokida oРІР‚Вtkaziladigan bunday tadbirlar xotin-qizlarda oРІР‚Вz huquqlarini anglash, ijtimoiy faollik va shaxsiy xavfsizlik madaniyatini shakllantirishga xizmat qiladi.</p>
+              <p>Universitetda psixologik va ijtimoiy qoРІР‚Вllab-quvvatlash tizimi izchil yoРІР‚Вlga qoРІР‚Вyilgan boРІР‚Вlib, talaba-qizlar va ayol xodimlar uchun bepul maslahat xizmatlari taqdim etiladi. Psixologik xizmat markazi orqali stress, bosim, ijtimoiy muammolar yoki shaxsiy qiyinchiliklarga duch kelgan xotin-qizlarga individual yondashuv asosida yordam koРІР‚Вrsatiladi, bu esa ularning ruhiy barqarorligini mustahkamlash, taРІР‚в„ўlim va ish faoliyatida samaradorlikni oshirishga xizmat qiladi.</p>
+              <p>Shuningdek, universitetda gender tenglik, oilaviy qadriyatlar va ijtimoiy masРІР‚в„ўuliyat masalalariga bagРІР‚Вishlangan taРІР‚в„ўlim va maРІР‚в„ўrifiy dasturlar muntazam amalga oshiriladi. Fakultetlar kesimida tashkil etiladigan seminarlar va uchrashuvlarda xotin-qizlarning jamiyatdagi oРІР‚Вrni, ularning ijtimoiy himoyasi, zamonaviy globallashuv sharoitida yuzaga kelayotgan muammolar va ularning yechimlari muhokama qilinadi. Bu jarayonlarda xotin-qizlar boРІР‚Вyicha maslahatchilar, psixologlar va mutaxassislar faol ishtirok etadi va talabalarga amaliy bilim hamda hayotiy koРІР‚Вnikmalar beriladi.</p>
+              <p>Universitet xotin-qizlarning ijtimoiy faolligini oshirishga alohida eРІР‚в„ўtibor qaratadi. Turli tanlovlar, aksiyalar va madaniy tadbirlar, jumladan РІР‚СљZoРІР‚Вravonlikka qarshi 16 kunРІР‚Сњ kampaniyasi doirasidagi tashabbuslar xotin-qizlarning jamiyatdagi rolini mustahkamlash, ularning ijodiy va ijtimoiy salohiyatini namoyon etish uchun muhim platforma vazifasini bajaradi. Bunday tashabbuslar nafaqat xotin-qizlarni qoРІР‚Вllab-quvvatlashga, balki universitetda sogРІР‚Вlom, xavfsiz va inklyuziv muhitni shakllantirishga xizmat qiladi.</p>
+              <p>Mazkur siyosat doirasida universitet har bir xotin-qiz uchun xavfsiz va himoyalangan muhitni kafolatlaydi. ZoРІР‚Вravonlik yoki tazyiq holatlari yuzaga kelgan taqdirda maxfiy murojaat qilish imkoniyati yaratilgan boРІР‚Вlib, har bir murojaat tezkor, xolis va adolatli tarzda koРІР‚Вrib chiqiladi, jabrlangan shaxslarni himoya qilish va ularga zarur yordam koРІР‚Вrsatish ustuvor vazifa sifatida qaraladi.</p>
+              <p>Umuman olganda, Qarshi davlat universiteti xotin-qizlarni qoРІР‚Вllab-quvvatlash va gender tenglikni taРІР‚в„ўminlash orqali zamonaviy, inklyuziv va barqaror taРІР‚в„ўlim muhitini shakllantirishni maqsad qiladi. Ushbu siyosat universitet jamoasining barcha aРІР‚в„ўzolari uchun teng imkoniyatlar yaratish, inson qadr-qimmatini hurmat qilish va ijtimoiy adolatni taРІР‚в„ўminlashga xizmat qiladi hamda milliy va xalqaro barqaror rivojlanish maqsadlariga mos ravishda doimiy takomillashtirib boriladi.</p>
             </div>
         """,
         "single_card_raw_en": """
             <div class="governance-richtext">
-              <p><strong>KARSHI STATE UNIVERSITY<br>WOMENвЂ™S SUPPORT AND GENDER EQUALITY POLICY</strong></p>
-              <p>Karshi State University recognizes the protection of womenвЂ™s rights and interests, the promotion of their active participation in education, research, and social life, and the strengthening of gender equality principles as one of its key institutional priorities. This policy has been developed in accordance with the Resolution of the Senate of the Republic of Uzbekistan dated December 28, 2022 (No. SQ-682-IV) on the implementation of the Gender Equality Strategy of the Republic of Uzbekistan until 2030, the Order of the Ministry of Higher Education, Science and Innovation dated May 5, 2023 (No. 126), as well as the Resolution of the Cabinet of Ministers dated October 6, 2021 (No. 625) on additional measures to improve the rehabilitation and adaptation of women affected by violence and the prevention of suicide. The policy is aimed at ensuring a strict zero-tolerance approach to any form of discrimination, harassment, or violence against women within the university.</p>
+              <p><strong>KARSHI STATE UNIVERSITY<br>WOMENРІР‚в„ўS SUPPORT AND GENDER EQUALITY POLICY</strong></p>
+              <p>Karshi State University recognizes the protection of womenРІР‚в„ўs rights and interests, the promotion of their active participation in education, research, and social life, and the strengthening of gender equality principles as one of its key institutional priorities. This policy has been developed in accordance with the Resolution of the Senate of the Republic of Uzbekistan dated December 28, 2022 (No. SQ-682-IV) on the implementation of the Gender Equality Strategy of the Republic of Uzbekistan until 2030, the Order of the Ministry of Higher Education, Science and Innovation dated May 5, 2023 (No. 126), as well as the Resolution of the Cabinet of Ministers dated October 6, 2021 (No. 625) on additional measures to improve the rehabilitation and adaptation of women affected by violence and the prevention of suicide. The policy is aimed at ensuring a strict zero-tolerance approach to any form of discrimination, harassment, or violence against women within the university.</p>
               <p>Within the university environment, equal opportunities for women are ensured not only through formal policies and regulations but also through the consistent integration of these principles into academic processes, social life, and cultural activities. Necessary conditions are created to support the personal development of female students and women staff, enhance their academic and professional competencies, and foster an active civic position in society. At the same time, particular attention is given to building a healthy socio-psychological environment based on mutual respect, equality, and tolerance.</p>
-              <p>Preventing violence and harassment against women is one of the universityвЂ™s priority areas. For this purpose, regular roundtable discussions, awareness campaigns, and educational meetings are organized under themes such as вЂњWe are against violence and harassment.вЂќ During these activities, students are provided with comprehensive knowledge on crime prevention, legal awareness, the causes and consequences of violence, as well as practical guidance on protection mechanisms and reporting procedures. Events conducted with the participation of university psychologists, inspectors, and specialists contribute to raising awareness among women about their rights, strengthening social engagement, and developing a culture of personal safety.</p>
+              <p>Preventing violence and harassment against women is one of the universityРІР‚в„ўs priority areas. For this purpose, regular roundtable discussions, awareness campaigns, and educational meetings are organized under themes such as РІР‚СљWe are against violence and harassment.РІР‚Сњ During these activities, students are provided with comprehensive knowledge on crime prevention, legal awareness, the causes and consequences of violence, as well as practical guidance on protection mechanisms and reporting procedures. Events conducted with the participation of university psychologists, inspectors, and specialists contribute to raising awareness among women about their rights, strengthening social engagement, and developing a culture of personal safety.</p>
               <p>The university has established a consistent system of psychological and social support, providing free counseling services to female students and women staff. Through the psychological service center, individualized support is offered to those experiencing stress, pressure, social challenges, or personal difficulties. This contributes to strengthening their emotional well-being and improving their academic and professional performance.</p>
-              <p>In addition, the university regularly implements educational and awareness programs focused on gender equality, family values, and social responsibility. Seminars and meetings organized at the faculty level address the role of women in society, their social protection, as well as contemporary challenges emerging in the context of globalization and their possible solutions. These activities involve faculty advisors for womenвЂ™s issues, psychologists, and specialists, providing students with practical knowledge and life skills.</p>
-              <p>The university also places strong emphasis on increasing the social engagement of women. Various competitions, campaigns, and cultural events, such as initiatives conducted within the framework of the вЂњ16 Days of Activism Against Violence,вЂќ serve as important platforms for strengthening womenвЂ™s role in society and showcasing their creative and social potential. These initiatives contribute not only to supporting women but also to fostering a safe, inclusive, and healthy university environment.</p>
+              <p>In addition, the university regularly implements educational and awareness programs focused on gender equality, family values, and social responsibility. Seminars and meetings organized at the faculty level address the role of women in society, their social protection, as well as contemporary challenges emerging in the context of globalization and their possible solutions. These activities involve faculty advisors for womenРІР‚в„ўs issues, psychologists, and specialists, providing students with practical knowledge and life skills.</p>
+              <p>The university also places strong emphasis on increasing the social engagement of women. Various competitions, campaigns, and cultural events, such as initiatives conducted within the framework of the РІР‚Сљ16 Days of Activism Against Violence,РІР‚Сњ serve as important platforms for strengthening womenРІР‚в„ўs role in society and showcasing their creative and social potential. These initiatives contribute not only to supporting women but also to fostering a safe, inclusive, and healthy university environment.</p>
               <p>Within the framework of this policy, the university guarantees a safe and protected environment for every woman. In cases of violence or harassment, confidential reporting mechanisms are available, and each case is reviewed promptly, fairly, and impartially. Protecting victims and providing them with the necessary support is considered a priority responsibility of the institution.</p>
               <p>Overall, Karshi State University aims to create a modern, inclusive, and sustainable educational environment by supporting women and ensuring gender equality. This policy contributes to providing equal opportunities for all members of the university community, promoting respect for human dignity, and ensuring social justice, while being continuously improved in alignment with national and international sustainable development goals.</p>
             </div>
@@ -1814,17 +1814,17 @@ GOVERNANCE_PAGE_CONTENT = {
         "single_card_raw_uz": """
             <div class="governance-richtext">
               <p><strong>TALABALAR KENGASHI</strong></p>
-              <p>OвЂzbekiston Yoshlar ittifoqining Qarshi davlat universitetida ham boshlangвЂich tashkiloti mavjud boвЂlib, Oliy taвЂ™lim fan va innovatsiyalar vazirligi hamda OвЂzbekiston Yoshlar ittifoqi Markaziy Kengashining 2023-yil 29-apreldagi 6-son QoвЂshma qaroriga asosan universitetda Yoshlar Kengashi faoliyat yuritadi. Yoshlar Kengashining aвЂ™zolari 6 ta yoвЂnalish va 12 ta fakultet koordinatorlaridan iborat boвЂlib ularning maqsad va vazifalari quydagicha:</p>
+              <p>OРІР‚Вzbekiston Yoshlar ittifoqining Qarshi davlat universitetida ham boshlangРІР‚Вich tashkiloti mavjud boРІР‚Вlib, Oliy taРІР‚в„ўlim fan va innovatsiyalar vazirligi hamda OРІР‚Вzbekiston Yoshlar ittifoqi Markaziy Kengashining 2023-yil 29-apreldagi 6-son QoРІР‚Вshma qaroriga asosan universitetda Yoshlar Kengashi faoliyat yuritadi. Yoshlar Kengashining aРІР‚в„ўzolari 6 ta yoРІР‚Вnalish va 12 ta fakultet koordinatorlaridan iborat boРІР‚Вlib ularning maqsad va vazifalari quydagicha:</p>
               <ul>
-                <li>BoshlangвЂich tashkilotning asosiy maqsadi oliy taвЂ™lim muassasasida tahsil olayotgan talaba-yoshlarning huquq va qonuniy manfaatlarini himoya qilish, ularning maвЂ™naviy-mafkuraviy dunyoqarashini mustahkamlash, iqtidorli yoshlarni har tomonlama qoвЂllab-quvvatlash hamda ijtimoiy faolligini oshirishdan iboratdir. Shuningdek, talaba-yoshlarning boвЂsh vaqtlarini mazmunli tashkil etish, ularning tashabbus va gвЂoyalarini roвЂyobga chiqarishga koвЂmaklashish tashkilot faoliyatining ustuvor yoвЂnalishlaridan biri hisoblanadi.</li>
-                <li>Ekologiya va atrof-muhitni muhofaza qilish, tabiiy resurslardan oqilona foydalanishni targвЂib qilish orqali yoshlarning ekologik madaniyatini yuksaltirish va ekologik tashabbuslarini qoвЂllab-quvvatlash ham tashkilot faoliyatining ajralmas qismi hisoblanadi.</li>
-                <li>BoshlangвЂich tashkilot oвЂz oldiga qator muhim vazifalarni qoвЂyadi. Avvalo, oliy taвЂ™lim muassasasida talaba-yoshlarni qoвЂllab-quvvatlash, ularning huquq va manfaatlarini himoya qilishga qaratilgan amaliy chora-tadbirlar yuzasidan takliflar ishlab chiqadi. Yoshlar oвЂrtasida tibbiy madaniyatni oshirish, sogвЂlom turmush tarzini targвЂib qilish, kasalliklarning oldini olish boвЂyicha tushuntirish ishlari olib boriladi. Shu bilan birga, ijtimoiy himoyaga muhtoj, yetim va ota-onasining qaramogвЂidan mahrum boвЂlgan talaba-yoshlarning ijtimoiy-huquqiy himoyasini taвЂ™minlashda faol ishtirok etadi. Huquqbuzarlikdan jabrlangan yoki bunday holatlarga moyil boвЂlgan yoshlarni ijtimoiy reabilitatsiya qilish va jamiyatga moslashtirish boвЂyicha ishlar ham tashkilot eвЂ™tiborida boвЂladi.</li>
-                <li>Tashkilot talaba-yoshlarni Vatanga muhabbat va sadoqat ruhida tarbiyalash, ularning ongiga milliy istiqlol gвЂoyasi, milliy qadriyatlar, diniy bagвЂrikenglik, millatlararo totuvlik va oilaviy qadriyatlarni singdirishga alohida ahamiyat qaratadi. Shu bilan birga, yoshlarning OвЂzbekiston Respublikasi Konstitutsiyasi va qonunlarida belgilangan huquq va burchlarini anglab yetishlariga koвЂmaklashadi hamda mamlakatda yoshlarga oid davlat siyosati doirasida amalga oshirilayotgan islohotlarning mazmun-mohiyatini tushuntiradi.</li>
-                <li>Talaba-yoshlarning murojaatlari va muammolarini oвЂrganish, ularni hal etishda amaliy yordam koвЂrsatish ham tashkilot faoliyatining muhim yoвЂnalishlaridan biridir. Bundan tashqari, yoshlarning sifatli taвЂ™lim olishi, chet tillarini oвЂrganishi, zamonaviy axborot-kommunikatsiya texnologiyalarini puxta egallashi va kasb-hunarga yoвЂnaltirilishiga qaratilgan tadbirlar muntazam amalga oshiriladi.</li>
-                <li>IsteвЂ™dodli yoshlarni aniqlash, ularni ragвЂbatlantirish va har tomonlama qoвЂllab-quvvatlash maqsadida turli tanlovlar, intellektual oвЂyinlar, ijodiy loyihalar hamda klub va toвЂgaraklar faoliyati yoвЂlga qoвЂyiladi. Shuningdek, talaba-yoshlar oвЂrtasida kitobxonlikni keng targвЂib qilish, kitob oвЂqishga boвЂlgan qiziqishni oshirish va kitobxonlik madaniyatini rivojlantirishga alohida eвЂ™tibor qaratiladi.</li>
-                <li>Tashkilot yoshlar ongida вЂњommaviy madaniyatвЂќ niqobi ostidagi zararli illatlarga, turli axborot xurujlariga, diniy aqidaparastlik, missionerlik va ekstremistik gвЂoyalarga qarshi mustahkam mafkuraviy immunitetni shakllantirishga xizmat qiladi.</li>
-                <li>Bundan tashqari, yoshlar turizmini rivojlantirish, ularni oвЂz hududidagi tarixiy obidalar, muqaddas qadamjolar, muzeylar, teatrlar hamda mustaqillik yillarida barpo etilgan zamonaviy inshootlar bilan yaqindan tanishtirish maqsadida turli sayohatlar tashkil etiladi.</li>
-                <li>Talaba-yoshlar, ayniqsa xotin-qizlar oвЂrtasida sportni keng targвЂib qilish, ularning sportga boвЂlgan qiziqishini qoвЂllab-quvvatlash hamda turli sport musobaqalarida ishtirok etishlari uchun zarur shart-sharoitlar yaratib berish ham muhim vazifalardan biri hisoblanadi.</li>
+                <li>BoshlangРІР‚Вich tashkilotning asosiy maqsadi oliy taРІР‚в„ўlim muassasasida tahsil olayotgan talaba-yoshlarning huquq va qonuniy manfaatlarini himoya qilish, ularning maРІР‚в„ўnaviy-mafkuraviy dunyoqarashini mustahkamlash, iqtidorli yoshlarni har tomonlama qoРІР‚Вllab-quvvatlash hamda ijtimoiy faolligini oshirishdan iboratdir. Shuningdek, talaba-yoshlarning boРІР‚Вsh vaqtlarini mazmunli tashkil etish, ularning tashabbus va gРІР‚Вoyalarini roРІР‚Вyobga chiqarishga koРІР‚Вmaklashish tashkilot faoliyatining ustuvor yoРІР‚Вnalishlaridan biri hisoblanadi.</li>
+                <li>Ekologiya va atrof-muhitni muhofaza qilish, tabiiy resurslardan oqilona foydalanishni targРІР‚Вib qilish orqali yoshlarning ekologik madaniyatini yuksaltirish va ekologik tashabbuslarini qoРІР‚Вllab-quvvatlash ham tashkilot faoliyatining ajralmas qismi hisoblanadi.</li>
+                <li>BoshlangРІР‚Вich tashkilot oРІР‚Вz oldiga qator muhim vazifalarni qoРІР‚Вyadi. Avvalo, oliy taРІР‚в„ўlim muassasasida talaba-yoshlarni qoРІР‚Вllab-quvvatlash, ularning huquq va manfaatlarini himoya qilishga qaratilgan amaliy chora-tadbirlar yuzasidan takliflar ishlab chiqadi. Yoshlar oРІР‚Вrtasida tibbiy madaniyatni oshirish, sogРІР‚Вlom turmush tarzini targРІР‚Вib qilish, kasalliklarning oldini olish boРІР‚Вyicha tushuntirish ishlari olib boriladi. Shu bilan birga, ijtimoiy himoyaga muhtoj, yetim va ota-onasining qaramogРІР‚Вidan mahrum boРІР‚Вlgan talaba-yoshlarning ijtimoiy-huquqiy himoyasini taРІР‚в„ўminlashda faol ishtirok etadi. Huquqbuzarlikdan jabrlangan yoki bunday holatlarga moyil boРІР‚Вlgan yoshlarni ijtimoiy reabilitatsiya qilish va jamiyatga moslashtirish boРІР‚Вyicha ishlar ham tashkilot eРІР‚в„ўtiborida boРІР‚Вladi.</li>
+                <li>Tashkilot talaba-yoshlarni Vatanga muhabbat va sadoqat ruhida tarbiyalash, ularning ongiga milliy istiqlol gРІР‚Вoyasi, milliy qadriyatlar, diniy bagРІР‚Вrikenglik, millatlararo totuvlik va oilaviy qadriyatlarni singdirishga alohida ahamiyat qaratadi. Shu bilan birga, yoshlarning OРІР‚Вzbekiston Respublikasi Konstitutsiyasi va qonunlarida belgilangan huquq va burchlarini anglab yetishlariga koРІР‚Вmaklashadi hamda mamlakatda yoshlarga oid davlat siyosati doirasida amalga oshirilayotgan islohotlarning mazmun-mohiyatini tushuntiradi.</li>
+                <li>Talaba-yoshlarning murojaatlari va muammolarini oРІР‚Вrganish, ularni hal etishda amaliy yordam koРІР‚Вrsatish ham tashkilot faoliyatining muhim yoРІР‚Вnalishlaridan biridir. Bundan tashqari, yoshlarning sifatli taРІР‚в„ўlim olishi, chet tillarini oРІР‚Вrganishi, zamonaviy axborot-kommunikatsiya texnologiyalarini puxta egallashi va kasb-hunarga yoРІР‚Вnaltirilishiga qaratilgan tadbirlar muntazam amalga oshiriladi.</li>
+                <li>IsteРІР‚в„ўdodli yoshlarni aniqlash, ularni ragРІР‚Вbatlantirish va har tomonlama qoРІР‚Вllab-quvvatlash maqsadida turli tanlovlar, intellektual oРІР‚Вyinlar, ijodiy loyihalar hamda klub va toРІР‚Вgaraklar faoliyati yoРІР‚Вlga qoРІР‚Вyiladi. Shuningdek, talaba-yoshlar oРІР‚Вrtasida kitobxonlikni keng targРІР‚Вib qilish, kitob oРІР‚Вqishga boРІР‚Вlgan qiziqishni oshirish va kitobxonlik madaniyatini rivojlantirishga alohida eРІР‚в„ўtibor qaratiladi.</li>
+                <li>Tashkilot yoshlar ongida РІР‚Сљommaviy madaniyatРІР‚Сњ niqobi ostidagi zararli illatlarga, turli axborot xurujlariga, diniy aqidaparastlik, missionerlik va ekstremistik gРІР‚Вoyalarga qarshi mustahkam mafkuraviy immunitetni shakllantirishga xizmat qiladi.</li>
+                <li>Bundan tashqari, yoshlar turizmini rivojlantirish, ularni oРІР‚Вz hududidagi tarixiy obidalar, muqaddas qadamjolar, muzeylar, teatrlar hamda mustaqillik yillarida barpo etilgan zamonaviy inshootlar bilan yaqindan tanishtirish maqsadida turli sayohatlar tashkil etiladi.</li>
+                <li>Talaba-yoshlar, ayniqsa xotin-qizlar oРІР‚Вrtasida sportni keng targРІР‚Вib qilish, ularning sportga boРІР‚Вlgan qiziqishini qoРІР‚Вllab-quvvatlash hamda turli sport musobaqalarida ishtirok etishlari uchun zarur shart-sharoitlar yaratib berish ham muhim vazifalardan biri hisoblanadi.</li>
               </ul>
             </div>
         """,
@@ -1833,13 +1833,13 @@ GOVERNANCE_PAGE_CONTENT = {
               <p><strong>STUDENT UNION</strong></p>
               <p>The Youth Union of Uzbekistan has an established primary organization at Karshi State University. In accordance with the Joint Resolution No. 6 dated April 29, 2023, adopted by the Ministry of Higher Education, Science and Innovation and the Central Council of the Youth Union of Uzbekistan, a Youth Council operates within the university. The Youth Council consists of members representing six directions and coordinators from twelve faculties. Its primary goals and responsibilities are as follows:</p>
               <ul>
-                <li>The main objective of the primary organization is to protect the rights and legitimate interests of student youth studying at the higher education institution, strengthen their spiritual and ideological outlook, support talented young people in all aspects, and enhance their social activity. Additionally, organizing studentsвЂ™ free time in a meaningful way and assisting in the realization of their initiatives and ideas are among the priority areas of the organizationвЂ™s activities.</li>
+                <li>The main objective of the primary organization is to protect the rights and legitimate interests of student youth studying at the higher education institution, strengthen their spiritual and ideological outlook, support talented young people in all aspects, and enhance their social activity. Additionally, organizing studentsРІР‚в„ў free time in a meaningful way and assisting in the realization of their initiatives and ideas are among the priority areas of the organizationРІР‚в„ўs activities.</li>
                 <li>Promoting ecological culture among youth through environmental protection activities, rational use of natural resources, and support for environmental initiatives is an integral part of its work.</li>
                 <li>The primary organization sets a number of important tasks. First of all, it develops proposals for practical measures aimed at supporting students and protecting their rights and interests within the higher education institution. The organization also works to improve medical awareness among young people, promote a healthy lifestyle, and conduct awareness campaigns aimed at preventing diseases. It also actively participates in ensuring the social and legal protection of students in need, including orphans and those deprived of parental care. Furthermore, it works on the social rehabilitation and reintegration of young people affected by or vulnerable to offenses.</li>
                 <li>The organization places special emphasis on fostering patriotism and devotion to the homeland among students, instilling in them the ideas of national independence, national values, religious tolerance, interethnic harmony, and family values. It also helps young people understand their rights and responsibilities as defined by the Constitution and laws of the Republic of Uzbekistan and raises awareness about the essence of reforms being implemented within the framework of state youth policy.</li>
                 <li>Studying student appeals and problems and providing practical assistance in resolving them is another key area of activity. In addition, regular activities are carried out to ensure that students receive quality education, learn foreign languages, master modern information and communication technologies, and are guided toward professional development.</li>
                 <li>To identify, encourage, and support talented youth, various competitions, intellectual games, creative projects, as well as clubs and extracurricular groups are organized. Special attention is also given to promoting reading culture, increasing interest in books, and developing a strong reading habit among students.</li>
-                <li>The organization contributes to forming a strong ideological immunity among young people against harmful influences disguised as вЂњmass culture,вЂќ as well as against various information attacks, religious extremism, missionary activities, and radical ideas.</li>
+                <li>The organization contributes to forming a strong ideological immunity among young people against harmful influences disguised as РІР‚Сљmass culture,РІР‚Сњ as well as against various information attacks, religious extremism, missionary activities, and radical ideas.</li>
                 <li>Moreover, to promote youth tourism, various excursions are organized to introduce students to historical monuments, sacred sites, museums, theaters, and modern structures built during the years of independence.</li>
                 <li>Finally, special attention is given to promoting sports among students, especially women, supporting their interest in sports, and creating favorable conditions for their participation in various sports competitions.</li>
               </ul>
@@ -1851,39 +1851,39 @@ GOVERNANCE_PAGE_CONTENT = {
         "eyebrow_en": "Sustainability governance",
         "title_uz": "Uglerod emissiyalarini kamaytirish maqsadlari",
         "title_en": "Carbon Emission Reduction Targets",
-        "intro_uz": "(Scope 1 va Scope 2) 2024вЂ“2050",
-        "intro_en": "(Scope 1 and Scope 2) 2024вЂ“2050",
+        "intro_uz": "(Scope 1 va Scope 2) 2024РІР‚вЂњ2050",
+        "intro_en": "(Scope 1 and Scope 2) 2024РІР‚вЂњ2050",
         "sections_uz": [],
         "sections_en": [],
         "single_card_raw_uz": """
             <div class="governance-richtext">
-              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>UGLEROD EMISSIYALARINI KAMAYTIRISH MAQSADLARI<br>(SCOPE 1 VA SCOPE 2)<br>2024вЂ“2050</strong></p>
-              <p>Qarshi davlat universitetining Scope 1 va Scope 2 toifalariga kiruvchi issiqxona gazlari (GHG) emissiyalarini kamaytirish boвЂyicha uzoq muddatli maqsadlari universitetning 2024вЂ“2025 yillardagi tasdiqlangan emissiya maвЂ™lumotlariga asoslangan boвЂlib, xalqaro iqlim majburiyatlari, xususan Parij kelishuvi talablariga muvofiq ishlab chiqilgan. Hujjatda 2050 yilgacha uglerod neytralligiga (Net Zero) erishish yoвЂli bosqichma-bosqich koвЂrsatib berilgan.</p>
-              <p>Mazkur maqsadlar universitet tasarrufidagi barcha asosiy infratuzilma obyektlarini, jumladan oвЂquv binolari, maвЂ™muriy binolar, talabalar turar joylari, laboratoriyalar va boshqa yordamchi inshootlarni qamrab oladi.</p>
-              <p>Scope 1 emissiyalariga tabiiy gaz, koвЂmir va universitetga tegishli transport vositalarida ishlatiladigan yoqilgвЂi natijasida hosil boвЂladigan toвЂgвЂridan-toвЂgвЂri emissiyalar kiradi. Scope 2 emissiyalariga esa universitet tomonidan isteвЂ™mol qilinadigan elektr energiyasi bilan bogвЂliq bilvosita emissiyalar kiradi.</p>
-              <p>2024вЂ“2025 yillar uchun boshlangвЂich emissiya koвЂrsatkichlari quyidagi jadvalda keltirilgan.</p>
+              <p><strong>QARSHI DAVLAT UNIVERSITETI<br>UGLEROD EMISSIYALARINI KAMAYTIRISH MAQSADLARI<br>(SCOPE 1 VA SCOPE 2)<br>2024РІР‚вЂњ2050</strong></p>
+              <p>Qarshi davlat universitetining Scope 1 va Scope 2 toifalariga kiruvchi issiqxona gazlari (GHG) emissiyalarini kamaytirish boРІР‚Вyicha uzoq muddatli maqsadlari universitetning 2024РІР‚вЂњ2025 yillardagi tasdiqlangan emissiya maРІР‚в„ўlumotlariga asoslangan boРІР‚Вlib, xalqaro iqlim majburiyatlari, xususan Parij kelishuvi talablariga muvofiq ishlab chiqilgan. Hujjatda 2050 yilgacha uglerod neytralligiga (Net Zero) erishish yoРІР‚Вli bosqichma-bosqich koРІР‚Вrsatib berilgan.</p>
+              <p>Mazkur maqsadlar universitet tasarrufidagi barcha asosiy infratuzilma obyektlarini, jumladan oРІР‚Вquv binolari, maРІР‚в„ўmuriy binolar, talabalar turar joylari, laboratoriyalar va boshqa yordamchi inshootlarni qamrab oladi.</p>
+              <p>Scope 1 emissiyalariga tabiiy gaz, koРІР‚Вmir va universitetga tegishli transport vositalarida ishlatiladigan yoqilgРІР‚Вi natijasida hosil boРІР‚Вladigan toРІР‚ВgРІР‚Вridan-toРІР‚ВgРІР‚Вri emissiyalar kiradi. Scope 2 emissiyalariga esa universitet tomonidan isteРІР‚в„ўmol qilinadigan elektr energiyasi bilan bogРІР‚Вliq bilvosita emissiyalar kiradi.</p>
+              <p>2024РІР‚вЂњ2025 yillar uchun boshlangРІР‚Вich emissiya koРІР‚Вrsatkichlari quyidagi jadvalda keltirilgan.</p>
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Scope</th><th>Emissiya manbasi</th><th>Emissiya (tCOв‚‚e)</th></tr>
+                  <tr><th>Scope</th><th>Emissiya manbasi</th><th>Emissiya (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Scope 1</td><td>Tabiiy gaz, koвЂmir yoqilgвЂisi</td><td>1,159</td></tr>
+                  <tr><td>Scope 1</td><td>Tabiiy gaz, koРІР‚Вmir yoqilgРІР‚Вisi</td><td>1,159</td></tr>
                   <tr><td>Scope 2</td><td>Elektr energiyasi</td><td>617.31</td></tr>
                   <tr><td><strong>Jami</strong></td><td><strong>Scope 1 + Scope 2</strong></td><td><strong>1,776.31</strong></td></tr>
                 </tbody>
               </table>
               </div>
-              <p>Tahlillar shuni koвЂrsatadiki, Scope 1 emissiyalarining asosiy qismi isitish tizimlarida ishlatiladigan tabiiy gaz hissasiga toвЂgвЂri keladi. Scope 2 emissiyalari esa toвЂliq elektr energiyasi isteвЂ™moli bilan bogвЂliq.</p>
-              <p>Qarshi davlat universiteti 2050 yilga borib Scope 1 va Scope 2 emissiyalarini nol darajaga (Net Zero) tushirishni oвЂz oldiga strategik maqsad qilib qoвЂyadi. Ushbu yakuniy maqsadga erishish uchun oraliq bosqichlar quyidagicha belgilangan.</p>
+              <p>Tahlillar shuni koРІР‚Вrsatadiki, Scope 1 emissiyalarining asosiy qismi isitish tizimlarida ishlatiladigan tabiiy gaz hissasiga toРІР‚ВgРІР‚Вri keladi. Scope 2 emissiyalari esa toРІР‚Вliq elektr energiyasi isteРІР‚в„ўmoli bilan bogРІР‚Вliq.</p>
+              <p>Qarshi davlat universiteti 2050 yilga borib Scope 1 va Scope 2 emissiyalarini nol darajaga (Net Zero) tushirishni oРІР‚Вz oldiga strategik maqsad qilib qoРІР‚Вyadi. Ushbu yakuniy maqsadga erishish uchun oraliq bosqichlar quyidagicha belgilangan.</p>
               <p><strong>Emissiyalarni kamaytirish maqsadlari</strong></p>
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Yil</th><th>Kamaytirish (%)</th><th>Emissiya (tCOв‚‚e)</th></tr>
+                  <tr><th>Yil</th><th>Kamaytirish (%)</th><th>Emissiya (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>2025</td><td>BoshlangвЂich</td><td>1,776</td></tr>
+                  <tr><td>2025</td><td>BoshlangРІР‚Вich</td><td>1,776</td></tr>
                   <tr><td>2030</td><td>30%</td><td>1,243</td></tr>
                   <tr><td>2035</td><td>50%</td><td>888</td></tr>
                   <tr><td>2040</td><td>70%</td><td>533</td></tr>
@@ -1892,15 +1892,15 @@ GOVERNANCE_PAGE_CONTENT = {
                 </tbody>
               </table>
               </div>
-              <p>Scope 1 emissiyalarini kamaytirish asosan isitish tizimlarini transformatsiya qilish, yuqori emissiyali yoqilgвЂilarni bosqichma-bosqich bekor qilish hamda transport tizimini modernizatsiya qilish orqali amalga oshiriladi. Tabiiy gazdan foydalanish hozirgi kunda asosiy emissiya manbasi boвЂlib, uni elektr asosidagi isitish texnologiyalari, xususan issiqlik nasoslari bilan almashtirish rejalashtirilgan. Shu bilan birga, binolarning issiqlik izolyatsiyasini yaxshilash orqali umumiy energiya talabi kamaytiriladi.</p>
-              <p>KoвЂmir yuqori emissiya koeffitsientiga ega boвЂlganligi sababli, uni ishlatish 2030 yilga qadar toвЂliq toвЂxtatiladi. Bu qisqa muddat ichida sezilarli emissiya kamayishiga olib keladi.</p>
-              <p>Transport vositalaridan kelib chiqadigan emissiyalarni kamaytirish maqsadida universitet bosqichma-bosqich elektr transport vositalariga oвЂtadi. Bu esa uzoq muddatda yoqilgвЂi asosidagi emissiyalarni deyarli toвЂliq yoвЂq qilish imkonini beradi.</p>
-              <p>Scope 2 emissiyalarini kamaytirish elektr energiyasi isteвЂ™molini optimallashtirish va qayta tiklanuvchi energiya manbalarini kengaytirish orqali amalga oshiriladi. Universitetda LED yoritish tizimlari joriy etilgan boвЂlib, bu energiya samaradorligini oshirishga xizmat qilmoqda. Keyingi bosqichda asosiy eвЂ™tibor quyosh energiyasidan foydalanishni kengaytirishga qaratiladi. Universitet hududida quyosh panellarini oвЂrnatish orqali elektr energiyasining muhim qismini qayta tiklanuvchi manbalardan olish rejalashtirilgan. Shu bilan birga, energiya isteвЂ™molini nazorat qilish va optimallashtirish uchun zamonaviy monitoring tizimlari joriy etiladi.</p>
+              <p>Scope 1 emissiyalarini kamaytirish asosan isitish tizimlarini transformatsiya qilish, yuqori emissiyali yoqilgРІР‚Вilarni bosqichma-bosqich bekor qilish hamda transport tizimini modernizatsiya qilish orqali amalga oshiriladi. Tabiiy gazdan foydalanish hozirgi kunda asosiy emissiya manbasi boРІР‚Вlib, uni elektr asosidagi isitish texnologiyalari, xususan issiqlik nasoslari bilan almashtirish rejalashtirilgan. Shu bilan birga, binolarning issiqlik izolyatsiyasini yaxshilash orqali umumiy energiya talabi kamaytiriladi.</p>
+              <p>KoРІР‚Вmir yuqori emissiya koeffitsientiga ega boРІР‚Вlganligi sababli, uni ishlatish 2030 yilga qadar toРІР‚Вliq toРІР‚Вxtatiladi. Bu qisqa muddat ichida sezilarli emissiya kamayishiga olib keladi.</p>
+              <p>Transport vositalaridan kelib chiqadigan emissiyalarni kamaytirish maqsadida universitet bosqichma-bosqich elektr transport vositalariga oРІР‚Вtadi. Bu esa uzoq muddatda yoqilgРІР‚Вi asosidagi emissiyalarni deyarli toРІР‚Вliq yoРІР‚Вq qilish imkonini beradi.</p>
+              <p>Scope 2 emissiyalarini kamaytirish elektr energiyasi isteРІР‚в„ўmolini optimallashtirish va qayta tiklanuvchi energiya manbalarini kengaytirish orqali amalga oshiriladi. Universitetda LED yoritish tizimlari joriy etilgan boРІР‚Вlib, bu energiya samaradorligini oshirishga xizmat qilmoqda. Keyingi bosqichda asosiy eРІР‚в„ўtibor quyosh energiyasidan foydalanishni kengaytirishga qaratiladi. Universitet hududida quyosh panellarini oРІР‚Вrnatish orqali elektr energiyasining muhim qismini qayta tiklanuvchi manbalardan olish rejalashtirilgan. Shu bilan birga, energiya isteРІР‚в„ўmolini nazorat qilish va optimallashtirish uchun zamonaviy monitoring tizimlari joriy etiladi.</p>
               <p><strong>Scope 1 va Scope 2 emissiyalarining umumiy kamayish dinamikasi quyidagi jadvalda keltirilgan.</strong></p>
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Yil</th><th>Scope 1</th><th>Scope 2</th><th>Jami (tCOв‚‚e)</th></tr>
+                  <tr><th>Yil</th><th>Scope 1</th><th>Scope 2</th><th>Jami (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>2025</td><td>1,159</td><td>617</td><td>1,776</td></tr>
@@ -1912,21 +1912,21 @@ GOVERNANCE_PAGE_CONTENT = {
                 </tbody>
               </table>
               </div>
-              <p>Mazkur maqsadlarning amalga oshirilishi doimiy monitoring va boshqaruv tizimi orqali taвЂ™minlanadi. Universitet har yili ISO 14064-1 standartiga muvofiq issiqxona gazlari inventarizatsiyasini amalga oshiradi. Ichki auditlar muntazam ravishda oвЂtkazilib, tashqi auditlar orqali maвЂ™lumotlarning ishonchliligi taвЂ™minlanadi.</p>
-              <p>Asosiy koвЂrsatkichlar sifatida umumiy emissiya hajmi, qayta tiklanuvchi energiya ulushi va energiya samaradorligi darajasi monitoring qilinadi. Ushbu natijalar universitetning barqarorlik hisobotlariga va xalqaro reyting tizimlariga integratsiya qilinadi.</p>
+              <p>Mazkur maqsadlarning amalga oshirilishi doimiy monitoring va boshqaruv tizimi orqali taРІР‚в„ўminlanadi. Universitet har yili ISO 14064-1 standartiga muvofiq issiqxona gazlari inventarizatsiyasini amalga oshiradi. Ichki auditlar muntazam ravishda oРІР‚Вtkazilib, tashqi auditlar orqali maРІР‚в„ўlumotlarning ishonchliligi taРІР‚в„ўminlanadi.</p>
+              <p>Asosiy koРІР‚Вrsatkichlar sifatida umumiy emissiya hajmi, qayta tiklanuvchi energiya ulushi va energiya samaradorligi darajasi monitoring qilinadi. Ushbu natijalar universitetning barqarorlik hisobotlariga va xalqaro reyting tizimlariga integratsiya qilinadi.</p>
             </div>
         """,
         "single_card_raw_en": """
             <div class="governance-richtext">
-              <p><strong>KARSHI STATE UNIVERSITY<br>CARBON EMISSION REDUCTION TARGETS<br>(SCOPE 1 AND SCOPE 2)<br>2024вЂ“2050</strong></p>
-              <p>The long-term targets of Karshi State University for reducing greenhouse gas (GHG) emissions under Scope 1 and Scope 2 are based on the universityвЂ™s verified emissions data for the years 2024вЂ“2025 and have been developed in accordance with international climate commitments, particularly the requirements of the Paris Agreement. The document outlines a step-by-step pathway for achieving carbon neutrality (Net Zero) by 2050.</p>
+              <p><strong>KARSHI STATE UNIVERSITY<br>CARBON EMISSION REDUCTION TARGETS<br>(SCOPE 1 AND SCOPE 2)<br>2024РІР‚вЂњ2050</strong></p>
+              <p>The long-term targets of Karshi State University for reducing greenhouse gas (GHG) emissions under Scope 1 and Scope 2 are based on the universityРІР‚в„ўs verified emissions data for the years 2024РІР‚вЂњ2025 and have been developed in accordance with international climate commitments, particularly the requirements of the Paris Agreement. The document outlines a step-by-step pathway for achieving carbon neutrality (Net Zero) by 2050.</p>
               <p>These targets cover all major infrastructure facilities under the management of the university, including academic buildings, administrative buildings, student dormitories, laboratories, and other supporting structures.</p>
               <p>Scope 1 emissions include direct emissions resulting from the use of natural gas, coal, and fuel consumed by university-owned vehicles. Scope 2 emissions include indirect emissions associated with the electricity consumed by the university.</p>
-              <p>The baseline emission figures for the years 2024вЂ“2025 are presented in the table below.</p>
+              <p>The baseline emission figures for the years 2024РІР‚вЂњ2025 are presented in the table below.</p>
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Scope</th><th>Emission Source</th><th>Emissions (tCOв‚‚e)</th></tr>
+                  <tr><th>Scope</th><th>Emission Source</th><th>Emissions (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>Scope 1</td><td>Natural gas, coal, fuel</td><td>1,159</td></tr>
@@ -1940,7 +1940,7 @@ GOVERNANCE_PAGE_CONTENT = {
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Year</th><th>Reduction (%)</th><th>Emissions (tCOв‚‚e)</th></tr>
+                  <tr><th>Year</th><th>Reduction (%)</th><th>Emissions (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>2024</td><td>Baseline</td><td>1,776</td></tr>
@@ -1960,7 +1960,7 @@ GOVERNANCE_PAGE_CONTENT = {
               <div class="governance-table-wrap">
               <table class="governance-table">
                 <thead>
-                  <tr><th>Year</th><th>Scope 1 (tCOв‚‚e)</th><th>Scope 2 (tCOв‚‚e)</th><th>Total (tCOв‚‚e)</th></tr>
+                  <tr><th>Year</th><th>Scope 1 (tCOРІвЂљвЂљe)</th><th>Scope 2 (tCOРІвЂљвЂљe)</th><th>Total (tCOРІвЂљвЂљe)</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>2024</td><td>1,159</td><td>617</td><td>1,776</td></tr>
@@ -1973,7 +1973,7 @@ GOVERNANCE_PAGE_CONTENT = {
               </table>
               </div>
               <p>The implementation of these targets will be ensured through a continuous monitoring and management system. The university will conduct annual greenhouse gas inventories in accordance with the ISO 14064-1 standard. Internal audits will be carried out regularly, while external audits will ensure the reliability and accuracy of the data.</p>
-              <p>Key indicators such as total emissions, the share of renewable energy, and the level of energy efficiency will be monitored. These results will be integrated into the universityвЂ™s sustainability reports and international ranking systems.</p>
+              <p>Key indicators such as total emissions, the share of renewable energy, and the level of energy efficiency will be monitored. These results will be integrated into the universityРІР‚в„ўs sustainability reports and international ranking systems.</p>
             </div>
         """,
     },
@@ -1987,7 +1987,7 @@ DISABILITY_SUPPORT_ROADMAP_CONTENT = {
         "eyebrow": "Barqarorlik boshqaruvi",
         "title": "Qarshi davlat universitetining nogironligi bo'lgan talabalar uchun inklyuziv ta'lim muhiti holatini baholab, kamchiliklarni bartaraf etish bo'yicha \"YO'L-XARITASI\"",
         "intro": "Nogironligi bo'lgan talabalar uchun ta'lim muhiti, infratuzilma va qo'llab-quvvatlash xizmatlarini bosqichma-bosqich yaxshilashga qaratilgan amaliy reja.",
-        "table_headers": ["в„–", "Chora-tadbir nomi", "Amalga oshirish mexanizmi", "Muddat", "Mas'ullar"],
+        "table_headers": ["РІвЂћвЂ“", "Chora-tadbir nomi", "Amalga oshirish mexanizmi", "Muddat", "Mas'ullar"],
         "rows": [
             {
                 "no": "1",
@@ -2048,7 +2048,7 @@ DISABILITY_SUPPORT_ROADMAP_CONTENT = {
             },
             {
                 "no": "5",
-                "activity": "3-dekabr вЂ“ вЂњXalqaro nogironlar kuniвЂќ munosabati bilan universitetda вЂњHech kim mehr va eвЂ™tibordan chetda qolmasin!вЂќ shiori ostida tadbirlar tashkil etish.",
+                "activity": "3-dekabr РІР‚вЂњ РІР‚СљXalqaro nogironlar kuniРІР‚Сњ munosabati bilan universitetda РІР‚СљHech kim mehr va eРІР‚в„ўtibordan chetda qolmasin!РІР‚Сњ shiori ostida tadbirlar tashkil etish.",
                 "mechanism_steps": [
                     "Tadbirlar rejasini ishlab chiqib, tasdiqlash.",
                     "Tadbirlar ssenariysini ishlab chiqish.",
@@ -2372,40 +2372,40 @@ SDG_CONTENT = [
 
 
 SDG_1_DETAIL_UZ = {
-    "hero_title": "OвЂta qashshoqlikka barham berish",
-    "idea_title": "Asosiy gвЂoya",
-    "idea_text": "Butun dunyoda barcha turdagi qashshoqlikni butkul yoвЂq qilish",
+    "hero_title": "OРІР‚Вta qashshoqlikka barham berish",
+    "idea_title": "Asosiy gРІР‚Вoya",
+    "idea_text": "Butun dunyoda barcha turdagi qashshoqlikni butkul yoРІР‚Вq qilish",
     "sections": [
         {
-            "title": "Umumiy maвЂ™lumot",
+            "title": "Umumiy maРІР‚в„ўlumot",
             "paragraphs": [
-                "2015-yilda Birlashgan Millatlar Tashkiloti tomonidan belgilangan Barqaror rivojlanish maqsadlarining birinchi yoвЂnalishi вЂ” qashshoqlikning barcha shakllariga barham berishdir (SDG 1).",
-                "Davlatlar quyidagi prinsipni qabul qilgan: вЂњHech kimni ortda qoldirmaslikвЂќ.",
+                "2015-yilda Birlashgan Millatlar Tashkiloti tomonidan belgilangan Barqaror rivojlanish maqsadlarining birinchi yoРІР‚Вnalishi РІР‚вЂќ qashshoqlikning barcha shakllariga barham berishdir (SDG 1).",
+                "Davlatlar quyidagi prinsipni qabul qilgan: РІР‚СљHech kimni ortda qoldirmaslikРІР‚Сњ.",
                 "Bu maqsad oziq-ovqat yetishmovchiligi, toza ichimlik suvi muammosi va sanitariya yetishmasligi kabi muammolarni ham qamrab oladi.",
-                "Shuningdek, iqlim oвЂzgarishi va mojarolar keltirib chiqaradigan xavflarni ham hal qilishni talab qiladi.",
+                "Shuningdek, iqlim oРІР‚Вzgarishi va mojarolar keltirib chiqaradigan xavflarni ham hal qilishni talab qiladi.",
             ],
         },
         {
             "title": "Asosiy maqsadlar va natijalar",
             "paragraphs": [
-                "SDG 1 doirasida 7 ta maqsad va 13 ta koвЂrsatkich mavjud.",
+                "SDG 1 doirasida 7 ta maqsad va 13 ta koРІР‚Вrsatkich mavjud.",
                 "Natijada quyidagilar amalga oshiriladi:",
             ],
             "bullets": [
-                "OвЂta qashshoqlikni yoвЂq qilish",
+                "OРІР‚Вta qashshoqlikni yoРІР‚Вq qilish",
                 "Qashshoqlikni kamida 50% ga qisqartirish",
                 "Ijtimoiy himoya tizimini yaratish",
-                "Resurs va xizmatlarga teng kirishni taвЂ™minlash",
+                "Resurs va xizmatlarga teng kirishni taРІР‚в„ўminlash",
                 "Ofatlarga chidamlilikni oshirish",
             ],
         },
         {
             "title": "Global holat",
-            "paragraphs": ["Hozirgi kunda quyidagi koвЂrsatkichlar dolzarb hisoblanadi:"],
+            "paragraphs": ["Hozirgi kunda quyidagi koРІР‚Вrsatkichlar dolzarb hisoblanadi:"],
             "bullets": [
                 "Dunyo aholisining taxminan 10% qashshoqlikda yashaydi",
-                "2015-yilda 736 million odam oвЂta qashshoqlikda yashagan",
-                "Eng katta ulush Afrika hududiga toвЂgвЂri keladi",
+                "2015-yilda 736 million odam oРІР‚Вta qashshoqlikda yashagan",
+                "Eng katta ulush Afrika hududiga toРІР‚ВgРІР‚Вri keladi",
                 "Qishloqlarda qashshoqlik darajasi 17.2%",
                 "Shaharlarda qashshoqlik darajasi 5.3%",
             ],
@@ -2418,7 +2418,7 @@ SDG_1_DETAIL_UZ = {
             "bullets": [
                 "iqtisodiy tengsizlik",
                 "siyosiy beqarorlik",
-                "iqlim oвЂzgarishi",
+                "iqlim oРІР‚Вzgarishi",
                 "urush va mojarolar",
             ],
         },
@@ -2426,25 +2426,25 @@ SDG_1_DETAIL_UZ = {
             "title": "Bolalar va qashshoqlik",
             "bullets": [
                 "385 millionga yaqin bola kuniga $1.90 dan kam daromad bilan yashaydi",
-                "KoвЂplab mamlakatlarda bolalar qashshoqligi boвЂyicha aniq statistika yoвЂq",
+                "KoРІР‚Вplab mamlakatlarda bolalar qashshoqligi boРІР‚Вyicha aniq statistika yoРІР‚Вq",
                 "97% mamlakatda yetarli data mavjud emas",
             ],
         },
         {
-            "title": "Ijobiy oвЂzgarishlar",
+            "title": "Ijobiy oРІР‚Вzgarishlar",
             "paragraphs": [
-                "1990вЂ“2015 oraligвЂida qashshoqlikda yashovchilar soni 1.8 milliarddan 776 milliongacha kamaydi.",
-                "Ammo muammo hali toвЂliq hal boвЂlmagan va erishilgan natijalarni saqlab qolish uchun izchil siyosat zarur.",
+                "1990РІР‚вЂњ2015 oraligРІР‚Вida qashshoqlikda yashovchilar soni 1.8 milliarddan 776 milliongacha kamaydi.",
+                "Ammo muammo hali toРІР‚Вliq hal boРІР‚Вlmagan va erishilgan natijalarni saqlab qolish uchun izchil siyosat zarur.",
             ],
         },
         {
             "title": "Hukumatlar roli",
-            "paragraphs": ["Mahalliy va global hukumatlar quyidagi yoвЂnalishlarda faol ishlaydi:"],
+            "paragraphs": ["Mahalliy va global hukumatlar quyidagi yoРІР‚Вnalishlarda faol ishlaydi:"],
             "bullets": [
-                "kam taвЂ™minlanganlarni qoвЂllab-quvvatlash",
-                "shaffof boshqaruvni taвЂ™minlash",
+                "kam taРІР‚в„ўminlanganlarni qoРІР‚Вllab-quvvatlash",
+                "shaffof boshqaruvni taРІР‚в„ўminlash",
                 "bandlikni oshirish",
-                "taвЂ™lim va iqtisodiy imkoniyatlarni kengaytirish",
+                "taРІР‚в„ўlim va iqtisodiy imkoniyatlarni kengaytirish",
             ],
         },
     ],
@@ -2640,76 +2640,76 @@ SDG_2_DETAIL_UZ_CLEAN = {
 
 SDG_2_DETAIL_UZ = {
     "hero_title": "Ochlikka barham berish",
-    "idea_title": "Asosiy gвЂoya",
-    "idea_text": "Ochlikni tugatish, oziq-ovqat xavfsizligini taвЂ™minlash va oziqlanishni yaxshilash hamda qishloq xoвЂjaligining barqaror rivojlanishiga koвЂmaklashish.",
+    "idea_title": "Asosiy gРІР‚Вoya",
+    "idea_text": "Ochlikni tugatish, oziq-ovqat xavfsizligini taРІР‚в„ўminlash va oziqlanishni yaxshilash hamda qishloq xoРІР‚Вjaligining barqaror rivojlanishiga koРІР‚Вmaklashish.",
     "sections": [
         {
-            "title": "Umumiy maвЂ™lumot",
+            "title": "Umumiy maРІР‚в„ўlumot",
             "paragraphs": [
-                "Barqaror rivojlanishning 2-maqsadi ochlikni tugatish, oziq-ovqat xavfsizligini taвЂ™minlash, oziqlanishni yaxshilash hamda qishloq xoвЂjaligining barqaror rivojlanishiga koвЂmaklashishni nazarda tutadi.",
-                "SDG 2 oziq-ovqat xavfsizligi, ovqatlanish sifatini yaxshilash va qishloq xoвЂjaligi bilan barqaror iqtisodiy rivojlanish oвЂrtasidagi uzviy bogвЂliqlikni koвЂrsatadi.",
-                "Birlashgan Millatlar Tashkiloti maвЂ™lumotlariga koвЂra, dunyoda yuz millionlab odamlar ochlik va toвЂyib ovqatlanmaslik xavfi ostida yashamoqda.",
+                "Barqaror rivojlanishning 2-maqsadi ochlikni tugatish, oziq-ovqat xavfsizligini taРІР‚в„ўminlash, oziqlanishni yaxshilash hamda qishloq xoРІР‚Вjaligining barqaror rivojlanishiga koРІР‚Вmaklashishni nazarda tutadi.",
+                "SDG 2 oziq-ovqat xavfsizligi, ovqatlanish sifatini yaxshilash va qishloq xoРІР‚Вjaligi bilan barqaror iqtisodiy rivojlanish oРІР‚Вrtasidagi uzviy bogРІР‚Вliqlikni koРІР‚Вrsatadi.",
+                "Birlashgan Millatlar Tashkiloti maРІР‚в„ўlumotlariga koРІР‚Вra, dunyoda yuz millionlab odamlar ochlik va toРІР‚Вyib ovqatlanmaslik xavfi ostida yashamoqda.",
             ],
         },
         {
             "title": "Asosiy maqsadlar va natijalar",
             "paragraphs": [
-                "SDG 2 doirasida 8 ta maqsad va 14 ta koвЂrsatkich mavjud.",
-                "Mazkur vazifalarni amalga oshirish natijasida quyidagilarga erishish koвЂzda tutiladi:",
+                "SDG 2 doirasida 8 ta maqsad va 14 ta koРІР‚Вrsatkich mavjud.",
+                "Mazkur vazifalarni amalga oshirish natijasida quyidagilarga erishish koРІР‚Вzda tutiladi:",
             ],
             "bullets": [
-                "ochlikni yoвЂq qilish va oziq-ovqat bilan taвЂ™minlashni yaxshilash",
-                "toвЂyib ovqatlanmaslikning barcha shakllarini yoвЂq qilish",
-                "qishloq xoвЂjaligi hosildorligini oshirish",
-                "barqaror oziq-ovqat ishlab chiqarish tizimlari va qishloq xoвЂjaligi amaliyotini kengaytirish",
-                "urugвЂlar, ekinlar va uy hayvonlarining genetik xilma-xilligini koвЂpaytirish",
+                "ochlikni yoРІР‚Вq qilish va oziq-ovqat bilan taРІР‚в„ўminlashni yaxshilash",
+                "toРІР‚Вyib ovqatlanmaslikning barcha shakllarini yoРІР‚Вq qilish",
+                "qishloq xoРІР‚Вjaligi hosildorligini oshirish",
+                "barqaror oziq-ovqat ishlab chiqarish tizimlari va qishloq xoРІР‚Вjaligi amaliyotini kengaytirish",
+                "urugРІР‚Вlar, ekinlar va uy hayvonlarining genetik xilma-xilligini koРІР‚Вpaytirish",
                 "investitsiyalar, tadqiqot va texnologiyalarni keng joriy etish",
             ],
         },
         {
             "title": "Bugungi global holat",
             "paragraphs": [
-                "ToвЂyib ovqatlanmaslik darajasi ayrim davrlarda kamaygan boвЂlsa-da, 2015-yildan keyin och qolish koвЂrsatkichlari yana oвЂsishni boshladi.",
-                "Bunga oziq-ovqat tizimlaridagi uzilishlar, iqlim oвЂzgarishi, mojarolar va iqtisodiy beqarorlik sabab boвЂlmoqda.",
-                "COVID-19 pandemiyasi esa xarid qobiliyati va mahsulot tarqatish zanjirlariga salbiy taвЂ™sir koвЂrsatib, vaziyatni keskinlashtirdi.",
+                "ToРІР‚Вyib ovqatlanmaslik darajasi ayrim davrlarda kamaygan boРІР‚Вlsa-da, 2015-yildan keyin och qolish koРІР‚Вrsatkichlari yana oРІР‚Вsishni boshladi.",
+                "Bunga oziq-ovqat tizimlaridagi uzilishlar, iqlim oРІР‚Вzgarishi, mojarolar va iqtisodiy beqarorlik sabab boРІР‚Вlmoqda.",
+                "COVID-19 pandemiyasi esa xarid qobiliyati va mahsulot tarqatish zanjirlariga salbiy taРІР‚в„ўsir koРІР‚Вrsatib, vaziyatni keskinlashtirdi.",
             ],
         },
         {
             "title": "Xavflar va muammolar",
             "paragraphs": [
-                "Dunyo 2030-yilgacha ocharchilikni toвЂliq yoвЂqotish yoвЂlida jiddiy sinovlarga duch kelmoqda.",
+                "Dunyo 2030-yilgacha ocharchilikni toРІР‚Вliq yoРІР‚Вqotish yoРІР‚Вlida jiddiy sinovlarga duch kelmoqda.",
             ],
             "bullets": [
-                "iqlim oвЂzgarishi va qurgвЂoqchilik",
+                "iqlim oРІР‚Вzgarishi va qurgРІР‚Вoqchilik",
                 "urush va mojarolar",
                 "oziq-ovqat narxlarining oshishi",
-                "qishloq xoвЂjaligida texnologik orqada qolish",
+                "qishloq xoРІР‚Вjaligida texnologik orqada qolish",
                 "taqsimot tizimidagi zaifliklar",
             ],
         },
         {
             "title": "Bolalar va ovqatlanish",
             "paragraphs": [
-                "Bolalar orasidagi toвЂyib ovqatlanmaslik jismoniy va aqliy rivojlanishga bevosita salbiy taвЂ™sir koвЂrsatadi.",
-                "Dunyoda millionlab bolalar yetarli ovqatlanmaslik tufayli sogвЂliq, taвЂ™lim va kelajakdagi iqtisodiy imkoniyatlardan mahrum boвЂlish xavfi ostida qolmoqda.",
+                "Bolalar orasidagi toРІР‚Вyib ovqatlanmaslik jismoniy va aqliy rivojlanishga bevosita salbiy taРІР‚в„ўsir koРІР‚Вrsatadi.",
+                "Dunyoda millionlab bolalar yetarli ovqatlanmaslik tufayli sogРІР‚Вliq, taРІР‚в„ўlim va kelajakdagi iqtisodiy imkoniyatlardan mahrum boРІР‚Вlish xavfi ostida qolmoqda.",
             ],
         },
         {
-            "title": "Qishloq xoвЂjaligi va rivojlanish",
+            "title": "Qishloq xoРІР‚Вjaligi va rivojlanish",
             "paragraphs": [
-                "Rivojlanayotgan mamlakatlarda qishloq xoвЂjaligi millionlab oilalar uchun asosiy daromad manbai hisoblanadi.",
-                "Zamonaviy texnologiyalar, adolatli taqsimlash tizimlari va samarali investitsiyalar orqali oziq-ovqat ishlab chiqarishni koвЂpaytirish va chiqindilarni kamaytirish mumkin.",
-                "Ayollar va kichik ishlab chiqaruvchilarni qoвЂllab-quvvatlash bu yoвЂnalishda alohida ahamiyatga ega.",
+                "Rivojlanayotgan mamlakatlarda qishloq xoРІР‚Вjaligi millionlab oilalar uchun asosiy daromad manbai hisoblanadi.",
+                "Zamonaviy texnologiyalar, adolatli taqsimlash tizimlari va samarali investitsiyalar orqali oziq-ovqat ishlab chiqarishni koРІР‚Вpaytirish va chiqindilarni kamaytirish mumkin.",
+                "Ayollar va kichik ishlab chiqaruvchilarni qoРІР‚Вllab-quvvatlash bu yoРІР‚Вnalishda alohida ahamiyatga ega.",
             ],
         },
         {
             "title": "Hukumatlar va institutlar roli",
             "paragraphs": [
-                "Davlatlar va xalqaro institutlar SDG 2 ga erishish uchun quyidagi yoвЂnalishlarda ishlaydi:",
+                "Davlatlar va xalqaro institutlar SDG 2 ga erishish uchun quyidagi yoРІР‚Вnalishlarda ishlaydi:",
             ],
             "bullets": [
                 "oziq-ovqat xavfsizligi siyosatini kuchaytirish",
-                "mahalliy ishlab chiqaruvchilarni qoвЂllab-quvvatlash",
+                "mahalliy ishlab chiqaruvchilarni qoРІР‚Вllab-quvvatlash",
                 "innovatsion agrotexnologiyalarni joriy etish",
                 "barqaror suv va yer resurslarini boshqarish",
                 "zaif qatlamlar uchun oziq-ovqat va ijtimoiy yordam dasturlarini kengaytirish",
@@ -2720,74 +2720,74 @@ SDG_2_DETAIL_UZ = {
 
 
 SDG_3_DETAIL_UZ = {
-    "hero_title": "SogвЂlik va farovonlik",
-    "idea_title": "Asosiy gвЂoya",
-    "idea_text": "SogвЂlom turmush tarzini taвЂ™minlash va barcha yoshdagi kishilarning farovonligiga koвЂmaklashish.",
+    "hero_title": "SogРІР‚Вlik va farovonlik",
+    "idea_title": "Asosiy gРІР‚Вoya",
+    "idea_text": "SogРІР‚Вlom turmush tarzini taРІР‚в„ўminlash va barcha yoshdagi kishilarning farovonligiga koРІР‚Вmaklashish.",
     "sections": [
         {
-            "title": "Umumiy maвЂ™lumot",
+            "title": "Umumiy maРІР‚в„ўlumot",
             "paragraphs": [
-                "Barqaror rivojlanishning 3-maqsadi sogвЂlom turmush tarzini taвЂ™minlash va barcha yoshdagi kishilarning farovonligiga koвЂmaklashishni nazarda tutadi.",
-                "SDG 3 sogвЂlom turmush tarzining turli jihatlarini qamrab oladi va unga doimiy eвЂ™tibor qaratadi.",
+                "Barqaror rivojlanishning 3-maqsadi sogРІР‚Вlom turmush tarzini taРІР‚в„ўminlash va barcha yoshdagi kishilarning farovonligiga koРІР‚Вmaklashishni nazarda tutadi.",
+                "SDG 3 sogРІР‚Вlom turmush tarzining turli jihatlarini qamrab oladi va unga doimiy eРІР‚в„ўtibor qaratadi.",
             ],
         },
         {
-            "title": "Asosiy maqsadlar va koвЂrsatkichlar",
+            "title": "Asosiy maqsadlar va koРІР‚Вrsatkichlar",
             "paragraphs": [
-                "SDG 3ni amalga oshirish uchun 13 maqsad va taraqqiyot yoвЂlini belgilash uchun 28 koвЂrsatkich mavjud.",
-                "Birinchi 9 maqsad вЂњmaqsadli natijalarвЂќ boвЂlib, ularga quyidagilar kiradi:",
+                "SDG 3ni amalga oshirish uchun 13 maqsad va taraqqiyot yoРІР‚Вlini belgilash uchun 28 koРІР‚Вrsatkich mavjud.",
+                "Birinchi 9 maqsad РІР‚Сљmaqsadli natijalarРІР‚Сњ boРІР‚Вlib, ularga quyidagilar kiradi:",
             ],
             "bullets": [
-                "onalar oвЂlimini kamaytirish",
-                "yangi tugвЂilgan chaqaloqlar va besh yoshgacha boвЂlgan bolalar oвЂlimini kamaytirish",
+                "onalar oРІР‚Вlimini kamaytirish",
+                "yangi tugРІР‚Вilgan chaqaloqlar va besh yoshgacha boРІР‚Вlgan bolalar oРІР‚Вlimini kamaytirish",
                 "yuqumli kasalliklarga qarshi kurashish",
-                "yuqumli boвЂlmagan kasalliklardan oвЂlimni kamaytirish va ruhiy salomatlikni yaxshilash",
+                "yuqumli boРІР‚Вlmagan kasalliklardan oРІР‚Вlimni kamaytirish va ruhiy salomatlikni yaxshilash",
                 "giyohvandlikning oldini olish va davolash",
-                "yoвЂl-transport hodisalarida jarohatlar va oвЂlimlarni kamaytirish",
+                "yoРІР‚Вl-transport hodisalarida jarohatlar va oРІР‚Вlimlarni kamaytirish",
                 "jinsiy va reproduktiv salomatlik xizmatlaridan foydalanishni kengaytirish",
-                "umumiy sogвЂliqni saqlash qamroviga erishish",
-                "xavfli kimyoviy moddalardan kasallanish va oвЂlimni kamaytirish",
+                "umumiy sogРІР‚Вliqni saqlash qamroviga erishish",
+                "xavfli kimyoviy moddalardan kasallanish va oРІР‚Вlimni kamaytirish",
             ],
         },
         {
             "title": "Erishish vositalari",
             "paragraphs": [
-                "SDG 3 maqsadlarining qolgan toвЂrttasi erishish vositalari boвЂlib, ular quyidagi yoвЂnalishlarni qamrab oladi:",
+                "SDG 3 maqsadlarining qolgan toРІР‚Вrttasi erishish vositalari boРІР‚Вlib, ular quyidagi yoРІР‚Вnalishlarni qamrab oladi:",
             ],
             "bullets": [
-                "tamaki nazorati boвЂyicha xalqaro konvensiyalarni amalga oshirish",
-                "tadqiqot, dori vositalari va vaksinalardan universal foydalanishni qoвЂllab-quvvatlash",
-                "rivojlanayotgan mamlakatlarda sogвЂliqni saqlashni moliyalashtirish va tizimni mustahkamlash",
-                "global sogвЂliq xavflari boвЂyicha erta ogohlantirish tizimlarini takomillashtirish",
+                "tamaki nazorati boРІР‚Вyicha xalqaro konvensiyalarni amalga oshirish",
+                "tadqiqot, dori vositalari va vaksinalardan universal foydalanishni qoРІР‚Вllab-quvvatlash",
+                "rivojlanayotgan mamlakatlarda sogРІР‚Вliqni saqlashni moliyalashtirish va tizimni mustahkamlash",
+                "global sogРІР‚Вliq xavflari boРІР‚Вyicha erta ogohlantirish tizimlarini takomillashtirish",
             ],
         },
         {
-            "title": "Global sogвЂliq kun tartibi",
+            "title": "Global sogРІР‚Вliq kun tartibi",
             "paragraphs": [
-                "SDG 3 barcha erkaklar va ayollar uchun tibbiy xizmatlardan teng foydalanishni taвЂ™minlaydigan universal tibbiy qamrovga erishishga qaratilgan.",
-                "U yangi tugвЂilgan chaqaloqlar, besh yoshgacha boвЂlgan bolalar oвЂlimining oldini olish va epidemiyalarni tugatish bilan birga iqtisodiy hamda ijtimoiy tengsizlik, urbanizatsiya, iqlim inqirozi va boshqa yuqumli kasalliklar xavfiga ham eвЂ™tibor qaratadi.",
-                "2030-yil kun tartibidagi asosiy masala salomatlikka eвЂ™tiborni oshirish boвЂlib, COVID-19 pandemiyasi hisobga olinganda global miqyosda salomatlik va farovonlikni taвЂ™minlashga jiddiy eвЂ™tibor qaratish zarur.",
+                "SDG 3 barcha erkaklar va ayollar uchun tibbiy xizmatlardan teng foydalanishni taРІР‚в„ўminlaydigan universal tibbiy qamrovga erishishga qaratilgan.",
+                "U yangi tugРІР‚Вilgan chaqaloqlar, besh yoshgacha boРІР‚Вlgan bolalar oРІР‚Вlimining oldini olish va epidemiyalarni tugatish bilan birga iqtisodiy hamda ijtimoiy tengsizlik, urbanizatsiya, iqlim inqirozi va boshqa yuqumli kasalliklar xavfiga ham eРІР‚в„ўtibor qaratadi.",
+                "2030-yil kun tartibidagi asosiy masala salomatlikka eРІР‚в„ўtiborni oshirish boРІР‚Вlib, COVID-19 pandemiyasi hisobga olinganda global miqyosda salomatlik va farovonlikni taРІР‚в„ўminlashga jiddiy eРІР‚в„ўtibor qaratish zarur.",
             ],
         },
         {
             "title": "Bolalar salomatligi",
             "paragraphs": [
-                "Har bir bolaning omon qolishi va rivojlanishini taвЂ™minlash yuqori taвЂ™sirli chora-tadbirlarni koвЂrishni talab qiladi.",
-                "Bunga yangi tugвЂilgan chaqaloqlarni sifatli prenatal, tugвЂruq va tugвЂruqdan keyingi parvarish bilan qamrab olish, yuqumli kasalliklardan himoya qilish hamda yetarli va toвЂyimli oziq-ovqatdan foydalanish imkoniyatini kengaytirish kiradi.",
+                "Har bir bolaning omon qolishi va rivojlanishini taРІР‚в„ўminlash yuqori taРІР‚в„ўsirli chora-tadbirlarni koРІР‚Вrishni talab qiladi.",
+                "Bunga yangi tugРІР‚Вilgan chaqaloqlarni sifatli prenatal, tugРІР‚Вruq va tugРІР‚Вruqdan keyingi parvarish bilan qamrab olish, yuqumli kasalliklardan himoya qilish hamda yetarli va toРІР‚Вyimli oziq-ovqatdan foydalanish imkoniyatini kengaytirish kiradi.",
             ],
         },
         {
             "title": "Asosiy statistika va xavflar",
             "paragraphs": [
-                "UNDP maвЂ™lumotlariga koвЂra, har 2 soniyada 30 yoshdan 70 yoshgacha boвЂlgan bir kishi yurak-qon tomir kasalliklari, surunkali nafas yoвЂllari kasalliklari, diabet yoki saraton kabi yuqumli boвЂlmagan kasalliklardan bevaqt vafot etadi.",
-                "Dunyo boвЂylab 2019-yilda 2.4 million chaqaloq bevaqt vafot etgan, kuniga taxminan 6,700 neonatal oвЂlim qayd etilgan.",
-                "OвЂrtacha umr koвЂrish davomiyligini oshirish va ona-bola salomatligini yaxshilash borasida sezilarli yutuqlar boвЂlsa-da, koвЂplab mamlakatlarda bu maqsadlarga erishish uchun hali jiddiy ishlar talab etiladi.",
+                "UNDP maРІР‚в„ўlumotlariga koРІР‚Вra, har 2 soniyada 30 yoshdan 70 yoshgacha boРІР‚Вlgan bir kishi yurak-qon tomir kasalliklari, surunkali nafas yoРІР‚Вllari kasalliklari, diabet yoki saraton kabi yuqumli boРІР‚Вlmagan kasalliklardan bevaqt vafot etadi.",
+                "Dunyo boРІР‚Вylab 2019-yilda 2.4 million chaqaloq bevaqt vafot etgan, kuniga taxminan 6,700 neonatal oРІР‚Вlim qayd etilgan.",
+                "OРІР‚Вrtacha umr koРІР‚Вrish davomiyligini oshirish va ona-bola salomatligini yaxshilash borasida sezilarli yutuqlar boРІР‚Вlsa-da, koРІР‚Вplab mamlakatlarda bu maqsadlarga erishish uchun hali jiddiy ishlar talab etiladi.",
             ],
         },
         {
-            "title": "Kelajak uchun ustuvor yoвЂnalishlar",
+            "title": "Kelajak uchun ustuvor yoРІР‚Вnalishlar",
             "paragraphs": [
-                "Onalar oвЂlimini kamaytirish, toza suv va sanitariya xizmatlaridan foydalanishni kengaytirish, bezgak, sil, poliomiyelit va OIV/OITS tarqalishini qisqartirish SDG 3ning muhim yoвЂnalishlari boвЂlib qolmoqda.",
+                "Onalar oРІР‚Вlimini kamaytirish, toza suv va sanitariya xizmatlaridan foydalanishni kengaytirish, bezgak, sil, poliomiyelit va OIV/OITS tarqalishini qisqartirish SDG 3ning muhim yoРІР‚Вnalishlari boРІР‚Вlib qolmoqda.",
                 "Internet va texnologiyalarning rivojlanishi tibbiy yozuvlarni raqamlashtirish, shifokorlar va tibbiyot xodimlari uchun onlayn resurslardan foydalanish imkonini kengaytirib, bemorlarni parvarish qilish va natijalarni yaxshilashga xizmat qilmoqda.",
             ],
         },
@@ -2972,7 +2972,7 @@ SDG_5_DETAIL_UZ_CLEAN = {
         {
             "title": "Global holat va dolzarb muammolar",
             "paragraphs": [
-                "В«Hech kimni ortda qoldirmaslikВ» tamoyili asosida davlatlar eng uzoqda qolayotgan hududlar va ijtimoiy qatlamlar uchun taraqqiyotni tezlashtirish majburiyatini oldilar. Bu gender tengligiga erishish va barcha ayol-qizlarning imkoniyatlarini kengaytirish uchun alohida ahamiyatga ega.",
+                "Р’В«Hech kimni ortda qoldirmaslikР’В» tamoyili asosida davlatlar eng uzoqda qolayotgan hududlar va ijtimoiy qatlamlar uchun taraqqiyotni tezlashtirish majburiyatini oldilar. Bu gender tengligiga erishish va barcha ayol-qizlarning imkoniyatlarini kengaytirish uchun alohida ahamiyatga ega.",
                 "Barqaror rivojlanish maqsadlari BMT tomonidan belgilangan 17 ta global maqsaddan iborat bo'lib, gender tengligi ularning ko'pchiligiga bevosita ta'sir qiladi. Bu qashshoqlik, ochlik, sog'liqni saqlash, ta'lim, iqlim o'zgarishi va ijtimoiy adolat bilan chambarchas bog'langan yo'nalishdir.",
             ],
         },
@@ -3173,39 +3173,39 @@ SDG_9_DETAIL_UZ_CLEAN = {
 }
 
 SDG_8_DETAIL_UZ_CLEAN = {
-    "hero_title": "Munosib ish oвЂrinlari va iqtisodiy oвЂsish",
-    "idea_title": "Asosiy gвЂoya",
-    "idea_text": "Keng qamrovli va barqaror iqtisodiy oвЂsish hamda barcha uchun bandlik va munosib mehnat qilish imkoniyatlarini taвЂ™minlashga koвЂmaklashish.",
+    "hero_title": "Munosib ish oРІР‚Вrinlari va iqtisodiy oРІР‚Вsish",
+    "idea_title": "Asosiy gРІР‚Вoya",
+    "idea_text": "Keng qamrovli va barqaror iqtisodiy oРІР‚Вsish hamda barcha uchun bandlik va munosib mehnat qilish imkoniyatlarini taРІР‚в„ўminlashga koРІР‚Вmaklashish.",
     "sections": [
         {
-            "title": "Umumiy maвЂ™lumot",
+            "title": "Umumiy maРІР‚в„ўlumot",
             "paragraphs": [
-                "Barqaror rivojlanishning 8-maqsadi keng qamrovli va barqaror iqtisodiy oвЂsish hamda barcha uchun bandlik va munosib mehnat qilish imkoniyatlarini taвЂ™minlashga koвЂmaklashishga qaratilgan. Keyingi oвЂrinlarda bu maqsad SDG 8 deb yuritiladi.",
-                "SDG 8 ni amalga oshirish uchun 12 maqsad va taraqqiyot yoвЂlini belgilash uchun 17 ta koвЂrsatkich mavjud.",
+                "Barqaror rivojlanishning 8-maqsadi keng qamrovli va barqaror iqtisodiy oРІР‚Вsish hamda barcha uchun bandlik va munosib mehnat qilish imkoniyatlarini taРІР‚в„ўminlashga koРІР‚Вmaklashishga qaratilgan. Keyingi oРІР‚Вrinlarda bu maqsad SDG 8 deb yuritiladi.",
+                "SDG 8 ni amalga oshirish uchun 12 maqsad va taraqqiyot yoРІР‚Вlini belgilash uchun 17 ta koРІР‚Вrsatkich mavjud.",
             ],
         },
         {
             "title": "Asosiy maqsadlar",
             "paragraphs": [
-                "Birinchi oвЂntalik maqsadlar maqsadli natijalar deb yuritiladi va ular quyidagilarni qamrab oladi:",
+                "Birinchi oРІР‚Вntalik maqsadlar maqsadli natijalar deb yuritiladi va ular quyidagilarni qamrab oladi:",
             ],
             "bullets": [
-                "barqaror iqtisodiy oвЂsish",
+                "barqaror iqtisodiy oРІР‚Вsish",
                 "iqtisodiy samaradorlikni oshirish uchun diversifikatsiya, innovatsiyalar va modernizatsiya",
-                "ish oвЂrinlari yaratish va korxonalar oвЂsishini qoвЂllab-quvvatlash siyosatini ragвЂbatlantirish",
-                "isteвЂ™mol va ishlab chiqarishda resurslardan foydalanish samaradorligini oshirish",
-                "toвЂliq bandlik va teng haq toвЂlanadigan munosib mehnat",
-                "bandlikka koвЂmaklashish",
-                "yoshlarni taвЂ™lim va tarbiyalash",
+                "ish oРІР‚Вrinlari yaratish va korxonalar oРІР‚Вsishini qoРІР‚Вllab-quvvatlash siyosatini ragРІР‚Вbatlantirish",
+                "isteРІР‚в„ўmol va ishlab chiqarishda resurslardan foydalanish samaradorligini oshirish",
+                "toРІР‚Вliq bandlik va teng haq toРІР‚Вlanadigan munosib mehnat",
+                "bandlikka koРІР‚Вmaklashish",
+                "yoshlarni taРІР‚в„ўlim va tarbiyalash",
                 "zamonaviy qullik, odam savdosi va bolalar mehnatiga barham berish",
                 "mehnat huquqlarini himoya qilish va xavfsiz mehnat muhitini yaratish",
-                "sogвЂlom va barqaror turizmni rivojlantirish, bank, sugвЂurta va moliyaviy xizmatlardan hamma teng foydalanishi",
+                "sogРІР‚Вlom va barqaror turizmni rivojlantirish, bank, sugРІР‚Вurta va moliyaviy xizmatlardan hamma teng foydalanishi",
             ],
         },
         {
             "title": "Yutuq vositalari",
             "paragraphs": [
-                "Bundan tashqari, qolgan ikki maqsad yutuq vositalari hisoblanadi va ular quyidagilarni oвЂz ichiga oladi:",
+                "Bundan tashqari, qolgan ikki maqsad yutuq vositalari hisoblanadi va ular quyidagilarni oРІР‚Вz ichiga oladi:",
             ],
             "bullets": [
                 "savdoni rivojlantirish uchun yordam berish hajmini oshirish",
@@ -3215,23 +3215,23 @@ SDG_8_DETAIL_UZ_CLEAN = {
         {
             "title": "Global holat va iqtisodiy xatarlar",
             "paragraphs": [
-                "Mazkur maqsad har bir mamlakatning iqtisodiy sektoridan, irqi va madaniyatidan qatвЂ™i nazar, fuqarolarning yaxshi hayot uchun zarur ehtiyojlarini taвЂ™minlashga qaratilgan. Dunyo aholisining qariyb yarmi hali ham kuniga taxminan 2 AQSh dollari ekvivalenti bilan yashaydi.",
-                "KoвЂp joylarda ish bilan band boвЂlish qashshoqlikdan xalos boвЂlishni kafolatlamaydi. NotoвЂgвЂri taraqqiyot va nomutanosib iqtisodiy siyosat qashshoqlikni bartaraf etishga toвЂsqinlik qilishi mumkin.",
-                "COVID-19 pandemiyasi esa dunyoni Buyuk Depressiyadan keyingi eng yomon global iqtisodiy inqirozlardan biriga olib keldi va oвЂsish surвЂ™atlariga salbiy taвЂ™sir koвЂrsatdi.",
+                "Mazkur maqsad har bir mamlakatning iqtisodiy sektoridan, irqi va madaniyatidan qatРІР‚в„ўi nazar, fuqarolarning yaxshi hayot uchun zarur ehtiyojlarini taРІР‚в„ўminlashga qaratilgan. Dunyo aholisining qariyb yarmi hali ham kuniga taxminan 2 AQSh dollari ekvivalenti bilan yashaydi.",
+                "KoРІР‚Вp joylarda ish bilan band boРІР‚Вlish qashshoqlikdan xalos boРІР‚Вlishni kafolatlamaydi. NotoРІР‚ВgРІР‚Вri taraqqiyot va nomutanosib iqtisodiy siyosat qashshoqlikni bartaraf etishga toРІР‚Вsqinlik qilishi mumkin.",
+                "COVID-19 pandemiyasi esa dunyoni Buyuk Depressiyadan keyingi eng yomon global iqtisodiy inqirozlardan biriga olib keldi va oРІР‚Вsish surРІР‚в„ўatlariga salbiy taРІР‚в„ўsir koРІР‚Вrsatdi.",
             ],
         },
         {
             "title": "Bandlik va mehnat bozori",
             "paragraphs": [
-                "2008-yilgi iqtisodiy inqiroz va global retsessiyaning uzoq davom etgan taвЂ™siriga qaramay, oвЂtgan oвЂn yilliklarda ayrim hududlarda ishchilarning oвЂta qashshoqlikda yashashi kamaydi. Shunga qaramay, bandlikning oвЂsish darajasi koвЂplab mamlakatlarda sekinlashib bormoqda.",
-                "Barcha xodimlarning katta qismi hali ham rasmiy mehnat shartnomasiga ega emas. Bu esa ijtimoiy himoya, munosib daromad va mehnat xavfsizligi bilan bogвЂliq muammolarni kuchaytiradi.",
+                "2008-yilgi iqtisodiy inqiroz va global retsessiyaning uzoq davom etgan taРІР‚в„ўsiriga qaramay, oРІР‚Вtgan oРІР‚Вn yilliklarda ayrim hududlarda ishchilarning oРІР‚Вta qashshoqlikda yashashi kamaydi. Shunga qaramay, bandlikning oРІР‚Вsish darajasi koРІР‚Вplab mamlakatlarda sekinlashib bormoqda.",
+                "Barcha xodimlarning katta qismi hali ham rasmiy mehnat shartnomasiga ega emas. Bu esa ijtimoiy himoya, munosib daromad va mehnat xavfsizligi bilan bogРІР‚Вliq muammolarni kuchaytiradi.",
             ],
         },
         {
-            "title": "Kelajak ustuvor yoвЂnalishlari",
+            "title": "Kelajak ustuvor yoРІР‚Вnalishlari",
             "paragraphs": [
-                "SDG 8 kelib chiqishi, irqi va jinsidan qatвЂ™i nazar, barcha ishchilar uchun barqaror va adolatli iqtisodiy oвЂsishni ragвЂbatlantirishga qaratilgan. Bu diversifikatsiya, texnologik yangilanish va innovatsiyalar orqali iqtisodiy samaradorlikni oshirishni anglatadi.",
-                "Kelgusida yuqori qoвЂshilgan qiymatga ega, mehnatni koвЂp talab qiluvchi tarmoqlarga eвЂ™tibor qaratish, yoshlar bandligini kuchaytirish va munosib mehnat standartlarini mustahkamlash asosiy vazifa boвЂlib qoladi.",
+                "SDG 8 kelib chiqishi, irqi va jinsidan qatРІР‚в„ўi nazar, barcha ishchilar uchun barqaror va adolatli iqtisodiy oРІР‚Вsishni ragРІР‚Вbatlantirishga qaratilgan. Bu diversifikatsiya, texnologik yangilanish va innovatsiyalar orqali iqtisodiy samaradorlikni oshirishni anglatadi.",
+                "Kelgusida yuqori qoРІР‚Вshilgan qiymatga ega, mehnatni koРІР‚Вp talab qiluvchi tarmoqlarga eРІР‚в„ўtibor qaratish, yoshlar bandligini kuchaytirish va munosib mehnat standartlarini mustahkamlash asosiy vazifa boРІР‚Вlib qoladi.",
             ],
         },
     ],
@@ -3745,13 +3745,13 @@ def set_portal_language(request, language_code):
 def normalize_search_text(value):
     normalized = (value or "").lower()
     for source, target in {
-        "вЂ™": "'",
+        "РІР‚в„ў": "'",
         "`": "'",
-        "К»": "'",
-        "вЂњ": '"',
-        "вЂќ": '"',
-        "вЂ“": "-",
-        "вЂ”": "-",
+        "РљВ»": "'",
+        "РІР‚Сљ": '"',
+        "РІР‚Сњ": '"',
+        "РІР‚вЂњ": "-",
+        "РІР‚вЂќ": "-",
     }.items():
         normalized = normalized.replace(source, target)
     return " ".join(normalized.split())
@@ -4388,10 +4388,10 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                         {
                             "title": "2. Asosiy prinsiplar",
                             "points": [
-                                "Qonuniylik вЂ” qonunchilikka so'zsiz rioya qilish",
-                                "Vatanparvarlik вЂ” Vatanga sadoqat va xizmat burchiga sodiqlik",
-                                "Adolat va halollik вЂ” barcha munosabatlarda xolis bo'lish",
-                                "Samaradorlik вЂ” innovatsiyalar orqali faoliyatni doimiy yaxshilash",
+                                "Qonuniylik РІР‚вЂќ qonunchilikka so'zsiz rioya qilish",
+                                "Vatanparvarlik РІР‚вЂќ Vatanga sadoqat va xizmat burchiga sodiqlik",
+                                "Adolat va halollik РІР‚вЂќ barcha munosabatlarda xolis bo'lish",
+                                "Samaradorlik РІР‚вЂќ innovatsiyalar orqali faoliyatni doimiy yaxshilash",
                             ],
                         },
                         {
@@ -4426,7 +4426,7 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                             "points": [
                                 "Talabalar darsga kirmay qolish va kechikishga yo'l qo'ymaydi",
                                 "O'qituvchi kirganida talabalar o'rindan turadi",
-                                "Akademik ta'qib (harassment) вЂ” qat'iyan taqiqlanadi",
+                                "Akademik ta'qib (harassment) РІР‚вЂќ qat'iyan taqiqlanadi",
                                 "Talabalar asosli shikoyat bilan dekanat yoki rekturat orqali murojaat qila oladi",
                             ],
                         },
@@ -4468,10 +4468,10 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
                         {
                             "title": "2. Core principles",
                             "points": [
-                                "Legality вЂ” unconditional compliance with legislation",
-                                "Patriotism вЂ” loyalty to the country and dedication to service",
-                                "Justice and integrity вЂ” impartiality in all relations",
-                                "Efficiency вЂ” continuous improvement through innovation",
+                                "Legality РІР‚вЂќ unconditional compliance with legislation",
+                                "Patriotism РІР‚вЂќ loyalty to the country and dedication to service",
+                                "Justice and integrity РІР‚вЂќ impartiality in all relations",
+                                "Efficiency РІР‚вЂќ continuous improvement through innovation",
                             ],
                         },
                         {
@@ -4704,25 +4704,25 @@ class SDGDetailView(BasePortalContextMixin, TemplateView):
         else:
             context["detail_content"] = {
                 "hero_title": goal["title"],
-                "idea_title": "Asosiy gвЂoya" if language_code == "uz" else "Core idea",
+                "idea_title": "Asosiy gРІР‚Вoya" if language_code == "uz" else "Core idea",
                 "idea_text": goal["description"],
                 "sections": [
                     {
-                        "title": "Umumiy maвЂ™lumot" if language_code == "uz" else "Overview",
+                        "title": "Umumiy maРІР‚в„ўlumot" if language_code == "uz" else "Overview",
                         "paragraphs": [
                             goal["description"],
-                            "Mazkur maqsad universitetning ilmiy izlanishlari, taвЂ™lim dasturlari va jamoatchilik bilan ishlash tashabbuslari orqali qoвЂllab-quvvatlanadi."
+                            "Mazkur maqsad universitetning ilmiy izlanishlari, taРІР‚в„ўlim dasturlari va jamoatchilik bilan ishlash tashabbuslari orqali qoРІР‚Вllab-quvvatlanadi."
                             if language_code == "uz"
                             else "This goal is supported through the university's research agenda, educational programs, and community engagement initiatives.",
                         ],
                     },
                     {
-                        "title": "Asosiy yoвЂnalishlar" if language_code == "uz" else "Priority directions",
+                        "title": "Asosiy yoРІР‚Вnalishlar" if language_code == "uz" else "Priority directions",
                         "bullets": [
-                            "taвЂ™lim, tadqiqot va kampus boshqaruvida integratsiya"
+                            "taРІР‚в„ўlim, tadqiqot va kampus boshqaruvida integratsiya"
                             if language_code == "uz"
                             else "integration across teaching, research, and campus management",
-                            "maвЂ™lumotlarga asoslangan institutsional qarorlar"
+                            "maРІР‚в„ўlumotlarga asoslangan institutsional qarorlar"
                             if language_code == "uz"
                             else "data-informed institutional decision-making",
                             "mahalliy va xalqaro hamkorlik"
@@ -4836,49 +4836,49 @@ RESEARCH_CARD_CONTENT = {
             {
                 "label": "1) Innovatsion loyiha",
                 "title_label": "Nomi",
-                "title": "вЂњEnergiya tejovchi texnologiyalarda foydalaniladigan silidsid metall va yarimoвЂtkazgich birikmalar asosidagi nanooвЂlchamli plyonkalarning optik va elektrofizik xossalarini tadqiq etishвЂќ",
+                "title": "РІР‚СљEnergiya tejovchi texnologiyalarda foydalaniladigan silidsid metall va yarimoРІР‚Вtkazgich birikmalar asosidagi nanooРІР‚Вlchamli plyonkalarning optik va elektrofizik xossalarini tadqiq etishРІР‚Сњ",
                 "details": [
                     {"label": "Sana", "value": "10-avgust 2024"},
                     {"label": "Loyiha rahbari", "value": "Normuradov Muradulla, fizika-matematika fanlari doktori, professor"},
-                    {"label": "Fan yoвЂnalishi", "value": "Matematika va fizika, mexanika fanlari"},
-                    {"label": "Qisqacha mazmuni", "value": "loyiha kremniy monokristallari yuzasida hosil boвЂladigan oвЂtish metallari, ularning silisidlari va nanooвЂlchamli yupqa plyonkalar xossalarini oвЂrganishga qaratilgan. Asosiy urgвЂu вЂ” qattiq jismli elektronika uchun noyob xossalarga ega materiallar yaratish, ion-plazma usulida olingan yupqa plyonkalar asosida yangi qurilmalar ishlab chiqish."},
+                    {"label": "Fan yoРІР‚Вnalishi", "value": "Matematika va fizika, mexanika fanlari"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha kremniy monokristallari yuzasida hosil boРІР‚Вladigan oРІР‚Вtish metallari, ularning silisidlari va nanooРІР‚Вlchamli yupqa plyonkalar xossalarini oРІР‚Вrganishga qaratilgan. Asosiy urgРІР‚Вu РІР‚вЂќ qattiq jismli elektronika uchun noyob xossalarga ega materiallar yaratish, ion-plazma usulida olingan yupqa plyonkalar asosida yangi qurilmalar ishlab chiqish."},
                     {"label": "Ijrochi tashkilot", "value": "Qarshi davlat universiteti"},
-                    {"label": "Loyiha qiymati", "value": "1 936 350 000 soвЂm."},
+                    {"label": "Loyiha qiymati", "value": "1 936 350 000 soРІР‚Вm."},
                 ],
             },
             {
                 "label": "2) Amaliy loyiha",
                 "title_label": "Nomi",
-                "title": "вЂњQashqadaryo viloyati hududida tarqalgan isteвЂ™molbop, dorivor qoвЂziqorinlar va ularni sunвЂ™iy ozuqa muhitlarida yetishtirish texnologiyasini ishlab chiqishвЂќ",
+                "title": "РІР‚СљQashqadaryo viloyati hududida tarqalgan isteРІР‚в„ўmolbop, dorivor qoРІР‚Вziqorinlar va ularni sunРІР‚в„ўiy ozuqa muhitlarida yetishtirish texnologiyasini ishlab chiqishРІР‚Сњ",
                 "details": [
                     {"label": "Sana", "value": "10-avgust 2024"},
                     {"label": "Loyiha rahbari", "value": "dots. Sherqulova Jamila Payanovna"},
-                    {"label": "Fan yoвЂnalishi", "value": "Biotexnologiya va mikologiya"},
-                    {"label": "Qisqacha mazmuni", "value": "loyiha isteвЂ™molbop va dorivor zamburugвЂlarni mahalliy sharoitda ilmiy asosda yetishtirish texnologiyasini ishlab chiqishga qaratilgan. Unda sifatli oziq-ovqat va tabiiy dori vositalariga ehtiyoj ortayotgani, Qashqadaryoda bu yoвЂnalishda rejali mikologik tadqiqotlar yetarli emasligi, sof kultura kolleksiyasini yaratish va arzon substratlar asosida yuqori hosil olish zarurligi taвЂ™kidlangan."},
+                    {"label": "Fan yoРІР‚Вnalishi", "value": "Biotexnologiya va mikologiya"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha isteРІР‚в„ўmolbop va dorivor zamburugРІР‚Вlarni mahalliy sharoitda ilmiy asosda yetishtirish texnologiyasini ishlab chiqishga qaratilgan. Unda sifatli oziq-ovqat va tabiiy dori vositalariga ehtiyoj ortayotgani, Qashqadaryoda bu yoРІР‚Вnalishda rejali mikologik tadqiqotlar yetarli emasligi, sof kultura kolleksiyasini yaratish va arzon substratlar asosida yuqori hosil olish zarurligi taРІР‚в„ўkidlangan."},
                     {"label": "Ijrochi tashkilot", "value": "Qarshi davlat universiteti"},
-                    {"label": "Loyiha qiymati", "value": "981 920 000 soвЂm."},
+                    {"label": "Loyiha qiymati", "value": "981 920 000 soРІР‚Вm."},
                 ],
             },
             {
                 "label": "3) Startup loyiha",
                 "title_label": "Nomi",
-                "title": "вЂњClean WaterвЂќ",
+                "title": "РІР‚СљClean WaterРІР‚Сњ",
                 "details": [
                     {"label": "Sana", "value": "10-avgust 2024"},
                     {"label": "Loyiha rahbari", "value": "Shamsiddinova Shahrizoda Baxtiyor qizi"},
-                    {"label": "Qisqacha mazmuni", "value": "loyiha suv oвЂtlari yordamida suvni biologik usulda tozalashga qaratilgan. Unda chiqindi suvlarni organo-minerallar, ogвЂir metallar, sianidlar, neft mahsulotlari va patogen mikroorganizmlardan tozalash, shuningdek, qishloq xoвЂjaligi, baliqchilik, parrandachilik va chorvachilik uchun foydali resurs olish koвЂzda tutilgan."},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha suv oРІР‚Вtlari yordamida suvni biologik usulda tozalashga qaratilgan. Unda chiqindi suvlarni organo-minerallar, ogРІР‚Вir metallar, sianidlar, neft mahsulotlari va patogen mikroorganizmlardan tozalash, shuningdek, qishloq xoРІР‚Вjaligi, baliqchilik, parrandachilik va chorvachilik uchun foydali resurs olish koРІР‚Вzda tutilgan."},
                     {"label": "Hamkor tashkilot", "value": "Qarshi davlat universiteti"},
-                    {"label": "Loyiha qiymati", "value": "177 410 000 soвЂm."},
+                    {"label": "Loyiha qiymati", "value": "177 410 000 soРІР‚Вm."},
                 ],
             },
             {
                 "label": "4) Xalqaro loyiha",
                 "title_label": "Nomi",
-                "title": "вЂњAccess Microscholarship ProgramвЂќ",
+                "title": "РІР‚СљAccess Microscholarship ProgramРІР‚Сњ",
                 "details": [
                     {"label": "Sana", "value": "10-avgust 2024"},
-                    {"label": "Loyiha rahbari", "value": "Musayeva DilsoвЂz Tuychiyevna, PhD"},
-                    {"label": "Qisqacha mazmuni", "value": "loyiha AQShning OвЂzbekistondagi Elchixonasi moliyaviy koвЂmagida, Amerika kengashlari rahbarligida amalga oshiriladi. Qarshi shahridagi umumiy oвЂrta taвЂ™lim maktablarida oвЂqiyotgan, kam taвЂ™minlangan va ijtimoiy himoyaga muhtoj oilalar farzandlarining ingliz tili malakasini oshirishga qaratilgan. Darslik va oвЂquv jihozlari xarajatlari loyiha mablagвЂlari hisobidan qoplanadi."},
+                    {"label": "Loyiha rahbari", "value": "Musayeva DilsoРІР‚Вz Tuychiyevna, PhD"},
+                    {"label": "Qisqacha mazmuni", "value": "loyiha AQShning OРІР‚Вzbekistondagi Elchixonasi moliyaviy koРІР‚Вmagida, Amerika kengashlari rahbarligida amalga oshiriladi. Qarshi shahridagi umumiy oРІР‚Вrta taРІР‚в„ўlim maktablarida oРІР‚Вqiyotgan, kam taРІР‚в„ўminlangan va ijtimoiy himoyaga muhtoj oilalar farzandlarining ingliz tili malakasini oshirishga qaratilgan. Darslik va oРІР‚Вquv jihozlari xarajatlari loyiha mablagРІР‚Вlari hisobidan qoplanadi."},
                     {"label": "Hamkor tashkilot", "value": "Qarshi davlat universiteti"},
                     {"label": "Loyiha qiymati", "value": "64 000 AQSH dollari."},
                 ],
@@ -4888,7 +4888,7 @@ RESEARCH_CARD_CONTENT = {
             {
                 "label": "1) Innovation project",
                 "title_label": "Title",
-                "title": "вЂњResearch on the optical and electrophysical properties of nanoscale films based on silicide metals and semiconductor compounds used in energy-saving technologiesвЂќ",
+                "title": "РІР‚СљResearch on the optical and electrophysical properties of nanoscale films based on silicide metals and semiconductor compounds used in energy-saving technologiesРІР‚Сњ",
                 "details": [
                     {"label": "Date", "value": "August 10, 2024"},
                     {"label": "Project leader", "value": "Normuradov Muradulla, Doctor of Physical and Mathematical Sciences, Professor"},
@@ -4901,7 +4901,7 @@ RESEARCH_CARD_CONTENT = {
             {
                 "label": "2) Applied project",
                 "title_label": "Title",
-                "title": "вЂњDevelopment of technology for cultivating edible and medicinal mushrooms widespread in Kashkadarya region in artificial nutrient mediaвЂќ",
+                "title": "РІР‚СљDevelopment of technology for cultivating edible and medicinal mushrooms widespread in Kashkadarya region in artificial nutrient mediaРІР‚Сњ",
                 "details": [
                     {"label": "Date", "value": "August 10, 2024"},
                     {"label": "Project leader", "value": "Assoc. Prof. Sherqulova Jamila Payanovna"},
@@ -4914,7 +4914,7 @@ RESEARCH_CARD_CONTENT = {
             {
                 "label": "3) Startup project",
                 "title_label": "Title",
-                "title": "вЂњClean WaterвЂќ",
+                "title": "РІР‚СљClean WaterРІР‚Сњ",
                 "details": [
                     {"label": "Date", "value": "August 10, 2024"},
                     {"label": "Project leader", "value": "Shamsiddinova Shahrizoda Baxtiyor qizi"},
@@ -4926,10 +4926,10 @@ RESEARCH_CARD_CONTENT = {
             {
                 "label": "4) International project",
                 "title_label": "Title",
-                "title": "вЂњAccess Microscholarship ProgramвЂќ",
+                "title": "РІР‚СљAccess Microscholarship ProgramРІР‚Сњ",
                 "details": [
                     {"label": "Date", "value": "August 10, 2024"},
-                    {"label": "Project leader", "value": "Musayeva DilsoвЂz Tuychiyevna, PhD"},
+                    {"label": "Project leader", "value": "Musayeva DilsoРІР‚Вz Tuychiyevna, PhD"},
                     {"label": "Summary", "value": "The project is implemented under the leadership of American Councils with financial support from the U.S. Embassy in Uzbekistan. It is aimed at improving English language proficiency among schoolchildren in Karshi city from low-income and socially vulnerable families. The costs of textbooks and educational materials are covered through project funds."},
                     {"label": "Partner institution", "value": "Karshi State University"},
                     {"label": "Project value", "value": "64,000 USD."},
@@ -5230,6 +5230,15 @@ class ReportsView(BasePortalContextMixin, TemplateView):
         )
         context["report_cards"] = [
             {
+                "slug": "governance-meeting-minutes",
+                "title": "Boshqaruv yig'ilishlari bayonnomalari" if language_code == "uz" else "Governance meeting minutes",
+                "summary": (
+                    "Boshqaruv yig'ilishlari, muhokama qilingan masalalar va qabul qilingan qarorlar bo'yicha rasmiy bayonnomalar."
+                    if language_code == "uz"
+                    else "Official minutes of governance meetings, including agenda items discussed and decisions adopted."
+                ),
+            },
+            {
                 "slug": "greenhouse-gases",
                 "title": "Issiqxona gazlari emissiyalari hisoboti" if language_code == "uz" else "Greenhouse gas emissions report",
                 "summary": (
@@ -5261,6 +5270,53 @@ class ReportsView(BasePortalContextMixin, TemplateView):
 
 
 REPORT_INSIGHT_CARD_CONTENT = {
+    "governance-meeting-minutes": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Boshqaruv yig'ilishlari bayonnomalari",
+        "title_en": "Governance meeting minutes",
+        "intro_uz": "Universitet boshqaruvi yig'ilishlari bo'yicha qisqa bayonnomalar va qabul qilingan qarorlar jamlanmasi.",
+        "intro_en": "A concise collection of governance meeting minutes and adopted decisions.",
+        "show_download_cta": False,
+        "sections_uz": [
+            {
+                "title": "2024-2025-yillar bo'yicha yig'ilishlar",
+                "table_headers": ["в„–", "Sana", "Muhokama mavzusi", "Qabul qilingan qaror", "Mas'ul bo'linma"],
+                "table_rows": [
+                    ["1", "2025-yil fevral", "Inklyuziv ta'lim va accessibilty", "Plandagi infratuzilma moslashtirish ishlari boshlandi", "O'quv ishlari bo'yicha prorektor"],
+                    ["2", "2025-yil aprel", "Energiya tejamkorligi va monitoring", "LED yoritish va energiya monitoringi jadvali tasdiqlandi", "Moliya-iqtisod ishlari bo'yicha prorektor"],
+                    ["3", "2025-yil iyun", "Talabalar ishtiroki va qo'llab-quvvatlash", "Yoshlar bilan ishlash bo'yicha qo'shimcha chora-tadbirlar belgilandi", "Yoshlar masalalari bo'yicha prorektor"],
+                    ["4", "2025-yil sentyabr", "Barqarorlik hisobotini tayyorlash", "Yillik hisobot tuzilmasi va muddatlari tasdiqlandi", "Barqarorlik kengashi"],
+                ],
+            },
+            {
+                "title": "Qisqa izoh",
+                "paragraphs": [
+                    "Bayonnomalar universitetning barqarorlik, boshqaruv va hisobot berish jarayonlarini tizimli ravishda hujjatlashtirish uchun xizmat qiladi.",
+                    "Har bir yig'ilishda masalalar muhokama qilinib, bajarilish muddati, mas'ul bo'linmalar va monitoring tartibi belgilanadi.",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Meetings for 2024-2025",
+                "table_headers": ["No", "Date", "Discussion topic", "Decision adopted", "Responsible unit"],
+                "table_rows": [
+                    ["1", "February 2025", "Inclusive education and accessibility", "Infrastructure adaptation work was launched according to the plan", "Vice-Rector for Academic Affairs"],
+                    ["2", "April 2025", "Energy efficiency and monitoring", "The LED lighting and energy monitoring schedule was approved", "Vice-Rector for Finance and Economic Affairs"],
+                    ["3", "June 2025", "Student engagement and support", "Additional measures for youth engagement were defined", "Vice-Rector for Youth Affairs"],
+                    ["4", "September 2025", "Preparation of the sustainability report", "The annual report structure and deadlines were approved", "Sustainability Council"],
+                ],
+            },
+            {
+                "title": "Short note",
+                "paragraphs": [
+                    "The minutes serve to document the university's sustainability, governance, and reporting processes in a structured way.",
+                    "At each meeting, agenda items are discussed and deadlines, responsible units, and monitoring procedures are defined.",
+                ],
+            },
+        ],
+    },
     "greenhouse-gases": {
         "eyebrow_uz": "Hisobotlar",
         "eyebrow_en": "Reports",
@@ -5375,10 +5431,11 @@ REPORT_INSIGHT_CARD_CONTENT = {
         "intro_en": "Key figures from Karshi State University's annual financial report for 2024.",
         "download_url": "/static/documents/annual-financial-report-2024.docx",
         "download_name": "Annual Financial Report-2024.docx",
+        "show_download_cta": False,
         "sections_uz": [
             {
                 "title": "Umumiy hisobot",
-                "table_headers": ["в„–", "Umumiy hisobot", "So'm"],
+                "table_headers": ["РІвЂћвЂ“", "Umumiy hisobot", "So'm"],
                 "table_rows": [
                     ["1", "Jami daromadlar qiymati", "267 923 179 787"],
                     ["2", "Jami xarajatlar qiymati", "228 895 792 507"],
@@ -5388,7 +5445,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
             },
             {
                 "title": "Daromad hisoboti",
-                "table_headers": ["в„–", "Daromad hisoboti", "So'm"],
+                "table_headers": ["РІвЂћвЂ“", "Daromad hisoboti", "So'm"],
                 "table_rows": [
                     ["1", "Davlat tomonidan moliyalashtirish", "66 579 927 300"],
                     ["2", "O'qish to'lovlari-kontrakt", "182 496 604 487"],
@@ -5398,7 +5455,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
             },
             {
                 "title": "Xarajatlar",
-                "table_headers": ["в„–", "Xarajatlar", "So'm"],
+                "table_headers": ["РІвЂћвЂ“", "Xarajatlar", "So'm"],
                 "table_rows": [
                     ["1", "Maosh va ish haqi", "124 947 192 257"],
                     ["2", "Infratuzilma va texnik xizmat ko'rsatish", "44 739 359 771"],
@@ -5411,7 +5468,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
         "sections_en": [
             {
                 "title": "Summary Financial Report",
-                "table_headers": ["в„–", "Summary Financial Report", "Amount (UZS)"],
+                "table_headers": ["РІвЂћвЂ“", "Summary Financial Report", "Amount (UZS)"],
                 "table_rows": [
                     ["1", "Total Revenue", "267 923 179 787"],
                     ["2", "Total Expenditure", "228 895 792 507"],
@@ -5421,7 +5478,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
             },
             {
                 "title": "Revenue breakdown",
-                "table_headers": ["в„–", "Revenue Breakdown", "Amount (UZS)"],
+                "table_headers": ["РІвЂћвЂ“", "Revenue Breakdown", "Amount (UZS)"],
                 "table_rows": [
                     ["1", "Government Funding", "66 579 927 300"],
                     ["2", "Tuition Fees (Contract-based)", "182 496 604 487"],
@@ -5431,7 +5488,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
             },
             {
                 "title": "Expenditure Breakdown",
-                "table_headers": ["в„–", "Expenditure Breakdown", "Amount (UZS)"],
+                "table_headers": ["РІвЂћвЂ“", "Expenditure Breakdown", "Amount (UZS)"],
                 "table_rows": [
                     ["1", "Salaries and Wages", "124 947 192 257"],
                     ["2", "Infrastructure and Maintenance", "44 739 359 771"],
@@ -5445,47 +5502,38 @@ REPORT_INSIGHT_CARD_CONTENT = {
     "sustainability-report": {
         "eyebrow_uz": "Hisobotlar",
         "eyebrow_en": "Reports",
-        "title_uz": "Barqarorlik hisoboti",
-        "title_en": "Sustainability report",
-        "intro_uz": "Qarshi davlat universitetining 2024вЂ“2025 yillardagi Barqarorlik hisoboti asosida tayyorlangan qisqacha sahifa.",
-        "intro_en": "A summary page based on Karshi State University's Sustainability Report 2024вЂ“2025.",
-        "download_url": "/static/documents/sustainability-report-2024-2025.pdf",
-        "download_name": "Sustainability report 2024-2025.pdf",
+        "title_uz": "Qarshi davlat universiteti 2024-2025 yildagi Barqarorlik hisoboti",
+        "title_en": "Karshi State University Sustainability Report 2024-2025",
+        "intro_uz": "Qarshi davlat universitetining 2024-2025 yillardagi barqarorlik yo'nalishlari, boshqaruv tizimi va rivojlanish natijalarini yorituvchi hisobot sahifasi.",
+        "intro_en": "A report page highlighting Karshi State University's 2024-2025 sustainability priorities, governance model, and progress.",
+        "show_download_cta": False,
         "sections_uz": [
             {
                 "title": "Hisobot mazmuni",
                 "paragraphs": [
-                    "Hisobot universitetning atrof-muhitga mas'uliyatli yondashuvi, barqaror rivojlanish strategiyasi va global hamkorlik bo'yicha yondashuvini yoritadi.",
-                    "Unda infratuzilma, energiya va iqlim o'zgarishi, chiqindilarni boshqarish, suv resurslarini tejash, transport, ta'lim va ilmiy tadqiqotlar kabi olti asosiy yo'nalish qamrab olingan.",
-                ],
-            },
-            {
-                "title": "Asosiy jihatlar",
-                "bullets": [
-                    "Barqarorlik tashabbuslari ilmiy ishlar va innovatsiyalar bo'yicha prorektor rahbarligidagi maxsus bo'linma va Barqarorlik kengashi orqali muvofiqlashtiriladi",
-                    "Universitet umumiy byudjetining taxminan 30 foizi yashil tashabbuslar va ekologik dasturlarga yo'naltirilgan",
-                    "Kampus hududining yarmidan ortig'i yashil hududlar bilan qoplangan",
-                    "LED yoritish, issiqlik izolyatsiyasi va quyosh panellari orqali energiya iste'moli hamda karbon chiqindilarini kamaytirish bo'yicha amaliy ishlar olib borilgan",
-                    "Barqarorlik ta'lim, ilmiy tadqiqot va talaba tashabbuslariga faol integratsiya qilingan",
+                    "Qarshi davlat universitetining 2024-2025 yillardagi Barqarorlik hisoboti universitetning atrof-muhitga mas'uliyatli yondashuvi, barqaror rivojlanish va global hamkorlik yo'lidagi strategik majburiyatlarini har tomonlama yoritib beradi. O'zbekistonning yetakchi oliy ta'lim muassasalaridan biri sifatida QDU barqarorlik tamoyillarini ta'lim dasturlari, kampus faoliyati va jamoatchilik bilan hamkorlik jarayonlariga faol integratsiya qilib, uzoq muddatli ekologik, ijtimoiy va iqtisodiy farovonlikka hissa qo'shmoqda.",
+                    "Hisobot oltita asosiy yo'nalishni qamrab oladi: infratuzilma, energiya va iqlim o'zgarishi, chiqindilarni boshqarish, suv resurslarini tejash, transport va ta'lim hamda ilmiy tadqiqotlar. Ushbu tizimli yondashuv orqali universitet barqarorlik faoliyatida o'lchab bo'ladigan natijalar, ochiqlik va doimiy takomillashuvni ta'minlaydi.",
+                    "QDU barqarorlik modelining muhim jihatlaridan biri kuchli institutsional boshqaruv tizimidir. Barqarorlik tashabbuslari ilmiy ishlar va innovatsiyalar bo'yicha prorektor rahbarligidagi maxsus bo'linma tomonidan muvofiqlashtiriladi hamda professor-o'qituvchilar, talabalar va ma'muriy xodimlardan iborat Barqarorlik kengashi tomonidan qo'llab-quvvatlanadi. Ushbu inklyuziv boshqaruv modeli barqarorlikni universitet faoliyatining barcha darajalariga chuqur singdirishni ta'minlaydi.",
+                    "Universitet barqarorlikni moliyalashtirishga ham katta e'tibor qaratadi, umumiy byudjetining taxminan 30 foizi yashil tashabbuslar, infratuzilmani modernizatsiya qilish va ekologik dasturlarga yo'naltirilgan. Ushbu investitsiyalar energiya samaradorligini oshirish, qayta tiklanuvchi energiya manbalarini joriy etish, suvni tejash texnologiyalari, chiqindilarni kamaytirish va barqaror kampusni rivojlantirishga xizmat qiladi hamda past uglerodli va resurslardan samarali foydalanadigan universitet modelini shakllantirishga qaratilgan.",
+                    "QDU yashil va inklyuziv kampus muhitini yaratishda sezilarli yutuqlarga erishgan. Kampus hududining yarmidan ortig'i yashil hududlar bilan qoplangan bo'lib, bu bioxilma-xillikni saqlash, ilmiy tadqiqotlar va jamoatchilik bilan ishlashni qo'llab-quvvatlaydi. Shu bilan birga, universitet nogironligi bo'lgan shaxslar uchun maxsus infratuzilmalarni yaratish orqali inklyuzivlikni ta'minlaydi hamda talabalar va xodimlar uchun keng qamrovli sog'liqni saqlash, xavfsizlik va farovonlik xizmatlarini taklif etadi.",
+                    "Energiya va iqlim yo'nalishida universitet zamonaviy energiya tejovchi texnologiyalarni joriy qilgan, jumladan, barcha binolarda LED yoritish tizimlari, issiqlik izolyatsiyasi va quyosh panellari o'rnatilgan. Ushbu choralar energiya iste'molini va karbon chiqindilarini sezilarli darajada kamaytirish bilan birga, qayta tiklanuvchi energiya manbalariga o'tishni jadallashtirmoqda.",
+                    "Bundan tashqari, Qarshi davlat universiteti barqarorlikni ta'lim va ilmiy tadqiqotlar jarayoniga faol integratsiya qiladi. Talabalar tashabbuslari, fanlararo ilmiy loyihalar va targ'ibot tadbirlari qo'llab-quvvatlanadi. Mahalliy va xalqaro hamkorliklar orqali universitet global barqaror rivojlanish jarayonlariga hissa qo'shadi hamda o'z faoliyatini BMTning Barqaror rivojlanish maqsadlari (SDGs) bilan uyg'unlashtiradi.",
+                    "Umuman olganda, ushbu hisobot Qarshi davlat universitetining zamonaviy, yashil va ijtimoiy mas'uliyatli universitetga aylanish jarayonini yoritib beradi. Universitet innovatsiya, ekologik barqarorlik va barqaror rivojlanish tamoyillariga sodiq holda milliy va global miqyosda faoliyat olib bormoqda.",
                 ],
             },
         ],
         "sections_en": [
             {
-                "title": "Report scope",
+                "title": "Report overview",
                 "paragraphs": [
-                    "The report outlines the university's environmentally responsible approach, sustainability strategy, and commitment to global engagement.",
-                    "It covers six major areas: infrastructure, energy and climate change, waste management, water conservation, transportation, and education and research.",
-                ],
-            },
-            {
-                "title": "Key highlights",
-                "bullets": [
-                    "Sustainability initiatives are coordinated through a dedicated unit under the Vice-Rector for Scientific Affairs and Innovations together with a Sustainability Council",
-                    "Approximately 30% of the university's total budget is directed toward green initiatives and environmental programs",
-                    "More than half of the campus area is covered by green space",
-                    "LED lighting, thermal insulation, and solar panels are used to reduce energy consumption and carbon emissions",
-                    "Sustainability is actively integrated into education, research, and student-led initiatives",
+                    "Karshi State University's Sustainability Report 2024-2025 presents a comprehensive overview of the university's strategic commitment to environmental responsibility, sustainable development, and global engagement. As one of Uzbekistan's leading higher education institutions, KSU actively integrates sustainability principles into its academic programs, campus operations, and community partnerships, contributing to long-term environmental, social, and economic well-being.",
+                    "The report is covering six key areas: infrastructure, energy and climate change, waste management, water conservation, transportation, and education and research. Through this structured approach, the university ensures measurable progress, transparency, and continuous improvement in sustainability performance.",
+                    "A distinctive feature of KSU's sustainability model is its strong institutional governance. Sustainability initiatives are coordinated by a dedicated unit under the Vice-Rector for Scientific Affairs and Innovations, supported by a cross-functional Sustainability Council that includes faculty members, students, and administrative staff. This inclusive governance structure ensures that sustainability is embedded across all levels of university operations.",
+                    "The university demonstrates a significant financial commitment to sustainability, allocating approximately 30% of its total budget toward green initiatives, infrastructure modernization, and environmental programs. Investments focus on energy efficiency, renewable energy adoption, water-saving technologies, waste reduction, and sustainable campus development, reflecting a long-term vision for a low-carbon and resource-efficient university.",
+                    "KSU has made notable progress in developing a green and inclusive campus environment. Over half of the campus area is covered by vegetation, supporting biodiversity, research, and community engagement. The university also ensures accessibility and inclusivity through facilities designed for individuals with disabilities, alongside comprehensive health, safety, and well-being services for students and staff.",
+                    "In the area of energy and climate action, the university has implemented advanced energy-saving technologies, including full LED lighting coverage, thermal insulation, and the installation of solar panels. These measures have significantly reduced energy consumption and carbon emissions, while supporting the transition toward renewable energy sources.",
+                    "Furthermore, Karshi State University actively integrates sustainability into education and research by supporting student-led initiatives, interdisciplinary research projects, and awareness programs. Through partnerships with local and international stakeholders, the university contributes to global sustainability efforts and aligns its activities with the United Nations Sustainable Development Goals (SDGs).",
+                    "Overall, the Sustainability Report highlights KSU's transformation into a smart, green, and socially responsible university, committed to innovation, environmental stewardship, and sustainable development at both national and global levels.",
                 ],
             },
         ],
@@ -5531,7 +5579,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                     report_context["sections"] = [
                         {
                             "title": "Umumiy hisobot",
-                            "table_headers": ["в„–", "Umumiy hisobot", "So'm"],
+                            "table_headers": ["РІвЂћвЂ“", "Umumiy hisobot", "So'm"],
                             "table_rows": [
                                 ["1", "Jami daromadlar qiymati", "269 259 861 100"],
                                 ["2", "Jami xarajatlar qiymati", "198 402 697 300"],
@@ -5541,7 +5589,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                         },
                         {
                             "title": "Daromad hisoboti",
-                            "table_headers": ["в„–", "Daromad hisoboti", "So'm"],
+                            "table_headers": ["РІвЂћвЂ“", "Daromad hisoboti", "So'm"],
                             "table_rows": [
                                 ["1", "Davlat tomonidan moliyalashtirish", "56 707 206 700"],
                                 ["2", "O'qish to'lovlari-kontrakt", "205 655 311 200"],
@@ -5551,7 +5599,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                         },
                         {
                             "title": "Xarajatlar",
-                            "table_headers": ["в„–", "Xarajatlar", "So'm"],
+                            "table_headers": ["РІвЂћвЂ“", "Xarajatlar", "So'm"],
                             "table_rows": [
                                 ["1", "Maosh va ish haqi", "110 575 449 800"],
                                 ["2", "Infratuzilma va texnik xizmat ko'rsatish", "27 908 827 800"],
@@ -5565,7 +5613,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                     report_context["sections"] = [
                         {
                             "title": "Summary Financial Report",
-                            "table_headers": ["в„–", "Summary Financial Report", "Amount (UZS)"],
+                            "table_headers": ["РІвЂћвЂ“", "Summary Financial Report", "Amount (UZS)"],
                             "table_rows": [
                                 ["1", "Total Revenue", "269 259 861 100"],
                                 ["2", "Total Expenditure", "198 402 697 300"],
@@ -5575,7 +5623,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                         },
                         {
                             "title": "Revenue Breakdown",
-                            "table_headers": ["в„–", "Revenue Breakdown", "Amount (UZS)"],
+                            "table_headers": ["РІвЂћвЂ“", "Revenue Breakdown", "Amount (UZS)"],
                             "table_rows": [
                                 ["1", "Government Funding", "56 707 206 700"],
                                 ["2", "Tuition Fees (Contract-based)", "205 655 311 200"],
@@ -5585,7 +5633,7 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                         },
                         {
                             "title": "Expenditure Breakdown",
-                            "table_headers": ["в„–", "Expenditure Breakdown", "Amount (UZS)"],
+                            "table_headers": ["РІвЂћвЂ“", "Expenditure Breakdown", "Amount (UZS)"],
                             "table_rows": [
                                 ["1", "Salaries and Wages", "110 575 449 800"],
                                 ["2", "Infrastructure and Maintenance", "27 908 827 800"],

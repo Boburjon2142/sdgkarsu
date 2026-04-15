@@ -299,6 +299,27 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, "Universitet ish joyida har qanday shakldagi diskriminatsiyani qat'iyan taqiqlaydi.")
         self.assertContains(response, "homiladorlik va onalik davrida ayollarni qo'llab-quvvatlash siyosatini amalga oshiradi")
 
+    def test_governance_meeting_minutes_card_is_listed(self):
+        response = Client().get(reverse("reports"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("report-card-detail", kwargs={"slug": "governance-meeting-minutes"}))
+        self.assertContains(response, "Governance meeting minutes")
+
+    def test_governance_meeting_minutes_detail_loads(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "en"
+        session.save()
+
+        response = client.get(reverse("report-card-detail", kwargs={"slug": "governance-meeting-minutes"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Meetings for 2024-2025")
+        self.assertContains(response, "February 2025")
+        self.assertContains(response, "Vice-Rector for Academic Affairs")
+        self.assertNotContains(response, "research-intro__aside")
+
     def test_greenhouse_report_uses_uzbek_tables_without_download_cta(self):
         client = Client()
         session = client.session
@@ -326,6 +347,34 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, "Scope 1 - Direct Emissions")
         self.assertContains(response, "Natural gas consumption")
         self.assertContains(response, "1 141.9")
+        self.assertNotContains(response, "research-intro__aside")
+        self.assertNotContains(response, "download=")
+
+    def test_financial_report_hides_download_cta(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "uz"
+        session.save()
+
+        response = client.get(reverse("report-card-detail", kwargs={"slug": "financial-report"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Umumiy hisobot")
+        self.assertNotContains(response, "research-intro__aside")
+        self.assertNotContains(response, "download=")
+
+    def test_sustainability_report_uses_custom_content_without_download_cta(self):
+        client = Client()
+        session = client.session
+        session["portal_language"] = "en"
+        session.save()
+
+        response = client.get(reverse("report-card-detail", kwargs={"slug": "sustainability-report"}))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Karshi State University Sustainability Report 2024-2025")
+        self.assertContains(response, "six key areas")
+        self.assertContains(response, "approximately 30% of its total budget")
         self.assertNotContains(response, "research-intro__aside")
         self.assertNotContains(response, "download=")
 
