@@ -5506,7 +5506,9 @@ REPORT_INSIGHT_CARD_CONTENT = {
         "title_en": "Karshi State University Sustainability Report 2024-2025",
         "intro_uz": "Qarshi davlat universitetining 2024-2025 yillardagi barqarorlik yo'nalishlari, boshqaruv tizimi va rivojlanish natijalarini yorituvchi hisobot sahifasi.",
         "intro_en": "A report page highlighting Karshi State University's 2024-2025 sustainability priorities, governance model, and progress.",
-        "show_download_cta": False,
+        "show_download_cta": True,
+        "download_url": "/static/documents/sustainability-report-2024-2025.pdf",
+        "download_name": "Sustainability report 2024-2025.pdf",
         "sections_uz": [
             {
                 "title": "Hisobot mazmuni",

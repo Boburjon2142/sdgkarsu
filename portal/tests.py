@@ -363,7 +363,7 @@ class PortalSmokeTests(TestCase):
         self.assertNotContains(response, "research-intro__aside")
         self.assertNotContains(response, "download=")
 
-    def test_sustainability_report_uses_custom_content_without_download_cta(self):
+    def test_sustainability_report_uses_custom_content_with_download_cta(self):
         client = Client()
         session = client.session
         session["portal_language"] = "en"
@@ -375,8 +375,9 @@ class PortalSmokeTests(TestCase):
         self.assertContains(response, "Karshi State University Sustainability Report 2024-2025")
         self.assertContains(response, "six key areas")
         self.assertContains(response, "approximately 30% of its total budget")
-        self.assertNotContains(response, "research-intro__aside")
-        self.assertNotContains(response, "download=")
+        self.assertContains(response, "research-intro__aside")
+        self.assertContains(response, "download=\"Sustainability report 2024-2025.pdf\"")
+        self.assertContains(response, "/static/documents/sustainability-report-2024-2025.pdf")
 
     def test_governance_detail_uses_english_content_when_language_is_en(self):
         client = Client()
