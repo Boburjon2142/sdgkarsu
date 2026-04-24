@@ -1,6 +1,11 @@
 from copy import copy
 from types import SimpleNamespace
 
+try:
+    from ftfy import fix_text as fix_text_encoding
+except ImportError:  # pragma: no cover - optional fallback for environments without ftfy
+    fix_text_encoding = None
+
 from .current_portal_translations import PORTAL_TRANSLATIONS
 
 
@@ -394,6 +399,7 @@ MOJIBAKE_REPLACEMENTS = {
     "вЂ”": "—",
     "вЂ¦": "…",
     "в„–": "№",
+    "ā\"–": "№",
 }
 
 
@@ -401,9 +407,46 @@ def normalize_text(value):
     if not isinstance(value, str):
         return value
     cleaned = value
+    if fix_text_encoding is not None:
+        cleaned = fix_text_encoding(cleaned)
     for source, target in MOJIBAKE_REPLACEMENTS.items():
         cleaned = cleaned.replace(source, target)
     return cleaned
+
+
+def normalize_value(value):
+    if isinstance(value, str):
+        return normalize_text(value)
+    if isinstance(value, list):
+        return [normalize_value(item) for item in value]
+    if isinstance(value, tuple):
+        return tuple(normalize_value(item) for item in value)
+    if isinstance(value, set):
+        return {normalize_value(item) for item in value}
+    if isinstance(value, dict):
+        return {key: normalize_value(item) for key, item in value.items()}
+    if isinstance(value, SimpleNamespace):
+        return SimpleNamespace(**{key: normalize_value(item) for key, item in vars(value).items() if not key.startswith("_")})
+    return value
+
+
+class NormalizedContext(dict):
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+        self.update(*args, **kwargs)
+
+    def __setitem__(self, key, value):
+        super().__setitem__(key, normalize_value(value))
+
+    def update(self, *args, **kwargs):
+        mapping = dict(*args, **kwargs)
+        for key, value in mapping.items():
+            self[key] = value
+
+    def setdefault(self, key, default=None):
+        if key not in self:
+            self[key] = default
+        return self[key]
 
 
 def translate_text(value, language_code):
@@ -440,11 +483,11 @@ def localize_object(instance, language_code):
     for field_name in bilingual_fields:
         if hasattr(instance, f"{field_name}_uz") or hasattr(instance, f"{field_name}_en"):
             setattr(localized_instance, field_name, resolve_bilingual_text(instance, field_name, language_code))
-    return localized_instance
+    return normalize_value(localized_instance)
 
 
 def build_page_content_fallback(**values):
-    normalized = {key: normalize_text(value) for key, value in values.items()}
+    normalized = {key: normalize_value(value) for key, value in values.items()}
     return SimpleNamespace(**normalized)
 
 

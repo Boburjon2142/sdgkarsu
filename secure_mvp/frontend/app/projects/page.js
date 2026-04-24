@@ -25,7 +25,7 @@ function ProjectsContent() {
   }, []);
 
   if (state.loading) {
-    return <div className="card">Loading projects…</div>;
+    return <div className="card">Loading projects...</div>;
   }
 
   return (

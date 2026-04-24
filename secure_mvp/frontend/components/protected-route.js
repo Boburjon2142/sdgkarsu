@@ -22,7 +22,7 @@ export function ProtectedRoute({ children, requireAdmin = false }) {
   }, [requireAdmin, router, state.loading, state.user]);
 
   if (state.loading) {
-    return <div className="card">Checking your session…</div>;
+    return <div className="card">Checking your session...</div>;
   }
 
   if (!state.user) {
