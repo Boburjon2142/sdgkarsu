@@ -1360,9 +1360,9 @@ GOVERNANCE_PAGE_CONTENT = {
                     {
                         "headers": ["в\"–", "Indikator", "2030 yilgacha"],
                         "rows": [
-                            ["1", "Karbon emissiyasi", "в€'40% kamaytirish"],
+                            ["1", "Karbon emissiyasi", "-40% kamaytirish"],
                             ["2", "Qayta tiklanuvchi energiya ulushi", "50%"],
-                            ["3", "Suv iste'moli", "в€'30% kamaytirish"],
+                            ["3", "Suv iste'moli", "-30% kamaytirish"],
                             ["4", "Chiqindilarni qayta ishlash", "70%"],
                         ],
                     }
