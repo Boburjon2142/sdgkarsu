@@ -5112,31 +5112,113 @@ REPORT_INSIGHT_CARD_CONTENT = {
         "sections_uz": [
             {
                 "title": "2024-2025-yillar bo'yicha yig'ilishlar",
-                "table_headers": ["в\"–", "Sana", "Muhokama mavzusi", "Qabul qilingan qaror", "Mas'ul bo'linma"],
+                "table_headers": ["№", "Sana", "Muhokama mavzusi", "Qabul qilingan qaror", "Mas'ul bo'linma", "SDGlar", "Hujjat"],
                 "table_rows": [
-                    ["1", "2025-yil fevral", "Inklyuziv ta'lim va accessibility", "Plandagi infratuzilma moslashtirish ishlari boshlandi", "O'quv ishlari bo'yicha prorektor"],
-                    ["2", "2025-yil aprel", "Energiya tejamkorligi va monitoring", "LED yoritish va energiya monitoringi jadvali tasdiqlandi", "Moliya-iqtisod ishlari bo'yicha prorektor"],
-                    ["3", "2025-yil iyun", "Talabalar ishtiroki va qo'llab-quvvatlash", "Yoshlar bilan ishlash bo'yicha qo'shimcha chora-tadbirlar belgilandi", "Yoshlar masalalari bo'yicha prorektor"],
-                    ["4", "2025-yil sentyabr", "Barqarorlik hisobotini tayyorlash", "Yillik hisobot tuzilmasi va muddatlari tasdiqlandi", "Barqarorlik kengashi"],
+                    [
+                        "1",
+                        "2024-yil 6-fevral",
+                        "Universitet faoliyati tahlili; xodimlarni rag'batlantirish; ilmiy rejalashtirish; kadrlar tanlovi; ilmiy infratuzilmani rivojlantirish",
+                        "2023-yil faoliyat hisobotlari tasdiqlandi; yuqori natija ko'rsatgan xodimlarga rag'batlantirish berildi; past ko'rsatkichli bo'limlarga choralar belgilandi; doktorantura rejalar tasdiqlandi; yangi ilmiy laboratoriyalar tashkil etildi",
+                        "Ilmiy ishlar bo'yicha prorektor; Moliya bo'limi; Kasaba uyushmasi; Kafedralar",
+                        "SDG 4, SDG 8, SDG 9, SDG 3",
+                        "—",
+                    ],
+                    [
+                        "2",
+                        "2024-yil 29-mart",
+                        "“O‘zbekiston–2030” strategiyasi; yoshlar faolligi; xalqaro hamkorlik; raqamli boshqaruv; ta'lim dasturlarini rivojlantirish",
+                        "Strategiya amalga oshirish rejasi tasdiqlandi; yangi ta'lim dasturlari ochildi; xalqaro hamkorlik kengaytirildi; xalqaro reytinglarga kirish chorasi belgilandi; elektron ovoz berish tizimi joriy etildi; 92 nafar xodim stajirovkaga tanlab olindi",
+                        "Prorektorlar; Fakultetlar; Bo'limlar",
+                        "SDG 4, SDG 8, SDG 9, SDG 17, SDG 3",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-second-document/\" download>Yuklab olish</a>",
+                    ],
+                    [
+                        "3",
+                        "2024-yil 30-may",
+                        "Ilmiy faoliyat ko‘rsatkichlari (KPI) tahlili; o‘quv yiliga tayyorgarlik; akademik rejalashtirish",
+                        "2024-yil birinchi yarim yillik KPI natijalari tasdiqlandi; ilg'or kafedralar rag'batlantirildi; past natijali kafedralarga topshiriqlar berildi; o‘quv dasturlari va sifatini oshirish chorasi belgilandi",
+                        "Ilmiy ishlar bo'yicha prorektor; O'quv ishlari bo'yicha prorektor; Fakultetlar",
+                        "SDG 4, SDG 9, SDG 8",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-third-document/\" download>Yuklab olish</a>",
+                    ],
+                    [
+                        "4",
+                        "2024-yil 30-avgust",
+                        "2024-2025 o'quv yiliga tayyorgarlik; o'quv hujjatlarini tasdiqlash; barqaror rivojlanish tashabbuslari; talabalar siyosati",
+                        "Yangi o'quv yiliga tayyorgarlik tasdiqlandi; o'quv rejalar va syllabuslar tasdiqlandi; \"Muqobil energiya\" laboratoriyasi tashkil etildi; talabalar turar joy to'lovlari belgilandi; kredit ko'chirish tartibi tasdiqlandi",
+                        "O'quv ishlari bo'yicha prorektor; Registrator ofisi; Moliya; Ilmiy bo'lim",
+                        "SDG 4, SDG 7, SDG 9",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-fourth-document/\" download>Yuklab olish</a>",
+                    ],
+                    [
+                        "5",
+                        "2024-yil 6-noyabr",
+                        "Vazirlik qarorlarini bajarish; boshqaruv tizimi; talabalar turar joyi; ilmiy va akademik jarayonlar",
+                        "Vazirlik topshiriqlari ijrosi tasdiqlandi; boshqaruv rejasi yangilandi; talabalar turar joyi holati qoniqarli deb baholandi; 231 nafar talabaga imtiyoz berildi; ilmiy va ta'lim jarayonlari takomillashtirildi",
+                        "Rektor; Prorektorlar; Fakultetlar; Yoshlar bilan ishlash bo'limi",
+                        "SDG 4, SDG 11, SDG 10, SDG 8",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-fifth-document/\" download>Yuklab olish</a>",
+                    ],
                 ],
             },
             {
                 "title": "Qisqa izoh",
                 "paragraphs": [
                     "Bayonnomalar universitetning barqarorlik, boshqaruv va hisobot berish jarayonlarini tizimli ravishda hujjatlashtirish uchun xizmat qiladi.",
-                    "Har bir yig'ilishda masalalar muhokama qilinib, bajarilish muddati, mas'ul bo'linmalar va monitoring tartibi belgilanadi.",
+                    "Har bir yig'ilishda muhokama qilingan masalalar, bajarilish muddati, mas'ul bo'linmalar va monitoring mexanizmi aniqlanadi.",
                 ],
             },
         ],
         "sections_en": [
             {
                 "title": "Meetings for 2024-2025",
-                "table_headers": ["No", "Date", "Discussion topic", "Decision adopted", "Responsible unit"],
+                "table_headers": ["No", "Date", "Discussion topic", "Decision adopted", "Responsible unit", "Related SDGs", "Document"],
                 "table_rows": [
-                    ["1", "February 2025", "Inclusive education and accessibility", "Infrastructure adaptation work was launched according to the plan", "Vice-Rector for Academic Affairs"],
-                    ["2", "April 2025", "Energy efficiency and monitoring", "The LED lighting and energy monitoring schedule was approved", "Vice-Rector for Finance and Economic Affairs"],
-                    ["3", "June 2025", "Student engagement and support", "Additional measures for youth engagement were defined", "Vice-Rector for Youth Affairs"],
-                    ["4", "September 2025", "Preparation of the sustainability report", "The annual report structure and deadlines were approved", "Sustainability Council"],
+                    [
+                        "1",
+                        "February 6, 2024",
+                        "University performance analysis; staff remuneration; research planning; academic recruitment; development of research infrastructure",
+                        "Approved 2023 performance report; financial incentives for high-performing staff; disciplinary measures for underperformance; approval of doctoral research plans; establishment of new research laboratories",
+                        "Vice-Rector for Research and Innovation; Vice-Rector for Finance; Trade Union; Academic Departments",
+                        "SDG 4, SDG 8, SDG 9, SDG 3",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-first-document/\" download>Download</a>",
+                    ],
+                    [
+                        "2",
+                        "March 29, 2024",
+                        "Uzbekistan–2030 strategy implementation; youth engagement; internationalization; academic development; digital governance",
+                        "Strategy implementation plan approved; new academic programs introduced; international partnerships expanded; ranking improvement measures (QS, THE); digital voting system introduced; 92 staff selected for international training",
+                        "Vice-Rectors; Faculties; Departments",
+                        "SDG 4, SDG 8, SDG 9, SDG 17, SDG 3",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-second-document/\" download>Download</a>",
+                    ],
+                    [
+                        "3",
+                        "May 30, 2024",
+                        "Research performance monitoring (KPIs); academic planning; preparation for 2024–2025 academic year",
+                        "KPI results approved; high-performing departments recognized; low-performing departments instructed to improve; curriculum updates and academic quality measures approved",
+                        "Vice-Rector for Research and Innovation; Vice-Rector for Academic Affairs; Faculties",
+                        "SDG 4, SDG 9, SDG 8",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-third-document/\" download>Download</a>",
+                    ],
+                    [
+                        "4",
+                        "August 30, 2024",
+                        "Academic year preparation; approval of educational documents; sustainability initiatives; student policies",
+                        "2024–2025 academic readiness approved; educational documents validated; alternative energy laboratory established; student housing fees set; credit transfer policies approved",
+                        "Vice-Rector for Academic Affairs; Registrar Office; Finance; Research Units",
+                        "SDG 4, SDG 7, SDG 9",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-fourth-document/\" download>Download</a>",
+                    ],
+                    [
+                        "5",
+                        "November 6, 2024",
+                        "Implementation of ministry directives; governance updates; student welfare; academic and research management",
+                        "Ministry directives implemented; governance plans approved; student housing conditions monitored; 231 students received financial support; research and academic processes strengthened",
+                        "Rector; Vice-Rectors; Faculties; Student Affairs",
+                        "SDG 4, SDG 11, SDG 10, SDG 8",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-fifth-document/\" download>Download</a>",
+                    ],
                 ],
             },
             {
@@ -5561,6 +5643,66 @@ class ContactView(BasePortalContextMixin, TemplateView):
             )
             return redirect("contact")
         return self.render_to_response(self.get_context_data(form=form))
+
+
+def governance_meeting_minutes_document_download(_request):
+    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 06- fevral.PDF")
+    if not document_path.exists():
+        raise Http404("Governance meeting minutes document not found.")
+    return FileResponse(
+        document_path.open("rb"),
+        as_attachment=True,
+        filename=document_path.name,
+        content_type="application/pdf",
+    )
+
+
+def governance_meeting_minutes_second_document_download(_request):
+    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 29-mart.PDF")
+    if not document_path.exists():
+        raise Http404("Governance meeting minutes document not found.")
+    return FileResponse(
+        document_path.open("rb"),
+        as_attachment=True,
+        filename=document_path.name,
+        content_type="application/pdf",
+    )
+
+
+def governance_meeting_minutes_third_document_download(_request):
+    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 30-may.PDF")
+    if not document_path.exists():
+        raise Http404("Governance meeting minutes document not found.")
+    return FileResponse(
+        document_path.open("rb"),
+        as_attachment=True,
+        filename=document_path.name,
+        content_type="application/pdf",
+    )
+
+
+def governance_meeting_minutes_fourth_document_download(_request):
+    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 30-Avgust.PDF")
+    if not document_path.exists():
+        raise Http404("Governance meeting minutes document not found.")
+    return FileResponse(
+        document_path.open("rb"),
+        as_attachment=True,
+        filename=document_path.name,
+        content_type="application/pdf",
+    )
+
+
+def governance_meeting_minutes_fifth_document_download(_request):
+    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 06-Noyabr.PDF")
+    if not document_path.exists():
+        raise Http404("Governance meeting minutes document not found.")
+    return FileResponse(
+        document_path.open("rb"),
+        as_attachment=True,
+        filename=document_path.name,
+        content_type="application/pdf",
+    )
 
 
 def robots_txt(_request):

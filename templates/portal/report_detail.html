@@ -65,8 +65,8 @@
       <p>{{ paragraph }}</p>
       {% endfor %}
       {% if section.table_headers and section.table_rows %}
-      <div class="governance-table-wrap">
-        <table class="governance-table">
+      <div class="governance-table-wrap report-detail-table-wrap">
+        <table class="governance-table report-detail-table">
           <thead>
             <tr>
               {% for header in section.table_headers %}
@@ -78,7 +78,7 @@
             {% for row in section.table_rows %}
             <tr>
               {% for cell in row %}
-              <td>{{ cell }}</td>
+              <td>{{ cell|safe }}</td>
               {% endfor %}
             </tr>
             {% endfor %}
