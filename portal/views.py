@@ -5121,7 +5121,7 @@ REPORT_INSIGHT_CARD_CONTENT = {
                         "2023-yil faoliyat hisobotlari tasdiqlandi; yuqori natija ko'rsatgan xodimlarga rag'batlantirish berildi; past ko'rsatkichli bo'limlarga choralar belgilandi; doktorantura rejalar tasdiqlandi; yangi ilmiy laboratoriyalar tashkil etildi",
                         "Ilmiy ishlar bo'yicha prorektor; Moliya bo'limi; Kasaba uyushmasi; Kafedralar",
                         "SDG 4, SDG 8, SDG 9, SDG 3",
-                        "—",
+                        "<a class=\"button button--secondary button--small\" href=\"/reports-insights/governance-meeting-minutes/download-first-document/\" download>Yuklab olish</a>",
                     ],
                     [
                         "2",
@@ -5646,8 +5646,12 @@ class ContactView(BasePortalContextMixin, TemplateView):
 
 
 def governance_meeting_minutes_document_download(_request):
-    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 06- fevral.PDF")
-    if not document_path.exists():
+    candidates = [
+        settings.BASE_DIR / "assets" / "documents" / "2024-yil 06-fevral.PDF",
+        settings.BASE_DIR / "assets" / "documents" / "2024-yil 06- fevral.PDF",
+    ]
+    document_path = next((path for path in candidates if path.exists()), None)
+    if not document_path:
         raise Http404("Governance meeting minutes document not found.")
     return FileResponse(
         document_path.open("rb"),
@@ -5658,7 +5662,7 @@ def governance_meeting_minutes_document_download(_request):
 
 
 def governance_meeting_minutes_second_document_download(_request):
-    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 29-mart.PDF")
+    document_path = settings.BASE_DIR / "assets" / "documents" / "2024-yil 29-mart.PDF"
     if not document_path.exists():
         raise Http404("Governance meeting minutes document not found.")
     return FileResponse(
@@ -5670,7 +5674,7 @@ def governance_meeting_minutes_second_document_download(_request):
 
 
 def governance_meeting_minutes_third_document_download(_request):
-    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 30-may.PDF")
+    document_path = settings.BASE_DIR / "assets" / "documents" / "2024-yil 30-may.PDF"
     if not document_path.exists():
         raise Http404("Governance meeting minutes document not found.")
     return FileResponse(
@@ -5682,7 +5686,7 @@ def governance_meeting_minutes_third_document_download(_request):
 
 
 def governance_meeting_minutes_fourth_document_download(_request):
-    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 30-Avgust.PDF")
+    document_path = settings.BASE_DIR / "assets" / "documents" / "2024-yil 30-Avgust.PDF"
     if not document_path.exists():
         raise Http404("Governance meeting minutes document not found.")
     return FileResponse(
@@ -5694,7 +5698,7 @@ def governance_meeting_minutes_fourth_document_download(_request):
 
 
 def governance_meeting_minutes_fifth_document_download(_request):
-    document_path = Path(r"C:\Users\Omen\Downloads\Telegram Desktop\2024-yil 06-Noyabr.PDF")
+    document_path = settings.BASE_DIR / "assets" / "documents" / "2024-yil 06-Noyabr.PDF"
     if not document_path.exists():
         raise Http404("Governance meeting minutes document not found.")
     return FileResponse(
