@@ -5647,8 +5647,8 @@ class ContactView(BasePortalContextMixin, TemplateView):
 
 def governance_meeting_minutes_document_download(_request):
     candidates = [
-        settings.BASE_DIR / "assets" / "documents" / "2024-yil 06-fevral.PDF",
         settings.BASE_DIR / "assets" / "documents" / "2024-yil 06- fevral.PDF",
+        settings.BASE_DIR / "assets" / "documents" / "2024-yil 06-fevral.PDF",
     ]
     document_path = next((path for path in candidates if path.exists()), None)
     if not document_path:
