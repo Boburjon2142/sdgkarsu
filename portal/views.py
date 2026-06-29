@@ -5096,6 +5096,24 @@ class ReportsView(BasePortalContextMixin, TemplateView):
                     else "A report covering sustainability goals, initiatives, and the university's overall sustainability performance."
                 ),
             },
+            {
+                "slug": "financial-report-2025",
+                "title": "Moliyaviy hisobot 2025" if language_code == "uz" else "Financial report 2025",
+                "summary": (
+                    "2025-yil uchun moliyaviy faoliyat, mablag'lar taqsimoti va institutsional xarajatlar bo'yicha rasmiy PDF hisobot."
+                    if language_code == "uz"
+                    else "The official PDF report on 2025 financial activity, fund allocation, and institutional expenditure."
+                ),
+            },
+            {
+                "slug": "sustainability-report-2025-2026",
+                "title": "Barqarorlik hisoboti 2025-2026" if language_code == "uz" else "Sustainability report 2025-2026",
+                "summary": (
+                    "2025-2026-yillar uchun barqaror rivojlanish tashabbuslari, kampus faoliyati va SDG natijalari bo'yicha PDF hisobot."
+                    if language_code == "uz"
+                    else "A PDF report covering 2025-2026 sustainability initiatives, campus performance, and SDG outcomes."
+                ),
+            },
         ]
         return context
 
@@ -5449,6 +5467,234 @@ REPORT_INSIGHT_CARD_CONTENT = {
                     "In the area of energy and climate action, the university has implemented advanced energy-saving technologies, including full LED lighting coverage, thermal insulation, and the installation of solar panels. These measures have significantly reduced energy consumption and carbon emissions, while supporting the transition toward renewable energy sources.",
                     "Furthermore, Karshi State University actively integrates sustainability into education and research by supporting student-led initiatives, interdisciplinary research projects, and awareness programs. Through partnerships with local and international stakeholders, the university contributes to global sustainability efforts and aligns its activities with the United Nations Sustainable Development Goals (SDGs).",
                     "Overall, the Sustainability Report highlights KSU's transformation into a smart, green, and socially responsible university, committed to innovation, environmental stewardship, and sustainable development at both national and global levels.",
+                ],
+            },
+        ],
+    },
+    "financial-report-2025": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Qarshi davlat universiteti moliyaviy hisoboti 2025",
+        "title_en": "Karshi State University Financial Report 2025",
+        "intro_uz": "Qarshi davlat universitetining 2025-yil bo'yicha moliyaviy faoliyati va rasmiy hisobot fayliga kirish sahifasi.",
+        "intro_en": "A report page for Karshi State University's 2025 financial activity and official financial report file.",
+        "show_download_cta": True,
+        "download_url": "/static/documents/financial-report-2025.pdf",
+        "download_name": "FINANCIAL REPORT 2025.pdf",
+        "sections_uz": [
+            {
+                "title": "Qisqa mazmun",
+                "paragraphs": [
+                    "2025-yilda Qarshi davlat universiteti davlat byudjeti, kontrakt to'lovlari, rivojlantirish jamg'armasi, ilmiy loyihalar va qo'shma ta'lim dasturlari orqali barqaror moliyaviy natijalarni saqlab qoldi.",
+                    "Yil davomida jami daromad 233,7 mlrd so'mni tashkil etdi. Ochilish qoldiqlari bilan birga jami mavjud moliyaviy resurslar 485,1 mlrd so'mga yetdi.",
+                    "Hisobotda byudjet ijrosi, kontrakt mablag'lari, rivojlantirish jamg'armasi, quyosh energiyasidan tushum, xodim va talabalarni qo'llab-quvvatlash hamda 2026-yil moliyaviy prognozi yoritilgan.",
+                ],
+            },
+            {
+                "title": "Daromad manbalari",
+                "table_headers": ["Manba", "Miqdor", "Ulush"],
+                "table_rows": [
+                    ["Davlat byudjeti", "83,0 mlrd so'm", "35,5%"],
+                    ["Kontrakt to'lovlari", "141,4 mlrd so'm", "60,5%"],
+                    ["Rivojlantirish jamg'armasi", "5,5 mlrd so'm", "2,4%"],
+                    ["Ilmiy loyihalar", "2,1 mlrd so'm", "0,9%"],
+                    ["Qo'shma ta'lim dasturlari", "1,7 mlrd so'm", "0,7%"],
+                    ["Jami", "233,7 mlrd so'm", "100%"],
+                ],
+            },
+            {
+                "title": "Asosiy moliyaviy ko'rsatkichlar",
+                "bullets": [
+                    "Yil boshidagi hisob qoldig'i 251,4 mlrd so'm bo'lib, jami mavjud resurslar 485,1 mlrd so'mni tashkil etdi.",
+                    "Rejalashtirilgan xarajatlar 367,5 mlrd so'm: kontrakt mablag'lari 277,6 mlrd so'm, davlat byudjeti 83,0 mlrd so'm, rivojlantirish jamg'armasi 6,9 mlrd so'm.",
+                    "Davlat byudjeti xarajatlari 81,5 mlrd so'mga yetib, byudjet ijrosi 98,2% bo'ldi; tejalgan mablag' taxminan 1,5 mlrd so'm.",
+                    "Kontrakt tushumlari 141,4 mlrd so'mga yetib, 126,2 mlrd so'mlik rejadan yuqori bajarildi.",
+                    "Rivojlantirish jamg'armasi 5,49 mlrd so'm daromad keltirdi; bu 2024-yilga nisbatan taxminan 1,21 mlrd so'mga ko'p.",
+                ],
+            },
+            {
+                "title": "Quyosh energiyasi va ijtimoiy qo'llab-quvvatlash",
+                "table_headers": ["Yo'nalish", "Ko'rsatkich"],
+                "table_rows": [
+                    ["Tarmoqqa sotilgan elektr energiyasi", "797 283 kWh"],
+                    ["Quyosh energiyasidan tushum", "650,5 mln so'm"],
+                    ["Ichki foydalanilgan elektr energiyasi", "993 610 kWh"],
+                    ["Taxminiy ichki tejamkorlik", "993,6 mln so'm"],
+                    ["Xodimlar va talabalar uchun ijtimoiy xarajatlar", "30,5 mlrd so'm"],
+                ],
+            },
+            {
+                "title": "2026-yil prognozi",
+                "paragraphs": [
+                    "2026-yilda jami daromad 227,9 mlrd so'm, ochilish qoldiqlari bilan birga mavjud moliyaviy resurslar esa taxminan 415,6 mlrd so'm bo'lishi kutilmoqda.",
+                    "Prognoz qilinayotgan jami xarajatlar 317,2 mlrd so'm. Ustuvor yo'nalishlar: qurilish loyihalarini yakunlash, laboratoriya infratuzilmasini kengaytirish, AI va raqamli transformatsiya, zamonaviy o'quv jihozlari, axborot xavfsizligi, talabalar xizmatlari va qayta tiklanuvchi energiya tashabbuslari.",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Short summary",
+                "paragraphs": [
+                    "In 2025, Karshi State University maintained stable financial performance through state budget allocations, tuition fees, development fund income, research grants, and joint education programs.",
+                    "Total revenue reached UZS 233.7 billion. Including opening balances, total available financial resources amounted to UZS 485.1 billion.",
+                    "The report covers budget execution, contract-based education financing, development fund activities, renewable energy revenue, social support, and the financial outlook for 2026.",
+                ],
+            },
+            {
+                "title": "Revenue sources",
+                "table_headers": ["Source", "Amount", "Share"],
+                "table_rows": [
+                    ["State budget", "UZS 83.0 billion", "35.5%"],
+                    ["Tuition fees", "UZS 141.4 billion", "60.5%"],
+                    ["Development fund", "UZS 5.5 billion", "2.4%"],
+                    ["Research projects", "UZS 2.1 billion", "0.9%"],
+                    ["Joint education programs", "UZS 1.7 billion", "0.7%"],
+                    ["Total", "UZS 233.7 billion", "100%"],
+                ],
+            },
+            {
+                "title": "Key financial indicators",
+                "bullets": [
+                    "Opening balances were UZS 251.4 billion, bringing total available resources to UZS 485.1 billion.",
+                    "Planned expenditure was UZS 367.5 billion: UZS 277.6 billion from tuition funds, UZS 83.0 billion from the state budget, and UZS 6.9 billion from the development fund.",
+                    "State budget expenditure reached UZS 81.5 billion, equal to 98.2% budget execution, with approximately UZS 1.5 billion in savings.",
+                    "Tuition revenue reached UZS 141.4 billion, exceeding the planned amount of UZS 126.2 billion.",
+                    "The Development Fund generated UZS 5.49 billion, approximately UZS 1.21 billion more than in 2024.",
+                ],
+            },
+            {
+                "title": "Solar energy and social support",
+                "table_headers": ["Area", "Indicator"],
+                "table_rows": [
+                    ["Electricity sold to the grid", "797,283 kWh"],
+                    ["Solar energy revenue", "UZS 650.5 million"],
+                    ["Electricity used internally", "993,610 kWh"],
+                    ["Estimated internal savings", "UZS 993.6 million"],
+                    ["Employee and student welfare spending", "UZS 30.5 billion"],
+                ],
+            },
+            {
+                "title": "Financial outlook for 2026",
+                "paragraphs": [
+                    "For 2026, the university expects total revenues of UZS 227.9 billion and total available financial resources of approximately UZS 415.6 billion, including opening balances.",
+                    "Projected total expenditures are estimated at UZS 317.2 billion. Key priorities include completing construction projects, expanding laboratory infrastructure, AI and digital transformation, modern educational equipment, information security, student services, campus facilities, and continued investment in renewable energy.",
+                ],
+            },
+        ],
+    },
+    "sustainability-report-2025-2026": {
+        "eyebrow_uz": "Hisobotlar",
+        "eyebrow_en": "Reports",
+        "title_uz": "Qarshi davlat universiteti barqarorlik hisoboti 2025-2026",
+        "title_en": "Karshi State University Sustainability Report 2025-2026",
+        "intro_uz": "Qarshi davlat universitetining 2025-2026-yillardagi barqarorlik tashabbuslari, kampus faoliyati va SDG natijalari bo'yicha rasmiy hisobot sahifasi.",
+        "intro_en": "A report page for Karshi State University's 2025-2026 sustainability initiatives, campus activity, and SDG outcomes.",
+        "show_download_cta": True,
+        "download_url": "/static/documents/sustainability-report-2025-2026.pdf",
+        "download_name": "Sustainability report 2025-2026.pdf",
+        "sections_uz": [
+            {
+                "title": "Qisqa mazmun",
+                "paragraphs": [
+                    "2025-2026-yillar Barqarorlik hisoboti Qarshi davlat universitetining kampus operatsiyalari, ta'lim dasturlari, ilmiy faoliyat va hamkorliklarda barqarorlik tamoyillarini qanday joriy qilayotganini ko'rsatadi.",
+                    "Hisobot UI GreenMetric yo'nalishlari bo'yicha tuzilgan: infratuzilma, energiya va iqlim, chiqindi, suv, transport, ta'lim va tadqiqot, boshqaruv va raqamlashtirish.",
+                    "Barqarorlik ishlari Xalqaro reytinglar va barqaror rivojlanish bo'limi tomonidan muvofiqlashtiriladi, fakultetlar, talabalar tashkilotlari va ma'muriy bo'linmalar ishtirokidagi kengash orqali monitoring qilinadi.",
+                ],
+            },
+            {
+                "title": "Infratuzilma va yashil hududlar",
+                "table_headers": ["Ko'rsatkich", "Qiymat"],
+                "table_rows": [
+                    ["Jami kampus maydoni", "319 107 m2"],
+                    ["Jami binolar maydoni", "116 897,76 m2"],
+                    ["Tadqiqot va ta'lim uchun o'rmon-yashil hudud", "44 332 m2"],
+                    ["Ekilgan yashil hudud", "177 328 m2, jami maydonning 56%"],
+                    ["Barqarorlikka ajratilgan byudjet", "$18 479 226, jami $61 597 422 byudjetning 30%"],
+                ],
+            },
+            {
+                "title": "Energiya va iqlim",
+                "bullets": [
+                    "Universitet binolarida LED yoritish tizimlari joriy etilgan va yiliga taxminan 100 000 kWh elektr energiyasi tejaladi.",
+                    "17 ta binoda quyosh panellari o'rnatilgan; umumiy quyosh quvvati 1545 kW atrofida.",
+                    "2025-yil mayidan 2026-yil apreligacha jami elektr iste'moli 2 630 342 kWh bo'lgan, quyosh panellari esa 1 909 436 kWh elektr energiyasi ishlab chiqargan.",
+                    "Elektr energiyasining 72,5% qismi toza quyosh energiyasi hisobidan qoplangan.",
+                    "Real vaqt rejimidagi energiya monitoringi orqali ishlab chiqarish, iste'mol va tarmoqqa uzatilgan energiya kuzatib boriladi.",
+                ],
+            },
+            {
+                "title": "Chiqindi, suv va transport",
+                "table_headers": ["Yo'nalish", "Qisqa ko'rsatkich"],
+                "table_rows": [
+                    ["Chiqindi", "Qog'oz va plastik chiqindilar 65,1 tonna: 40,3 tonna qog'oz va 24,8 tonna plastik."],
+                    ["Organik chiqindi", "216,0 tonna organik chiqindi; oziq-ovqat chiqindisi 198,5 tonnagacha kamaygan."],
+                    ["Noorganik chiqindi", "Noorganik toksik bo'lmagan chiqindi 245,7 tonnadan 216,1 tonnagacha kamaygan."],
+                    ["Toksik chiqindi", "Toksik chiqindi 1,1 tonnadan 1,0 tonnagacha kamaygan va vakolatli tashkilotlar orqali qayta ishlangan."],
+                    ["Suv", "15 ta artezian quduq va 23 ta suv rezervuari ishlatiladi; OSMOS tizimi soatiga 300 m3 suvni tozalaydi va qayta ishlaydi."],
+                    ["Transport", "Xususiy benzin/dizel transport kampusga kiritilmaydi; 2 ta 10 o'rinli elektr golf shuttle, 7 ta elektr mototsikl va velosiped yo'laklari ishlatiladi."],
+                ],
+            },
+            {
+                "title": "Ta'lim, tadqiqot va raqamli boshqaruv",
+                "bullets": [
+                    "169 ta kursda barqarorlik, ekologiya, qayta tiklanuvchi energiya, biotexnologiya yoki ijtimoiy mas'uliyat mavzulari integratsiya qilingan.",
+                    "2025-yilda universitet 841 ta fan/kurs taklif qilgan; 2023-yilda 873 ta, 2024-yilda 846 ta kurs bo'lgan.",
+                    "2023-2025-yillarda barqarorlikka oid tadqiqotlar uchun o'rtacha yillik mablag' taxminan 2 077 618 267 so'mni tashkil etgan.",
+                    "2024-yilda Google Scholar bo'yicha 745 ta, Scopus bo'yicha 267 ta ilmiy publikatsiya qayd etilgan.",
+                    "HEMIS, Moodle, My Qarshidu, E-Xat va Edu-ijro tizimlari ta'lim, hujjat aylanishi, monitoring, xizmatlar va barqarorlik boshqaruvida ishlatiladi.",
+                ],
+            },
+        ],
+        "sections_en": [
+            {
+                "title": "Short summary",
+                "paragraphs": [
+                    "The 2025-2026 Sustainability Report shows how Karshi State University integrates sustainability into campus operations, academic programs, research activity, and community partnerships.",
+                    "The report follows the UI GreenMetric categories: setting and infrastructure, energy and climate change, waste, water, transportation, education and research, and governance and digitalization.",
+                    "Sustainability work is coordinated by the Department of International Rankings and Sustainable Development, with monitoring through a cross-functional council involving faculties, student organizations, and administrative units.",
+                ],
+            },
+            {
+                "title": "Infrastructure and green space",
+                "table_headers": ["Indicator", "Value"],
+                "table_rows": [
+                    ["Total campus area", "319,107 m2"],
+                    ["Total building area", "116,897.76 m2"],
+                    ["Forest vegetation for research and teaching", "44,332 m2"],
+                    ["Planted vegetation area", "177,328 m2, equal to 56% of total area"],
+                    ["Budget dedicated to sustainability", "$18,479,226, equal to 30% of the $61,597,422 institutional budget"],
+                ],
+            },
+            {
+                "title": "Energy and climate",
+                "bullets": [
+                    "LED lighting has been implemented across university buildings, saving approximately 100,000 kWh of electricity annually.",
+                    "Solar panels are installed on 17 buildings, with total solar capacity of about 1,545 kW.",
+                    "From May 2025 to April 2026, total electricity consumption was 2,630,342 kWh, while solar panels generated 1,909,436 kWh.",
+                    "Clean solar energy covered 72.5% of total electricity consumption.",
+                    "A real-time energy monitoring system tracks generation, consumption, and electricity exported to the national grid.",
+                ],
+            },
+            {
+                "title": "Waste, water, and transportation",
+                "table_headers": ["Area", "Key indicator"],
+                "table_rows": [
+                    ["Waste", "Paper and plastic waste totaled 65.1 tons: 40.3 tons of paper and 24.8 tons of plastic."],
+                    ["Organic waste", "Organic waste decreased to 216.0 tons, with food waste reduced to 198.5 tons."],
+                    ["Inorganic waste", "Inorganic non-toxic waste decreased from 245.7 tons to 216.1 tons."],
+                    ["Toxic waste", "Toxic waste decreased from 1.1 tons to 1.0 ton and was handled through authorized treatment processes."],
+                    ["Water", "The campus uses 15 artesian wells and 23 reservoirs; the OSMOS system purifies and recycles 300 m3 of water per hour."],
+                    ["Transportation", "Private diesel and gasoline vehicles are restricted inside campus; mobility is supported by two 10-seat electric golf shuttles, 7 electric motorcycles, and bicycle paths."],
+                ],
+            },
+            {
+                "title": "Education, research, and digital governance",
+                "bullets": [
+                    "169 courses embed sustainability topics such as ecology, renewable energy, biotechnology, environmental protection, and social responsibility.",
+                    "The university offered 841 courses in 2025, following 873 courses in 2023 and 846 courses in 2024.",
+                    "Average annual sustainability-related research funding for 2023-2025 was approximately UZS 2,077,618,267.",
+                    "In 2024, the university recorded 745 Google Scholar publications and 267 Scopus-indexed publications.",
+                    "HEMIS, Moodle, My Qarshidu, E-Xat, and Edu-ijro support education, document circulation, monitoring, student services, and sustainability governance.",
                 ],
             },
         ],
