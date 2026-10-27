@@ -2,9 +2,9 @@
 {% load cache static portal_i18n %}
 
 {% block content %}
-  {% cache 900 home_hero current_language home_hero_cache_key using="fragments" %}
+  {% cache 900 home_hero_rankings current_language home_hero_cache_key using="fragments" %}
   <section class="hero-section">
-    <div class="container hero-layout">
+    <div class="container hero-layout hero-layout--rankings">
       <div class="hero-portrait-card">
         {% if site_settings.leader_photo %}
           <img class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="hero-stats hero-stats--full">
+      <div class="hero-stats hero-stats--stacked">
         <article class="stat-card stat-card--hero stat-card--hero-featured stat-card--hero-greenmetric">
           <div class="stat-card--hero__content">
             <strong

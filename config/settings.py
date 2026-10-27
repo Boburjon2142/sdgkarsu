@@ -136,7 +136,7 @@ if not DEBUG and not ALLOWED_HOSTS:
 
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    "portal.admin_config.PortalAdminConfig",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",

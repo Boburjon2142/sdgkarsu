@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'css/admin-sdg.css' %}">{% endblock %}
+{% block content %}
+<div id="content-main">
+  {% if can_view_news or can_add_news %}
+  <section class="sdg-admin-intro">
+    <h2>SDG yangiliklari</h2>
+    <p>Maqsadni tanlang, yangilik matni va rasmini kiriting, so'ng saqlang.</p>
+    <div class="sdg-admin-actions">
+      {% if can_add_news %}<a class="button" href="{{ news_add_url }}">+ Yangilik qo'shish</a>{% endif %}
+      {% if can_view_news %}<a class="button" href="{{ news_list_url }}">Barcha yangiliklar</a>{% endif %}
+    </div>
+  </section>
+  <div class="sdg-admin-grid">
+    {% for goal in sdg_news_goals %}
+    <section class="sdg-admin-card">
+      <h2>SDG {{ goal.number }}</h2>
+      {% if can_view_news %}<p>{{ goal.count }} ta yangilik</p>{% endif %}
+      <div class="sdg-admin-actions">
+        {% if can_add_news %}<a href="{{ news_add_url }}?sdg_goal={{ goal.number }}">+ Qo'shish</a>{% endif %}
+        {% if can_view_news %}<a href="{{ news_list_url }}?sdg_goal__exact={{ goal.number }}">Ko'rish</a>{% endif %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <details class="sdg-admin-settings"{% if not can_view_news and not can_add_news %} open{% endif %}>
+    <summary>Boshqa boshqaruv bo'limlari</summary>
+    {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+  </details>
+</div>
+{% endblock %}

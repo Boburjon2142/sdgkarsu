@@ -1,0 +1,46 @@
+.sdg-admin-intro {
+  margin-bottom: 24px;
+}
+
+.sdg-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.sdg-admin-actions a {
+  padding-block: 10px;
+}
+
+.sdg-admin-actions a.button {
+  padding: 12px 18px;
+}
+
+.sdg-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 16px;
+}
+
+.sdg-admin-card {
+  padding: 20px;
+  border: 1px solid var(--hairline-color);
+  border-top: 4px solid var(--primary);
+  border-radius: 8px;
+  background: var(--darkened-bg);
+}
+
+.sdg-admin-card h2 {
+  margin-top: 0;
+}
+
+.sdg-admin-settings {
+  margin-top: 32px;
+}
+
+.sdg-admin-settings summary {
+  padding: 16px 0;
+  cursor: pointer;
+  font-weight: 600;
+}

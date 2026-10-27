@@ -1,5 +1,5 @@
 {% extends "portal/base.html" %}
-{% load portal_i18n %}
+{% load portal_i18n news_content %}
 
 {% block title %}sdg.qarshidu.uz{% endblock %}
 {% block meta_description %}{{ article.summary }}{% endblock %}
@@ -23,7 +23,7 @@
             <img src="{{ article.image.url }}" alt="{{ article.title }}">
           </figure>
         {% endif %}
-        <div class="rich-text-content">{{ article.body }}</div>
+        <div class="news-body-content">{{ article.body|news_content }}</div>
       </article>
       <aside class="stack-list">
         <article class="content-card content-card--panel">

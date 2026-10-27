@@ -30,6 +30,22 @@ Seed content is included in the `portal` migrations so the homepage and all core
 
 ## Admin-managed content
 
+The admin home prioritizes SDG news publishing. Choose one of the 17 SDG cards
+to add news with that goal preselected or view its existing articles. Enter the
+Uzbek content and optionally expand the English translation section. At least
+one language is required for the title and body. Summaries for news cards are
+generated from each language's body (up to 220 characters). Existing summaries
+are preserved when the corresponding body is unchanged. The date and news
+type have defaults, and leaving the URL slug blank generates a unique one.
+Other content and user management remain under the expandable secondary section.
+
+The news body editor supports ordered text and table blocks in both languages.
+Use `Matn qismi` for paragraphs and `Jadval chizish` after choosing row and column
+counts. The first table row contains column headings. Blocks can be moved or
+deleted; tables scroll horizontally on small screens. Existing plain-text news
+remains supported. Structured content is stored in the existing body fields,
+so no database migration is needed.
+
 The admin panel allows editors to manage:
 
 - Site settings and homepage hero
@@ -42,6 +58,9 @@ The admin panel allows editors to manage:
 - Department contacts and contact submissions
 
 ## PythonAnywhere deployment
+
+For updating an existing server while preserving its database, media, and
+environment configuration, follow [DEPLOYMENT.md](DEPLOYMENT.md).
 
 1. Upload the project or clone it into your PythonAnywhere account.
 2. Create a virtual environment and install dependencies:

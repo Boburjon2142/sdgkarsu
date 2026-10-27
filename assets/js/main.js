@@ -51,8 +51,21 @@ if (mobileToggle && siteNavigation) {
     });
   });
 
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteNavigation.classList.contains("is-open")) {
+      closeNavigation();
+      mobileToggle.focus();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteNavigation.contains(event.target) && !mobileToggle.contains(event.target)) {
+      closeNavigation();
+    }
+  });
+
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) {
+    if (window.innerWidth > 1280) {
       closeNavigation();
     }
   });

@@ -1,0 +1,23 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'css/admin-news-editor.css' %}">{% endblock %}
+{% block extrahead %}{{ block.super }}<script src="{% static 'js/admin-news-editor.js' %}" defer></script><script src="{% static 'js/admin-news-blocks.js' %}" defer></script>{% endblock %}
+{% block bodyclass %}{{ block.super }} news-editor{% endblock %}
+{% block content_title %}
+<div class="news-editor-heading">
+  <div>
+    <span class="news-editor-eyebrow">SDG YANGILIKLARI</span>
+    <h1>{% if add %}Yangilik qo'shish{% else %}Yangilikni tahrirlash{% endif %}</h1>
+    <p>Matnni kiriting, SDG maqsadini tanlang va yangilikni saqlang.</p>
+  </div>
+  <a class="news-editor-back" href="{% url 'admin:index' %}">← Boshqaruv paneli</a>
+</div>
+{% endblock %}
+{% block field_sets %}
+<div class="news-editor-grid">
+  {% for fieldset in adminform %}
+    {% include "admin/includes/fieldset.html" %}
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,6 +1,11 @@
+from uuid import uuid4
+
 from django import forms
 from django.contrib import admin
-from django.utils.html import format_html
+from django.utils.html import format_html, strip_tags
+from django.utils import timezone
+from django.utils.text import Truncator, slugify
+from .news_blocks import news_plain_text
 
 from .models import (
     Achievement,
@@ -37,20 +42,76 @@ class NewsArticleAdminForm(forms.ModelForm):
         model = NewsArticle
         fields = "__all__"
         help_texts = {
-            "image": "Recommended size: 1600 x 1000 px (16:10), landscape. 1200 x 750 px also works well. Keep the main subject near the center because the card uses cover cropping.",
+            "image": "Tavsiya: 1600 × 1000 px. Asosiy tasvir rasm markazida bo'lsin.",
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        labels = {
+            "sdg_goal": "SDG maqsadi", "title_uz": "Sarlavha",
+            "body_uz": "Yangilik matni", "title_en": "English title",
+            "body_en": "English content", "image": "Yangilik rasmi", "published_on": "Sana",
+            "category": "Yangilik turi", "featured": "Ajratib ko'rsatish", "slug": "Havola nomi",
+        }
+        for name, label in labels.items():
+            if name in self.fields:
+                self.fields[name].label = label
+        for name in ("title", "body"):
+            if f"{name}_uz" in self.fields and not getattr(self.instance, f"{name}_uz") and not getattr(self.instance, f"{name}_en"):
+                self.initial[f"{name}_uz"] = getattr(self.instance, name)
+        if "sdg_goal" in self.fields:
+            self.fields["sdg_goal"].required = True
+        if "slug" in self.fields:
+            self.fields["slug"].required = False
+            self.fields["slug"].help_text = "Bo'sh qoldiring: sarlavhadan avtomatik yaratiladi."
+        if "category" in self.fields and not self.instance.pk and not self.initial.get("category"):
+            self.initial["category"] = NewsArticle.Category.OFFICIAL
+        if "published_on" in self.fields and not self.instance.pk:
+            if not self.initial.get("published_on"):
+                self.initial["published_on"] = timezone.localdate()
+        for name in ("title_uz", "title_en"):
+            if name in self.fields:
+                self.fields[name].widget = forms.TextInput(attrs={"class": "vTextField"})
 
     def clean(self):
         cleaned_data = super().clean()
         cleaned_data["title"] = cleaned_data.get("title_en") or cleaned_data.get("title_uz") or cleaned_data.get("title") or ""
-        cleaned_data["summary"] = cleaned_data.get("summary_en") or cleaned_data.get("summary_uz") or cleaned_data.get("summary") or ""
         cleaned_data["body"] = cleaned_data.get("body_en") or cleaned_data.get("body_uz") or cleaned_data.get("body") or ""
+        plain_bodies = {}
+        for language in ("uz", "en"):
+            try:
+                plain_bodies[language] = news_plain_text(cleaned_data.get(f"body_{language}", ""))
+            except forms.ValidationError as error:
+                self.add_error(f"body_{language}", error)
+                plain_bodies[language] = ""
+        for language in ("uz", "en"):
+            body_name = f"body_{language}"
+            summary_name = f"summary_{language}"
+            body = cleaned_data.get(body_name, "")
+            existing_summary = getattr(self.instance, summary_name)
+            if existing_summary and body == getattr(self.instance, body_name):
+                cleaned_data[summary_name] = existing_summary
+            else:
+                cleaned_data[summary_name] = Truncator(" ".join(strip_tags(plain_bodies[language]).split())).chars(220)
+        cleaned_data["summary"] = cleaned_data["summary_en"] or cleaned_data["summary_uz"]
+        for name in ("title", "body"):
+            content = " ".join(plain_bodies.values()) if name == "body" else cleaned_data[name]
+            if not content.strip():
+                self.add_error(f"{name}_uz", "O'zbekcha yoki inglizcha matn kiriting.")
+        if not cleaned_data.get("slug"):
+            base_slug = slugify(cleaned_data["title"])[:40] or "yangilik"
+            candidate = base_slug
+            while NewsArticle.objects.filter(slug=candidate).exclude(pk=self.instance.pk).exists():
+                candidate = f"{base_slug}-{uuid4().hex[:8]}"
+            cleaned_data["slug"] = candidate
         return cleaned_data
 
     def save(self, commit=True):
         instance = super().save(commit=False)
         instance.title = self.cleaned_data.get("title", "")
         instance.summary = self.cleaned_data.get("summary", "")
+        instance.summary_uz = self.cleaned_data.get("summary_uz", "")
+        instance.summary_en = self.cleaned_data.get("summary_en", "")
         instance.body = self.cleaned_data.get("body", "")
         if commit:
             instance.save()
@@ -222,22 +283,26 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(NewsArticle)
 class NewsArticleAdmin(admin.ModelAdmin):
     form = NewsArticleAdminForm
-    list_display = ("title_uz", "title_en", "category", "sdg_goal", "published_on", "featured")
-    list_filter = ("category", "sdg_goal", "featured")
-    prepopulated_fields = {"slug": ("title_en",)}
+    change_form_template = "admin/portal/newsarticle/change_form.html"
+    list_display = ("news_title", "sdg_goal", "published_on", "featured")
+    list_filter = ("sdg_goal", "published_on")
+    list_per_page = 25
     search_fields = ("title_uz", "title_en", "summary_uz", "summary_en", "body_uz", "body_en", "title", "summary", "body")
     readonly_fields = ("image_preview",)
     fieldsets = (
-        (None, {"fields": ("title_uz", "title_en", "slug", "category", "sdg_goal", "featured")}),
-        ("Summary", {"fields": ("summary_uz", "summary_en")}),
-        ("Body", {"fields": ("body_uz", "body_en")}),
-        ("Media", {"fields": ("image", "image_preview")}),
-        ("Publishing", {"fields": ("published_on",)}),
+        ("Yangilik matni", {"fields": ("title_uz", "body_uz"), "classes": ("news-editor-main",), "description": "Kartalardagi qisqacha mazmun yangilik matnidan avtomatik olinadi."}),
+        ("Nashr va rasm", {"fields": ("sdg_goal", "published_on", "image", "image_preview"), "classes": ("news-editor-publish",)}),
+        ("Inglizcha tarjima (ixtiyoriy)", {"fields": ("title_en", "body_en"), "classes": ("collapse", "news-editor-translation")}),
+        ("Qo'shimcha sozlamalar", {"fields": ("category", "featured", "slug"), "classes": ("collapse", "news-editor-options")}),
     )
+
+    @admin.display(description="Yangilik")
+    def news_title(self, obj):
+        return str(obj)
 
     def image_preview(self, obj):
         if not obj or not obj.image:
-            return "Image preview will appear after upload."
+            return "Rasm tanlanganda shu yerda ko'rinadi."
         return format_html(
             '<div style="max-width: 420px;">'
             '<img src="{}" alt="News image preview" style="width: 100%; max-width: 420px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid rgba(17, 24, 39, 0.08);" />'
@@ -246,7 +311,7 @@ class NewsArticleAdmin(admin.ModelAdmin):
             obj.image.url,
         )
 
-    image_preview.short_description = "Preview"
+    image_preview.short_description = "Rasm ko'rinishi"
 
 
 @admin.register(Event)
@@ -279,8 +344,3 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
     list_display = ("full_name", "email", "subject", "created_at")
     readonly_fields = ("full_name", "email", "organization", "subject", "message", "created_at", "updated_at")
     search_fields = ("full_name", "email", "organization", "message")
-
-
-admin.site.site_header = "Institutional Portal Administration"
-admin.site.site_title = "Portal Admin"
-admin.site.index_title = "Content management"

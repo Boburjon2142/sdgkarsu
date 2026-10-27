@@ -177,6 +177,14 @@ ul {
   margin: 0 auto;
 }
 
+.news-body-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.news-body-content .governance-table-wrap { margin-block: 1.5rem; }
+.news-body-content td, .news-body-content th { white-space: pre-wrap; }
+
 .section {
   padding: 5.5rem 0;
   position: relative;
@@ -723,6 +731,9 @@ small {
 .hero-section {
   position: relative;
   overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-height: calc(100svh - 5.5rem);
   padding: 6rem 0 5rem;
 }
 
@@ -732,7 +743,7 @@ small {
   inset: 0;
   background:
     linear-gradient(128deg, rgba(246, 250, 246, 0.54) 10%, rgba(247, 250, 246, 0.38) 42%, rgba(252, 252, 249, 0.46) 100%),
-    url("../images/hero-back.jpg") center 22% / cover no-repeat;
+    url("../images/hero-back.jpg") center 15% / cover no-repeat;
 }
 
 .hero-layout,

@@ -1,3 +1,64 @@
+.hero-layout--rankings .hero-stats--stacked {
+  grid-template-columns: minmax(0, 1fr);
+  align-self: center;
+  gap: 1rem;
+}
+
+.hero-stats--stacked .stat-card--hero-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  min-height: 10rem;
+}
+
+.hero-stats--stacked .stat-card--hero-featured .stat-card--hero__content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-stats--stacked .stat-card--hero__content strong {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.hero-stats--stacked .stat-card--hero-featured .stat-card--hero__logo {
+  width: 100%;
+  max-height: 8rem;
+  margin: 0;
+  object-fit: contain;
+}
+
+@media (min-width: 1101px) {
+  .hero-layout--rankings {
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  .hero-stats--stacked .stat-card--hero-featured {
+    min-height: 12rem;
+    padding: clamp(1.25rem, 1.8vw, 1.75rem);
+  }
+
+  .hero-stats--stacked .stat-card--hero__content strong {
+    font-size: clamp(2.4rem, 2.8vw, 3.4rem);
+  }
+
+  .hero-stats--stacked .stat-card--hero-featured .stat-card--hero__logo {
+    max-height: 9rem;
+  }
+
+  .hero-layout--rankings .hero-copy h1 {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+  }
+}
+
+@media (min-width: 1281px) {
+  .container {
+    width: 94%;
+  }
+}
+
 @media (max-width: 1100px) {
   .hero-layout,
   .research-intro,
@@ -119,6 +180,9 @@
     font-size: 13px;
   }
 
+}
+
+@media (max-width: 1280px) {
   .site-header {
     position: sticky;
   }
@@ -237,6 +301,9 @@
     color: #18301c;
   }
 
+}
+
+@media (max-width: 860px) {
   .search-page-form {
     flex-direction: column;
     align-items: stretch;
@@ -801,7 +868,7 @@
     align-self: center;
     margin-left: 0;
     margin-right: 0;
-    transform: translateY(-52px);
+    transform: none;
   }
 
   .stat-card--hero-impact .stat-card--hero__content strong,
@@ -900,7 +967,6 @@
    These rules intentionally affect presentation only. They keep the existing
    templates, links, forms, and application behavior unchanged. */
 html {
-  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -946,7 +1012,14 @@ textarea {
 .two-column > *,
 .footer-grid > *,
 .card-grid > *,
-.form-grid > * {
+.form-grid > *,
+.hero-stats > *,
+.editorial-grid > *,
+.sdg-detail-page > *,
+.sdg-updates-page > *,
+.governance-detail-stack > *,
+.governance-detail-card__block,
+.governance-panel__content {
   min-width: 0;
 }
 
@@ -1210,6 +1283,107 @@ textarea {
   .header-actions {
     flex: 1 0 auto;
     min-width: max-content;
+  }
+}
+
+.stat-card--hero-featured {
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.stat-card--hero-impact .stat-card--hero__content {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.stat-card--hero-impact .stat-card--hero__content strong,
+.stat-card--hero-impact .stat-card--hero__content span,
+.stat-card--hero-impact .stat-card--hero__content p {
+  white-space: normal;
+}
+
+.stat-card--hero-featured .stat-card--hero__logo {
+  flex: 0 1 45%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  transform: none;
+}
+
+@media (min-width: 581px) and (max-width: 1100px) {
+  .hero-stats,
+  .overview-grid,
+  .priority-grid,
+  .card-grid--three,
+  .governance-links__grid,
+  .metrics-band,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .editorial-grid--three,
+  .anti-corruption-contact-card__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .anti-corruption-contact-card__image-wrap {
+    max-width: 15rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stat-card--hero-featured .stat-card--hero__logo {
+    width: min(45%, 16rem);
+    margin-inline: auto;
+  }
+
+  .governance-document-frame,
+  .governance-document-frame iframe {
+    min-height: 24rem;
+    height: 70vh;
+    height: 70dvh;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-section,
+  .page-intro,
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .stat-card--hero-featured {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card--hero-impact .stat-card--hero__content {
+    flex-basis: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat-card--hero-featured .stat-card--hero__logo {
+    flex-basis: auto;
+    width: min(100%, 15rem);
+  }
+
+  .contact-profile-head {
+    flex-wrap: wrap;
+  }
+
+  .metric-inline,
+  .list-card__meta {
+    min-width: 0;
   }
 }
 
