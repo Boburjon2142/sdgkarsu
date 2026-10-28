@@ -106,9 +106,14 @@
       </div>
       {% endcache %}
 
-      {% cache 900 governance_detail_stack governance_section.slug current_language using="fragments" %}
+      {% cache 900 governance_detail_stack_pdf_2026 governance_section.slug current_language using="fragments" %}
       <div class="governance-detail-stack">
-        {% if governance_section.single_card %}
+        {% if governance_section.slug == "jamoatchilik" %}
+          {% static 'documents/collective-agreement-2026-2028.pdf' as collective_pdf_url %}
+          <object data="{{ collective_pdf_url }}" type="application/pdf" width="100%" height="900" style="display: block; height: 85vh; min-height: 480px; border: 1px solid #d5dfc4; border-radius: 12px;" aria-label="{{ governance_section.title }} 2026–2028">
+            <p><a href="{{ collective_pdf_url }}" target="_blank" rel="noopener">{% if current_language == "uz" %}Jamoa shartnomasi 2026–2028 — hujjatni ochish{% else %}Collective Agreement 2026–2028 — open document{% endif %}</a></p>
+          </object>
+        {% elif governance_section.single_card %}
           <article class="content-card governance-detail-card governance-detail-card--single">
             {% if governance_section.raw_html %}
               {{ governance_section.raw_html|safe }}

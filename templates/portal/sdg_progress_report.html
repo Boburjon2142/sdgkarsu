@@ -1,0 +1,36 @@
+{% extends "portal/base.html" %}
+{% load static %}
+
+{% block title %}{{ report_detail.title }} | sdg.qarshidu.uz{% endblock %}
+{% block meta_description %}{{ report_detail.intro }}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/progress-report.css' %}">{% endblock %}
+
+{% block content %}
+  <div class="container progress-report">
+    <header class="progress-report__header">
+      <div class="eyebrow">{{ report_detail.eyebrow }}</div>
+      <h1>{{ report_detail.title }}</h1>
+      <p>{{ report_detail.intro }}</p>
+      <p class="progress-report__publication">Karshi, Uzbekistan · 2026</p>
+      <a class="button button--primary" href="{% static 'documents/Karshi_State_University_SDG_Progress_Report_2024_2025.pdf' %}" download="Karshi_State_University_SDG_Progress_Report_2024_2025.pdf">
+        {% if current_language == 'uz' %}Hujjatni yuklab olish (PDF){% else %}Download report (PDF){% endif %}
+      </a>
+    </header>
+    <nav class="progress-report__contents" aria-label="{% if current_language == 'uz' %}Hisobot bo‘limlari{% else %}Report contents{% endif %}">
+      <h2>{% if current_language == 'uz' %}Mundarija{% else %}Contents{% endif %}</h2>
+      <ul>
+        {% for section in progress_report_sections %}
+          <li><a href="#report-section-{{ forloop.counter }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <article class="progress-report__body" lang="en">
+      {% for section in progress_report_sections %}
+        <section id="report-section-{{ forloop.counter }}" class="progress-report__section">
+          <h2>{{ section.title }}</h2>
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        </section>
+      {% endfor %}
+    </article>
+  </div>
+{% endblock %}

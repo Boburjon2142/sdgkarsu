@@ -9,19 +9,21 @@ const filterTargets = document.querySelectorAll(".filter-targets [data-category]
 const revealItems = document.querySelectorAll(".reveal");
 const countupItems = document.querySelectorAll("[data-countup]");
 const tiltTargets = document.querySelectorAll(
-  ".stat-card, .content-card:not(.governance-detail-card), .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card, .sdg-work-card"
+  ".stat-card, .content-card:not(.governance-detail-card), .priority-card, .metric-card, .report-card, .news-card, .partner-card, .list-card, .sdg-news-card, .sdg-goal-card"
 );
 const heroParallax = document.querySelectorAll(".hero-portrait-card, .hero-rankings-strip, .hero-author");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const typewriterTargets = document.querySelectorAll("[data-typewriter]");
 
 if (siteLoader) {
-  window.addEventListener("load", () => {
+  const hideLoader = () => {
     siteLoader.classList.add("is-hidden");
     window.setTimeout(() => {
       siteLoader.remove();
     }, 360);
-  });
+  };
+  // The document is ready here; do not wait for every image and animation.
+  hideLoader();
 }
 
 if (header) {

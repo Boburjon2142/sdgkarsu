@@ -1,0 +1,33 @@
+{% extends "portal/base.html" %}
+{% load static %}
+{% block title %}{% if current_language == 'uz' %}Jamoa shartnomasi 2026–2028{% else %}Collective Agreement 2026–2028{% endif %} | sdg.qarshidu.uz{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/progress-report.css' %}">{% endblock %}
+{% block content %}
+  <div class="container progress-report">
+    <header class="progress-report__header">
+      <div class="eyebrow">{{ governance_section.eyebrow }}</div>
+      <h1>{% if current_language == 'uz' %}Jamoa shartnomasi 2026–2028{% else %}Collective Agreement 2026–2028{% endif %}</h1>
+      <p lang="uz">Qarshi davlat universiteti ma’muriyati hamda universitet xodimlari va talabalari kasaba uyushma qo‘mitasi o‘rtasida 2026–2028-yillar uchun tuzilgan jamoa shartnomasi.</p>
+      <div class="hero-actions">
+        <a class="button button--primary" href="{% static 'documents/collective-agreement-2026-2028.pdf' %}" download>{% if current_language == 'uz' %}PDF hujjatni yuklab olish{% else %}Download PDF document{% endif %}</a>
+        <a class="button button--secondary" href="{% url 'governance-finance-contact' 'jamoatchilik' %}">{% if current_language == 'uz' %}Mutaxassis bilan bog‘lanish{% else %}Contact specialist{% endif %}</a>
+      </div>
+    </header>
+    <nav class="progress-report__contents" aria-label="{% if current_language == 'uz' %}Mundarija{% else %}Contents{% endif %}">
+      <h2>{% if current_language == 'uz' %}Mundarija{% else %}Contents{% endif %}</h2>
+      <ul>
+        {% for section in agreement_sections %}
+          <li><a href="#agreement-section-{{ forloop.counter }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <article class="progress-report__body" lang="uz">
+      {% for section in agreement_sections %}
+        <section class="progress-report__section" id="agreement-section-{{ forloop.counter }}">
+          <h2>{{ section.title }}</h2>
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        </section>
+      {% endfor %}
+    </article>
+  </div>
+{% endblock %}

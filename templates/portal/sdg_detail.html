@@ -7,7 +7,7 @@
       <div class="sdg-detail-page">
         <div class="sdg-detail-page__content">
           <div class="sdg-detail-page__header">
-            <img class="sdg-detail-page__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }}">
+            <img loading="lazy" decoding="async" class="sdg-detail-page__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }}">
             <div>
               <div class="eyebrow">{% tr "Sustainable Development Goal" %}</div>
               <h1>SDG {{ goal.number }}: {{ detail_content.hero_title }}</h1>
@@ -72,9 +72,9 @@
                   <article class="sdg-work-card reveal">
                     <div class="sdg-work-card__media">
                       {% if work_item.cover_image %}
-                        <img src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
+                        <img loading="lazy" decoding="async" src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
                       {% else %}
-                        <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                        <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
                       {% endif %}
                     </div>
                     <div class="sdg-work-card__body">
@@ -105,7 +105,7 @@
 
         <aside class="sdg-detail-page__aside">
           <div class="sdg-detail-page__poster reveal">
-            <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
+            <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
           </div>
           <div class="sdg-detail-page__nav reveal">
             <a href="{% url 'programs' %}" class="text-link">{% tr "Back to all SDGs" %}</a>

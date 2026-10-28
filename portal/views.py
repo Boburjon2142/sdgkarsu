@@ -1811,6 +1811,16 @@ GOVERNANCE_PAGE_CONTENT = {
 }
 
 GOVERNANCE_PAGE_CONTENT["disability-support-policy"] = ANTI_CORRUPTION_CONTACT_CONTENT["disability-support-policy"]
+GOVERNANCE_PAGE_CONTENT["food-security-and-nutrition"] = {
+    "eyebrow_uz": "Barqarorlik boshqaruvi",
+    "eyebrow_en": "Sustainability governance",
+    "title_uz": "Oziq-ovqat xavfsizligi va ovqatlanish dasturi",
+    "title_en": "Food Security and Nutrition Program for Karshi State University",
+    "intro_uz": "Qarshi davlat universitetining oziq-ovqat xavfsizligi va ovqatlanish dasturi.",
+    "intro_en": "Food security and nutrition program for Karshi State University.",
+    "sections_uz": [],
+    "sections_en": [],
+}
 
 
 DISABILITY_SUPPORT_ROADMAP_CONTENT = {
@@ -4028,7 +4038,7 @@ class ResultsShowcaseView(BasePortalContextMixin, TemplateView):
             (1, "1001+"),
             (2, "601-800"),
             (3, "1001-1500"),
-            (4, "1500+"),
+            (4, "1001+"),
             (5, "1001-1500"),
             (6, "801-1000"),
             (7, "601-800"),
@@ -4066,7 +4076,7 @@ class ResultsShowcaseView(BasePortalContextMixin, TemplateView):
             "impact_cards": [
                 {
                     "logo": "images/impact.png",
-                    "value": "TOP 1500+",
+                    "value": "#1001+",
                     "title": "THE Impact Rankings",
                     "summary": (
                         "Barqaror rivojlanish maqsadlari bo'yicha global universitetlar reytingi."
@@ -4076,7 +4086,7 @@ class ResultsShowcaseView(BasePortalContextMixin, TemplateView):
                 },
                 {
                     "logo": "images/uigreenmetric.png",
-                    "value": "#403",
+                    "value": "#327",
                     "title": "UI GreenMetric",
                     "summary": (
                         "World University Rankings bo'yicha ekologik va yashil kampus natijasi."
@@ -4124,12 +4134,26 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
     template_name = "portal/governance_detail.html"
     page_key = "about"
 
+    def get_template_names(self):
+        if self.kwargs.get("slug") == "jamoatchilik":
+            return ["portal/collective_agreement_text.html"]
+        if self.kwargs.get("slug") == "food-security-and-nutrition":
+            return ["portal/food_security_document.html"]
+        return super().get_template_names()
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         slug = kwargs["slug"]
         section = GOVERNANCE_PAGE_CONTENT.get(slug)
         if not section:
             raise Http404("Governance page not found")
+
+        if slug == "jamoatchilik":
+            from .progress_report import get_collective_agreement_sections
+            context["agreement_sections"] = get_collective_agreement_sections()
+        elif slug == "food-security-and-nutrition":
+            from .progress_report import get_food_security_sections
+            context["food_security_sections"] = get_food_security_sections()
 
         language_code = self.get_language_code()
         language_suffix = "uz" if language_code == "uz" else "en"
@@ -5089,7 +5113,7 @@ class ReportsView(BasePortalContextMixin, TemplateView):
             },
             {
                 "slug": "sustainability-report",
-                "title": "Barqarorlik hisoboti" if language_code == "uz" else "Sustainability report",
+                "title": "SDG taraqqiyot hisoboti 2024–2025" if language_code == "uz" else "SDG Progress Report 2024–2025",
                 "summary": (
                     "Barqaror rivojlanish maqsadlari, tashabbuslar va universitetning umumiy barqarorlik natijalari bo'yicha hisobot."
                     if language_code == "uz"
@@ -5433,10 +5457,10 @@ REPORT_INSIGHT_CARD_CONTENT = {
     "sustainability-report": {
         "eyebrow_uz": "Hisobotlar",
         "eyebrow_en": "Reports",
-        "title_uz": "Qarshi davlat universiteti 2024-2025 yildagi Barqarorlik hisoboti",
-        "title_en": "Karshi State University Sustainability Report 2024-2025",
-        "intro_uz": "Qarshi davlat universitetining 2024-2025 yillardagi barqarorlik yo'nalishlari, boshqaruv tizimi va rivojlanish natijalarini yorituvchi hisobot sahifasi.",
-        "intro_en": "A report page highlighting Karshi State University's 2024-2025 sustainability priorities, governance model, and progress.",
+        "title_uz": "Qarshi davlat universiteti — SDG taraqqiyot hisoboti 2024–2025",
+        "title_en": "Karshi State University — SDG Progress Report 2024–2025",
+        "intro_uz": "Birlashgan Millatlar Tashkilotining Barqaror rivojlanish maqsadlari sari erishilgan natijalar.",
+        "intro_en": "Progress towards the United Nations Sustainable Development Goals.",
         "show_download_cta": True,
         "download_url": "/static/documents/sustainability-report-2024-2025.pdf",
         "download_name": "Sustainability report 2024-2025.pdf",
@@ -5706,6 +5730,11 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
     template_name = "portal/report_detail.html"
     page_key = "reports"
 
+    def get_template_names(self):
+        if self.kwargs.get("slug") == "sustainability-report":
+            return ["portal/sdg_progress_report.html"]
+        return super().get_template_names()
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         language_code = self.get_language_code()
@@ -5805,6 +5834,9 @@ class ReportCardDetailView(BasePortalContextMixin, TemplateView):
                         },
                     ]
 
+        if slug == "sustainability-report":
+            from .progress_report import get_progress_report_sections
+            context["progress_report_sections"] = get_progress_report_sections()
         context["report_detail"] = report_context
         return context
 

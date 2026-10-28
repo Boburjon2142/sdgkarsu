@@ -1,44 +1,62 @@
 {% extends "portal/base.html" %}
-{% load portal_i18n news_content %}
+{% load static portal_i18n news_content %}
 
-{% block title %}sdg.qarshidu.uz{% endblock %}
+{% block title %}{{ article.title }} | sdg.qarshidu.uz{% endblock %}
 {% block meta_description %}{{ article.summary }}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/news-detail.css' %}">{% endblock %}
 
 {% block content %}
-  <section class="page-intro">
-    <div class="container page-intro__grid">
-      <div>
-        <div class="eyebrow">{{ article.get_category_display|translate_value:current_language }}</div>
+  <div class="news-detail">
+    <header class="news-detail__header">
+      <div class="container">
+        <nav class="news-detail__breadcrumb" aria-label="{% if current_language == 'uz' %}Sahifa yo‘li{% else %}Breadcrumb{% endif %}">
+          <a href="{% url 'home' %}">{% tr "Home" %}</a><span aria-hidden="true">/</span>
+          <a href="{% url 'news-events' %}">{% tr "News and events" %}</a>
+        </nav>
+        <div class="news-detail__meta">
+          <span class="news-detail__category">{{ article.get_category_display|translate_value:current_language }}</span>
+          <time datetime="{{ article.published_on|date:'Y-m-d' }}">{{ article.published_on|date:"d.m.Y" }}</time>
+          {% if article.sdg_goal %}<span>SDG {{ article.sdg_goal }}</span>{% endif %}
+        </div>
         <h1>{{ article.title }}</h1>
-        <p class="page-intro__lead rich-text-inline">{{ article.summary }}</p>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="section">
-    <div class="container detail-layout">
-      <article class="content-card content-card--large">
+    <div class="container news-detail__layout">
+      <article class="news-detail__article" aria-label="{{ article.title }}">
         {% if article.image %}
-          <figure class="detail-media">
-            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+          <figure class="news-detail__media">
+            <img loading="lazy" decoding="async" src="{{ article.image.url }}" alt="{{ article.title }}">
           </figure>
         {% endif %}
         <div class="news-body-content">{{ article.body|news_content }}</div>
       </article>
-      <aside class="stack-list">
-        <article class="content-card content-card--panel">
-          <h3>{% tr "Related reports" %}</h3>
-          {% for report in related_reports %}
-            <p class="rich-text-inline"><strong>{{ report.title }}</strong><br>{{ report.summary }}</p>
-          {% endfor %}
-        </article>
-        <article class="content-card content-card--panel">
-          <h3>{% tr "Recent updates" %}</h3>
+      <aside class="news-detail__sidebar">
+        {% if recent_news %}
+        <section class="news-detail__panel" aria-labelledby="recent-news-heading">
+          <h2 id="recent-news-heading">{% tr "Recent updates" %}</h2>
+          <ul class="news-detail__updates">
           {% for item in recent_news %}
-            <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></p>
+            <li>
+              <time datetime="{{ item.published_on|date:'Y-m-d' }}">{{ item.published_on|date:"d.m.Y" }}</time>
+              <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+            </li>
           {% endfor %}
-        </article>
+          </ul>
+        </section>
+        {% endif %}
+        {% if related_reports %}
+        <section class="news-detail__panel news-detail__panel--reports" aria-labelledby="related-reports-heading">
+          <h2 id="related-reports-heading">{% tr "Related reports" %}</h2>
+          <ul class="news-detail__reports">
+          {% for report in related_reports %}
+            <li><a href="{% url 'reports' %}">{{ report.title }}</a><p>{{ report.summary }}</p></li>
+          {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+        <a class="news-detail__back" href="{% url 'news-events' %}"><span aria-hidden="true">&larr;</span> {% if current_language == "uz" %}Barcha yangiliklar{% else %}All news{% endif %}</a>
       </aside>
     </div>
-  </section>
+  </div>
 {% endblock %}

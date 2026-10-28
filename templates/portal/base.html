@@ -9,8 +9,12 @@
   <meta property="og:title" content="{% block og_title %}sdg.qarshidu.uz{% endblock %}">
   <meta property="og:description" content="{% block og_description %}{% if page_content and page_content.meta_description %}{{ page_content.meta_description }}{% else %}{{ site_settings.meta_description }}{% endif %}{% endblock %}">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  {% block extra_css %}{% endblock %}
 </head>
 <body>
   <div class="site-loader" id="site-loader" aria-hidden="true">
@@ -22,7 +26,7 @@
           <a class="brand" href="{% url 'home' %}" aria-label="{{ site_settings.institution_name }}">
             <span class="brand-logo">
               <img
-                src="{% if current_language == 'uz' %}{% static 'images/qarshi_davlat_universiteti_logo_white.svg' %}{% else %}{% static 'images/karshi_state_university_logo_white.svg' %}{% endif %}"
+                src="{% static 'images/logo-oz-light.svg' %}"
                 alt="{% if current_language == 'uz' %}Qarshi Davlat Universiteti logotipi{% else %}Karshi State University logo{% endif %}"
               >
             </span>
@@ -108,7 +112,7 @@
         <div class="footer-brand">{% if current_language == "uz" %}Qarshi davlat universiteti{% else %}Karshi State University{% endif %}</div>
         <img
           class="footer-logo"
-          src="{% if current_language == 'uz' %}{% static 'images/qarshi_davlat_universiteti_logo_white.svg' %}{% else %}{% static 'images/karshi_state_university_logo_white.svg' %}{% endif %}"
+          src="{% static 'images/logo-oz-light.svg' %}"
           alt="{% if current_language == 'uz' %}Qarshi Davlat Universiteti logotipi{% else %}Karshi State University logo{% endif %}"
         >
       </div>

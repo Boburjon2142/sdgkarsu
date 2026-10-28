@@ -21,7 +21,7 @@
           <article class="news-card reveal">
             {% if article.image %}
               <a class="news-card__media" href="{{ article.get_absolute_url }}">
-                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                <img loading="lazy" decoding="async" src="{{ article.image.url }}" alt="{{ article.title }}">
               </a>
             {% else %}
               <a class="news-card__media news-card__media--placeholder" href="{{ article.get_absolute_url }}" aria-label="{{ article.title }}">

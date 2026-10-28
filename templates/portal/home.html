@@ -2,14 +2,14 @@
 {% load cache static portal_i18n %}
 
 {% block content %}
-  {% cache 900 home_hero_rankings current_language home_hero_cache_key using="fragments" %}
+  {% cache 900 home_hero_leader_rankings_327_1001 current_language home_hero_cache_key using="fragments" %}
   <section class="hero-section">
     <div class="container hero-layout hero-layout--rankings">
       <div class="hero-portrait-card">
         {% if site_settings.leader_photo %}
-          <img class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
+          <img fetchpriority="high" decoding="async" class="hero-portrait-card__image" src="{{ site_settings.leader_photo.url }}" alt="{{ site_settings.leader_name }}">
         {% else %}
-          <img class="hero-portrait-card__image" src="{% static 'images/rektor.jpg' %}" alt="{{ site_settings.leader_name }}">
+          <img fetchpriority="high" decoding="async" class="hero-portrait-card__image" src="{% static 'images/rektor.webp' %}" alt="{{ site_settings.leader_name }}">
         {% endif %}
         <div class="hero-portrait-card__meta">
           <strong>{% tr "Rector of Karshi State University" %}</strong>
@@ -23,46 +23,32 @@
         <div class="hero-actions">
           <a class="button button--primary" href="{% url 'results-showcase' %}">{% tr "Results" %}</a>
         </div>
+        <div class="hero-ranking-cards">
+          <article class="hero-ranking-card">
+            <div>
+              <strong class="hero-ranking-card__value">#327</strong>
+              <h2>UI GreenMetric</h2>
+              <p>World University Rankings</p>
+            </div>
+            <img decoding="async" src="{% static 'images/uigreenmetric.png' %}" alt="UI GreenMetric logo">
+          </article>
+          <article class="hero-ranking-card">
+            <div>
+              <strong class="hero-ranking-card__value">#1001+</strong>
+              <h2>THE Impact Rankings</h2>
+              <p>Global university standing</p>
+            </div>
+            <img decoding="async" src="{% static 'images/impact.png' %}" alt="THE Impact Rankings logo">
+          </article>
+        </div>
       </div>
 
-      <div class="hero-stats hero-stats--stacked">
-        <article class="stat-card stat-card--hero stat-card--hero-featured stat-card--hero-greenmetric">
-          <div class="stat-card--hero__content">
-            <strong
-              class="stat-card__value js-countup"
-              data-countup
-              data-target="403"
-              data-prefix="#"
-              data-duration="1800"
-              aria-label="403"
-            >#0</strong>
-            <span>UI GreenMetric</span>
-            <p>World University Rankings</p>
-          </div>
-          <img class="stat-card--hero__logo" src="{% static 'images/uigreenmetric.png' %}" alt="UI GreenMetric logo">
-        </article>
-        <article class="stat-card stat-card--hero stat-card--hero-featured stat-card--hero-impact">
-          <div class="stat-card--hero__content">
-            <strong
-              class="stat-card__value js-countup"
-              data-countup
-              data-target="1500"
-              data-prefix="#"
-              data-suffix="+"
-              data-duration="2200"
-              aria-label="1500 plus"
-            >#0+</strong>
-            <span>THE Impact Rankings</span>
-            <p>Global university standing</p>
-          </div>
-          <img class="stat-card--hero__logo stat-card--hero__logo--impact" src="{% static 'images/impact.png' %}" alt="THE Impact Rankings logo">
-        </article>
-      </div>
+
     </div>
   </section>
   {% endcache %}
 
-  {% cache 900 home_sdg_news current_language home_sdg_grid_cache_key using="fragments" %}
+  {% cache 900 home_sdg_news_lazy current_language home_sdg_grid_cache_key using="fragments" %}
   <section class="section section--cool section--sdg-news">
     <div class="container">
       <div class="news-sdg-block">
@@ -74,8 +60,8 @@
       <div class="sdg-icons-grid">
         {% for goal in sdg_goals %}
           <a class="sdg-news-card reveal" href="{% url 'sdg-updates' number=goal.number %}">
-            <img class="sdg-news-card__icon" src="{% static goal.image %}" alt="{{ goal.title }}">
-            <img class="sdg-news-card__gif" src="{% static goal.gif %}" alt="" aria-hidden="true">
+            <img loading="lazy" decoding="async" class="sdg-news-card__icon" src="{% static goal.image %}" alt="{{ goal.title }}">
+            <img loading="lazy" decoding="async" class="sdg-news-card__gif" src="{% static goal.gif %}" alt="" aria-hidden="true">
             {% if current_language == "uz" %}
               <div class="sdg-news-card__caption">{{ goal.title }}</div>
             {% endif %}
@@ -86,7 +72,7 @@
   </section>
   {% endcache %}
 
-  {% cache 300 home_latest_news current_language home_latest_news_cache_key using="fragments" %}
+  {% cache 300 home_latest_news_lazy current_language home_latest_news_cache_key using="fragments" %}
   <section class="section section--cool section--latest-news">
     <div class="container">
       <div class="news-sdg-block section-heading section-heading--news">
@@ -101,7 +87,7 @@
           <article class="news-card reveal">
             {% if article.image %}
               <a class="news-card__media" href="{{ article.get_absolute_url }}">
-                <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                <img loading="lazy" decoding="async" src="{{ article.image.url }}" alt="{{ article.title }}">
               </a>
             {% else %}
               <a class="news-card__media news-card__media--placeholder" href="{{ article.get_absolute_url }}" aria-label="{{ article.title }}">

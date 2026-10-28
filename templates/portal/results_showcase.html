@@ -49,7 +49,7 @@
         {% for card in results_page.impact_cards %}
           <article class="results-impact-card">
             <div class="results-impact-card__logo-wrap">
-              <img src="{% static card.logo %}" alt="{{ card.title }}">
+              <img loading="lazy" decoding="async" src="{% static card.logo %}" alt="{{ card.title }}">
             </div>
             <div class="results-impact-card__copy">
               <p class="results-impact-card__title">{{ card.title }}</p>
@@ -74,7 +74,7 @@
         {% for goal in results_sdg_cards %}
           <article class="results-sdg-card">
             <div class="results-sdg-card__icon">
-              <img src="{% static goal.image %}" alt="{{ goal.title }}">
+              <img loading="lazy" decoding="async" src="{% static goal.image %}" alt="{{ goal.title }}">
             </div>
             <div class="results-sdg-card__body">
               <p class="results-sdg-card__title">SDG {{ goal.number }}: {{ goal.title }}</p>

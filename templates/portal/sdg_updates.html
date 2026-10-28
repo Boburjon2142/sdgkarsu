@@ -7,7 +7,7 @@
       <div class="sdg-updates-page">
         <div class="sdg-updates-page__content">
           <div class="sdg-detail-page__header reveal">
-            <img class="sdg-detail-page__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }}">
+            <img loading="lazy" decoding="async" class="sdg-detail-page__icon" src="{% static goal.image %}" alt="SDG {{ goal.number }}">
             <div>
               <div class="eyebrow">{% tr "Sustainability news" %}</div>
               <h1>
@@ -24,25 +24,22 @@
           {% if goal_news_items %}
             <div class="sdg-work-grid">
               {% for item in goal_news_items %}
-                <article class="sdg-work-card reveal">
+                <a class="sdg-work-card sdg-work-card--news reveal" href="{{ item.get_absolute_url }}">
                   <div class="sdg-work-card__media">
                     {% if item.image %}
-                      <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                      <img loading="lazy" decoding="async" src="{{ item.image.url }}" alt="{{ item.title }}">
                     {% else %}
-                      <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                      <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
                     {% endif %}
                   </div>
                   <div class="sdg-work-card__body">
                     <h3>{{ item.title }}</h3>
                     <p>{{ item.summary }}</p>
-                    {% if item.body %}
-                      <div class="sdg-work-card__details">{{ item.body|truncatewords:50|linebreaks }}</div>
-                    {% endif %}
                     <div class="sdg-work-card__actions">
-                      <a class="button button--primary" href="{{ item.get_absolute_url }}">{% tr "Read more" %}</a>
+                      <span class="button button--primary">{% tr "Read more" %}</span>
                     </div>
                   </div>
-                </article>
+                </a>
               {% endfor %}
             </div>
           {% elif goal_work_items %}
@@ -51,9 +48,9 @@
                 <article class="sdg-work-card reveal">
                   <div class="sdg-work-card__media">
                     {% if work_item.cover_image %}
-                      <img src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
+                      <img loading="lazy" decoding="async" src="{{ work_item.cover_image.url }}" alt="{{ work_item.title }}">
                     {% else %}
-                      <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
+                      <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} preview">
                     {% endif %}
                   </div>
                   <div class="sdg-work-card__body">
@@ -90,7 +87,7 @@
 
         <aside class="sdg-detail-page__aside">
           <div class="sdg-detail-page__poster reveal">
-            <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
+            <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} GIF">
           </div>
           <div class="sdg-detail-page__nav reveal">
             <a href="{% url 'home' %}#main-content" class="text-link">

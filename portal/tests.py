@@ -294,10 +294,12 @@ class PortalSmokeTests(TestCase):
         response = client.get(reverse("governance-detail", kwargs={"slug": "jamoatchilik"}))
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "2023-2025")
-        self.assertContains(response, "mehnatga haq to'lash, kompensatsiya va rag'batlantirish tizimi")
-        self.assertContains(response, "Universitet ish joyida har qanday shakldagi diskriminatsiyani qat'iyan taqiqlaydi.")
-        self.assertContains(response, "homiladorlik va onalik davrida ayollarni qo'llab-quvvatlash siyosatini amalga oshiradi")
+        self.assertContains(response, "Jamoa shartnomasi 2026")
+        self.assertContains(response, "I. UMUMIY QOIDALAR")
+        self.assertContains(response, 'href="#agreement-section-1"')
+        self.assertContains(response, "/static/documents/collective-agreement-2026-2028.pdf")
+        self.assertNotContains(response, "<object")
+        self.assertNotContains(response, "~ 71 ~")
 
     def test_governance_meeting_minutes_card_is_listed(self):
         response = Client().get(reverse("reports"))
@@ -372,12 +374,11 @@ class PortalSmokeTests(TestCase):
         response = client.get(reverse("report-card-detail", kwargs={"slug": "sustainability-report"}))
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Karshi State University Sustainability Report 2024-2025")
-        self.assertContains(response, "six key areas")
-        self.assertContains(response, "approximately 30% of its total budget")
-        self.assertContains(response, "research-intro__aside")
-        self.assertContains(response, "download=\"Sustainability report 2024-2025.pdf\"")
-        self.assertContains(response, "/static/documents/sustainability-report-2024-2025.pdf")
+        self.assertContains(response, "SDG Progress Report 2024")
+        self.assertContains(response, "SDG 17")
+        self.assertContains(response, 'href="#report-section-1"')
+        self.assertContains(response, 'download="Karshi_State_University_SDG_Progress_Report_2024_2025.pdf"')
+        self.assertNotContains(response, "<object")
 
     def test_governance_detail_uses_english_content_when_language_is_en(self):
         client = Client()

@@ -103,6 +103,11 @@ class SDGNewsAdminTests(TestCase):
         self.assertNotContains(response, "<script>alert(1)</script>")
         content = response.content.decode()
         self.assertLess(content.index("<th"), content.index("<p>Oxirgi qism"))
+        response = self.client.get(reverse("sdg-updates", args=[3]))
+        self.assertContains(response, "Jadvalli yangilik")
+        self.assertContains(response, "Birinchi qism")
+        self.assertNotContains(response, "sdg-news-blocks-v1")
+        self.assertContains(response, article.get_absolute_url())
 
     def test_invalid_table_is_rejected(self):
         response = self.client.post(reverse("admin:portal_newsarticle_add"), {

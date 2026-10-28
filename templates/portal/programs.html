@@ -21,7 +21,7 @@
         {% for goal in sdg_goals %}
           <a class="sdg-goal-card reveal" href="{% url 'sdg-detail' goal.number %}">
             <div class="sdg-goal-card__media">
-              <img src="{% static goal.gif %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
+              <img loading="lazy" decoding="async" src="{% static goal.gif %}" alt="SDG {{ goal.number }} - {{ goal.title }}">
             </div>
             <div class="sdg-goal-card__body">
               <span class="chip">SDG {{ goal.number }}</span>
