@@ -85,7 +85,12 @@
   line-height: 1.9;
 }
 
-.news-detail .news-body-content p { margin: 0 0 1.25rem; }
+.news-detail .news-body-content p {
+  margin: 0 0 1.25rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 4;
+}
 .news-detail .news-body-content > :last-child { margin-bottom: 0; }
 .news-detail__sidebar { display: grid; gap: 1.25rem; min-width: 0; }
 .news-detail__panel { padding: 1.5rem; }
