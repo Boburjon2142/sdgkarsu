@@ -1,3 +1,4 @@
+import json
 from copy import copy
 from types import SimpleNamespace
 
@@ -406,6 +407,15 @@ MOJIBAKE_REPLACEMENTS = {
 def normalize_text(value):
     if not isinstance(value, str):
         return value
+    # Normalize content after decoding: ftfy can turn curly quotes or HTML
+    # entities into unescaped quotes and make a serialized news body invalid.
+    if value.lstrip().startswith("{"):
+        try:
+            document = json.loads(value)
+        except ValueError:
+            document = None
+        if isinstance(document, dict) and document.get("format") == "sdg-news-blocks-v1":
+            return json.dumps(normalize_value(document), ensure_ascii=False)
     cleaned = value
     if fix_text_encoding is not None:
         cleaned = fix_text_encoding(cleaned)

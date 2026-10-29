@@ -117,6 +117,30 @@ class SDGNewsAdminTests(TestCase):
         })
         self.assertIn("body_uz", response.context["adminform"].form.errors)
 
+    def test_localized_news_preserves_json_with_quotes_and_entities(self):
+        body = json.dumps({"format": "sdg-news-blocks-v1", "blocks": [
+            {"type": "text", "text": "Campus \u201cgreen\u201d &quot;mobility&quot;\n\nNext paragraph"},
+            {"type": "table", "rows": [["Program"], ["\u201cWater\u201d &quot;research&quot;"]]},
+            {"type": "text", "text": "<script>alert(1)</script>"},
+        ]}, ensure_ascii=False)
+        article = NewsArticle.objects.create(
+            title="Campus", slug="campus-quotes", body=body, body_en=body, body_uz=body,
+            category="official", published_on="2026-10-29",
+        )
+        for language in ("en", "uz"):
+            with self.subTest(language=language):
+                session = self.client.session
+                session["portal_language"] = language
+                session.save()
+                response = self.client.get(article.get_absolute_url())
+                self.assertContains(response, '<p>Campus &quot;green&quot; &quot;mobility&quot;</p>', html=True)
+                self.assertContains(response, '<p>Next paragraph</p>', html=True)
+                self.assertContains(response, '<td>&quot;Water&quot; &quot;research&quot;</td>', html=True)
+                self.assertNotContains(response, "sdg-news-blocks-v1")
+                self.assertNotContains(response, "<script>alert(1)</script>")
+        article.refresh_from_db()
+        self.assertEqual(article.body_en, body)
+
     def test_unrelated_staff_does_not_get_news_shortcuts(self):
         staff = get_user_model().objects.create_user("contacts-editor", is_staff=True)
         staff.user_permissions.add(Permission.objects.get(codename="view_contactsubmission"))
