@@ -1,0 +1,21 @@
+﻿{% extends "portal/base.html" %}
+{% load static %}
+{% block title %}{{ governance_section.title }} | sdg.qarshidu.uz{% endblock %}
+{% block meta_description %}{{ governance_section.intro }}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/progress-report.css' %}"><link rel="stylesheet" href="{% static 'css/water-policy.css' %}">{% endblock %}
+{% block content %}
+<div class="container progress-report progress-report--agreement water-policy">
+  <header class="progress-report__header">
+    <div class="eyebrow">{{ governance_section.eyebrow }}</div>
+    <h1>{{ governance_section.title }}</h1>
+    <p lang="en">Karshi State University</p>
+    <div class="hero-actions">
+      <a class="button button--primary" href="{% static 'documents/karshi-state-university-water-reuse-policy.docx' %}" download>{% if current_language == 'uz' %}DOCX hujjatni yuklab olish{% else %}Download DOCX document{% endif %}</a>
+      <a class="button button--secondary" href="{% url 'about' %}">{% if current_language == 'uz' %}Boshqaruv sahifasiga qaytish{% else %}Back to governance{% endif %}</a>
+    </div>
+  </header>
+  <article class="progress-report__body water-policy__content" lang="en">
+    {% include "portal/water_reuse_content.html" %}
+  </article>
+</div>
+{% endblock %}

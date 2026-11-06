@@ -1,0 +1,8 @@
+﻿.water-policy__content { padding: clamp(1rem, 3vw, 2.5rem); border: 1px solid #d5dfc4; border-radius: 16px; background: #fff; }
+.water-policy__content h2 { color: #24471c; font-size: clamp(1.25rem, 2vw, 1.7rem); margin: 2rem 0 1rem; }
+.water-policy__content img { display: block; max-width: 100%; height: auto; margin: 1rem auto; border-radius: 8px; }
+.water-policy__table { max-width: 100%; overflow-x: auto; margin: 1.5rem 0; }
+.water-policy__table table { width: 100%; border-collapse: collapse; }
+.water-policy__table th, .water-policy__table td { border: 1px solid #d5dfc4; padding: .85rem; vertical-align: top; min-width: 140px; overflow-wrap: anywhere; }
+.water-policy__table th { background: #f0f6eb; color: #24471c; text-align: left; }
+.water-policy__table p:last-child { margin-bottom: 0; }

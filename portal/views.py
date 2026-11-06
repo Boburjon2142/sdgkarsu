@@ -1811,6 +1811,17 @@ GOVERNANCE_PAGE_CONTENT = {
 }
 
 GOVERNANCE_PAGE_CONTENT["disability-support-policy"] = ANTI_CORRUPTION_CONTACT_CONTENT["disability-support-policy"]
+GOVERNANCE_PAGE_CONTENT["water-reuse-policy"] = {
+    "eyebrow_uz": "Barqarorlik boshqaruvi",
+    "eyebrow_en": "Sustainability governance",
+    "title_uz": "Suvdan qayta foydalanish va uni qayta ishlash siyosati",
+    "title_en": "Water Reuse and Recycling Policy",
+    "intro_uz": "Qarshi davlat universitetining suvdan qayta foydalanish va uni qayta ishlash siyosati.",
+    "intro_en": "Karshi State University Water Reuse and Recycling Policy.",
+    "sections_uz": [],
+    "sections_en": [],
+}
+
 GOVERNANCE_PAGE_CONTENT["food-security-and-nutrition"] = {
     "eyebrow_uz": "Barqarorlik boshqaruvi",
     "eyebrow_en": "Sustainability governance",
@@ -4137,6 +4148,8 @@ class GovernanceDetailView(BasePortalContextMixin, TemplateView):
     def get_template_names(self):
         if self.kwargs.get("slug") == "jamoatchilik":
             return ["portal/collective_agreement_text.html"]
+        if self.kwargs.get("slug") == "water-reuse-policy":
+            return ["portal/water_reuse_document.html"]
         if self.kwargs.get("slug") == "food-security-and-nutrition":
             return ["portal/food_security_document.html"]
         return super().get_template_names()
